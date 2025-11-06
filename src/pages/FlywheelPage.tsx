@@ -340,10 +340,12 @@ export default function FlywheelPage() {
         </div>
       </div>
 
-      <div className="max-w-7xl mx-auto px-6 pb-16">
-        {renderSection(gtmStrategyContent)}
-        {renderSection(costOptimizationContent)}
-        {renderSection(operationalEfficienciesContent)}
+      <div className="bg-gray-50 -mt-24 pt-32">
+        <div className="max-w-7xl mx-auto px-6 pb-16">
+          {renderSection(gtmStrategyContent)}
+          {renderSection(costOptimizationContent)}
+          {renderSection(operationalEfficienciesContent)}
+        </div>
       </div>
 
       {showBackToTop && (
