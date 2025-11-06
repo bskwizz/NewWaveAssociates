@@ -76,11 +76,25 @@ export default function AboutUsPage({ onNavigate }: AboutUsPageProps) {
                 key={index}
                 className="bg-white border border-gray-200 rounded-lg overflow-hidden hover:shadow-xl transition-all hover:-translate-y-2"
               >
-                <div className="aspect-square bg-white flex items-center justify-center overflow-hidden">
+                <div className={`aspect-square flex items-center justify-center overflow-hidden ${
+                  index === 0 ? 'bg-gradient-to-br from-[#01A3DB]/10 to-[#38495D]/10' : 'bg-white'
+                }`}>
                   <img
                     src={member.image}
                     alt={member.name}
                     className="w-full h-full object-cover"
+                    onError={(e) => {
+                      const target = e.target as HTMLImageElement;
+                      target.style.display = 'none';
+                      const parent = target.parentElement;
+                      if (parent) {
+                        parent.classList.add('bg-gradient-to-br', 'from-[#01A3DB]', 'to-[#38495D]');
+                        const initials = document.createElement('div');
+                        initials.className = 'w-32 h-32 bg-white/20 rounded-full flex items-center justify-center';
+                        initials.innerHTML = `<span class="text-white text-4xl font-bold">${member.name.split(' ').map(n => n[0]).join('')}</span>`;
+                        parent.appendChild(initials);
+                      }
+                    }}
                   />
                 </div>
                 <div className="p-6 text-center">
