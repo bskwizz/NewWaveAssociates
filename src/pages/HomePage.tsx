@@ -33,7 +33,7 @@ export default function HomePage({ onNavigate }: HomePageProps) {
           setIsVisible(true);
         }, 50);
       }, 180);
-    }, 8000);
+    }, 6000);
 
     return () => clearInterval(interval);
   }, []);
