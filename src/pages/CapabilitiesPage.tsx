@@ -122,11 +122,24 @@ export default function CapabilitiesPage({ onNavigate }: CapabilitiesPageProps) 
                       </li>
                     ))}
                   </ul>
-                  <div className="pt-4 border-t border-gray-200">
-                    <p className="text-sm font-semibold text-[#EF5919] mb-1">
-                      Outcome:
-                    </p>
-                    <p className="text-gray-700 italic">{capability.outcome}</p>
+                  <div className="pt-4 border-t border-gray-200 space-y-4">
+                    <div>
+                      <p className="text-sm font-semibold text-[#EF5919] mb-1">
+                        Outcome:
+                      </p>
+                      <p className="text-gray-700 italic">{capability.outcome}</p>
+                    </div>
+                    <div>
+                      <p className="text-sm font-semibold text-[#38495D] mb-2">
+                        Related Case Studies:
+                      </p>
+                      <button
+                        onClick={() => onNavigate('case-studies')}
+                        className="text-[#01A3DB] hover:text-[#0182b3] underline text-sm transition-colors"
+                      >
+                        View related case studies →
+                      </button>
+                    </div>
                   </div>
                 </div>
               )}
