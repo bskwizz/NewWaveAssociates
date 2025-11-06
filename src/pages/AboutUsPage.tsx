@@ -43,11 +43,9 @@ export default function AboutUsPage({ onNavigate }: AboutUsPageProps) {
         }}></div>
 
         <div className="relative flex-1 flex flex-col justify-center max-w-7xl mx-auto px-6 pt-32 pb-24">
-          <div className="max-w-4xl mx-auto text-center mb-16">
-            <h1 className="text-6xl md:text-7xl font-bold text-[#38495D] mb-8 leading-tight">
-              Built by Operators. Trusted by Leaders.
-            </h1>
-            <p className="text-2xl md:text-3xl text-[#38495D] leading-relaxed">
+          <div className="max-w-3xl mb-16">
+            <h1 className="text-6xl font-bold text-[#38495D] mb-4">About Us</h1>
+            <p className="text-xl text-[#38495D]">
               New Wave Associates is a strategy & general management growth consultancy that brings operator-grade expertise to help companies evolve smarter, leaner, and faster.
             </p>
           </div>
