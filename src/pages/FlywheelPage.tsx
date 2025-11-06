@@ -246,6 +246,10 @@ export default function FlywheelPage() {
 
     const clamp = (n: number, min: number, max: number) => Math.max(min, Math.min(max, n));
 
+    const bar = document.querySelector('.fw-progress__bar') as HTMLElement;
+    const first = document.getElementById('gtm-strategy');
+    const last = document.getElementById('operational-efficiencies');
+
     const handleScroll = () => {
       setShowBackToTop(window.scrollY > 400);
 
@@ -256,6 +260,15 @@ export default function FlywheelPage() {
         const shiftY = (t * 8).toFixed(2) + 'px';
         document.documentElement.style.setProperty('--glow-shift-x', shiftX);
         document.documentElement.style.setProperty('--glow-shift-y', shiftY);
+      }
+
+      if (bar && first && last) {
+        const top = first.getBoundingClientRect().top + window.scrollY;
+        const bottom = last.getBoundingClientRect().bottom + window.scrollY;
+        const total = Math.max(1, bottom - top);
+        const scrollY = window.scrollY + window.innerHeight * 0.25;
+        const pct = Math.min(100, Math.max(0, ((scrollY - top) / total) * 100));
+        bar.style.width = pct + '%';
       }
     };
 
@@ -301,6 +314,9 @@ export default function FlywheelPage() {
 
   return (
     <div className="pt-16">
+      <div className="fw-progress fw-progress--top" aria-hidden="true">
+        <div className="fw-progress__bar"></div>
+      </div>
       <div id="flywheel-hero" className="flywheel-hero fw-glow" aria-label="New Wave Flywheel">
         <div className="flywheel-hero__inner">
           <div className="flywheel-hero__media">
