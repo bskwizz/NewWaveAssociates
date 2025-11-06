@@ -20,12 +20,21 @@ html {
 }
 
 :root {
-  --nw-header-height: 64px;
-  --nw-hero-h: 360px;
-  --nw-hero-collapsed-h: 76px;
+  --nw-header-h: 64px;
+  --nw-hero-h: 420px;
+  --nw-hero-collapsed-h: 80px;
+  --nw-line-rotate: 6deg;
+  --nw-line-top: 62%;
+  --nw-line-left: 10%;
+  --nw-line-length: 80%;
+  --nw-progress: 0%;
 }
 
 .flywheel-progress {
+  display: none !important;
+}
+
+.flywheel-progress__bar {
   display: none !important;
 }
 
@@ -38,58 +47,63 @@ html {
 }
 
 .flywheel-hero {
-  position: sticky;
-  top: var(--nw-header-height);
-  z-index: 45;
-  background: #fff;
-  transition: height 220ms ease, box-shadow 220ms ease;
+  position: relative;
   height: var(--nw-hero-h);
+  background: #fff;
   border-bottom: 1px solid rgba(0, 0, 0, 0.06);
+  transition: height 220ms ease, box-shadow 220ms ease;
+  z-index: 1;
 }
 
-.flywheel-hero.is-collapsed {
+.flywheel-hero.is-sticky {
+  position: sticky;
+  top: var(--nw-header-h);
   height: var(--nw-hero-collapsed-h);
   box-shadow: 0 4px 16px rgba(0, 0, 0, 0.06);
+  z-index: 45;
 }
 
 .flywheel-hero__inner {
-  position: relative;
-  height: 100%;
   max-width: 1200px;
   margin: 0 auto;
-  padding: 8px 16px;
+  padding: 12px 16px;
+  height: 100%;
   display: grid;
-  grid-template-areas:
-    "img"
-    "labels";
   grid-template-rows: 1fr auto;
+  gap: 8px;
+}
+
+.flywheel-hero__media {
+  position: relative;
+  display: grid;
+  place-items: center;
+  overflow: hidden;
 }
 
 .flywheel-hero__img {
-  grid-area: img;
-  align-self: center;
-  justify-self: center;
-  max-height: calc(var(--nw-hero-h) - 64px);
+  max-height: calc(var(--nw-hero-h) - 100px);
   width: auto;
   height: auto;
-  transition: transform 220ms ease, max-height 220ms ease, opacity 220ms ease;
+  transition: max-height 220ms ease, transform 220ms ease, opacity 220ms ease;
 }
 
-.flywheel-hero.is-collapsed .flywheel-hero__img {
-  max-height: calc(var(--nw-hero-collapsed-h) - 24px);
-  transform: translateX(-8px) scale(0.95);
+.flywheel-hero.is-sticky .flywheel-hero__img {
+  max-height: calc(var(--nw-hero-collapsed-h) - 20px);
+  transform: translateX(-6px) scale(0.96);
   opacity: 0.95;
 }
 
 .flywheel-hero__labels {
-  grid-area: labels;
   display: flex;
   gap: 12px;
   justify-content: center;
   align-items: center;
-  padding-top: 8px;
   flex-wrap: wrap;
-  transition: padding 200ms ease, justify-content 200ms ease;
+  transition: justify-content 200ms ease, gap 200ms ease;
+}
+
+.flywheel-hero.is-sticky .flywheel-hero__labels {
+  justify-content: flex-start;
 }
 
 .flywheel-hero__label {
@@ -114,34 +128,24 @@ html {
   color: #38495D;
 }
 
-.flywheel-hero.is-collapsed .flywheel-hero__labels {
-  justify-content: flex-start;
-  padding-top: 0;
-}
-
-.flywheel-hero__progress {
+.flywheel-hero__line-overlay {
   position: absolute;
-  left: 0;
-  right: 0;
-  bottom: 0;
-  height: 3px;
-  background: transparent;
-}
-
-.flywheel-hero__progress-bar {
-  height: 100%;
-  width: 0%;
+  top: var(--nw-line-top);
+  left: var(--nw-line-left);
+  height: 4px;
+  width: calc(var(--nw-line-length) * (var(--nw-progress) / 100));
   background: #EF5919;
+  border-radius: 3px;
+  transform-origin: left center;
+  transform: rotate(var(--nw-line-rotate));
   transition: width 120ms linear;
+  pointer-events: none;
 }
 
 @media (max-width: 768px) {
   :root {
-    --nw-hero-h: 300px;
-    --nw-hero-collapsed-h: 68px;
-  }
-  .flywheel-hero__labels {
-    gap: 8px;
+    --nw-hero-h: 340px;
+    --nw-hero-collapsed-h: 72px;
   }
   .flywheel-hero__label {
     padding: 6px 8px;

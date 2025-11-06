@@ -234,13 +234,11 @@ function CollapsibleGroup({ subhead, items, groupId }: CollapsibleGroupProps) {
 
 export default function FlywheelPage() {
   const [showBackToTop, setShowBackToTop] = useState(false);
-  const [isHeroCollapsed, setIsHeroCollapsed] = useState(false);
+  const [isHeroSticky, setIsHeroSticky] = useState(false);
   const [activeLabel, setActiveLabel] = useState('gtm-strategy');
-  const [progressWidth, setProgressWidth] = useState(0);
 
   useEffect(() => {
     const hero = document.getElementById('flywheel-hero');
-    const bar = document.querySelector('.flywheel-hero__progress-bar') as HTMLElement;
     const labels = Array.from(document.querySelectorAll('.flywheel-hero__label'));
     const sections = [
       document.getElementById('gtm-strategy'),
@@ -248,48 +246,65 @@ export default function FlywheelPage() {
       document.getElementById('operational-efficiencies'),
     ].filter(Boolean) as HTMLElement[];
 
-    const headerHeight = 64;
+    const headerH = 64;
+
+    function setProgress(pct: number) {
+      document.documentElement.style.setProperty(
+        '--nw-progress',
+        String(Math.max(0, Math.min(100, pct)))
+      );
+    }
 
     const onScroll = () => {
       setShowBackToTop(window.scrollY > 400);
 
       if (hero) {
         const rect = hero.getBoundingClientRect();
-        setIsHeroCollapsed(rect.top <= headerHeight);
+        const heroBottom = rect.top + rect.height;
+        const shouldStick = heroBottom <= headerH + 8;
+        setIsHeroSticky(shouldStick);
       }
 
       const first = sections[0];
       const last = sections[sections.length - 1];
       if (first && last) {
-        const top = first.getBoundingClientRect().top + window.scrollY;
-        const bottom = last.getBoundingClientRect().bottom + window.scrollY;
+        const top = first.getBoundingClientRect().top + window.scrollY - headerH;
+        const bottom = last.getBoundingClientRect().bottom + window.scrollY - headerH;
         const total = Math.max(1, bottom - top);
-        const y = window.scrollY + window.innerHeight * 0.25;
-        const pct = Math.min(100, Math.max(0, ((y - top) / total) * 100));
-        setProgressWidth(pct);
+        const y = window.scrollY + window.innerHeight * 0.3;
+        const pct = ((y - top) / total) * 100;
+        setProgress(pct);
       }
     };
 
-    const map: Record<string, Element> = {
+    const tabMap: Record<string, Element> = {
       'gtm-strategy': labels.find((a) => a.getAttribute('data-target') === 'gtm-strategy')!,
       'cost-optimization': labels.find((a) => a.getAttribute('data-target') === 'cost-optimization')!,
-      'operational-efficiencies': labels.find((a) => a.getAttribute('data-target') === 'operational-efficiencies')!,
+      'operational-efficiencies': labels.find(
+        (a) => a.getAttribute('data-target') === 'operational-efficiencies'
+      )!,
     };
 
     const io = new IntersectionObserver(
       (entries) => {
         entries.forEach((entry) => {
           const id = entry.target.id;
-          if (!map[id]) return;
+          const link = tabMap[id];
+          if (!link) return;
           if (entry.isIntersecting) {
             setActiveLabel(id);
           }
         });
       },
-      { root: null, rootMargin: '-35% 0px -55% 0px', threshold: [0, 0.2, 0.5, 0.8, 1] }
+      { root: null, rootMargin: '-35% 0px -55% 0px', threshold: [0, 0.25, 0.5, 0.75, 1] }
     );
 
     sections.forEach((sec) => io.observe(sec));
+
+    const img = hero?.querySelector('.flywheel-hero__img') as HTMLImageElement;
+    if (img && !img.complete) {
+      img.addEventListener('load', () => requestAnimationFrame(onScroll));
+    }
 
     window.addEventListener('scroll', onScroll, { passive: true });
     window.addEventListener('resize', onScroll, { passive: true });
@@ -309,14 +324,11 @@ export default function FlywheelPage() {
   const handleLabelClick = (e: React.MouseEvent<HTMLAnchorElement>, targetId: string) => {
     e.preventDefault();
     const target = document.getElementById(targetId);
-    const hero = document.getElementById('flywheel-hero');
     if (!target) return;
 
-    const headerHeight = 64;
-    const heroOffset = hero && isHeroCollapsed ? 0 : 8;
-    const y = target.getBoundingClientRect().top + window.scrollY - headerHeight - heroOffset;
-
+    const headerH = 64;
     const prefersReduced = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+    const y = target.getBoundingClientRect().top + window.scrollY - headerH - 8;
     window.scrollTo({ top: y, behavior: prefersReduced ? 'auto' : 'smooth' });
     history.replaceState(null, '', '#' + targetId);
   };
@@ -352,15 +364,19 @@ export default function FlywheelPage() {
     <div className="pt-16">
       <div
         id="flywheel-hero"
-        className={`flywheel-hero ${isHeroCollapsed ? 'is-collapsed' : ''}`}
+        className={`flywheel-hero ${isHeroSticky ? 'is-sticky' : ''}`}
         aria-label="New Wave Flywheel"
       >
         <div className="flywheel-hero__inner">
-          <img
-            className="flywheel-hero__img"
-            src="/FlyWheel New Wave Associates.png"
-            alt="New Wave Flywheel"
-          />
+          <div className="flywheel-hero__media">
+            <img
+              className="flywheel-hero__img"
+              src="/FlyWheel New Wave Associates.png"
+              alt="New Wave Flywheel"
+            />
+            <div className="flywheel-hero__line-overlay" aria-hidden="true"></div>
+          </div>
+
           <nav className="flywheel-hero__labels" aria-label="Flywheel sections">
             <a
               href="#gtm-strategy"
@@ -387,9 +403,6 @@ export default function FlywheelPage() {
               Operational Efficiencies
             </a>
           </nav>
-          <div className="flywheel-hero__progress" aria-hidden="true">
-            <div className="flywheel-hero__progress-bar" style={{ width: `${progressWidth}%` }}></div>
-          </div>
         </div>
       </div>
 
