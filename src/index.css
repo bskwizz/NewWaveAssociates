@@ -184,10 +184,27 @@ html {
   cursor: pointer;
   z-index: 10;
   transition: background-color 200ms ease;
+  display: flex;
+  align-items: center;
+  justify-content: center;
 }
 
 .flywheel-hotspot:hover {
   background-color: rgba(1, 163, 219, 0.1);
+}
+
+.flywheel-label {
+  font-size: 1.125rem;
+  font-weight: 600;
+  color: #38495D;
+  text-align: center;
+  pointer-events: none;
+}
+
+@media (max-width: 768px) {
+  .flywheel-label {
+    font-size: 0.875rem;
+  }
 }
 
 .flywheel-hotspot--gtm {

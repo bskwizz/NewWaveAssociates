@@ -357,9 +357,7 @@ export default function FlywheelPage() {
             />
             <a
               href="#gtm-strategy"
-              className={`flywheel-hotspot flywheel-hotspot--gtm transition-opacity duration-700 ${
-                fadeInGtm ? 'opacity-100' : 'opacity-0'
-              }`}
+              className="flywheel-hotspot flywheel-hotspot--gtm"
               aria-label="Go to GTM Strategy"
               onClick={(e) => {
                 e.preventDefault();
@@ -370,12 +368,14 @@ export default function FlywheelPage() {
                   window.scrollTo({ top: y, behavior: 'smooth' });
                 }
               }}
-            ></a>
+            >
+              <span className={`flywheel-label transition-opacity duration-700 ${
+                fadeInGtm ? 'opacity-100' : 'opacity-0'
+              }`}>GTM Strategy</span>
+            </a>
             <a
               href="#cost-optimization"
-              className={`flywheel-hotspot flywheel-hotspot--cost transition-opacity duration-700 ${
-                fadeInCost ? 'opacity-100' : 'opacity-0'
-              }`}
+              className="flywheel-hotspot flywheel-hotspot--cost"
               aria-label="Go to Cost Optimization"
               onClick={(e) => {
                 e.preventDefault();
@@ -386,12 +386,14 @@ export default function FlywheelPage() {
                   window.scrollTo({ top: y, behavior: 'smooth' });
                 }
               }}
-            ></a>
+            >
+              <span className={`flywheel-label transition-opacity duration-700 ${
+                fadeInCost ? 'opacity-100' : 'opacity-0'
+              }`}>Cost Optimization</span>
+            </a>
             <a
               href="#operational-efficiencies"
-              className={`flywheel-hotspot flywheel-hotspot--ops transition-opacity duration-700 ${
-                fadeInOps ? 'opacity-100' : 'opacity-0'
-              }`}
+              className="flywheel-hotspot flywheel-hotspot--ops"
               aria-label="Go to Operational Efficiencies"
               onClick={(e) => {
                 e.preventDefault();
@@ -402,7 +404,11 @@ export default function FlywheelPage() {
                   window.scrollTo({ top: y, behavior: 'smooth' });
                 }
               }}
-            ></a>
+            >
+              <span className={`flywheel-label transition-opacity duration-700 ${
+                fadeInOps ? 'opacity-100' : 'opacity-0'
+              }`}>Operational Efficiency</span>
+            </a>
           </div>
         </div>
       </div>
