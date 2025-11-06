@@ -33,7 +33,7 @@ export default function AboutUsPage({ onNavigate }: AboutUsPageProps) {
             Built by Operators. Trusted by Leaders.
           </h1>
           <p className="text-xl text-gray-700 leading-relaxed">
-            We&apos;ve carried the bag, owned the P&L, stood up PMOs, and led integrations with thousands of employees in flight. Now we bring that experience to teams who want execution momentum — not another binder.
+            We bring operator-grade expertise in growth, strategy, cost optimization, and operational excellence to help businesses scale smarter, leaner, and faster.
           </p>
         </div>
 
