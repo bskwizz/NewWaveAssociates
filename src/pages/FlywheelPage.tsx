@@ -243,12 +243,37 @@ export default function FlywheelPage() {
     document.documentElement?.style?.removeProperty('--nw-progress');
 
     const prefersReduced = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
-
     const clamp = (n: number, min: number, max: number) => Math.max(min, Math.min(max, n));
 
-    const bar = document.querySelector('.fw-progress__bar') as HTMLElement;
+    const heroBar = document.querySelector('.fw-progress--hero .fw-progress__bar') as HTMLElement;
+    const heroWrap = document.querySelector('.fw-progress--hero') as HTMLElement;
     const first = document.getElementById('gtm-strategy');
     const last = document.getElementById('operational-efficiencies');
+    const miniNav = document.querySelector('.flywheel-mininav') as HTMLElement;
+
+    const setProgress = (pct: number) => {
+      const pctStr = Math.min(100, Math.max(0, pct)) + '%';
+      if (heroBar) heroBar.style.width = pctStr;
+      if (miniNav) miniNav.style.setProperty('--fw-progress', pctStr);
+    };
+
+    const calcProgress = () => {
+      if (!first || !last) return;
+      const top = first.getBoundingClientRect().top + window.scrollY;
+      const bottom = last.getBoundingClientRect().bottom + window.scrollY;
+      const total = Math.max(1, bottom - top);
+      const y = window.scrollY + window.innerHeight * 0.25;
+      const pct = ((y - top) / total) * 100;
+      setProgress(pct);
+    };
+
+    const toggleHandoff = () => {
+      if (!miniNav || !heroWrap) return;
+      const headerH = parseInt(getComputedStyle(document.documentElement).getPropertyValue('--nw-header-h')) || 64;
+      const navTop = miniNav.getBoundingClientRect().top;
+      const isSticky = navTop <= headerH + 1;
+      heroWrap.classList.toggle('is-hidden', isSticky);
+    };
 
     const handleScroll = () => {
       setShowBackToTop(window.scrollY > 400);
@@ -262,14 +287,8 @@ export default function FlywheelPage() {
         document.documentElement.style.setProperty('--glow-shift-y', shiftY);
       }
 
-      if (bar && first && last) {
-        const top = first.getBoundingClientRect().top + window.scrollY;
-        const bottom = last.getBoundingClientRect().bottom + window.scrollY;
-        const total = Math.max(1, bottom - top);
-        const scrollY = window.scrollY + window.innerHeight * 0.25;
-        const pct = Math.min(100, Math.max(0, ((scrollY - top) / total) * 100));
-        bar.style.width = pct + '%';
-      }
+      calcProgress();
+      toggleHandoff();
     };
 
     window.addEventListener('scroll', handleScroll, { passive: true });
@@ -369,6 +388,10 @@ export default function FlywheelPage() {
             ></a>
           </div>
         </div>
+      </div>
+
+      <div className="fw-progress fw-progress--hero" aria-hidden="true">
+        <div className="fw-progress__bar"></div>
       </div>
 
       <div className="bg-gray-50 -mt-24 pt-32">
