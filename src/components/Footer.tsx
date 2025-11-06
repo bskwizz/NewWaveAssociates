@@ -10,7 +10,7 @@ export default function Footer() {
             alt="New Wave Associates"
             className="h-24 mb-4"
           />
-          <p className="text-sm text-gray-300 w-full md:w-1/4 leading-relaxed">
+          <p className="text-xs text-gray-300 w-full md:w-1/3 leading-relaxed">
             New Wave Associates is a strategy & general management growth consultancy that brings operator-grade expertise to help companies evolve smarter, leaner, and faster.
           </p>
         </div>
