@@ -440,7 +440,7 @@ html {
   content: "";
   position: absolute;
   inset: 0;
-  background: rgba(255, 255, 255, 0.3);
+  background: rgba(255, 255, 255, 0.85);
   z-index: 1;
   pointer-events: none;
 }
@@ -465,7 +465,7 @@ html {
   bottom: 0 !important;
   width: 100% !important;
   height: 100% !important;
-  background: rgba(255, 255, 255, 0.3) !important;
+  background: rgba(255, 255, 255, 0.85) !important;
   filter: none !important;
   border-radius: 0 !important;
   animation: none !important;
