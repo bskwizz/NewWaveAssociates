@@ -242,15 +242,30 @@ export default function FlywheelPage() {
     }
     document.documentElement?.style?.removeProperty('--nw-progress');
 
+    const prefersReduced = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+
+    const clamp = (n: number, min: number, max: number) => Math.max(min, Math.min(max, n));
+
     const handleScroll = () => {
       setShowBackToTop(window.scrollY > 400);
+
+      if (!prefersReduced) {
+        const y = window.scrollY || 0;
+        const t = clamp(y / 1200, 0, 1);
+        const shiftX = (t * 6).toFixed(2) + 'px';
+        const shiftY = (t * 8).toFixed(2) + 'px';
+        document.documentElement.style.setProperty('--glow-shift-x', shiftX);
+        document.documentElement.style.setProperty('--glow-shift-y', shiftY);
+      }
     };
 
     window.addEventListener('scroll', handleScroll, { passive: true });
+    window.addEventListener('resize', handleScroll, { passive: true });
     handleScroll();
 
     return () => {
       window.removeEventListener('scroll', handleScroll);
+      window.removeEventListener('resize', handleScroll);
     };
   }, []);
 
@@ -286,7 +301,7 @@ export default function FlywheelPage() {
 
   return (
     <div className="pt-16">
-      <div id="flywheel-hero" className="flywheel-hero" aria-label="New Wave Flywheel">
+      <div id="flywheel-hero" className="flywheel-hero fw-glow" aria-label="New Wave Flywheel">
         <div className="flywheel-hero__inner">
           <div className="flywheel-hero__media">
             <img

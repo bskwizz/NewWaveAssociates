@@ -21,6 +21,10 @@ html {
 
 :root {
   --nw-hero-h: 85vh;
+  --glow-shift-x: 0px;
+  --glow-shift-y: 0px;
+  --glow-speed-1: 14s;
+  --glow-speed-2: 18s;
 }
 
 .flywheel-progress {
@@ -61,6 +65,87 @@ html {
   align-items: center;
   justify-content: center;
   padding: 32px 16px;
+}
+
+.fw-glow {
+  position: relative;
+  background:
+    repeating-linear-gradient(
+      135deg,
+      rgba(56,73,93,0.05) 0px,
+      rgba(56,73,93,0.05) 1px,
+      transparent 1px,
+      transparent 22px
+    ),
+    radial-gradient(1200px 600px at 12% -10%, rgba(1,163,219,0.08), transparent 55%),
+    radial-gradient(900px 500px at 88% 110%, rgba(56,73,93,0.10), transparent 55%),
+    linear-gradient(180deg, #FFFFFF 0%, #F8FBFD 100%);
+  border-bottom: 1px solid rgba(0,0,0,0.06);
+}
+
+.fw-glow::before,
+.fw-glow::after {
+  content: '';
+  position: absolute;
+  border-radius: 50%;
+  filter: blur(80px);
+  opacity: 0.4;
+  pointer-events: none;
+  z-index: 0;
+}
+
+.fw-glow::before {
+  top: -10%;
+  left: 8%;
+  width: 400px;
+  height: 400px;
+  background: radial-gradient(circle, rgba(1,163,219,0.3), transparent 70%);
+  animation: glowShift1 var(--glow-speed-1) ease-in-out infinite alternate;
+  transform: translate(var(--glow-shift-x), var(--glow-shift-y)) scale(1);
+}
+
+.fw-glow::after {
+  bottom: -15%;
+  right: 10%;
+  width: 500px;
+  height: 500px;
+  background: radial-gradient(circle, rgba(56,73,93,0.2), transparent 70%);
+  animation: glowShift2 var(--glow-speed-2) ease-in-out infinite alternate;
+  transform: translate(calc(var(--glow-shift-x) * -0.6), calc(var(--glow-shift-y) * 0.6)) scale(1);
+}
+
+@keyframes glowShift1 {
+  0% { transform: translate(var(--glow-shift-x), var(--glow-shift-y)) scale(1) translate(0, 0); }
+  100% { transform: translate(var(--glow-shift-x), var(--glow-shift-y)) scale(1.05) translate(20px, -15px); }
+}
+
+@keyframes glowShift2 {
+  0% { transform: translate(calc(var(--glow-shift-x) * -0.6), calc(var(--glow-shift-y) * 0.6)) scale(1) translate(0, 0); }
+  100% { transform: translate(calc(var(--glow-shift-x) * -0.6), calc(var(--glow-shift-y) * 0.6)) scale(1.08) translate(-25px, 20px); }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .fw-glow::before,
+  .fw-glow::after {
+    animation: none;
+    transform: none;
+  }
+}
+
+@media (max-width: 768px) {
+  .fw-glow {
+    background:
+      repeating-linear-gradient(
+        135deg,
+        rgba(56,73,93,0.035) 0px,
+        rgba(56,73,93,0.035) 1px,
+        transparent 1px,
+        transparent 22px
+      ),
+      radial-gradient(1200px 600px at 12% -10%, rgba(1,163,219,0.07), transparent 55%),
+      radial-gradient(900px 500px at 88% 110%, rgba(56,73,93,0.09), transparent 55%),
+      linear-gradient(180deg, #FFFFFF 0%, #F8FBFD 100%);
+  }
 }
 
 .flywheel-hero__inner {
