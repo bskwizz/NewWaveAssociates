@@ -8,7 +8,8 @@ interface VantaWavesOptions {
 
 declare global {
   interface Window {
-    VANTA: {
+    THREE?: any;
+    VANTA?: {
       WAVES: (options: any) => {
         destroy: () => void;
       };
@@ -27,11 +28,10 @@ export function useVantaWaves(options: VantaWavesOptions = {}) {
     }
 
     const reduceMotion = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
-    const isMobile = Math.min(window.innerWidth, window.innerHeight) < 768;
 
-    console.log('Vanta init check:', { reduceMotion, isMobile, hasVanta: !!window.VANTA });
+    console.log('Vanta init check:', { reduceMotion, hasVanta: !!window.VANTA });
 
-    if (reduceMotion || isMobile) {
+    if (reduceMotion) {
       if (containerRef.current) {
         containerRef.current.style.background = 'linear-gradient(180deg, #FFFFFF 0%, #F8FBFD 100%)';
       }
@@ -39,6 +39,10 @@ export function useVantaWaves(options: VantaWavesOptions = {}) {
     }
 
     const initVanta = () => {
+      if (!window.THREE) {
+        console.log('THREE.js not available');
+        return;
+      }
       if (!window.VANTA) {
         console.log('VANTA not available');
         return;
@@ -49,9 +53,10 @@ export function useVantaWaves(options: VantaWavesOptions = {}) {
       }
 
       try {
-        console.log('Initializing Vanta WAVES');
+        console.log('Initializing Vanta WAVES with THREE', window.THREE);
         const baseOptions = {
           el: containerRef.current,
+          THREE: window.THREE,
           color: 0x01A3DB,
           backgroundColor: 0xFFFFFF,
           shininess: 35.0,
@@ -73,15 +78,15 @@ export function useVantaWaves(options: VantaWavesOptions = {}) {
       }
     };
 
-    if (window.VANTA) {
+    if (window.VANTA && window.THREE) {
       initVanta();
     } else {
-      console.log('Waiting for VANTA to load...');
+      console.log('Waiting for VANTA and THREE to load...');
       let attempts = 0;
       const checkVanta = setInterval(() => {
         attempts++;
-        if (window.VANTA) {
-          console.log('VANTA loaded after', attempts, 'attempts');
+        if (window.VANTA && window.THREE) {
+          console.log('VANTA and THREE loaded after', attempts, 'attempts');
           clearInterval(checkVanta);
           initVanta();
         }
@@ -89,7 +94,7 @@ export function useVantaWaves(options: VantaWavesOptions = {}) {
 
       setTimeout(() => {
         clearInterval(checkVanta);
-        console.log('VANTA load timeout after', attempts, 'attempts');
+        console.log('VANTA/THREE load timeout after', attempts, 'attempts');
       }, 5000);
     }
 
