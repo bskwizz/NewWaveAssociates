@@ -1,25 +1,25 @@
 import { useState } from 'react';
-import { Linkedin, Mail } from 'lucide-react';
+import { MapPin, Mail } from 'lucide-react';
 
 export default function ContactUsPage() {
   const [formData, setFormData] = useState({
-    firstName: '',
-    lastName: '',
+    name: '',
     email: '',
+    phone: '',
     company: '',
-    role: '',
+    reason: '',
     message: '',
   });
 
   const handleSubmit = (e: React.FormEvent) => {
     e.preventDefault();
-    const mailtoLink = `mailto:hello@newwaveassociates.com?subject=Contact from ${formData.firstName} ${formData.lastName}&body=${encodeURIComponent(
-      `Name: ${formData.firstName} ${formData.lastName}\nEmail: ${formData.email}\nCompany: ${formData.company}\nRole: ${formData.role}\n\nMessage:\n${formData.message}`
+    const mailtoLink = `mailto:hello@newwaveassociates.com?subject=Contact from ${formData.name}&body=${encodeURIComponent(
+      `Name: ${formData.name}\nEmail: ${formData.email}\nPhone: ${formData.phone}\nCompany: ${formData.company}\nReason: ${formData.reason}\n\nMessage:\n${formData.message}`
     )}`;
     window.location.href = mailtoLink;
   };
 
-  const handleChange = (e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement>) => {
+  const handleChange = (e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement | HTMLSelectElement>) => {
     setFormData({
       ...formData,
       [e.target.name]: e.target.value,
@@ -27,146 +27,142 @@ export default function ContactUsPage() {
   };
 
   return (
-    <div className="pt-24 pb-16">
-      <div className="max-w-4xl mx-auto px-6">
-        <div className="text-center mb-12">
-          <h1 className="text-5xl font-bold text-[#38495D] mb-6">
-            Let's Start the Conversation
-          </h1>
-          <p className="text-xl text-gray-600">
-            We typically respond within one business day.
-          </p>
-        </div>
+    <div className="min-h-screen bg-gray-50">
+      <div className="pt-24 pb-16">
+        <div className="max-w-6xl mx-auto px-6">
+          <div className="grid lg:grid-cols-2 gap-12 items-start">
+            <div>
+              <h1 className="text-5xl font-bold text-[#38495D] mb-6">
+                Contact Us
+              </h1>
+              <p className="text-lg text-gray-700 mb-8 leading-relaxed">
+                Have a question or want to request more information? Fill out the form and we'll get back to you as soon as possible.
+              </p>
 
-        <div className="bg-white border border-gray-200 rounded-lg p-8 md:p-12 mb-12">
-          <form onSubmit={handleSubmit} className="space-y-6">
-            <div className="grid md:grid-cols-2 gap-6">
-              <div>
-                <label className="block text-sm font-semibold text-[#38495D] mb-2">
-                  First Name
-                </label>
-                <input
-                  type="text"
-                  name="firstName"
-                  value={formData.firstName}
-                  onChange={handleChange}
-                  required
-                  className="w-full px-4 py-3 border border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-[#01A3DB] focus:border-transparent transition-all"
-                />
-              </div>
-              <div>
-                <label className="block text-sm font-semibold text-[#38495D] mb-2">
-                  Last Name
-                </label>
-                <input
-                  type="text"
-                  name="lastName"
-                  value={formData.lastName}
-                  onChange={handleChange}
-                  required
-                  className="w-full px-4 py-3 border border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-[#01A3DB] focus:border-transparent transition-all"
-                />
+              <div className="space-y-6">
+                <div className="flex items-start gap-4">
+                  <MapPin className="text-[#01A3DB] mt-1 flex-shrink-0" size={24} />
+                  <div>
+                    <p className="font-semibold text-[#38495D] mb-1">Address</p>
+                    <p className="text-gray-700">
+                      1570 Galleon Drive<br />
+                      Naples, FL 34102
+                    </p>
+                  </div>
+                </div>
+
+                <div className="flex items-start gap-4">
+                  <Mail className="text-[#01A3DB] mt-1 flex-shrink-0" size={24} />
+                  <div>
+                    <p className="font-semibold text-[#38495D] mb-1">Email</p>
+                    <a
+                      href="mailto:hello@newwaveassociates.com"
+                      className="text-[#01A3DB] hover:text-[#0192C5] transition-colors"
+                    >
+                      hello@newwaveassociates.com
+                    </a>
+                  </div>
+                </div>
               </div>
             </div>
 
-            <div>
-              <label className="block text-sm font-semibold text-[#38495D] mb-2">
-                Email
-              </label>
-              <input
-                type="email"
-                name="email"
-                value={formData.email}
-                onChange={handleChange}
-                required
-                className="w-full px-4 py-3 border border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-[#01A3DB] focus:border-transparent transition-all"
-              />
+            <div className="bg-white border border-gray-200 rounded-lg p-8 shadow-sm">
+              <form onSubmit={handleSubmit} className="space-y-5">
+                <div>
+                  <label className="block text-sm font-semibold text-[#38495D] mb-2">
+                    Name *
+                  </label>
+                  <input
+                    type="text"
+                    name="name"
+                    value={formData.name}
+                    onChange={handleChange}
+                    required
+                    className="w-full px-4 py-3 border border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-[#01A3DB] focus:border-transparent transition-all"
+                  />
+                </div>
+
+                <div>
+                  <label className="block text-sm font-semibold text-[#38495D] mb-2">
+                    Email *
+                  </label>
+                  <input
+                    type="email"
+                    name="email"
+                    value={formData.email}
+                    onChange={handleChange}
+                    required
+                    className="w-full px-4 py-3 border border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-[#01A3DB] focus:border-transparent transition-all"
+                  />
+                </div>
+
+                <div>
+                  <label className="block text-sm font-semibold text-[#38495D] mb-2">
+                    Phone
+                  </label>
+                  <input
+                    type="tel"
+                    name="phone"
+                    value={formData.phone}
+                    onChange={handleChange}
+                    className="w-full px-4 py-3 border border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-[#01A3DB] focus:border-transparent transition-all"
+                  />
+                </div>
+
+                <div>
+                  <label className="block text-sm font-semibold text-[#38495D] mb-2">
+                    Company
+                  </label>
+                  <input
+                    type="text"
+                    name="company"
+                    value={formData.company}
+                    onChange={handleChange}
+                    className="w-full px-4 py-3 border border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-[#01A3DB] focus:border-transparent transition-all"
+                  />
+                </div>
+
+                <div>
+                  <label className="block text-sm font-semibold text-[#38495D] mb-2">
+                    Reason for Contact *
+                  </label>
+                  <select
+                    name="reason"
+                    value={formData.reason}
+                    onChange={handleChange}
+                    required
+                    className="w-full px-4 py-3 border border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-[#01A3DB] focus:border-transparent transition-all bg-white"
+                  >
+                    <option value="">Select a reason</option>
+                    <option value="General Inquiry">General Inquiry</option>
+                    <option value="Partnership Opportunity">Partnership Opportunity</option>
+                    <option value="Consulting Services">Consulting Services</option>
+                    <option value="Other">Other</option>
+                  </select>
+                </div>
+
+                <div>
+                  <label className="block text-sm font-semibold text-[#38495D] mb-2">
+                    Message
+                  </label>
+                  <textarea
+                    name="message"
+                    value={formData.message}
+                    onChange={handleChange}
+                    rows={5}
+                    className="w-full px-4 py-3 border border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-[#01A3DB] focus:border-transparent transition-all resize-none"
+                  />
+                </div>
+
+                <button
+                  type="submit"
+                  className="w-full py-4 bg-[#01A3DB] text-white rounded-md font-medium text-lg hover:bg-[#0192C5] transition-all hover:scale-[1.02] focus:outline-none focus:ring-2 focus:ring-[#01A3DB] focus:ring-offset-2"
+                >
+                  Submit
+                </button>
+              </form>
             </div>
-
-            <div>
-              <label className="block text-sm font-semibold text-[#38495D] mb-2">
-                Company
-              </label>
-              <input
-                type="text"
-                name="company"
-                value={formData.company}
-                onChange={handleChange}
-                required
-                className="w-full px-4 py-3 border border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-[#01A3DB] focus:border-transparent transition-all"
-              />
-            </div>
-
-            <div>
-              <label className="block text-sm font-semibold text-[#38495D] mb-2">
-                Role / Title
-              </label>
-              <input
-                type="text"
-                name="role"
-                value={formData.role}
-                onChange={handleChange}
-                required
-                className="w-full px-4 py-3 border border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-[#01A3DB] focus:border-transparent transition-all"
-              />
-            </div>
-
-            <div>
-              <label className="block text-sm font-semibold text-[#38495D] mb-2">
-                Message
-              </label>
-              <textarea
-                name="message"
-                value={formData.message}
-                onChange={handleChange}
-                required
-                rows={6}
-                className="w-full px-4 py-3 border border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-[#01A3DB] focus:border-transparent transition-all resize-none"
-              />
-            </div>
-
-            <button
-              type="submit"
-              className="w-full py-4 bg-[#01A3DB] text-white rounded-md font-medium text-lg hover:bg-[#0192C5] transition-all hover:scale-[1.02] focus:outline-none focus:ring-2 focus:ring-[#01A3DB] focus:ring-offset-2"
-            >
-              Send Message
-            </button>
-          </form>
-        </div>
-
-        <div className="grid md:grid-cols-2 gap-8 mb-12">
-          <div className="bg-gradient-to-br from-[#01A3DB]/5 to-white border border-gray-200 rounded-lg p-8 text-center hover:shadow-lg transition-shadow">
-            <Mail className="mx-auto mb-4 text-[#01A3DB]" size={32} />
-            <p className="text-sm font-semibold text-[#38495D] mb-2">Prefer email?</p>
-            <a
-              href="mailto:hello@newwaveassociates.com"
-              className="text-[#01A3DB] hover:text-[#0192C5] font-medium transition-colors"
-            >
-              hello@newwaveassociates.com
-            </a>
           </div>
-
-          <div className="bg-gradient-to-br from-[#38495D]/5 to-white border border-gray-200 rounded-lg p-8 text-center hover:shadow-lg transition-shadow">
-            <Linkedin className="mx-auto mb-4 text-[#01A3DB]" size={32} />
-            <p className="text-sm font-semibold text-[#38495D] mb-2">Prefer LinkedIn?</p>
-            <a
-              href="https://linkedin.com"
-              target="_blank"
-              rel="noopener noreferrer"
-              className="text-[#01A3DB] hover:text-[#0192C5] font-medium transition-colors"
-            >
-              Connect with us
-            </a>
-          </div>
-        </div>
-
-        <div className="text-center bg-gradient-to-r from-gray-50 to-white border border-gray-200 rounded-lg p-10">
-          <p className="text-xl font-medium text-[#38495D] mb-6">
-            Looking for project-fit or just exploring options?
-          </p>
-          <button className="px-8 py-3 bg-[#EF5919] text-white rounded-md font-medium hover:bg-[#D54E15] transition-all hover:scale-105">
-            Contact Us
-          </button>
         </div>
       </div>
     </div>
