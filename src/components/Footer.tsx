@@ -28,7 +28,7 @@ export default function Footer() {
           </div>
         </div>
         <div className="pt-3 border-t border-white/10">
-          <p className="text-sm text-gray-300">
+          <p className="text-xs text-gray-300">
             © New Wave Associates LLC. All rights reserved.
           </p>
         </div>
