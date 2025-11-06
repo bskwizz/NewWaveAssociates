@@ -46,7 +46,7 @@ export default function AboutUsPage({ onNavigate }: AboutUsPageProps) {
               Built by Operators. Trusted by Leaders.
             </h1>
             <p className="text-2xl md:text-3xl text-[#38495D] leading-relaxed">
-              We bring operator-grade expertise in growth, strategy, cost optimization, and operational excellence to help businesses scale smarter, leaner, and faster.
+              New Wave Associates is a strategy & general management growth consultancy that brings operator-grade expertise to help companies evolve smarter, leaner, and faster.
             </p>
           </div>
 
