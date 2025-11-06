@@ -294,6 +294,48 @@ export default function FlywheelPage() {
               src="/FlyWheel New Wave Associates.png"
               alt="New Wave Flywheel"
             />
+            <a
+              href="#gtm-strategy"
+              className="flywheel-hotspot flywheel-hotspot--gtm"
+              aria-label="Go to GTM Strategy"
+              onClick={(e) => {
+                e.preventDefault();
+                const target = document.getElementById('gtm-strategy');
+                if (target) {
+                  const headerH = 64;
+                  const y = target.getBoundingClientRect().top + window.scrollY - headerH - 16;
+                  window.scrollTo({ top: y, behavior: 'smooth' });
+                }
+              }}
+            ></a>
+            <a
+              href="#cost-optimization"
+              className="flywheel-hotspot flywheel-hotspot--cost"
+              aria-label="Go to Cost Optimization"
+              onClick={(e) => {
+                e.preventDefault();
+                const target = document.getElementById('cost-optimization');
+                if (target) {
+                  const headerH = 64;
+                  const y = target.getBoundingClientRect().top + window.scrollY - headerH - 16;
+                  window.scrollTo({ top: y, behavior: 'smooth' });
+                }
+              }}
+            ></a>
+            <a
+              href="#operational-efficiencies"
+              className="flywheel-hotspot flywheel-hotspot--ops"
+              aria-label="Go to Operational Efficiencies"
+              onClick={(e) => {
+                e.preventDefault();
+                const target = document.getElementById('operational-efficiencies');
+                if (target) {
+                  const headerH = 64;
+                  const y = target.getBoundingClientRect().top + window.scrollY - headerH - 16;
+                  window.scrollTo({ top: y, behavior: 'smooth' });
+                }
+              }}
+            ></a>
           </div>
         </div>
       </div>
