@@ -1,3 +1,5 @@
+import CTABar from '../components/CTABar';
+
 interface AboutUsPageProps {
   onNavigate: (page: string) => void;
 }
@@ -122,17 +124,11 @@ export default function AboutUsPage({ onNavigate }: AboutUsPageProps) {
           </div>
         </div>
 
-        <div className="text-center bg-gradient-to-r from-gray-50 to-white border border-gray-200 rounded-lg p-12">
-          <p className="text-2xl font-medium text-[#38495D] mb-6">
-            If your strategy is right but execution is stuck — we should talk.
-          </p>
-          <button
-            onClick={() => onNavigate('contact-us')}
-            className="px-10 py-4 bg-[#01A3DB] text-white rounded-md font-medium text-lg hover:bg-[#0192C5] transition-all hover:scale-105"
-          >
-            Contact Us
-          </button>
-        </div>
+        <CTABar
+          text="Learn more about New Wave solutions for your unique growth opportunity"
+          buttonText="Contact Us"
+          onButtonClick={() => onNavigate('contact-us')}
+        />
       </div>
     </div>
   );
