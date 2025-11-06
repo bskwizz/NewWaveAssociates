@@ -76,13 +76,19 @@ export default function CapabilitiesPage({ onNavigate }: CapabilitiesPageProps) 
   const [expandedIndex, setExpandedIndex] = useState<number | null>(0);
 
   return (
-    <div className="pt-32 pb-16">
-      <div className="max-w-5xl mx-auto px-6">
-        <div className="mb-16">
-          <h1 className="text-5xl font-bold text-[#38495D] mb-6">Capabilities</h1>
+    <div className="pt-16">
+      <div className="capabilities-hero fw-glow" aria-label="Capabilities">
+        <div className="capabilities-hero__inner">
+          <div className="max-w-7xl mx-auto px-6">
+            <h1 className="text-6xl font-bold text-[#38495D]">Capabilities</h1>
+          </div>
         </div>
+      </div>
 
-        <div className="space-y-4 mb-16">
+      <div className="bg-gray-50 -mt-24 pt-32 pb-16">
+        <div className="max-w-5xl mx-auto px-6">
+
+          <div className="space-y-4 mb-16">
           {capabilities.map((capability, index) => (
             <div
               key={index}
@@ -125,11 +131,12 @@ export default function CapabilitiesPage({ onNavigate }: CapabilitiesPageProps) 
           ))}
         </div>
 
-        <CTABar
-          text="Learn more about New Wave solutions for your unique growth opportunity"
-          buttonText="Contact Us"
-          onButtonClick={() => onNavigate('contact-us')}
-        />
+          <CTABar
+            text="Learn more about New Wave solutions for your unique growth opportunity"
+            buttonText="Contact Us"
+            onButtonClick={() => onNavigate('contact-us')}
+          />
+        </div>
       </div>
     </div>
   );
