@@ -28,28 +28,20 @@ const differentiators = [
 
 export default function AboutUsPage({ onNavigate }: AboutUsPageProps) {
   return (
-    <div>
-      <div className="relative min-h-screen flex flex-col" style={{
-        background: `radial-gradient(1200px 600px at 15% -10%, rgba(1,163,219,0.25), transparent 50%),
-                     radial-gradient(800px 400px at 85% 110%, rgba(56,73,93,0.25), transparent 50%),
-                     linear-gradient(180deg, #f7f9fb 0%, #eef3f7 100%)`
-      }}>
-        <div className="absolute inset-0 opacity-[0.12] pointer-events-none" style={{
-          backgroundImage: `radial-gradient(1px 1px at 20% 30%, #38495d 100%, transparent 0),
-                            radial-gradient(1px 1px at 70% 60%, #01a3db 100%, transparent 0),
-                            radial-gradient(1px 1px at 40% 80%, #38495d 100%, transparent 0)`,
-          backgroundSize: '120px 120px, 160px 160px, 200px 200px',
-          backgroundRepeat: 'repeat'
-        }}></div>
-
-        <div className="relative flex-1 flex flex-col justify-center max-w-7xl mx-auto px-6 pt-32 pb-24">
-          <div className="max-w-3xl mx-auto text-center mb-16">
-            <p className="text-xl text-[#38495D]">
+    <div className="pt-16">
+      <div className="capabilities-hero" aria-label="About Us">
+        <div className="capabilities-hero__inner">
+          <div className="max-w-7xl mx-auto px-6">
+            <p className="text-xl text-[#38495D] max-w-3xl">
               New Wave Associates is a strategy & general management growth consultancy that brings operator-grade expertise to help companies evolve smarter, leaner, and faster.
             </p>
           </div>
+        </div>
+      </div>
 
-          <div className="max-w-5xl mx-auto w-full mt-auto">
+      <div className="bg-gray-50 -mt-24 pt-32 pb-16">
+        <div className="max-w-7xl mx-auto px-6">
+          <div className="max-w-5xl mx-auto mb-16">
             <div className="bg-white/80 backdrop-blur-sm border border-gray-200 rounded-lg p-10 shadow-lg">
               <h2 className="text-3xl font-bold text-[#38495D] mb-4 text-center">
                 Our Philosophy
@@ -59,73 +51,71 @@ export default function AboutUsPage({ onNavigate }: AboutUsPageProps) {
               </p>
             </div>
           </div>
-        </div>
-      </div>
 
-      <div className="max-w-7xl mx-auto px-6 py-20">
-        <div className="mb-20">
-          <div className="grid md:grid-cols-3 gap-8">
-            {differentiators.map((diff, index) => (
-              <div
-                key={index}
-                className="bg-white border border-gray-200 rounded-lg p-8 text-center hover:shadow-xl transition-all hover:-translate-y-2"
-              >
-                <h3 className="text-2xl font-bold text-[#01A3DB] mb-4">
-                  {diff.title}
-                </h3>
-                <p className="text-gray-700 leading-relaxed">
-                  {diff.description}
-                </p>
-              </div>
-            ))}
-          </div>
-        </div>
-
-        <div className="mb-16">
-          <h2 className="text-4xl font-bold text-[#38495D] mb-12 text-center">
-            Meet the Team
-          </h2>
-          <div className="grid md:grid-cols-4 gap-8">
-            {teamMembers.map((member, index) => (
-              <div
-                key={index}
-                className="bg-white border border-gray-200 rounded-lg overflow-hidden hover:shadow-xl transition-all hover:-translate-y-2"
-              >
-                <div className="aspect-square flex items-center justify-center overflow-hidden bg-white">
-                  <img
-                    src={member.image}
-                    alt={member.name}
-                    className="w-full h-full object-cover"
-                    onError={(e) => {
-                      const target = e.target as HTMLImageElement;
-                      target.style.display = 'none';
-                      const parent = target.parentElement;
-                      if (parent) {
-                        parent.classList.add('bg-gradient-to-br', 'from-[#01A3DB]', 'to-[#38495D]');
-                        const initials = document.createElement('div');
-                        initials.className = 'w-32 h-32 bg-white/20 rounded-full flex items-center justify-center';
-                        initials.innerHTML = `<span class="text-white text-4xl font-bold">${member.name.split(' ').map(n => n[0]).join('')}</span>`;
-                        parent.appendChild(initials);
-                      }
-                    }}
-                  />
-                </div>
-                <div className="p-6 text-center">
-                  <h3 className="text-xl font-bold text-[#38495D] mb-1">
-                    {member.name}
+          <div className="mb-20">
+            <div className="grid md:grid-cols-3 gap-8">
+              {differentiators.map((diff, index) => (
+                <div
+                  key={index}
+                  className="bg-white border border-gray-200 rounded-lg p-8 text-center hover:shadow-xl transition-all hover:-translate-y-2"
+                >
+                  <h3 className="text-2xl font-bold text-[#01A3DB] mb-4">
+                    {diff.title}
                   </h3>
-                  <p className="text-gray-600">{member.title}</p>
+                  <p className="text-gray-700 leading-relaxed">
+                    {diff.description}
+                  </p>
                 </div>
-              </div>
-            ))}
+              ))}
+            </div>
           </div>
-        </div>
 
-        <CTABar
-          text="Learn more about New Wave solutions for your unique growth opportunity"
-          buttonText="Contact Us"
-          onButtonClick={() => onNavigate('contact-us')}
-        />
+          <div className="mb-16">
+            <h2 className="text-4xl font-bold text-[#38495D] mb-12 text-center">
+              Meet the Team
+            </h2>
+            <div className="grid md:grid-cols-4 gap-8">
+              {teamMembers.map((member, index) => (
+                <div
+                  key={index}
+                  className="bg-white border border-gray-200 rounded-lg overflow-hidden hover:shadow-xl transition-all hover:-translate-y-2"
+                >
+                  <div className="aspect-square flex items-center justify-center overflow-hidden bg-white">
+                    <img
+                      src={member.image}
+                      alt={member.name}
+                      className="w-full h-full object-cover"
+                      onError={(e) => {
+                        const target = e.target as HTMLImageElement;
+                        target.style.display = 'none';
+                        const parent = target.parentElement;
+                        if (parent) {
+                          parent.classList.add('bg-gradient-to-br', 'from-[#01A3DB]', 'to-[#38495D]');
+                          const initials = document.createElement('div');
+                          initials.className = 'w-32 h-32 bg-white/20 rounded-full flex items-center justify-center';
+                          initials.innerHTML = `<span class="text-white text-4xl font-bold">${member.name.split(' ').map(n => n[0]).join('')}</span>`;
+                          parent.appendChild(initials);
+                        }
+                      }}
+                    />
+                  </div>
+                  <div className="p-6 text-center">
+                    <h3 className="text-xl font-bold text-[#38495D] mb-1">
+                      {member.name}
+                    </h3>
+                    <p className="text-gray-600">{member.title}</p>
+                  </div>
+                </div>
+              ))}
+            </div>
+          </div>
+
+          <CTABar
+            text="Learn more about New Wave solutions for your unique growth opportunity"
+            buttonText="Contact Us"
+            onButtonClick={() => onNavigate('contact-us')}
+          />
+        </div>
       </div>
     </div>
   );
