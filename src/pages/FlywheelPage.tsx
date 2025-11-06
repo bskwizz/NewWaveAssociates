@@ -1,5 +1,5 @@
 import { ArrowUp, ChevronDown } from 'lucide-react';
-import { useState, useEffect } from 'react';
+import { useState, useEffect, useRef } from 'react';
 
 interface SectionGroup {
   subhead: string;
@@ -234,6 +234,7 @@ function CollapsibleGroup({ subhead, items, groupId }: CollapsibleGroupProps) {
 
 export default function FlywheelPage() {
   const [showBackToTop, setShowBackToTop] = useState(false);
+  const miniNavInitialized = useRef(false);
 
   useEffect(() => {
     const hero = document.getElementById('flywheel-hero');
@@ -251,6 +252,62 @@ export default function FlywheelPage() {
 
     return () => {
       window.removeEventListener('scroll', handleScroll);
+    };
+  }, []);
+
+  useEffect(() => {
+    if (miniNavInitialized.current) return;
+    miniNavInitialized.current = true;
+
+    const sectionIds = ['gtm-strategy', 'cost-optimization', 'operational-efficiencies'];
+    const links = sectionIds.map(id => document.querySelector('.flywheel-mininav__link[href="#' + id + '"]'));
+
+    sectionIds.forEach(id => {
+      const sec = document.getElementById(id);
+      if (sec) {
+        sec.classList.add('fw-section');
+        const h2 = sec.querySelector('h2');
+        if (h2) h2.classList.add('reveal');
+      }
+    });
+
+    const io = new IntersectionObserver((entries) => {
+      entries.forEach(entry => {
+        const id = entry.target.id;
+        if (entry.isIntersecting) {
+          links.forEach(a => a && a.classList.remove('is-active'));
+          const active = document.querySelector('.flywheel-mininav__link[href="#' + id + '"]');
+          active && active.classList.add('is-active');
+
+          const h2 = entry.target.querySelector('h2.reveal');
+          if (h2) h2.classList.add('is-visible');
+        }
+      });
+    }, { root: null, rootMargin: '-35% 0px -55% 0px', threshold: [0.25, 0.5, 0.75] });
+
+    sectionIds.forEach(id => {
+      const sec = document.getElementById(id);
+      if (sec) io.observe(sec);
+    });
+
+    const prefersReduced = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+    links.forEach(a => {
+      if (!a) return;
+      a.addEventListener('click', (e) => {
+        const targetId = a.getAttribute('href')?.slice(1);
+        if (!targetId) return;
+        const targetEl = document.getElementById(targetId);
+        if (!targetEl) return;
+        e.preventDefault();
+        const headerH = 64;
+        const y = targetEl.getBoundingClientRect().top + window.scrollY - headerH - 8;
+        window.scrollTo({ top: y, behavior: prefersReduced ? 'auto' : 'smooth' });
+        history.replaceState(null, '', '#' + targetId);
+      });
+    });
+
+    return () => {
+      io.disconnect();
     };
   }, []);
 
@@ -339,6 +396,12 @@ export default function FlywheelPage() {
           </div>
         </div>
       </div>
+
+      <nav className="flywheel-mininav" aria-label="Flywheel quick navigation">
+        <a href="#gtm-strategy" className="flywheel-mininav__link is-active">GTM Strategy</a>
+        <a href="#cost-optimization" className="flywheel-mininav__link">Cost Optimization</a>
+        <a href="#operational-efficiencies" className="flywheel-mininav__link">Operational Efficiencies</a>
+      </nav>
 
       <div className="max-w-7xl mx-auto px-6 pb-16">
         {renderSection(gtmStrategyContent)}
