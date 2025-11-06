@@ -2,7 +2,7 @@ import { useState, useEffect } from 'react';
 import Navigation from './components/Navigation';
 import Footer from './components/Footer';
 import HomePage from './pages/HomePage';
-import IndustriesPage from './pages/IndustriesPage';
+import FlywheelPage from './pages/FlywheelPage';
 import CapabilitiesPage from './pages/CapabilitiesPage';
 import AboutUsPage from './pages/AboutUsPage';
 import ContactUsPage from './pages/ContactUsPage';
@@ -18,8 +18,8 @@ function App() {
     switch (currentPage) {
       case 'home':
         return <HomePage onNavigate={setCurrentPage} />;
-      case 'industries':
-        return <IndustriesPage />;
+      case 'flywheel':
+        return <FlywheelPage />;
       case 'capabilities':
         return <CapabilitiesPage onNavigate={setCurrentPage} />;
       case 'about-us':

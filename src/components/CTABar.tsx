@@ -6,7 +6,7 @@ interface CTABarProps {
 
 export default function CTABar({ text, buttonText, onButtonClick }: CTABarProps) {
   return (
-    <div className="bg-gradient-to-r from-gray-50 to-white border-t border-b border-gray-200 py-8">
+    <div className="bg-[#f5f5f5] border-t border-b border-gray-200 py-8">
       <div className="max-w-7xl mx-auto px-6">
         <div className="flex flex-col md:flex-row justify-between items-center gap-6">
           <p className="text-[#38495D] text-lg font-medium max-w-2xl">
