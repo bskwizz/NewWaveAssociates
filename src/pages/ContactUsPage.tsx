@@ -1,5 +1,5 @@
 import { useState } from 'react';
-import { MapPin, Mail } from 'lucide-react';
+import { MapPin, Mail, Linkedin } from 'lucide-react';
 
 export default function ContactUsPage() {
   const [formData, setFormData] = useState({
@@ -60,6 +60,21 @@ export default function ContactUsPage() {
                       className="text-[#01A3DB] hover:text-[#0192C5] transition-colors"
                     >
                       hello@newwaveassociates.com
+                    </a>
+                  </div>
+                </div>
+
+                <div className="flex items-start gap-4">
+                  <Linkedin className="text-[#01A3DB] mt-1 flex-shrink-0" size={24} />
+                  <div>
+                    <p className="font-semibold text-[#38495D] mb-1">Find Us Online</p>
+                    <a
+                      href="https://www.linkedin.com/company/new-wave-associates"
+                      target="_blank"
+                      rel="noopener noreferrer"
+                      className="text-[#01A3DB] hover:text-[#0192C5] transition-colors"
+                    >
+                      LinkedIn
                     </a>
                   </div>
                 </div>
