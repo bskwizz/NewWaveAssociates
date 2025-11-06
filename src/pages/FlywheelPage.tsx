@@ -92,7 +92,6 @@ export default function FlywheelPage() {
               style={{ background: 'transparent', border: 'none' }}
             />
           </div>
-          <p className="text-lg text-[#38495D] font-medium">The New Wave Flywheel</p>
         </div>
       </div>
 
