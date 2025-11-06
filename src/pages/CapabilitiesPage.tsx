@@ -1,4 +1,4 @@
-import { useState, useRef } from 'react';
+import { useState, useRef, useEffect } from 'react';
 import { ChevronDown } from 'lucide-react';
 import CTABar from '../components/CTABar';
 
@@ -74,14 +74,24 @@ const capabilities = [
 
 export default function CapabilitiesPage({ onNavigate }: CapabilitiesPageProps) {
   const [expandedIndex, setExpandedIndex] = useState<number | null>(0);
+  const [fadeIn, setFadeIn] = useState(false);
   const vantaRef = useRef<HTMLDivElement>(null);
+
+  useEffect(() => {
+    setFadeIn(true);
+  }, []);
 
   return (
     <div className="pt-16">
       <div ref={vantaRef} className="capabilities-hero" aria-label="Capabilities">
         <div className="capabilities-hero__inner hero-content">
-          <div className="max-w-7xl mx-auto px-6">
-            <p className="text-xl text-[#38495D]" style={{ maxWidth: '75%' }}>
+          <div className="max-w-7xl mx-auto px-6 flex items-center justify-center h-full">
+            <p
+              className={`text-xl text-[#38495D] text-center transition-opacity duration-1000 ${
+                fadeIn ? 'opacity-100' : 'opacity-0'
+              }`}
+              style={{ maxWidth: '900px' }}
+            >
               Explore the full spectrum of capabilities we deploy to accelerate growth, expand margins, and operationalize transformation.
             </p>
           </div>

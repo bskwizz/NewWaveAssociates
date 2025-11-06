@@ -1,4 +1,4 @@
-import { useRef } from 'react';
+import { useRef, useEffect, useState } from 'react';
 import CTABar from '../components/CTABar';
 
 interface AboutUsPageProps {
@@ -28,14 +28,24 @@ const differentiators = [
 ];
 
 export default function AboutUsPage({ onNavigate }: AboutUsPageProps) {
+  const [fadeIn, setFadeIn] = useState(false);
   const vantaRef = useRef<HTMLDivElement>(null);
+
+  useEffect(() => {
+    setFadeIn(true);
+  }, []);
 
   return (
     <div className="pt-16">
       <div ref={vantaRef} className="capabilities-hero" aria-label="About Us">
         <div className="capabilities-hero__inner hero-content">
-          <div className="max-w-7xl mx-auto px-6">
-            <p className="text-xl text-[#38495D]" style={{ maxWidth: '75%' }}>
+          <div className="max-w-7xl mx-auto px-6 flex items-center justify-center h-full">
+            <p
+              className={`text-xl text-[#38495D] text-center transition-opacity duration-1000 ${
+                fadeIn ? 'opacity-100' : 'opacity-0'
+              }`}
+              style={{ maxWidth: '900px' }}
+            >
               New Wave Associates is a strategy & general management growth consultancy that brings operator-grade expertise to help companies evolve smarter, leaner, and faster.
             </p>
           </div>
