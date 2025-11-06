@@ -212,3 +212,36 @@ html {
   font-weight: 900;
   line-height: 1;
 }
+
+.hero-rotator {
+  max-width: 960px;
+  margin: 0;
+}
+
+.hero-title, .hero-subtext {
+  opacity: 0;
+  transition: opacity 220ms ease;
+}
+
+.hero-title.is-visible, .hero-subtext.is-visible {
+  opacity: 1;
+}
+
+.hero-title {
+  font-weight: 800;
+  letter-spacing: 0.2px;
+  margin: 0 0 10px 0;
+}
+
+.hero-subtext {
+  font-size: 1.05rem;
+  line-height: 1.45;
+  margin: 0;
+  color: #38495D;
+}
+
+@media (max-width: 768px) {
+  .hero-subtext {
+    font-size: 1rem;
+  }
+}

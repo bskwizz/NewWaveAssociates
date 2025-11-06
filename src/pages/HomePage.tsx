@@ -7,34 +7,32 @@ interface HomePageProps {
 
 const heroSlides = [
   {
-    title: 'Experience',
-    subtext: 'Operators first. Consultants second. We install the discipline that turns strategy into measurable lift.',
+    title: 'Grow',
+    subtext: 'New Wave Associates accelerates portfolio growth by unlocking new revenue engines and enabling businesses to scale with precision and purpose.',
   },
   {
-    title: 'Partnership',
-    subtext: 'We work inside your world, not above it. Your team, your systems. Stronger when we exit.',
+    title: 'Optimize',
+    subtext: 'New Wave Associates drives operational excellence by streamlining complexity, expanding margins, and strengthening enterprise value across the portfolio.',
   },
   {
-    title: 'Growth',
-    subtext: "Clarity, cadence, and measurable outcomes. That's how growth compounds.",
-  },
-  {
-    title: 'Actionable Insights',
-    subtext: 'Data becomes decisions. Decisions become outcomes. Outcomes compound.',
+    title: 'Transform',
+    subtext: 'New Wave Associates leads bold transformation by aligning people, processes, and technology to create lasting impact and outperform expectations.',
   },
 ];
 
 export default function HomePage({ onNavigate }: HomePageProps) {
   const [currentSlide, setCurrentSlide] = useState(0);
-  const [isTransitioning, setIsTransitioning] = useState(false);
+  const [isVisible, setIsVisible] = useState(true);
 
   useEffect(() => {
     const interval = setInterval(() => {
-      setIsTransitioning(true);
+      setIsVisible(false);
       setTimeout(() => {
         setCurrentSlide((prev) => (prev + 1) % heroSlides.length);
-        setIsTransitioning(false);
-      }, 500);
+        setTimeout(() => {
+          setIsVisible(true);
+        }, 50);
+      }, 180);
     }, 8000);
 
     return () => clearInterval(interval);
@@ -55,25 +53,14 @@ export default function HomePage({ onNavigate }: HomePageProps) {
           backgroundRepeat: 'repeat'
         }}></div>
         <div className="relative h-full max-w-7xl mx-auto px-6 flex items-center" aria-live="polite">
-          {heroSlides.map((slide, index) => (
-            <div
-              key={index}
-              className={`absolute transition-all duration-700 ${
-                index === currentSlide && !isTransitioning
-                  ? 'opacity-100 translate-x-0'
-                  : 'opacity-0 -translate-x-8'
-              }`}
-            >
-              <div className="max-w-2xl">
-                <h1 className="text-6xl md:text-7xl font-bold text-[#38495D] mb-6 leading-tight">
-                  {slide.title}
-                </h1>
-                <p className="text-xl md:text-2xl text-[#38495D]/80 leading-relaxed font-light">
-                  {slide.subtext}
-                </p>
-              </div>
-            </div>
-          ))}
+          <div id="hero-rotator" className="hero-rotator max-w-2xl">
+            <h1 className={`hero-title text-6xl md:text-7xl font-bold text-[#38495D] mb-6 leading-tight ${isVisible ? 'is-visible' : ''}`}>
+              {heroSlides[currentSlide].title}
+            </h1>
+            <p className={`hero-subtext text-xl md:text-2xl text-[#38495D] leading-relaxed ${isVisible ? 'is-visible' : ''}`}>
+              {heroSlides[currentSlide].subtext}
+            </p>
+          </div>
         </div>
 
         <div className="absolute bottom-8 left-1/2 -translate-x-1/2 flex gap-2">
