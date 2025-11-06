@@ -77,10 +77,10 @@ export default function CapabilitiesPage({ onNavigate }: CapabilitiesPageProps) 
 
   return (
     <div className="pt-16">
-      <div className="capabilities-hero fw-glow" aria-label="Capabilities">
+      <div className="capabilities-hero" aria-label="Capabilities">
         <div className="capabilities-hero__inner">
           <div className="max-w-7xl mx-auto px-6">
-            <h1 className="text-6xl font-bold text-[#38495D]">Capabilities</h1>
+            <h1 className="text-6xl font-bold text-white">Capabilities</h1>
           </div>
         </div>
       </div>

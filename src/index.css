@@ -387,7 +387,7 @@ html {
 .capabilities-hero {
   position: relative;
   min-height: var(--nw-hero-h);
-  background: #fff;
+  background: url('/ChatGPT Image Nov 6, 2025 at 02_51_10 PM.png') center center / cover no-repeat;
   border-bottom: 1px solid rgba(0, 0, 0, 0.06);
   box-shadow: none;
   display: flex;
