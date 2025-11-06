@@ -1,7 +1,19 @@
-import { ArrowUp } from 'lucide-react';
-import { useState, useEffect, useRef } from 'react';
+import { ArrowUp, ChevronDown } from 'lucide-react';
+import { useState, useEffect } from 'react';
 
-const gtmStrategyContent = {
+interface SectionGroup {
+  subhead: string;
+  items: string[];
+}
+
+interface SectionContent {
+  id: string;
+  title: string;
+  subheading: string;
+  groups: SectionGroup[];
+}
+
+const gtmStrategyContent: SectionContent = {
   id: 'gtm-strategy',
   title: 'GTM Strategy',
   subheading: 'Align product, pricing, and pipeline to drive repeatable growth.',
@@ -49,32 +61,172 @@ const gtmStrategyContent = {
   ],
 };
 
-const sections = [
-  {
-    id: 'cost-optimization',
-    title: 'Cost Optimization',
-    subheading: 'Reduce noise and expense without breaking continuity.',
-    bullets: [
-      'SKU/catalog simplification and vendor rationalization',
-      'Working capital visibility; smarter terms',
-      'COA alignment; margin clarity by product',
-      'Duplicated tool elimination; contract hygiene',
-      'Operating expense targeting with decision logs',
-    ],
-  },
-  {
-    id: 'operational-efficiencies',
-    title: 'Operational Efficiencies',
-    subheading: 'Increase throughput with clear roles, cadence, and automation.',
-    bullets: [
-      'Transformation Office (PMO/IMO) with weekly wins/risks/decisions',
-      'Role clarity and handoffs that cut rework',
-      'Platform modernization with predictable releases',
-      'AI/automation for repetitive workflows',
-      'Single-source metrics; fewer shadow spreadsheets',
-    ],
-  },
-];
+const costOptimizationContent: SectionContent = {
+  id: 'cost-optimization',
+  title: 'Cost Optimization',
+  subheading: 'Reduce noise and expense without breaking continuity.',
+  groups: [
+    {
+      subhead: 'Cash infusion & Liquidity Unlock',
+      items: [
+        'Working Capital Liberation',
+        'Balance Sheet Optimization',
+        'Liquidity Uplift',
+        'Cash Flow Acceleration',
+        'Monetization of Non-core Assets',
+        'Rapid ROI Levers',
+        'Operational Cash Reparation',
+      ],
+    },
+    {
+      subhead: 'Cost takeout via strategic alignment',
+      items: [
+        'Targeted SG&A Rationalization',
+        'Support Function Rewiring',
+        'Shared Service Realignment',
+        'Strategic Consolidation',
+        'Functional Cost Harmonization',
+        'Support Stack Simplification',
+      ],
+    },
+    {
+      subhead: 'Transformation-oriented efficiency plays',
+      items: [
+        'Cost-To-Serve Compression',
+        'Digital Labor Deployment',
+        'Process Reengineering at Scale',
+        'AI Driven Cost Containment',
+        'End-to-End Value Chain Optimization',
+        'Strategic Cost Restructuring',
+        'Run-Rate Reduction Initiatives',
+      ],
+    },
+    {
+      subhead: 'Executive-ready framing',
+      items: [
+        'Unlocking trapped value through surgical cost alignment',
+        'Infusing liquidity via precision-tuned support model transformation',
+        'From bloated to bold: Rearchitecting cost structure for scale',
+        'Turning cost centers into value engines',
+        'Aligning support functions to strategic intent, not inertia',
+      ],
+    },
+  ],
+};
+
+const operationalEfficienciesContent: SectionContent = {
+  id: 'operational-efficiencies',
+  title: 'Operational Efficiencies',
+  subheading: 'Increase throughput with clear roles, cadence, and automation.',
+  groups: [
+    {
+      subhead: 'Core operational Efficiency Levers',
+      items: [
+        'Throughput Maximization',
+        'Cycle Time Compression',
+        'Lean Process Enablement',
+        'Workflow Streamlining',
+        'Touchpoint Reduction',
+        'Operational Load Balancing',
+        'Process Velocity Uplift',
+        'Waste Elimination',
+      ],
+    },
+    {
+      subhead: 'Intelligent Automation & Digital',
+      items: [
+        'Digital Twin Deployment',
+        'Hyper Automation Strategy',
+        'AI-Augmented Operations',
+        'Bot-Driven Task Execution',
+        'Cognitive Workflow Integration',
+        'Intelligent Exception Handling',
+        'Digital Labor Scaling',
+        'Offshore/Onshore Productivity Gains',
+      ],
+    },
+    {
+      subhead: 'Cross-Functional Optimization',
+      items: [
+        'End-to-End Process Harmonization',
+        'Functional Interface Simplification',
+        'Cross-Silo Efficiency Plays',
+        'Enterprise Throughput Engineering',
+        'Span-of-Control Realignment',
+        'Ops Stack Consolidation',
+        'Platform Rationalization',
+        'Strategic Headcount Calibration',
+      ],
+    },
+    {
+      subhead: 'Transformation-Oriented Efficiencies',
+      items: [
+        'Run-Rate Efficiency Expansion',
+        'Cost-to-Serve Optimization',
+        'Agility Driven Ops Restructuring',
+        'Performance Uplift via Process Rewire',
+        'Efficiency-Led Growth Enablement',
+        'Structural Ops Reset',
+        'Throughput-First Transformation',
+      ],
+    },
+  ],
+};
+
+interface CollapsibleGroupProps {
+  subhead: string;
+  items: string[];
+  groupId: string;
+}
+
+function CollapsibleGroup({ subhead, items, groupId }: CollapsibleGroupProps) {
+  const [isExpanded, setIsExpanded] = useState(true);
+  const [isMobile, setIsMobile] = useState(false);
+
+  useEffect(() => {
+    const checkMobile = () => {
+      const mobile = window.matchMedia('(max-width: 768px)').matches;
+      setIsMobile(mobile);
+      if (!mobile) {
+        setIsExpanded(true);
+      } else {
+        setIsExpanded(false);
+      }
+    };
+
+    checkMobile();
+    window.addEventListener('resize', checkMobile);
+    return () => window.removeEventListener('resize', checkMobile);
+  }, []);
+
+  const handleToggle = () => {
+    if (isMobile) {
+      setIsExpanded(!isExpanded);
+    }
+  };
+
+  return (
+    <section className="fw-group" data-collapsible aria-expanded={isExpanded}>
+      <button
+        className="fw-group__head"
+        type="button"
+        onClick={handleToggle}
+        aria-expanded={isExpanded}
+        aria-controls={groupId}
+      >
+        <span className="fw-group__title">{subhead}</span>
+        <span className="fw-group__chev" aria-hidden="true">
+          <ChevronDown size={18} />
+        </span>
+      </button>
+      <ul className="fw-list" id={groupId} style={{ display: isExpanded ? 'grid' : 'none' }}>
+        {items.map((item, i) => (
+          <li key={i}>{item}</li>
+        ))}
+      </ul>
+    </section>
+  );
+}
 
 export default function FlywheelPage() {
   const [showBackToTop, setShowBackToTop] = useState(false);
@@ -145,6 +297,34 @@ export default function FlywheelPage() {
     scrollToSection(sectionId);
   };
 
+  const renderSection = (content: SectionContent) => (
+    <section
+      id={content.id}
+      aria-labelledby={`${content.id}-title`}
+      className="mb-16 pb-16 border-b border-gray-200 scroll-mt-32"
+    >
+      <div className="max-w-6xl">
+        <h2 id={`${content.id}-title`} className="text-4xl font-bold text-[#38495D] mb-4">
+          {content.title}
+        </h2>
+        <p className="text-xl text-gray-700 mb-8 leading-relaxed">
+          {content.subheading}
+        </p>
+
+        <div className="fw-group-grid">
+          {content.groups.map((group, idx) => (
+            <CollapsibleGroup
+              key={idx}
+              subhead={group.subhead}
+              items={group.items}
+              groupId={`${content.id}-group-${idx}`}
+            />
+          ))}
+        </div>
+      </div>
+    </section>
+  );
+
   return (
     <div className="pt-24 pb-16">
       <div className="w-full bg-gradient-to-b from-gray-50 to-white py-16 mb-12">
@@ -209,56 +389,9 @@ export default function FlywheelPage() {
       </nav>
 
       <div className="max-w-7xl mx-auto px-6">
-        <section
-          id={gtmStrategyContent.id}
-          aria-labelledby="gtm-strategy-title"
-          className="mb-16 pb-16 border-b border-gray-200 scroll-mt-32"
-        >
-          <div className="max-w-4xl">
-            <h2 id="gtm-strategy-title" className="text-4xl font-bold text-[#38495D] mb-4">
-              {gtmStrategyContent.title}
-            </h2>
-            <p className="text-xl text-gray-700 mb-8 leading-relaxed">
-              {gtmStrategyContent.subheading}
-            </p>
-
-            {gtmStrategyContent.groups.map((group, idx) => (
-              <div key={idx} className="gtm-group">
-                <h3 className="gtm-subhead">{group.subhead}</h3>
-                <ul className="gtm-list">
-                  {group.items.map((item, i) => (
-                    <li key={i}>{item}</li>
-                  ))}
-                </ul>
-              </div>
-            ))}
-          </div>
-        </section>
-
-        {sections.map((section, index) => (
-          <section
-            key={section.id}
-            id={section.id}
-            className={`mb-16 scroll-mt-32 ${index !== sections.length - 1 ? 'pb-16 border-b border-gray-200' : ''}`}
-          >
-            <div className="max-w-4xl">
-              <h2 className="text-4xl font-bold text-[#38495D] mb-4">
-                {section.title}
-              </h2>
-              <p className="text-xl text-gray-700 mb-8 leading-relaxed">
-                {section.subheading}
-              </p>
-              <ul className="space-y-4">
-                {section.bullets.map((bullet, i) => (
-                  <li key={i} className="flex items-start gap-4">
-                    <span className="text-[#EF5919] text-xl mt-1">•</span>
-                    <span className="text-lg text-gray-700 leading-relaxed">{bullet}</span>
-                  </li>
-                ))}
-              </ul>
-            </div>
-          </section>
-        ))}
+        {renderSection(gtmStrategyContent)}
+        {renderSection(costOptimizationContent)}
+        {renderSection(operationalEfficienciesContent)}
       </div>
 
       {showBackToTop && (
