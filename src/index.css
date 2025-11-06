@@ -439,6 +439,15 @@ html {
   display: none !important;
 }
 
+.vanta-host::after {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background: rgba(255, 255, 255, 0.75);
+  z-index: 1;
+  pointer-events: none;
+}
+
 .vanta-host .hero-content {
   position: relative;
   z-index: 2;
