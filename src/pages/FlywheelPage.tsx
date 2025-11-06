@@ -288,7 +288,9 @@ export default function FlywheelPage() {
       }
 
       calcProgress();
-      toggleHandoff();
+      if (miniNav) {
+        toggleHandoff();
+      }
     };
 
     window.addEventListener('scroll', handleScroll, { passive: true });
