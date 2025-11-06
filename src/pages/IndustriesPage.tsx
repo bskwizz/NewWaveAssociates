@@ -1,0 +1,101 @@
+const industries = [
+  {
+    title: 'Financial Services & Fintech',
+    description: 'We help banks, credit unions, and fintechs reduce noise, strengthen pricing discipline, and execute integrations with regulatory clarity.',
+    points: [
+      'Post-merger integration and separation',
+      'Product and pricing standardization',
+      'Renewal and retention operations',
+      'Risk and control readiness',
+      'Margin visibility by product',
+    ],
+  },
+  {
+    title: 'Healthcare & Provider Networks',
+    description: 'We enable multi-site health organizations to align process, capacity, and data — without disrupting care.',
+    points: [
+      'Enterprise PMO and change cadence',
+      'Referral and access workflows',
+      'Clinical + operational comms',
+      'Vendor rationalization',
+      'KPI design and scorecards',
+    ],
+  },
+  {
+    title: 'Technology, SaaS & Managed Services',
+    description: "For platforms and MSPs, we bring order to product, pricing, and delivery — so growth doesn't break quality.",
+    points: [
+      'SKU catalog cleanup and agreement alignment',
+      'RevOps and deal desk setup',
+      'Triage + defect workflow design',
+      'Platform modernization and prioritization',
+      'Automation for repetitive ops work',
+    ],
+  },
+  {
+    title: 'Private Equity & Portfolio Ops',
+    description: 'We accelerate value creation with 100-day plans and hands-on execution that leadership teams can sustain.',
+    points: [
+      'Integration management office (IMO)',
+      'Commercial + operating alignment',
+      'Cost takeout with continuity',
+      'Working capital reporting',
+      'Board-ready dashboards',
+    ],
+  },
+  {
+    title: 'Industrial, Manufacturing & Distribution',
+    description: 'We streamline quote-to-cash and improve gross margin visibility — down to the SKU and channel.',
+    points: [
+      'Item master and catalog governance',
+      'Price guardrails and discount logic',
+      'Inventory + COA mapping',
+      'Field service clarity',
+      'Data cleanup and reporting',
+    ],
+  },
+];
+
+export default function IndustriesPage() {
+  return (
+    <div className="pt-24 pb-16">
+      <div className="max-w-7xl mx-auto px-6">
+        <div className="max-w-4xl mb-16">
+          <h1 className="text-5xl font-bold text-[#38495D] mb-6">Industries</h1>
+          <p className="text-xl text-gray-700 leading-relaxed">
+            At New Wave Associates, we apply pattern recognition across sectors. We&apos;ve built PMOs, led integrations, run due diligence, standardized product catalogs, and installed renewal discipline — from fintech to manufacturing.
+          </p>
+        </div>
+
+        <div className="grid md:grid-cols-2 gap-8">
+          {industries.map((industry, index) => (
+            <div
+              key={index}
+              className="bg-white border border-gray-200 rounded-lg p-8 hover:shadow-xl transition-all hover:-translate-y-1"
+            >
+              <h3 className="text-2xl font-bold text-[#38495D] mb-4">
+                {industry.title}
+              </h3>
+              <p className="text-gray-700 mb-6 leading-relaxed">
+                {industry.description}
+              </p>
+              <div className="space-y-3">
+                <p className="text-sm font-semibold text-[#01A3DB] uppercase tracking-wide">
+                  Where we help:
+                </p>
+                <ul className="space-y-2">
+                  {industry.points.map((point, i) => (
+                    <li key={i} className="flex items-start gap-3 text-gray-700">
+                      <span className="text-[#EF5919] mt-1">•</span>
+                      <span>{point}</span>
+                    </li>
+                  ))}
+                </ul>
+              </div>
+            </div>
+          ))}
+        </div>
+      </div>
+    </div>
+  );
+}
