@@ -20,14 +20,7 @@ html {
 }
 
 :root {
-  --nw-header-h: 64px;
-  --nw-hero-h: 420px;
-  --nw-hero-collapsed-h: 80px;
-  --nw-line-rotate: 6deg;
-  --nw-line-top: 62%;
-  --nw-line-left: 10%;
-  --nw-line-length: 80%;
-  --nw-progress: 0%;
+  --nw-hero-h: 440px;
 }
 
 .flywheel-progress {
@@ -46,35 +39,29 @@ html {
   display: none !important;
 }
 
+.flywheel-hero__line-overlay {
+  display: none !important;
+}
+
 .flywheel-hero {
   position: relative;
   height: var(--nw-hero-h);
   background: #fff;
   border-bottom: 1px solid rgba(0, 0, 0, 0.06);
-  transition: height 220ms ease, box-shadow 220ms ease;
-  z-index: 1;
-}
-
-.flywheel-hero.is-sticky {
-  position: sticky;
-  top: var(--nw-header-h);
-  height: var(--nw-hero-collapsed-h);
-  box-shadow: 0 4px 16px rgba(0, 0, 0, 0.06);
-  z-index: 45;
+  box-shadow: none;
 }
 
 .flywheel-hero__inner {
   max-width: 1200px;
   margin: 0 auto;
-  padding: 12px 16px;
+  padding: 16px;
   height: 100%;
   display: grid;
   grid-template-rows: 1fr auto;
-  gap: 8px;
+  gap: 10px;
 }
 
 .flywheel-hero__media {
-  position: relative;
   display: grid;
   place-items: center;
   overflow: hidden;
@@ -84,13 +71,10 @@ html {
   max-height: calc(var(--nw-hero-h) - 100px);
   width: auto;
   height: auto;
-  transition: max-height 220ms ease, transform 220ms ease, opacity 220ms ease;
-}
-
-.flywheel-hero.is-sticky .flywheel-hero__img {
-  max-height: calc(var(--nw-hero-collapsed-h) - 20px);
-  transform: translateX(-6px) scale(0.96);
-  opacity: 0.95;
+  object-fit: contain;
+  transform: none;
+  opacity: 1;
+  transition: none;
 }
 
 .flywheel-hero__labels {
@@ -99,11 +83,6 @@ html {
   justify-content: center;
   align-items: center;
   flex-wrap: wrap;
-  transition: justify-content 200ms ease, gap 200ms ease;
-}
-
-.flywheel-hero.is-sticky .flywheel-hero__labels {
-  justify-content: flex-start;
 }
 
 .flywheel-hero__label {
@@ -113,43 +92,14 @@ html {
   padding: 6px 10px;
   border-radius: 999px;
   border: 1px solid rgba(56, 73, 93, 0.2);
-  transition: color 140ms ease, border-color 140ms ease, background 140ms ease, transform 140ms ease;
-  white-space: nowrap;
-}
-
-.flywheel-hero__label:hover {
-  transform: translateY(-1px);
-}
-
-.flywheel-hero__label.is-active {
-  font-weight: 800;
-  background: rgba(1, 163, 219, 0.1);
-  border-color: rgba(1, 163, 219, 0.5);
-  color: #38495D;
-}
-
-.flywheel-hero__line-overlay {
-  position: absolute;
-  top: var(--nw-line-top);
-  left: var(--nw-line-left);
-  height: 4px;
-  width: calc(var(--nw-line-length) * (var(--nw-progress) / 100));
-  background: #EF5919;
-  border-radius: 3px;
-  transform-origin: left center;
-  transform: rotate(var(--nw-line-rotate));
-  transition: width 120ms linear;
-  pointer-events: none;
 }
 
 @media (max-width: 768px) {
   :root {
-    --nw-hero-h: 340px;
-    --nw-hero-collapsed-h: 72px;
+    --nw-hero-h: 360px;
   }
-  .flywheel-hero__label {
-    padding: 6px 8px;
-    font-size: 0.95rem;
+  .flywheel-hero__img {
+    max-height: calc(var(--nw-hero-h) - 90px);
   }
 }
 

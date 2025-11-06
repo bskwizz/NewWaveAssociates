@@ -234,86 +234,23 @@ function CollapsibleGroup({ subhead, items, groupId }: CollapsibleGroupProps) {
 
 export default function FlywheelPage() {
   const [showBackToTop, setShowBackToTop] = useState(false);
-  const [isHeroSticky, setIsHeroSticky] = useState(false);
-  const [activeLabel, setActiveLabel] = useState('gtm-strategy');
 
   useEffect(() => {
     const hero = document.getElementById('flywheel-hero');
-    const labels = Array.from(document.querySelectorAll('.flywheel-hero__label'));
-    const sections = [
-      document.getElementById('gtm-strategy'),
-      document.getElementById('cost-optimization'),
-      document.getElementById('operational-efficiencies'),
-    ].filter(Boolean) as HTMLElement[];
-
-    const headerH = 64;
-
-    function setProgress(pct: number) {
-      document.documentElement.style.setProperty(
-        '--nw-progress',
-        String(Math.max(0, Math.min(100, pct)))
-      );
+    if (hero) {
+      hero.classList.remove('is-sticky');
     }
+    document.documentElement?.style?.removeProperty('--nw-progress');
 
-    const onScroll = () => {
+    const handleScroll = () => {
       setShowBackToTop(window.scrollY > 400);
-
-      if (hero) {
-        const rect = hero.getBoundingClientRect();
-        const heroBottom = rect.top + rect.height;
-        const shouldStick = heroBottom <= headerH + 8;
-        setIsHeroSticky(shouldStick);
-      }
-
-      const first = sections[0];
-      const last = sections[sections.length - 1];
-      if (first && last) {
-        const top = first.getBoundingClientRect().top + window.scrollY - headerH;
-        const bottom = last.getBoundingClientRect().bottom + window.scrollY - headerH;
-        const total = Math.max(1, bottom - top);
-        const y = window.scrollY + window.innerHeight * 0.3;
-        const pct = ((y - top) / total) * 100;
-        setProgress(pct);
-      }
     };
 
-    const tabMap: Record<string, Element> = {
-      'gtm-strategy': labels.find((a) => a.getAttribute('data-target') === 'gtm-strategy')!,
-      'cost-optimization': labels.find((a) => a.getAttribute('data-target') === 'cost-optimization')!,
-      'operational-efficiencies': labels.find(
-        (a) => a.getAttribute('data-target') === 'operational-efficiencies'
-      )!,
-    };
-
-    const io = new IntersectionObserver(
-      (entries) => {
-        entries.forEach((entry) => {
-          const id = entry.target.id;
-          const link = tabMap[id];
-          if (!link) return;
-          if (entry.isIntersecting) {
-            setActiveLabel(id);
-          }
-        });
-      },
-      { root: null, rootMargin: '-35% 0px -55% 0px', threshold: [0, 0.25, 0.5, 0.75, 1] }
-    );
-
-    sections.forEach((sec) => io.observe(sec));
-
-    const img = hero?.querySelector('.flywheel-hero__img') as HTMLImageElement;
-    if (img && !img.complete) {
-      img.addEventListener('load', () => requestAnimationFrame(onScroll));
-    }
-
-    window.addEventListener('scroll', onScroll, { passive: true });
-    window.addEventListener('resize', onScroll, { passive: true });
-    onScroll();
+    window.addEventListener('scroll', handleScroll, { passive: true });
+    handleScroll();
 
     return () => {
-      io.disconnect();
-      window.removeEventListener('scroll', onScroll);
-      window.removeEventListener('resize', onScroll);
+      window.removeEventListener('scroll', handleScroll);
     };
   }, []);
 
@@ -321,24 +258,11 @@ export default function FlywheelPage() {
     window.scrollTo({ top: 0, behavior: 'smooth' });
   };
 
-  const handleLabelClick = (e: React.MouseEvent<HTMLAnchorElement>, targetId: string) => {
-    e.preventDefault();
-    const target = document.getElementById(targetId);
-    if (!target) return;
-
-    const headerH = 64;
-    const prefersReduced = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
-    const y = target.getBoundingClientRect().top + window.scrollY - headerH - 8;
-    window.scrollTo({ top: y, behavior: prefersReduced ? 'auto' : 'smooth' });
-    history.replaceState(null, '', '#' + targetId);
-  };
-
   const renderSection = (content: SectionContent) => (
     <section
       id={content.id}
       aria-labelledby={`${content.id}-title`}
       className="mb-16 pb-16 border-b border-gray-200"
-      style={{ scrollMarginTop: '180px' }}
     >
       <div className="max-w-6xl">
         <h2 id={`${content.id}-title`} className="text-4xl font-bold text-[#38495D] mb-4">
@@ -362,11 +286,7 @@ export default function FlywheelPage() {
 
   return (
     <div className="pt-16">
-      <div
-        id="flywheel-hero"
-        className={`flywheel-hero ${isHeroSticky ? 'is-sticky' : ''}`}
-        aria-label="New Wave Flywheel"
-      >
+      <div id="flywheel-hero" className="flywheel-hero" aria-label="New Wave Flywheel">
         <div className="flywheel-hero__inner">
           <div className="flywheel-hero__media">
             <img
@@ -374,32 +294,16 @@ export default function FlywheelPage() {
               src="/FlyWheel New Wave Associates.png"
               alt="New Wave Flywheel"
             />
-            <div className="flywheel-hero__line-overlay" aria-hidden="true"></div>
           </div>
 
           <nav className="flywheel-hero__labels" aria-label="Flywheel sections">
-            <a
-              href="#gtm-strategy"
-              className={`flywheel-hero__label ${activeLabel === 'gtm-strategy' ? 'is-active' : ''}`}
-              data-target="gtm-strategy"
-              onClick={(e) => handleLabelClick(e, 'gtm-strategy')}
-            >
+            <a href="#gtm-strategy" className="flywheel-hero__label">
               GTM Strategy
             </a>
-            <a
-              href="#cost-optimization"
-              className={`flywheel-hero__label ${activeLabel === 'cost-optimization' ? 'is-active' : ''}`}
-              data-target="cost-optimization"
-              onClick={(e) => handleLabelClick(e, 'cost-optimization')}
-            >
+            <a href="#cost-optimization" className="flywheel-hero__label">
               Cost Optimization
             </a>
-            <a
-              href="#operational-efficiencies"
-              className={`flywheel-hero__label ${activeLabel === 'operational-efficiencies' ? 'is-active' : ''}`}
-              data-target="operational-efficiencies"
-              onClick={(e) => handleLabelClick(e, 'operational-efficiencies')}
-            >
+            <a href="#operational-efficiencies" className="flywheel-hero__label">
               Operational Efficiencies
             </a>
           </nav>
