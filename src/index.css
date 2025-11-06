@@ -465,7 +465,7 @@ html {
   bottom: 0 !important;
   width: 100% !important;
   height: 100% !important;
-  background: rgba(255, 255, 255, 0.85) !important;
+  background: rgba(255, 255, 255, 0.92) !important;
   filter: none !important;
   border-radius: 0 !important;
   animation: none !important;
@@ -489,7 +489,7 @@ html {
   bottom: 0 !important;
   width: 100% !important;
   height: 100% !important;
-  background: rgba(255, 255, 255, 0.85) !important;
+  background: rgba(255, 255, 255, 0.5) !important;
   background-image: none !important;
   background-size: auto !important;
   background-repeat: no-repeat !important;
