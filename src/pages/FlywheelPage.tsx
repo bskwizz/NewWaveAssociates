@@ -234,86 +234,105 @@ function CollapsibleGroup({ subhead, items, groupId }: CollapsibleGroupProps) {
 
 export default function FlywheelPage() {
   const [showBackToTop, setShowBackToTop] = useState(false);
-  const [scrollProgress, setScrollProgress] = useState(0);
-  const [activeTab, setActiveTab] = useState('gtm-strategy');
+  const [isHeroCollapsed, setIsHeroCollapsed] = useState(false);
+  const [activeLabel, setActiveLabel] = useState('gtm-strategy');
+  const [progressWidth, setProgressWidth] = useState(0);
 
   useEffect(() => {
-    const handleScroll = () => {
+    const hero = document.getElementById('flywheel-hero');
+    const bar = document.querySelector('.flywheel-hero__progress-bar') as HTMLElement;
+    const labels = Array.from(document.querySelectorAll('.flywheel-hero__label'));
+    const sections = [
+      document.getElementById('gtm-strategy'),
+      document.getElementById('cost-optimization'),
+      document.getElementById('operational-efficiencies'),
+    ].filter(Boolean) as HTMLElement[];
+
+    const headerHeight = 64;
+
+    const onScroll = () => {
       setShowBackToTop(window.scrollY > 400);
 
-      const el = document.documentElement;
-      const scrollTop = el.scrollTop || document.body.scrollTop;
-      const scrollHeight = (el.scrollHeight || document.body.scrollHeight) - el.clientHeight;
-      const pct = scrollHeight > 0 ? (scrollTop / scrollHeight) * 100 : 0;
-      setScrollProgress(pct);
+      if (hero) {
+        const rect = hero.getBoundingClientRect();
+        setIsHeroCollapsed(rect.top <= headerHeight);
+      }
+
+      const first = sections[0];
+      const last = sections[sections.length - 1];
+      if (first && last) {
+        const top = first.getBoundingClientRect().top + window.scrollY;
+        const bottom = last.getBoundingClientRect().bottom + window.scrollY;
+        const total = Math.max(1, bottom - top);
+        const y = window.scrollY + window.innerHeight * 0.25;
+        const pct = Math.min(100, Math.max(0, ((y - top) / total) * 100));
+        setProgressWidth(pct);
+      }
     };
 
-    window.addEventListener('scroll', handleScroll, { passive: true });
-    handleScroll();
-    return () => window.removeEventListener('scroll', handleScroll);
-  }, []);
-
-  useEffect(() => {
-    const tabMap: Record<string, string> = {
-      'gtm-strategy': 'gtm-strategy',
-      'cost-optimization': 'cost-optimization',
-      'operational-efficiencies': 'operational-efficiencies',
+    const map: Record<string, Element> = {
+      'gtm-strategy': labels.find((a) => a.getAttribute('data-target') === 'gtm-strategy')!,
+      'cost-optimization': labels.find((a) => a.getAttribute('data-target') === 'cost-optimization')!,
+      'operational-efficiencies': labels.find((a) => a.getAttribute('data-target') === 'operational-efficiencies')!,
     };
 
-    const opts: IntersectionObserverInit = {
-      root: null,
-      rootMargin: '-30% 0px -60% 0px',
-      threshold: [0, 0.25, 0.5, 0.75, 1],
+    const io = new IntersectionObserver(
+      (entries) => {
+        entries.forEach((entry) => {
+          const id = entry.target.id;
+          if (!map[id]) return;
+          if (entry.isIntersecting) {
+            setActiveLabel(id);
+          }
+        });
+      },
+      { root: null, rootMargin: '-35% 0px -55% 0px', threshold: [0, 0.2, 0.5, 0.8, 1] }
+    );
+
+    sections.forEach((sec) => io.observe(sec));
+
+    window.addEventListener('scroll', onScroll, { passive: true });
+    window.addEventListener('resize', onScroll, { passive: true });
+    onScroll();
+
+    return () => {
+      io.disconnect();
+      window.removeEventListener('scroll', onScroll);
+      window.removeEventListener('resize', onScroll);
     };
-
-    const io = new IntersectionObserver((entries) => {
-      entries.forEach((entry) => {
-        const id = entry.target.getAttribute('id');
-        if (!id || !tabMap[id]) return;
-        if (entry.isIntersecting) {
-          setActiveTab(id);
-          history.replaceState(null, '', '#' + id);
-        }
-      });
-    }, opts);
-
-    ['gtm-strategy', 'cost-optimization', 'operational-efficiencies'].forEach((id) => {
-      const sec = document.getElementById(id);
-      if (sec) io.observe(sec);
-    });
-
-    return () => io.disconnect();
   }, []);
 
   const scrollToTop = () => {
     window.scrollTo({ top: 0, behavior: 'smooth' });
   };
 
-  const scrollToSection = (sectionId: string) => {
-    const element = document.getElementById(sectionId);
-    if (element) {
-      element.scrollIntoView({ behavior: 'smooth', block: 'start' });
-    }
-  };
-
-  const handleTabClick = (e: React.MouseEvent<HTMLAnchorElement>, sectionId: string) => {
+  const handleLabelClick = (e: React.MouseEvent<HTMLAnchorElement>, targetId: string) => {
     e.preventDefault();
-    scrollToSection(sectionId);
+    const target = document.getElementById(targetId);
+    const hero = document.getElementById('flywheel-hero');
+    if (!target) return;
+
+    const headerHeight = 64;
+    const heroOffset = hero && isHeroCollapsed ? 0 : 8;
+    const y = target.getBoundingClientRect().top + window.scrollY - headerHeight - heroOffset;
+
+    const prefersReduced = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+    window.scrollTo({ top: y, behavior: prefersReduced ? 'auto' : 'smooth' });
+    history.replaceState(null, '', '#' + targetId);
   };
 
   const renderSection = (content: SectionContent) => (
     <section
       id={content.id}
       aria-labelledby={`${content.id}-title`}
-      className="mb-16 pb-16 border-b border-gray-200 scroll-mt-32"
+      className="mb-16 pb-16 border-b border-gray-200"
+      style={{ scrollMarginTop: '180px' }}
     >
       <div className="max-w-6xl">
         <h2 id={`${content.id}-title`} className="text-4xl font-bold text-[#38495D] mb-4">
           {content.title}
         </h2>
-        <p className="text-xl text-gray-700 mb-8 leading-relaxed">
-          {content.subheading}
-        </p>
+        <p className="text-xl text-gray-700 mb-8 leading-relaxed">{content.subheading}</p>
 
         <div className="fw-group-grid">
           {content.groups.map((group, idx) => (
@@ -330,69 +349,51 @@ export default function FlywheelPage() {
   );
 
   return (
-    <div className="pt-24 pb-16">
-      <div className="w-full bg-gradient-to-b from-gray-50 to-white py-16 mb-12">
-        <div className="max-w-4xl mx-auto px-6 text-center">
-          <div className="w-full max-w-2xl mx-auto mb-6 relative">
-            <img
-              src="/FlyWheel New Wave Associates.png"
-              alt="The New Wave Flywheel"
-              className="w-full h-auto"
-            />
-            <button
-              onClick={() => scrollToSection('gtm-strategy')}
-              className="absolute top-[8%] left-[15%] w-[20%] h-[15%] cursor-pointer hover:opacity-50 transition-opacity"
-              aria-label="Go to GTM Strategy section"
-              style={{ background: 'transparent', border: 'none' }}
-            />
-            <button
-              onClick={() => scrollToSection('cost-optimization')}
-              className="absolute top-[8%] right-[15%] w-[20%] h-[15%] cursor-pointer hover:opacity-50 transition-opacity"
-              aria-label="Go to Cost Optimization section"
-              style={{ background: 'transparent', border: 'none' }}
-            />
-            <button
-              onClick={() => scrollToSection('operational-efficiencies')}
-              className="absolute bottom-[8%] left-[50%] -translate-x-1/2 w-[20%] h-[15%] cursor-pointer hover:opacity-50 transition-opacity"
-              aria-label="Go to Operational Efficiencies section"
-              style={{ background: 'transparent', border: 'none' }}
-            />
+    <div className="pt-16">
+      <div
+        id="flywheel-hero"
+        className={`flywheel-hero ${isHeroCollapsed ? 'is-collapsed' : ''}`}
+        aria-label="New Wave Flywheel"
+      >
+        <div className="flywheel-hero__inner">
+          <img
+            className="flywheel-hero__img"
+            src="/FlyWheel New Wave Associates.png"
+            alt="New Wave Flywheel"
+          />
+          <nav className="flywheel-hero__labels" aria-label="Flywheel sections">
+            <a
+              href="#gtm-strategy"
+              className={`flywheel-hero__label ${activeLabel === 'gtm-strategy' ? 'is-active' : ''}`}
+              data-target="gtm-strategy"
+              onClick={(e) => handleLabelClick(e, 'gtm-strategy')}
+            >
+              GTM Strategy
+            </a>
+            <a
+              href="#cost-optimization"
+              className={`flywheel-hero__label ${activeLabel === 'cost-optimization' ? 'is-active' : ''}`}
+              data-target="cost-optimization"
+              onClick={(e) => handleLabelClick(e, 'cost-optimization')}
+            >
+              Cost Optimization
+            </a>
+            <a
+              href="#operational-efficiencies"
+              className={`flywheel-hero__label ${activeLabel === 'operational-efficiencies' ? 'is-active' : ''}`}
+              data-target="operational-efficiencies"
+              onClick={(e) => handleLabelClick(e, 'operational-efficiencies')}
+            >
+              Operational Efficiencies
+            </a>
+          </nav>
+          <div className="flywheel-hero__progress" aria-hidden="true">
+            <div className="flywheel-hero__progress-bar" style={{ width: `${progressWidth}%` }}></div>
           </div>
         </div>
       </div>
 
-      <div className="flywheel-progress" aria-hidden="true">
-        <div className="flywheel-progress__bar" style={{ width: `${scrollProgress}%` }}></div>
-      </div>
-
-      <nav className="flywheel-tabs" aria-label="Flywheel sections">
-        <a
-          href="#gtm-strategy"
-          className={`flywheel-tab ${activeTab === 'gtm-strategy' ? 'is-active' : ''}`}
-          onClick={(e) => handleTabClick(e, 'gtm-strategy')}
-          aria-current={activeTab === 'gtm-strategy' ? 'location' : undefined}
-        >
-          GTM Strategy
-        </a>
-        <a
-          href="#cost-optimization"
-          className={`flywheel-tab ${activeTab === 'cost-optimization' ? 'is-active' : ''}`}
-          onClick={(e) => handleTabClick(e, 'cost-optimization')}
-          aria-current={activeTab === 'cost-optimization' ? 'location' : undefined}
-        >
-          Cost Optimization
-        </a>
-        <a
-          href="#operational-efficiencies"
-          className={`flywheel-tab ${activeTab === 'operational-efficiencies' ? 'is-active' : ''}`}
-          onClick={(e) => handleTabClick(e, 'operational-efficiencies')}
-          aria-current={activeTab === 'operational-efficiencies' ? 'location' : undefined}
-        >
-          Operational Efficiencies
-        </a>
-      </nav>
-
-      <div className="max-w-7xl mx-auto px-6">
+      <div className="max-w-7xl mx-auto px-6 pb-16">
         {renderSection(gtmStrategyContent)}
         {renderSection(costOptimizationContent)}
         {renderSection(operationalEfficienciesContent)}
