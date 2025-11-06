@@ -40,7 +40,11 @@ const gtmStrategyContent: SectionContent = {
         'Lead-to-Cash Process Engineering',
         'GTM Governance Framework',
         'Performance-Based Resource Allocation',
-        'GTM Redesign & Transformation',
+      ],
+    },
+    {
+      subhead: 'GTM Redesign & Transformation',
+      items: [
         'Zero-Based GTM Planning',
         'Cost-to-Acquire Optimization',
         'Digital Channel Expansion',
