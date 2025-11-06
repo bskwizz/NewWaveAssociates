@@ -355,6 +355,11 @@ export default function FlywheelPage() {
               src="/FlyWheel New Wave Associates.png"
               alt="New Wave Flywheel"
             />
+            <div
+              className={`flywheel-overlay flywheel-overlay--gtm transition-opacity duration-700 ${
+                fadeInGtm ? 'opacity-0' : 'opacity-100'
+              }`}
+            ></div>
             <a
               href="#gtm-strategy"
               className="flywheel-hotspot flywheel-hotspot--gtm"
@@ -368,11 +373,12 @@ export default function FlywheelPage() {
                   window.scrollTo({ top: y, behavior: 'smooth' });
                 }
               }}
-            >
-              <span className={`flywheel-label transition-opacity duration-700 ${
-                fadeInGtm ? 'opacity-100' : 'opacity-0'
-              }`}>GTM Strategy</span>
-            </a>
+            ></a>
+            <div
+              className={`flywheel-overlay flywheel-overlay--cost transition-opacity duration-700 ${
+                fadeInCost ? 'opacity-0' : 'opacity-100'
+              }`}
+            ></div>
             <a
               href="#cost-optimization"
               className="flywheel-hotspot flywheel-hotspot--cost"
@@ -386,11 +392,12 @@ export default function FlywheelPage() {
                   window.scrollTo({ top: y, behavior: 'smooth' });
                 }
               }}
-            >
-              <span className={`flywheel-label transition-opacity duration-700 ${
-                fadeInCost ? 'opacity-100' : 'opacity-0'
-              }`}>Cost Optimization</span>
-            </a>
+            ></a>
+            <div
+              className={`flywheel-overlay flywheel-overlay--ops transition-opacity duration-700 ${
+                fadeInOps ? 'opacity-0' : 'opacity-100'
+              }`}
+            ></div>
             <a
               href="#operational-efficiencies"
               className="flywheel-hotspot flywheel-hotspot--ops"
@@ -404,11 +411,7 @@ export default function FlywheelPage() {
                   window.scrollTo({ top: y, behavior: 'smooth' });
                 }
               }}
-            >
-              <span className={`flywheel-label transition-opacity duration-700 ${
-                fadeInOps ? 'opacity-100' : 'opacity-0'
-              }`}>Operational Efficiency</span>
-            </a>
+            ></a>
           </div>
         </div>
       </div>
