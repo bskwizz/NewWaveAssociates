@@ -56,14 +56,41 @@ export default function FlywheelPage() {
     window.scrollTo({ top: 0, behavior: 'smooth' });
   };
 
+  const scrollToSection = (sectionId: string) => {
+    const element = document.getElementById(sectionId);
+    if (element) {
+      element.scrollIntoView({ behavior: 'smooth', block: 'start' });
+    }
+  };
+
   return (
     <div className="pt-24 pb-16">
       <div className="w-full bg-gradient-to-b from-gray-50 to-white py-16 mb-12">
         <div className="max-w-4xl mx-auto px-6 text-center">
-          <div className="w-full max-w-2xl mx-auto mb-6 bg-gray-200 rounded-lg overflow-hidden" style={{ aspectRatio: '16/9' }}>
-            <div className="w-full h-full flex items-center justify-center text-gray-500">
-              <span className="text-sm">Flywheel Image Placeholder</span>
-            </div>
+          <div className="w-full max-w-2xl mx-auto mb-6 relative">
+            <img
+              src="/FlyWheel New Wave Associates.png"
+              alt="The New Wave Flywheel"
+              className="w-full h-auto"
+            />
+            <button
+              onClick={() => scrollToSection('gtm-strategy')}
+              className="absolute top-[8%] left-[15%] w-[20%] h-[15%] cursor-pointer hover:opacity-50 transition-opacity"
+              aria-label="Go to GTM Strategy section"
+              style={{ background: 'transparent', border: 'none' }}
+            />
+            <button
+              onClick={() => scrollToSection('cost-optimization')}
+              className="absolute top-[8%] right-[15%] w-[20%] h-[15%] cursor-pointer hover:opacity-50 transition-opacity"
+              aria-label="Go to Cost Optimization section"
+              style={{ background: 'transparent', border: 'none' }}
+            />
+            <button
+              onClick={() => scrollToSection('operational-efficiencies')}
+              className="absolute bottom-[8%] left-[50%] -translate-x-1/2 w-[20%] h-[15%] cursor-pointer hover:opacity-50 transition-opacity"
+              aria-label="Go to Operational Efficiencies section"
+              style={{ background: 'transparent', border: 'none' }}
+            />
           </div>
           <p className="text-lg text-[#38495D] font-medium">The New Wave Flywheel</p>
         </div>
