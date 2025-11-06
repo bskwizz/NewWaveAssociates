@@ -249,7 +249,7 @@ html {
 
 .fw-progress--hero {
   position: fixed;
-  top: 70px;
+  top: 80px;
   left: 0;
   z-index: 9999;
   width: 100%;
