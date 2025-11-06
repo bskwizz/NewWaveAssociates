@@ -3,10 +3,10 @@ interface AboutUsPageProps {
 }
 
 const teamMembers = [
-  { name: 'Alex Morgan', title: 'Partner' },
-  { name: 'Jordan Lee', title: 'Partner' },
-  { name: 'Taylor Grant', title: 'Partner' },
-  { name: 'Riley Shaw', title: 'Partner' },
+  { name: 'Craig Keller', title: 'Founding Partner', image: '/Pictures.png' },
+  { name: 'Hunter New', title: 'Founding Partner', image: '/Pictures-2.png' },
+  { name: 'Bryan Skwirut', title: 'Founding Partner', image: '/Pictures-3.png' },
+  { name: 'Jason Lee', title: 'Founding Partner', image: '/Pictures-4.png' },
 ];
 
 const differentiators = [
@@ -76,12 +76,12 @@ export default function AboutUsPage({ onNavigate }: AboutUsPageProps) {
                 key={index}
                 className="bg-white border border-gray-200 rounded-lg overflow-hidden hover:shadow-xl transition-all hover:-translate-y-2"
               >
-                <div className="aspect-square bg-gradient-to-br from-[#01A3DB] to-[#38495D] flex items-center justify-center">
-                  <div className="w-32 h-32 bg-white/20 rounded-full flex items-center justify-center">
-                    <span className="text-white text-4xl font-bold">
-                      {member.name.split(' ').map(n => n[0]).join('')}
-                    </span>
-                  </div>
+                <div className="aspect-square bg-white flex items-center justify-center overflow-hidden">
+                  <img
+                    src={member.image}
+                    alt={member.name}
+                    className="w-full h-full object-cover"
+                  />
                 </div>
                 <div className="p-6 text-center">
                   <h3 className="text-xl font-bold text-[#38495D] mb-1">
