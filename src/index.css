@@ -9,3 +9,104 @@
 html {
   scroll-behavior: smooth;
 }
+
+@media (prefers-reduced-motion: reduce) {
+  html {
+    scroll-behavior: auto;
+  }
+  * {
+    transition: none !important;
+  }
+}
+
+.flywheel-progress {
+  position: sticky;
+  top: calc(5rem - 3px);
+  z-index: 60;
+  height: 3px;
+  background: transparent;
+}
+
+.flywheel-progress__bar {
+  height: 100%;
+  width: 0%;
+  background: #01A3DB;
+  transition: width 120ms linear;
+}
+
+.flywheel-tabs {
+  position: sticky;
+  top: 5rem;
+  z-index: 50;
+  display: flex;
+  gap: 12px;
+  justify-content: center;
+  align-items: center;
+  padding: 10px 16px;
+  background: #ffffff;
+  border-bottom: 1px solid rgba(0, 0, 0, 0.06);
+  backdrop-filter: saturate(120%) blur(6px);
+  overflow-x: auto;
+  -webkit-overflow-scrolling: touch;
+}
+
+.flywheel-tab {
+  display: inline-block;
+  padding: 10px 14px;
+  border-radius: 999px;
+  font-weight: 600;
+  color: #38495D;
+  text-decoration: none;
+  border: 1px solid rgba(56, 73, 93, 0.25);
+  transition: transform 140ms ease, background 140ms ease, color 140ms ease, border-color 140ms ease;
+  white-space: nowrap;
+  flex-shrink: 0;
+}
+
+.flywheel-tab:hover {
+  transform: translateY(-1px);
+}
+
+.flywheel-tab.is-active {
+  background: rgba(1, 163, 219, 0.1);
+  border-color: rgba(1, 163, 219, 0.5);
+  color: #38495D;
+}
+
+.gtm-group {
+  margin-block: 20px;
+}
+
+.gtm-subhead {
+  font-size: 1rem;
+  font-weight: 700;
+  color: #38495D;
+  margin-bottom: 8px;
+  letter-spacing: 0.2px;
+}
+
+.gtm-list {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+  gap: 10px 16px;
+}
+
+.gtm-list li {
+  position: relative;
+  padding-left: 14px;
+  font-size: 1rem;
+  color: #4a5568;
+  line-height: 1.6;
+}
+
+.gtm-list li::before {
+  content: "•";
+  position: absolute;
+  left: 0;
+  color: #01A3DB;
+  font-weight: 900;
+  line-height: 1;
+}
