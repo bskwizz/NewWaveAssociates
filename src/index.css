@@ -95,6 +95,11 @@ html {
   z-index: 0;
 }
 
+.fw-glow.vanta-host::before,
+.fw-glow.vanta-host::after {
+  opacity: 0.2;
+}
+
 .fw-glow::before {
   top: -10%;
   left: 8%;
