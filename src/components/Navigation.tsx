@@ -59,9 +59,6 @@ export default function Navigation({ currentPage, onNavigate }: NavigationProps)
                 <span className="absolute -bottom-1 left-0 w-0 h-0.5 bg-[#01A3DB] transition-all group-hover:w-full"></span>
               </button>
             ))}
-            <button className="px-5 py-2 border-2 border-[#01A3DB] text-[#01A3DB] rounded-full text-sm font-medium hover:bg-[#01A3DB] hover:text-white transition-all">
-              Newsletter
-            </button>
           </div>
 
           <button
@@ -88,9 +85,6 @@ export default function Navigation({ currentPage, onNavigate }: NavigationProps)
                 {item.label}
               </button>
             ))}
-            <button className="px-5 py-2 border-2 border-[#01A3DB] text-[#01A3DB] rounded-full text-sm font-medium hover:bg-[#01A3DB] hover:text-white transition-all w-fit">
-              Newsletter
-            </button>
           </div>
         )}
       </div>
