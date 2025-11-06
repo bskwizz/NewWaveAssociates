@@ -3,7 +3,7 @@ interface AboutUsPageProps {
 }
 
 const teamMembers = [
-  { name: 'Craig Keller', title: 'Founding Partner', image: '/Pictures.png' },
+  { name: 'Craig Keller', title: 'Founding Partner', image: '/Pictures-5 copy.png' },
   { name: 'Hunter New', title: 'Founding Partner', image: '/Pictures-2.png' },
   { name: 'Bryan Skwirut', title: 'Founding Partner', image: '/Pictures-3.png' },
   { name: 'Jason Lee', title: 'Founding Partner', image: '/Pictures-4.png' },
