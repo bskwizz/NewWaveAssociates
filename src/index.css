@@ -387,7 +387,9 @@ html {
 .capabilities-hero {
   position: relative;
   min-height: var(--nw-hero-h);
-  background: #fff;
+  background: radial-gradient(1200px 600px at 15% -10%, rgba(1,163,219,0.25), transparent 50%),
+               radial-gradient(800px 400px at 85% 110%, rgba(56,73,93,0.25), transparent 50%),
+               linear-gradient(180deg, #f7f9fb 0%, #eef3f7 100%);
   border-bottom: 1px solid rgba(0, 0, 0, 0.06);
   box-shadow: none;
   display: flex;
@@ -399,11 +401,14 @@ html {
 .capabilities-hero::before {
   content: '';
   position: absolute;
-  top: 60px;
-  bottom: 60px;
-  left: 0;
-  right: 0;
-  background: url('/ChatGPT Image Nov 6, 2025 at 02_51_10 PM.png') center center / cover no-repeat;
+  inset: 0;
+  opacity: 0.12;
+  pointer-events: none;
+  background-image: radial-gradient(1px 1px at 20% 30%, #38495d 100%, transparent 0),
+                    radial-gradient(1px 1px at 70% 60%, #01a3db 100%, transparent 0),
+                    radial-gradient(1px 1px at 40% 80%, #38495d 100%, transparent 0);
+  background-size: 120px 120px, 160px 160px, 200px 200px;
+  background-repeat: repeat;
   z-index: 0;
 }
 
@@ -420,10 +425,5 @@ html {
   .capabilities-hero {
     padding: 40px 16px;
     min-height: 50vh;
-  }
-
-  .capabilities-hero::before {
-    top: 30px;
-    bottom: 30px;
   }
 }
