@@ -477,3 +477,23 @@ html {
 .vanta-host.fw-glow::after {
   display: none !important;
 }
+
+/* Override capabilities-hero pattern when using Vanta */
+.vanta-host.capabilities-hero::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  top: 0 !important;
+  left: 0 !important;
+  right: 0 !important;
+  bottom: 0 !important;
+  width: 100% !important;
+  height: 100% !important;
+  background: rgba(255, 255, 255, 0.85) !important;
+  background-image: none !important;
+  background-size: auto !important;
+  background-repeat: no-repeat !important;
+  opacity: 1 !important;
+  z-index: 1;
+  pointer-events: none;
+}
