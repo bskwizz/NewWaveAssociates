@@ -79,9 +79,6 @@ export default function CapabilitiesPage({ onNavigate }: CapabilitiesPageProps) 
       <div className="max-w-5xl mx-auto px-6">
         <div className="mb-16">
           <h1 className="text-5xl font-bold text-[#38495D] mb-6">Capabilities</h1>
-          <p className="text-xl text-gray-700 leading-relaxed">
-            Strategy without execution is theater. We build the habits, governance, and clarity required to turn plans into lift.
-          </p>
         </div>
 
         <div className="space-y-4 mb-16">
