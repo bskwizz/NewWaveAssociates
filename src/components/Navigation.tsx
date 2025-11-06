@@ -24,10 +24,12 @@ export default function Navigation({ currentPage, onNavigate }: NavigationProps)
             onClick={() => onNavigate('home')}
             className="flex items-center gap-3 hover:opacity-80 transition-opacity"
           >
-            <div className="w-10 h-10 bg-[#01A3DB] rounded-full flex items-center justify-center">
-              <span className="text-white font-bold text-lg">NW</span>
-            </div>
-            <span className="text-[#38495D] font-semibold text-lg">New Wave Associates</span>
+            <img
+              src="/New Wave Associates Square.png"
+              alt="New Wave Associates Logo"
+              className="h-12 w-auto"
+            />
+            <span className="text-[#38495D] font-semibold text-lg hidden sm:inline">New Wave Associates</span>
           </button>
 
           <div className="hidden md:flex items-center gap-8">
