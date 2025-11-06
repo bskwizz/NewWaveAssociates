@@ -234,9 +234,18 @@ function CollapsibleGroup({ subhead, items, groupId }: CollapsibleGroupProps) {
 
 export default function FlywheelPage() {
   const [showBackToTop, setShowBackToTop] = useState(false);
+  const [fadeInImage, setFadeInImage] = useState(false);
+  const [fadeInGtm, setFadeInGtm] = useState(false);
+  const [fadeInCost, setFadeInCost] = useState(false);
+  const [fadeInOps, setFadeInOps] = useState(false);
   const vantaRef = useRef<HTMLDivElement>(null);
 
   useEffect(() => {
+    setFadeInImage(true);
+    setTimeout(() => setFadeInGtm(true), 300);
+    setTimeout(() => setFadeInCost(true), 600);
+    setTimeout(() => setFadeInOps(true), 900);
+
     const hero = document.getElementById('flywheel-hero');
     if (hero) {
       hero.classList.remove('is-sticky');
@@ -340,13 +349,17 @@ export default function FlywheelPage() {
         <div className="flywheel-hero__inner hero-content">
           <div className="flywheel-hero__media">
             <img
-              className="flywheel-hero__img"
+              className={`flywheel-hero__img transition-opacity duration-1000 ${
+                fadeInImage ? 'opacity-100' : 'opacity-0'
+              }`}
               src="/FlyWheel New Wave Associates.png"
               alt="New Wave Flywheel"
             />
             <a
               href="#gtm-strategy"
-              className="flywheel-hotspot flywheel-hotspot--gtm"
+              className={`flywheel-hotspot flywheel-hotspot--gtm transition-opacity duration-700 ${
+                fadeInGtm ? 'opacity-100' : 'opacity-0'
+              }`}
               aria-label="Go to GTM Strategy"
               onClick={(e) => {
                 e.preventDefault();
@@ -360,7 +373,9 @@ export default function FlywheelPage() {
             ></a>
             <a
               href="#cost-optimization"
-              className="flywheel-hotspot flywheel-hotspot--cost"
+              className={`flywheel-hotspot flywheel-hotspot--cost transition-opacity duration-700 ${
+                fadeInCost ? 'opacity-100' : 'opacity-0'
+              }`}
               aria-label="Go to Cost Optimization"
               onClick={(e) => {
                 e.preventDefault();
@@ -374,7 +389,9 @@ export default function FlywheelPage() {
             ></a>
             <a
               href="#operational-efficiencies"
-              className="flywheel-hotspot flywheel-hotspot--ops"
+              className={`flywheel-hotspot flywheel-hotspot--ops transition-opacity duration-700 ${
+                fadeInOps ? 'opacity-100' : 'opacity-0'
+              }`}
               aria-label="Go to Operational Efficiencies"
               onClick={(e) => {
                 e.preventDefault();
