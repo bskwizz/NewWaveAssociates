@@ -57,6 +57,9 @@ export function useVantaWaves(options: VantaWavesOptions = {}) {
         const baseOptions = {
           el: containerRef.current,
           THREE: window.THREE,
+          mouseControls: false,
+          touchControls: false,
+          gyroControls: false,
           color: 0x01A3DB,
           backgroundColor: 0xFFFFFF,
           shininess: 35.0,
