@@ -333,9 +333,6 @@ export default function FlywheelPage() {
 
   return (
     <div className="pt-16">
-      <div className="fw-progress fw-progress--top" aria-hidden="true">
-        <div className="fw-progress__bar"></div>
-      </div>
       <div id="flywheel-hero" className="flywheel-hero fw-glow" aria-label="New Wave Flywheel">
         <div className="flywheel-hero__inner">
           <div className="flywheel-hero__media">
