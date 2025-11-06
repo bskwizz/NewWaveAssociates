@@ -25,7 +25,7 @@ export default function Navigation({ currentPage, onNavigate }: NavigationProps)
             className="flex items-center gap-3 hover:opacity-80 transition-opacity"
           >
             <img
-              src="/New Wave Associates Square.png"
+              src="/New Wave Associates Square-2.png"
               alt="New Wave Associates Logo"
               className="h-12 w-auto"
             />
