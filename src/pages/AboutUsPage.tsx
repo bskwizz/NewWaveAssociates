@@ -76,9 +76,7 @@ export default function AboutUsPage({ onNavigate }: AboutUsPageProps) {
                 key={index}
                 className="bg-white border border-gray-200 rounded-lg overflow-hidden hover:shadow-xl transition-all hover:-translate-y-2"
               >
-                <div className={`aspect-square flex items-center justify-center overflow-hidden ${
-                  index === 0 ? 'bg-gradient-to-br from-[#01A3DB]/10 to-[#38495D]/10' : 'bg-white'
-                }`}>
+                <div className="aspect-square flex items-center justify-center overflow-hidden bg-white">
                   <img
                     src={member.image}
                     alt={member.name}
