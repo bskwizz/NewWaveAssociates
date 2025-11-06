@@ -295,18 +295,6 @@ export default function FlywheelPage() {
               alt="New Wave Flywheel"
             />
           </div>
-
-          <nav className="flywheel-hero__labels" aria-label="Flywheel sections">
-            <a href="#gtm-strategy" className="flywheel-hero__label">
-              GTM Strategy
-            </a>
-            <a href="#cost-optimization" className="flywheel-hero__label">
-              Cost Optimization
-            </a>
-            <a href="#operational-efficiencies" className="flywheel-hero__label">
-              Operational Efficiencies
-            </a>
-          </nav>
         </div>
       </div>
 
