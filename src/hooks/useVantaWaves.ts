@@ -21,10 +21,15 @@ export function useVantaWaves(options: VantaWavesOptions = {}) {
   const vantaRef = useRef<{ destroy: () => void } | null>(null);
 
   useEffect(() => {
-    if (!containerRef.current) return;
+    if (!containerRef.current) {
+      console.log('No container ref');
+      return;
+    }
 
     const reduceMotion = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
     const isMobile = Math.min(window.innerWidth, window.innerHeight) < 768;
+
+    console.log('Vanta init check:', { reduceMotion, isMobile, hasVanta: !!window.VANTA });
 
     if (reduceMotion || isMobile) {
       if (containerRef.current) {
@@ -34,9 +39,17 @@ export function useVantaWaves(options: VantaWavesOptions = {}) {
     }
 
     const initVanta = () => {
-      if (!window.VANTA || !containerRef.current) return;
+      if (!window.VANTA) {
+        console.log('VANTA not available');
+        return;
+      }
+      if (!containerRef.current) {
+        console.log('Container ref lost');
+        return;
+      }
 
       try {
+        console.log('Initializing Vanta WAVES');
         const baseOptions = {
           el: containerRef.current,
           color: 0x01A3DB,
@@ -51,8 +64,9 @@ export function useVantaWaves(options: VantaWavesOptions = {}) {
         };
 
         vantaRef.current = window.VANTA.WAVES(baseOptions);
+        console.log('Vanta initialized successfully');
       } catch (error) {
-        console.warn('Vanta initialization failed:', error);
+        console.error('Vanta initialization failed:', error);
         if (containerRef.current) {
           containerRef.current.style.background = 'linear-gradient(180deg, #FFFFFF 0%, #F8FBFD 100%)';
         }
@@ -62,20 +76,28 @@ export function useVantaWaves(options: VantaWavesOptions = {}) {
     if (window.VANTA) {
       initVanta();
     } else {
+      console.log('Waiting for VANTA to load...');
+      let attempts = 0;
       const checkVanta = setInterval(() => {
+        attempts++;
         if (window.VANTA) {
+          console.log('VANTA loaded after', attempts, 'attempts');
           clearInterval(checkVanta);
           initVanta();
         }
       }, 100);
 
-      setTimeout(() => clearInterval(checkVanta), 5000);
+      setTimeout(() => {
+        clearInterval(checkVanta);
+        console.log('VANTA load timeout after', attempts, 'attempts');
+      }, 5000);
     }
 
     return () => {
       if (vantaRef.current) {
         try {
           vantaRef.current.destroy();
+          console.log('Vanta destroyed');
         } catch (error) {
           console.warn('Vanta cleanup failed:', error);
         }
