@@ -95,10 +95,6 @@ html {
   z-index: 0;
 }
 
-.fw-glow.vanta-host::before,
-.fw-glow.vanta-host::after {
-  opacity: 0.2;
-}
 
 .fw-glow::before {
   top: -10%;
@@ -441,10 +437,6 @@ html {
 }
 
 .vanta-host::before {
-  display: none !important;
-}
-
-.vanta-host::after {
   content: "";
   position: absolute;
   inset: 0;
@@ -453,13 +445,35 @@ html {
   pointer-events: none;
 }
 
+.vanta-host::after {
+  display: none !important;
+}
+
 .vanta-host .hero-content {
   position: relative;
   z-index: 2;
 }
 
 /* Disable the old glow animations when using Vanta */
-.vanta-host.fw-glow::before,
+.vanta-host.fw-glow::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  top: 0 !important;
+  left: 0 !important;
+  right: 0 !important;
+  bottom: 0 !important;
+  width: 100% !important;
+  height: 100% !important;
+  background: rgba(255, 255, 255, 0.5) !important;
+  filter: none !important;
+  border-radius: 0 !important;
+  animation: none !important;
+  transform: none !important;
+  z-index: 1;
+  pointer-events: none;
+}
+
 .vanta-host.fw-glow::after {
   display: none !important;
 }
