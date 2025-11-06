@@ -16,7 +16,7 @@ interface SectionContent {
 const gtmStrategyContent: SectionContent = {
   id: 'gtm-strategy',
   title: 'GTM Strategy',
-  subheading: 'Align product, pricing, and pipeline to drive repeatable growth.',
+  subheading: 'Most GTM models are relics of a different buying era: linear, siloed, and reactive. We design adaptive frameworks that align revenue teams, tech, processes, and data around one unified motion.',
   groups: [
     {
       subhead: 'GTM Strategy Levers',
@@ -68,7 +68,7 @@ const gtmStrategyContent: SectionContent = {
 const costOptimizationContent: SectionContent = {
   id: 'cost-optimization',
   title: 'Cost Optimization',
-  subheading: 'Reduce noise and expense without breaking continuity.',
+  subheading: 'In today\'s margin-pressured environment, cost optimization isn\'t just a lever, it\'s THE lever. We deliver measurable reductions in SG&A, COGS, and operational overhead to unlock EBITDA expansion without sacrificing growth.',
   groups: [
     {
       subhead: 'Cash infusion & Liquidity Unlock',
@@ -121,7 +121,7 @@ const costOptimizationContent: SectionContent = {
 const operationalEfficienciesContent: SectionContent = {
   id: 'operational-efficiencies',
   title: 'Operational Efficiencies',
-  subheading: 'Increase throughput with clear roles, cadence, and automation.',
+  subheading: 'Growth without operational discipline creates friction, delays, and hidden cost. We re-engineer workflows across systems, teams, and processes to deliver scalability, speed, and confidence in execution.',
   groups: [
     {
       subhead: 'Core operational Efficiency Levers',
