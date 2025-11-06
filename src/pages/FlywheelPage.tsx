@@ -268,7 +268,7 @@ export default function FlywheelPage() {
         <h2 id={`${content.id}-title`} className="text-4xl font-bold text-[#38495D] mb-4">
           {content.title}
         </h2>
-        <p className="text-xl text-gray-700 mb-8 leading-relaxed">{content.subheading}</p>
+        <p className="text-xl text-gray-700 mb-8 leading-relaxed text-left w-full md:w-1/2">{content.subheading}</p>
 
         <div className="fw-group-grid">
           {content.groups.map((group, idx) => (
