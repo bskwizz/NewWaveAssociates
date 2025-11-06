@@ -1,7 +1,6 @@
-import { useState } from 'react';
+import { useState, useRef } from 'react';
 import { ChevronDown } from 'lucide-react';
 import CTABar from '../components/CTABar';
-import { useVantaWaves } from '../hooks/useVantaWaves';
 
 interface CapabilitiesPageProps {
   onNavigate: (page: string) => void;
@@ -75,11 +74,11 @@ const capabilities = [
 
 export default function CapabilitiesPage({ onNavigate }: CapabilitiesPageProps) {
   const [expandedIndex, setExpandedIndex] = useState<number | null>(0);
-  const vantaRef = useVantaWaves({ waveHeight: 16.0, waveSpeed: 0.65, zoom: 1.05 });
+  const vantaRef = useRef<HTMLDivElement>(null);
 
   return (
     <div className="pt-16">
-      <div ref={vantaRef} className="capabilities-hero vanta-host" aria-label="Capabilities">
+      <div ref={vantaRef} className="capabilities-hero" aria-label="Capabilities">
         <div className="capabilities-hero__inner hero-content">
           <div className="max-w-7xl mx-auto px-6">
             <p className="text-xl text-[#38495D]" style={{ maxWidth: '75%' }}>

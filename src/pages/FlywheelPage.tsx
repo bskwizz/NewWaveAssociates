@@ -1,6 +1,5 @@
 import { ArrowUp, ChevronDown } from 'lucide-react';
-import { useState, useEffect } from 'react';
-import { useVantaWaves } from '../hooks/useVantaWaves';
+import { useState, useEffect, useRef } from 'react';
 
 interface SectionGroup {
   subhead: string;
@@ -235,7 +234,7 @@ function CollapsibleGroup({ subhead, items, groupId }: CollapsibleGroupProps) {
 
 export default function FlywheelPage() {
   const [showBackToTop, setShowBackToTop] = useState(false);
-  const vantaRef = useVantaWaves({ waveHeight: 18.0, waveSpeed: 0.70, zoom: 1.10 });
+  const vantaRef = useRef<HTMLDivElement>(null);
 
   useEffect(() => {
     const hero = document.getElementById('flywheel-hero');
@@ -337,7 +336,7 @@ export default function FlywheelPage() {
 
   return (
     <div className="pt-16">
-      <div id="flywheel-hero" ref={vantaRef} className="flywheel-hero fw-glow vanta-host" aria-label="New Wave Flywheel">
+      <div id="flywheel-hero" ref={vantaRef} className="flywheel-hero fw-glow" aria-label="New Wave Flywheel">
         <div className="flywheel-hero__inner hero-content">
           <div className="flywheel-hero__media">
             <img
