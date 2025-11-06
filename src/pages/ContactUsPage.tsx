@@ -165,7 +165,7 @@ export default function ContactUsPage() {
             Looking for project-fit or just exploring options?
           </p>
           <button className="px-8 py-3 bg-[#EF5919] text-white rounded-md font-medium hover:bg-[#D54E15] transition-all hover:scale-105">
-            Schedule a Call
+            Contact Us
           </button>
         </div>
       </div>

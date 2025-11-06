@@ -132,7 +132,7 @@ export default function CapabilitiesPage({ onNavigate }: CapabilitiesPageProps) 
             onClick={() => onNavigate('contact-us')}
             className="px-10 py-4 bg-[#01A3DB] text-white rounded-md font-medium text-lg hover:bg-[#0192C5] transition-all hover:scale-105"
           >
-            Talk to Us
+            Contact Us
           </button>
         </div>
       </div>
