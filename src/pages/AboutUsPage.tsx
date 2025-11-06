@@ -1,4 +1,5 @@
 import CTABar from '../components/CTABar';
+import { useVantaWaves } from '../hooks/useVantaWaves';
 
 interface AboutUsPageProps {
   onNavigate: (page: string) => void;
@@ -27,10 +28,12 @@ const differentiators = [
 ];
 
 export default function AboutUsPage({ onNavigate }: AboutUsPageProps) {
+  const vantaRef = useVantaWaves({ waveHeight: 14.0, waveSpeed: 0.60, zoom: 1.00 });
+
   return (
     <div className="pt-16">
-      <div className="capabilities-hero" aria-label="About Us">
-        <div className="capabilities-hero__inner">
+      <div ref={vantaRef} className="capabilities-hero vanta-host" aria-label="About Us">
+        <div className="capabilities-hero__inner hero-content">
           <div className="max-w-7xl mx-auto px-6">
             <p className="text-xl text-[#38495D]" style={{ maxWidth: '75%' }}>
               New Wave Associates is a strategy & general management growth consultancy that brings operator-grade expertise to help companies evolve smarter, leaner, and faster.

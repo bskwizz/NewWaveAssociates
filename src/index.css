@@ -427,3 +427,35 @@ html {
     min-height: 50vh;
   }
 }
+
+/* Vanta.js Wave Animation Styles */
+.vanta-host {
+  position: relative;
+  min-height: 60vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  overflow: hidden;
+  isolation: isolate;
+  background: #FFFFFF;
+}
+
+.vanta-host .hero-content {
+  position: relative;
+  z-index: 2;
+}
+
+.vanta-host::after {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background: rgba(255,255,255,0.12);
+  z-index: 1;
+  pointer-events: none;
+}
+
+/* Disable the old glow animations when using Vanta */
+.vanta-host.fw-glow::before,
+.vanta-host.fw-glow::after {
+  display: none !important;
+}
