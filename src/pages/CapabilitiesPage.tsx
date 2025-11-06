@@ -80,8 +80,7 @@ export default function CapabilitiesPage({ onNavigate }: CapabilitiesPageProps) 
       <div className="capabilities-hero" aria-label="Capabilities">
         <div className="capabilities-hero__inner">
           <div className="max-w-7xl mx-auto px-6">
-            <h1 className="text-6xl font-bold text-[#38495D] mb-4">Capabilities</h1>
-            <p className="text-xl text-[#38495D] max-w-3xl">
+            <p className="text-xl text-[#38495D]" style={{ maxWidth: '75%' }}>
               Explore the full spectrum of capabilities we deploy to accelerate growth, expand margins, and operationalize transformation.
             </p>
           </div>
