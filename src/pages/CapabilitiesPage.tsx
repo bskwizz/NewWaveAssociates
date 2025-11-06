@@ -75,7 +75,7 @@ export default function CapabilitiesPage({ onNavigate }: CapabilitiesPageProps) 
   const [expandedIndex, setExpandedIndex] = useState<number | null>(0);
 
   return (
-    <div className="pt-24 pb-16">
+    <div className="pt-32 pb-16">
       <div className="max-w-5xl mx-auto px-6">
         <div className="mb-16">
           <h1 className="text-5xl font-bold text-[#38495D] mb-6">Capabilities</h1>
