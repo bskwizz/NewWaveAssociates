@@ -54,7 +54,7 @@ const gtmStrategyContent: SectionContent = {
       ],
     },
     {
-      subhead: 'Executive-ready framing',
+      subhead: 'Executive-Ready Framing',
       items: [
         'Engineering precision into every commercial motion',
         'Rewiring the revenue engine for modern buyer behavior',
@@ -71,7 +71,7 @@ const costOptimizationContent: SectionContent = {
   subheading: 'We deliver measurable reductions in SG&A, COGS, and operational overhead to unlock EBITDA expansion without sacrificing growth.',
   groups: [
     {
-      subhead: 'Cash infusion & Liquidity Unlock',
+      subhead: 'Cash Infusion & Liquidity Unlock',
       items: [
         'Working Capital Liberation',
         'Balance Sheet Optimization',
@@ -83,7 +83,7 @@ const costOptimizationContent: SectionContent = {
       ],
     },
     {
-      subhead: 'Cost takeout via strategic alignment',
+      subhead: 'Cost Takeout via Strategic Alignment',
       items: [
         'Targeted SG&A Rationalization',
         'Support Function Rewiring',
@@ -94,7 +94,7 @@ const costOptimizationContent: SectionContent = {
       ],
     },
     {
-      subhead: 'Transformation-oriented efficiency plays',
+      subhead: 'Transformation-Oriented Efficiency Plays',
       items: [
         'Cost-To-Serve Compression',
         'Digital Labor Deployment',
@@ -106,7 +106,7 @@ const costOptimizationContent: SectionContent = {
       ],
     },
     {
-      subhead: 'Executive-ready framing',
+      subhead: 'Executive-Ready Framing',
       items: [
         'Unlocking trapped value through surgical cost alignment',
         'Infusing liquidity via precision-tuned support model transformation',
@@ -124,7 +124,7 @@ const operationalEfficienciesContent: SectionContent = {
   subheading: 'We re-engineer workflows across systems, teams, and processes to deliver scalability, speed, and confidence in execution.',
   groups: [
     {
-      subhead: 'Core operational Efficiency Levers',
+      subhead: 'Core Operational Efficiency Levers',
       items: [
         'Throughput Maximization',
         'Cycle Time Compression',
