@@ -46,7 +46,7 @@ export default function AboutUsPage({ onNavigate }: AboutUsPageProps) {
               }`}
               style={{ maxWidth: '900px' }}
             >
-              New Wave Associates is a strategy & general management growth consultancy that brings operator-grade expertise to help companies evolve smarter, leaner, and faster.
+              New Wave Associates is a strategy & general management growth consultancy that brings operator-grade expertise to help companies evolve. Smarter. Leaner. Faster.
             </p>
           </div>
         </div>
