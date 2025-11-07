@@ -15,6 +15,7 @@ const capabilities = [
       'Coach leaders on crisp updates',
     ],
     outcome: 'Visible burn-down of noise and risk',
+    caseStudyRoute: 'case-study-pmo',
   },
   {
     title: 'Operating Model & Org Design',
@@ -24,6 +25,7 @@ const capabilities = [
       'Reduce friction; speed up decisions',
     ],
     outcome: 'Higher throughput with fewer meetings',
+    caseStudyRoute: 'case-study-operating-model',
   },
   {
     title: 'Product, Pricing & Deal Desk',
@@ -33,6 +35,7 @@ const capabilities = [
       'Increase renewal speed and margin',
     ],
     outcome: 'Healthier pipeline-to-revenue flow',
+    caseStudyRoute: 'case-study-pricing',
   },
   {
     title: 'Post-Merger Integration & Separation',
@@ -42,6 +45,7 @@ const capabilities = [
       'Cultural + comms integration',
     ],
     outcome: 'Captured synergies without disruption',
+    caseStudyRoute: 'case-study-merger',
   },
   {
     title: 'Data, Insights & KPI Cadence',
@@ -51,6 +55,7 @@ const capabilities = [
       'Translate analytics into decisions',
     ],
     outcome: 'Faster decisions, fewer spreadsheets',
+    caseStudyRoute: 'case-study-data',
   },
   {
     title: 'Platform Modernization & Program Rescue',
@@ -60,6 +65,7 @@ const capabilities = [
       'Restore predictability',
     ],
     outcome: 'Rebuilt trust in delivery',
+    caseStudyRoute: 'case-study-platform',
   },
   {
     title: 'AI & Intelligent Automation',
@@ -69,6 +75,7 @@ const capabilities = [
       'Embed user adoption',
     ],
     outcome: 'Real capacity unlocked, sustained',
+    caseStudyRoute: 'case-study-ai',
   },
 ];
 
@@ -144,7 +151,7 @@ export default function CapabilitiesPage({ onNavigate }: CapabilitiesPageProps) 
                         Related Case Studies:
                       </p>
                       <button
-                        onClick={() => onNavigate('case-studies')}
+                        onClick={() => onNavigate(capability.caseStudyRoute)}
                         className="text-[#01A3DB] hover:text-[#0182b3] underline text-sm transition-colors"
                       >
                         View related case studies →
