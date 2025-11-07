@@ -31,7 +31,7 @@ export default function Footer() {
         </div>
         <div className="pt-3 border-t border-white/10">
           <p className="text-xs text-gray-300">
-            © New Wave Associates LLC. All rights reserved.
+            © New Wave <span className="text-[10px]">Associates</span> LLC. All rights reserved.
           </p>
         </div>
       </div>
