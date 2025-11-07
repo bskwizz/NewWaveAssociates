@@ -8,7 +8,7 @@ export default function Footer() {
           <div>
             <div className="flex items-center gap-2 mb-1">
               <img
-                src="/New Wave Associates Square-2.png"
+                src="/Copy of New Wave Associates Horizontal copy.png"
                 alt="New Wave Associates Logo"
                 className="h-16 w-auto"
               />
