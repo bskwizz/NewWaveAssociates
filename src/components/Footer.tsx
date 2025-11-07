@@ -6,11 +6,17 @@ export default function Footer() {
       <div className="max-w-7xl mx-auto px-6">
         <div className="mb-3 flex flex-col md:flex-row justify-between items-start gap-4">
           <div>
-            <img
-              src="/New Wave Associates Horizontal.png"
-              alt="New Wave Associates"
-              className="h-24 mb-1"
-            />
+            <div className="flex items-center gap-2 mb-1">
+              <img
+                src="/New Wave Associates Square-2.png"
+                alt="New Wave Associates Logo"
+                className="h-16 w-auto"
+              />
+              <div className="text-white font-medium leading-tight" style={{ fontFamily: 'Avenir, sans-serif' }}>
+                <div className="text-lg">NEW WAVE</div>
+                <div className="text-base">ASSOCIATES</div>
+              </div>
+            </div>
             <p className="text-xs text-gray-300 w-full md:w-auto max-w-md leading-relaxed">
               New Wave Associates is a strategy & general management growth consultancy that brings operator-grade expertise to help companies evolve.
               <br />
@@ -31,7 +37,7 @@ export default function Footer() {
         </div>
         <div className="pt-3 border-t border-white/10">
           <p className="text-xs text-gray-300">
-            © New Wave <span className="text-[10px]">Associates</span> LLC. All rights reserved.
+            © New Wave Associates LLC. All rights reserved.
           </p>
         </div>
       </div>
