@@ -40,7 +40,7 @@ export default function Navigation({ currentPage, onNavigate }: NavigationProps)
               alt="New Wave Associates Logo"
               className="h-12 w-auto"
             />
-            <div className="text-[#38495D] font-semibold text-sm hidden sm:block" style={{ fontFamily: 'Avenir, sans-serif' }}>
+            <div className="text-[#38495D] font-medium text-sm hidden sm:block leading-tight" style={{ fontFamily: 'Avenir, sans-serif' }}>
               <div>NEW WAVE</div>
               <div>ASSOCIATES</div>
             </div>
