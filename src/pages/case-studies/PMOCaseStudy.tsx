@@ -27,7 +27,7 @@ export default function PMOCaseStudy({ onNavigate }: PMOCaseStudyProps) {
           <div className="max-w-7xl mx-auto px-6 py-20">
             <div className={`transition-opacity duration-1000 ${fadeIn ? 'opacity-100' : 'opacity-0'}`}>
               <h1 className="text-5xl font-bold text-[#38495D] mb-4">
-                PMO Installation
+                PMO Framework & Delivery Model Implementation
               </h1>
               <p className="text-lg text-[#38495D] mb-2">
                 Case Study
@@ -39,7 +39,7 @@ export default function PMOCaseStudy({ onNavigate }: PMOCaseStudyProps) {
               <div className="bg-white/90 backdrop-blur-sm border border-gray-200 rounded-lg p-8 mb-8 shadow-lg max-w-4xl">
                 <h2 className="text-xl font-bold text-[#38495D] mb-4">Executive Summary</h2>
                 <p className="text-gray-700 leading-relaxed">
-                  A mid-sized technology company experiencing rapid growth needed to establish a formal Program Management Office (PMO) to bring structure, visibility, and accountability to their transformation initiatives. With multiple concurrent projects competing for resources and limited executive visibility into progress and risks, the organization was struggling to deliver on strategic priorities. New Wave Associates partnered with the leadership team to design and implement a lightweight, operator-friendly PMO that aligned strategy with execution, established clear governance rhythms, and built internal capability for sustainable program delivery.
+                  A technology SaaS company needed a standardized PMO framework to ensure consistent delivery quality, predictable timelines, and cross-department coordination for enterprise-scale implementations, especially as they brought on their largest client (&gt;500K ARR). The goal was to transform delivery from reactive firefighting to proactive execution with visibility and accountability.
                 </p>
               </div>
 
@@ -78,7 +78,7 @@ export default function PMOCaseStudy({ onNavigate }: PMOCaseStudyProps) {
               </h2>
               <div className="space-y-4 text-gray-700 leading-relaxed text-lg">
                 <p>
-                  The company had grown from 200 to 500 employees in 18 months through a combination of organic growth and two strategic acquisitions. While revenue was strong, the leadership team recognized that their informal approach to managing initiatives was no longer sustainable.
+                  While revenue was strong, the leadership team recognized that their informal approach to managing initiatives was no longer sustainable.
                 </p>
                 <p>
                   Key challenges included:
@@ -86,23 +86,23 @@ export default function PMOCaseStudy({ onNavigate }: PMOCaseStudyProps) {
                 <ul className="space-y-3 ml-6">
                   <li className="flex items-start">
                     <span className="inline-block w-2 h-2 bg-[#01A3DB] rounded-full mt-2 mr-3 flex-shrink-0"></span>
-                    <span>No single source of truth for active projects, their status, or resource allocation</span>
+                    <span>No formal PMO structure governing project delivery or customer communication</span>
                   </li>
                   <li className="flex items-start">
                     <span className="inline-block w-2 h-2 bg-[#01A3DB] rounded-full mt-2 mr-3 flex-shrink-0"></span>
-                    <span>Limited visibility into risks and dependencies across workstreams</span>
+                    <span>Project plans tracked inconsistently across consultants, leading to scope drift and timeline slippage</span>
                   </li>
                   <li className="flex items-start">
                     <span className="inline-block w-2 h-2 bg-[#01A3DB] rounded-full mt-2 mr-3 flex-shrink-0"></span>
-                    <span>Inconsistent status reporting leading to surprises in executive meetings</span>
+                    <span>Technical resources lacked coordinated scheduling or accountability</span>
                   </li>
                   <li className="flex items-start">
                     <span className="inline-block w-2 h-2 bg-[#01A3DB] rounded-full mt-2 mr-3 flex-shrink-0"></span>
-                    <span>Project teams working in silos without clear prioritization framework</span>
+                    <span>Leadership lacked visibility into project status, risk, and resource utilization</span>
                   </li>
                   <li className="flex items-start">
                     <span className="inline-block w-2 h-2 bg-[#01A3DB] rounded-full mt-2 mr-3 flex-shrink-0"></span>
-                    <span>No established process for escalating blockers or making tradeoff decisions</span>
+                    <span>Go-live dates often missed due to poor cross-functional alignment</span>
                   </li>
                 </ul>
               </div>
@@ -119,19 +119,23 @@ export default function PMOCaseStudy({ onNavigate }: PMOCaseStudyProps) {
                 <ul className="space-y-3 ml-6">
                   <li className="flex items-start">
                     <span className="inline-block w-2 h-2 bg-[#01A3DB] rounded-full mt-2 mr-3 flex-shrink-0"></span>
-                    <span><strong>Assessment & Design (Weeks 1-3):</strong> Interviewed stakeholders across the organization to understand current state pain points, catalogued all active initiatives, and designed a lightweight PMO framework tailored to the company's culture and maturity level.</span>
+                    <span>Designed and operationalized a full PMO structure using GuideCX as the core delivery platform</span>
                   </li>
                   <li className="flex items-start">
                     <span className="inline-block w-2 h-2 bg-[#01A3DB] rounded-full mt-2 mr-3 flex-shrink-0"></span>
-                    <span><strong>Quick Wins & Governance Setup (Weeks 4-8):</strong> Established a single source of truth for project portfolio in a lightweight tool, created standardized status reporting templates, and launched weekly steering committee meetings with clear decision-making protocols.</span>
+                    <span>Built standardized project templates, milestone definitions, and communication cadences</span>
                   </li>
                   <li className="flex items-start">
                     <span className="inline-block w-2 h-2 bg-[#01A3DB] rounded-full mt-2 mr-3 flex-shrink-0"></span>
-                    <span><strong>Capability Building (Weeks 9-16):</strong> Coached project leads on effective status updates and risk management, created prioritization framework and resource allocation process, and built dashboards for executive visibility.</span>
+                    <span>Created a resource bench of technical SMEs to support integrations (NetSuite, HubSpot, Avalara, etc)</span>
                   </li>
                   <li className="flex items-start">
                     <span className="inline-block w-2 h-2 bg-[#01A3DB] rounded-full mt-2 mr-3 flex-shrink-0"></span>
-                    <span><strong>Transition & Sustainability (Weeks 17-20):</strong> Hired and onboarded permanent PMO Director, documented playbooks and processes, and transitioned day-to-day operations to internal team.</span>
+                    <span>Established project governance including kickoff protocols, weekly stand-ups, risk logs, and executive steering cadence</span>
+                  </li>
+                  <li className="flex items-start">
+                    <span className="inline-block w-2 h-2 bg-[#01A3DB] rounded-full mt-2 mr-3 flex-shrink-0"></span>
+                    <span>Defined UAT readiness gates and formal go-live checklists to ensure accountability and predictability</span>
                   </li>
                 </ul>
               </div>
@@ -143,33 +147,30 @@ export default function PMOCaseStudy({ onNavigate }: PMOCaseStudyProps) {
               </h2>
               <div className="space-y-4 text-gray-700 leading-relaxed text-lg">
                 <p>
-                  Within 5 months, the company had a fully functioning PMO that transformed how they managed strategic initiatives:
+                  Within 3 months, the company had a fully functioning PMO that transformed how they managed strategic initiatives:
                 </p>
-                <ul className="space-y-3 ml-6 mb-6">
+                <ul className="space-y-3 ml-6">
                   <li className="flex items-start">
                     <span className="inline-block w-2 h-2 bg-[#01A3DB] rounded-full mt-2 mr-3 flex-shrink-0"></span>
-                    <span>100% of active projects now tracked in centralized system with weekly status updates</span>
+                    <span>Established scalable delivery framework supporting enterprise client growth</span>
                   </li>
                   <li className="flex items-start">
                     <span className="inline-block w-2 h-2 bg-[#01A3DB] rounded-full mt-2 mr-3 flex-shrink-0"></span>
-                    <span>Executive team meeting time spent on status updates reduced by 60%</span>
+                    <span>Enabled predictable, data-driven project execution for all implementations</span>
                   </li>
                   <li className="flex items-start">
                     <span className="inline-block w-2 h-2 bg-[#01A3DB] rounded-full mt-2 mr-3 flex-shrink-0"></span>
-                    <span>Project delivery predictability improved from 45% to 85% on-time completion</span>
+                    <span>Strengthened cross-functional collaboration between PS, Integration, & CS</span>
                   </li>
                   <li className="flex items-start">
                     <span className="inline-block w-2 h-2 bg-[#01A3DB] rounded-full mt-2 mr-3 flex-shrink-0"></span>
-                    <span>Clear escalation paths reduced average blocker resolution time from 3 weeks to 5 days</span>
+                    <span>Reduced delivery risk and enhanced customer retention & referenceability</span>
                   </li>
                   <li className="flex items-start">
                     <span className="inline-block w-2 h-2 bg-[#01A3DB] rounded-full mt-2 mr-3 flex-shrink-0"></span>
-                    <span>Resource conflicts identified and resolved proactively rather than reactively</span>
+                    <span>Formed the foundation for future automation and AI-driven delivery insights</span>
                   </li>
                 </ul>
-                <p>
-                  The newly hired PMO Director successfully maintained and evolved the processes, with the New Wave team providing ongoing advisory support for the first 90 days post-transition.
-                </p>
               </div>
             </div>
 
