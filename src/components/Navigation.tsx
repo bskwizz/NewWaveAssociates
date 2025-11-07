@@ -33,7 +33,7 @@ export default function Navigation({ currentPage, onNavigate }: NavigationProps)
         <div className="flex items-center justify-between">
           <button
             onClick={() => onNavigate('home')}
-            className="flex items-center gap-1.5 hover:opacity-80 transition-opacity"
+            className="flex items-center gap-2 hover:opacity-80 transition-opacity"
           >
             <img
               src="/New Wave Associates Square-2.png"
