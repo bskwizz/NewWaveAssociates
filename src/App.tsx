@@ -6,6 +6,7 @@ import FlywheelPage from './pages/FlywheelPage';
 import CapabilitiesPage from './pages/CapabilitiesPage';
 import AboutUsPage from './pages/AboutUsPage';
 import ContactUsPage from './pages/ContactUsPage';
+import CaseStudiesPage from './pages/CaseStudiesPage';
 
 function App() {
   const [currentPage, setCurrentPage] = useState('home');
@@ -26,6 +27,8 @@ function App() {
         return <AboutUsPage onNavigate={setCurrentPage} />;
       case 'contact-us':
         return <ContactUsPage />;
+      case 'case-studies':
+        return <CaseStudiesPage onNavigate={setCurrentPage} />;
       default:
         return <HomePage onNavigate={setCurrentPage} />;
     }
