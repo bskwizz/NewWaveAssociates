@@ -41,8 +41,8 @@ export default function Navigation({ currentPage, onNavigate }: NavigationProps)
               className="h-12 w-auto"
             />
             <div className="text-[#38495D] font-semibold text-sm hidden sm:block" style={{ fontFamily: 'Avenir, sans-serif' }}>
-              <div>New Wave</div>
-              <div>Associates</div>
+              <div>NEW WAVE</div>
+              <div>ASSOCIATES</div>
             </div>
           </button>
 
