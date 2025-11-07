@@ -6,7 +6,13 @@ import FlywheelPage from './pages/FlywheelPage';
 import CapabilitiesPage from './pages/CapabilitiesPage';
 import AboutUsPage from './pages/AboutUsPage';
 import ContactUsPage from './pages/ContactUsPage';
-import CaseStudiesPage from './pages/CaseStudiesPage';
+import PMOCaseStudy from './pages/case-studies/PMOCaseStudy';
+import OperatingModelCaseStudy from './pages/case-studies/OperatingModelCaseStudy';
+import PricingCaseStudy from './pages/case-studies/PricingCaseStudy';
+import MergerCaseStudy from './pages/case-studies/MergerCaseStudy';
+import DataInsightsCaseStudy from './pages/case-studies/DataInsightsCaseStudy';
+import PlatformModernizationCaseStudy from './pages/case-studies/PlatformModernizationCaseStudy';
+import AICaseStudy from './pages/case-studies/AICaseStudy';
 
 function App() {
   const [currentPage, setCurrentPage] = useState('home');
@@ -27,8 +33,20 @@ function App() {
         return <AboutUsPage onNavigate={setCurrentPage} />;
       case 'contact-us':
         return <ContactUsPage />;
-      case 'case-studies':
-        return <CaseStudiesPage onNavigate={setCurrentPage} />;
+      case 'case-study-pmo':
+        return <PMOCaseStudy onNavigate={setCurrentPage} />;
+      case 'case-study-operating-model':
+        return <OperatingModelCaseStudy onNavigate={setCurrentPage} />;
+      case 'case-study-pricing':
+        return <PricingCaseStudy onNavigate={setCurrentPage} />;
+      case 'case-study-merger':
+        return <MergerCaseStudy onNavigate={setCurrentPage} />;
+      case 'case-study-data':
+        return <DataInsightsCaseStudy onNavigate={setCurrentPage} />;
+      case 'case-study-platform':
+        return <PlatformModernizationCaseStudy onNavigate={setCurrentPage} />;
+      case 'case-study-ai':
+        return <AICaseStudy onNavigate={setCurrentPage} />;
       default:
         return <HomePage onNavigate={setCurrentPage} />;
     }
