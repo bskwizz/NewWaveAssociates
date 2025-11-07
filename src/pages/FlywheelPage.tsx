@@ -356,7 +356,7 @@ export default function FlywheelPage() {
               alt="New Wave Flywheel"
             />
             <div
-              className={`flywheel-overlay flywheel-overlay--gtm transition-opacity duration-700 ${
+              className={`flywheel-overlay flywheel-overlay--gtm transition-opacity duration-1400 ${
                 fadeInGtm ? 'opacity-0' : 'opacity-100'
               }`}
             ></div>
@@ -375,7 +375,7 @@ export default function FlywheelPage() {
               }}
             ></a>
             <div
-              className={`flywheel-overlay flywheel-overlay--cost transition-opacity duration-700 ${
+              className={`flywheel-overlay flywheel-overlay--cost transition-opacity duration-1400 ${
                 fadeInCost ? 'opacity-0' : 'opacity-100'
               }`}
             ></div>
@@ -394,7 +394,7 @@ export default function FlywheelPage() {
               }}
             ></a>
             <div
-              className={`flywheel-overlay flywheel-overlay--ops transition-opacity duration-700 ${
+              className={`flywheel-overlay flywheel-overlay--ops transition-opacity duration-1400 ${
                 fadeInOps ? 'opacity-0' : 'opacity-100'
               }`}
             ></div>
