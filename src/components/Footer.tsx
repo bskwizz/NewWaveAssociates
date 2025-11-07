@@ -20,7 +20,7 @@ export default function Footer() {
           <div className="flex items-center gap-3">
             <span className="text-sm text-gray-300">Find Us Online</span>
             <a
-              href="https://linkedin.com"
+              href="https://www.linkedin.com/company/new-wave-associates/"
               target="_blank"
               rel="noopener noreferrer"
               className="w-8 h-8 bg-white/10 rounded-full flex items-center justify-center hover:bg-[#01A3DB] transition-colors"
