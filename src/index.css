@@ -527,24 +527,36 @@ html {
   pointer-events: none;
 }
 
-/* ==== Case Study Hubs: Shared Styles ==== */
+/* ==== Case Study Hubs: Shared Styles (compact hero) ==== */
 .cs-hero {
-  padding: 64px 20px 28px;
-  background: linear-gradient(180deg,#FFFFFF 0%, #F8FBFD 100%);
+  position: relative;
+  padding: 28px 20px;
   border-bottom: 1px solid rgba(0,0,0,.06);
+  background: linear-gradient(180deg,#FFFFFF 0%, #F8FBFD 100%);
 }
-.cs-hero .wrap { max-width: 1100px; margin: 0 auto; }
-.cs-hero h1 { margin: 0 0 10px; font-weight: 800; letter-spacing:.2px; color:#38495D; }
+.cs-hero.has-image {
+  min-height: 28vh;
+  padding: 24px 20px;
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+}
+.cs-hero.has-image::after {
+  content: "";
+  position: absolute; inset: 0;
+  background: linear-gradient(180deg, rgba(255,255,255,0.78) 0%, rgba(255,255,255,0.88) 70%, rgba(255,255,255,0.95) 100%);
+  pointer-events: none;
+}
+.cs-hero .wrap { position: relative; z-index: 1; max-width: 1100px; margin: 0 auto; }
+.cs-hero h1 { margin: 0 0 8px; font-weight: 800; letter-spacing:.2px; color:#38495D; }
 .cs-hero p  { margin: 0; color:#4f5e6d; max-width: 900px; }
 
-.cs-breadcrumbs {
-  font-size: .9rem; margin-bottom: 10px; color:#6a7886;
-}
+.cs-breadcrumbs { font-size: .9rem; margin-bottom: 8px; color:#6a7886; }
 .cs-breadcrumbs a { color:#6a7886; text-decoration:none; }
 .cs-breadcrumbs a:hover { text-decoration:underline; }
 
 .cs-grid {
-  max-width: 1100px; margin: 26px auto 80px; padding: 0 20px;
+  max-width: 1100px; margin: 22px auto 72px; padding: 0 20px;
   display: grid; gap: 18px;
   grid-template-columns: repeat( auto-fit, minmax(280px,1fr) );
 }
@@ -557,7 +569,7 @@ html {
   transition: transform .18s ease, box-shadow .18s ease;
 }
 .cs-card:hover { transform: translateY(-2px); box-shadow: 0 8px 24px rgba(0,0,0,.06); }
-.cs-card__img { aspect-ratio: 16/9; background:#e9f4fa; object-fit: cover; width:100%; }
+.cs-card__img { aspect-ratio: 16/9; object-fit: cover; width:100%; background:#e9f4fa; }
 .cs-card__body { padding: 16px 16px 18px; }
 .cs-card__eyebrow { font-size:.8rem; color:#6a7886; margin:0 0 6px; text-transform:uppercase; letter-spacing:.04em; }
 .cs-card__title { margin:0 0 8px; font-weight: 700; color:#38495D; }
@@ -567,6 +579,6 @@ html {
 .cs-card__link:hover { text-decoration: underline; }
 
 .cs-empty {
-  max-width: 900px; margin: 32px auto 80px; padding: 18px 20px;
+  max-width: 900px; margin: 24px auto 64px; padding: 16px 18px;
   background: #fff; border:1px dashed rgba(0,0,0,.15); border-radius:12px; color:#4f5e6d;
 }
