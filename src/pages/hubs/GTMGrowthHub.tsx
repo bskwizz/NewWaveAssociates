@@ -19,47 +19,47 @@ export default function GTMGrowthHub({ onNavigate }: GTMGrowthHubProps) {
 
       <section className="cs-grid">
         <article className="cs-card">
-          <img className="cs-card__img" src="https://images.unsplash.com/photo-1600880292203-757bb62b4baf?w=1600&h=900&fit=crop" alt="GTM redesign for B2B services" />
+          <img className="cs-card__img" src="https://images.unsplash.com/photo-1551288049-bebda4e38f71?w=1600&h=900&fit=crop" alt="Pricing & Packaging" />
           <div className="cs-card__body">
-            <p className="cs-card__eyebrow">ICP & Pipeline</p>
-            <h3 className="cs-card__title">GTM Redesign for a B2B Services Firm</h3>
-            <p className="cs-card__text">Segmented ICPs, rebuilt value props, and re-sequenced funnel to lift qualified pipeline.</p>
-            <p className="cs-card__meta">Outcome: +28% SQLs, higher win rate.</p>
+            <p className="cs-card__eyebrow">Pricing & Packaging</p>
+            <h3 className="cs-card__title">Pricing & Packaging Transformation for $150M SaaS</h3>
+            <p className="cs-card__text">Rebuilt packaging, pricing guardrails, and Deal Desk to align value with margin discipline.</p>
+            <p className="cs-card__meta">Outcome: +20% ASP, −10% churn, faster approvals with less discount variance.</p>
           </div>
-          <a className="cs-card__link" href="#" onClick={(e) => { e.preventDefault(); onNavigate('case-study-gtm'); }}>Read full case →</a>
+          <a className="cs-card__link" href="#" onClick={(e) => { e.preventDefault(); onNavigate('case-studies/gtm-pricing-packaging'); }}>Read full case →</a>
         </article>
 
         <article className="cs-card">
-          <img className="cs-card__img" src="https://images.unsplash.com/photo-1551288049-bebda4e38f71?w=1600&h=900&fit=crop" alt="Pricing normalization and channel mix optimization" />
+          <img className="cs-card__img" src="https://images.unsplash.com/photo-1600880292203-757bb62b4baf?w=1600&h=900&fit=crop" alt="GTM Architecture" />
           <div className="cs-card__body">
-            <p className="cs-card__eyebrow">Pricing & Channels</p>
-            <h3 className="cs-card__title">Pricing Normalization & Channel Mix</h3>
-            <p className="cs-card__text">Instituted pricing guardrails and channel strategy tied to margin thresholds.</p>
-            <p className="cs-card__meta">Outcome: ARR uplift with disciplined CAC.</p>
+            <p className="cs-card__eyebrow">GTM Architecture</p>
+            <h3 className="cs-card__title">Allbound GTM Model for $150M SaaS</h3>
+            <p className="cs-card__text">Unified inbound/outbound/partner motions with a single customer-journey model and RevOps cadence.</p>
+            <p className="cs-card__meta">Outcome: +10% ARR YoY, −20% CAC, faster cycle times.</p>
           </div>
-          <a className="cs-card__link" href="#" onClick={(e) => { e.preventDefault(); onNavigate('case-study-pricing'); }}>Read full case →</a>
+          <a className="cs-card__link" href="#" onClick={(e) => { e.preventDefault(); onNavigate('case-studies/gtm-allbound-model'); }}>Read full case →</a>
         </article>
 
         <article className="cs-card">
-          <img className="cs-card__img" src="https://images.unsplash.com/photo-1557804506-669a67965ba0?w=1600&h=900&fit=crop" alt="Campaign velocity and orchestration" />
+          <img className="cs-card__img" src="https://images.unsplash.com/photo-1557804506-669a67965ba0?w=1600&h=900&fit=crop" alt="Vertical GTM" />
           <div className="cs-card__body">
-            <p className="cs-card__eyebrow">Demand Velocity</p>
-            <h3 className="cs-card__title">Campaign Velocity & Orchestration</h3>
-            <p className="cs-card__text">Introduced agile cadence and channel-mix optimization for consistent demand generation.</p>
-            <p className="cs-card__meta">Outcome: stable MQL flow, faster cycle time.</p>
+            <p className="cs-card__eyebrow">Vertical GTM</p>
+            <h3 className="cs-card__title">Vertical Incubation & Expansion for $4B SaaS</h3>
+            <p className="cs-card__text">Built a vertical incubation framework and launched five industry plays with product + field alignment.</p>
+            <p className="cs-card__meta">Outcome: +$25M ARR, faster cycles, tighter discount discipline.</p>
           </div>
-          <a className="cs-card__link" href="#" onClick={(e) => { e.preventDefault(); onNavigate('case-study-gtm'); }}>Read full case →</a>
+          <a className="cs-card__link" href="#" onClick={(e) => { e.preventDefault(); onNavigate('case-studies/gtm-vertical-incubation'); }}>Read full case →</a>
         </article>
 
         <article className="cs-card">
-          <img className="cs-card__img" src="https://images.unsplash.com/photo-1454165804606-c3d57bc86b40?w=1600&h=900&fit=crop" alt="Lead-to-cash process engineering" />
+          <img className="cs-card__img" src="https://images.unsplash.com/photo-1454165804606-c3d57bc86b40?w=1600&h=900&fit=crop" alt="Revenue Integrity" />
           <div className="cs-card__body">
-            <p className="cs-card__eyebrow">RevOps</p>
-            <h3 className="cs-card__title">Lead-to-Cash Process Engineering</h3>
-            <p className="cs-card__text">Rewired L2C workflows to reduce friction across Marketing, Sales, and Finance.</p>
-            <p className="cs-card__meta">Outcome: higher conversion, cleaner data.</p>
+            <p className="cs-card__eyebrow">Revenue Integrity</p>
+            <h3 className="cs-card__title">Revenue Visibility & Leakage Mitigation for $1B MSP</h3>
+            <p className="cs-card__text">Standardized item master, unified reporting, and minimum-margin governance to stop silent leakage.</p>
+            <p className="cs-card__meta">Outcome: ~$3M leakage recovered, +$500k EBITDA year 1, 6–10 FTE overhead saved.</p>
           </div>
-          <a className="cs-card__link" href="#" onClick={(e) => { e.preventDefault(); onNavigate('case-study-gtm'); }}>Read full case →</a>
+          <a className="cs-card__link" href="#" onClick={(e) => { e.preventDefault(); onNavigate('case-studies/gtm-revenue-visibility'); }}>Read full case →</a>
         </article>
       </section>
     </div>

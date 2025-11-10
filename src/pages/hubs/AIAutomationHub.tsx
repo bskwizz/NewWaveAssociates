@@ -19,25 +19,25 @@ export default function AIAutomationHub({ onNavigate }: AIAutomationHubProps) {
 
       <section className="cs-grid">
         <article className="cs-card">
-          <img className="cs-card__img" src="https://images.unsplash.com/photo-1677442136019-21780ecad995?w=1600&h=900&fit=crop" alt="AI-augmented operations" />
+          <img className="cs-card__img" src="https://images.unsplash.com/photo-1554224155-8d04cb21cd6c?w=1600&h=900&fit=crop" alt="AP Automation" />
           <div className="cs-card__body">
-            <p className="cs-card__eyebrow">AI-Augmented Ops</p>
-            <h3 className="cs-card__title">Cognitive Triage & Routing</h3>
-            <p className="cs-card__text">Deployed LLM-driven classification and routing to eliminate manual queues.</p>
-            <p className="cs-card__meta">Outcome: 10× speed, fewer errors.</p>
+            <p className="cs-card__eyebrow">AP Automation</p>
+            <h3 className="cs-card__title">AP Automation & Payments for a $1B Tech Reseller</h3>
+            <p className="cs-card__text">Deployed an enterprise AP platform (OCR → match → approve → pay) with auditability and vendor self-service.</p>
+            <p className="cs-card__meta">Outcome: Processing cost ↓ to $1–$2/invoice, ~65% FTE efficiency, 6–9 month payback.</p>
           </div>
-          <a className="cs-card__link" href="#" onClick={(e) => { e.preventDefault(); onNavigate('case-study-ai'); }}>Read full case →</a>
+          <a className="cs-card__link" href="#" onClick={(e) => { e.preventDefault(); onNavigate('case-studies/automation-ap-makeover'); }}>Read full case →</a>
         </article>
 
         <article className="cs-card">
-          <img className="cs-card__img" src="https://images.unsplash.com/photo-1531746790731-6c087fecd65a?w=1600&h=900&fit=crop" alt="Automation modernization" />
+          <img className="cs-card__img" src="https://images.unsplash.com/photo-1460925895917-afdab827c52f?w=1600&h=900&fit=crop" alt="AR Automation" />
           <div className="cs-card__body">
-            <p className="cs-card__eyebrow">Automation Stack</p>
-            <h3 className="cs-card__title">RPA to Intelligent Automation Refresh</h3>
-            <p className="cs-card__text">Modernized bot fleet, added governance, and instrumented performance dashboards.</p>
-            <p className="cs-card__meta">Outcome: sustainable automation ROI.</p>
+            <p className="cs-card__eyebrow">AR Automation</p>
+            <h3 className="cs-card__title">AR Automation for a $1B Tech Reseller</h3>
+            <p className="cs-card__text">Prioritized collections, automated dunning, cash application, and dispute resolution with credit analytics.</p>
+            <p className="cs-card__meta">Outcome: 40–60% cost-to-collect reduction, DSO ↓ 5–15 days, 6–9 month payback.</p>
           </div>
-          <a className="cs-card__link" href="#" onClick={(e) => { e.preventDefault(); onNavigate('case-study-ai'); }}>Read full case →</a>
+          <a className="cs-card__link" href="#" onClick={(e) => { e.preventDefault(); onNavigate('case-studies/automation-ar-acceleration'); }}>Read full case →</a>
         </article>
 
         <article className="cs-card">
@@ -45,10 +45,10 @@ export default function AIAutomationHub({ onNavigate }: AIAutomationHubProps) {
           <div className="cs-card__body">
             <p className="cs-card__eyebrow">Governance & Observability</p>
             <h3 className="cs-card__title">Automation Governance & Observability</h3>
-            <p className="cs-card__text">Established adoption governance and metrics to track performance and reliability.</p>
-            <p className="cs-card__meta">Outcome: resilient, scalable automation.</p>
+            <p className="cs-card__text">Built adoption governance, run-state KPIs, and issue triage across bots and AI workflows.</p>
+            <p className="cs-card__meta">Outcome: Sustainable automation ROI with measurable reliability and throughput gains.</p>
           </div>
-          <a className="cs-card__link" href="#" onClick={(e) => { e.preventDefault(); onNavigate('case-study-ai'); }}>Read full case →</a>
+          <a className="cs-card__link" href="#" onClick={(e) => { e.preventDefault(); onNavigate('case-studies/automation-governance'); }}>Read full case →</a>
         </article>
       </section>
     </div>
