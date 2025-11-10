@@ -22,7 +22,7 @@ const capabilities = [
     id: 'cap-gtm-growth',
     title: 'Go-to-Market (GTM) & Growth Optimization',
     points: [
-      'Redesign commercial architecture around ICPs, segment clarity, and measurable revenue pathways.',
+      'Redesign commercial architecture around Perfect-Customer-Profile, segment clarity, and measurable revenue pathways.',
       'Activate demand through channel-mix optimization, pricing discipline, and campaign velocity modeling.',
       'Embed an agile GTM operating rhythm that unites marketing, sales, and customer success.',
     ],
