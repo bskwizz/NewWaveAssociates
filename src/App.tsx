@@ -18,7 +18,6 @@ import LaborStrategyCaseStudy from './pages/case-studies/LaborStrategyCaseStudy'
 import SGACaseStudy from './pages/case-studies/SGACaseStudy';
 import APAutomationCaseStudy from './pages/case-studies/APAutomationCaseStudy';
 import ARAutomationCaseStudy from './pages/case-studies/ARAutomationCaseStudy';
-import AutomationGovernanceCaseStudy from './pages/case-studies/AutomationGovernanceCaseStudy';
 import PricingPackagingCaseStudy from './pages/case-studies/PricingPackagingCaseStudy';
 import AllboundGTMCaseStudy from './pages/case-studies/AllboundGTMCaseStudy';
 import VerticalIncubationCaseStudy from './pages/case-studies/VerticalIncubationCaseStudy';
@@ -83,8 +82,6 @@ function App() {
         return <APAutomationCaseStudy onNavigate={setCurrentPage} />;
       case 'case-studies/automation-ar-acceleration':
         return <ARAutomationCaseStudy onNavigate={setCurrentPage} />;
-      case 'case-studies/automation-governance':
-        return <AutomationGovernanceCaseStudy onNavigate={setCurrentPage} />;
       case 'case-studies/gtm-pricing-packaging':
         return <PricingPackagingCaseStudy onNavigate={setCurrentPage} />;
       case 'case-studies/gtm-allbound-model':

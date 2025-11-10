@@ -39,17 +39,6 @@ export default function AIAutomationHub({ onNavigate }: AIAutomationHubProps) {
           </div>
           <a className="cs-card__link" href="#" onClick={(e) => { e.preventDefault(); onNavigate('case-studies/automation-ar-acceleration'); }}>Read full case →</a>
         </article>
-
-        <article className="cs-card">
-          <img className="cs-card__img" src="https://images.unsplash.com/photo-1551288049-bebda4e38f71?w=1600&h=900&fit=crop" alt="Automation observability and governance" />
-          <div className="cs-card__body">
-            <p className="cs-card__eyebrow">Governance & Observability</p>
-            <h3 className="cs-card__title">Automation Governance & Observability</h3>
-            <p className="cs-card__text">Built adoption governance, run-state KPIs, and issue triage across bots and AI workflows.</p>
-            <p className="cs-card__meta">Outcome: Sustainable automation ROI with measurable reliability and throughput gains.</p>
-          </div>
-          <a className="cs-card__link" href="#" onClick={(e) => { e.preventDefault(); onNavigate('case-studies/automation-governance'); }}>Read full case →</a>
-        </article>
       </section>
     </div>
   );
