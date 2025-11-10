@@ -23,6 +23,11 @@ import PricingPackagingCaseStudy from './pages/case-studies/PricingPackagingCase
 import AllboundGTMCaseStudy from './pages/case-studies/AllboundGTMCaseStudy';
 import VerticalIncubationCaseStudy from './pages/case-studies/VerticalIncubationCaseStudy';
 import RevenueVisibilityCaseStudy from './pages/case-studies/RevenueVisibilityCaseStudy';
+import MultisiteSystemIntegrationCaseStudy from './pages/case-studies/MultisiteSystemIntegrationCaseStudy';
+import PartnershipTransitionCaseStudy from './pages/case-studies/PartnershipTransitionCaseStudy';
+import AgreementsStandardizationCaseStudy from './pages/case-studies/AgreementsStandardizationCaseStudy';
+import CatalogRationalizationCaseStudy from './pages/case-studies/CatalogRationalizationCaseStudy';
+import TechStackBICaseStudy from './pages/case-studies/TechStackBICaseStudy';
 import TransformationOfficeHub from './pages/hubs/TransformationOfficeHub';
 import GTMGrowthHub from './pages/hubs/GTMGrowthHub';
 import IntegrationConsolidationHub from './pages/hubs/IntegrationConsolidationHub';
@@ -83,6 +88,16 @@ function App() {
         return <VerticalIncubationCaseStudy onNavigate={setCurrentPage} />;
       case 'case-studies/gtm-revenue-visibility':
         return <RevenueVisibilityCaseStudy onNavigate={setCurrentPage} />;
+      case 'case-studies/integration-multisite-system':
+        return <MultisiteSystemIntegrationCaseStudy onNavigate={setCurrentPage} />;
+      case 'case-studies/integration-partnership-transition':
+        return <PartnershipTransitionCaseStudy onNavigate={setCurrentPage} />;
+      case 'case-studies/integration-agreements-standardization':
+        return <AgreementsStandardizationCaseStudy onNavigate={setCurrentPage} />;
+      case 'case-studies/integration-catalog-rationalization':
+        return <CatalogRationalizationCaseStudy onNavigate={setCurrentPage} />;
+      case 'case-studies/integration-techstack-bi':
+        return <TechStackBICaseStudy onNavigate={setCurrentPage} />;
       case 'hub-transformation-office':
         return <TransformationOfficeHub onNavigate={setCurrentPage} />;
       case 'hub-gtm-growth':
