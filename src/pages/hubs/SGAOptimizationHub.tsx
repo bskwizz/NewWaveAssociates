@@ -19,25 +19,25 @@ export default function SGAOptimizationHub({ onNavigate }: SGAOptimizationHubPro
 
       <section className="cs-grid">
         <article className="cs-card">
-          <img className="cs-card__img" src="https://images.unsplash.com/photo-1497366216548-37526070297c?w=1600&h=900&fit=crop" alt="Shared services realignment" />
+          <img className="cs-card__img" src="https://images.unsplash.com/photo-1497366216548-37526070297c?w=1600&h=900&fit=crop" alt="SG&A Optimization" />
           <div className="cs-card__body">
-            <p className="cs-card__eyebrow">Shared Services</p>
-            <h3 className="cs-card__title">Shared Services Realignment</h3>
-            <p className="cs-card__text">Consolidated duplicative functions into a CoE model with tiered SLAs.</p>
-            <p className="cs-card__meta">Outcome: run-rate reduction and clarity of ownership.</p>
+            <p className="cs-card__eyebrow">SG&A Optimization</p>
+            <h3 className="cs-card__title">Sub-Contracting Takeout & Capture</h3>
+            <p className="cs-card__text">Internalized subcontracted delivery and established governance to sustain cost savings.</p>
+            <p className="cs-card__meta">Outcome: $12M+ annual savings | 25% utilization lift | 8 pt margin gain</p>
           </div>
-          <a className="cs-card__link" href="#" onClick={(e) => { e.preventDefault(); onNavigate('case-study-sga'); }}>Read full case →</a>
+          <a className="cs-card__link" href="#" onClick={(e) => { e.preventDefault(); onNavigate('case-studies/sga-subcontracting-capture'); }}>Read full case →</a>
         </article>
 
         <article className="cs-card">
-          <img className="cs-card__img" src="https://images.unsplash.com/photo-1454165804606-c3d57bc86b40?w=1600&h=900&fit=crop" alt="Workflow re-engineering across back office" />
+          <img className="cs-card__img" src="https://images.unsplash.com/photo-1563013544-824ae1b704d3?w=1600&h=900&fit=crop" alt="Payment Optimization" />
           <div className="cs-card__body">
-            <p className="cs-card__eyebrow">Process Engineering</p>
-            <h3 className="cs-card__title">End-to-End Workflow Re-Engineering</h3>
-            <p className="cs-card__text">Mapped high-cost paths and redesigned handoffs with automation and rules.</p>
-            <p className="cs-card__meta">Outcome: cost-to-serve compression.</p>
+            <p className="cs-card__eyebrow">Payment Optimization</p>
+            <h3 className="cs-card__title">Virtual Card Implementation & Rebate Program</h3>
+            <p className="cs-card__text">Implemented a virtual-card program to capture rebates and streamline AP processing.</p>
+            <p className="cs-card__meta">Outcome: $4.5M annual rebate value | 35% cycle-time reduction | Working-capital gain</p>
           </div>
-          <a className="cs-card__link" href="#" onClick={(e) => { e.preventDefault(); onNavigate('case-study-sga'); }}>Read full case →</a>
+          <a className="cs-card__link" href="#" onClick={(e) => { e.preventDefault(); onNavigate('case-studies/sga-virtual-card'); }}>Read full case →</a>
         </article>
       </section>
     </div>

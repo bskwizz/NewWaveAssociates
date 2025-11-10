@@ -31,6 +31,8 @@ import TechStackBICaseStudy from './pages/case-studies/TechStackBICaseStudy';
 import ITMSPOffshoringCaseStudy from './pages/case-studies/ITMSPOffshoringCaseStudy';
 import HealthcareOffshoringCaseStudy from './pages/case-studies/HealthcareOffshoringCaseStudy';
 import HealthcareOrganizationReviewCaseStudy from './pages/case-studies/HealthcareOrganizationReviewCaseStudy';
+import SubcontractingCaptureCaseStudy from './pages/case-studies/SubcontractingCaptureCaseStudy';
+import VirtualCardCaseStudy from './pages/case-studies/VirtualCardCaseStudy';
 import TransformationOfficeHub from './pages/hubs/TransformationOfficeHub';
 import GTMGrowthHub from './pages/hubs/GTMGrowthHub';
 import IntegrationConsolidationHub from './pages/hubs/IntegrationConsolidationHub';
@@ -107,6 +109,10 @@ function App() {
         return <HealthcareOffshoringCaseStudy onNavigate={setCurrentPage} />;
       case 'case-studies/labor-healthcare-review':
         return <HealthcareOrganizationReviewCaseStudy onNavigate={setCurrentPage} />;
+      case 'case-studies/sga-subcontracting-capture':
+        return <SubcontractingCaptureCaseStudy onNavigate={setCurrentPage} />;
+      case 'case-studies/sga-virtual-card':
+        return <VirtualCardCaseStudy onNavigate={setCurrentPage} />;
       case 'hub-transformation-office':
         return <TransformationOfficeHub onNavigate={setCurrentPage} />;
       case 'hub-gtm-growth':
