@@ -16,7 +16,7 @@ const capabilities = [
       'Standardize tools, templates, and cadence to create a predictable delivery rhythm and stronger accountability.',
     ],
     outcome: 'Faster decision-making, reduced execution risk, and sustained delivery predictability across enterprise initiatives.',
-    caseStudyRoute: 'case-study-pmo',
+    caseStudyRoute: 'hub-transformation-office',
   },
   {
     id: 'cap-gtm-growth',
@@ -27,7 +27,7 @@ const capabilities = [
       'Embed an agile GTM operating rhythm that unites marketing, sales, and customer success.',
     ],
     outcome: 'Accelerated pipeline velocity, higher conversion rates, and sustained top-line growth.',
-    caseStudyRoute: 'case-study-gtm',
+    caseStudyRoute: 'hub-gtm-growth',
   },
   {
     id: 'cap-integration-consolidation',
@@ -38,7 +38,7 @@ const capabilities = [
       'Execute structured day-100, day-200, and year-one playbooks to maintain business continuity.',
     ],
     outcome: 'Faster synergy realization, unified enterprise visibility, and minimal disruption during transition.',
-    caseStudyRoute: 'case-study-merger',
+    caseStudyRoute: 'hub-integration-consolidation',
   },
   {
     id: 'cap-labor-offshoring',
@@ -49,7 +49,7 @@ const capabilities = [
       'Create performance-based vendor frameworks that preserve quality while lowering total cost.',
     ],
     outcome: 'Expanded capacity, 20–40% labor-efficiency gains, and resilient delivery coverage across time zones.',
-    caseStudyRoute: 'case-study-labor',
+    caseStudyRoute: 'hub-labor-offshoring',
   },
   {
     id: 'cap-sga-optimization',
@@ -60,7 +60,7 @@ const capabilities = [
       'Re-engineer high-cost workflows using automation and zero-based design.',
     ],
     outcome: 'Reduced run-rate spend, leaner support operations, and liberated capital for reinvestment in growth.',
-    caseStudyRoute: 'case-study-sga',
+    caseStudyRoute: 'hub-sga-optimization',
   },
   {
     id: 'cap-ai-automation',
@@ -71,7 +71,7 @@ const capabilities = [
       'Build automation governance and performance dashboards to sustain adoption.',
     ],
     outcome: '10× process speed, measurable error reduction, and scalable intelligence embedded in daily operations.',
-    caseStudyRoute: 'case-study-ai',
+    caseStudyRoute: 'hub-ai-automation',
   },
 ];
 

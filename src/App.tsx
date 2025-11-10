@@ -16,6 +16,12 @@ import AICaseStudy from './pages/case-studies/AICaseStudy';
 import GTMCaseStudy from './pages/case-studies/GTMCaseStudy';
 import LaborStrategyCaseStudy from './pages/case-studies/LaborStrategyCaseStudy';
 import SGACaseStudy from './pages/case-studies/SGACaseStudy';
+import TransformationOfficeHub from './pages/hubs/TransformationOfficeHub';
+import GTMGrowthHub from './pages/hubs/GTMGrowthHub';
+import IntegrationConsolidationHub from './pages/hubs/IntegrationConsolidationHub';
+import LaborOffshoringHub from './pages/hubs/LaborOffshoringHub';
+import SGAOptimizationHub from './pages/hubs/SGAOptimizationHub';
+import AIAutomationHub from './pages/hubs/AIAutomationHub';
 
 function App() {
   const [currentPage, setCurrentPage] = useState('home');
@@ -56,6 +62,18 @@ function App() {
         return <LaborStrategyCaseStudy onNavigate={setCurrentPage} />;
       case 'case-study-sga':
         return <SGACaseStudy onNavigate={setCurrentPage} />;
+      case 'hub-transformation-office':
+        return <TransformationOfficeHub onNavigate={setCurrentPage} />;
+      case 'hub-gtm-growth':
+        return <GTMGrowthHub onNavigate={setCurrentPage} />;
+      case 'hub-integration-consolidation':
+        return <IntegrationConsolidationHub onNavigate={setCurrentPage} />;
+      case 'hub-labor-offshoring':
+        return <LaborOffshoringHub onNavigate={setCurrentPage} />;
+      case 'hub-sga-optimization':
+        return <SGAOptimizationHub onNavigate={setCurrentPage} />;
+      case 'hub-ai-automation':
+        return <AIAutomationHub onNavigate={setCurrentPage} />;
       default:
         return <HomePage onNavigate={setCurrentPage} />;
     }
