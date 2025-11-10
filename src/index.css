@@ -567,6 +567,7 @@ html {
   overflow: hidden;
   display: flex; flex-direction: column;
   transition: transform .18s ease, box-shadow .18s ease;
+  max-width: 400px;
 }
 .cs-card:hover { transform: translateY(-2px); box-shadow: 0 8px 24px rgba(0,0,0,.06); }
 .cs-card__img { aspect-ratio: 16/9; object-fit: cover; width:100%; background:#e9f4fa; }

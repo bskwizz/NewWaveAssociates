@@ -5,10 +5,10 @@ interface SGAOptimizationHubProps {
 export default function SGAOptimizationHub({ onNavigate }: SGAOptimizationHubProps) {
   return (
     <div className="pt-16">
-      <section className="cs-hero has-image" style={{ backgroundImage: "url('https://source.unsplash.com/1600x900/?cost,efficiency,backoffice')" }}>
+      <section className="cs-hero has-image" style={{ backgroundImage: "url('https://images.unsplash.com/photo-1460925895917-afdab827c52f?w=1600&h=900&fit=crop')" }}>
         <div className="wrap">
           <div className="cs-breadcrumbs">
-            <a href="#" onClick={(e) => { e.preventDefault(); onNavigate('case-studies'); }}>Case Studies</a> · SG&A Cost Optimization
+            <a href="#" onClick={(e) => { e.preventDefault(); onNavigate('capabilities'); }}>Capabilities</a> · SG&A Cost Optimization
           </div>
           <h1>SG&A Cost Optimization Case Studies</h1>
           <p>
@@ -19,7 +19,7 @@ export default function SGAOptimizationHub({ onNavigate }: SGAOptimizationHubPro
 
       <section className="cs-grid">
         <article className="cs-card">
-          <img className="cs-card__img" src="https://source.unsplash.com/1600x900/?office,shared,services" alt="Shared services realignment" />
+          <img className="cs-card__img" src="https://images.unsplash.com/photo-1497366216548-37526070297c?w=1600&h=900&fit=crop" alt="Shared services realignment" />
           <div className="cs-card__body">
             <p className="cs-card__eyebrow">Shared Services</p>
             <h3 className="cs-card__title">Shared Services Realignment</h3>
@@ -30,7 +30,7 @@ export default function SGAOptimizationHub({ onNavigate }: SGAOptimizationHubPro
         </article>
 
         <article className="cs-card">
-          <img className="cs-card__img" src="https://source.unsplash.com/1600x900/?process,engineering,workflow" alt="Workflow re-engineering across back office" />
+          <img className="cs-card__img" src="https://images.unsplash.com/photo-1454165804606-c3d57bc86b40?w=1600&h=900&fit=crop" alt="Workflow re-engineering across back office" />
           <div className="cs-card__body">
             <p className="cs-card__eyebrow">Process Engineering</p>
             <h3 className="cs-card__title">End-to-End Workflow Re-Engineering</h3>

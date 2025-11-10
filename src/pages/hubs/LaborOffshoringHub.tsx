@@ -5,10 +5,10 @@ interface LaborOffshoringHubProps {
 export default function LaborOffshoringHub({ onNavigate }: LaborOffshoringHubProps) {
   return (
     <div className="pt-16">
-      <section className="cs-hero has-image" style={{ backgroundImage: "url('https://source.unsplash.com/1600x900/?global,team,operations')" }}>
+      <section className="cs-hero has-image" style={{ backgroundImage: "url('https://images.unsplash.com/photo-1521737711867-e3b97375f902?w=1600&h=900&fit=crop')" }}>
         <div className="wrap">
           <div className="cs-breadcrumbs">
-            <a href="#" onClick={(e) => { e.preventDefault(); onNavigate('case-studies'); }}>Case Studies</a> · Labor Strategy & Offshoring
+            <a href="#" onClick={(e) => { e.preventDefault(); onNavigate('capabilities'); }}>Capabilities</a> · Labor Strategy & Offshoring
           </div>
           <h1>Labor Strategy & Offshoring Case Studies</h1>
           <p>
@@ -19,7 +19,7 @@ export default function LaborOffshoringHub({ onNavigate }: LaborOffshoringHubPro
 
       <section className="cs-grid">
         <article className="cs-card">
-          <img className="cs-card__img" src="https://source.unsplash.com/1600x900/?support,operations,service" alt="Global delivery model for support functions" />
+          <img className="cs-card__img" src="https://images.unsplash.com/photo-1573164713714-d95e436ab8d6?w=1600&h=900&fit=crop" alt="Global delivery model for support functions" />
           <div className="cs-card__body">
             <p className="cs-card__eyebrow">Global Delivery</p>
             <h3 className="cs-card__title">Global Delivery for Support Functions</h3>
@@ -30,7 +30,7 @@ export default function LaborOffshoringHub({ onNavigate }: LaborOffshoringHubPro
         </article>
 
         <article className="cs-card">
-          <img className="cs-card__img" src="https://source.unsplash.com/1600x900/?vendor,ecosystem,contract" alt="Vendor ecosystem and performance framework" />
+          <img className="cs-card__img" src="https://images.unsplash.com/photo-1450101499163-c8848c66ca85?w=1600&h=900&fit=crop" alt="Vendor ecosystem and performance framework" />
           <div className="cs-card__body">
             <p className="cs-card__eyebrow">Vendor Model</p>
             <h3 className="cs-card__title">Vendor Ecosystem & Performance Framework</h3>
@@ -41,7 +41,7 @@ export default function LaborOffshoringHub({ onNavigate }: LaborOffshoringHubPro
         </article>
 
         <article className="cs-card">
-          <img className="cs-card__img" src="https://source.unsplash.com/1600x900/?automation,robot,process" alt="Digital labor and automation uplift" />
+          <img className="cs-card__img" src="https://images.unsplash.com/photo-1485827404703-89b55fcc595e?w=1600&h=900&fit=crop" alt="Digital labor and automation uplift" />
           <div className="cs-card__body">
             <p className="cs-card__eyebrow">Digital Labor</p>
             <h3 className="cs-card__title">Digital Labor Uplift</h3>

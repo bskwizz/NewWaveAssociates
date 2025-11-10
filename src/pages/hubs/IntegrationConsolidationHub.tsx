@@ -5,10 +5,10 @@ interface IntegrationConsolidationHubProps {
 export default function IntegrationConsolidationHub({ onNavigate }: IntegrationConsolidationHubProps) {
   return (
     <div className="pt-16">
-      <section className="cs-hero has-image" style={{ backgroundImage: "url('https://source.unsplash.com/1600x900/?merger,integration,systems')" }}>
+      <section className="cs-hero has-image" style={{ backgroundImage: "url('https://images.unsplash.com/photo-1556761175-5973dc0f32e7?w=1600&h=900&fit=crop')" }}>
         <div className="wrap">
           <div className="cs-breadcrumbs">
-            <a href="#" onClick={(e) => { e.preventDefault(); onNavigate('case-studies'); }}>Case Studies</a> · Integration & Consolidation
+            <a href="#" onClick={(e) => { e.preventDefault(); onNavigate('capabilities'); }}>Capabilities</a> · Integration & Consolidation
           </div>
           <h1>Integration & Consolidation Case Studies</h1>
           <p>
@@ -19,7 +19,7 @@ export default function IntegrationConsolidationHub({ onNavigate }: IntegrationC
 
       <section className="cs-grid">
         <article className="cs-card">
-          <img className="cs-card__img" src="https://source.unsplash.com/1600x900/?program,planning,roadmap" alt="Integration Management Office for platform roll-up" />
+          <img className="cs-card__img" src="https://images.unsplash.com/photo-1454165804606-c3d57bc86b40?w=1600&h=900&fit=crop" alt="Integration Management Office for platform roll-up" />
           <div className="cs-card__body">
             <p className="cs-card__eyebrow">IMO / Synergies</p>
             <h3 className="cs-card__title">IMO for a Multi-Site Platform Roll-Up</h3>
@@ -30,7 +30,7 @@ export default function IntegrationConsolidationHub({ onNavigate }: IntegrationC
         </article>
 
         <article className="cs-card">
-          <img className="cs-card__img" src="https://source.unsplash.com/1600x900/?product,inventory,catalog" alt="Product catalog harmonization" />
+          <img className="cs-card__img" src="https://images.unsplash.com/photo-1586528116311-ad8dd3c8310d?w=1600&h=900&fit=crop" alt="Product catalog harmonization" />
           <div className="cs-card__body">
             <p className="cs-card__eyebrow">Catalog & SKUs</p>
             <h3 className="cs-card__title">Product Catalog Harmonization</h3>
@@ -41,7 +41,7 @@ export default function IntegrationConsolidationHub({ onNavigate }: IntegrationC
         </article>
 
         <article className="cs-card">
-          <img className="cs-card__img" src="https://source.unsplash.com/1600x900/?finance,accounting,erp" alt="Financial systems consolidation" />
+          <img className="cs-card__img" src="https://images.unsplash.com/photo-1554224155-8d04cb21cd6c?w=1600&h=900&fit=crop" alt="Financial systems consolidation" />
           <div className="cs-card__body">
             <p className="cs-card__eyebrow">Finance Ops</p>
             <h3 className="cs-card__title">Financial Systems Consolidation</h3>
@@ -52,7 +52,7 @@ export default function IntegrationConsolidationHub({ onNavigate }: IntegrationC
         </article>
 
         <article className="cs-card">
-          <img className="cs-card__img" src="https://source.unsplash.com/1600x900/?sales,marketing,alignment" alt="Unified go-to-market motion post-merger" />
+          <img className="cs-card__img" src="https://images.unsplash.com/photo-1542744173-8e7e53415bb0?w=1600&h=900&fit=crop" alt="Unified go-to-market motion post-merger" />
           <div className="cs-card__body">
             <p className="cs-card__eyebrow">GTM Unification</p>
             <h3 className="cs-card__title">Unified GTM Motion Post-Merger</h3>
@@ -63,7 +63,7 @@ export default function IntegrationConsolidationHub({ onNavigate }: IntegrationC
         </article>
 
         <article className="cs-card">
-          <img className="cs-card__img" src="https://source.unsplash.com/1600x900/?operations,continuity,process" alt="Operational continuity during consolidation" />
+          <img className="cs-card__img" src="https://images.unsplash.com/photo-1560179707-f14e90ef3623?w=1600&h=900&fit=crop" alt="Operational continuity during consolidation" />
           <div className="cs-card__body">
             <p className="cs-card__eyebrow">Continuity</p>
             <h3 className="cs-card__title">Operational Continuity Through Consolidation</h3>

@@ -5,10 +5,10 @@ interface AIAutomationHubProps {
 export default function AIAutomationHub({ onNavigate }: AIAutomationHubProps) {
   return (
     <div className="pt-16">
-      <section className="cs-hero has-image" style={{ backgroundImage: "url('https://source.unsplash.com/1600x900/?ai,automation,intelligence')" }}>
+      <section className="cs-hero has-image" style={{ backgroundImage: "url('https://images.unsplash.com/photo-1677442136019-21780ecad995?w=1600&h=900&fit=crop')" }}>
         <div className="wrap">
           <div className="cs-breadcrumbs">
-            <a href="#" onClick={(e) => { e.preventDefault(); onNavigate('case-studies'); }}>Case Studies</a> · AI & Intelligent Automation
+            <a href="#" onClick={(e) => { e.preventDefault(); onNavigate('capabilities'); }}>Capabilities</a> · AI & Intelligent Automation
           </div>
           <h1>AI & Intelligent Automation Case Studies</h1>
           <p>
@@ -19,7 +19,7 @@ export default function AIAutomationHub({ onNavigate }: AIAutomationHubProps) {
 
       <section className="cs-grid">
         <article className="cs-card">
-          <img className="cs-card__img" src="https://source.unsplash.com/1600x900/?llm,nlp,classification" alt="AI-augmented operations" />
+          <img className="cs-card__img" src="https://images.unsplash.com/photo-1677442136019-21780ecad995?w=1600&h=900&fit=crop" alt="AI-augmented operations" />
           <div className="cs-card__body">
             <p className="cs-card__eyebrow">AI-Augmented Ops</p>
             <h3 className="cs-card__title">Cognitive Triage & Routing</h3>
@@ -30,7 +30,7 @@ export default function AIAutomationHub({ onNavigate }: AIAutomationHubProps) {
         </article>
 
         <article className="cs-card">
-          <img className="cs-card__img" src="https://source.unsplash.com/1600x900/?robotics,process,automation" alt="Automation modernization" />
+          <img className="cs-card__img" src="https://images.unsplash.com/photo-1531746790731-6c087fecd65a?w=1600&h=900&fit=crop" alt="Automation modernization" />
           <div className="cs-card__body">
             <p className="cs-card__eyebrow">Automation Stack</p>
             <h3 className="cs-card__title">RPA to Intelligent Automation Refresh</h3>
@@ -41,7 +41,7 @@ export default function AIAutomationHub({ onNavigate }: AIAutomationHubProps) {
         </article>
 
         <article className="cs-card">
-          <img className="cs-card__img" src="https://source.unsplash.com/1600x900/?data,observability,monitoring" alt="Automation observability and governance" />
+          <img className="cs-card__img" src="https://images.unsplash.com/photo-1551288049-bebda4e38f71?w=1600&h=900&fit=crop" alt="Automation observability and governance" />
           <div className="cs-card__body">
             <p className="cs-card__eyebrow">Governance & Observability</p>
             <h3 className="cs-card__title">Automation Governance & Observability</h3>

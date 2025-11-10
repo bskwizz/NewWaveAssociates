@@ -5,10 +5,10 @@ interface GTMGrowthHubProps {
 export default function GTMGrowthHub({ onNavigate }: GTMGrowthHubProps) {
   return (
     <div className="pt-16">
-      <section className="cs-hero has-image" style={{ backgroundImage: "url('https://source.unsplash.com/1600x900/?growth,marketing,data')" }}>
+      <section className="cs-hero has-image" style={{ backgroundImage: "url('https://images.unsplash.com/photo-1460925895917-afdab827c52f?w=1600&h=900&fit=crop')" }}>
         <div className="wrap">
           <div className="cs-breadcrumbs">
-            <a href="#" onClick={(e) => { e.preventDefault(); onNavigate('case-studies'); }}>Case Studies</a> · GTM & Growth Optimization
+            <a href="#" onClick={(e) => { e.preventDefault(); onNavigate('capabilities'); }}>Capabilities</a> · GTM & Growth Optimization
           </div>
           <h1>GTM & Growth Optimization Case Studies</h1>
           <p>
@@ -19,7 +19,7 @@ export default function GTMGrowthHub({ onNavigate }: GTMGrowthHubProps) {
 
       <section className="cs-grid">
         <article className="cs-card">
-          <img className="cs-card__img" src="https://source.unsplash.com/1600x900/?b2b,sales,team" alt="GTM redesign for B2B services" />
+          <img className="cs-card__img" src="https://images.unsplash.com/photo-1600880292203-757bb62b4baf?w=1600&h=900&fit=crop" alt="GTM redesign for B2B services" />
           <div className="cs-card__body">
             <p className="cs-card__eyebrow">ICP & Pipeline</p>
             <h3 className="cs-card__title">GTM Redesign for a B2B Services Firm</h3>
@@ -30,7 +30,7 @@ export default function GTMGrowthHub({ onNavigate }: GTMGrowthHubProps) {
         </article>
 
         <article className="cs-card">
-          <img className="cs-card__img" src="https://source.unsplash.com/1600x900/?pricing,charts" alt="Pricing normalization and channel mix optimization" />
+          <img className="cs-card__img" src="https://images.unsplash.com/photo-1551288049-bebda4e38f71?w=1600&h=900&fit=crop" alt="Pricing normalization and channel mix optimization" />
           <div className="cs-card__body">
             <p className="cs-card__eyebrow">Pricing & Channels</p>
             <h3 className="cs-card__title">Pricing Normalization & Channel Mix</h3>
@@ -41,7 +41,7 @@ export default function GTMGrowthHub({ onNavigate }: GTMGrowthHubProps) {
         </article>
 
         <article className="cs-card">
-          <img className="cs-card__img" src="https://source.unsplash.com/1600x900/?campaign,marketing,analytics" alt="Campaign velocity and orchestration" />
+          <img className="cs-card__img" src="https://images.unsplash.com/photo-1557804506-669a67965ba0?w=1600&h=900&fit=crop" alt="Campaign velocity and orchestration" />
           <div className="cs-card__body">
             <p className="cs-card__eyebrow">Demand Velocity</p>
             <h3 className="cs-card__title">Campaign Velocity & Orchestration</h3>
@@ -52,7 +52,7 @@ export default function GTMGrowthHub({ onNavigate }: GTMGrowthHubProps) {
         </article>
 
         <article className="cs-card">
-          <img className="cs-card__img" src="https://source.unsplash.com/1600x900/?crm,salesforce,revops" alt="Lead-to-cash process engineering" />
+          <img className="cs-card__img" src="https://images.unsplash.com/photo-1454165804606-c3d57bc86b40?w=1600&h=900&fit=crop" alt="Lead-to-cash process engineering" />
           <div className="cs-card__body">
             <p className="cs-card__eyebrow">RevOps</p>
             <h3 className="cs-card__title">Lead-to-Cash Process Engineering</h3>
