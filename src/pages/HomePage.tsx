@@ -54,6 +54,18 @@ export default function HomePage({ onNavigate }: HomePageProps) {
         }}></div>
         <div className="relative h-full max-w-7xl mx-auto px-6 flex items-center" aria-live="polite">
           <div id="hero-rotator" className="hero-rotator max-w-2xl">
+            <div className="mb-8 inline-block">
+              <div className="relative">
+                <div className="absolute inset-0 bg-gradient-to-r from-[#f05e00] to-[#ff8c42] blur-xl opacity-30"></div>
+                <p className="relative text-[#f05e00] text-sm md:text-base font-bold tracking-[0.2em] uppercase mb-2 animate-fade-in" style={{
+                  textShadow: '0 0 20px rgba(240, 94, 0, 0.3)',
+                  letterSpacing: '0.25em'
+                }}>
+                  The New Playbook for Operational Leaders
+                </p>
+                <div className="h-[2px] bg-gradient-to-r from-[#f05e00] via-[#ff8c42] to-transparent"></div>
+              </div>
+            </div>
             <h1 className={`hero-title text-6xl md:text-7xl font-bold text-[#38495D] mb-6 leading-tight ${isVisible ? 'is-visible' : ''}`}>
               {heroSlides[currentSlide].title}
             </h1>
