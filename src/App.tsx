@@ -16,6 +16,13 @@ import AICaseStudy from './pages/case-studies/AICaseStudy';
 import GTMCaseStudy from './pages/case-studies/GTMCaseStudy';
 import LaborStrategyCaseStudy from './pages/case-studies/LaborStrategyCaseStudy';
 import SGACaseStudy from './pages/case-studies/SGACaseStudy';
+import APAutomationCaseStudy from './pages/case-studies/APAutomationCaseStudy';
+import ARAutomationCaseStudy from './pages/case-studies/ARAutomationCaseStudy';
+import AutomationGovernanceCaseStudy from './pages/case-studies/AutomationGovernanceCaseStudy';
+import PricingPackagingCaseStudy from './pages/case-studies/PricingPackagingCaseStudy';
+import AllboundGTMCaseStudy from './pages/case-studies/AllboundGTMCaseStudy';
+import VerticalIncubationCaseStudy from './pages/case-studies/VerticalIncubationCaseStudy';
+import RevenueVisibilityCaseStudy from './pages/case-studies/RevenueVisibilityCaseStudy';
 import TransformationOfficeHub from './pages/hubs/TransformationOfficeHub';
 import GTMGrowthHub from './pages/hubs/GTMGrowthHub';
 import IntegrationConsolidationHub from './pages/hubs/IntegrationConsolidationHub';
@@ -62,6 +69,20 @@ function App() {
         return <LaborStrategyCaseStudy onNavigate={setCurrentPage} />;
       case 'case-study-sga':
         return <SGACaseStudy onNavigate={setCurrentPage} />;
+      case 'case-studies/automation-ap-makeover':
+        return <APAutomationCaseStudy onNavigate={setCurrentPage} />;
+      case 'case-studies/automation-ar-acceleration':
+        return <ARAutomationCaseStudy onNavigate={setCurrentPage} />;
+      case 'case-studies/automation-governance':
+        return <AutomationGovernanceCaseStudy onNavigate={setCurrentPage} />;
+      case 'case-studies/gtm-pricing-packaging':
+        return <PricingPackagingCaseStudy onNavigate={setCurrentPage} />;
+      case 'case-studies/gtm-allbound-model':
+        return <AllboundGTMCaseStudy onNavigate={setCurrentPage} />;
+      case 'case-studies/gtm-vertical-incubation':
+        return <VerticalIncubationCaseStudy onNavigate={setCurrentPage} />;
+      case 'case-studies/gtm-revenue-visibility':
+        return <RevenueVisibilityCaseStudy onNavigate={setCurrentPage} />;
       case 'hub-transformation-office':
         return <TransformationOfficeHub onNavigate={setCurrentPage} />;
       case 'hub-gtm-growth':
