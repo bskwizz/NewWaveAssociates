@@ -164,7 +164,7 @@ export default function PartnershipTransitionCaseStudy({ onNavigate }: Partnersh
                 <div className="flex items-center gap-3">
                   <div className="w-16 h-16 rounded-full overflow-hidden bg-gradient-to-br from-[#01A3DB] to-[#38495D]">
                     <img
-                      src="/Pictures-6.png"
+                      src="/Pictures-3.png"
                       alt="Bryan Skwirut"
                       className="w-full h-full object-cover"
                       onError={(e) => {
@@ -175,7 +175,7 @@ export default function PartnershipTransitionCaseStudy({ onNavigate }: Partnersh
                   </div>
                   <div>
                     <p className="font-semibold text-[#38495D]">Bryan Skwirut</p>
-                    <p className="text-sm text-gray-600">Managing Director</p>
+                    <p className="text-sm text-gray-600">Founding Partner</p>
                   </div>
                 </div>
               </div>

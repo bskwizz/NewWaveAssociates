@@ -201,7 +201,10 @@ export default function PMOCaseStudy({ onNavigate }: PMOCaseStudyProps) {
                       }}
                     />
                   </div>
-                  <span className="text-gray-700 font-medium">Jason Lee</span>
+                  <div>
+                    <p className="font-semibold text-[#38495D]">Jason Lee</p>
+                    <p className="text-sm text-gray-600">Founding Partner</p>
+                  </div>
                 </div>
               </div>
             </div>

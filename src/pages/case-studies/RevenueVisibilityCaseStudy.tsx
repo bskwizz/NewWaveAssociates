@@ -171,7 +171,7 @@ export default function RevenueVisibilityCaseStudy({ onNavigate }: RevenueVisibi
                   </div>
                   <div>
                     <p className="font-semibold text-[#38495D]">Jason Lee</p>
-                    <p className="text-sm text-gray-600">Managing Director</p>
+                    <p className="text-sm text-gray-600">Founding Partner</p>
                   </div>
                 </div>
               </div>
