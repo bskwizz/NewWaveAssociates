@@ -43,7 +43,7 @@ export default function HealthcareOrganizationReviewCaseStudy({ onNavigate }: He
                 Case Study
               </p>
               <p className="text-sm text-gray-600 mb-8">
-                Author: New Wave Associates | 3 minute read
+                Author: Hunter New | 3 minute read
               </p>
 
               <div className="bg-white/90 backdrop-blur-sm border border-gray-200 rounded-lg p-8 mb-8 shadow-lg max-w-4xl">
@@ -145,6 +145,31 @@ export default function HealthcareOrganizationReviewCaseStudy({ onNavigate }: He
                     <span>Standardized KPIs and governance cadence to sustain performance</span>
                   </li>
                 </ul>
+              </div>
+            </div>
+
+            <div className="border-t border-gray-200 pt-8">
+              <h3 className="text-2xl font-bold text-[#38495D] mb-6">
+                Meet The Team
+              </h3>
+              <div className="flex gap-6">
+                <div className="flex items-center gap-3">
+                  <div className="w-16 h-16 rounded-full overflow-hidden bg-gradient-to-br from-[#01A3DB] to-[#38495D]">
+                    <img
+                      src="/Pictures-5.png"
+                      alt="Hunter New"
+                      className="w-full h-full object-cover"
+                      onError={(e) => {
+                        const target = e.target as HTMLImageElement;
+                        target.style.display = 'none';
+                      }}
+                    />
+                  </div>
+                  <div>
+                    <p className="font-semibold text-[#38495D]">Hunter New</p>
+                    <p className="text-sm text-gray-600">Managing Director</p>
+                  </div>
+                </div>
               </div>
             </div>
           </div>
