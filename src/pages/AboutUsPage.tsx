@@ -6,10 +6,10 @@ interface AboutUsPageProps {
 }
 
 const teamMembers = [
-  { name: 'Craig Keller', title: 'Founding Partner', image: '/Pictures-6.png' },
-  { name: 'Hunter New', title: 'Founding Partner', image: '/Pictures-2.png' },
-  { name: 'Bryan Skwirut', title: 'Founding Partner', image: '/Pictures-3.png' },
-  { name: 'Jason Lee', title: 'Founding Partner', image: '/Pictures-4.png' },
+  { name: 'Craig Keller', title: 'Founding Partner', image: 'Pictures-6.png' },
+  { name: 'Hunter New', title: 'Founding Partner', image: 'Pictures-2.png' },
+  { name: 'Bryan Skwirut', title: 'Founding Partner', image: 'Pictures-3.png' },
+  { name: 'Jason Lee', title: 'Founding Partner', image: 'Pictures-4.png' },
 ];
 
 const differentiators = [
@@ -95,7 +95,7 @@ export default function AboutUsPage({ onNavigate }: AboutUsPageProps) {
                 >
                   <div className="aspect-square flex items-center justify-center overflow-hidden bg-white">
                     <img
-                      src={member.image}
+                      src={`${import.meta.env.BASE_URL}${member.image}`}
                       alt={member.name}
                       className="w-full h-full object-cover"
                       onError={(e) => {

@@ -164,7 +164,7 @@ export default function PartnershipTransitionCaseStudy({ onNavigate }: Partnersh
                 <div className="flex items-center gap-3">
                   <div className="w-16 h-16 rounded-full overflow-hidden bg-gradient-to-br from-[#01A3DB] to-[#38495D]">
                     <img
-                      src="/Pictures-3.png"
+                      src={`${import.meta.env.BASE_URL}Pictures-3.png`}
                       alt="Bryan Skwirut"
                       className="w-full h-full object-cover"
                       onError={(e) => {
