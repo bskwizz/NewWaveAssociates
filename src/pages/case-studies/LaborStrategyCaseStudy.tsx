@@ -1,4 +1,5 @@
 import { useRef, useEffect, useState } from 'react';
+import { ArrowLeft } from 'lucide-react';
 import CTABar from '../../components/CTABar';
 
 interface LaborStrategyCaseStudyProps {
@@ -22,6 +23,15 @@ export default function LaborStrategyCaseStudy({ onNavigate }: LaborStrategyCase
 
   return (
     <div className="pt-16">
+      <div className="max-w-7xl mx-auto px-6 pt-6">
+        <button
+          onClick={() => onNavigate('hub-labor-offshoring')}
+          className="flex items-center gap-2 text-[#01A3DB] hover:text-[#0182b3] transition-colors font-medium"
+        >
+          <ArrowLeft size={20} />
+          Back to Labor Strategy & Offshoring
+        </button>
+      </div>
       <div ref={vantaRef} className="capabilities-hero" aria-label="Case Study">
         <div className="capabilities-hero__inner hero-content">
           <div className="max-w-7xl mx-auto px-6 py-20">
