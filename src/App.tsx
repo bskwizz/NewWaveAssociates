@@ -28,6 +28,9 @@ import PartnershipTransitionCaseStudy from './pages/case-studies/PartnershipTran
 import AgreementsStandardizationCaseStudy from './pages/case-studies/AgreementsStandardizationCaseStudy';
 import CatalogRationalizationCaseStudy from './pages/case-studies/CatalogRationalizationCaseStudy';
 import TechStackBICaseStudy from './pages/case-studies/TechStackBICaseStudy';
+import ITMSPOffshoringCaseStudy from './pages/case-studies/ITMSPOffshoringCaseStudy';
+import HealthcareOffshoringCaseStudy from './pages/case-studies/HealthcareOffshoringCaseStudy';
+import HealthcareOrganizationReviewCaseStudy from './pages/case-studies/HealthcareOrganizationReviewCaseStudy';
 import TransformationOfficeHub from './pages/hubs/TransformationOfficeHub';
 import GTMGrowthHub from './pages/hubs/GTMGrowthHub';
 import IntegrationConsolidationHub from './pages/hubs/IntegrationConsolidationHub';
@@ -98,6 +101,12 @@ function App() {
         return <CatalogRationalizationCaseStudy onNavigate={setCurrentPage} />;
       case 'case-studies/integration-techstack-bi':
         return <TechStackBICaseStudy onNavigate={setCurrentPage} />;
+      case 'case-studies/labor-itmsp-offshoring':
+        return <ITMSPOffshoringCaseStudy onNavigate={setCurrentPage} />;
+      case 'case-studies/labor-healthcare-offshoring':
+        return <HealthcareOffshoringCaseStudy onNavigate={setCurrentPage} />;
+      case 'case-studies/labor-healthcare-review':
+        return <HealthcareOrganizationReviewCaseStudy onNavigate={setCurrentPage} />;
       case 'hub-transformation-office':
         return <TransformationOfficeHub onNavigate={setCurrentPage} />;
       case 'hub-gtm-growth':
