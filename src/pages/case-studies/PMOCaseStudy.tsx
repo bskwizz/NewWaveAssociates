@@ -119,7 +119,7 @@ export default function PMOCaseStudy({ onNavigate }: PMOCaseStudyProps) {
                 <ul className="space-y-3 ml-6">
                   <li className="flex items-start">
                     <span className="inline-block w-2 h-2 bg-[#01A3DB] rounded-full mt-2 mr-3 flex-shrink-0"></span>
-                    <span>Designed and operationalized a full PMO structure using GuideCX as the core delivery platform</span>
+                    <span>Designed and operationalized a full PMO structure using a core delivery platform</span>
                   </li>
                   <li className="flex items-start">
                     <span className="inline-block w-2 h-2 bg-[#01A3DB] rounded-full mt-2 mr-3 flex-shrink-0"></span>
