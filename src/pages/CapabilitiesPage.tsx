@@ -27,7 +27,7 @@ const capabilities = [
       'Revenue pathway engineering and conversion funnel acceleration',
     ],
     outcome: 'Unified market motion with predictable growth',
-    caseStudyRoute: null,
+    caseStudyRoute: 'case-study-gtm',
   },
   {
     id: 'cap-integration-consolidation',
@@ -49,7 +49,7 @@ const capabilities = [
       'Transition planning and knowledge transfer frameworks',
     ],
     outcome: 'Cost-effective scaling with quality delivery',
-    caseStudyRoute: null,
+    caseStudyRoute: 'case-study-labor',
   },
   {
     id: 'cap-sga-optimization',
@@ -60,7 +60,7 @@ const capabilities = [
       'Cash flow acceleration and working capital liberation',
     ],
     outcome: 'EBITDA expansion without sacrificing growth',
-    caseStudyRoute: null,
+    caseStudyRoute: 'case-study-sga',
   },
   {
     id: 'cap-ai-automation',

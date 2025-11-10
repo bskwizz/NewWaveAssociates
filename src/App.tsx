@@ -13,6 +13,9 @@ import MergerCaseStudy from './pages/case-studies/MergerCaseStudy';
 import DataInsightsCaseStudy from './pages/case-studies/DataInsightsCaseStudy';
 import PlatformModernizationCaseStudy from './pages/case-studies/PlatformModernizationCaseStudy';
 import AICaseStudy from './pages/case-studies/AICaseStudy';
+import GTMCaseStudy from './pages/case-studies/GTMCaseStudy';
+import LaborStrategyCaseStudy from './pages/case-studies/LaborStrategyCaseStudy';
+import SGACaseStudy from './pages/case-studies/SGACaseStudy';
 
 function App() {
   const [currentPage, setCurrentPage] = useState('home');
@@ -47,6 +50,12 @@ function App() {
         return <PlatformModernizationCaseStudy onNavigate={setCurrentPage} />;
       case 'case-study-ai':
         return <AICaseStudy onNavigate={setCurrentPage} />;
+      case 'case-study-gtm':
+        return <GTMCaseStudy onNavigate={setCurrentPage} />;
+      case 'case-study-labor':
+        return <LaborStrategyCaseStudy onNavigate={setCurrentPage} />;
+      case 'case-study-sga':
+        return <SGACaseStudy onNavigate={setCurrentPage} />;
       default:
         return <HomePage onNavigate={setCurrentPage} />;
     }
