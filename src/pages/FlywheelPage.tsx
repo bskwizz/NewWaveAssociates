@@ -416,7 +416,7 @@ export default function FlywheelPage() {
         </div>
       </div>
 
-      <div className="fw-progress fw-progress--hero" style={{ marginTop: '60px' }} aria-hidden="true">
+      <div className="fw-progress fw-progress--hero" style={{ marginTop: '70px' }} aria-hidden="true">
         <div className="fw-progress__bar"></div>
       </div>
 
