@@ -29,7 +29,7 @@ export default function Navigation({ currentPage, onNavigate }: NavigationProps)
 
   return (
     <nav className="fixed top-0 left-0 right-0 bg-[#f5f5f5] backdrop-blur-sm z-50 border-b border-gray-200">
-      <div className="max-w-7xl mx-auto px-6 -my-2 md:-my-2">
+      <div className="max-w-7xl mx-auto px-6 -my-4 md:-my-4">
         <div className="flex items-center justify-between">
           <button
             onClick={() => onNavigate('home')}
@@ -38,7 +38,7 @@ export default function Navigation({ currentPage, onNavigate }: NavigationProps)
             <img
               src={`${import.meta.env.BASE_URL}New Wave Associates Horizontal (1).png`}
               alt="New Wave Associates"
-              className="h-32 md:h-40 w-auto"
+              className="h-36 md:h-48 w-auto"
             />
           </button>
 
