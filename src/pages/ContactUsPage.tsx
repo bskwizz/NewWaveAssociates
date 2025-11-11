@@ -28,7 +28,7 @@ export default function ContactUsPage() {
 
   return (
     <div className="min-h-screen bg-gray-50">
-      <div className="pt-32 pb-16">
+      <div className="pt-40 pb-16">
         <div className="max-w-7xl mx-auto px-6">
           <div className="flex gap-12 items-start">
             <div className="w-[30%] flex-shrink-0">
