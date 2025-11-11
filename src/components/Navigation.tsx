@@ -38,7 +38,7 @@ export default function Navigation({ currentPage, onNavigate }: NavigationProps)
             <img
               src={`${import.meta.env.BASE_URL}New Wave Associates Horizontal (1).png`}
               alt="New Wave Associates"
-              className="h-12 md:h-16 w-auto"
+              className="h-20 md:h-24 w-auto"
             />
           </button>
 
