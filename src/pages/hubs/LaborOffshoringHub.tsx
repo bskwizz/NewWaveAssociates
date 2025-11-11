@@ -4,7 +4,7 @@ interface LaborOffshoringHubProps {
 
 export default function LaborOffshoringHub({ onNavigate }: LaborOffshoringHubProps) {
   return (
-    <div className="pt-16">
+    <div className="pt-24">
       <section className="cs-hero has-image" style={{ backgroundImage: "url('https://images.unsplash.com/photo-1521737711867-e3b97375f902?w=1600&h=900&fit=crop')" }}>
         <div className="wrap">
           <div className="cs-breadcrumbs">

@@ -4,7 +4,7 @@ interface AIAutomationHubProps {
 
 export default function AIAutomationHub({ onNavigate }: AIAutomationHubProps) {
   return (
-    <div className="pt-16">
+    <div className="pt-24">
       <section className="cs-hero has-image" style={{ backgroundImage: "url('https://images.unsplash.com/photo-1677442136019-21780ecad995?w=1600&h=900&fit=crop')" }}>
         <div className="wrap">
           <div className="cs-breadcrumbs">

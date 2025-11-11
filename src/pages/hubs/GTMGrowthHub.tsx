@@ -4,7 +4,7 @@ interface GTMGrowthHubProps {
 
 export default function GTMGrowthHub({ onNavigate }: GTMGrowthHubProps) {
   return (
-    <div className="pt-16">
+    <div className="pt-24">
       <section className="cs-hero has-image" style={{ backgroundImage: "url('https://images.unsplash.com/photo-1460925895917-afdab827c52f?w=1600&h=900&fit=crop')" }}>
         <div className="wrap">
           <div className="cs-breadcrumbs">
