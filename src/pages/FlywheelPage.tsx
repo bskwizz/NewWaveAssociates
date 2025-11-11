@@ -416,7 +416,7 @@ export default function FlywheelPage() {
         </div>
       </div>
 
-      <div className="fw-progress fw-progress--hero mt-24" aria-hidden="true">
+      <div className="fw-progress fw-progress--hero mt-18" aria-hidden="true">
         <div className="fw-progress__bar"></div>
       </div>
 
