@@ -170,8 +170,8 @@ html {
 }
 
 .flywheel-hero__img {
-  width: 90%;
-  max-width: 1200px;
+  width: 100%;
+  max-width: 1400px;
   height: auto;
   object-fit: contain;
   transform: none;
