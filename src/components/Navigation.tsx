@@ -29,7 +29,7 @@ export default function Navigation({ currentPage, onNavigate }: NavigationProps)
 
   return (
     <nav className="fixed top-0 left-0 right-0 bg-[#f5f5f5] backdrop-blur-sm z-50 border-b border-gray-200">
-      <div className="max-w-7xl mx-auto px-6 py-3 md:py-3">
+      <div className="max-w-7xl mx-auto px-6 py-2 md:py-2">
         <div className="flex items-center justify-between">
           <button
             onClick={() => onNavigate('home')}
