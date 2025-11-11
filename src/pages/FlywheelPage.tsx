@@ -416,11 +416,11 @@ export default function FlywheelPage() {
         </div>
       </div>
 
-      <div className="fw-progress fw-progress--hero" aria-hidden="true">
+      <div className="fw-progress fw-progress--hero mt-8" aria-hidden="true">
         <div className="fw-progress__bar"></div>
       </div>
 
-      <div className="bg-gray-50 -mt-24 pt-32">
+      <div className="bg-gray-50 pt-8">
         <div className="max-w-7xl mx-auto px-6 pb-16">
           {renderSection(gtmStrategyContent)}
           {renderSection(costOptimizationContent)}
