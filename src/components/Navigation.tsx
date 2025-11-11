@@ -33,17 +33,13 @@ export default function Navigation({ currentPage, onNavigate }: NavigationProps)
         <div className="flex items-center justify-between">
           <button
             onClick={() => onNavigate('home')}
-            className="flex items-center gap-3 hover:opacity-80 transition-opacity"
+            className="hover:opacity-80 transition-opacity"
           >
             <img
-              src={`${import.meta.env.BASE_URL}New Wave Associates Square-2.png`}
-              alt="New Wave Associates Logo"
-              className="h-20 md:h-24 w-auto"
+              src={`${import.meta.env.BASE_URL}New Wave Associates Horizontal copy.png`}
+              alt="New Wave Associates"
+              className="h-12 md:h-16 w-auto"
             />
-            <div className="text-[#38495D] font-semibold block leading-tight" style={{ fontFamily: 'Avenir, sans-serif' }}>
-              <div className="text-lg md:text-xl">NEW WAVE</div>
-              <div className="text-base md:text-lg">ASSOCIATES</div>
-            </div>
           </button>
 
           <div className="hidden md:flex items-center gap-8">
