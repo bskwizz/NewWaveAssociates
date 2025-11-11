@@ -29,7 +29,7 @@ export default function Navigation({ currentPage, onNavigate }: NavigationProps)
 
   return (
     <nav className="fixed top-0 left-0 right-0 bg-[#f5f5f5] backdrop-blur-sm z-50 border-b border-gray-200">
-      <div className="max-w-7xl mx-auto px-6 py-5 md:py-6">
+      <div className="max-w-7xl mx-auto px-6 py-6 md:py-8">
         <div className="flex items-center justify-between">
           <button
             onClick={() => onNavigate('home')}
@@ -38,11 +38,11 @@ export default function Navigation({ currentPage, onNavigate }: NavigationProps)
             <img
               src={`${import.meta.env.BASE_URL}New Wave Associates Square-2.png`}
               alt="New Wave Associates Logo"
-              className="h-14 md:h-16 w-auto"
+              className="h-16 md:h-20 w-auto"
             />
             <div className="text-[#38495D] font-medium block leading-tight" style={{ fontFamily: 'Avenir, sans-serif' }}>
-              <div className="text-sm md:text-base">NEW WAVE</div>
-              <div className="text-xs md:text-sm">ASSOCIATES</div>
+              <div className="text-base md:text-lg">NEW WAVE</div>
+              <div className="text-sm md:text-base">ASSOCIATES</div>
             </div>
           </button>
 
