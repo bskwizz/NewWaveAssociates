@@ -14,7 +14,7 @@ const industries = [
     title: 'Healthcare & Provider Networks',
     description: 'We enable multi-site health organizations to align process, capacity, and data — without disrupting care.',
     points: [
-      'Enterprise PMO and change cadence',
+      'Enterprise Project Management Office and change cadence',
       'Referral and access workflows',
       'Clinical + operational comms',
       'Vendor rationalization',

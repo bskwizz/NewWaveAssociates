@@ -37,7 +37,7 @@ export default function PMOCaseStudy({ onNavigate }: PMOCaseStudyProps) {
           <div className="max-w-7xl mx-auto px-6 py-20">
             <div className={`transition-opacity duration-1000 ${fadeIn ? 'opacity-100' : 'opacity-0'}`}>
               <h1 className="text-5xl font-bold text-[#38495D] mb-4">
-                PMO Framework & Delivery Model Implementation
+                Project Management Office Framework & Delivery Model Implementation
               </h1>
               <p className="text-lg text-[#38495D] mb-2">
                 Case Study
@@ -49,7 +49,7 @@ export default function PMOCaseStudy({ onNavigate }: PMOCaseStudyProps) {
               <div className="bg-white/90 backdrop-blur-sm border border-gray-200 rounded-lg p-8 mb-8 shadow-lg max-w-4xl">
                 <h2 className="text-xl font-bold text-[#38495D] mb-4">Executive Summary</h2>
                 <p className="text-gray-700 leading-relaxed">
-                  A technology SaaS company needed a standardized PMO framework to ensure consistent delivery quality, predictable timelines, and cross-department coordination for enterprise-scale implementations, especially as they brought on their largest client (&gt;500K ARR). The goal was to transform delivery from reactive firefighting to proactive execution with visibility and accountability.
+                  A technology SaaS company needed a standardized Project Management Office framework to ensure consistent delivery quality, predictable timelines, and cross-department coordination for enterprise-scale implementations, especially as they brought on their largest client (&gt;500K ARR). The goal was to transform delivery from reactive firefighting to proactive execution with visibility and accountability.
                 </p>
               </div>
 
@@ -96,7 +96,7 @@ export default function PMOCaseStudy({ onNavigate }: PMOCaseStudyProps) {
                 <ul className="space-y-3 ml-6">
                   <li className="flex items-start">
                     <span className="inline-block w-2 h-2 bg-[#01A3DB] rounded-full mt-2 mr-3 flex-shrink-0"></span>
-                    <span>No formal PMO structure governing project delivery or customer communication</span>
+                    <span>No formal Project Management Office structure governing project delivery or customer communication</span>
                   </li>
                   <li className="flex items-start">
                     <span className="inline-block w-2 h-2 bg-[#01A3DB] rounded-full mt-2 mr-3 flex-shrink-0"></span>
@@ -124,12 +124,12 @@ export default function PMOCaseStudy({ onNavigate }: PMOCaseStudyProps) {
               </h2>
               <div className="space-y-4 text-gray-700 leading-relaxed text-lg">
                 <p>
-                  New Wave Associates took a pragmatic, phased approach to building the PMO capability:
+                  New Wave Associates took a pragmatic, phased approach to building the Project Management Office capability:
                 </p>
                 <ul className="space-y-3 ml-6">
                   <li className="flex items-start">
                     <span className="inline-block w-2 h-2 bg-[#01A3DB] rounded-full mt-2 mr-3 flex-shrink-0"></span>
-                    <span>Designed and operationalized a full PMO structure using a core delivery platform</span>
+                    <span>Designed and operationalized a full Project Management Office structure using a core delivery platform</span>
                   </li>
                   <li className="flex items-start">
                     <span className="inline-block w-2 h-2 bg-[#01A3DB] rounded-full mt-2 mr-3 flex-shrink-0"></span>
@@ -157,7 +157,7 @@ export default function PMOCaseStudy({ onNavigate }: PMOCaseStudyProps) {
               </h2>
               <div className="space-y-4 text-gray-700 leading-relaxed text-lg">
                 <p>
-                  Within 3 months, the company had a fully functioning PMO that transformed how they managed strategic initiatives:
+                  Within 3 months, the company had a fully functioning Project Management Office that transformed how they managed strategic initiatives:
                 </p>
                 <ul className="space-y-3 ml-6">
                   <li className="flex items-start">
@@ -211,7 +211,7 @@ export default function PMOCaseStudy({ onNavigate }: PMOCaseStudyProps) {
           </div>
 
           <CTABar
-            text="Need help establishing or optimizing your PMO? Let's discuss your specific challenges."
+            text="Need help establishing or optimizing your Project Management Office? Let's discuss your specific challenges."
             buttonText="Contact Us"
             onButtonClick={() => onNavigate('contact-us')}
           />

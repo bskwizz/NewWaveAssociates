@@ -27,7 +27,7 @@ export default function CaseStudiesPage({ onNavigate }: CaseStudiesPageProps) {
           <div className="max-w-7xl mx-auto px-6 py-20">
             <div className={`transition-opacity duration-1000 ${fadeIn ? 'opacity-100' : 'opacity-0'}`}>
               <h1 className="text-5xl font-bold text-[#38495D] mb-4">
-                PMO Installation
+                Project Management Office Installation
               </h1>
               <p className="text-lg text-[#38495D] mb-2">
                 Case Study
@@ -39,7 +39,7 @@ export default function CaseStudiesPage({ onNavigate }: CaseStudiesPageProps) {
               <div className="bg-white/90 backdrop-blur-sm border border-gray-200 rounded-lg p-8 mb-8 shadow-lg max-w-4xl">
                 <h2 className="text-xl font-bold text-[#38495D] mb-4">Executive Summary</h2>
                 <p className="text-gray-700 leading-relaxed">
-                  A mid-sized technology company experiencing rapid growth needed to establish a formal Program Management Office (PMO) to bring structure, visibility, and accountability to their transformation initiatives. With multiple concurrent projects competing for resources and limited executive visibility into progress and risks, the organization was struggling to deliver on strategic priorities. New Wave Associates partnered with the leadership team to design and implement a lightweight, operator-friendly PMO that aligned strategy with execution, established clear governance rhythms, and built internal capability for sustainable program delivery.
+                  A mid-sized technology company experiencing rapid growth needed to establish a formal Project Management Office to bring structure, visibility, and accountability to their transformation initiatives. With multiple concurrent projects competing for resources and limited executive visibility into progress and risks, the organization was struggling to deliver on strategic priorities. New Wave Associates partnered with the leadership team to design and implement a lightweight, operator-friendly Project Management Office that aligned strategy with execution, established clear governance rhythms, and built internal capability for sustainable program delivery.
                 </p>
               </div>
 
@@ -114,12 +114,12 @@ export default function CaseStudiesPage({ onNavigate }: CaseStudiesPageProps) {
               </h2>
               <div className="space-y-4 text-gray-700 leading-relaxed text-lg">
                 <p>
-                  New Wave Associates took a pragmatic, phased approach to building the PMO capability:
+                  New Wave Associates took a pragmatic, phased approach to building the Project Management Office capability:
                 </p>
                 <ul className="space-y-3 ml-6">
                   <li className="flex items-start">
                     <span className="inline-block w-2 h-2 bg-[#01A3DB] rounded-full mt-2 mr-3 flex-shrink-0"></span>
-                    <span><strong>Assessment & Design (Weeks 1-3):</strong> Interviewed stakeholders across the organization to understand current state pain points, catalogued all active initiatives, and designed a lightweight PMO framework tailored to the company's culture and maturity level.</span>
+                    <span><strong>Assessment & Design (Weeks 1-3):</strong> Interviewed stakeholders across the organization to understand current state pain points, catalogued all active initiatives, and designed a lightweight Project Management Office framework tailored to the company's culture and maturity level.</span>
                   </li>
                   <li className="flex items-start">
                     <span className="inline-block w-2 h-2 bg-[#01A3DB] rounded-full mt-2 mr-3 flex-shrink-0"></span>
@@ -131,7 +131,7 @@ export default function CaseStudiesPage({ onNavigate }: CaseStudiesPageProps) {
                   </li>
                   <li className="flex items-start">
                     <span className="inline-block w-2 h-2 bg-[#01A3DB] rounded-full mt-2 mr-3 flex-shrink-0"></span>
-                    <span><strong>Transition & Sustainability (Weeks 17-20):</strong> Hired and onboarded permanent PMO Director, documented playbooks and processes, and transitioned day-to-day operations to internal team.</span>
+                    <span><strong>Transition & Sustainability (Weeks 17-20):</strong> Hired and onboarded permanent Project Management Office Director, documented playbooks and processes, and transitioned day-to-day operations to internal team.</span>
                   </li>
                 </ul>
               </div>
@@ -143,7 +143,7 @@ export default function CaseStudiesPage({ onNavigate }: CaseStudiesPageProps) {
               </h2>
               <div className="space-y-4 text-gray-700 leading-relaxed text-lg">
                 <p>
-                  Within 5 months, the company had a fully functioning PMO that transformed how they managed strategic initiatives:
+                  Within 5 months, the company had a fully functioning Project Management Office that transformed how they managed strategic initiatives:
                 </p>
                 <ul className="space-y-3 ml-6 mb-6">
                   <li className="flex items-start">
@@ -168,7 +168,7 @@ export default function CaseStudiesPage({ onNavigate }: CaseStudiesPageProps) {
                   </li>
                 </ul>
                 <p>
-                  The newly hired PMO Director successfully maintained and evolved the processes, with the New Wave team providing ongoing advisory support for the first 90 days post-transition.
+                  The newly hired Project Management Office Director successfully maintained and evolved the processes, with the New Wave team providing ongoing advisory support for the first 90 days post-transition.
                 </p>
               </div>
             </div>
@@ -197,7 +197,7 @@ export default function CaseStudiesPage({ onNavigate }: CaseStudiesPageProps) {
           </div>
 
           <CTABar
-            text="Need help establishing or optimizing your PMO? Let's discuss your specific challenges."
+            text="Need help establishing or optimizing your Project Management Office? Let's discuss your specific challenges."
             buttonText="Contact Us"
             onButtonClick={() => onNavigate('contact-us')}
           />

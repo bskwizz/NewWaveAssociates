@@ -12,17 +12,17 @@ export default function TransformationOfficeHub({ onNavigate }: TransformationOf
           </div>
           <h1>Transformation Office Case Studies</h1>
           <p>
-            PMO/IMO builds and turnarounds: unified governance, portfolio visibility, and predictable delivery that reduces risk and accelerates time-to-value.
+            Project Management Office builds and turnarounds: unified governance, portfolio visibility, and predictable delivery that reduces risk and accelerates time-to-value.
           </p>
         </div>
       </section>
 
       <section className="cs-grid">
         <article className="cs-card">
-          <img className="cs-card__img" src="https://images.unsplash.com/photo-1551288049-bebda4e38f71?w=1600&h=900&fit=crop" alt="PMO build-out for healthcare platform" />
+          <img className="cs-card__img" src="https://images.unsplash.com/photo-1551288049-bebda4e38f71?w=1600&h=900&fit=crop" alt="Project Management Office build-out for healthcare platform" />
           <div className="cs-card__body">
-            <p className="cs-card__eyebrow">PMO / Governance</p>
-            <h3 className="cs-card__title">PMO Build-Out for a Healthcare Platform</h3>
+            <p className="cs-card__eyebrow">Project Management Office / Governance</p>
+            <h3 className="cs-card__title">Project Management Office Build-Out for a Healthcare Platform</h3>
             <p className="cs-card__text">Stood up a unified governance engine, executive dashboards, and cadence within 60 days.</p>
             <p className="cs-card__meta">Outcome: predictable delivery, visible burn-down of risk.</p>
           </div>
