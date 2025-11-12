@@ -22,7 +22,7 @@ export default function CatalogRationalizationCaseStudy({ onNavigate }: CatalogR
   };
 
   return (
-    <div className="pt-32">
+    <div className="pt-36">
       <div className="max-w-7xl mx-auto px-6 pt-6">
         <button
           onClick={() => onNavigate('hub-integration-consolidation')}
