@@ -8,7 +8,7 @@ export default function IntegrationConsolidationHub({ onNavigate }: IntegrationC
       <section className="cs-hero has-image" style={{ backgroundImage: "url('https://images.unsplash.com/photo-1556761175-5973dc0f32e7?w=1600&h=900&fit=crop')" }}>
         <div className="wrap">
           <div className="cs-breadcrumbs">
-            <a href="#" onClick={(e) => { e.preventDefault(); onNavigate('capabilities'); }}>Services</a> · Integration & Consolidation
+            <button onClick={() => onNavigate('capabilities')} className="hover:underline cursor-pointer bg-transparent border-none p-0 font-inherit text-inherit">Services</button> · Integration & Consolidation
           </div>
           <h1>Integration & Consolidation Case Studies</h1>
           <p>
