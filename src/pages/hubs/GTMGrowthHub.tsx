@@ -8,7 +8,7 @@ export default function GTMGrowthHub({ onNavigate }: GTMGrowthHubProps) {
       <section className="cs-hero has-image" style={{ backgroundImage: "url('https://images.unsplash.com/photo-1460925895917-afdab827c52f?w=1600&h=900&fit=crop')" }}>
         <div className="wrap">
           <div className="cs-breadcrumbs">
-            <button onClick={() => onNavigate('capabilities')} className="hover:underline cursor-pointer bg-transparent border-none p-0 font-inherit text-inherit">Services</button> · Go-to-Market & Growth Optimization
+            <button onClick={() => onNavigate('capabilities')} className="hover:underline cursor-pointer bg-transparent border-none px-2 py-1 -mx-2 -my-1 font-inherit text-inherit">Services</button> · Go-to-Market & Growth Optimization
           </div>
           <h1>Go-to-Market & Growth Optimization Case Studies</h1>
           <p>
