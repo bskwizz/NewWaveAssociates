@@ -95,7 +95,7 @@ export default function CapabilitiesPage({ onNavigate }: CapabilitiesPageProps) 
               }`}
               style={{ maxWidth: '900px' }}
             >
-              Explore the full spectrum of capabilities we deploy to accelerate growth, expand margins, and operationalize transformation.
+              Explore the full spectrum of services we deploy to accelerate growth, expand margins, and operationalize transformation.
             </p>
           </div>
         </div>
