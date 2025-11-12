@@ -41,95 +41,111 @@ import AIAutomationHub from './pages/hubs/AIAutomationHub';
 
 function App() {
   const [currentPage, setCurrentPage] = useState('home');
+  const [capabilitiesScrollPosition, setCapabilitiesScrollPosition] = useState(0);
 
   useEffect(() => {
-    window.scrollTo({ top: 0, behavior: 'smooth' });
+    if (currentPage === 'capabilities' && capabilitiesScrollPosition > 0) {
+      setTimeout(() => {
+        window.scrollTo({ top: capabilitiesScrollPosition, behavior: 'smooth' });
+      }, 100);
+    } else {
+      window.scrollTo({ top: 0, behavior: 'smooth' });
+    }
   }, [currentPage]);
+
+  const handleNavigate = (page: string) => {
+    if (currentPage === 'capabilities' && page.startsWith('hub-')) {
+      setCapabilitiesScrollPosition(window.scrollY);
+    } else if (page !== 'capabilities') {
+      setCapabilitiesScrollPosition(0);
+    }
+    setCurrentPage(page);
+  };
 
   const renderPage = () => {
     switch (currentPage) {
       case 'home':
-        return <HomePage onNavigate={setCurrentPage} />;
+        return <HomePage onNavigate={handleNavigate} />;
       case 'flywheel':
         return <FlywheelPage />;
       case 'capabilities':
-        return <CapabilitiesPage onNavigate={setCurrentPage} />;
+        return <CapabilitiesPage onNavigate={handleNavigate} />;
       case 'about-us':
-        return <AboutUsPage onNavigate={setCurrentPage} />;
+        return <AboutUsPage onNavigate={handleNavigate} />;
       case 'contact-us':
         return <ContactUsPage />;
       case 'case-study-pmo':
-        return <PMOCaseStudy onNavigate={setCurrentPage} />;
+        return <PMOCaseStudy onNavigate={handleNavigate} />;
       case 'case-study-operating-model':
-        return <OperatingModelCaseStudy onNavigate={setCurrentPage} />;
+        return <OperatingModelCaseStudy onNavigate={handleNavigate} />;
       case 'case-study-pricing':
-        return <PricingCaseStudy onNavigate={setCurrentPage} />;
+        return <PricingCaseStudy onNavigate={handleNavigate} />;
       case 'case-study-merger':
-        return <MergerCaseStudy onNavigate={setCurrentPage} />;
+        return <MergerCaseStudy onNavigate={handleNavigate} />;
       case 'case-study-data':
-        return <DataInsightsCaseStudy onNavigate={setCurrentPage} />;
+        return <DataInsightsCaseStudy onNavigate={handleNavigate} />;
       case 'case-study-platform':
-        return <PlatformModernizationCaseStudy onNavigate={setCurrentPage} />;
+        return <PlatformModernizationCaseStudy onNavigate={handleNavigate} />;
       case 'case-study-ai':
-        return <AICaseStudy onNavigate={setCurrentPage} />;
+        return <AICaseStudy onNavigate={handleNavigate} />;
       case 'case-study-gtm':
-        return <GTMCaseStudy onNavigate={setCurrentPage} />;
+        return <GTMCaseStudy onNavigate={handleNavigate} />;
       case 'case-study-labor':
-        return <LaborStrategyCaseStudy onNavigate={setCurrentPage} />;
+        return <LaborStrategyCaseStudy onNavigate={handleNavigate} />;
       case 'case-study-sga':
-        return <SGACaseStudy onNavigate={setCurrentPage} />;
+        return <SGACaseStudy onNavigate={handleNavigate} />;
       case 'case-studies/automation-ap-makeover':
-        return <APAutomationCaseStudy onNavigate={setCurrentPage} />;
+        return <APAutomationCaseStudy onNavigate={handleNavigate} />;
       case 'case-studies/automation-ar-acceleration':
-        return <ARAutomationCaseStudy onNavigate={setCurrentPage} />;
+        return <ARAutomationCaseStudy onNavigate={handleNavigate} />;
       case 'case-studies/gtm-pricing-packaging':
-        return <PricingPackagingCaseStudy onNavigate={setCurrentPage} />;
+        return <PricingPackagingCaseStudy onNavigate={handleNavigate} />;
       case 'case-studies/gtm-allbound-model':
-        return <AllboundGTMCaseStudy onNavigate={setCurrentPage} />;
+        return <AllboundGTMCaseStudy onNavigate={handleNavigate} />;
       case 'case-studies/gtm-vertical-incubation':
-        return <VerticalIncubationCaseStudy onNavigate={setCurrentPage} />;
+        return <VerticalIncubationCaseStudy onNavigate={handleNavigate} />;
       case 'case-studies/gtm-revenue-visibility':
-        return <RevenueVisibilityCaseStudy onNavigate={setCurrentPage} />;
+        return <RevenueVisibilityCaseStudy onNavigate={handleNavigate} />;
       case 'case-studies/integration-multisite-system':
-        return <MultisiteSystemIntegrationCaseStudy onNavigate={setCurrentPage} />;
+        return <MultisiteSystemIntegrationCaseStudy onNavigate={handleNavigate} />;
       case 'case-studies/integration-partnership-transition':
-        return <PartnershipTransitionCaseStudy onNavigate={setCurrentPage} />;
+        return <PartnershipTransitionCaseStudy onNavigate={handleNavigate} />;
       case 'case-studies/integration-agreements-standardization':
-        return <AgreementsStandardizationCaseStudy onNavigate={setCurrentPage} />;
+        return <AgreementsStandardizationCaseStudy onNavigate={handleNavigate} />;
       case 'case-studies/integration-catalog-rationalization':
-        return <CatalogRationalizationCaseStudy onNavigate={setCurrentPage} />;
+        return <CatalogRationalizationCaseStudy onNavigate={handleNavigate} />;
       case 'case-studies/integration-techstack-bi':
-        return <TechStackBICaseStudy onNavigate={setCurrentPage} />;
+        return <TechStackBICaseStudy onNavigate={handleNavigate} />;
       case 'case-studies/labor-itmsp-offshoring':
-        return <ITMSPOffshoringCaseStudy onNavigate={setCurrentPage} />;
+        return <ITMSPOffshoringCaseStudy onNavigate={handleNavigate} />;
       case 'case-studies/labor-healthcare-offshoring':
-        return <HealthcareOffshoringCaseStudy onNavigate={setCurrentPage} />;
+        return <HealthcareOffshoringCaseStudy onNavigate={handleNavigate} />;
       case 'case-studies/labor-healthcare-review':
-        return <HealthcareOrganizationReviewCaseStudy onNavigate={setCurrentPage} />;
+        return <HealthcareOrganizationReviewCaseStudy onNavigate={handleNavigate} />;
       case 'case-studies/sga-subcontracting-capture':
-        return <SubcontractingCaptureCaseStudy onNavigate={setCurrentPage} />;
+        return <SubcontractingCaptureCaseStudy onNavigate={handleNavigate} />;
       case 'case-studies/sga-virtual-card':
-        return <VirtualCardCaseStudy onNavigate={setCurrentPage} />;
+        return <VirtualCardCaseStudy onNavigate={handleNavigate} />;
       case 'hub-transformation-office':
-        return <TransformationOfficeHub onNavigate={setCurrentPage} />;
+        return <TransformationOfficeHub onNavigate={handleNavigate} />;
       case 'hub-gtm-growth':
-        return <GTMGrowthHub onNavigate={setCurrentPage} />;
+        return <GTMGrowthHub onNavigate={handleNavigate} />;
       case 'hub-integration-consolidation':
-        return <IntegrationConsolidationHub onNavigate={setCurrentPage} />;
+        return <IntegrationConsolidationHub onNavigate={handleNavigate} />;
       case 'hub-labor-offshoring':
-        return <LaborOffshoringHub onNavigate={setCurrentPage} />;
+        return <LaborOffshoringHub onNavigate={handleNavigate} />;
       case 'hub-sga-optimization':
-        return <SGAOptimizationHub onNavigate={setCurrentPage} />;
+        return <SGAOptimizationHub onNavigate={handleNavigate} />;
       case 'hub-ai-automation':
-        return <AIAutomationHub onNavigate={setCurrentPage} />;
+        return <AIAutomationHub onNavigate={handleNavigate} />;
       default:
-        return <HomePage onNavigate={setCurrentPage} />;
+        return <HomePage onNavigate={handleNavigate} />;
     }
   };
 
   return (
     <div className="min-h-screen bg-gray-50 flex flex-col">
-      <Navigation currentPage={currentPage} onNavigate={setCurrentPage} />
+      <Navigation currentPage={currentPage} onNavigate={handleNavigate} />
       <main className="flex-grow">
         {renderPage()}
       </main>
