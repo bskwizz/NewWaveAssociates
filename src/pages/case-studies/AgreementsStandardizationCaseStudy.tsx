@@ -22,19 +22,18 @@ export default function AgreementsStandardizationCaseStudy({ onNavigate }: Agree
   };
 
   return (
-    <div className="pt-36">
-      <div className="max-w-7xl mx-auto px-6 pt-6">
-        <button
+    <div className="pt-16">
+      <div ref={vantaRef} className="capabilities-hero" aria-label="Case Study">
+        <div className="capabilities-hero__inner hero-content">
+          <div className="max-w-7xl mx-auto px-6 pt-6 pb-20">
+            <button
           onClick={() => onNavigate('hub-integration-consolidation')}
-          className="flex items-center gap-2 text-[#01A3DB] hover:text-[#0182b3] transition-colors font-medium"
+          className="flex items-center gap-2 text-[#01A3DB] hover:text-[#0182b3] transition-colors font-medium mb-8"
         >
           <ArrowLeft size={20} />
           Back to Integration & Consolidation
         </button>
-      </div>
-      <div ref={vantaRef} className="capabilities-hero" aria-label="Case Study">
-        <div className="capabilities-hero__inner hero-content">
-          <div className="max-w-7xl mx-auto px-6 py-20">
+
             <div className={`transition-opacity duration-1000 ${fadeIn ? 'opacity-100' : 'opacity-0'}`}>
               <h1 className="text-5xl font-bold text-[#38495D] mb-4">
                 Agreements Standardization
