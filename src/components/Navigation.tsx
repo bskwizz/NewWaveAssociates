@@ -39,7 +39,7 @@ export default function Navigation({ currentPage, onNavigate }: NavigationProps)
             />
             <button
               onClick={() => onNavigate('home')}
-              className="absolute left-0 top-1/2 -translate-y-1/2 w-32 h-20 hover:bg-black/5 transition-colors rounded"
+              className="absolute left-0 top-1/2 -translate-y-1/2 w-64 h-20 hover:bg-black/5 transition-colors rounded"
               aria-label="Go to homepage"
             />
           </div>
