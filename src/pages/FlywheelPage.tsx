@@ -22,7 +22,7 @@ const gtmStrategyContent: SectionContent = {
       subhead: 'Go-to-Market Strategy Levers',
       items: [
         'Segment-Specific Value Propositions',
-        'ICP-Driven Targeting',
+        'Perfect-Customer-Profile Driven Targeting',
         'Segment Clarity',
         'Commercial Strategy Realignment',
         'Demand Signal Amplification',
