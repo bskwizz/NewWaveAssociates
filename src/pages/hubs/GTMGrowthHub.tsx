@@ -8,9 +8,9 @@ export default function GTMGrowthHub({ onNavigate }: GTMGrowthHubProps) {
       <section className="cs-hero has-image" style={{ backgroundImage: "url('https://images.unsplash.com/photo-1460925895917-afdab827c52f?w=1600&h=900&fit=crop')" }}>
         <div className="wrap">
           <div className="cs-breadcrumbs">
-            <a href="#" onClick={(e) => { e.preventDefault(); onNavigate('capabilities'); }}>Capabilities</a> · GTM & Growth Optimization
+            <a href="#" onClick={(e) => { e.preventDefault(); onNavigate('capabilities'); }}>Capabilities</a> · Go-to-Market & Growth Optimization
           </div>
-          <h1>GTM & Growth Optimization Case Studies</h1>
+          <h1>Go-to-Market & Growth Optimization Case Studies</h1>
           <p>
             Revenue architecture, demand activation, and conversion velocity—aligned to ICP, segment clarity, and margin discipline.
           </p>
@@ -32,8 +32,8 @@ export default function GTMGrowthHub({ onNavigate }: GTMGrowthHubProps) {
         <article className="cs-card">
           <img className="cs-card__img" src="https://images.unsplash.com/photo-1600880292203-757bb62b4baf?w=1600&h=900&fit=crop" alt="GTM Architecture" />
           <div className="cs-card__body">
-            <p className="cs-card__eyebrow">GTM Architecture</p>
-            <h3 className="cs-card__title">Allbound GTM Model for $150M SaaS</h3>
+            <p className="cs-card__eyebrow">Go-to-Market Architecture</p>
+            <h3 className="cs-card__title">Allbound Go-to-Market Model for $150M SaaS</h3>
             <p className="cs-card__text">Unified inbound/outbound/partner motions with a single customer-journey model and RevOps cadence.</p>
             <p className="cs-card__meta">Outcome: +10% ARR YoY, −20% CAC, faster cycle times.</p>
           </div>
@@ -43,7 +43,7 @@ export default function GTMGrowthHub({ onNavigate }: GTMGrowthHubProps) {
         <article className="cs-card">
           <img className="cs-card__img" src="https://images.unsplash.com/photo-1557804506-669a67965ba0?w=1600&h=900&fit=crop" alt="Vertical GTM" />
           <div className="cs-card__body">
-            <p className="cs-card__eyebrow">Vertical GTM</p>
+            <p className="cs-card__eyebrow">Vertical Go-to-Market</p>
             <h3 className="cs-card__title">Vertical Incubation & Expansion for $4B SaaS</h3>
             <p className="cs-card__text">Built a vertical incubation framework and launched five industry plays with product + field alignment.</p>
             <p className="cs-card__meta">Outcome: +$25M ARR, faster cycles, tighter discount discipline.</p>

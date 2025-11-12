@@ -29,7 +29,7 @@ export default function PricingPackagingCaseStudy({ onNavigate }: PricingPackagi
           className="flex items-center gap-2 text-[#01A3DB] hover:text-[#0182b3] transition-colors font-medium"
         >
           <ArrowLeft size={20} />
-          Back to GTM & Growth Optimization
+          Back to Go-to-Market & Growth Optimization
         </button>
       </div>
       <div ref={vantaRef} className="capabilities-hero" aria-label="Case Study">

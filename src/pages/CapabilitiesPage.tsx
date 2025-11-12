@@ -20,11 +20,11 @@ const capabilities = [
   },
   {
     id: 'cap-gtm-growth',
-    title: 'Go-to-Market (GTM) & Growth Optimization',
+    title: 'Go-to-Market & Growth Optimization',
     points: [
       'Redesign commercial architecture around Perfect-Customer-Profile, segment clarity, and measurable revenue pathways.',
       'Activate demand through channel-mix optimization, pricing discipline, and campaign velocity modeling.',
-      'Embed an agile GTM operating rhythm that unites marketing, sales, and customer success.',
+      'Embed an agile Go-to-Market operating rhythm that unites marketing, sales, and customer success.',
     ],
     outcome: 'Accelerated pipeline velocity, higher conversion rates, and sustained top-line growth.',
     caseStudyRoute: 'hub-gtm-growth',

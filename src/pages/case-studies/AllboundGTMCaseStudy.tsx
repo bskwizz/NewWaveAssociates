@@ -29,7 +29,7 @@ export default function AllboundGTMCaseStudy({ onNavigate }: AllboundGTMCaseStud
           className="flex items-center gap-2 text-[#01A3DB] hover:text-[#0182b3] transition-colors font-medium"
         >
           <ArrowLeft size={20} />
-          Back to GTM & Growth Optimization
+          Back to Go-to-Market & Growth Optimization
         </button>
       </div>
       <div ref={vantaRef} className="capabilities-hero" aria-label="Case Study">
@@ -37,7 +37,7 @@ export default function AllboundGTMCaseStudy({ onNavigate }: AllboundGTMCaseStud
           <div className="max-w-7xl mx-auto px-6 py-20">
             <div className={`transition-opacity duration-1000 ${fadeIn ? 'opacity-100' : 'opacity-0'}`}>
               <h1 className="text-5xl font-bold text-[#38495D] mb-4">
-                Allbound GTM Model Transformation
+                Allbound Go-to-Market Model Transformation
               </h1>
               <p className="text-lg text-[#38495D] mb-2">
                 Case Study
@@ -49,7 +49,7 @@ export default function AllboundGTMCaseStudy({ onNavigate }: AllboundGTMCaseStud
               <div className="bg-white/90 backdrop-blur-sm border border-gray-200 rounded-lg p-8 mb-8 shadow-lg max-w-4xl">
                 <h2 className="text-xl font-bold text-[#38495D] mb-4">Executive Summary</h2>
                 <p className="text-gray-700 leading-relaxed">
-                  Disjointed inbound, outbound, and partner motions created conversion friction. New Wave implemented an Allbound GTM model with unified journey stages, role clarity, and RevOps instrumentation.
+                  Disjointed inbound, outbound, and partner motions created conversion friction. New Wave implemented an Allbound Go-to-Market model with unified journey stages, role clarity, and RevOps instrumentation.
                 </p>
               </div>
 
@@ -142,7 +142,7 @@ export default function AllboundGTMCaseStudy({ onNavigate }: AllboundGTMCaseStud
                   </li>
                   <li className="flex items-start">
                     <span className="inline-block w-2 h-2 bg-[#01A3DB] rounded-full mt-2 mr-3 flex-shrink-0"></span>
-                    <span>Sustainable GTM architecture for scale</span>
+                    <span>Sustainable Go-to-Market architecture for scale</span>
                   </li>
                 </ul>
               </div>

@@ -15,11 +15,11 @@ interface SectionContent {
 
 const gtmStrategyContent: SectionContent = {
   id: 'gtm-strategy',
-  title: 'GTM Strategy',
+  title: 'Go-to-Market Strategy',
   subheading: 'We design adaptive frameworks that align revenue teams, tech, processes, and data around one unified motion.',
   groups: [
     {
-      subhead: 'GTM Strategy Levers',
+      subhead: 'Go-to-Market Strategy Levers',
       items: [
         'Segment-Specific Value Propositions',
         'ICP-Driven Targeting',
@@ -34,23 +34,23 @@ const gtmStrategyContent: SectionContent = {
     {
       subhead: 'Framework & Operating Model',
       items: [
-        'Modular GTM Architecture',
+        'Modular Go-to-Market Architecture',
         'Agile Campaign Orchestration',
-        'GTM Stack Rationalization',
+        'Go-to-Market Stack Rationalization',
         'Lead-to-Cash Process Engineering',
-        'GTM Governance Framework',
+        'Go-to-Market Governance Framework',
         'Performance-Based Resource Allocation',
       ],
     },
     {
-      subhead: 'GTM Redesign & Transformation',
+      subhead: 'Go-to-Market Redesign & Transformation',
       items: [
-        'Zero-Based GTM Planning',
+        'Zero-Based Go-to-Market Planning',
         'Cost-to-Acquire Optimization',
         'Digital Channel Expansion',
         'Sales Enablement Modernization',
         'Pipeline Velocity Uplift',
-        'GTM Tech Stack Refresh',
+        'Go-to-Market Tech Stack Refresh',
       ],
     },
     {
@@ -58,7 +58,7 @@ const gtmStrategyContent: SectionContent = {
       items: [
         'Engineering precision into every commercial motion',
         'Rewiring the revenue engine for modern buyer behavior',
-        'Aligning GTM architecture to strategic growth vectors',
+        'Aligning Go-to-Market architecture to strategic growth vectors',
         'Turning fragmented efforts into a unified market assault',
       ],
     },
@@ -363,7 +363,7 @@ export default function FlywheelPage() {
             <a
               href="#gtm-strategy"
               className="flywheel-hotspot flywheel-hotspot--gtm"
-              aria-label="Go to GTM Strategy"
+              aria-label="Go to Go-to-Market Strategy"
               onClick={(e) => {
                 e.preventDefault();
                 const target = document.getElementById('gtm-strategy');

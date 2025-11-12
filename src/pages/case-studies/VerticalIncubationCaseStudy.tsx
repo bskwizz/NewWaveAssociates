@@ -29,7 +29,7 @@ export default function VerticalIncubationCaseStudy({ onNavigate }: VerticalIncu
           className="flex items-center gap-2 text-[#01A3DB] hover:text-[#0182b3] transition-colors font-medium"
         >
           <ArrowLeft size={20} />
-          Back to GTM & Growth Optimization
+          Back to Go-to-Market & Growth Optimization
         </button>
       </div>
       <div ref={vantaRef} className="capabilities-hero" aria-label="Case Study">
@@ -49,7 +49,7 @@ export default function VerticalIncubationCaseStudy({ onNavigate }: VerticalIncu
               <div className="bg-white/90 backdrop-blur-sm border border-gray-200 rounded-lg p-8 mb-8 shadow-lg max-w-4xl">
                 <h2 className="text-xl font-bold text-[#38495D] mb-4">Executive Summary</h2>
                 <p className="text-gray-700 leading-relaxed">
-                  Growth plateaued in core segments. New Wave introduced a vertical GTM framework linking product, marketing, and sales with segment-specific plays that drove incremental ARR and margin expansion.
+                  Growth plateaued in core segments. New Wave introduced a vertical Go-to-Market framework linking product, marketing, and sales with segment-specific plays that drove incremental ARR and margin expansion.
                 </p>
               </div>
 

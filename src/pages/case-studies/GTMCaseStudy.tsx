@@ -29,7 +29,7 @@ export default function GTMCaseStudy({ onNavigate }: GTMCaseStudyProps) {
           className="flex items-center gap-2 text-[#01A3DB] hover:text-[#0182b3] transition-colors font-medium"
         >
           <ArrowLeft size={20} />
-          Back to GTM & Growth Optimization
+          Back to Go-to-Market & Growth Optimization
         </button>
       </div>
       <div ref={vantaRef} className="capabilities-hero" aria-label="Case Study">
@@ -49,7 +49,7 @@ export default function GTMCaseStudy({ onNavigate }: GTMCaseStudyProps) {
               <div className="bg-white/90 backdrop-blur-sm border border-gray-200 rounded-lg p-8 mb-8 shadow-lg max-w-4xl">
                 <h2 className="text-xl font-bold text-[#38495D] mb-4">Executive Summary</h2>
                 <p className="text-gray-700 leading-relaxed">
-                  [Placeholder content for GTM case study executive summary. This will be replaced with actual case study details about how New Wave Associates helped a company optimize their go-to-market strategy, align revenue teams, and drive predictable growth through strategic framework design and execution.]
+                  [Placeholder content for Go-to-Market case study executive summary. This will be replaced with actual case study details about how New Wave Associates helped a company optimize their go-to-market strategy, align revenue teams, and drive predictable growth through strategic framework design and execution.]
                 </p>
               </div>
 
@@ -88,7 +88,7 @@ export default function GTMCaseStudy({ onNavigate }: GTMCaseStudyProps) {
               </h2>
               <div className="space-y-4 text-gray-700 leading-relaxed text-lg">
                 <p>
-                  [Placeholder content describing the client's GTM challenges and growth constraints.]
+                  [Placeholder content describing the client's Go-to-Market challenges and growth constraints.]
                 </p>
                 <p>
                   Key challenges included:
@@ -116,7 +116,7 @@ export default function GTMCaseStudy({ onNavigate }: GTMCaseStudyProps) {
               </h2>
               <div className="space-y-4 text-gray-700 leading-relaxed text-lg">
                 <p>
-                  New Wave Associates implemented a comprehensive GTM transformation:
+                  New Wave Associates implemented a comprehensive Go-to-Market transformation:
                 </p>
                 <ul className="space-y-3 ml-6">
                   <li className="flex items-start">
