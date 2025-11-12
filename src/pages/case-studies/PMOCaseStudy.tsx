@@ -31,7 +31,7 @@ export default function PMOCaseStudy({ onNavigate }: PMOCaseStudyProps) {
               className="flex items-center gap-2 text-[#01A3DB] hover:text-[#0182b3] transition-colors font-medium mb-8"
             >
               <ArrowLeft size={20} />
-              Back to Transformation Office
+              Back to Project Management Office
             </button>
             <div className={`transition-opacity duration-1000 ${fadeIn ? 'opacity-100' : 'opacity-0'}`}>
               <h1 className="text-5xl font-bold text-[#38495D] mb-4">
