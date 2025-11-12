@@ -22,7 +22,7 @@ export default function VirtualCardCaseStudy({ onNavigate }: VirtualCardCaseStud
   };
 
   return (
-    <div className="pt-16">
+    <div className="pt-32">
       <div className="max-w-7xl mx-auto px-6 pt-6">
         <button
           onClick={() => onNavigate('hub-sga-optimization')}
