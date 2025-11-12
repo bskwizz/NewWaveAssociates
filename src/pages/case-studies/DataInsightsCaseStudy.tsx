@@ -29,7 +29,7 @@ export default function DataInsightsCaseStudy({ onNavigate }: DataInsightsCaseSt
           className="flex items-center gap-2 text-[#01A3DB] hover:text-[#0182b3] transition-colors font-medium"
         >
           <ArrowLeft size={20} />
-          Back to Capabilities
+          Back to Services
         </button>
       </div>
       <div ref={vantaRef} className="capabilities-hero" aria-label="Case Study">

@@ -8,7 +8,7 @@ export default function AIAutomationHub({ onNavigate }: AIAutomationHubProps) {
       <section className="cs-hero has-image" style={{ backgroundImage: "url('https://images.unsplash.com/photo-1677442136019-21780ecad995?w=1600&h=900&fit=crop')" }}>
         <div className="wrap">
           <div className="cs-breadcrumbs">
-            <a href="#" onClick={(e) => { e.preventDefault(); onNavigate('capabilities'); }}>Capabilities</a> · AI & Intelligent Automation
+            <a href="#" onClick={(e) => { e.preventDefault(); onNavigate('capabilities'); }}>Services</a> · AI & Intelligent Automation
           </div>
           <h1>AI & Intelligent Automation Case Studies</h1>
           <p>

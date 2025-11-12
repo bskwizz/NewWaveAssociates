@@ -8,7 +8,7 @@ export default function SGAOptimizationHub({ onNavigate }: SGAOptimizationHubPro
       <section className="cs-hero has-image" style={{ backgroundImage: "url('https://images.unsplash.com/photo-1460925895917-afdab827c52f?w=1600&h=900&fit=crop')" }}>
         <div className="wrap">
           <div className="cs-breadcrumbs">
-            <a href="#" onClick={(e) => { e.preventDefault(); onNavigate('capabilities'); }}>Capabilities</a> · SG&A Cost Optimization
+            <a href="#" onClick={(e) => { e.preventDefault(); onNavigate('capabilities'); }}>Services</a> · SG&A Cost Optimization
           </div>
           <h1>SG&A Cost Optimization Case Studies</h1>
           <p>

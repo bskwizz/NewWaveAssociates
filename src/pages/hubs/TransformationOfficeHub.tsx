@@ -8,7 +8,7 @@ export default function TransformationOfficeHub({ onNavigate }: TransformationOf
       <section className="cs-hero has-image" style={{ backgroundImage: "url('https://images.unsplash.com/photo-1552664730-d307ca884978?w=1600&h=900&fit=crop')" }}>
         <div className="wrap">
           <div className="cs-breadcrumbs">
-            <a href="#" onClick={(e) => { e.preventDefault(); onNavigate('capabilities'); }}>Capabilities</a> · Transformation Office
+            <a href="#" onClick={(e) => { e.preventDefault(); onNavigate('capabilities'); }}>Services</a> · Transformation Office
           </div>
           <h1>Transformation Office Case Studies</h1>
           <p>

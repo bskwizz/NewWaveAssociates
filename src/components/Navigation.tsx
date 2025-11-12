@@ -12,7 +12,7 @@ export default function Navigation({ currentPage, onNavigate }: NavigationProps)
 
   const navItems = [
     { label: 'The Flywheel', page: 'flywheel' },
-    { label: 'Capabilities', page: 'capabilities' },
+    { label: 'Services', page: 'capabilities' },
     { label: 'About Us', page: 'about-us' },
     { label: 'Contact Us', page: 'contact-us' },
   ];

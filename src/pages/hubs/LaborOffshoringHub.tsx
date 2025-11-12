@@ -8,7 +8,7 @@ export default function LaborOffshoringHub({ onNavigate }: LaborOffshoringHubPro
       <section className="cs-hero has-image" style={{ backgroundImage: "url('https://images.unsplash.com/photo-1521737711867-e3b97375f902?w=1600&h=900&fit=crop')" }}>
         <div className="wrap">
           <div className="cs-breadcrumbs">
-            <a href="#" onClick={(e) => { e.preventDefault(); onNavigate('capabilities'); }}>Capabilities</a> · Labor Strategy & Offshoring
+            <a href="#" onClick={(e) => { e.preventDefault(); onNavigate('capabilities'); }}>Services</a> · Labor Strategy & Offshoring
           </div>
           <h1>Labor Strategy & Offshoring Case Studies</h1>
           <p>
