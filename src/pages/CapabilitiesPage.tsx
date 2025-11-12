@@ -9,7 +9,7 @@ interface CapabilitiesPageProps {
 const capabilities = [
   {
     id: 'cap-transformation-office',
-    title: 'Transformation Office (Project Management Office)',
+    title: 'Project Management Office',
     points: [
       'Establish a unified governance engine that aligns strategy, funding, and delivery across functions.',
       'Implement portfolio dashboards and KPI frameworks that convert project data into executive visibility.',

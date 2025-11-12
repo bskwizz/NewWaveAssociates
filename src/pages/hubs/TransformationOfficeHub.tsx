@@ -8,9 +8,9 @@ export default function TransformationOfficeHub({ onNavigate }: TransformationOf
       <section className="cs-hero has-image" style={{ backgroundImage: "url('https://images.unsplash.com/photo-1552664730-d307ca884978?w=1600&h=900&fit=crop')" }}>
         <div className="wrap">
           <div className="cs-breadcrumbs">
-            <button onClick={() => onNavigate('capabilities')} className="hover:underline cursor-pointer bg-transparent border-none px-4 py-2 -mx-4 -my-2 font-inherit text-inherit rounded hover:bg-gray-100/50 transition-colors">Services</button> · Transformation Office
+            <button onClick={() => onNavigate('capabilities')} className="hover:underline cursor-pointer bg-transparent border-none px-4 py-2 -mx-4 -my-2 font-inherit text-inherit rounded hover:bg-gray-100/50 transition-colors">Services</button> · Project Management Office
           </div>
-          <h1>Transformation Office Case Studies</h1>
+          <h1>Project Management Office Case Studies</h1>
           <p>
             Project Management Office builds and turnarounds: unified governance, portfolio visibility, and predictable delivery that reduces risk and accelerates time-to-value.
           </p>
