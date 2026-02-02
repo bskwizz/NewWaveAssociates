@@ -34,12 +34,12 @@ export default function HomePage({ onNavigate }: HomePageProps) {
                 <div className="h-[2px] bg-gradient-to-r from-[#f05e00] via-[#ff8c42] to-transparent"></div>
               </div>
             </div>
-            <p className="hero-subtext text-xl md:text-2xl text-[#38495D] leading-relaxed is-visible">
+            <p className="hero-subtext text-xl md:text-2xl text-[#38495D] leading-relaxed is-visible mb-8">
               We bring <em className="font-semibold not-italic">operator-grade expertise</em> in procurement, revenue operations, and transformation excellence to help lower and middle market companies and small providers protect margins, extract value from their vendor communities, and prepare for the future.
             </p>
+            <div className="w-full bg-[#00a4dd]" style={{height: '60px', marginLeft: 'calc(-50vw + 50%)', marginRight: 'calc(-50vw + 50%)', width: '100vw'}}></div>
           </div>
         </div>
-        <div className="absolute bottom-0 left-0 right-0 w-full bg-[#00a4dd]" style={{height: '60px'}}></div>
       </div>
 
       <CTABar
