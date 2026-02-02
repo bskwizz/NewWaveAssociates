@@ -24,12 +24,12 @@ export default function HomePage({ onNavigate }: HomePageProps) {
 
         <PageHeader onNavigate={onNavigate} currentPage="home" />
 
-        <div className="relative flex items-center" style={{ height: 'calc(100vh - 10rem)' }}>
+        <div className="relative flex items-center" style={{ height: 'calc(100vh - 16rem)' }}>
           <div className="w-full">
             <div className="max-w-7xl mx-auto px-6">
               <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
                 <div id="hero-rotator" className="hero-rotator text-center">
-                  <div className="inline-block mb-6">
+                  <div className="inline-block mb-4">
                     <div>
                       <p className="text-black text-sm md:text-base font-bold tracking-[0.2em] uppercase mb-2 animate-fade-in" style={{
                         letterSpacing: '0.25em'
@@ -52,7 +52,7 @@ export default function HomePage({ onNavigate }: HomePageProps) {
                 </div>
               </div>
             </div>
-            <div className="w-full bg-[#00a4dd] mt-6" style={{height: '75px'}}></div>
+            <div className="w-full bg-[#00a4dd] mt-0" style={{height: '75px'}}></div>
           </div>
         </div>
       </div>
