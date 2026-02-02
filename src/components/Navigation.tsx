@@ -35,7 +35,7 @@ export default function Navigation({ currentPage, onNavigate }: NavigationProps)
             <img
               src={`${import.meta.env.BASE_URL}new_wave_associates_logo_only.png`}
               alt="New Wave Associates"
-              className="h-36 md:h-48 w-auto"
+              className="h-18 md:h-24 w-auto"
             />
             <button
               onClick={() => onNavigate('home')}
