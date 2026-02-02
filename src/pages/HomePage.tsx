@@ -8,10 +8,11 @@ export default function HomePage({ onNavigate }: HomePageProps) {
 
   return (
     <div>
-      <div className="hero relative h-screen overflow-hidden" style={{
+      <div className="hero relative h-screen" style={{
         background: `radial-gradient(1200px 600px at 15% -10%, rgba(1,163,219,0.25), transparent 50%),
                      radial-gradient(800px 400px at 85% 110%, rgba(56,73,93,0.25), transparent 50%),
-                     linear-gradient(180deg, #f7f9fb 0%, #eef3f7 100%)`
+                     linear-gradient(180deg, #f7f9fb 0%, #eef3f7 100%)`,
+        overflow: 'visible'
       }}>
         <div className="absolute inset-0 opacity-[0.12] pointer-events-none" style={{
           backgroundImage: `radial-gradient(1px 1px at 20% 30%, #38495d 100%, transparent 0),
@@ -21,7 +22,7 @@ export default function HomePage({ onNavigate }: HomePageProps) {
           backgroundRepeat: 'repeat'
         }}></div>
         <div className="relative h-full max-w-7xl mx-auto px-6 flex items-center">
-          <div id="hero-rotator" className="hero-rotator max-w-2xl">
+          <div id="hero-rotator" className="hero-rotator max-w-2xl relative">
             <div className="mb-8 inline-block">
               <div className="relative">
                 <div className="absolute inset-0 bg-gradient-to-r from-[#f05e00] to-[#ff8c42] blur-xl opacity-30"></div>
@@ -37,7 +38,10 @@ export default function HomePage({ onNavigate }: HomePageProps) {
             <p className="hero-subtext text-xl md:text-2xl text-[#38495D] leading-relaxed is-visible mb-8">
               We bring <em className="font-semibold not-italic">operator-grade expertise</em> in procurement, revenue operations, and transformation excellence to help lower and middle market companies and small providers protect margins, extract value from their vendor communities, and prepare for the future.
             </p>
-            <div className="w-full bg-[#00a4dd]" style={{height: '60px', marginLeft: 'calc(-50vw + 50%)', marginRight: 'calc(-50vw + 50%)', width: '100vw'}}></div>
+            <div className="absolute left-0 right-0 w-screen bg-[#00a4dd]" style={{
+              height: '60px',
+              marginLeft: 'calc(-50vw + 50%)'
+            }}></div>
           </div>
         </div>
       </div>
