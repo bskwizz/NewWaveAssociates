@@ -28,7 +28,7 @@ export default function HomePage({ onNavigate }: HomePageProps) {
                 <div id="hero-rotator" className="hero-rotator text-center">
                   <div className="inline-block mb-8">
                     <div>
-                      <p className="text-[#f05e00] text-sm md:text-base font-bold tracking-[0.2em] uppercase mb-2 animate-fade-in" style={{
+                      <p className="text-black text-sm md:text-base font-bold tracking-[0.2em] uppercase mb-2 animate-fade-in" style={{
                         letterSpacing: '0.25em'
                       }}>
                         The New Playbook<br />For Operational Leaders
