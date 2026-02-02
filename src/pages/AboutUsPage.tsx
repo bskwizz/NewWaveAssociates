@@ -38,8 +38,8 @@ export default function AboutUsPage({ onNavigate }: AboutUsPageProps) {
 
   return (
     <div>
-      <PageHeader onNavigate={onNavigate} currentPage="about-us" />
       <div ref={vantaRef} className="capabilities-hero" aria-label="About Us">
+        <PageHeader onNavigate={onNavigate} currentPage="about-us" />
         <div className="capabilities-hero__inner hero-content">
           <div className="max-w-7xl mx-auto px-6 flex items-center justify-center h-full">
             <p

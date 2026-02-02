@@ -350,8 +350,8 @@ export default function FlywheelPage({ onNavigate }: FlywheelPageProps) {
 
   return (
     <div>
-      <PageHeader onNavigate={onNavigate} currentPage="flywheel" />
       <div id="flywheel-hero" ref={vantaRef} className="flywheel-hero fw-glow" aria-label="New Wave Flywheel">
+        <PageHeader onNavigate={onNavigate} currentPage="flywheel" />
         <div className="flywheel-hero__inner hero-content">
           <div className="flywheel-hero__media">
             <img

@@ -87,8 +87,8 @@ export default function CapabilitiesPage({ onNavigate }: CapabilitiesPageProps) 
 
   return (
     <div>
-      <PageHeader onNavigate={onNavigate} currentPage="capabilities" />
       <div ref={vantaRef} className="capabilities-hero" aria-label="Services">
+        <PageHeader onNavigate={onNavigate} currentPage="capabilities" />
         <div className="capabilities-hero__inner hero-content">
           <div className="max-w-7xl mx-auto px-6 flex items-center justify-center h-full">
             <p
