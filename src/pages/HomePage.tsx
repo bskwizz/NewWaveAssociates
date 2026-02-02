@@ -39,9 +39,8 @@ export default function HomePage({ onNavigate }: HomePageProps) {
             </p>
           </div>
         </div>
+        <div className="absolute bottom-0 left-0 right-0 w-full bg-[#00a4dd]" style={{height: '60px'}}></div>
       </div>
-
-      <div className="w-full bg-[#00a4dd]" style={{height: '60px'}}></div>
 
       <CTABar
         text="Learn more about New Wave solutions for your unique growth opportunity"
