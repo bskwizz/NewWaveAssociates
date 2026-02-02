@@ -29,7 +29,7 @@ export default function Footer() {
         </div>
         <div className="pt-2 border-t border-white/10">
           <p className="text-xs text-gray-300">
-            © New Wave Associates LLC. All rights reserved.
+            © 2026 New Wave Associates LLC. All rights reserved.
           </p>
         </div>
       </div>
