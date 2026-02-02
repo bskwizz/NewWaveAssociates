@@ -57,6 +57,28 @@ export default function HomePage({ onNavigate }: HomePageProps) {
         </div>
       </div>
 
+      <section className="py-16 bg-white">
+        <div className="max-w-7xl mx-auto px-6">
+          <div className="flex flex-wrap justify-center items-center gap-12 md:gap-16">
+            <div className="flex items-center justify-center w-40 h-24 grayscale hover:grayscale-0 transition-all duration-300 opacity-60 hover:opacity-100">
+              <img src="/client-logo-1.png" alt="Client Logo 1" className="max-w-full max-h-full object-contain" />
+            </div>
+            <div className="flex items-center justify-center w-40 h-24 grayscale hover:grayscale-0 transition-all duration-300 opacity-60 hover:opacity-100">
+              <img src="/client-logo-2.png" alt="Client Logo 2" className="max-w-full max-h-full object-contain" />
+            </div>
+            <div className="flex items-center justify-center w-40 h-24 grayscale hover:grayscale-0 transition-all duration-300 opacity-60 hover:opacity-100">
+              <img src="/client-logo-3.png" alt="Client Logo 3" className="max-w-full max-h-full object-contain" />
+            </div>
+            <div className="flex items-center justify-center w-40 h-24 grayscale hover:grayscale-0 transition-all duration-300 opacity-60 hover:opacity-100">
+              <img src="/client-logo-4.png" alt="Client Logo 4" className="max-w-full max-h-full object-contain" />
+            </div>
+            <div className="flex items-center justify-center w-40 h-24 grayscale hover:grayscale-0 transition-all duration-300 opacity-60 hover:opacity-100">
+              <img src="/client-logo-5.png" alt="Client Logo 5" className="max-w-full max-h-full object-contain" />
+            </div>
+          </div>
+        </div>
+      </section>
+
       <CTABar
         text="Learn more about New Wave solutions for your unique growth opportunity"
         buttonText="Contact Us"
