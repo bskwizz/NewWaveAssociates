@@ -33,13 +33,13 @@ export default function Navigation({ currentPage, onNavigate }: NavigationProps)
         <div className="flex items-center justify-between">
           <div className="relative mt-3">
             <img
-              src={`${import.meta.env.BASE_URL}New Wave Associates Horizontal (1).png`}
+              src={`${import.meta.env.BASE_URL}new_wave_associates_logo_only.png`}
               alt="New Wave Associates"
               className="h-36 md:h-48 w-auto"
             />
             <button
               onClick={() => onNavigate('home')}
-              className="absolute left-0 top-1/2 -translate-y-1/2 w-80 h-20 hover:bg-black/5 transition-colors rounded"
+              className="absolute left-0 top-1/2 -translate-y-1/2 w-full h-full hover:bg-black/5 transition-colors rounded"
               aria-label="Go to homepage"
             />
           </div>
