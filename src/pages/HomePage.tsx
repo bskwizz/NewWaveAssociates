@@ -31,7 +31,7 @@ export default function HomePage({ onNavigate }: HomePageProps) {
                       <p className="text-[#f05e00] text-sm md:text-base font-bold tracking-[0.2em] uppercase mb-2 animate-fade-in" style={{
                         letterSpacing: '0.25em'
                       }}>
-                        The New Playbook for Operational Leaders
+                        The New Playbook<br />For Operational Leaders
                       </p>
                       <div className="h-[2px] bg-[#f05e00]"></div>
                     </div>
