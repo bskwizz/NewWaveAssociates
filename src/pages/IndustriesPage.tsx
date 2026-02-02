@@ -1,3 +1,9 @@
+import PageHeader from '../components/PageHeader';
+
+interface IndustriesPageProps {
+  onNavigate: (page: string) => void;
+}
+
 const industries = [
   {
     title: 'Financial Services & Fintech',
@@ -56,9 +62,11 @@ const industries = [
   },
 ];
 
-export default function IndustriesPage() {
+export default function IndustriesPage({ onNavigate }: IndustriesPageProps) {
   return (
-    <div className="pt-24 pb-16">
+    <div className="min-h-screen bg-gray-50">
+      <PageHeader onNavigate={onNavigate} currentPage="industries" />
+      <div className="pt-24 pb-16">
       <div className="max-w-7xl mx-auto px-6">
         <div className="max-w-4xl mb-16">
           <h1 className="text-5xl font-bold text-[#38495D] mb-6">Industries</h1>
@@ -95,6 +103,7 @@ export default function IndustriesPage() {
             </div>
           ))}
         </div>
+      </div>
       </div>
     </div>
   );

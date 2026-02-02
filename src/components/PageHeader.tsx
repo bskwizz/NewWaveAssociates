@@ -24,18 +24,34 @@ export default function PageHeader({ onNavigate, currentPage }: PageHeaderProps)
           </button>
 
           <div className="flex items-center gap-8">
-            {navItems.map((item) => (
-              <button
-                key={item.page}
-                onClick={() => onNavigate(item.page)}
-                className={`text-sm font-medium transition-all hover:text-[#01A3DB] relative group ${
-                  currentPage === item.page ? 'text-[#01A3DB]' : 'text-[#38495D]'
-                }`}
-              >
-                {item.label}
-                <span className="absolute -bottom-1 left-0 w-0 h-0.5 bg-[#01A3DB] transition-all group-hover:w-full"></span>
-              </button>
-            ))}
+            {navItems.map((item) => {
+              const isContactUs = item.page === 'contact-us';
+
+              if (isContactUs) {
+                return (
+                  <button
+                    key={item.page}
+                    onClick={() => onNavigate(item.page)}
+                    className="px-6 py-2.5 bg-[#f05e00] text-white text-sm font-semibold rounded-md hover:bg-[#d94f00] transition-all shadow-sm hover:shadow-md"
+                  >
+                    {item.label}
+                  </button>
+                );
+              }
+
+              return (
+                <button
+                  key={item.page}
+                  onClick={() => onNavigate(item.page)}
+                  className={`text-sm font-medium transition-all hover:text-[#01A3DB] relative group ${
+                    currentPage === item.page ? 'text-[#01A3DB]' : 'text-[#38495D]'
+                  }`}
+                >
+                  {item.label}
+                  <span className="absolute -bottom-1 left-0 w-0 h-0.5 bg-[#01A3DB] transition-all group-hover:w-full"></span>
+                </button>
+              );
+            })}
           </div>
         </div>
       </div>
