@@ -33,7 +33,7 @@ export default function Navigation({ currentPage, onNavigate }: NavigationProps)
         <div className="flex items-center justify-between h-20 md:h-24">
           <div className="relative">
             <img
-              src={`${import.meta.env.BASE_URL}new_wave_associates_horizontal.png`}
+              src="/new_wave_associates_horizontal.png"
               alt="New Wave Associates"
               className="h-12 md:h-16 w-auto"
             />
