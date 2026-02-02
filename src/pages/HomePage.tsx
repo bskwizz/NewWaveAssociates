@@ -52,7 +52,7 @@ export default function HomePage({ onNavigate }: HomePageProps) {
                 </div>
               </div>
             </div>
-            <div className="w-full bg-[#00a4dd] mt-0" style={{height: '75px'}}></div>
+            <div className="w-full bg-[#00a4dd] mt-12" style={{height: '75px'}}></div>
           </div>
         </div>
       </div>
