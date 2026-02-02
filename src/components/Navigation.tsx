@@ -31,18 +31,16 @@ export default function Navigation({ currentPage, onNavigate }: NavigationProps)
     <nav className="fixed top-0 left-0 right-0 bg-white/80 backdrop-blur-sm z-50">
       <div className="max-w-7xl mx-auto px-6">
         <div className="flex items-center justify-between h-20 md:h-24">
-          <div className="relative">
+          <button
+            onClick={() => onNavigate('home')}
+            className="flex items-center gap-3 group"
+          >
             <img
-              src="/New Wave Associates Horizontal copy.png"
+              src="/New Wave Associates Horizontal.png"
               alt="New Wave Associates"
-              className="h-14 md:h-18 w-auto"
+              className="h-12 w-auto"
             />
-            <button
-              onClick={() => onNavigate('home')}
-              className="absolute left-0 top-1/2 -translate-y-1/2 w-full h-full hover:bg-black/5 transition-colors rounded"
-              aria-label="Go to homepage"
-            />
-          </div>
+          </button>
 
           <div className="hidden md:flex items-center gap-8">
             {navItems.map((item) => (

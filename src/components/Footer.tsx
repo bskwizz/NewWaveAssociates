@@ -7,9 +7,9 @@ export default function Footer() {
         <div className="mb-2 flex flex-col md:flex-row justify-between items-start md:items-center gap-4">
           <div className="flex flex-col md:flex-row md:items-center gap-4 md:gap-8">
             <img
-              src="/New Wave Associates Horizontal copy.png"
+              src="/New Wave Associates Horizontal.png"
               alt="New Wave Associates Logo"
-              className="h-16 md:h-24 w-auto object-contain max-w-full"
+              className="h-12 w-auto"
             />
             <p className="text-xs text-gray-300 w-full md:w-auto max-w-md leading-relaxed">
               New Wave Associates is a strategy & general management growth consultancy that brings operator-grade expertise to help companies evolve. Smarter. Leaner. Faster.
