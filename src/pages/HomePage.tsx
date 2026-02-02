@@ -1,42 +1,10 @@
-import { useState, useEffect } from 'react';
 import CTABar from '../components/CTABar';
 
 interface HomePageProps {
   onNavigate: (page: string) => void;
 }
 
-const heroSlides = [
-  {
-    title: 'Grow',
-    subtext: 'New Wave Associates accelerates portfolio growth by unlocking new revenue engines and enabling businesses to scale with precision and purpose.',
-  },
-  {
-    title: 'Optimize',
-    subtext: 'New Wave Associates drives operational excellence by streamlining complexity, expanding margins, and strengthening enterprise value across the portfolio.',
-  },
-  {
-    title: 'Transform',
-    subtext: 'New Wave Associates leads bold transformation by aligning people, processes, and technology to create lasting impact and outperform expectations.',
-  },
-];
-
 export default function HomePage({ onNavigate }: HomePageProps) {
-  const [currentSlide, setCurrentSlide] = useState(0);
-  const [isVisible, setIsVisible] = useState(true);
-
-  useEffect(() => {
-    const interval = setInterval(() => {
-      setIsVisible(false);
-      setTimeout(() => {
-        setCurrentSlide((prev) => (prev + 1) % heroSlides.length);
-        setTimeout(() => {
-          setIsVisible(true);
-        }, 50);
-      }, 180);
-    }, 6000);
-
-    return () => clearInterval(interval);
-  }, []);
 
   return (
     <div>
@@ -52,7 +20,7 @@ export default function HomePage({ onNavigate }: HomePageProps) {
           backgroundSize: '120px 120px, 160px 160px, 200px 200px',
           backgroundRepeat: 'repeat'
         }}></div>
-        <div className="relative h-full max-w-7xl mx-auto px-6 flex items-center" aria-live="polite">
+        <div className="relative h-full max-w-7xl mx-auto px-6 flex items-center">
           <div id="hero-rotator" className="hero-rotator max-w-2xl">
             <div className="mb-8 inline-block">
               <div className="relative">
@@ -66,25 +34,10 @@ export default function HomePage({ onNavigate }: HomePageProps) {
                 <div className="h-[2px] bg-gradient-to-r from-[#f05e00] via-[#ff8c42] to-transparent"></div>
               </div>
             </div>
-            <h1 className={`hero-title text-6xl md:text-7xl font-bold text-[#38495D] mb-6 leading-tight ${isVisible ? 'is-visible' : ''}`}>
-              {heroSlides[currentSlide].title}
-            </h1>
-            <p className={`hero-subtext text-xl md:text-2xl text-[#38495D] leading-relaxed ${isVisible ? 'is-visible' : ''}`}>
-              {heroSlides[currentSlide].subtext}
+            <p className="hero-subtext text-xl md:text-2xl text-[#38495D] leading-relaxed is-visible">
+              We bring <em className="font-semibold not-italic">operator-grade expertise</em> in procurement, revenue operations, and transformation excellence to help lower and middle market companies and small providers protect margins, extract value from their vendor communities, and prepare for the future.
             </p>
           </div>
-        </div>
-
-        <div className="absolute bottom-8 left-1/2 -translate-x-1/2 flex gap-2">
-          {heroSlides.map((_, index) => (
-            <button
-              key={index}
-              onClick={() => setCurrentSlide(index)}
-              className={`w-2 h-2 rounded-full transition-all ${
-                index === currentSlide ? 'bg-[#01A3DB] w-8' : 'bg-[#38495D]/30'
-              }`}
-            />
-          ))}
         </div>
       </div>
 
