@@ -33,7 +33,7 @@ export default function HomePage({ onNavigate }: HomePageProps) {
                       }}>
                         The New Playbook for Operational Leaders
                       </p>
-                      <div className="h-[2px] bg-gradient-to-r from-[#f05e00] via-[#ff8c42] to-transparent"></div>
+                      <div className="h-[2px] bg-[#f05e00]"></div>
                     </div>
                   </div>
                   <p className="hero-subtext text-lg md:text-xl text-[#38495D] leading-relaxed is-visible">
