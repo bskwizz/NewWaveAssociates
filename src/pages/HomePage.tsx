@@ -37,10 +37,11 @@ export default function HomePage({ onNavigate }: HomePageProps) {
             <p className="hero-subtext text-xl md:text-2xl text-[#38495D] leading-relaxed is-visible">
               We bring <em className="font-semibold not-italic">operator-grade expertise</em> in procurement, revenue operations, and transformation excellence to help lower and middle market companies and small providers protect margins, extract value from their vendor communities, and prepare for the future.
             </p>
-            <div className="mt-8 bg-[#00a4dd]" style={{height: '60px', width: '100vw', marginLeft: 'calc(-50vw + 50%)', marginRight: 'calc(-50vw + 50%)'}}></div>
           </div>
         </div>
       </div>
+
+      <div className="w-full bg-[#00a4dd]" style={{height: '60px'}}></div>
 
       <CTABar
         text="Learn more about New Wave solutions for your unique growth opportunity"
