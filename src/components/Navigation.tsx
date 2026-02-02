@@ -28,7 +28,11 @@ export default function Navigation({ currentPage, onNavigate }: NavigationProps)
   };
 
   return (
-    <nav className="fixed top-0 left-0 right-0 bg-[#f5f5f5] backdrop-blur-sm z-50 border-b border-gray-200">
+    <nav className="fixed top-0 left-0 right-0 z-50" style={{
+      background: `radial-gradient(1200px 600px at 15% -10%, rgba(1,163,219,0.25), transparent 50%),
+                   radial-gradient(800px 400px at 85% 110%, rgba(56,73,93,0.25), transparent 50%),
+                   linear-gradient(180deg, #f7f9fb 0%, #eef3f7 100%)`
+    }}>
       <div className="max-w-7xl mx-auto px-6 -my-8 md:-my-8">
         <div className="flex items-center justify-between">
           <div className="relative mt-3">
