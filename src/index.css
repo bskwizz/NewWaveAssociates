@@ -597,7 +597,7 @@ html {
 }
 
 .reveal-animation {
-  animation: revealLeftToRight 3s ease-out forwards;
+  animation: revealLeftToRight 2s ease-out forwards;
 }
 
 @media (prefers-reduced-motion: reduce) {
