@@ -26,7 +26,7 @@ export default function HomePage({ onNavigate }: HomePageProps) {
             <div className="max-w-7xl mx-auto px-6">
               <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
                 <div id="hero-rotator" className="hero-rotator text-center">
-                  <p className="hero-subtext text-xl md:text-2xl text-[#38495D] leading-relaxed is-visible mb-8">
+                  <p className="hero-subtext text-lg md:text-xl text-[#38495D] leading-relaxed is-visible mb-8">
                     We bring <em className="font-semibold not-italic">operator-grade expertise</em> in procurement, revenue operations, and transformation excellence to help lower and middle market companies and small providers protect margins, extract value from their vendor communities, and prepare for the future.
                   </p>
                   <div className="inline-block">
