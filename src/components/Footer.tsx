@@ -7,7 +7,7 @@ export default function Footer() {
         <div className="mb-2 flex flex-col md:flex-row justify-between items-start md:items-center gap-4">
           <div className="flex flex-col md:flex-row md:items-center gap-4 md:gap-8">
             <img
-              src="/new_wave_associates_horizontal.png"
+              src="/New Wave Associates Horizontal copy.png"
               alt="New Wave Associates Logo"
               className="h-16 md:h-24 w-auto object-contain max-w-full"
             />
