@@ -42,9 +42,9 @@ export default function HomePage({ onNavigate }: HomePageProps) {
                 </div>
                 <div className="relative">
                   <img
-                    src="/path-to-your-image.jpg"
-                    alt="Hero image"
-                    className="w-full h-auto rounded-lg shadow-2xl"
+                    src="/new_wave_process_graphic.png"
+                    alt="New Wave Associates Process"
+                    className="w-full h-auto"
                   />
                 </div>
               </div>
