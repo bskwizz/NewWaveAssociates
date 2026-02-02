@@ -422,10 +422,6 @@ export default function FlywheelPage({ onNavigate }: FlywheelPageProps) {
         </div>
       </div>
 
-      <div className="fw-progress fw-progress--hero" style={{ marginTop: '70px' }} aria-hidden="true">
-        <div className="fw-progress__bar"></div>
-      </div>
-
       <div className="bg-gray-50 pt-8">
         <div className="max-w-7xl mx-auto px-6 pb-16">
           {renderSection(gtmStrategyContent)}
