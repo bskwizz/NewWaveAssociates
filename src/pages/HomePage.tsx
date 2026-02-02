@@ -40,11 +40,11 @@ export default function HomePage({ onNavigate }: HomePageProps) {
                     We bring <em className="font-semibold not-italic">operator-grade expertise</em> in procurement, revenue operations, and transformation excellence to help lower and middle market companies and small providers protect margins, extract value from their vendor communities, and prepare for the future.
                   </p>
                 </div>
-                <div className="relative">
+                <div className="relative overflow-visible">
                   <img
                     src="/new_wave_process_graphic_(1).png"
                     alt="New Wave Associates Process"
-                    className="w-full h-auto"
+                    className="w-full h-auto scale-125 origin-center"
                   />
                 </div>
               </div>
