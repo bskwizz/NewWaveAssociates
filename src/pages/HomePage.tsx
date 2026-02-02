@@ -21,27 +21,28 @@ export default function HomePage({ onNavigate }: HomePageProps) {
           backgroundSize: '120px 120px, 160px 160px, 200px 200px',
           backgroundRepeat: 'repeat'
         }}></div>
-        <div className="relative h-full max-w-7xl mx-auto px-6 flex items-center">
-          <div id="hero-rotator" className="hero-rotator max-w-2xl relative">
-            <div className="mb-8 inline-block">
-              <div className="relative">
-                <div className="absolute inset-0 bg-gradient-to-r from-[#f05e00] to-[#ff8c42] blur-xl opacity-30"></div>
-                <p className="relative text-[#f05e00] text-sm md:text-base font-bold tracking-[0.2em] uppercase mb-2 animate-fade-in" style={{
-                  textShadow: '0 0 20px rgba(240, 94, 0, 0.3)',
-                  letterSpacing: '0.25em'
-                }}>
-                  The New Playbook for Operational Leaders
+        <div className="relative h-full flex items-center">
+          <div className="w-full">
+            <div className="max-w-7xl mx-auto px-6">
+              <div id="hero-rotator" className="hero-rotator max-w-2xl">
+                <div className="mb-8 inline-block">
+                  <div className="relative">
+                    <div className="absolute inset-0 bg-gradient-to-r from-[#f05e00] to-[#ff8c42] blur-xl opacity-30"></div>
+                    <p className="relative text-[#f05e00] text-sm md:text-base font-bold tracking-[0.2em] uppercase mb-2 animate-fade-in" style={{
+                      textShadow: '0 0 20px rgba(240, 94, 0, 0.3)',
+                      letterSpacing: '0.25em'
+                    }}>
+                      The New Playbook for Operational Leaders
+                    </p>
+                    <div className="h-[2px] bg-gradient-to-r from-[#f05e00] via-[#ff8c42] to-transparent"></div>
+                  </div>
+                </div>
+                <p className="hero-subtext text-xl md:text-2xl text-[#38495D] leading-relaxed is-visible mb-8">
+                  We bring <em className="font-semibold not-italic">operator-grade expertise</em> in procurement, revenue operations, and transformation excellence to help lower and middle market companies and small providers protect margins, extract value from their vendor communities, and prepare for the future.
                 </p>
-                <div className="h-[2px] bg-gradient-to-r from-[#f05e00] via-[#ff8c42] to-transparent"></div>
               </div>
             </div>
-            <p className="hero-subtext text-xl md:text-2xl text-[#38495D] leading-relaxed is-visible mb-8">
-              We bring <em className="font-semibold not-italic">operator-grade expertise</em> in procurement, revenue operations, and transformation excellence to help lower and middle market companies and small providers protect margins, extract value from their vendor communities, and prepare for the future.
-            </p>
-            <div className="absolute left-0 right-0 w-screen bg-[#00a4dd]" style={{
-              height: '60px',
-              marginLeft: 'calc(-50vw + 50%)'
-            }}></div>
+            <div className="w-full bg-[#00a4dd]" style={{height: '60px'}}></div>
           </div>
         </div>
       </div>
