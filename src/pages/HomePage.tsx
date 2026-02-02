@@ -44,7 +44,7 @@ export default function HomePage({ onNavigate }: HomePageProps) {
                   <img
                     src="/new_wave_process_graphic_(1).png"
                     alt="New Wave Associates Process"
-                    className="w-full h-auto scale-125 origin-center"
+                    className="w-full h-auto scale-125 origin-center reveal-animation"
                   />
                 </div>
               </div>

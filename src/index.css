@@ -586,3 +586,23 @@ html {
   max-width: 900px; margin: 24px auto 64px; padding: 16px 18px;
   background: #fff; border:1px dashed rgba(0,0,0,.15); border-radius:12px; color:#4f5e6d;
 }
+
+@keyframes revealLeftToRight {
+  0% {
+    clip-path: inset(0 100% 0 0);
+  }
+  100% {
+    clip-path: inset(0 0 0 0);
+  }
+}
+
+.reveal-animation {
+  animation: revealLeftToRight 3s ease-out forwards;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .reveal-animation {
+    animation: none;
+    clip-path: none;
+  }
+}
