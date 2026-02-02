@@ -26,10 +26,7 @@ export default function HomePage({ onNavigate }: HomePageProps) {
             <div className="max-w-7xl mx-auto px-6">
               <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
                 <div id="hero-rotator" className="hero-rotator text-center">
-                  <p className="hero-subtext text-lg md:text-xl text-[#38495D] leading-relaxed is-visible mb-8">
-                    We bring <em className="font-semibold not-italic">operator-grade expertise</em> in procurement, revenue operations, and transformation excellence to help lower and middle market companies and small providers protect margins, extract value from their vendor communities, and prepare for the future.
-                  </p>
-                  <div className="inline-block">
+                  <div className="inline-block mb-8">
                     <div className="relative">
                       <div className="absolute inset-0 bg-gradient-to-r from-[#f05e00] to-[#ff8c42] blur-xl opacity-30"></div>
                       <p className="relative text-[#f05e00] text-sm md:text-base font-bold tracking-[0.2em] uppercase mb-2 animate-fade-in" style={{
@@ -41,6 +38,9 @@ export default function HomePage({ onNavigate }: HomePageProps) {
                       <div className="h-[2px] bg-gradient-to-r from-[#f05e00] via-[#ff8c42] to-transparent"></div>
                     </div>
                   </div>
+                  <p className="hero-subtext text-lg md:text-xl text-[#38495D] leading-relaxed is-visible">
+                    We bring <em className="font-semibold not-italic">operator-grade expertise</em> in procurement, revenue operations, and transformation excellence to help lower and middle market companies and small providers protect margins, extract value from their vendor communities, and prepare for the future.
+                  </p>
                 </div>
                 <div className="relative">
                   <img
