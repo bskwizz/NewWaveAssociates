@@ -1,11 +1,11 @@
 import CTABar from '../components/CTABar';
+import PageHeader from '../components/PageHeader';
 
 interface HomePageProps {
   onNavigate: (page: string) => void;
 }
 
 export default function HomePage({ onNavigate }: HomePageProps) {
-
   return (
     <div>
       <div className="hero relative h-screen" style={{
@@ -21,7 +21,10 @@ export default function HomePage({ onNavigate }: HomePageProps) {
           backgroundSize: '120px 120px, 160px 160px, 200px 200px',
           backgroundRepeat: 'repeat'
         }}></div>
-        <div className="relative h-full flex items-center">
+
+        <PageHeader onNavigate={onNavigate} currentPage="home" />
+
+        <div className="relative h-full flex items-center -mt-32">
           <div className="w-full">
             <div className="max-w-7xl mx-auto px-6">
               <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">

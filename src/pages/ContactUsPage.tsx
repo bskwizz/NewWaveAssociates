@@ -1,7 +1,12 @@
 import { useState } from 'react';
 import { MapPin, Mail, Linkedin } from 'lucide-react';
+import PageHeader from '../components/PageHeader';
 
-export default function ContactUsPage() {
+interface ContactUsPageProps {
+  onNavigate: (page: string) => void;
+}
+
+export default function ContactUsPage({ onNavigate }: ContactUsPageProps) {
   const [formData, setFormData] = useState({
     name: '',
     email: '',
@@ -28,7 +33,8 @@ export default function ContactUsPage() {
 
   return (
     <div className="min-h-screen bg-gray-50">
-      <div className="pt-40 pb-16">
+      <PageHeader onNavigate={onNavigate} currentPage="contact-us" />
+      <div className="pt-24 pb-16">
         <div className="max-w-7xl mx-auto px-6">
           <div className="flex gap-12 items-start">
             <div className="w-[30%] flex-shrink-0">

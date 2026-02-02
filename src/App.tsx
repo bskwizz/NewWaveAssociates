@@ -1,5 +1,4 @@
 import { useState, useEffect } from 'react';
-import Navigation from './components/Navigation';
 import Footer from './components/Footer';
 import HomePage from './pages/HomePage';
 import FlywheelPage from './pages/FlywheelPage';
@@ -67,13 +66,13 @@ function App() {
       case 'home':
         return <HomePage onNavigate={handleNavigate} />;
       case 'flywheel':
-        return <FlywheelPage />;
+        return <FlywheelPage onNavigate={handleNavigate} />;
       case 'capabilities':
         return <CapabilitiesPage onNavigate={handleNavigate} />;
       case 'about-us':
         return <AboutUsPage onNavigate={handleNavigate} />;
       case 'contact-us':
-        return <ContactUsPage />;
+        return <ContactUsPage onNavigate={handleNavigate} />;
       case 'case-study-pmo':
         return <PMOCaseStudy onNavigate={handleNavigate} />;
       case 'case-study-operating-model':
@@ -145,7 +144,6 @@ function App() {
 
   return (
     <div className="min-h-screen bg-gray-50 flex flex-col">
-      <Navigation currentPage={currentPage} onNavigate={handleNavigate} />
       <main className="flex-grow">
         {renderPage()}
       </main>

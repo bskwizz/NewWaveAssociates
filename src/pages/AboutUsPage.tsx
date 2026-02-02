@@ -1,5 +1,6 @@
 import { useRef, useEffect, useState } from 'react';
 import CTABar from '../components/CTABar';
+import PageHeader from '../components/PageHeader';
 
 interface AboutUsPageProps {
   onNavigate: (page: string) => void;
@@ -36,7 +37,8 @@ export default function AboutUsPage({ onNavigate }: AboutUsPageProps) {
   }, []);
 
   return (
-    <div className="pt-16">
+    <div>
+      <PageHeader onNavigate={onNavigate} currentPage="about-us" />
       <div ref={vantaRef} className="capabilities-hero" aria-label="About Us">
         <div className="capabilities-hero__inner hero-content">
           <div className="max-w-7xl mx-auto px-6 flex items-center justify-center h-full">

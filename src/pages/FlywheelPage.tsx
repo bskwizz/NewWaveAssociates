@@ -1,5 +1,6 @@
 import { ArrowUp, ChevronDown } from 'lucide-react';
 import { useState, useEffect, useRef } from 'react';
+import PageHeader from '../components/PageHeader';
 
 interface SectionGroup {
   subhead: string;
@@ -232,7 +233,11 @@ function CollapsibleGroup({ subhead, items, groupId }: CollapsibleGroupProps) {
   );
 }
 
-export default function FlywheelPage() {
+interface FlywheelPageProps {
+  onNavigate: (page: string) => void;
+}
+
+export default function FlywheelPage({ onNavigate }: FlywheelPageProps) {
   const [showBackToTop, setShowBackToTop] = useState(false);
   const [fadeInImage, setFadeInImage] = useState(false);
   const [fadeInGtm, setFadeInGtm] = useState(false);
@@ -344,7 +349,8 @@ export default function FlywheelPage() {
   );
 
   return (
-    <div className="pt-16">
+    <div>
+      <PageHeader onNavigate={onNavigate} currentPage="flywheel" />
       <div id="flywheel-hero" ref={vantaRef} className="flywheel-hero fw-glow" aria-label="New Wave Flywheel">
         <div className="flywheel-hero__inner hero-content">
           <div className="flywheel-hero__media">

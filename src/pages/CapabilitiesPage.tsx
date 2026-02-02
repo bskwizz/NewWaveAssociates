@@ -1,6 +1,7 @@
 import { useState, useRef, useEffect } from 'react';
 import { ChevronDown } from 'lucide-react';
 import CTABar from '../components/CTABar';
+import PageHeader from '../components/PageHeader';
 
 interface CapabilitiesPageProps {
   onNavigate: (page: string) => void;
@@ -85,7 +86,8 @@ export default function CapabilitiesPage({ onNavigate }: CapabilitiesPageProps) 
   }, []);
 
   return (
-    <div className="pt-16">
+    <div>
+      <PageHeader onNavigate={onNavigate} currentPage="capabilities" />
       <div ref={vantaRef} className="capabilities-hero" aria-label="Services">
         <div className="capabilities-hero__inner hero-content">
           <div className="max-w-7xl mx-auto px-6 flex items-center justify-center h-full">
