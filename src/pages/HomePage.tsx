@@ -27,10 +27,8 @@ export default function HomePage({ onNavigate }: HomePageProps) {
               <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
                 <div id="hero-rotator" className="hero-rotator text-center">
                   <div className="inline-block mb-8">
-                    <div className="relative">
-                      <div className="absolute inset-0 bg-gradient-to-r from-[#f05e00] to-[#ff8c42] blur-xl opacity-30"></div>
-                      <p className="relative text-[#f05e00] text-sm md:text-base font-bold tracking-[0.2em] uppercase mb-2 animate-fade-in" style={{
-                        textShadow: '0 0 20px rgba(240, 94, 0, 0.3)',
+                    <div>
+                      <p className="text-[#f05e00] text-sm md:text-base font-bold tracking-[0.2em] uppercase mb-2 animate-fade-in" style={{
                         letterSpacing: '0.25em'
                       }}>
                         The New Playbook for Operational Leaders
