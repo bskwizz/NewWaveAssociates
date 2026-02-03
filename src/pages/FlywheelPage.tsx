@@ -434,11 +434,11 @@ export default function FlywheelPage({ onNavigate }: FlywheelPageProps) {
                 </div>
                 <div className="hero-rotator text-left pt-8">
                   <div className="mb-6">
-                    <div>
+                    <div className="inline-block">
                       <p className="text-black text-sm md:text-base font-bold tracking-[0.2em] uppercase mb-2 animate-fade-in text-left" style={{
                         letterSpacing: '0.25em'
                       }}>
-                        Interim Leadership<br />Practice Areas
+                        Interim<br />Leadership Practice Areas
                       </p>
                       <div className="h-[2px] bg-[#f05e00]"></div>
                     </div>
