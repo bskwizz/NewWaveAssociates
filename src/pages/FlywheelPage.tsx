@@ -366,18 +366,18 @@ export default function FlywheelPage({ onNavigate }: FlywheelPageProps) {
             <div className="max-w-7xl mx-auto px-6">
               <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-start">
                 <div className="flywheel-hero__media relative">
-                  {/* Strategic Sourcing - positioned at 10:30 clock position */}
-                  <div className="absolute" style={{ top: '12%', left: '5%' }}>
+                  {/* Strategic Sourcing - positioned at 10:30 clock position, overlapping */}
+                  <div className="absolute" style={{ top: '22%', left: '18%' }}>
                     <p className="text-[#38495D] font-bold text-base">Strategic Sourcing</p>
                   </div>
 
-                  {/* Revenue and Demand Acceleration - positioned at 1:30 clock position */}
-                  <div className="absolute text-center" style={{ top: '12%', right: '5%' }}>
+                  {/* Revenue and Demand Acceleration - positioned at 1:30 clock position, overlapping */}
+                  <div className="absolute text-center" style={{ top: '22%', right: '18%' }}>
                     <p className="text-[#38495D] font-bold text-base">Revenue and Demand<br />Acceleration</p>
                   </div>
 
-                  {/* Integrations and Divestitures - positioned at 6:00 clock position */}
-                  <div className="absolute left-1/2" style={{ bottom: '5%', transform: 'translateX(-50%)' }}>
+                  {/* Integrations and Divestitures - positioned at 6:00 clock position, overlapping */}
+                  <div className="absolute left-1/2" style={{ bottom: '18%', transform: 'translateX(-50%)' }}>
                     <p className="text-[#38495D] font-bold text-base text-center">Integrations and Divestitures</p>
                   </div>
 
