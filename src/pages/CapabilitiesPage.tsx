@@ -103,56 +103,6 @@ export default function CapabilitiesPage({ onNavigate }: CapabilitiesPageProps) 
 
         <PageHeader onNavigate={onNavigate} currentPage="capabilities" />
 
-        <div className="absolute inset-x-0" style={{ top: '50%', transform: 'translateY(-50%)', height: '60%', pointerEvents: 'none', opacity: 0.15 }}>
-          <div className="relative w-full h-full">
-            <svg
-              viewBox="0 0 1440 600"
-              className="w-full h-full"
-              preserveAspectRatio="xMidYMid slice"
-              xmlns="http://www.w3.org/2000/svg"
-            >
-              <defs>
-                <linearGradient id="waveGradient1" x1="0%" y1="0%" x2="100%" y2="0%">
-                  <stop offset="0%" stopColor="#01A3DB" stopOpacity="0.6"/>
-                  <stop offset="50%" stopColor="#0182B3" stopOpacity="0.8"/>
-                  <stop offset="100%" stopColor="#01A3DB" stopOpacity="0.6"/>
-                </linearGradient>
-                <linearGradient id="waveGradient2" x1="0%" y1="0%" x2="100%" y2="0%">
-                  <stop offset="0%" stopColor="#38495D" stopOpacity="0.3"/>
-                  <stop offset="50%" stopColor="#01A3DB" stopOpacity="0.5"/>
-                  <stop offset="100%" stopColor="#38495D" stopOpacity="0.3"/>
-                </linearGradient>
-              </defs>
-
-              <path
-                d="M0,300 Q360,150 720,300 T1440,300 L1440,400 Q1080,250 720,400 T0,400 Z"
-                fill="url(#waveGradient1)"
-              />
-
-              <path
-                d="M0,320 Q360,180 720,320 T1440,320 L1440,420 Q1080,280 720,420 T0,420 Z"
-                fill="url(#waveGradient2)"
-              />
-
-              <path
-                d="M0,280 Q360,120 720,280 T1440,280"
-                fill="none"
-                stroke="#01A3DB"
-                strokeWidth="2"
-                opacity="0.4"
-              />
-
-              <path
-                d="M0,340 Q360,200 720,340 T1440,340"
-                fill="none"
-                stroke="#0182B3"
-                strokeWidth="1.5"
-                opacity="0.3"
-              />
-            </svg>
-          </div>
-        </div>
-
         <div className="relative flex items-start pt-12" style={{ height: 'calc(100vh - 16rem)' }}>
           <div className="w-full">
             <div className="max-w-7xl mx-auto px-6">
