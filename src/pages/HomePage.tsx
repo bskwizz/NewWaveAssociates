@@ -1,5 +1,6 @@
 import CTABar from '../components/CTABar';
 import PageHeader from '../components/PageHeader';
+import LogoScroller from '../components/LogoScroller';
 
 interface HomePageProps {
   onNavigate: (page: string) => void;
@@ -56,6 +57,8 @@ export default function HomePage({ onNavigate }: HomePageProps) {
           </div>
         </div>
       </div>
+
+      <LogoScroller />
 
       <CTABar
         text="Learn more about New Wave solutions for your unique growth opportunity"
