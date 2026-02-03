@@ -351,7 +351,27 @@ export default function FlywheelPage({ onNavigate }: FlywheelPageProps) {
   return (
     <div>
       <div id="flywheel-hero" ref={vantaRef} className="flywheel-hero fw-glow" aria-label="New Wave Flywheel">
+        <div className="absolute inset-0 opacity-[0.12] pointer-events-none" style={{
+          backgroundImage: `radial-gradient(1px 1px at 20% 30%, #38495d 100%, transparent 0),
+                            radial-gradient(1px 1px at 70% 60%, #01a3db 100%, transparent 0),
+                            radial-gradient(1px 1px at 40% 80%, #38495d 100%, transparent 0)`,
+          backgroundSize: '120px 120px, 160px 160px, 200px 200px',
+          backgroundRepeat: 'repeat'
+        }}></div>
+
         <PageHeader onNavigate={onNavigate} currentPage="flywheel" />
+
+        <div className="absolute top-32 left-6 md:left-12 z-10">
+          <div className="inline-block">
+            <p className="text-black text-sm md:text-base font-bold tracking-[0.2em] uppercase mb-2" style={{
+              letterSpacing: '0.25em'
+            }}>
+              Interim Leadership<br />Practice Areas
+            </p>
+            <div className="h-[2px] bg-[#f05e00]"></div>
+          </div>
+        </div>
+
         <div className="flywheel-hero__inner hero-content">
           <div className="flywheel-hero__media">
             <img

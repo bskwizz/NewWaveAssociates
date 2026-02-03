@@ -69,16 +69,9 @@ html {
 .fw-glow {
   position: relative;
   background:
-    repeating-linear-gradient(
-      135deg,
-      rgba(56,73,93,0.05) 0px,
-      rgba(56,73,93,0.05) 1px,
-      transparent 1px,
-      transparent 22px
-    ),
-    radial-gradient(1200px 600px at 12% -10%, rgba(1,163,219,0.08), transparent 55%),
-    radial-gradient(900px 500px at 88% 110%, rgba(56,73,93,0.10), transparent 55%),
-    linear-gradient(180deg, #FFFFFF 0%, #F8FBFD 100%);
+    radial-gradient(1200px 600px at 15% -10%, rgba(1,163,219,0.25), transparent 50%),
+    radial-gradient(800px 400px at 85% 110%, rgba(56,73,93,0.25), transparent 50%),
+    linear-gradient(180deg, #f7f9fb 0%, #eef3f7 100%);
   border-bottom: 1px solid rgba(0,0,0,0.06);
 }
 
@@ -135,16 +128,9 @@ html {
 @media (max-width: 768px) {
   .fw-glow {
     background:
-      repeating-linear-gradient(
-        135deg,
-        rgba(56,73,93,0.035) 0px,
-        rgba(56,73,93,0.035) 1px,
-        transparent 1px,
-        transparent 22px
-      ),
-      radial-gradient(1200px 600px at 12% -10%, rgba(1,163,219,0.07), transparent 55%),
-      radial-gradient(900px 500px at 88% 110%, rgba(56,73,93,0.09), transparent 55%),
-      linear-gradient(180deg, #FFFFFF 0%, #F8FBFD 100%);
+      radial-gradient(1200px 600px at 15% -10%, rgba(1,163,219,0.25), transparent 50%),
+      radial-gradient(800px 400px at 85% 110%, rgba(56,73,93,0.25), transparent 50%),
+      linear-gradient(180deg, #f7f9fb 0%, #eef3f7 100%);
   }
 }
 
