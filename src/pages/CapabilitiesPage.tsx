@@ -283,9 +283,16 @@ export default function CapabilitiesPage({ onNavigate }: CapabilitiesPageProps) 
               className="bg-white p-6 rounded-lg shadow-md hover:shadow-lg transition-shadow"
             >
               <div className="mb-4">
-                <h3 className="text-2xl font-bold text-[#38495D]">
-                  {capability.title}
-                </h3>
+                <div className="inline-block mb-2">
+                  <div>
+                    <p className="text-black text-sm md:text-base font-bold tracking-[0.2em] uppercase mb-2" style={{
+                      letterSpacing: '0.25em'
+                    }}>
+                      {capability.title}
+                    </p>
+                    <div className="h-[2px] bg-[#f05e00]"></div>
+                  </div>
+                </div>
               </div>
 
               <div className="space-y-4">
