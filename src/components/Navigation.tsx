@@ -36,7 +36,7 @@ export default function Navigation({ currentPage, onNavigate }: NavigationProps)
             className="flex items-center gap-3 group relative z-10"
           >
             <img
-              src="/New Wave Associates Horizontal.png"
+              src="/copy_of_new_wave_associates_horizontal.png"
               alt="New Wave Associates"
               className="!h-[140px] w-auto"
             />
