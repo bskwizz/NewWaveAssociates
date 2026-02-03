@@ -203,12 +203,12 @@ export default function OurServicesPage({ onNavigate }: OurServicesPageProps) {
 
     const textContent = (
       <div className="flex flex-col justify-center">
-        <div className="text-left mb-3">
+        <div className="text-left mb-2 sm:mb-3">
           <div className="inline-block mb-2">
             <div>
               <h2
                 id={`${content.id}-title`}
-                className="text-black text-xs sm:text-sm md:text-base font-bold uppercase mb-2"
+                className="text-black text-xs sm:text-sm lg:text-base font-bold uppercase mb-2"
                 style={{ letterSpacing: '0.2em' }}
               >
                 {content.title}
@@ -219,14 +219,14 @@ export default function OurServicesPage({ onNavigate }: OurServicesPageProps) {
         </div>
 
         {content.subheading && (
-          <p className="text-lg sm:text-xl text-gray-700 mb-6 md:mb-8 leading-relaxed text-left">{content.subheading}</p>
+          <p className="text-base sm:text-lg lg:text-xl text-gray-700 mb-5 sm:mb-6 lg:mb-8 leading-relaxed text-left">{content.subheading}</p>
         )}
 
         {content.bullets && content.bullets.length > 0 && (
-          <ul className="space-y-2 md:space-y-3 text-left">
+          <ul className="space-y-2 sm:space-y-2 lg:space-y-3 text-left">
             {content.bullets.map((bullet, idx) => (
               <li key={idx} className="flex items-start">
-                <span className="text-[#f05e00] mr-2 md:mr-3 mt-1 flex-shrink-0">•</span>
+                <span className="text-[#f05e00] mr-2 sm:mr-2 lg:mr-3 mt-1 flex-shrink-0">•</span>
                 <span className="text-gray-700 text-sm sm:text-base leading-relaxed">{bullet}</span>
               </li>
             ))}
@@ -262,19 +262,19 @@ export default function OurServicesPage({ onNavigate }: OurServicesPageProps) {
       <section
         id={content.id}
         aria-labelledby={`${content.id}-title`}
-        className="mb-12 md:mb-16 pb-12 md:pb-16 border-b border-gray-200"
+        className="mb-8 sm:mb-10 lg:mb-16 pb-8 sm:pb-10 lg:pb-16 border-b border-gray-200"
       >
         <div className="max-w-6xl">
-          <div className={content.image ? 'grid grid-cols-1 lg:grid-cols-2 gap-8 md:gap-12 items-center' : ''}>
+          <div className={content.image ? 'grid grid-cols-1 lg:grid-cols-2 gap-6 sm:gap-8 lg:gap-12 items-center' : ''}>
             {isFlipped ? (
               <>
-                {imageContent}
-                {textContent}
+                <div className="order-2 lg:order-1">{imageContent}</div>
+                <div className="order-1 lg:order-2">{textContent}</div>
               </>
             ) : (
               <>
-                {textContent}
-                {imageContent}
+                <div className="order-2 lg:order-1">{textContent}</div>
+                <div className="order-1 lg:order-2">{imageContent}</div>
               </>
             )}
           </div>
@@ -304,11 +304,11 @@ export default function OurServicesPage({ onNavigate }: OurServicesPageProps) {
           />
         </div>
 
-        <div className="relative flex items-center min-h-[50vh] md:min-h-[60vh] py-8 md:py-0">
+        <div className="relative flex items-center min-h-[50vh] sm:min-h-[55vh] lg:min-h-[60vh] py-6 sm:py-8 lg:py-0">
           <div className="w-full">
-            <div className="max-w-7xl mx-auto px-4 sm:px-6 w-full">
-              <div className="grid grid-cols-1 lg:grid-cols-2 gap-8 md:gap-12 items-center">
-                <div className="flywheel-hero__media relative">
+            <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-6 w-full">
+              <div className="grid grid-cols-1 lg:grid-cols-2 gap-6 sm:gap-8 lg:gap-12 items-center">
+                <div className="flywheel-hero__media relative order-2 lg:order-1">
                   <img
                     className={`flywheel-hero__img transition-opacity duration-1000 ${
                       fadeInImage ? 'opacity-100' : 'opacity-0'
@@ -375,10 +375,10 @@ export default function OurServicesPage({ onNavigate }: OurServicesPageProps) {
               }}
             ></a>
                 </div>
-                <div className="hero-rotator text-left">
+                <div className="hero-rotator text-left order-1 lg:order-2">
                   <div className="inline-block mb-2">
                     <div>
-                      <p className="text-black text-xs sm:text-sm md:text-base font-bold uppercase mb-2 animate-fade-in" style={{
+                      <p className="text-black text-xs sm:text-sm lg:text-base font-bold uppercase mb-2 animate-fade-in" style={{
                         letterSpacing: '0.2em'
                       }}>
                         Interim<br />Leadership Practice Areas
@@ -387,7 +387,7 @@ export default function OurServicesPage({ onNavigate }: OurServicesPageProps) {
                     </div>
                   </div>
 
-                  <div className="space-y-4 md:space-y-6 text-left max-w-xl mt-4 md:mt-6">
+                  <div className="space-y-3 sm:space-y-4 lg:space-y-6 text-left max-w-xl mt-4 sm:mt-5 lg:mt-6">
                     <p className="text-gray-700 text-sm sm:text-base leading-relaxed">
                       We embed in the trenches with leaders to achieve specific, pragmatic goals quickly.
                     </p>
@@ -407,8 +407,8 @@ export default function OurServicesPage({ onNavigate }: OurServicesPageProps) {
         </div>
       </div>
 
-      <div className="bg-gray-50 pt-6 md:pt-8">
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 pb-12 md:pb-16 w-full">
+      <div className="bg-gray-50 pt-5 sm:pt-6 lg:pt-8">
+        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 pb-8 sm:pb-12 lg:pb-16 w-full">
           {renderSection(gtmStrategyContent)}
           {renderSection(costOptimizationContent)}
           {renderSection(operationalEfficienciesContent)}

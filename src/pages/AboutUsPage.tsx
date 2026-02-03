@@ -65,14 +65,14 @@ export default function AboutUsPage({ onNavigate }: AboutUsPageProps) {
           />
         </div>
 
-        <div className="capabilities-hero__inner hero-content relative z-20" style={{ paddingTop: '4rem' }}>
-          <div className="max-w-7xl mx-auto px-6">
+        <div className="capabilities-hero__inner hero-content relative z-20 pt-6 sm:pt-8 lg:pt-[4rem]">
+          <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-6">
             <div className={`w-full transition-opacity duration-1000 ${fadeIn ? 'opacity-100' : 'opacity-0'}`}>
-              <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-start mb-12">
+              <div className="grid grid-cols-1 lg:grid-cols-2 gap-6 sm:gap-8 lg:gap-12 items-start mb-6 sm:mb-8 lg:mb-12">
                 <div className="text-left">
                   <div className="inline-block mb-2">
                     <div>
-                      <p className="text-black text-sm md:text-base font-bold tracking-[0.2em] uppercase mb-2" style={{
+                      <p className="text-black text-xs sm:text-sm lg:text-base font-bold tracking-[0.2em] uppercase mb-2" style={{
                         letterSpacing: '0.25em'
                       }}>
                         The Right Operators
@@ -80,20 +80,20 @@ export default function AboutUsPage({ onNavigate }: AboutUsPageProps) {
                       <div className="h-[2px] bg-[#f05e00]"></div>
                     </div>
                   </div>
-                  <p className="text-base text-gray-700 leading-relaxed mt-6">
+                  <p className="text-sm sm:text-base text-gray-700 leading-relaxed mt-4 sm:mt-5 lg:mt-6">
                     We have <span className="font-semibold">directly</span> led procurement, revenue operations, and M&A across lower and middle market organizations
                   </p>
                 </div>
               </div>
 
-              <div className="grid md:grid-cols-2 gap-8 pb-16">
+              <div className="grid grid-cols-1 md:grid-cols-2 gap-5 sm:gap-6 lg:gap-8 pb-8 sm:pb-12 lg:pb-16">
                 {teamMembers.map((member, index) => (
                   <div
                     key={index}
-                    className="bg-white border border-gray-200 rounded-lg p-5 shadow-lg hover:shadow-xl transition-all group"
+                    className="bg-white border border-gray-200 rounded-lg p-4 sm:p-5 shadow-lg hover:shadow-xl transition-all group"
                   >
-                    <div className="flex gap-5 mb-5">
-                      <div className="w-40 h-40 flex-shrink-0 flex items-center justify-center overflow-hidden bg-white rounded-lg">
+                    <div className="flex flex-col sm:flex-row gap-4 sm:gap-5 mb-4 sm:mb-5">
+                      <div className="w-32 h-32 sm:w-36 sm:h-36 lg:w-40 lg:h-40 flex-shrink-0 flex items-center justify-center overflow-hidden bg-white rounded-lg mx-auto sm:mx-0">
                         <img
                           src={`${import.meta.env.BASE_URL}${member.image}`}
                           alt={member.name}
@@ -105,46 +105,46 @@ export default function AboutUsPage({ onNavigate }: AboutUsPageProps) {
                             if (parent) {
                               parent.classList.add('bg-gradient-to-br', 'from-[#01A3DB]', 'to-[#38495D]');
                               const initials = document.createElement('div');
-                              initials.className = 'w-24 h-24 bg-white/20 rounded-full flex items-center justify-center';
-                              initials.innerHTML = `<span class="text-white text-3xl font-bold">${member.name.split(' ').map(n => n[0]).join('')}</span>`;
+                              initials.className = 'w-20 h-20 sm:w-22 sm:h-22 lg:w-24 lg:h-24 bg-white/20 rounded-full flex items-center justify-center';
+                              initials.innerHTML = `<span class="text-white text-2xl sm:text-2xl lg:text-3xl font-bold">${member.name.split(' ').map(n => n[0]).join('')}</span>`;
                               parent.appendChild(initials);
                             }
                           }}
                         />
                       </div>
-                      <div className="flex-1 text-left flex flex-col justify-center">
-                        <h3 className="text-xl font-bold text-[#38495D] mb-1">
+                      <div className="flex-1 text-center sm:text-left flex flex-col justify-center">
+                        <h3 className="text-lg sm:text-xl font-bold text-[#38495D] mb-1">
                           {member.name}
                         </h3>
-                        <p className="text-gray-600">{member.title}</p>
+                        <p className="text-sm sm:text-base text-gray-600">{member.title}</p>
                       </div>
                     </div>
 
-                    <div className="border-t border-gray-200 mb-4"></div>
+                    <div className="border-t border-gray-200 mb-3 sm:mb-4"></div>
 
-                    <p className="text-gray-700 leading-relaxed mb-4">
+                    <p className="text-sm sm:text-base text-gray-700 leading-relaxed mb-3 sm:mb-4">
                       {member.bio}
                     </p>
 
-                    <div className="border-t border-gray-200 mb-4"></div>
+                    <div className="border-t border-gray-200 mb-3 sm:mb-4"></div>
 
                     <a
                       href={member.linkedin}
                       target="_blank"
                       rel="noopener noreferrer"
-                      className="inline-flex items-center gap-2 text-[#01A3DB] hover:text-[#0192C5] transition-colors font-medium"
+                      className="inline-flex items-center gap-2 text-[#01A3DB] hover:text-[#0192C5] transition-colors font-medium text-sm sm:text-base"
                     >
-                      <Linkedin size={20} />
+                      <Linkedin size={18} className="sm:w-5 sm:h-5" />
                       <span>LinkedIn Profile</span>
                     </a>
                   </div>
                 ))}
               </div>
 
-              <div className="text-left mb-8">
+              <div className="text-left mb-5 sm:mb-6 lg:mb-8">
                 <div className="inline-block mb-2">
                   <div>
-                    <p className="text-black text-sm md:text-base font-bold tracking-[0.2em] uppercase mb-2" style={{
+                    <p className="text-black text-xs sm:text-sm lg:text-base font-bold tracking-[0.2em] uppercase mb-2" style={{
                       letterSpacing: '0.25em'
                     }}>
                       How We Differ
@@ -152,16 +152,16 @@ export default function AboutUsPage({ onNavigate }: AboutUsPageProps) {
                     <div className="h-[2px] bg-[#f05e00]"></div>
                   </div>
                 </div>
-                <p className="text-base text-gray-700 leading-relaxed mt-6 mb-8">
+                <p className="text-sm sm:text-base text-gray-700 leading-relaxed mt-4 sm:mt-5 lg:mt-6 mb-5 sm:mb-6 lg:mb-8">
                   Senior Operators. Realistic Outcomes. Timebound Delivery.
                 </p>
               </div>
 
-              <div className="pb-16">
+              <div className="pb-8 sm:pb-12 lg:pb-16">
                 <img
                   src={`${import.meta.env.BASE_URL}how_we_differ_section.png`}
                   alt="How We Differ"
-                  className="w-[93.5%] h-auto mx-auto shadow-xl rounded-lg"
+                  className="w-full lg:w-[93.5%] h-auto mx-auto shadow-xl rounded-lg"
                 />
               </div>
             </div>

@@ -29,8 +29,8 @@ export default function Navigation({ currentPage, onNavigate }: NavigationProps)
 
   return (
     <nav className="fixed top-0 left-0 right-0 bg-white/80 backdrop-blur-sm z-50">
-      <div className="max-w-7xl mx-auto px-6">
-        <div className="flex items-center justify-between" style={{ minHeight: '234px' }}>
+      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-6">
+        <div className="flex items-center justify-between min-h-[120px] sm:min-h-[150px] lg:min-h-[234px]">
           <button
             onClick={() => onNavigate('home')}
             className="flex items-center gap-3 group relative z-10"
@@ -38,11 +38,11 @@ export default function Navigation({ currentPage, onNavigate }: NavigationProps)
             <img
               src="/new_wave_associates_horizontal.png"
               alt="New Wave Associates"
-              className="!h-[221px] w-auto"
+              className="h-[100px] sm:h-[130px] lg:h-[221px] w-auto"
             />
           </button>
 
-          <div className="hidden md:flex items-center gap-12">
+          <div className="hidden lg:flex items-center gap-8 xl:gap-12">
             {navItems.map((item) => (
               <button
                 key={item.page}
@@ -58,7 +58,7 @@ export default function Navigation({ currentPage, onNavigate }: NavigationProps)
           </div>
 
           <button
-            className="md:hidden text-[#38495D]"
+            className="lg:hidden text-[#38495D]"
             onClick={() => setMobileMenuOpen(!mobileMenuOpen)}
           >
             {mobileMenuOpen ? <X size={24} /> : <Menu size={24} />}
@@ -66,7 +66,7 @@ export default function Navigation({ currentPage, onNavigate }: NavigationProps)
         </div>
 
         {mobileMenuOpen && (
-          <div className="md:hidden mt-4 pb-4 flex flex-col gap-4">
+          <div className="lg:hidden pb-4 flex flex-col gap-3 sm:gap-4">
             {navItems.map((item) => (
               <button
                 key={item.page}
