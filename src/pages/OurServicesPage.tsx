@@ -296,11 +296,11 @@ export default function OurServicesPage({ onNavigate }: OurServicesPageProps) {
 
         <PageHeader onNavigate={onNavigate} currentPage="our-services" />
 
-        <div className="absolute inset-x-0" style={{ bottom: '-6%', height: '40%', pointerEvents: 'none' }}>
+        <div className="absolute inset-x-0" style={{ bottom: '0', maxHeight: '300px', height: '30vh', pointerEvents: 'none' }}>
           <img
             src={`${import.meta.env.BASE_URL}wave_graphic_for_our_services_page.png`}
             alt="Wave graphic"
-            className="w-full h-full object-cover"
+            className="w-full h-full object-cover object-top"
           />
         </div>
 
