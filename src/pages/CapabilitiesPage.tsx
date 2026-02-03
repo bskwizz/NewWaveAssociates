@@ -103,10 +103,10 @@ export default function CapabilitiesPage({ onNavigate }: CapabilitiesPageProps) 
 
         <PageHeader onNavigate={onNavigate} currentPage="capabilities" />
 
-        <div className="relative flex items-center" style={{ height: 'calc(100vh - 24rem)', paddingTop: '0' }}>
+        <div className="relative flex items-start pt-12" style={{ height: 'calc(100vh - 16rem)' }}>
           <div className="w-full">
             <div className="max-w-7xl mx-auto px-6">
-              <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
+              <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-start">
                 <div className="text-left">
                   <div className="inline-block mb-2">
                     <div>
