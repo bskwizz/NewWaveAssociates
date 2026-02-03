@@ -17,13 +17,13 @@ export default function PageHeader({ onNavigate, currentPage }: PageHeaderProps)
         <div className="flex items-center justify-between">
           <button onClick={() => onNavigate('home')} className="hover:opacity-80 transition-opacity">
             <img
-              src="/new_wave_associates_horizontal.png"
+              src="/copy_of_new_wave_associates_horizontal.png"
               alt="New Wave Associates"
-              className="h-16 md:h-20 w-auto"
+              className="h-24 md:h-28 w-auto"
             />
           </button>
 
-          <div className="flex items-center gap-8">
+          <div className="flex items-center gap-12">
             {navItems.map((item) => {
               const isContactUs = item.page === 'contact-us';
 
