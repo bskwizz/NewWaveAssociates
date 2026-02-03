@@ -185,13 +185,13 @@ html {
 .flywheel-overlay--gtm {
   top: 19%;
   left: 1%;
-  width: 32%;
+  width: 36%;
   height: 12%;
 }
 
 .flywheel-overlay--cost {
   top: 20%;
-  right: 17%;
+  right: -1%;
   width: 36%;
   height: 12%;
 }
@@ -200,20 +200,20 @@ html {
   bottom: 16%;
   left: 50%;
   transform: translateX(-50%);
-  width: 26%;
+  width: 30%;
   height: 12%;
 }
 
 .flywheel-hotspot--gtm {
   top: 19%;
   left: 1%;
-  width: 32%;
+  width: 36%;
   height: 12%;
 }
 
 .flywheel-hotspot--cost {
   top: 20%;
-  right: 17%;
+  right: -1%;
   width: 36%;
   height: 12%;
 }
@@ -222,7 +222,7 @@ html {
   bottom: 16%;
   left: 50%;
   transform: translateX(-50%);
-  width: 26%;
+  width: 30%;
   height: 12%;
 }
 
