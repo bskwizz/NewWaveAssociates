@@ -64,7 +64,7 @@ export default function HomePage({ onNavigate }: HomePageProps) {
                     <img src="/client-logo-2.png" alt="Client Logo 2" className="max-w-full max-h-full object-contain" />
                   </div>
                   <div className="flex items-center justify-center w-32 h-16 grayscale hover:grayscale-0 transition-all duration-300 opacity-60 hover:opacity-100">
-                    <img src="/client-logo-3.png" alt="Client Logo 3" className="max-w-full max-h-full object-contain" />
+                    <img src="/client_logo_3.png" alt="Client Logo 3" className="max-w-full max-h-full object-contain" />
                   </div>
                   <div className="flex items-center justify-center w-32 h-16 grayscale hover:grayscale-0 transition-all duration-300 opacity-60 hover:opacity-100">
                     <img src="/client-logo-4.png" alt="Client Logo 4" className="max-w-full max-h-full object-contain" />
