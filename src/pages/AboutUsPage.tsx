@@ -10,28 +10,28 @@ interface AboutUsPageProps {
 const teamMembers = [
   {
     name: 'Craig Keller',
-    title: 'Founding Partner',
+    title: 'Managing Partner',
     image: 'Pictures-6.png',
     bio: 'A finance and transformation executive with 30+ years of experience leading Strategic Sourcing, FP&A, M&A integration, and operational initiatives across multi-entity technology and managed-services organizations. He\'s achieved $150M+ in cost synergies through consolidation, shared-services alignment, and pricing discipline.',
     linkedin: 'https://linkedin.com'
   },
   {
     name: 'Hunter New',
-    title: 'Founding Partner',
+    title: 'Managing Partner',
     image: 'Pictures-2.png',
     bio: 'M&A, performance improvement, and labor strategy leader across the healthcare provider/payer and technology sectors. He\'s delivered 10-15% EBITDA gains through post-merger integrations, divestitures, and performance initiatives while supporting $120B+ in total transaction value for non-profit and for-profit health systems, PE-owned health services organizations, and payers.',
     linkedin: 'https://linkedin.com'
   },
   {
     name: 'Bryan Skwirut',
-    title: 'Founding Partner',
+    title: 'Managing Partner',
     image: 'Pictures-3.png',
     bio: 'An enterprise transformation leader with over a decade of experience driving operational modernization and performance improvement across financial services, healthcare, and technology sectors. He\'s led initiatives that delivered $25M+ in process efficiency gains, reduced operational cycle times by 40%, and optimized enterprise workflows across 10+ business units.',
     linkedin: 'https://linkedin.com'
   },
   {
     name: 'Jason Lee',
-    title: 'Founding Partner',
+    title: 'Managing Partner',
     image: 'Pictures-4.png',
     bio: 'Strategy and growth executive who has built and scaled multi-entity operating models across numerous industries. He has architected enterprise GTM frameworks, pricing normalization programs, and RevOps transformations that have delivered millions in incremental revenue and improved commercial efficiencies across 80+ business units.',
     linkedin: 'https://linkedin.com'
@@ -111,10 +111,17 @@ export default function AboutUsPage({ onNavigate }: AboutUsPageProps) {
           </div>
 
           <div className="mb-16">
-            <h2 className="text-4xl font-bold text-[#38495D] mb-3 text-center">
-              The Right Operators
-            </h2>
-            <p className="text-lg text-gray-700 mb-12 text-center max-w-4xl mx-auto">
+            <div className="inline-block mb-8">
+              <div>
+                <p className="text-black text-sm md:text-base font-bold tracking-[0.2em] uppercase mb-2" style={{
+                  letterSpacing: '0.25em'
+                }}>
+                  The Right Operators
+                </p>
+                <div className="h-[2px] bg-[#f05e00]"></div>
+              </div>
+            </div>
+            <p className="text-base md:text-lg text-[#38495D] leading-relaxed mb-12">
               We have <span className="font-semibold">directly</span> led procurement, revenue operations, and M&A across lower and middle market organizations
             </p>
             <div className="grid md:grid-cols-2 gap-8">
