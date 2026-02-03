@@ -369,10 +369,10 @@ export default function FlywheelPage({ onNavigate }: FlywheelPageProps) {
           />
         </div>
 
-        <div className="relative flex items-center justify-center" style={{ minHeight: 'calc(100vh - 80px)' }}>
+        <div className="relative flex items-center" style={{ height: 'calc(100vh - 24rem)', paddingTop: '0' }}>
           <div className="w-full">
             <div className="max-w-7xl mx-auto px-6">
-              <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-start">
+              <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
                 <div className="flywheel-hero__media relative">
                   <img
                     className={`flywheel-hero__img transition-opacity duration-1000 ${
@@ -440,10 +440,10 @@ export default function FlywheelPage({ onNavigate }: FlywheelPageProps) {
               }}
             ></a>
                 </div>
-                <div className="hero-rotator text-left pt-8">
-                  <div className="mb-6">
-                    <div className="inline-block">
-                      <p className="text-black text-sm md:text-base font-bold tracking-[0.2em] uppercase mb-2 animate-fade-in text-left" style={{
+                <div className="hero-rotator text-left">
+                  <div className="inline-block mb-2">
+                    <div>
+                      <p className="text-black text-sm md:text-base font-bold tracking-[0.2em] uppercase mb-2 animate-fade-in" style={{
                         letterSpacing: '0.25em'
                       }}>
                         Interim<br />Leadership Practice Areas
@@ -452,7 +452,7 @@ export default function FlywheelPage({ onNavigate }: FlywheelPageProps) {
                     </div>
                   </div>
 
-                  <div className="space-y-6 text-left max-w-xl">
+                  <div className="space-y-6 text-left max-w-xl mt-6">
                     <p className="text-gray-700 text-base leading-relaxed">
                       We embed in the trenches with leaders to achieve specific, pragmatic goals quickly.
                     </p>
