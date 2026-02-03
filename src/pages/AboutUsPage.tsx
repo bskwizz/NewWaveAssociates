@@ -13,28 +13,28 @@ const teamMembers = [
     title: 'Managing Partner',
     image: 'Pictures-6.png',
     bio: 'A finance and transformation executive with 30+ years of experience leading Strategic Sourcing, FP&A, M&A integration, and operational initiatives across multi-entity technology and managed-services organizations. He\'s achieved $150M+ in cost synergies through consolidation, shared-services alignment, and pricing discipline.',
-    linkedin: 'https://linkedin.com'
+    linkedin: 'https://www.linkedin.com/in/crkeller/'
   },
   {
     name: 'Hunter New',
     title: 'Managing Partner',
     image: 'Pictures-2.png',
     bio: 'M&A, performance improvement, and labor strategy leader across the healthcare provider/payer and technology sectors. He\'s delivered 10-15% EBITDA gains through post-merger integrations, divestitures, and performance initiatives while supporting $120B+ in total transaction value for non-profit and for-profit health systems, PE-owned health services organizations, and payers.',
-    linkedin: 'https://linkedin.com'
+    linkedin: 'https://www.linkedin.com/in/hunter-new-4983373a/'
   },
   {
     name: 'Bryan Skwirut',
     title: 'Managing Partner',
     image: 'Pictures-3.png',
     bio: 'An enterprise transformation leader with over a decade of experience driving operational modernization and performance improvement across financial services, healthcare, and technology sectors. He\'s led initiatives that delivered $25M+ in process efficiency gains, reduced operational cycle times by 40%, and optimized enterprise workflows across 10+ business units.',
-    linkedin: 'https://linkedin.com'
+    linkedin: 'https://www.linkedin.com/in/bryanskwirut/'
   },
   {
     name: 'Jason Lee',
     title: 'Managing Partner',
     image: 'Pictures-4.png',
     bio: 'Strategy and growth executive who has built and scaled multi-entity operating models across numerous industries. He has architected enterprise GTM frameworks, pricing normalization programs, and RevOps transformations that have delivered millions in incremental revenue and improved commercial efficiencies across 80+ business units.',
-    linkedin: 'https://linkedin.com'
+    linkedin: 'https://www.linkedin.com/in/myportfoleeo/'
   },
 ];
 
