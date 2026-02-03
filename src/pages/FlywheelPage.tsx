@@ -361,54 +361,12 @@ export default function FlywheelPage({ onNavigate }: FlywheelPageProps) {
 
         <PageHeader onNavigate={onNavigate} currentPage="flywheel" />
 
-        <div className="absolute inset-x-0" style={{ top: '50%', transform: 'translateY(-50%)', height: '60%', pointerEvents: 'none', opacity: 0.15 }}>
-          <div className="relative w-full h-full">
-            <svg
-              viewBox="0 0 1440 600"
-              className="w-full h-full"
-              preserveAspectRatio="xMidYMid slice"
-              xmlns="http://www.w3.org/2000/svg"
-            >
-              <defs>
-                <linearGradient id="waveGradientFw1" x1="0%" y1="0%" x2="100%" y2="0%">
-                  <stop offset="0%" stopColor="#01A3DB" stopOpacity="0.6"/>
-                  <stop offset="50%" stopColor="#0182B3" stopOpacity="0.8"/>
-                  <stop offset="100%" stopColor="#01A3DB" stopOpacity="0.6"/>
-                </linearGradient>
-                <linearGradient id="waveGradientFw2" x1="0%" y1="0%" x2="100%" y2="0%">
-                  <stop offset="0%" stopColor="#38495D" stopOpacity="0.3"/>
-                  <stop offset="50%" stopColor="#01A3DB" stopOpacity="0.5"/>
-                  <stop offset="100%" stopColor="#38495D" stopOpacity="0.3"/>
-                </linearGradient>
-              </defs>
-
-              <path
-                d="M0,300 Q360,150 720,300 T1440,300 L1440,400 Q1080,250 720,400 T0,400 Z"
-                fill="url(#waveGradientFw1)"
-              />
-
-              <path
-                d="M0,320 Q360,180 720,320 T1440,320 L1440,420 Q1080,280 720,420 T0,420 Z"
-                fill="url(#waveGradientFw2)"
-              />
-
-              <path
-                d="M0,280 Q360,120 720,280 T1440,280"
-                fill="none"
-                stroke="#01A3DB"
-                strokeWidth="2"
-                opacity="0.4"
-              />
-
-              <path
-                d="M0,340 Q360,200 720,340 T1440,340"
-                fill="none"
-                stroke="#0182B3"
-                strokeWidth="1.5"
-                opacity="0.3"
-              />
-            </svg>
-          </div>
+        <div className="absolute inset-x-0" style={{ top: '50%', transform: 'translateY(-50%)', height: '60%', pointerEvents: 'none' }}>
+          <img
+            src={`${import.meta.env.BASE_URL}wave_graphic_for_our_services_page.png`}
+            alt="Wave graphic"
+            className="w-full h-full object-cover"
+          />
         </div>
 
         <div className="relative flex items-start" style={{ minHeight: 'calc(100vh - 16rem)', paddingTop: '2rem' }}>
