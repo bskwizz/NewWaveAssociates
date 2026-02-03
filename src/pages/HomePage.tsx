@@ -26,7 +26,7 @@ export default function HomePage({ onNavigate }: HomePageProps) {
         <PageHeader onNavigate={onNavigate} currentPage="home" />
 
         <div className="relative flex items-center" style={{ height: 'calc(100vh - 24rem)', paddingTop: '0' }}>
-          <div className="w-full">
+          <div className="w-full flex flex-col">
             <div className="max-w-7xl mx-auto px-6">
               <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
                 <div id="hero-rotator" className="hero-rotator text-left">
@@ -56,7 +56,7 @@ export default function HomePage({ onNavigate }: HomePageProps) {
               </div>
             </div>
             <div className="w-full bg-[#00a4dd] mt-12" style={{height: '75px'}}></div>
-            <div className="w-full flex items-center justify-center" style={{height: '120px'}}>
+            <div className="w-full flex items-center justify-center flex-1">
               <LogoScroller />
             </div>
           </div>
