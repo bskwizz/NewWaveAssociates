@@ -361,7 +361,7 @@ export default function FlywheelPage({ onNavigate }: FlywheelPageProps) {
 
         <PageHeader onNavigate={onNavigate} currentPage="flywheel" />
 
-        <div className="absolute inset-x-0" style={{ bottom: '-20%', height: '40%', pointerEvents: 'none' }}>
+        <div className="absolute inset-x-0" style={{ bottom: '-15%', height: '40%', pointerEvents: 'none' }}>
           <img
             src={`${import.meta.env.BASE_URL}wave_graphic_for_our_services_page.png`}
             alt="Wave graphic"
