@@ -32,14 +32,13 @@ export default function LogoScroller({ logos = [] }: LogoScrollerProps) {
   ];
 
   return (
-    <div className="logo-scroller-wrapper w-full flex items-center overflow-hidden">
+    <div className="logo-scroller-wrapper w-full flex items-center overflow-hidden py-4 md:py-0">
       <div ref={scrollerRef} className="logo-scroller w-full">
-        <div className="logo-scroller-inner flex gap-12 items-center">
+        <div className="logo-scroller-inner flex gap-6 md:gap-12 items-center">
           {placeholderLogos.map((logo, index) => (
             <div
               key={index}
-              className="logo-scroller-item flex-shrink-0 flex items-center justify-center"
-              style={{ width: '160px', height: '80px' }}
+              className="logo-scroller-item flex-shrink-0 flex items-center justify-center w-24 h-12 sm:w-32 sm:h-16 md:w-40 md:h-20"
             >
               {typeof logo === 'string' && !logo.startsWith('/') && !logo.startsWith('http') ? (
                 <div className="w-full h-full flex items-center justify-center bg-gray-100 rounded-lg border border-gray-200">
