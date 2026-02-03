@@ -25,7 +25,7 @@ export default function HomePage({ onNavigate }: HomePageProps) {
 
         <PageHeader onNavigate={onNavigate} currentPage="home" />
 
-        <div className="relative flex items-center" style={{ height: 'calc(100vh - 24rem)', paddingTop: '4rem' }}>
+        <div className="relative flex items-start" style={{ paddingTop: '4rem' }}>
           <div className="w-full flex flex-col">
             <div className="max-w-7xl mx-auto px-6">
               <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
