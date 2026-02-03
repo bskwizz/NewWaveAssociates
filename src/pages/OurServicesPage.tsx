@@ -198,72 +198,90 @@ export default function OurServicesPage({ onNavigate }: OurServicesPageProps) {
     window.scrollTo({ top: 0, behavior: 'smooth' });
   };
 
-  const renderSection = (content: SectionContent) => (
-    <section
-      id={content.id}
-      aria-labelledby={`${content.id}-title`}
-      className="mb-16 pb-16 border-b border-gray-200"
-    >
-      <div className="max-w-6xl">
-        <div className={content.image ? 'grid grid-cols-1 lg:grid-cols-2 gap-12 items-center' : ''}>
-          <div className="flex flex-col justify-center">
-            <div className="text-left mb-3">
-              <div className="inline-block mb-2">
-                <div>
-                  <h2
-                    id={`${content.id}-title`}
-                    className="text-black text-sm md:text-base font-bold tracking-[0.2em] uppercase mb-2"
-                    style={{ letterSpacing: '0.25em' }}
-                  >
-                    {content.title}
-                  </h2>
-                  <div className="h-[2px] bg-[#f05e00]"></div>
-                </div>
-              </div>
+  const renderSection = (content: SectionContent) => {
+    const isFlipped = content.id === 'cost-optimization';
+
+    const textContent = (
+      <div className="flex flex-col justify-center">
+        <div className="text-left mb-3">
+          <div className="inline-block mb-2">
+            <div>
+              <h2
+                id={`${content.id}-title`}
+                className="text-black text-sm md:text-base font-bold tracking-[0.2em] uppercase mb-2"
+                style={{ letterSpacing: '0.25em' }}
+              >
+                {content.title}
+              </h2>
+              <div className="h-[2px] bg-[#f05e00]"></div>
             </div>
+          </div>
+        </div>
 
-            {content.subheading && (
-              <p className="text-xl text-gray-700 mb-8 leading-relaxed text-left">{content.subheading}</p>
-            )}
+        {content.subheading && (
+          <p className="text-xl text-gray-700 mb-8 leading-relaxed text-left">{content.subheading}</p>
+        )}
 
-            {content.bullets && content.bullets.length > 0 && (
-              <ul className="space-y-3 text-left">
-                {content.bullets.map((bullet, idx) => (
-                  <li key={idx} className="flex items-start">
-                    <span className="text-[#f05e00] mr-3 mt-1">•</span>
-                    <span className="text-gray-700 text-base leading-relaxed">{bullet}</span>
-                  </li>
-                ))}
-              </ul>
-            )}
+        {content.bullets && content.bullets.length > 0 && (
+          <ul className="space-y-3 text-left">
+            {content.bullets.map((bullet, idx) => (
+              <li key={idx} className="flex items-start">
+                <span className="text-[#f05e00] mr-3 mt-1">•</span>
+                <span className="text-gray-700 text-base leading-relaxed">{bullet}</span>
+              </li>
+            ))}
+          </ul>
+        )}
 
-            {content.groups.length > 0 && (
-              <div className="fw-group-grid">
-                {content.groups.map((group, idx) => (
-                  <CollapsibleGroup
-                    key={idx}
-                    subhead={group.subhead}
-                    items={group.items}
-                    groupId={`${content.id}-group-${idx}`}
-                  />
-                ))}
-              </div>
+        {content.groups.length > 0 && (
+          <div className="fw-group-grid">
+            {content.groups.map((group, idx) => (
+              <CollapsibleGroup
+                key={idx}
+                subhead={group.subhead}
+                items={group.items}
+                groupId={`${content.id}-group-${idx}`}
+              />
+            ))}
+          </div>
+        )}
+      </div>
+    );
+
+    const imageContent = content.image && (
+      <div className="flex items-center justify-center">
+        <img
+          src={content.image}
+          alt={content.title}
+          className="w-full h-auto rounded-lg shadow-lg"
+        />
+      </div>
+    );
+
+    return (
+      <section
+        id={content.id}
+        aria-labelledby={`${content.id}-title`}
+        className="mb-16 pb-16 border-b border-gray-200"
+      >
+        <div className="max-w-6xl">
+          <div className={content.image ? 'grid grid-cols-1 lg:grid-cols-2 gap-12 items-center' : ''}>
+            {isFlipped ? (
+              <>
+                {imageContent}
+                {textContent}
+              </>
+            ) : (
+              <>
+                {textContent}
+                {imageContent}
+              </>
             )}
           </div>
-
-          {content.image && (
-            <div className="flex items-center justify-center">
-              <img
-                src={content.image}
-                alt={content.title}
-                className="w-full h-auto rounded-lg shadow-lg"
-              />
-            </div>
-          )}
         </div>
-      </div>
-    </section>
-  );
+      </section>
+    );
+  };
 
   return (
     <div>
