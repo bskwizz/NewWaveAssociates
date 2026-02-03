@@ -26,14 +26,14 @@ export default function CaseStudiesPage({ onNavigate }: CaseStudiesPageProps) {
         <div className="capabilities-hero__inner hero-content">
           <div className="max-w-7xl mx-auto px-6 py-20">
             <div className={`transition-opacity duration-1000 ${fadeIn ? 'opacity-100' : 'opacity-0'}`}>
-              <h1 className="text-5xl font-bold text-[#38495D] mb-4">
-                Project Management Office Installation
+              <h1 className="text-5xl font-bold text-[#38495D] mb-6">
+                OUR EXPERIENCE
               </h1>
-              <p className="text-lg text-[#38495D] mb-2">
-                Case Study
+              <p className="text-lg text-gray-700 mb-4 max-w-4xl">
+                Our interim management services are tailored for organizations who require hands-on operators to make change happen.
               </p>
-              <p className="text-sm text-gray-600 mb-8">
-                Author: Jason Lee | 5 minute read
+              <p className="text-lg text-gray-700 mb-8 max-w-4xl">
+                We have successfully placed our fractional and interim executives across multiple functions and industries.
               </p>
 
               <div className="bg-white/90 backdrop-blur-sm border border-gray-200 rounded-lg p-8 mb-8 shadow-lg max-w-4xl">
