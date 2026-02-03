@@ -202,37 +202,68 @@ export default function CapabilitiesPage({ onNavigate }: CapabilitiesPageProps) 
                         <td className="px-6 py-4 text-gray-700">B2B SaaS / FinTech / AI</td>
                         <td className="px-6 py-4 text-gray-700">Chief Operating Officer</td>
                         <td className="px-6 py-4 text-gray-700">1 Year</td>
-                        <td className="px-6 py-4 text-gray-700"></td>
+                        <td className="px-6 py-4 text-gray-700">
+                          <ul className="list-disc list-inside space-y-1">
+                            <li>Led product roadmap, market positioning & strategic direction</li>
+                            <li>Shaped GTM strategies & identified whitespace opportunities</li>
+                            <li>Drove strategic roadmaps, OKRs, and KPI frameworks</li>
+                          </ul>
+                        </td>
                       </tr>
                       <tr className="border-b border-gray-200 hover:bg-gray-50 transition-colors">
                         <td className="px-6 py-4 text-gray-700">B2B SaaS / Fintech</td>
                         <td className="px-6 py-4 text-gray-700">Director Strategy</td>
                         <td className="px-6 py-4 text-gray-700">2 Years</td>
-                        <td className="px-6 py-4 text-gray-700"></td>
+                        <td className="px-6 py-4 text-gray-700">
+                          <ul className="list-disc list-inside space-y-1">
+                            <li>Drove retention/upsell strategies & revenue forecasting initiatives, driving 5% increase in NRR & 15% cost reduction</li>
+                            <li>Directed global M&A integrations aligning analytics, pricing & overall GTM strategies</li>
+                          </ul>
+                        </td>
                       </tr>
                       <tr className="border-b border-gray-200 hover:bg-gray-50 transition-colors">
                         <td className="px-6 py-4 text-gray-700">Healthcare</td>
                         <td className="px-6 py-4 text-gray-700">Sr. Director of Strategic Sourcing</td>
                         <td className="px-6 py-4 text-gray-700">2 Years</td>
-                        <td className="px-6 py-4 text-gray-700"></td>
+                        <td className="px-6 py-4 text-gray-700">
+                          <ul className="list-disc list-inside space-y-1">
+                            <li>Drive spend cube mapping and cleanse with &gt;60k suppliers resulting in cleaner vendor master and vendor consolidation</li>
+                            <li>Directed targeting strategies resulting in &gt;$22M annual cost savings + cast infusion &gt;$55M through payments solutioning</li>
+                          </ul>
+                        </td>
                       </tr>
                       <tr className="border-b border-gray-200 hover:bg-gray-50 transition-colors">
                         <td className="px-6 py-4 text-gray-700">Waste & Recycling Services</td>
                         <td className="px-6 py-4 text-gray-700">VP of Strategic Sourcing</td>
                         <td className="px-6 py-4 text-gray-700">1 Year</td>
-                        <td className="px-6 py-4 text-gray-700"></td>
+                        <td className="px-6 py-4 text-gray-700">
+                          <ul className="list-disc list-inside space-y-1">
+                            <li>Developed GTM strategies for organics waste recycling for a major NoA provider</li>
+                            <li>Developed and integrated a new collections and transfer model which levered existing over the road fleet infrastructures</li>
+                          </ul>
+                        </td>
                       </tr>
                       <tr className="border-b border-gray-200 hover:bg-gray-50 transition-colors">
                         <td className="px-6 py-4 text-gray-700">BPO / ARM</td>
                         <td className="px-6 py-4 text-gray-700">Chief Procurement Officer</td>
                         <td className="px-6 py-4 text-gray-700">3 Years</td>
-                        <td className="px-6 py-4 text-gray-700"></td>
+                        <td className="px-6 py-4 text-gray-700">
+                          <ul className="list-disc list-inside space-y-1">
+                            <li>Drove vendor consolidation and cost reduction in excess of $32M annually</li>
+                            <li>Reduced data consumption for ARM business resulting in streamlined operations and lower cost structures</li>
+                          </ul>
+                        </td>
                       </tr>
                       <tr className="hover:bg-gray-50 transition-colors">
                         <td className="px-6 py-4 text-gray-700">B2B / B2C Banking Payments</td>
                         <td className="px-6 py-4 text-gray-700">VP of Strategic Alliance</td>
                         <td className="px-6 py-4 text-gray-700">1 Year</td>
-                        <td className="px-6 py-4 text-gray-700"></td>
+                        <td className="px-6 py-4 text-gray-700">
+                          <ul className="list-disc list-inside space-y-1">
+                            <li>Built a GTM B2C product set for insurance and one-time consumer payouts resulting in interchange revenues &gt;$22M annual</li>
+                            <li>Drive CRM conversion and customer retainage programs for strategic alliances for card distribution</li>
+                          </ul>
+                        </td>
                       </tr>
                     </tbody>
                   </table>
