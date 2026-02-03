@@ -54,10 +54,11 @@ export default function HomePage({ onNavigate }: HomePageProps) {
               </div>
             </div>
             <div className="w-full bg-[#00a4dd] mt-12" style={{height: '75px'}}></div>
-            <LogoScroller />
           </div>
         </div>
       </div>
+
+      <LogoScroller />
 
       <CTABar
         text="Learn more about New Wave solutions for your unique growth opportunity"
