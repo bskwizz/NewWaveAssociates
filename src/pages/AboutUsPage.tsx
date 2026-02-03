@@ -1,4 +1,5 @@
 import { useRef, useEffect, useState } from 'react';
+import { Linkedin } from 'lucide-react';
 import CTABar from '../components/CTABar';
 import PageHeader from '../components/PageHeader';
 
@@ -7,10 +8,34 @@ interface AboutUsPageProps {
 }
 
 const teamMembers = [
-  { name: 'Craig Keller', title: 'Founding Partner', image: 'Pictures-6.png' },
-  { name: 'Hunter New', title: 'Founding Partner', image: 'Pictures-2.png' },
-  { name: 'Bryan Skwirut', title: 'Founding Partner', image: 'Pictures-3.png' },
-  { name: 'Jason Lee', title: 'Founding Partner', image: 'Pictures-4.png' },
+  {
+    name: 'Craig Keller',
+    title: 'Founding Partner',
+    image: 'Pictures-6.png',
+    bio: 'Add bio text here for Craig Keller.',
+    linkedin: 'https://linkedin.com'
+  },
+  {
+    name: 'Hunter New',
+    title: 'Founding Partner',
+    image: 'Pictures-2.png',
+    bio: 'Add bio text here for Hunter New.',
+    linkedin: 'https://linkedin.com'
+  },
+  {
+    name: 'Bryan Skwirut',
+    title: 'Founding Partner',
+    image: 'Pictures-3.png',
+    bio: 'Add bio text here for Bryan Skwirut.',
+    linkedin: 'https://linkedin.com'
+  },
+  {
+    name: 'Jason Lee',
+    title: 'Founding Partner',
+    image: 'Pictures-4.png',
+    bio: 'Add bio text here for Jason Lee.',
+    linkedin: 'https://linkedin.com'
+  },
 ];
 
 const differentiators = [
@@ -89,37 +114,57 @@ export default function AboutUsPage({ onNavigate }: AboutUsPageProps) {
             <h2 className="text-4xl font-bold text-[#38495D] mb-12 text-center">
               Meet the Team
             </h2>
-            <div className="grid md:grid-cols-4 gap-8">
+            <div className="grid md:grid-cols-2 gap-8">
               {teamMembers.map((member, index) => (
                 <div
                   key={index}
-                  className="bg-white border border-gray-200 rounded-lg overflow-hidden hover:shadow-xl transition-all hover:-translate-y-2"
+                  className="bg-white border border-gray-200 rounded-lg p-6 hover:shadow-xl transition-all"
                 >
-                  <div className="aspect-square flex items-center justify-center overflow-hidden bg-white">
-                    <img
-                      src={`${import.meta.env.BASE_URL}${member.image}`}
-                      alt={member.name}
-                      className="w-full h-full object-cover"
-                      onError={(e) => {
-                        const target = e.target as HTMLImageElement;
-                        target.style.display = 'none';
-                        const parent = target.parentElement;
-                        if (parent) {
-                          parent.classList.add('bg-gradient-to-br', 'from-[#01A3DB]', 'to-[#38495D]');
-                          const initials = document.createElement('div');
-                          initials.className = 'w-32 h-32 bg-white/20 rounded-full flex items-center justify-center';
-                          initials.innerHTML = `<span class="text-white text-4xl font-bold">${member.name.split(' ').map(n => n[0]).join('')}</span>`;
-                          parent.appendChild(initials);
-                        }
-                      }}
-                    />
+                  <div className="flex gap-6 items-start mb-6">
+                    <div className="w-32 h-32 flex-shrink-0 flex items-center justify-center overflow-hidden bg-white rounded-lg">
+                      <img
+                        src={`${import.meta.env.BASE_URL}${member.image}`}
+                        alt={member.name}
+                        className="w-full h-full object-cover"
+                        onError={(e) => {
+                          const target = e.target as HTMLImageElement;
+                          target.style.display = 'none';
+                          const parent = target.parentElement;
+                          if (parent) {
+                            parent.classList.add('bg-gradient-to-br', 'from-[#01A3DB]', 'to-[#38495D]');
+                            const initials = document.createElement('div');
+                            initials.className = 'w-20 h-20 bg-white/20 rounded-full flex items-center justify-center';
+                            initials.innerHTML = `<span class="text-white text-2xl font-bold">${member.name.split(' ').map(n => n[0]).join('')}</span>`;
+                            parent.appendChild(initials);
+                          }
+                        }}
+                      />
+                    </div>
+                    <div className="flex-1 text-left">
+                      <h3 className="text-xl font-bold text-[#38495D] mb-1">
+                        {member.name}
+                      </h3>
+                      <p className="text-gray-600">{member.title}</p>
+                    </div>
                   </div>
-                  <div className="p-6 text-center">
-                    <h3 className="text-xl font-bold text-[#38495D] mb-1">
-                      {member.name}
-                    </h3>
-                    <p className="text-gray-600">{member.title}</p>
-                  </div>
+
+                  <div className="border-t border-gray-200 mb-4"></div>
+
+                  <p className="text-gray-700 leading-relaxed mb-4">
+                    {member.bio}
+                  </p>
+
+                  <div className="border-t border-gray-200 mb-4"></div>
+
+                  <a
+                    href={member.linkedin}
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className="inline-flex items-center gap-2 text-[#01A3DB] hover:text-[#0192C5] transition-colors font-medium"
+                  >
+                    <Linkedin size={20} />
+                    <span>LinkedIn Profile</span>
+                  </a>
                 </div>
               ))}
             </div>
