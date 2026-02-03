@@ -153,61 +153,61 @@ export default function CapabilitiesPage({ onNavigate }: CapabilitiesPageProps) 
                     </thead>
                     <tbody>
                       <tr className="border-b border-gray-200 hover:bg-gray-50 transition-colors">
-                        <td className="px-6 py-4 text-gray-700"></td>
-                        <td className="px-6 py-4 text-gray-700"></td>
-                        <td className="px-6 py-4 text-gray-700"></td>
-                        <td className="px-6 py-4 text-gray-700"></td>
-                      </tr>
-                      <tr className="border-b border-gray-200 hover:bg-gray-50 transition-colors">
-                        <td className="px-6 py-4 text-gray-700"></td>
+                        <td className="px-6 py-4 text-gray-700">Technology and Managed Service Providers</td>
                         <td className="px-6 py-4 text-gray-700"></td>
                         <td className="px-6 py-4 text-gray-700"></td>
                         <td className="px-6 py-4 text-gray-700"></td>
                       </tr>
                       <tr className="border-b border-gray-200 hover:bg-gray-50 transition-colors">
-                        <td className="px-6 py-4 text-gray-700"></td>
-                        <td className="px-6 py-4 text-gray-700"></td>
-                        <td className="px-6 py-4 text-gray-700"></td>
-                        <td className="px-6 py-4 text-gray-700"></td>
-                      </tr>
-                      <tr className="border-b border-gray-200 hover:bg-gray-50 transition-colors">
-                        <td className="px-6 py-4 text-gray-700"></td>
+                        <td className="px-6 py-4 text-gray-700">Technology and Managed Service Providers</td>
                         <td className="px-6 py-4 text-gray-700"></td>
                         <td className="px-6 py-4 text-gray-700"></td>
                         <td className="px-6 py-4 text-gray-700"></td>
                       </tr>
                       <tr className="border-b border-gray-200 hover:bg-gray-50 transition-colors">
-                        <td className="px-6 py-4 text-gray-700"></td>
-                        <td className="px-6 py-4 text-gray-700"></td>
-                        <td className="px-6 py-4 text-gray-700"></td>
-                        <td className="px-6 py-4 text-gray-700"></td>
-                      </tr>
-                      <tr className="border-b border-gray-200 hover:bg-gray-50 transition-colors">
-                        <td className="px-6 py-4 text-gray-700"></td>
+                        <td className="px-6 py-4 text-gray-700">Technology and Managed Service Providers</td>
                         <td className="px-6 py-4 text-gray-700"></td>
                         <td className="px-6 py-4 text-gray-700"></td>
                         <td className="px-6 py-4 text-gray-700"></td>
                       </tr>
                       <tr className="border-b border-gray-200 hover:bg-gray-50 transition-colors">
-                        <td className="px-6 py-4 text-gray-700"></td>
-                        <td className="px-6 py-4 text-gray-700"></td>
-                        <td className="px-6 py-4 text-gray-700"></td>
-                        <td className="px-6 py-4 text-gray-700"></td>
-                      </tr>
-                      <tr className="border-b border-gray-200 hover:bg-gray-50 transition-colors">
-                        <td className="px-6 py-4 text-gray-700"></td>
+                        <td className="px-6 py-4 text-gray-700">B2B SaaS / FinTech</td>
                         <td className="px-6 py-4 text-gray-700"></td>
                         <td className="px-6 py-4 text-gray-700"></td>
                         <td className="px-6 py-4 text-gray-700"></td>
                       </tr>
                       <tr className="border-b border-gray-200 hover:bg-gray-50 transition-colors">
+                        <td className="px-6 py-4 text-gray-700">B2B SaaS / FinTech / AI</td>
                         <td className="px-6 py-4 text-gray-700"></td>
+                        <td className="px-6 py-4 text-gray-700"></td>
+                        <td className="px-6 py-4 text-gray-700"></td>
+                      </tr>
+                      <tr className="border-b border-gray-200 hover:bg-gray-50 transition-colors">
+                        <td className="px-6 py-4 text-gray-700">B2B SaaS / Fintech</td>
+                        <td className="px-6 py-4 text-gray-700"></td>
+                        <td className="px-6 py-4 text-gray-700"></td>
+                        <td className="px-6 py-4 text-gray-700"></td>
+                      </tr>
+                      <tr className="border-b border-gray-200 hover:bg-gray-50 transition-colors">
+                        <td className="px-6 py-4 text-gray-700">Healthcare</td>
+                        <td className="px-6 py-4 text-gray-700"></td>
+                        <td className="px-6 py-4 text-gray-700"></td>
+                        <td className="px-6 py-4 text-gray-700"></td>
+                      </tr>
+                      <tr className="border-b border-gray-200 hover:bg-gray-50 transition-colors">
+                        <td className="px-6 py-4 text-gray-700">Waste & Recycling Services</td>
+                        <td className="px-6 py-4 text-gray-700"></td>
+                        <td className="px-6 py-4 text-gray-700"></td>
+                        <td className="px-6 py-4 text-gray-700"></td>
+                      </tr>
+                      <tr className="border-b border-gray-200 hover:bg-gray-50 transition-colors">
+                        <td className="px-6 py-4 text-gray-700">BPO / ARM</td>
                         <td className="px-6 py-4 text-gray-700"></td>
                         <td className="px-6 py-4 text-gray-700"></td>
                         <td className="px-6 py-4 text-gray-700"></td>
                       </tr>
                       <tr className="hover:bg-gray-50 transition-colors">
-                        <td className="px-6 py-4 text-gray-700"></td>
+                        <td className="px-6 py-4 text-gray-700">B2B / B2C Banking Payments</td>
                         <td className="px-6 py-4 text-gray-700"></td>
                         <td className="px-6 py-4 text-gray-700"></td>
                         <td className="px-6 py-4 text-gray-700"></td>
