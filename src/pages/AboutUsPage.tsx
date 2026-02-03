@@ -38,21 +38,6 @@ const teamMembers = [
   },
 ];
 
-const differentiators = [
-  {
-    title: 'Operator DNA',
-    description: "We've done the job. We know what breaks.",
-  },
-  {
-    title: 'Pragmatic over Theoretical',
-    description: 'We cut noise and focus teams on decisions.',
-  },
-  {
-    title: 'Change That Sticks',
-    description: 'People adopt what they co-create.',
-  },
-];
-
 export default function AboutUsPage({ onNavigate }: AboutUsPageProps) {
   const [fadeIn, setFadeIn] = useState(false);
   const vantaRef = useRef<HTMLDivElement>(null);
@@ -67,67 +52,28 @@ export default function AboutUsPage({ onNavigate }: AboutUsPageProps) {
         <PageHeader onNavigate={onNavigate} currentPage="about-us" />
         <div className="capabilities-hero__inner hero-content">
           <div className="max-w-7xl mx-auto px-6 flex items-center justify-center h-full">
-            <p
-              className={`text-xl text-[#38495D] text-center transition-opacity duration-1000 ${
-                fadeIn ? 'opacity-100' : 'opacity-0'
-              }`}
-              style={{ maxWidth: '900px' }}
-            >
-              New Wave Associates is a strategy & general management growth consultancy that brings operator-grade expertise to help companies evolve. Smarter. Leaner. Faster.
-            </p>
+            <div className={`transition-opacity duration-1000 ${fadeIn ? 'opacity-100' : 'opacity-0'}`} style={{ maxWidth: '900px' }}>
+              <div className="inline-block mb-8">
+                <div>
+                  <p className="text-white text-sm md:text-base font-bold tracking-[0.2em] uppercase mb-2" style={{
+                    letterSpacing: '0.25em'
+                  }}>
+                    The Right Operators
+                  </p>
+                  <div className="h-[2px] bg-[#f05e00]"></div>
+                </div>
+              </div>
+              <p className="text-xl text-white leading-relaxed">
+                We have <span className="font-semibold">directly</span> led procurement, revenue operations, and M&A across lower and middle market organizations
+              </p>
+            </div>
           </div>
         </div>
       </div>
 
       <div className="bg-gray-50 -mt-24 pt-32 pb-16">
         <div className="max-w-7xl mx-auto px-6">
-          <div className="max-w-5xl mx-auto mb-16">
-            <div className="bg-white/80 backdrop-blur-sm border border-gray-200 rounded-lg p-10 shadow-lg">
-              <h2 className="text-3xl font-bold text-[#38495D] mb-4 text-center">
-                Our Philosophy
-              </h2>
-              <p className="text-xl text-gray-700 text-center leading-relaxed">
-                We believe transformation is a contact sport. We embed, co-own outcomes, and make your team stronger, not dependent.
-              </p>
-            </div>
-          </div>
-
-          <div className="mb-20">
-            <div className="grid md:grid-cols-3 gap-8">
-              {differentiators.map((diff, index) => (
-                <div
-                  key={index}
-                  className="bg-white border border-gray-200 rounded-lg p-8 text-center hover:shadow-xl transition-all hover:-translate-y-2"
-                >
-                  <h3 className="text-2xl font-bold text-[#01A3DB] mb-4">
-                    {diff.title}
-                  </h3>
-                  <p className="text-gray-700 leading-relaxed">
-                    {diff.description}
-                  </p>
-                </div>
-              ))}
-            </div>
-          </div>
-
           <div className="mb-16">
-            <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 mb-12">
-              <div className="text-left">
-                <div className="inline-block mb-8">
-                  <div>
-                    <p className="text-black text-sm md:text-base font-bold tracking-[0.2em] uppercase mb-2" style={{
-                      letterSpacing: '0.25em'
-                    }}>
-                      The Right Operators
-                    </p>
-                    <div className="h-[2px] bg-[#f05e00]"></div>
-                  </div>
-                </div>
-                <p className="text-base md:text-lg text-[#38495D] leading-relaxed">
-                  We have <span className="font-semibold">directly</span> led procurement, revenue operations, and M&A across lower and middle market organizations
-                </p>
-              </div>
-            </div>
             <div className="grid md:grid-cols-2 gap-8">
               {teamMembers.map((member, index) => (
                 <div
