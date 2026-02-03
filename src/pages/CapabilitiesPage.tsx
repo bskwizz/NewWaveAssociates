@@ -1,5 +1,4 @@
 import { useState, useRef, useEffect } from 'react';
-import { ChevronDown } from 'lucide-react';
 import CTABar from '../components/CTABar';
 import PageHeader from '../components/PageHeader';
 
@@ -77,7 +76,6 @@ const capabilities = [
 ];
 
 export default function CapabilitiesPage({ onNavigate }: CapabilitiesPageProps) {
-  const [expandedIndex, setExpandedIndex] = useState<number | null>(0);
   const [fadeIn, setFadeIn] = useState(false);
   const vantaRef = useRef<HTMLDivElement>(null);
 
@@ -277,79 +275,56 @@ export default function CapabilitiesPage({ onNavigate }: CapabilitiesPageProps) 
       <div className="bg-gray-50 pt-16 pb-16">
         <div className="max-w-5xl mx-auto px-6">
 
-          <div className="cap-accordion-list space-y-4 mb-16">
-          {capabilities.map((capability, index) => (
+          <div className="space-y-8 mb-16">
+          {capabilities.map((capability) => (
             <section
               key={capability.id}
               id={capability.id}
-              className="cap-accordion border border-gray-200 rounded-lg overflow-hidden bg-white hover:shadow-lg transition-shadow"
-              aria-labelledby={`${capability.id}-h`}
+              className="bg-white"
             >
-              <button
-                id={`${capability.id}-h`}
-                onClick={() => setExpandedIndex(expandedIndex === index ? null : index)}
-                className="cap-accordion__head w-full flex items-center justify-between p-6 text-left hover:bg-gray-50 transition-colors"
-                type="button"
-                aria-expanded={expandedIndex === index}
-                aria-controls={`${capability.id}-panel`}
-              >
-                <span className="cap-accordion__title text-xl font-bold text-[#38495D]">
+              <div className="mb-4">
+                <h3 className="text-2xl font-bold text-[#38495D]">
                   {capability.title}
-                </span>
-                <ChevronDown
-                  className={`text-[#01A3DB] transition-transform ${
-                    expandedIndex === index ? 'rotate-180' : ''
-                  }`}
-                  size={24}
-                  aria-hidden="true"
-                />
-              </button>
+                </h3>
+              </div>
 
-              <div
-                id={`${capability.id}-panel`}
-                className="cap-accordion__panel"
-                hidden={expandedIndex !== index}
-              >
-                {expandedIndex === index && (
-                  <div className="px-6 pb-6 space-y-4">
-                    <ul className="space-y-3">
-                      {capability.points.map((point, i) => (
-                        <li key={i} className="flex items-start gap-3 text-gray-700">
-                          <span className="text-[#01A3DB] mt-1">•</span>
-                          <span>{point}</span>
-                        </li>
-                      ))}
-                    </ul>
-                    <div className="pt-4 border-t border-gray-200 space-y-4">
-                      <div>
-                        <p className="text-sm font-semibold text-[#EF5919] mb-1">
-                          Outcome:
-                        </p>
-                        <p className="text-gray-700 italic">{capability.outcome}</p>
-                      </div>
-                      <div>
-                        <p className="text-sm font-semibold text-[#38495D] mb-2">
-                          Related Case Studies:
-                        </p>
-                        {capability.caseStudyRoute ? (
-                          <button
-                            onClick={() => onNavigate(capability.caseStudyRoute!)}
-                            className="text-[#01A3DB] hover:text-[#0182b3] underline text-sm transition-colors"
-                          >
-                            View related case studies →
-                          </button>
-                        ) : (
-                          <button
-                            onClick={() => onNavigate('contact-us')}
-                            className="inline-block px-4 py-2 bg-gray-100 text-[#38495D] rounded hover:bg-gray-200 text-sm transition-colors"
-                          >
-                            Discuss your use case
-                          </button>
-                        )}
-                      </div>
-                    </div>
+              <div className="space-y-4">
+                <ul className="space-y-3">
+                  {capability.points.map((point, i) => (
+                    <li key={i} className="flex items-start gap-3 text-gray-700">
+                      <span className="text-[#01A3DB] mt-1">•</span>
+                      <span>{point}</span>
+                    </li>
+                  ))}
+                </ul>
+                <div className="pt-4 border-t border-gray-200 space-y-4">
+                  <div>
+                    <p className="text-sm font-semibold text-[#EF5919] mb-1">
+                      Outcome:
+                    </p>
+                    <p className="text-gray-700 italic">{capability.outcome}</p>
                   </div>
-                )}
+                  <div>
+                    <p className="text-sm font-semibold text-[#38495D] mb-2">
+                      Related Case Studies:
+                    </p>
+                    {capability.caseStudyRoute ? (
+                      <button
+                        onClick={() => onNavigate(capability.caseStudyRoute!)}
+                        className="text-[#01A3DB] hover:text-[#0182b3] underline text-sm transition-colors"
+                      >
+                        View related case studies →
+                      </button>
+                    ) : (
+                      <button
+                        onClick={() => onNavigate('contact-us')}
+                        className="inline-block px-4 py-2 bg-gray-100 text-[#38495D] rounded hover:bg-gray-200 text-sm transition-colors"
+                      >
+                        Discuss your use case
+                      </button>
+                    )}
+                  </div>
+                </div>
               </div>
             </section>
           ))}
