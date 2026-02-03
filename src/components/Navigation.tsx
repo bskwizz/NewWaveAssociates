@@ -33,12 +33,12 @@ export default function Navigation({ currentPage, onNavigate }: NavigationProps)
         <div className="flex items-center justify-between py-4">
           <button
             onClick={() => onNavigate('home')}
-            className="flex items-center gap-3 group -my-4"
+            className="flex items-center gap-3 group -my-8 relative z-10"
           >
             <img
               src="/New Wave Associates Horizontal.png"
               alt="New Wave Associates"
-              className="h-[108px] w-auto"
+              className="h-[140px] w-auto"
             />
           </button>
 
