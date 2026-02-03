@@ -365,7 +365,22 @@ export default function FlywheelPage({ onNavigate }: FlywheelPageProps) {
           <div className="w-full">
             <div className="max-w-7xl mx-auto px-6">
               <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-start">
-                <div className="flywheel-hero__media">
+                <div className="flywheel-hero__media relative">
+                  {/* Top Left Text Box */}
+                  <div className="absolute top-0 left-0 bg-white border-2 border-[#01A3DB] rounded-lg px-4 py-3 shadow-lg">
+                    <p className="text-[#38495D] font-semibold text-sm whitespace-nowrap">Strategic Sourcing</p>
+                  </div>
+
+                  {/* Top Right Text Box */}
+                  <div className="absolute top-0 right-0 bg-white border-2 border-[#01A3DB] rounded-lg px-4 py-3 shadow-lg">
+                    <p className="text-[#38495D] font-semibold text-sm whitespace-nowrap">Revenue and Demand<br />Acceleration</p>
+                  </div>
+
+                  {/* Bottom Center Text Box */}
+                  <div className="absolute bottom-0 left-1/2 transform -translate-x-1/2 bg-white border-2 border-[#01A3DB] rounded-lg px-4 py-3 shadow-lg">
+                    <p className="text-[#38495D] font-semibold text-sm whitespace-nowrap">Integrations and Divestitures</p>
+                  </div>
+
                   <img
                     className={`flywheel-hero__img transition-opacity duration-1000 ${
                       fadeInImage ? 'opacity-100' : 'opacity-0'
