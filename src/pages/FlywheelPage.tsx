@@ -350,7 +350,7 @@ export default function FlywheelPage({ onNavigate }: FlywheelPageProps) {
 
   return (
     <div>
-      <div id="flywheel-hero" ref={vantaRef} className="flywheel-hero fw-glow" aria-label="New Wave Flywheel">
+      <div id="flywheel-hero" ref={vantaRef} className="flywheel-hero fw-glow" aria-label="New Wave Flywheel" style={{ minHeight: '100vh', position: 'relative' }}>
         <div className="absolute inset-0 opacity-[0.12] pointer-events-none" style={{
           backgroundImage: `radial-gradient(1px 1px at 20% 30%, #38495d 100%, transparent 0),
                             radial-gradient(1px 1px at 70% 60%, #01a3db 100%, transparent 0),
@@ -369,7 +369,7 @@ export default function FlywheelPage({ onNavigate }: FlywheelPageProps) {
           />
         </div>
 
-        <div className="relative flex items-start" style={{ minHeight: 'calc(100vh - 16rem)', paddingTop: '2rem' }}>
+        <div className="relative flex items-center justify-center" style={{ minHeight: 'calc(100vh - 80px)' }}>
           <div className="w-full">
             <div className="max-w-7xl mx-auto px-6">
               <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-start">
