@@ -129,8 +129,8 @@ export default function CapabilitiesPage({ onNavigate }: CapabilitiesPageProps) 
                 </div>
                 <div className="relative overflow-visible">
                   <img
-                    src="/new_wave_process_graphic_(1).png"
-                    alt="New Wave Associates Process"
+                    src="/our_experience_graphic.png"
+                    alt="New Wave Associates Experience"
                     className="w-full h-auto scale-125 origin-center reveal-animation"
                   />
                 </div>
