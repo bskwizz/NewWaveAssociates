@@ -38,10 +38,17 @@ export default function ContactUsPage({ onNavigate }: ContactUsPageProps) {
         <div className="max-w-7xl mx-auto px-6">
           <div className="flex gap-12 items-start">
             <div className="w-[30%] flex-shrink-0">
-              <h1 className="text-4xl font-bold text-[#38495D] mb-4">
-                Contact Us
-              </h1>
-              <p className="text-base text-gray-700 mb-8 leading-relaxed">
+              <div className="inline-block mb-2">
+                <div>
+                  <p className="text-black text-sm md:text-base font-bold tracking-[0.2em] uppercase mb-2" style={{
+                    letterSpacing: '0.25em'
+                  }}>
+                    Contact Us
+                  </p>
+                  <div className="h-[2px] bg-[#f05e00]"></div>
+                </div>
+              </div>
+              <p className="text-base text-gray-700 leading-relaxed mt-6 mb-8">
                 Please let us know if you have a question, want to leave a comment, or would like further information about New Wave Associates.
               </p>
 
