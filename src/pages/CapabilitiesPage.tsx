@@ -127,11 +127,11 @@ export default function CapabilitiesPage({ onNavigate }: CapabilitiesPageProps) 
                     </p>
                   </div>
                 </div>
-                <div className="relative overflow-visible">
+                <div className="flex items-center justify-center">
                   <img
                     src="/our_experience_graphic.png"
                     alt="New Wave Associates Experience"
-                    className="w-full h-auto scale-125 origin-center reveal-animation"
+                    className="w-full h-auto rounded-lg shadow-lg"
                   />
                 </div>
               </div>
