@@ -62,7 +62,7 @@ export default function HomePage({ onNavigate }: HomePageProps) {
                 '/bridgeview_eye_logo.png',
                 '/medius_logo.png',
                 '/new_era_technology_logo.png',
-                'Logo 5',
+                '/trustage_logo.png',
                 'Logo 6',
               ]} />
             </div>
