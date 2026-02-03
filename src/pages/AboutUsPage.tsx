@@ -12,28 +12,28 @@ const teamMembers = [
     name: 'Craig Keller',
     title: 'Founding Partner',
     image: 'Pictures-6.png',
-    bio: 'Add bio text here for Craig Keller.',
+    bio: 'A finance and transformation executive with 30+ years of experience leading Strategic Sourcing, FP&A, M&A integration, and operational initiatives across multi-entity technology and managed-services organizations. He\'s achieved $150M+ in cost synergies through consolidation, shared-services alignment, and pricing discipline.',
     linkedin: 'https://linkedin.com'
   },
   {
     name: 'Hunter New',
     title: 'Founding Partner',
     image: 'Pictures-2.png',
-    bio: 'Add bio text here for Hunter New.',
+    bio: 'M&A, performance improvement, and labor strategy leader across the healthcare provider/payer and technology sectors. He\'s delivered 10-15% EBITDA gains through post-merger integrations, divestitures, and performance initiatives while supporting $120B+ in total transaction value for non-profit and for-profit health systems, PE-owned health services organizations, and payers.',
     linkedin: 'https://linkedin.com'
   },
   {
     name: 'Bryan Skwirut',
     title: 'Founding Partner',
     image: 'Pictures-3.png',
-    bio: 'Add bio text here for Bryan Skwirut.',
+    bio: 'An enterprise transformation leader with over a decade of experience driving operational modernization and performance improvement across financial services, healthcare, and technology sectors. He\'s led initiatives that delivered $25M+ in process efficiency gains, reduced operational cycle times by 40%, and optimized enterprise workflows across 10+ business units.',
     linkedin: 'https://linkedin.com'
   },
   {
     name: 'Jason Lee',
     title: 'Founding Partner',
     image: 'Pictures-4.png',
-    bio: 'Add bio text here for Jason Lee.',
+    bio: 'Strategy and growth executive who has built and scaled multi-entity operating models across numerous industries. He has architected enterprise GTM frameworks, pricing normalization programs, and RevOps transformations that have delivered millions in incremental revenue and improved commercial efficiencies across 80+ business units.',
     linkedin: 'https://linkedin.com'
   },
 ];
@@ -111,17 +111,20 @@ export default function AboutUsPage({ onNavigate }: AboutUsPageProps) {
           </div>
 
           <div className="mb-16">
-            <h2 className="text-4xl font-bold text-[#38495D] mb-12 text-center">
-              Meet the Team
+            <h2 className="text-4xl font-bold text-[#38495D] mb-3 text-center">
+              The Right Operators
             </h2>
+            <p className="text-lg text-gray-700 mb-12 text-center max-w-4xl mx-auto">
+              We have <span className="font-semibold">directly</span> led procurement, revenue operations, and M&A across lower and middle market organizations
+            </p>
             <div className="grid md:grid-cols-2 gap-8">
               {teamMembers.map((member, index) => (
                 <div
                   key={index}
-                  className="bg-white border border-gray-200 rounded-lg p-6 hover:shadow-xl transition-all"
+                  className="bg-white border border-gray-200 rounded-lg p-5 hover:shadow-xl transition-all"
                 >
-                  <div className="flex gap-6 items-start mb-6">
-                    <div className="w-32 h-32 flex-shrink-0 flex items-center justify-center overflow-hidden bg-white rounded-lg">
+                  <div className="flex gap-5 mb-5">
+                    <div className="w-40 h-40 flex-shrink-0 flex items-center justify-center overflow-hidden bg-white rounded-lg">
                       <img
                         src={`${import.meta.env.BASE_URL}${member.image}`}
                         alt={member.name}
@@ -133,14 +136,14 @@ export default function AboutUsPage({ onNavigate }: AboutUsPageProps) {
                           if (parent) {
                             parent.classList.add('bg-gradient-to-br', 'from-[#01A3DB]', 'to-[#38495D]');
                             const initials = document.createElement('div');
-                            initials.className = 'w-20 h-20 bg-white/20 rounded-full flex items-center justify-center';
-                            initials.innerHTML = `<span class="text-white text-2xl font-bold">${member.name.split(' ').map(n => n[0]).join('')}</span>`;
+                            initials.className = 'w-24 h-24 bg-white/20 rounded-full flex items-center justify-center';
+                            initials.innerHTML = `<span class="text-white text-3xl font-bold">${member.name.split(' ').map(n => n[0]).join('')}</span>`;
                             parent.appendChild(initials);
                           }
                         }}
                       />
                     </div>
-                    <div className="flex-1 text-left">
+                    <div className="flex-1 text-left flex flex-col justify-center">
                       <h3 className="text-xl font-bold text-[#38495D] mb-1">
                         {member.name}
                       </h3>
