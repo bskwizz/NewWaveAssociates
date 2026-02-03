@@ -205,29 +205,29 @@ export default function OurServicesPage({ onNavigate }: OurServicesPageProps) {
       className="mb-16 pb-16 border-b border-gray-200"
     >
       <div className="max-w-6xl">
-        <div className="text-left mb-4">
-          <div className="inline-block mb-2">
-            <div>
-              <h2
-                id={`${content.id}-title`}
-                className="text-black text-sm md:text-base font-bold tracking-[0.2em] uppercase mb-2"
-                style={{ letterSpacing: '0.25em' }}
-              >
-                {content.title}
-              </h2>
-              <div className="h-[2px] bg-[#f05e00]"></div>
-            </div>
-          </div>
-        </div>
-
         <div className={content.image ? 'grid grid-cols-1 lg:grid-cols-2 gap-12 items-center' : ''}>
           <div className="flex flex-col justify-center">
+            <div className="text-left mb-3">
+              <div className="inline-block mb-2">
+                <div>
+                  <h2
+                    id={`${content.id}-title`}
+                    className="text-black text-sm md:text-base font-bold tracking-[0.2em] uppercase mb-2"
+                    style={{ letterSpacing: '0.25em' }}
+                  >
+                    {content.title}
+                  </h2>
+                  <div className="h-[2px] bg-[#f05e00]"></div>
+                </div>
+              </div>
+            </div>
+
             {content.subheading && (
               <p className="text-xl text-gray-700 mb-8 leading-relaxed text-left">{content.subheading}</p>
             )}
 
             {content.bullets && content.bullets.length > 0 && (
-              <ul className="space-y-3 mb-8 text-left">
+              <ul className="space-y-3 text-left">
                 {content.bullets.map((bullet, idx) => (
                   <li key={idx} className="flex items-start">
                     <span className="text-[#f05e00] mr-3 mt-1">•</span>
