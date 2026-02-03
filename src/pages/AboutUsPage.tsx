@@ -58,7 +58,7 @@ export default function AboutUsPage({ onNavigate }: AboutUsPageProps) {
             alt=""
             className="w-full h-auto object-cover opacity-60"
             style={{
-              transform: 'translateY(-20%)',
+              transform: 'translateY(-5%)',
               minHeight: '500px'
             }}
           />
