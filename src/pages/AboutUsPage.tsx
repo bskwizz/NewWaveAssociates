@@ -50,10 +50,10 @@ export default function AboutUsPage({ onNavigate }: AboutUsPageProps) {
     <div>
       <div ref={vantaRef} className="capabilities-hero" aria-label="About Us">
         <PageHeader onNavigate={onNavigate} currentPage="about-us" />
-        <div className="capabilities-hero__inner hero-content">
-          <div className="max-w-7xl mx-auto px-6 h-full flex items-center">
+        <div className="capabilities-hero__inner hero-content" style={{ paddingTop: '4rem' }}>
+          <div className="max-w-7xl mx-auto px-6">
             <div className={`w-full transition-opacity duration-1000 ${fadeIn ? 'opacity-100' : 'opacity-0'}`}>
-              <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
+              <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-start mb-12">
                 <div className="text-left">
                   <div className="inline-block mb-2">
                     <div>
@@ -77,77 +77,71 @@ export default function AboutUsPage({ onNavigate }: AboutUsPageProps) {
                   />
                 </div>
               </div>
-            </div>
-          </div>
-        </div>
-      </div>
 
-      <div className="bg-gray-50 -mt-24 pt-32 pb-16">
-        <div className="max-w-7xl mx-auto px-6">
-          <div className="mb-16">
-            <div className="grid md:grid-cols-2 gap-8">
-              {teamMembers.map((member, index) => (
-                <div
-                  key={index}
-                  className="bg-white border border-gray-200 rounded-lg p-5 hover:shadow-xl transition-all"
-                >
-                  <div className="flex gap-5 mb-5">
-                    <div className="w-40 h-40 flex-shrink-0 flex items-center justify-center overflow-hidden bg-white rounded-lg">
-                      <img
-                        src={`${import.meta.env.BASE_URL}${member.image}`}
-                        alt={member.name}
-                        className="w-full h-full object-cover"
-                        onError={(e) => {
-                          const target = e.target as HTMLImageElement;
-                          target.style.display = 'none';
-                          const parent = target.parentElement;
-                          if (parent) {
-                            parent.classList.add('bg-gradient-to-br', 'from-[#01A3DB]', 'to-[#38495D]');
-                            const initials = document.createElement('div');
-                            initials.className = 'w-24 h-24 bg-white/20 rounded-full flex items-center justify-center';
-                            initials.innerHTML = `<span class="text-white text-3xl font-bold">${member.name.split(' ').map(n => n[0]).join('')}</span>`;
-                            parent.appendChild(initials);
-                          }
-                        }}
-                      />
-                    </div>
-                    <div className="flex-1 text-left flex flex-col justify-center">
-                      <h3 className="text-xl font-bold text-[#38495D] mb-1">
-                        {member.name}
-                      </h3>
-                      <p className="text-gray-600">{member.title}</p>
-                    </div>
-                  </div>
-
-                  <div className="border-t border-gray-200 mb-4"></div>
-
-                  <p className="text-gray-700 leading-relaxed mb-4">
-                    {member.bio}
-                  </p>
-
-                  <div className="border-t border-gray-200 mb-4"></div>
-
-                  <a
-                    href={member.linkedin}
-                    target="_blank"
-                    rel="noopener noreferrer"
-                    className="inline-flex items-center gap-2 text-[#01A3DB] hover:text-[#0192C5] transition-colors font-medium"
+              <div className="grid md:grid-cols-2 gap-8 pb-16">
+                {teamMembers.map((member, index) => (
+                  <div
+                    key={index}
+                    className="bg-white border border-gray-200 rounded-lg p-5 hover:shadow-xl transition-all"
                   >
-                    <Linkedin size={20} />
-                    <span>LinkedIn Profile</span>
-                  </a>
-                </div>
-              ))}
+                    <div className="flex gap-5 mb-5">
+                      <div className="w-40 h-40 flex-shrink-0 flex items-center justify-center overflow-hidden bg-white rounded-lg">
+                        <img
+                          src={`${import.meta.env.BASE_URL}${member.image}`}
+                          alt={member.name}
+                          className="w-full h-full object-cover"
+                          onError={(e) => {
+                            const target = e.target as HTMLImageElement;
+                            target.style.display = 'none';
+                            const parent = target.parentElement;
+                            if (parent) {
+                              parent.classList.add('bg-gradient-to-br', 'from-[#01A3DB]', 'to-[#38495D]');
+                              const initials = document.createElement('div');
+                              initials.className = 'w-24 h-24 bg-white/20 rounded-full flex items-center justify-center';
+                              initials.innerHTML = `<span class="text-white text-3xl font-bold">${member.name.split(' ').map(n => n[0]).join('')}</span>`;
+                              parent.appendChild(initials);
+                            }
+                          }}
+                        />
+                      </div>
+                      <div className="flex-1 text-left flex flex-col justify-center">
+                        <h3 className="text-xl font-bold text-[#38495D] mb-1">
+                          {member.name}
+                        </h3>
+                        <p className="text-gray-600">{member.title}</p>
+                      </div>
+                    </div>
+
+                    <div className="border-t border-gray-200 mb-4"></div>
+
+                    <p className="text-gray-700 leading-relaxed mb-4">
+                      {member.bio}
+                    </p>
+
+                    <div className="border-t border-gray-200 mb-4"></div>
+
+                    <a
+                      href={member.linkedin}
+                      target="_blank"
+                      rel="noopener noreferrer"
+                      className="inline-flex items-center gap-2 text-[#01A3DB] hover:text-[#0192C5] transition-colors font-medium"
+                    >
+                      <Linkedin size={20} />
+                      <span>LinkedIn Profile</span>
+                    </a>
+                  </div>
+                ))}
+              </div>
             </div>
           </div>
-
-          <CTABar
-            text="Learn more about New Wave solutions for your unique growth opportunity"
-            buttonText="Contact Us"
-            onButtonClick={() => onNavigate('contact-us')}
-          />
         </div>
       </div>
+
+      <CTABar
+        text="Learn more about New Wave solutions for your unique growth opportunity"
+        buttonText="Contact Us"
+        onButtonClick={() => onNavigate('contact-us')}
+      />
     </div>
   );
 }
