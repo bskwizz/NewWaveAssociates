@@ -40,61 +40,14 @@ const costOptimizationContent: SectionContent = {
 
 const operationalEfficienciesContent: SectionContent = {
   id: 'operational-efficiencies',
-  title: 'Operational Efficiencies',
-  subheading: 'We re-engineer workflows across systems, teams, and processes to deliver scalability, speed, and confidence in execution.',
-  groups: [
-    {
-      subhead: 'Core Operational Efficiency Levers',
-      items: [
-        'Throughput Maximization',
-        'Cycle Time Compression',
-        'Lean Process Enablement',
-        'Workflow Streamlining',
-        'Touchpoint Reduction',
-        'Operational Load Balancing',
-        'Process Velocity Uplift',
-        'Waste Elimination',
-      ],
-    },
-    {
-      subhead: 'Intelligent Automation & Digital',
-      items: [
-        'Digital Twin Deployment',
-        'Hyper Automation Strategy',
-        'AI-Augmented Operations',
-        'Bot-Driven Task Execution',
-        'Cognitive Workflow Integration',
-        'Intelligent Exception Handling',
-        'Digital Labor Scaling',
-        'Offshore/Onshore Productivity Gains',
-      ],
-    },
-    {
-      subhead: 'Cross-Functional Optimization',
-      items: [
-        'End-to-End Process Harmonization',
-        'Functional Interface Simplification',
-        'Cross-Silo Efficiency Plays',
-        'Enterprise Throughput Engineering',
-        'Span-of-Control Realignment',
-        'Ops Stack Consolidation',
-        'Platform Rationalization',
-        'Strategic Headcount Calibration',
-      ],
-    },
-    {
-      subhead: 'Transformation-Oriented Efficiencies',
-      items: [
-        'Run-Rate Efficiency Expansion',
-        'Cost-to-Serve Optimization',
-        'Agility Driven Ops Restructuring',
-        'Performance Uplift via Process Rewire',
-        'Efficiency-Led Growth Enablement',
-        'Structural Ops Reset',
-        'Throughput-First Transformation',
-      ],
-    },
+  title: 'Integrations and Divestitures',
+  bullets: [
+    'Integration, Divestiture Management, and Transformation Office Leadership (IMO, DMO, TMO)',
+    'Cost and Revenue Synergy Execution and Capture',
+    'Stranded Cost Management and Mitigation',
+    'Current, Interim, and Future-State Operating Model Execution',
   ],
+  groups: [],
 };
 
 interface CollapsibleGroupProps {
