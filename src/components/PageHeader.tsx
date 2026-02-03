@@ -5,8 +5,8 @@ interface PageHeaderProps {
 
 export default function PageHeader({ onNavigate, currentPage }: PageHeaderProps) {
   const navItems = [
-    { label: 'The Flywheel', page: 'flywheel' },
-    { label: 'Services', page: 'capabilities' },
+    { label: 'Our Services', page: 'flywheel' },
+    { label: 'Case Studies', page: 'capabilities' },
     { label: 'About Us', page: 'about-us' },
     { label: 'Contact Us', page: 'contact-us' },
   ];
@@ -19,7 +19,7 @@ export default function PageHeader({ onNavigate, currentPage }: PageHeaderProps)
             <img
               src="/new_wave_associates_horizontal.png"
               alt="New Wave Associates"
-              className="h-[72px] md:h-[84px] w-auto"
+              className="h-[108px] md:h-[126px] w-auto"
             />
           </button>
 
