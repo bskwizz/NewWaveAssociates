@@ -366,18 +366,18 @@ export default function FlywheelPage({ onNavigate }: FlywheelPageProps) {
             <div className="max-w-7xl mx-auto px-6">
               <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-start">
                 <div className="flywheel-hero__media relative">
-                  {/* Top Left Text */}
-                  <div className="absolute top-2 left-2">
+                  {/* Strategic Sourcing - positioned at 10:30 clock position */}
+                  <div className="absolute" style={{ top: '12%', left: '5%' }}>
                     <p className="text-[#38495D] font-bold text-base">Strategic Sourcing</p>
                   </div>
 
-                  {/* Top Right Text */}
-                  <div className="absolute top-2 right-2 text-right">
+                  {/* Revenue and Demand Acceleration - positioned at 1:30 clock position */}
+                  <div className="absolute text-center" style={{ top: '12%', right: '5%' }}>
                     <p className="text-[#38495D] font-bold text-base">Revenue and Demand<br />Acceleration</p>
                   </div>
 
-                  {/* Bottom Center Text */}
-                  <div className="absolute bottom-2 left-1/2 transform -translate-x-1/2">
+                  {/* Integrations and Divestitures - positioned at 6:00 clock position */}
+                  <div className="absolute left-1/2" style={{ bottom: '5%', transform: 'translateX(-50%)' }}>
                     <p className="text-[#38495D] font-bold text-base text-center">Integrations and Divestitures</p>
                   </div>
 
