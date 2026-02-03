@@ -53,28 +53,6 @@ export default function HomePage({ onNavigate }: HomePageProps) {
               </div>
             </div>
             <div className="w-full bg-[#00a4dd] mt-12" style={{height: '75px'}}></div>
-
-            <div className="w-full px-6 py-8">
-              <div className="max-w-7xl mx-auto">
-                <div className="flex flex-wrap justify-center items-center gap-8 md:gap-12">
-                  <div className="flex items-center justify-center w-32 h-16 grayscale hover:grayscale-0 transition-all duration-300 opacity-60 hover:opacity-100">
-                    <img src="/client-logo-1.png" alt="Client Logo 1" className="max-w-full max-h-full object-contain" />
-                  </div>
-                  <div className="flex items-center justify-center w-32 h-16 grayscale hover:grayscale-0 transition-all duration-300 opacity-60 hover:opacity-100">
-                    <img src="/client-logo-2.png" alt="Client Logo 2" className="max-w-full max-h-full object-contain" />
-                  </div>
-                  <div className="flex items-center justify-center w-32 h-16 grayscale hover:grayscale-0 transition-all duration-300 opacity-60 hover:opacity-100">
-                    <img src="/client_logo_3.png" alt="Client Logo 3" className="max-w-full max-h-full object-contain" />
-                  </div>
-                  <div className="flex items-center justify-center w-32 h-16 grayscale hover:grayscale-0 transition-all duration-300 opacity-60 hover:opacity-100">
-                    <img src="/client-logo-4.png" alt="Client Logo 4" className="max-w-full max-h-full object-contain" />
-                  </div>
-                  <div className="flex items-center justify-center w-32 h-16 grayscale hover:grayscale-0 transition-all duration-300 opacity-60 hover:opacity-100">
-                    <img src="/client-logo-5.png" alt="Client Logo 5" className="max-w-full max-h-full object-contain" />
-                  </div>
-                </div>
-              </div>
-            </div>
           </div>
         </div>
       </div>
