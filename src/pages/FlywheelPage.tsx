@@ -358,7 +358,7 @@ export default function FlywheelPage({ onNavigate }: FlywheelPageProps) {
               className={`flywheel-hero__img transition-opacity duration-1000 ${
                 fadeInImage ? 'opacity-100' : 'opacity-0'
               }`}
-              src={`${import.meta.env.BASE_URL}FlyWheel New Wave Associates copy.png`}
+              src={`${import.meta.env.BASE_URL}new_new_wave_flywheel.pdf.png`}
               alt="New Wave Flywheel"
             />
             <div
