@@ -58,7 +58,7 @@ export default function HomePage({ onNavigate }: HomePageProps) {
             <div className="w-full bg-[#00a4dd] mt-12" style={{height: '75px'}}></div>
             <div className="w-full flex items-center justify-center py-8">
               <LogoScroller logos={[
-                '/client_logo_3.png',
+                'Logo 1',
                 '/bridgeview_eye_logo.png',
                 'Logo 3',
                 'Logo 4',
