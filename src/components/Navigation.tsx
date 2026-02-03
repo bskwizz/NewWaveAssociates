@@ -30,15 +30,15 @@ export default function Navigation({ currentPage, onNavigate }: NavigationProps)
   return (
     <nav className="fixed top-0 left-0 right-0 bg-white/80 backdrop-blur-sm z-50">
       <div className="max-w-7xl mx-auto px-6">
-        <div className="flex items-center justify-between" style={{ minHeight: '120px' }}>
+        <div className="flex items-center justify-between" style={{ minHeight: '150px' }}>
           <button
             onClick={() => onNavigate('home')}
-            className="flex items-center gap-3 group relative z-10 py-4"
+            className="flex items-center gap-3 group relative z-10"
           >
             <img
               src="/New Wave Associates Horizontal.png"
               alt="New Wave Associates"
-              style={{ height: '100px', width: 'auto' }}
+              style={{ height: '140px', width: 'auto' }}
             />
           </button>
 
