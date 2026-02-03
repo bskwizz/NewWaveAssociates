@@ -137,7 +137,7 @@ export default function AboutUsPage({ onNavigate }: AboutUsPageProps) {
                     <div className="h-[2px] bg-[#f05e00]"></div>
                   </div>
                 </div>
-                <p className="text-base md:text-lg text-[#38495D] leading-relaxed mt-6 mb-8">
+                <p className="text-base text-[#38495D] leading-relaxed mt-6 mb-8">
                   Senior Operators. Realistic Outcomes. Timebound Delivery.
                 </p>
               </div>
