@@ -38,7 +38,7 @@ export default function Navigation({ currentPage, onNavigate }: NavigationProps)
             <img
               src="/New Wave Associates Horizontal.png"
               alt="New Wave Associates"
-              style={{ height: '140px', width: 'auto' }}
+              className="!h-[140px] w-auto"
             />
           </button>
 
