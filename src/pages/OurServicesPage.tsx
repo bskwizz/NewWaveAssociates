@@ -10,60 +10,21 @@ interface SectionGroup {
 interface SectionContent {
   id: string;
   title: string;
-  subheading: string;
+  subheading?: string;
+  bullets?: string[];
   groups: SectionGroup[];
 }
 
 const gtmStrategyContent: SectionContent = {
   id: 'gtm-strategy',
-  title: 'Go-to-Market Strategy',
-  subheading: 'We design adaptive frameworks that align revenue teams, tech, processes, and data around one unified motion.',
-  groups: [
-    {
-      subhead: 'Go-to-Market Strategy Levers',
-      items: [
-        'Segment-Specific Value Propositions',
-        'Perfect-Customer-Profile Driven Targeting',
-        'Segment Clarity',
-        'Commercial Strategy Realignment',
-        'Demand Signal Amplification',
-        'Channel Mix Optimization',
-        'Revenue Pathway Engineering',
-        'Conversion Funnel Acceleration',
-      ],
-    },
-    {
-      subhead: 'Framework & Operating Model',
-      items: [
-        'Modular Go-to-Market Architecture',
-        'Agile Campaign Orchestration',
-        'Go-to-Market Stack Rationalization',
-        'Lead-to-Cash Process Engineering',
-        'Go-to-Market Governance Framework',
-        'Performance-Based Resource Allocation',
-      ],
-    },
-    {
-      subhead: 'Go-to-Market Redesign & Transformation',
-      items: [
-        'Zero-Based Go-to-Market Planning',
-        'Cost-to-Acquire Optimization',
-        'Digital Channel Expansion',
-        'Sales Enablement Modernization',
-        'Pipeline Velocity Uplift',
-        'Go-to-Market Tech Stack Refresh',
-      ],
-    },
-    {
-      subhead: 'Executive-Ready Framing',
-      items: [
-        'Engineering precision into every commercial motion',
-        'Rewiring the revenue engine for modern buyer behavior',
-        'Aligning Go-to-Market architecture to strategic growth vectors',
-        'Turning fragmented efforts into a unified market assault',
-      ],
-    },
+  title: 'Strategic Sourcing',
+  bullets: [
+    'Spend Cube Development and AP Baseline',
+    'Market Event Oversight and Execution',
+    'Talent Assessment and Operating Model Redesign',
+    'GPO Interaction Model Development',
   ],
+  groups: [],
 };
 
 const costOptimizationContent: SectionContent = {
@@ -329,21 +290,48 @@ export default function OurServicesPage({ onNavigate }: OurServicesPageProps) {
       className="mb-16 pb-16 border-b border-gray-200"
     >
       <div className="max-w-6xl">
-        <h2 id={`${content.id}-title`} className="text-4xl font-bold text-[#38495D] mb-4">
-          {content.title}
-        </h2>
-        <p className="text-xl text-gray-700 mb-8 leading-relaxed text-left w-full md:w-1/2">{content.subheading}</p>
-
-        <div className="fw-group-grid">
-          {content.groups.map((group, idx) => (
-            <CollapsibleGroup
-              key={idx}
-              subhead={group.subhead}
-              items={group.items}
-              groupId={`${content.id}-group-${idx}`}
-            />
-          ))}
+        <div className="text-left mb-8">
+          <div className="inline-block mb-2">
+            <div>
+              <h2
+                id={`${content.id}-title`}
+                className="text-black text-sm md:text-base font-bold tracking-[0.2em] uppercase mb-2"
+                style={{ letterSpacing: '0.25em' }}
+              >
+                {content.title}
+              </h2>
+              <div className="h-[2px] bg-[#f05e00]"></div>
+            </div>
+          </div>
         </div>
+
+        {content.subheading && (
+          <p className="text-xl text-gray-700 mb-8 leading-relaxed text-left w-full md:w-1/2">{content.subheading}</p>
+        )}
+
+        {content.bullets && content.bullets.length > 0 && (
+          <ul className="space-y-3 mb-8 text-left">
+            {content.bullets.map((bullet, idx) => (
+              <li key={idx} className="flex items-start">
+                <span className="text-[#f05e00] mr-3 mt-1">•</span>
+                <span className="text-gray-700 text-base leading-relaxed">{bullet}</span>
+              </li>
+            ))}
+          </ul>
+        )}
+
+        {content.groups.length > 0 && (
+          <div className="fw-group-grid">
+            {content.groups.map((group, idx) => (
+              <CollapsibleGroup
+                key={idx}
+                subhead={group.subhead}
+                items={group.items}
+                groupId={`${content.id}-group-${idx}`}
+              />
+            ))}
+          </div>
+        )}
       </div>
     </section>
   );
