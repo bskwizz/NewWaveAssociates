@@ -48,9 +48,20 @@ export default function AboutUsPage({ onNavigate }: AboutUsPageProps) {
 
   return (
     <div>
-      <div ref={vantaRef} className="capabilities-hero" aria-label="About Us">
+      <div ref={vantaRef} className="capabilities-hero relative" aria-label="About Us">
         <PageHeader onNavigate={onNavigate} currentPage="about-us" />
-        <div className="capabilities-hero__inner hero-content" style={{ paddingTop: '4rem' }}>
+
+        {/* Wispy Wave Overlay */}
+        <div className="absolute inset-0 pointer-events-none z-10 overflow-hidden">
+          <img
+            src={`${import.meta.env.BASE_URL}chatgpt_image_feb_2,_2026,_08_35_11_pm.png`}
+            alt=""
+            className="w-full h-auto object-contain opacity-40"
+            style={{ mixBlendMode: 'multiply' }}
+          />
+        </div>
+
+        <div className="capabilities-hero__inner hero-content relative z-20" style={{ paddingTop: '4rem' }}>
           <div className="max-w-7xl mx-auto px-6">
             <div className={`w-full transition-opacity duration-1000 ${fadeIn ? 'opacity-100' : 'opacity-0'}`}>
               <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-start mb-12">
