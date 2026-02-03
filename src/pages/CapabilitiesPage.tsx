@@ -87,23 +87,58 @@ export default function CapabilitiesPage({ onNavigate }: CapabilitiesPageProps) 
 
   return (
     <div>
-      <div ref={vantaRef} className="capabilities-hero" aria-label="Services">
+      <div ref={vantaRef} className="hero relative h-screen" style={{
+        background: `radial-gradient(1200px 600px at 15% -10%, rgba(1,163,219,0.25), transparent 50%),
+                     radial-gradient(800px 400px at 85% 110%, rgba(56,73,93,0.25), transparent 50%),
+                     linear-gradient(180deg, #f7f9fb 0%, #eef3f7 100%)`,
+        overflow: 'visible'
+      }}>
+        <div className="absolute inset-0 opacity-[0.12] pointer-events-none" style={{
+          backgroundImage: `radial-gradient(1px 1px at 20% 30%, #38495d 100%, transparent 0),
+                            radial-gradient(1px 1px at 70% 60%, #01a3db 100%, transparent 0),
+                            radial-gradient(1px 1px at 40% 80%, #38495d 100%, transparent 0)`,
+          backgroundSize: '120px 120px, 160px 160px, 200px 200px',
+          backgroundRepeat: 'repeat'
+        }}></div>
+
         <PageHeader onNavigate={onNavigate} currentPage="capabilities" />
-        <div className="capabilities-hero__inner hero-content">
-          <div className="max-w-7xl mx-auto px-6 flex items-center justify-center h-full">
-            <p
-              className={`text-xl text-[#38495D] text-center transition-opacity duration-1000 ${
-                fadeIn ? 'opacity-100' : 'opacity-0'
-              }`}
-              style={{ maxWidth: '900px' }}
-            >
-              Explore the full spectrum of services we deploy to accelerate growth, expand margins, and operationalize transformation.
-            </p>
+
+        <div className="relative flex items-center" style={{ height: 'calc(100vh - 24rem)', paddingTop: '0' }}>
+          <div className="w-full">
+            <div className="max-w-7xl mx-auto px-6">
+              <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
+                <div className="text-left">
+                  <div className="inline-block mb-2">
+                    <div>
+                      <p className="text-black text-sm md:text-base font-bold tracking-[0.2em] uppercase mb-2" style={{
+                        letterSpacing: '0.25em'
+                      }}>
+                        Our Services
+                      </p>
+                      <div className="h-[2px] bg-[#f05e00]"></div>
+                    </div>
+                  </div>
+                  <p className={`text-base md:text-lg text-[#38495D] leading-relaxed mt-6 transition-opacity duration-1000 ${
+                    fadeIn ? 'opacity-100' : 'opacity-0'
+                  }`}>
+                    Explore the full spectrum of services we deploy to accelerate growth, expand margins, and operationalize transformation.
+                  </p>
+                </div>
+                <div className="relative overflow-visible">
+                  <img
+                    src="/new_wave_process_graphic_(1).png"
+                    alt="New Wave Associates Process"
+                    className="w-full h-auto scale-125 origin-center reveal-animation"
+                  />
+                </div>
+              </div>
+            </div>
+            <div className="w-full bg-[#00a4dd] mt-12" style={{height: '75px'}}></div>
           </div>
         </div>
       </div>
 
-      <div className="bg-gray-50 -mt-24 pt-32 pb-16">
+      <div className="bg-gray-50 pt-16 pb-16">
         <div className="max-w-5xl mx-auto px-6">
 
           <div className="cap-accordion-list space-y-4 mb-16">
