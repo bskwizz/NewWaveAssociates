@@ -17,7 +17,7 @@ export default function PageHeader({ onNavigate, currentPage }: PageHeaderProps)
         <div className="flex items-center justify-between">
           <button onClick={() => onNavigate('home')} className="hover:opacity-80 transition-opacity">
             <img
-              src="/copy_of_new_wave_associates_horizontal.png"
+              src="/new_wave_associates_horizontal.png"
               alt="New Wave Associates"
               className="h-[72px] md:h-[84px] w-auto"
             />
