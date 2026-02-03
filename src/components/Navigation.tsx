@@ -11,7 +11,7 @@ export default function Navigation({ currentPage, onNavigate }: NavigationProps)
   const [dropdownOpen, setDropdownOpen] = useState<string | null>(null);
 
   const navItems = [
-    { label: 'Our Services', page: 'flywheel' },
+    { label: 'Our Services', page: 'our-services' },
     { label: 'Case Studies', page: 'case-studies' },
     { label: 'About Us', page: 'about-us' },
     { label: 'Contact Us', page: 'contact-us' },

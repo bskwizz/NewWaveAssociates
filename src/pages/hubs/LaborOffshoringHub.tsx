@@ -8,7 +8,7 @@ export default function LaborOffshoringHub({ onNavigate }: LaborOffshoringHubPro
       <section className="cs-hero has-image" style={{ backgroundImage: "url('https://images.unsplash.com/photo-1521737711867-e3b97375f902?w=1600&h=900&fit=crop')" }}>
         <div className="wrap">
           <div className="cs-breadcrumbs">
-            <button onClick={() => onNavigate('capabilities')} className="hover:underline cursor-pointer bg-transparent border-none px-4 py-2 -mx-4 -my-2 font-inherit text-inherit rounded hover:bg-gray-100/50 transition-colors">Case Studies</button> · Labor Strategy & Offshoring
+            <button onClick={() => onNavigate('case-studies')} className="hover:underline cursor-pointer bg-transparent border-none px-4 py-2 -mx-4 -my-2 font-inherit text-inherit rounded hover:bg-gray-100/50 transition-colors">Case Studies</button> · Labor Strategy & Offshoring
           </div>
           <h1>Labor Strategy & Offshoring Case Studies</h1>
           <p>

@@ -5,8 +5,8 @@ interface PageHeaderProps {
 
 export default function PageHeader({ onNavigate, currentPage }: PageHeaderProps) {
   const navItems = [
-    { label: 'Our Services', page: 'flywheel' },
-    { label: 'Case Studies', page: 'capabilities' },
+    { label: 'Our Services', page: 'our-services' },
+    { label: 'Case Studies', page: 'case-studies' },
     { label: 'About Us', page: 'about-us' },
     { label: 'Contact Us', page: 'contact-us' },
   ];

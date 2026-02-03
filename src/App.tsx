@@ -1,7 +1,7 @@
 import { useState, useEffect } from 'react';
 import Footer from './components/Footer';
 import HomePage from './pages/HomePage';
-import FlywheelPage from './pages/FlywheelPage';
+import OurServicesPage from './pages/OurServicesPage';
 import CapabilitiesPage from './pages/CapabilitiesPage';
 import AboutUsPage from './pages/AboutUsPage';
 import ContactUsPage from './pages/ContactUsPage';
@@ -43,7 +43,7 @@ function App() {
   const [capabilitiesScrollPosition, setCapabilitiesScrollPosition] = useState(0);
 
   useEffect(() => {
-    if (currentPage === 'capabilities' && capabilitiesScrollPosition > 0) {
+    if (currentPage === 'case-studies' && capabilitiesScrollPosition > 0) {
       setTimeout(() => {
         window.scrollTo({ top: capabilitiesScrollPosition, behavior: 'smooth' });
       }, 100);
@@ -53,9 +53,9 @@ function App() {
   }, [currentPage]);
 
   const handleNavigate = (page: string) => {
-    if (currentPage === 'capabilities' && page.startsWith('hub-')) {
+    if (currentPage === 'case-studies' && page.startsWith('hub-')) {
       setCapabilitiesScrollPosition(window.scrollY);
-    } else if (page !== 'capabilities') {
+    } else if (page !== 'case-studies') {
       setCapabilitiesScrollPosition(0);
     }
     setCurrentPage(page);
@@ -65,9 +65,9 @@ function App() {
     switch (currentPage) {
       case 'home':
         return <HomePage onNavigate={handleNavigate} />;
-      case 'flywheel':
-        return <FlywheelPage onNavigate={handleNavigate} />;
-      case 'capabilities':
+      case 'our-services':
+        return <OurServicesPage onNavigate={handleNavigate} />;
+      case 'case-studies':
         return <CapabilitiesPage onNavigate={handleNavigate} />;
       case 'about-us':
         return <AboutUsPage onNavigate={handleNavigate} />;
