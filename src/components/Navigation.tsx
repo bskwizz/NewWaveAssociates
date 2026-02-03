@@ -30,7 +30,7 @@ export default function Navigation({ currentPage, onNavigate }: NavigationProps)
   return (
     <nav className="fixed top-0 left-0 right-0 bg-white/80 backdrop-blur-sm z-50">
       <div className="max-w-7xl mx-auto px-6">
-        <div className="flex items-center justify-between" style={{ minHeight: '150px' }}>
+        <div className="flex items-center justify-between" style={{ minHeight: '180px' }}>
           <button
             onClick={() => onNavigate('home')}
             className="flex items-center gap-3 group relative z-10"
@@ -38,11 +38,11 @@ export default function Navigation({ currentPage, onNavigate }: NavigationProps)
             <img
               src="/copy_of_new_wave_associates_horizontal.png"
               alt="New Wave Associates"
-              className="!h-[140px] w-auto"
+              className="!h-[170px] w-auto"
             />
           </button>
 
-          <div className="hidden md:flex items-center gap-8">
+          <div className="hidden md:flex items-center gap-12">
             {navItems.map((item) => (
               <button
                 key={item.page}
