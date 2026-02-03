@@ -8,7 +8,7 @@ export default function SGAOptimizationHub({ onNavigate }: SGAOptimizationHubPro
       <section className="cs-hero has-image" style={{ backgroundImage: "url('https://images.unsplash.com/photo-1460925895917-afdab827c52f?w=1600&h=900&fit=crop')" }}>
         <div className="wrap">
           <div className="cs-breadcrumbs">
-            <button onClick={() => onNavigate('capabilities')} className="hover:underline cursor-pointer bg-transparent border-none px-4 py-2 -mx-4 -my-2 font-inherit text-inherit rounded hover:bg-gray-100/50 transition-colors">Services</button> · SG&A Cost Optimization
+            <button onClick={() => onNavigate('capabilities')} className="hover:underline cursor-pointer bg-transparent border-none px-4 py-2 -mx-4 -my-2 font-inherit text-inherit rounded hover:bg-gray-100/50 transition-colors">Case Studies</button> · SG&A Cost Optimization
           </div>
           <h1>SG&A Cost Optimization Case Studies</h1>
           <p>
