@@ -85,10 +85,10 @@ export default function ContactUsPage({ onNavigate }: ContactUsPageProps) {
               </div>
             </div>
 
-            <div className="w-[70%] bg-white border border-gray-200 rounded-lg p-8 shadow-sm">
-              <form onSubmit={handleSubmit} className="grid grid-cols-2 gap-x-6 gap-y-4">
+            <div className="w-[70%] bg-white border border-gray-200 rounded-lg p-6 shadow-lg">
+              <form onSubmit={handleSubmit} className="grid grid-cols-2 gap-x-6 gap-y-3">
                 <div>
-                  <label className="block text-sm font-semibold text-[#38495D] mb-2">
+                  <label className="block text-sm font-semibold text-[#38495D] mb-1.5">
                     Name *
                   </label>
                   <input
@@ -97,12 +97,12 @@ export default function ContactUsPage({ onNavigate }: ContactUsPageProps) {
                     value={formData.name}
                     onChange={handleChange}
                     required
-                    className="w-full px-4 py-2.5 border border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-[#01A3DB] focus:border-transparent transition-all"
+                    className="w-full px-4 py-2 border border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-[#01A3DB] focus:border-transparent transition-all"
                   />
                 </div>
 
                 <div>
-                  <label className="block text-sm font-semibold text-[#38495D] mb-2">
+                  <label className="block text-sm font-semibold text-[#38495D] mb-1.5">
                     Email *
                   </label>
                   <input
@@ -111,12 +111,12 @@ export default function ContactUsPage({ onNavigate }: ContactUsPageProps) {
                     value={formData.email}
                     onChange={handleChange}
                     required
-                    className="w-full px-4 py-2.5 border border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-[#01A3DB] focus:border-transparent transition-all"
+                    className="w-full px-4 py-2 border border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-[#01A3DB] focus:border-transparent transition-all"
                   />
                 </div>
 
                 <div>
-                  <label className="block text-sm font-semibold text-[#38495D] mb-2">
+                  <label className="block text-sm font-semibold text-[#38495D] mb-1.5">
                     Phone
                   </label>
                   <input
@@ -124,12 +124,12 @@ export default function ContactUsPage({ onNavigate }: ContactUsPageProps) {
                     name="phone"
                     value={formData.phone}
                     onChange={handleChange}
-                    className="w-full px-4 py-2.5 border border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-[#01A3DB] focus:border-transparent transition-all"
+                    className="w-full px-4 py-2 border border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-[#01A3DB] focus:border-transparent transition-all"
                   />
                 </div>
 
                 <div>
-                  <label className="block text-sm font-semibold text-[#38495D] mb-2">
+                  <label className="block text-sm font-semibold text-[#38495D] mb-1.5">
                     Company
                   </label>
                   <input
@@ -137,12 +137,12 @@ export default function ContactUsPage({ onNavigate }: ContactUsPageProps) {
                     name="company"
                     value={formData.company}
                     onChange={handleChange}
-                    className="w-full px-4 py-2.5 border border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-[#01A3DB] focus:border-transparent transition-all"
+                    className="w-full px-4 py-2 border border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-[#01A3DB] focus:border-transparent transition-all"
                   />
                 </div>
 
                 <div className="col-span-2">
-                  <label className="block text-sm font-semibold text-[#38495D] mb-2">
+                  <label className="block text-sm font-semibold text-[#38495D] mb-1.5">
                     Reason for Contact *
                   </label>
                   <select
@@ -150,7 +150,7 @@ export default function ContactUsPage({ onNavigate }: ContactUsPageProps) {
                     value={formData.reason}
                     onChange={handleChange}
                     required
-                    className="w-full px-4 py-2.5 border border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-[#01A3DB] focus:border-transparent transition-all bg-white"
+                    className="w-full px-4 py-2 border border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-[#01A3DB] focus:border-transparent transition-all bg-white"
                   >
                     <option value="">Select a reason</option>
                     <option value="General Inquiry">General Inquiry</option>
@@ -161,22 +161,22 @@ export default function ContactUsPage({ onNavigate }: ContactUsPageProps) {
                 </div>
 
                 <div className="col-span-2">
-                  <label className="block text-sm font-semibold text-[#38495D] mb-2">
+                  <label className="block text-sm font-semibold text-[#38495D] mb-1.5">
                     Message
                   </label>
                   <textarea
                     name="message"
                     value={formData.message}
                     onChange={handleChange}
-                    rows={4}
-                    className="w-full px-4 py-2.5 border border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-[#01A3DB] focus:border-transparent transition-all resize-none"
+                    rows={3}
+                    className="w-full px-4 py-2 border border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-[#01A3DB] focus:border-transparent transition-all resize-none"
                   />
                 </div>
 
                 <div className="col-span-2">
                   <button
                     type="submit"
-                    className="w-full py-3 bg-[#01A3DB] text-white rounded-md font-medium text-lg hover:bg-[#0192C5] transition-all hover:scale-[1.02] focus:outline-none focus:ring-2 focus:ring-[#01A3DB] focus:ring-offset-2"
+                    className="w-full py-2.5 bg-[#01A3DB] text-white rounded-md font-medium text-lg hover:bg-[#0192C5] transition-all hover:scale-[1.02] focus:outline-none focus:ring-2 focus:ring-[#01A3DB] focus:ring-offset-2"
                   >
                     Submit
                   </button>
