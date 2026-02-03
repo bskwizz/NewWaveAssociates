@@ -275,12 +275,12 @@ export default function CapabilitiesPage({ onNavigate }: CapabilitiesPageProps) 
       <div className="bg-gray-50 pt-16 pb-16">
         <div className="max-w-5xl mx-auto px-6">
 
-          <div className="space-y-8 mb-16">
+          <div className="space-y-12 mb-16">
           {capabilities.map((capability) => (
             <section
               key={capability.id}
               id={capability.id}
-              className="bg-white"
+              className="bg-white p-6 rounded-lg shadow-md hover:shadow-lg transition-shadow"
             >
               <div className="mb-4">
                 <h3 className="text-2xl font-bold text-[#38495D]">
