@@ -379,15 +379,15 @@ export default function FlywheelPage({ onNavigate }: FlywheelPageProps) {
 
                   <div className="space-y-6 text-left max-w-xl mx-auto">
                     <p className="text-gray-700 text-base leading-relaxed">
-                      We embed in the trenches with leaders to achieve specific, pragmatic goals quickly
+                      We embed in the trenches with leaders to achieve specific, pragmatic goals quickly.
                     </p>
 
                     <p className="text-gray-700 text-base leading-relaxed">
-                      Our interim leadership services are informed by decades of combined experience; our entire team has served as director, VP, and C-level executives in house
+                      Our interim leadership services are informed by decades of combined experience; our entire team has served as director, VP, and C-level executives in house.
                     </p>
 
                     <p className="text-gray-700 text-base leading-relaxed">
-                      We modernize core business operations through process redesign, data integration, post-merger integration, and performance governance to scale cross-functional execution at speed and quality
+                      We modernize core business operations through process redesign, data integration, post-merger integration, and performance governance to scale cross-functional execution at speed and quality.
                     </p>
                   </div>
                 </div>

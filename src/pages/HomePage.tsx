@@ -28,7 +28,7 @@ export default function HomePage({ onNavigate }: HomePageProps) {
           <div className="w-full">
             <div className="max-w-7xl mx-auto px-6">
               <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
-                <div id="hero-rotator" className="hero-rotator text-center">
+                <div id="hero-rotator" className="hero-rotator text-left">
                   <div className="inline-block mb-2">
                     <div>
                       <p className="text-black text-sm md:text-base font-bold tracking-[0.2em] uppercase mb-2 animate-fade-in" style={{
