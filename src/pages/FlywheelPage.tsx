@@ -361,27 +361,31 @@ export default function FlywheelPage({ onNavigate }: FlywheelPageProps) {
 
         <PageHeader onNavigate={onNavigate} currentPage="flywheel" />
 
-        <div className="absolute top-32 left-6 md:left-12 z-10">
-          <div className="inline-block">
-            <p className="text-black text-sm md:text-base font-bold tracking-[0.2em] uppercase mb-2" style={{
-              letterSpacing: '0.25em'
-            }}>
-              Interim Leadership<br />Practice Areas
-            </p>
-            <div className="h-[2px] bg-[#f05e00]"></div>
-          </div>
-        </div>
-
-        <div className="flywheel-hero__inner hero-content">
-          <div className="flywheel-hero__media">
-            <img
-              className={`flywheel-hero__img transition-opacity duration-1000 ${
-                fadeInImage ? 'opacity-100' : 'opacity-0'
-              }`}
-              style={{ maxWidth: '50%', width: '50%', margin: '0 auto' }}
-              src={`${import.meta.env.BASE_URL}new_new_wave_flywheel.pdf.png`}
-              alt="New Wave Flywheel"
-            />
+        <div className="relative flex items-center" style={{ height: 'calc(100vh - 24rem)', paddingTop: '8rem' }}>
+          <div className="w-full">
+            <div className="max-w-7xl mx-auto px-6">
+              <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
+                <div className="hero-rotator text-center">
+                  <div className="inline-block mb-2">
+                    <div>
+                      <p className="text-black text-sm md:text-base font-bold tracking-[0.2em] uppercase mb-2 animate-fade-in" style={{
+                        letterSpacing: '0.25em'
+                      }}>
+                        Interim Leadership<br />Practice Areas
+                      </p>
+                      <div className="h-[2px] bg-[#f05e00]"></div>
+                    </div>
+                  </div>
+                </div>
+                <div className="flywheel-hero__media">
+                  <img
+                    className={`flywheel-hero__img transition-opacity duration-1000 ${
+                      fadeInImage ? 'opacity-100' : 'opacity-0'
+                    }`}
+                    style={{ maxWidth: '50%', width: '50%', margin: '0 auto' }}
+                    src={`${import.meta.env.BASE_URL}new_new_wave_flywheel.pdf.png`}
+                    alt="New Wave Flywheel"
+                  />
             <div
               className={`flywheel-overlay flywheel-overlay--gtm transition-opacity duration-1400 ${
                 fadeInGtm ? 'opacity-0' : 'opacity-100'
@@ -439,6 +443,9 @@ export default function FlywheelPage({ onNavigate }: FlywheelPageProps) {
                 }
               }}
             ></a>
+                </div>
+              </div>
+            </div>
           </div>
         </div>
       </div>
