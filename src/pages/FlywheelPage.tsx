@@ -366,26 +366,11 @@ export default function FlywheelPage({ onNavigate }: FlywheelPageProps) {
             <div className="max-w-7xl mx-auto px-6">
               <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-start">
                 <div className="flywheel-hero__media relative">
-                  {/* Strategic Sourcing - positioned at 10:30 clock position, overlapping */}
-                  <div className="absolute" style={{ top: '22%', left: '18%' }}>
-                    <p className="text-[#38495D] font-bold text-base">Strategic Sourcing</p>
-                  </div>
-
-                  {/* Revenue and Demand Acceleration - positioned at 1:30 clock position, overlapping */}
-                  <div className="absolute text-center" style={{ top: '22%', right: '18%' }}>
-                    <p className="text-[#38495D] font-bold text-base">Revenue and Demand<br />Acceleration</p>
-                  </div>
-
-                  {/* Integrations and Divestitures - positioned at 6:00 clock position, overlapping */}
-                  <div className="absolute left-1/2" style={{ bottom: '18%', transform: 'translateX(-50%)' }}>
-                    <p className="text-[#38495D] font-bold text-base text-center">Integrations and Divestitures</p>
-                  </div>
-
                   <img
                     className={`flywheel-hero__img transition-opacity duration-1000 ${
                       fadeInImage ? 'opacity-100' : 'opacity-0'
                     }`}
-                    style={{ maxWidth: '50%', width: '50%', margin: '0 auto' }}
+                    style={{ maxWidth: '100%', width: '100%', margin: '0 auto' }}
                     src={`${import.meta.env.BASE_URL}new_new_wave_flywheel.pdf%20copy.png`}
                     alt="New Wave Flywheel"
                   />
