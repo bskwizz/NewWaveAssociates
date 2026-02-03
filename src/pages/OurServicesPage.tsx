@@ -205,7 +205,7 @@ export default function OurServicesPage({ onNavigate }: OurServicesPageProps) {
       className="mb-16 pb-16 border-b border-gray-200"
     >
       <div className="max-w-6xl">
-        <div className="text-left mb-8">
+        <div className="text-left mb-4">
           <div className="inline-block mb-2">
             <div>
               <h2
