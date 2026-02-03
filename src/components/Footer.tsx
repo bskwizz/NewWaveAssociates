@@ -9,7 +9,7 @@ export default function Footer() {
             <img
               src="/New Wave Associates Horizontal.png"
               alt="New Wave Associates Logo"
-              className="h-12 w-auto"
+              className="h-24 w-auto"
             />
             <p className="text-xs text-gray-300 w-full md:w-auto max-w-md leading-relaxed">
               New Wave Associates is a strategy & general management growth consultancy that brings operator-grade expertise to help companies evolve. Smarter. Leaner. Faster.
