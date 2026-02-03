@@ -63,7 +63,7 @@ export default function HomePage({ onNavigate }: HomePageProps) {
                 '/medius_logo.png',
                 '/new_era_technology_logo.png',
                 '/trustage_logo.png',
-                'Logo 6',
+                '/tenet_health_logo.png',
               ]} />
             </div>
           </div>
