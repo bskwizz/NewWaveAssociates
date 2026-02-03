@@ -52,7 +52,7 @@ export default function AboutUsPage({ onNavigate }: AboutUsPageProps) {
         <PageHeader onNavigate={onNavigate} currentPage="about-us" />
 
         {/* Wave Graphic Overlay */}
-        <div className="absolute top-0 left-0 right-0 pointer-events-none z-30 overflow-hidden" style={{ height: '400px' }}>
+        <div className="absolute top-0 left-0 right-0 pointer-events-none z-10 overflow-hidden" style={{ height: '400px' }}>
           <img
             src={`${import.meta.env.BASE_URL}wave_graphic_image_for_services_page.png`}
             alt=""
@@ -72,14 +72,17 @@ export default function AboutUsPage({ onNavigate }: AboutUsPageProps) {
                   <div className="inline-block mb-2">
                     <div>
                       <p className="text-black text-sm md:text-base font-bold tracking-[0.2em] uppercase mb-2" style={{
-                        letterSpacing: '0.25em'
+                        letterSpacing: '0.25em',
+                        textShadow: '0 1px 2px rgba(255, 255, 255, 0.8)'
                       }}>
                         The Right Operators
                       </p>
                       <div className="h-[2px] bg-[#f05e00]"></div>
                     </div>
                   </div>
-                  <p className="text-base text-gray-700 leading-relaxed mt-6">
+                  <p className="text-base text-gray-900 leading-relaxed mt-6 font-medium" style={{
+                    textShadow: '0 1px 2px rgba(255, 255, 255, 0.8)'
+                  }}>
                     We have <span className="font-semibold">directly</span> led procurement, revenue operations, and M&A across lower and middle market organizations
                   </p>
                 </div>
