@@ -104,7 +104,7 @@ export default function CapabilitiesPage({ onNavigate }: CapabilitiesPageProps) 
         <div className="relative flex items-start" style={{ paddingTop: '2.5rem' }}>
           <div className="w-full">
             <div className="max-w-7xl mx-auto px-6">
-              <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
+              <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-start">
                 <div className="text-left">
                   <div className="inline-block mb-2">
                     <div>
