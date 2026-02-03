@@ -66,35 +66,35 @@ export default function IndustriesPage({ onNavigate }: IndustriesPageProps) {
   return (
     <div className="min-h-screen bg-gray-50">
       <PageHeader onNavigate={onNavigate} currentPage="industries" />
-      <div className="pt-24 pb-16">
-      <div className="max-w-7xl mx-auto px-6">
-        <div className="max-w-4xl mb-16">
-          <h1 className="text-5xl font-bold text-[#38495D] mb-6">Industries</h1>
-          <p className="text-xl text-gray-700 leading-relaxed">
+      <div className="pt-16 md:pt-24 pb-12 md:pb-16">
+      <div className="max-w-7xl mx-auto px-4 sm:px-6 w-full">
+        <div className="max-w-4xl mb-12 md:mb-16">
+          <h1 className="text-3xl sm:text-4xl md:text-5xl font-bold text-[#38495D] mb-4 md:mb-6">Industries</h1>
+          <p className="text-base sm:text-lg md:text-xl text-gray-700 leading-relaxed">
             At New Wave Associates, we apply pattern recognition across sectors. We&apos;ve built PMOs, led integrations, run due diligence, standardized product catalogs, and installed renewal discipline — from fintech to manufacturing.
           </p>
         </div>
 
-        <div className="grid md:grid-cols-2 gap-8">
+        <div className="grid grid-cols-1 md:grid-cols-2 gap-6 md:gap-8">
           {industries.map((industry, index) => (
             <div
               key={index}
-              className="bg-white border border-gray-200 rounded-lg p-8 hover:shadow-xl transition-all hover:-translate-y-1"
+              className="bg-white border border-gray-200 rounded-lg p-6 sm:p-8 hover:shadow-xl transition-all hover:-translate-y-1"
             >
-              <h3 className="text-2xl font-bold text-[#38495D] mb-4">
+              <h3 className="text-xl sm:text-2xl font-bold text-[#38495D] mb-3 md:mb-4">
                 {industry.title}
               </h3>
-              <p className="text-gray-700 mb-6 leading-relaxed">
+              <p className="text-sm sm:text-base text-gray-700 mb-4 md:mb-6 leading-relaxed">
                 {industry.description}
               </p>
-              <div className="space-y-3">
-                <p className="text-sm font-semibold text-[#01A3DB] uppercase tracking-wide">
+              <div className="space-y-2 md:space-y-3">
+                <p className="text-xs sm:text-sm font-semibold text-[#01A3DB] uppercase tracking-wide">
                   Where we help:
                 </p>
                 <ul className="space-y-2">
                   {industry.points.map((point, i) => (
-                    <li key={i} className="flex items-start gap-3 text-gray-700">
-                      <span className="text-[#EF5919] mt-1">•</span>
+                    <li key={i} className="flex items-start gap-2 md:gap-3 text-sm sm:text-base text-gray-700">
+                      <span className="text-[#EF5919] mt-1 flex-shrink-0">•</span>
                       <span>{point}</span>
                     </li>
                   ))}

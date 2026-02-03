@@ -101,28 +101,28 @@ export default function CapabilitiesPage({ onNavigate }: CapabilitiesPageProps) 
 
         <PageHeader onNavigate={onNavigate} currentPage="capabilities" />
 
-        <div className="relative flex items-start" style={{ paddingTop: '4rem' }}>
+        <div className="relative flex items-start pt-8 md:pt-16">
           <div className="w-full">
-            <div className="max-w-7xl mx-auto px-6">
-              <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-start">
+            <div className="max-w-7xl mx-auto px-4 sm:px-6 w-full">
+              <div className="grid grid-cols-1 lg:grid-cols-2 gap-8 lg:gap-12 items-start">
                 <div className="text-left">
                   <div className="inline-block mb-2">
                     <div>
-                      <p className="text-black text-sm md:text-base font-bold tracking-[0.2em] uppercase mb-2" style={{
-                        letterSpacing: '0.25em'
+                      <p className="text-black text-xs sm:text-sm md:text-base font-bold uppercase mb-2" style={{
+                        letterSpacing: '0.2em'
                       }}>
                         OUR EXPERIENCE
                       </p>
                       <div className="h-[2px] bg-[#f05e00]"></div>
                     </div>
                   </div>
-                  <div className={`space-y-4 text-left mt-6 transition-opacity duration-1000 ${
+                  <div className={`space-y-3 md:space-y-4 text-left mt-4 md:mt-6 transition-opacity duration-1000 ${
                     fadeIn ? 'opacity-100' : 'opacity-0'
                   }`}>
-                    <p className="text-base text-gray-700 leading-relaxed">
+                    <p className="text-sm sm:text-base text-gray-700 leading-relaxed">
                       Our interim management services are tailored for organizations who require hands-on operators to make change happen.
                     </p>
-                    <p className="text-base text-gray-700 leading-relaxed">
+                    <p className="text-sm sm:text-base text-gray-700 leading-relaxed">
                       We have successfully placed our fractional and interim executives across multiple functions and industries.
                     </p>
                   </div>
@@ -136,36 +136,38 @@ export default function CapabilitiesPage({ onNavigate }: CapabilitiesPageProps) 
                 </div>
               </div>
 
-              <div className={`mt-12 max-w-7xl mx-auto px-6 transition-opacity duration-1000 ${
+              <div className={`mt-8 md:mt-12 w-full transition-opacity duration-1000 ${
                 fadeIn ? 'opacity-100' : 'opacity-0'
               }`}>
-                <div className="overflow-x-auto">
-                  <table className="w-full border-collapse bg-white shadow-2xl rounded-lg overflow-hidden">
-                    <thead>
-                      <tr className="bg-[#00a4dd]">
-                        <th className="px-6 py-4 text-left text-white font-semibold text-sm uppercase tracking-wider">Industry</th>
-                        <th className="px-6 py-4 text-left text-white font-semibold text-sm uppercase tracking-wider">Role</th>
-                        <th className="px-6 py-4 text-left text-white font-semibold text-sm uppercase tracking-wider">Duration</th>
-                        <th className="px-6 py-4 text-left text-white font-semibold text-sm uppercase tracking-wider">Outcomes</th>
-                      </tr>
-                    </thead>
-                    <tbody>
+                <div className="overflow-x-auto -mx-4 sm:mx-0">
+                  <div className="inline-block min-w-full align-middle">
+                    <div className="overflow-hidden shadow-2xl rounded-lg">
+                      <table className="min-w-full border-collapse bg-white">
+                        <thead>
+                          <tr className="bg-[#00a4dd]">
+                            <th className="px-3 sm:px-4 md:px-6 py-3 md:py-4 text-left text-white font-semibold text-xs sm:text-sm uppercase tracking-wider whitespace-nowrap">Industry</th>
+                            <th className="px-3 sm:px-4 md:px-6 py-3 md:py-4 text-left text-white font-semibold text-xs sm:text-sm uppercase tracking-wider whitespace-nowrap">Role</th>
+                            <th className="px-3 sm:px-4 md:px-6 py-3 md:py-4 text-left text-white font-semibold text-xs sm:text-sm uppercase tracking-wider whitespace-nowrap">Duration</th>
+                            <th className="px-3 sm:px-4 md:px-6 py-3 md:py-4 text-left text-white font-semibold text-xs sm:text-sm uppercase tracking-wider">Outcomes</th>
+                          </tr>
+                        </thead>
+                        <tbody>
+                          <tr className="border-b border-gray-200 hover:bg-gray-50 transition-colors">
+                            <td className="px-3 sm:px-4 md:px-6 py-3 md:py-4 text-xs sm:text-sm text-gray-700">Technology and Managed Service Providers</td>
+                            <td className="px-3 sm:px-4 md:px-6 py-3 md:py-4 text-xs sm:text-sm text-gray-700">Vice President of Strategy and Transformation</td>
+                            <td className="px-3 sm:px-4 md:px-6 py-3 md:py-4 text-xs sm:text-sm text-gray-700 whitespace-nowrap">3 Months</td>
+                            <td className="px-3 sm:px-4 md:px-6 py-3 md:py-4 text-xs sm:text-sm text-gray-700">
+                              <ul className="list-disc list-inside space-y-1">
+                                <li>Developed a global labor strategy with $11M in annual operating efficiencies</li>
+                                <li>Created an M&A playbook to integration 35+ acquisitions</li>
+                              </ul>
+                            </td>
+                          </tr>
                       <tr className="border-b border-gray-200 hover:bg-gray-50 transition-colors">
-                        <td className="px-6 py-4 text-sm text-gray-700">Technology and Managed Service Providers</td>
-                        <td className="px-6 py-4 text-sm text-gray-700">Vice President of Strategy and Transformation</td>
-                        <td className="px-6 py-4 text-sm text-gray-700">3 Months</td>
-                        <td className="px-6 py-4 text-sm text-gray-700">
-                          <ul className="list-disc list-inside space-y-1">
-                            <li>Developed a global labor strategy with $11M in annual operating efficiencies</li>
-                            <li>Created an M&A playbook to integration 35+ acquisitions</li>
-                          </ul>
-                        </td>
-                      </tr>
-                      <tr className="border-b border-gray-200 hover:bg-gray-50 transition-colors">
-                        <td className="px-6 py-4 text-sm text-gray-700">Technology and Managed Service Providers</td>
-                        <td className="px-6 py-4 text-sm text-gray-700">Director of Transformation</td>
-                        <td className="px-6 py-4 text-sm text-gray-700">8 Months</td>
-                        <td className="px-6 py-4 text-sm text-gray-700">
+                        <td className="px-3 sm:px-4 md:px-6 py-3 md:py-4 text-xs sm:text-sm text-gray-700">Technology and Managed Service Providers</td>
+                        <td className="px-3 sm:px-4 md:px-6 py-3 md:py-4 text-xs sm:text-sm text-gray-700">Director of Transformation</td>
+                        <td className="px-3 sm:px-4 md:px-6 py-3 md:py-4 text-xs sm:text-sm text-gray-700">8 Months</td>
+                        <td className="px-3 sm:px-4 md:px-6 py-3 md:py-4 text-xs sm:text-sm text-gray-700">
                           <ul className="list-disc list-inside space-y-1">
                             <li>Orchestrated cross-functional workstreams to execute high-impact initiatives, utilizing custom project trackers to reconcile competing priorities and improve operational scalability across a $1B platform</li>
                             <li>Standardized a global product catalog by rationalizing 80,000+ SKUs into a unified data structure; improved reporting accuracy and margin visibility while reducing operational complexity for global sales and delivery teams</li>
@@ -173,10 +175,10 @@ export default function CapabilitiesPage({ onNavigate }: CapabilitiesPageProps) 
                         </td>
                       </tr>
                       <tr className="border-b border-gray-200 hover:bg-gray-50 transition-colors">
-                        <td className="px-6 py-4 text-sm text-gray-700">Technology and Managed Service Providers</td>
-                        <td className="px-6 py-4 text-sm text-gray-700">Chief Growth Officer</td>
-                        <td className="px-6 py-4 text-sm text-gray-700">8 Months</td>
-                        <td className="px-6 py-4 text-sm text-gray-700">
+                        <td className="px-3 sm:px-4 md:px-6 py-3 md:py-4 text-xs sm:text-sm text-gray-700">Technology and Managed Service Providers</td>
+                        <td className="px-3 sm:px-4 md:px-6 py-3 md:py-4 text-xs sm:text-sm text-gray-700">Chief Growth Officer</td>
+                        <td className="px-3 sm:px-4 md:px-6 py-3 md:py-4 text-xs sm:text-sm text-gray-700">8 Months</td>
+                        <td className="px-3 sm:px-4 md:px-6 py-3 md:py-4 text-xs sm:text-sm text-gray-700">
                           <ul className="list-disc list-inside space-y-1">
                             <li>Drive GTM strategy transformation (org structure, ICP, pricing, macroeconomic frameworks, KPI standardization)</li>
                             <li>Mitigated revenue leakage from bottom-tier clients with pricing levers, optimized data & reporting architecture/workflows</li>
@@ -184,10 +186,10 @@ export default function CapabilitiesPage({ onNavigate }: CapabilitiesPageProps) 
                         </td>
                       </tr>
                       <tr className="border-b border-gray-200 hover:bg-gray-50 transition-colors">
-                        <td className="px-6 py-4 text-sm text-gray-700">B2B SaaS / FinTech</td>
-                        <td className="px-6 py-4 text-sm text-gray-700">Vice President of Revenue Operations</td>
-                        <td className="px-6 py-4 text-sm text-gray-700">2.5 Years</td>
-                        <td className="px-6 py-4 text-sm text-gray-700">
+                        <td className="px-3 sm:px-4 md:px-6 py-3 md:py-4 text-xs sm:text-sm text-gray-700">B2B SaaS / FinTech</td>
+                        <td className="px-3 sm:px-4 md:px-6 py-3 md:py-4 text-xs sm:text-sm text-gray-700">Vice President of Revenue Operations</td>
+                        <td className="px-3 sm:px-4 md:px-6 py-3 md:py-4 text-xs sm:text-sm text-gray-700">2.5 Years</td>
+                        <td className="px-3 sm:px-4 md:px-6 py-3 md:py-4 text-xs sm:text-sm text-gray-700">
                           <ul className="list-disc list-inside space-y-1">
                             <li>Managed tech stack transformations, launching a BI foundation & reducing operational costs by $2M+</li>
                             <li>Led multiple global M&A integrations</li>
@@ -197,10 +199,10 @@ export default function CapabilitiesPage({ onNavigate }: CapabilitiesPageProps) 
                         </td>
                       </tr>
                       <tr className="border-b border-gray-200 hover:bg-gray-50 transition-colors">
-                        <td className="px-6 py-4 text-sm text-gray-700">B2B SaaS / FinTech / AI</td>
-                        <td className="px-6 py-4 text-sm text-gray-700">Chief Operating Officer</td>
-                        <td className="px-6 py-4 text-sm text-gray-700">1 Year</td>
-                        <td className="px-6 py-4 text-sm text-gray-700">
+                        <td className="px-3 sm:px-4 md:px-6 py-3 md:py-4 text-xs sm:text-sm text-gray-700">B2B SaaS / FinTech / AI</td>
+                        <td className="px-3 sm:px-4 md:px-6 py-3 md:py-4 text-xs sm:text-sm text-gray-700">Chief Operating Officer</td>
+                        <td className="px-3 sm:px-4 md:px-6 py-3 md:py-4 text-xs sm:text-sm text-gray-700">1 Year</td>
+                        <td className="px-3 sm:px-4 md:px-6 py-3 md:py-4 text-xs sm:text-sm text-gray-700">
                           <ul className="list-disc list-inside space-y-1">
                             <li>Led product roadmap, market positioning & strategic direction</li>
                             <li>Shaped GTM strategies & identified whitespace opportunities</li>
@@ -209,10 +211,10 @@ export default function CapabilitiesPage({ onNavigate }: CapabilitiesPageProps) 
                         </td>
                       </tr>
                       <tr className="border-b border-gray-200 hover:bg-gray-50 transition-colors">
-                        <td className="px-6 py-4 text-sm text-gray-700">B2B SaaS / Fintech</td>
-                        <td className="px-6 py-4 text-sm text-gray-700">Director Strategy</td>
-                        <td className="px-6 py-4 text-sm text-gray-700">2 Years</td>
-                        <td className="px-6 py-4 text-sm text-gray-700">
+                        <td className="px-3 sm:px-4 md:px-6 py-3 md:py-4 text-xs sm:text-sm text-gray-700">B2B SaaS / Fintech</td>
+                        <td className="px-3 sm:px-4 md:px-6 py-3 md:py-4 text-xs sm:text-sm text-gray-700">Director Strategy</td>
+                        <td className="px-3 sm:px-4 md:px-6 py-3 md:py-4 text-xs sm:text-sm text-gray-700">2 Years</td>
+                        <td className="px-3 sm:px-4 md:px-6 py-3 md:py-4 text-xs sm:text-sm text-gray-700">
                           <ul className="list-disc list-inside space-y-1">
                             <li>Drove retention/upsell strategies & revenue forecasting initiatives, driving 5% increase in NRR & 15% cost reduction</li>
                             <li>Directed global M&A integrations aligning analytics, pricing & overall GTM strategies</li>
@@ -220,10 +222,10 @@ export default function CapabilitiesPage({ onNavigate }: CapabilitiesPageProps) 
                         </td>
                       </tr>
                       <tr className="border-b border-gray-200 hover:bg-gray-50 transition-colors">
-                        <td className="px-6 py-4 text-sm text-gray-700">Healthcare</td>
-                        <td className="px-6 py-4 text-sm text-gray-700">Sr. Director of Strategic Sourcing</td>
-                        <td className="px-6 py-4 text-sm text-gray-700">2 Years</td>
-                        <td className="px-6 py-4 text-sm text-gray-700">
+                        <td className="px-3 sm:px-4 md:px-6 py-3 md:py-4 text-xs sm:text-sm text-gray-700">Healthcare</td>
+                        <td className="px-3 sm:px-4 md:px-6 py-3 md:py-4 text-xs sm:text-sm text-gray-700">Sr. Director of Strategic Sourcing</td>
+                        <td className="px-3 sm:px-4 md:px-6 py-3 md:py-4 text-xs sm:text-sm text-gray-700">2 Years</td>
+                        <td className="px-3 sm:px-4 md:px-6 py-3 md:py-4 text-xs sm:text-sm text-gray-700">
                           <ul className="list-disc list-inside space-y-1">
                             <li>Drive spend cube mapping and cleanse with &gt;60k suppliers resulting in cleaner vendor master and vendor consolidation</li>
                             <li>Directed targeting strategies resulting in &gt;$22M annual cost savings + cast infusion &gt;$55M through payments solutioning</li>
@@ -231,10 +233,10 @@ export default function CapabilitiesPage({ onNavigate }: CapabilitiesPageProps) 
                         </td>
                       </tr>
                       <tr className="border-b border-gray-200 hover:bg-gray-50 transition-colors">
-                        <td className="px-6 py-4 text-sm text-gray-700">Waste & Recycling Services</td>
-                        <td className="px-6 py-4 text-sm text-gray-700">VP of Strategic Sourcing</td>
-                        <td className="px-6 py-4 text-sm text-gray-700">1 Year</td>
-                        <td className="px-6 py-4 text-sm text-gray-700">
+                        <td className="px-3 sm:px-4 md:px-6 py-3 md:py-4 text-xs sm:text-sm text-gray-700">Waste & Recycling Services</td>
+                        <td className="px-3 sm:px-4 md:px-6 py-3 md:py-4 text-xs sm:text-sm text-gray-700">VP of Strategic Sourcing</td>
+                        <td className="px-3 sm:px-4 md:px-6 py-3 md:py-4 text-xs sm:text-sm text-gray-700">1 Year</td>
+                        <td className="px-3 sm:px-4 md:px-6 py-3 md:py-4 text-xs sm:text-sm text-gray-700">
                           <ul className="list-disc list-inside space-y-1">
                             <li>Developed GTM strategies for organics waste recycling for a major NoA provider</li>
                             <li>Developed and integrated a new collections and transfer model which levered existing over the road fleet infrastructures</li>
@@ -242,10 +244,10 @@ export default function CapabilitiesPage({ onNavigate }: CapabilitiesPageProps) 
                         </td>
                       </tr>
                       <tr className="border-b border-gray-200 hover:bg-gray-50 transition-colors">
-                        <td className="px-6 py-4 text-sm text-gray-700">BPO / ARM</td>
-                        <td className="px-6 py-4 text-sm text-gray-700">Chief Procurement Officer</td>
-                        <td className="px-6 py-4 text-sm text-gray-700">3 Years</td>
-                        <td className="px-6 py-4 text-sm text-gray-700">
+                        <td className="px-3 sm:px-4 md:px-6 py-3 md:py-4 text-xs sm:text-sm text-gray-700">BPO / ARM</td>
+                        <td className="px-3 sm:px-4 md:px-6 py-3 md:py-4 text-xs sm:text-sm text-gray-700">Chief Procurement Officer</td>
+                        <td className="px-3 sm:px-4 md:px-6 py-3 md:py-4 text-xs sm:text-sm text-gray-700">3 Years</td>
+                        <td className="px-3 sm:px-4 md:px-6 py-3 md:py-4 text-xs sm:text-sm text-gray-700">
                           <ul className="list-disc list-inside space-y-1">
                             <li>Drove vendor consolidation and cost reduction in excess of $32M annually</li>
                             <li>Reduced data consumption for ARM business resulting in streamlined operations and lower cost structures</li>
@@ -253,18 +255,20 @@ export default function CapabilitiesPage({ onNavigate }: CapabilitiesPageProps) 
                         </td>
                       </tr>
                       <tr className="hover:bg-gray-50 transition-colors">
-                        <td className="px-6 py-4 text-sm text-gray-700">B2B / B2C Banking Payments</td>
-                        <td className="px-6 py-4 text-sm text-gray-700">VP of Strategic Alliance</td>
-                        <td className="px-6 py-4 text-sm text-gray-700">1 Year</td>
-                        <td className="px-6 py-4 text-sm text-gray-700">
+                        <td className="px-3 sm:px-4 md:px-6 py-3 md:py-4 text-xs sm:text-sm text-gray-700">B2B / B2C Banking Payments</td>
+                        <td className="px-3 sm:px-4 md:px-6 py-3 md:py-4 text-xs sm:text-sm text-gray-700">VP of Strategic Alliance</td>
+                        <td className="px-3 sm:px-4 md:px-6 py-3 md:py-4 text-xs sm:text-sm text-gray-700">1 Year</td>
+                        <td className="px-3 sm:px-4 md:px-6 py-3 md:py-4 text-xs sm:text-sm text-gray-700">
                           <ul className="list-disc list-inside space-y-1">
                             <li>Built a GTM B2C product set for insurance and one-time consumer payouts resulting in interchange revenues &gt;$22M annual</li>
                             <li>Drive CRM conversion and customer retainage programs for strategic alliances for card distribution</li>
                           </ul>
                         </td>
                       </tr>
-                    </tbody>
-                  </table>
+                        </tbody>
+                      </table>
+                    </div>
+                  </div>
                 </div>
               </div>
             </div>
@@ -272,21 +276,21 @@ export default function CapabilitiesPage({ onNavigate }: CapabilitiesPageProps) 
         </div>
       </div>
 
-      <div className="bg-gray-50 pt-16 pb-16">
-        <div className="max-w-5xl mx-auto px-6">
+      <div className="bg-gray-50 pt-12 md:pt-16 pb-12 md:pb-16">
+        <div className="max-w-5xl mx-auto px-4 sm:px-6 w-full">
 
-          <div className="space-y-12 mb-16">
+          <div className="space-y-8 md:space-y-12 mb-12 md:mb-16">
           {capabilities.map((capability) => (
             <section
               key={capability.id}
               id={capability.id}
-              className="bg-white p-6 rounded-lg shadow-md hover:shadow-lg transition-shadow"
+              className="bg-white p-4 sm:p-6 rounded-lg shadow-md hover:shadow-lg transition-shadow"
             >
-              <div className="mb-4">
+              <div className="mb-3 md:mb-4">
                 <div className="inline-block mb-2">
                   <div>
-                    <p className="text-black text-sm md:text-base font-bold tracking-[0.2em] uppercase mb-2" style={{
-                      letterSpacing: '0.25em'
+                    <p className="text-black text-xs sm:text-sm md:text-base font-bold uppercase mb-2" style={{
+                      letterSpacing: '0.2em'
                     }}>
                       {capability.title}
                     </p>
@@ -295,37 +299,37 @@ export default function CapabilitiesPage({ onNavigate }: CapabilitiesPageProps) 
                 </div>
               </div>
 
-              <div className="space-y-4">
-                <ul className="space-y-3">
+              <div className="space-y-3 md:space-y-4">
+                <ul className="space-y-2 md:space-y-3">
                   {capability.points.map((point, i) => (
-                    <li key={i} className="flex items-start gap-3 text-gray-700">
-                      <span className="text-[#01A3DB] mt-1">•</span>
+                    <li key={i} className="flex items-start gap-2 md:gap-3 text-sm sm:text-base text-gray-700">
+                      <span className="text-[#01A3DB] mt-1 flex-shrink-0">•</span>
                       <span>{point}</span>
                     </li>
                   ))}
                 </ul>
-                <div className="pt-4 border-t border-gray-200 space-y-4">
+                <div className="pt-3 md:pt-4 border-t border-gray-200 space-y-3 md:space-y-4">
                   <div>
-                    <p className="text-sm font-semibold text-[#EF5919] mb-1">
+                    <p className="text-xs sm:text-sm font-semibold text-[#EF5919] mb-1">
                       Outcome:
                     </p>
-                    <p className="text-gray-700 italic">{capability.outcome}</p>
+                    <p className="text-sm sm:text-base text-gray-700 italic">{capability.outcome}</p>
                   </div>
                   <div>
-                    <p className="text-sm font-semibold text-[#38495D] mb-2">
+                    <p className="text-xs sm:text-sm font-semibold text-[#38495D] mb-2">
                       Related Case Studies:
                     </p>
                     {capability.caseStudyRoute ? (
                       <button
                         onClick={() => onNavigate(capability.caseStudyRoute!)}
-                        className="text-[#01A3DB] hover:text-[#0182b3] underline text-sm transition-colors"
+                        className="text-[#01A3DB] hover:text-[#0182b3] underline text-xs sm:text-sm transition-colors"
                       >
                         View related case studies →
                       </button>
                     ) : (
                       <button
                         onClick={() => onNavigate('contact-us')}
-                        className="inline-block px-4 py-2 bg-gray-100 text-[#38495D] rounded hover:bg-gray-200 text-sm transition-colors"
+                        className="inline-block px-3 sm:px-4 py-2 bg-gray-100 text-[#38495D] rounded hover:bg-gray-200 text-xs sm:text-sm transition-colors"
                       >
                         Discuss your use case
                       </button>

@@ -208,8 +208,8 @@ export default function OurServicesPage({ onNavigate }: OurServicesPageProps) {
             <div>
               <h2
                 id={`${content.id}-title`}
-                className="text-black text-sm md:text-base font-bold tracking-[0.2em] uppercase mb-2"
-                style={{ letterSpacing: '0.25em' }}
+                className="text-black text-xs sm:text-sm md:text-base font-bold uppercase mb-2"
+                style={{ letterSpacing: '0.2em' }}
               >
                 {content.title}
               </h2>
@@ -219,15 +219,15 @@ export default function OurServicesPage({ onNavigate }: OurServicesPageProps) {
         </div>
 
         {content.subheading && (
-          <p className="text-xl text-gray-700 mb-8 leading-relaxed text-left">{content.subheading}</p>
+          <p className="text-lg sm:text-xl text-gray-700 mb-6 md:mb-8 leading-relaxed text-left">{content.subheading}</p>
         )}
 
         {content.bullets && content.bullets.length > 0 && (
-          <ul className="space-y-3 text-left">
+          <ul className="space-y-2 md:space-y-3 text-left">
             {content.bullets.map((bullet, idx) => (
               <li key={idx} className="flex items-start">
-                <span className="text-[#f05e00] mr-3 mt-1">•</span>
-                <span className="text-gray-700 text-base leading-relaxed">{bullet}</span>
+                <span className="text-[#f05e00] mr-2 md:mr-3 mt-1 flex-shrink-0">•</span>
+                <span className="text-gray-700 text-sm sm:text-base leading-relaxed">{bullet}</span>
               </li>
             ))}
           </ul>
@@ -262,10 +262,10 @@ export default function OurServicesPage({ onNavigate }: OurServicesPageProps) {
       <section
         id={content.id}
         aria-labelledby={`${content.id}-title`}
-        className="mb-16 pb-16 border-b border-gray-200"
+        className="mb-12 md:mb-16 pb-12 md:pb-16 border-b border-gray-200"
       >
         <div className="max-w-6xl">
-          <div className={content.image ? 'grid grid-cols-1 lg:grid-cols-2 gap-12 items-center' : ''}>
+          <div className={content.image ? 'grid grid-cols-1 lg:grid-cols-2 gap-8 md:gap-12 items-center' : ''}>
             {isFlipped ? (
               <>
                 {imageContent}
@@ -304,10 +304,10 @@ export default function OurServicesPage({ onNavigate }: OurServicesPageProps) {
           />
         </div>
 
-        <div className="relative flex items-center" style={{ height: 'calc(100vh - 24rem)', paddingTop: '0' }}>
+        <div className="relative flex items-center min-h-[50vh] md:min-h-[60vh] py-8 md:py-0">
           <div className="w-full">
-            <div className="max-w-7xl mx-auto px-6">
-              <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
+            <div className="max-w-7xl mx-auto px-4 sm:px-6 w-full">
+              <div className="grid grid-cols-1 lg:grid-cols-2 gap-8 md:gap-12 items-center">
                 <div className="flywheel-hero__media relative">
                   <img
                     className={`flywheel-hero__img transition-opacity duration-1000 ${
@@ -378,8 +378,8 @@ export default function OurServicesPage({ onNavigate }: OurServicesPageProps) {
                 <div className="hero-rotator text-left">
                   <div className="inline-block mb-2">
                     <div>
-                      <p className="text-black text-sm md:text-base font-bold tracking-[0.2em] uppercase mb-2 animate-fade-in" style={{
-                        letterSpacing: '0.25em'
+                      <p className="text-black text-xs sm:text-sm md:text-base font-bold uppercase mb-2 animate-fade-in" style={{
+                        letterSpacing: '0.2em'
                       }}>
                         Interim<br />Leadership Practice Areas
                       </p>
@@ -387,16 +387,16 @@ export default function OurServicesPage({ onNavigate }: OurServicesPageProps) {
                     </div>
                   </div>
 
-                  <div className="space-y-6 text-left max-w-xl mt-6">
-                    <p className="text-gray-700 text-base leading-relaxed">
+                  <div className="space-y-4 md:space-y-6 text-left max-w-xl mt-4 md:mt-6">
+                    <p className="text-gray-700 text-sm sm:text-base leading-relaxed">
                       We embed in the trenches with leaders to achieve specific, pragmatic goals quickly.
                     </p>
 
-                    <p className="text-gray-700 text-base leading-relaxed">
+                    <p className="text-gray-700 text-sm sm:text-base leading-relaxed">
                       Our interim leadership services are informed by decades of combined experience; our entire team has served as director, VP, and C-level executives in house.
                     </p>
 
-                    <p className="text-gray-700 text-base leading-relaxed">
+                    <p className="text-gray-700 text-sm sm:text-base leading-relaxed">
                       We modernize core business operations through process redesign, data integration, post-merger integration, and performance governance to scale cross-functional execution at speed and quality.
                     </p>
                   </div>
@@ -407,8 +407,8 @@ export default function OurServicesPage({ onNavigate }: OurServicesPageProps) {
         </div>
       </div>
 
-      <div className="bg-gray-50 pt-8">
-        <div className="max-w-7xl mx-auto px-6 pb-16">
+      <div className="bg-gray-50 pt-6 md:pt-8">
+        <div className="max-w-7xl mx-auto px-4 sm:px-6 pb-12 md:pb-16 w-full">
           {renderSection(gtmStrategyContent)}
           {renderSection(costOptimizationContent)}
           {renderSection(operationalEfficienciesContent)}
