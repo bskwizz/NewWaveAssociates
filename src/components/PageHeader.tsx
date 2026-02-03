@@ -19,7 +19,7 @@ export default function PageHeader({ onNavigate, currentPage }: PageHeaderProps)
             <img
               src="/copy_of_new_wave_associates_horizontal.png"
               alt="New Wave Associates"
-              className="h-24 md:h-28 w-auto"
+              className="h-18 md:h-21 w-auto"
             />
           </button>
 
