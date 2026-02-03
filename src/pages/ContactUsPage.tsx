@@ -34,7 +34,7 @@ export default function ContactUsPage({ onNavigate }: ContactUsPageProps) {
   return (
     <div className="min-h-screen bg-gray-50">
       <PageHeader onNavigate={onNavigate} currentPage="contact-us" />
-      <div className="pt-24 pb-16">
+      <div className="pt-16 pb-16">
         <div className="max-w-7xl mx-auto px-6">
           <div className="flex gap-12 items-start">
             <div className="w-[30%] flex-shrink-0">
