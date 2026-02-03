@@ -87,7 +87,7 @@ export default function CapabilitiesPage({ onNavigate }: CapabilitiesPageProps) 
 
   return (
     <div>
-      <div ref={vantaRef} className="hero relative h-screen" style={{
+      <div ref={vantaRef} className="hero relative min-h-screen pb-12" style={{
         background: `radial-gradient(1200px 600px at 15% -10%, rgba(1,163,219,0.25), transparent 50%),
                      radial-gradient(800px 400px at 85% 110%, rgba(56,73,93,0.25), transparent 50%),
                      linear-gradient(180deg, #f7f9fb 0%, #eef3f7 100%)`,
@@ -103,7 +103,7 @@ export default function CapabilitiesPage({ onNavigate }: CapabilitiesPageProps) 
 
         <PageHeader onNavigate={onNavigate} currentPage="capabilities" />
 
-        <div className="relative flex items-start pt-12" style={{ height: 'calc(100vh - 16rem)' }}>
+        <div className="relative flex items-start pt-12">
           <div className="w-full">
             <div className="max-w-7xl mx-auto px-6">
               <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-start">
@@ -137,8 +137,86 @@ export default function CapabilitiesPage({ onNavigate }: CapabilitiesPageProps) 
                   />
                 </div>
               </div>
+
+              <div className={`mt-12 max-w-7xl mx-auto px-6 transition-opacity duration-1000 ${
+                fadeIn ? 'opacity-100' : 'opacity-0'
+              }`}>
+                <div className="overflow-x-auto">
+                  <table className="w-full border-collapse bg-white shadow-lg rounded-lg overflow-hidden">
+                    <thead>
+                      <tr className="bg-[#00a4dd]">
+                        <th className="px-6 py-4 text-left text-white font-semibold text-sm uppercase tracking-wider">Industry</th>
+                        <th className="px-6 py-4 text-left text-white font-semibold text-sm uppercase tracking-wider">Role</th>
+                        <th className="px-6 py-4 text-left text-white font-semibold text-sm uppercase tracking-wider">Duration</th>
+                        <th className="px-6 py-4 text-left text-white font-semibold text-sm uppercase tracking-wider">Outcomes</th>
+                      </tr>
+                    </thead>
+                    <tbody>
+                      <tr className="border-b border-gray-200 hover:bg-gray-50 transition-colors">
+                        <td className="px-6 py-4 text-gray-700"></td>
+                        <td className="px-6 py-4 text-gray-700"></td>
+                        <td className="px-6 py-4 text-gray-700"></td>
+                        <td className="px-6 py-4 text-gray-700"></td>
+                      </tr>
+                      <tr className="border-b border-gray-200 hover:bg-gray-50 transition-colors">
+                        <td className="px-6 py-4 text-gray-700"></td>
+                        <td className="px-6 py-4 text-gray-700"></td>
+                        <td className="px-6 py-4 text-gray-700"></td>
+                        <td className="px-6 py-4 text-gray-700"></td>
+                      </tr>
+                      <tr className="border-b border-gray-200 hover:bg-gray-50 transition-colors">
+                        <td className="px-6 py-4 text-gray-700"></td>
+                        <td className="px-6 py-4 text-gray-700"></td>
+                        <td className="px-6 py-4 text-gray-700"></td>
+                        <td className="px-6 py-4 text-gray-700"></td>
+                      </tr>
+                      <tr className="border-b border-gray-200 hover:bg-gray-50 transition-colors">
+                        <td className="px-6 py-4 text-gray-700"></td>
+                        <td className="px-6 py-4 text-gray-700"></td>
+                        <td className="px-6 py-4 text-gray-700"></td>
+                        <td className="px-6 py-4 text-gray-700"></td>
+                      </tr>
+                      <tr className="border-b border-gray-200 hover:bg-gray-50 transition-colors">
+                        <td className="px-6 py-4 text-gray-700"></td>
+                        <td className="px-6 py-4 text-gray-700"></td>
+                        <td className="px-6 py-4 text-gray-700"></td>
+                        <td className="px-6 py-4 text-gray-700"></td>
+                      </tr>
+                      <tr className="border-b border-gray-200 hover:bg-gray-50 transition-colors">
+                        <td className="px-6 py-4 text-gray-700"></td>
+                        <td className="px-6 py-4 text-gray-700"></td>
+                        <td className="px-6 py-4 text-gray-700"></td>
+                        <td className="px-6 py-4 text-gray-700"></td>
+                      </tr>
+                      <tr className="border-b border-gray-200 hover:bg-gray-50 transition-colors">
+                        <td className="px-6 py-4 text-gray-700"></td>
+                        <td className="px-6 py-4 text-gray-700"></td>
+                        <td className="px-6 py-4 text-gray-700"></td>
+                        <td className="px-6 py-4 text-gray-700"></td>
+                      </tr>
+                      <tr className="border-b border-gray-200 hover:bg-gray-50 transition-colors">
+                        <td className="px-6 py-4 text-gray-700"></td>
+                        <td className="px-6 py-4 text-gray-700"></td>
+                        <td className="px-6 py-4 text-gray-700"></td>
+                        <td className="px-6 py-4 text-gray-700"></td>
+                      </tr>
+                      <tr className="border-b border-gray-200 hover:bg-gray-50 transition-colors">
+                        <td className="px-6 py-4 text-gray-700"></td>
+                        <td className="px-6 py-4 text-gray-700"></td>
+                        <td className="px-6 py-4 text-gray-700"></td>
+                        <td className="px-6 py-4 text-gray-700"></td>
+                      </tr>
+                      <tr className="hover:bg-gray-50 transition-colors">
+                        <td className="px-6 py-4 text-gray-700"></td>
+                        <td className="px-6 py-4 text-gray-700"></td>
+                        <td className="px-6 py-4 text-gray-700"></td>
+                        <td className="px-6 py-4 text-gray-700"></td>
+                      </tr>
+                    </tbody>
+                  </table>
+                </div>
+              </div>
             </div>
-            <div className="w-full bg-[#00a4dd] mt-12" style={{height: '75px'}}></div>
           </div>
         </div>
       </div>
