@@ -386,7 +386,7 @@ export default function FlywheelPage({ onNavigate }: FlywheelPageProps) {
                       fadeInImage ? 'opacity-100' : 'opacity-0'
                     }`}
                     style={{ maxWidth: '50%', width: '50%', margin: '0 auto' }}
-                    src={`${import.meta.env.BASE_URL}new_new_wave_flywheel.pdf.png`}
+                    src={`${import.meta.env.BASE_URL}new_new_wave_flywheel.pdf%20copy.png`}
                     alt="New Wave Flywheel"
                   />
             <div
