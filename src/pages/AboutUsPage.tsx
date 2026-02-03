@@ -137,21 +137,21 @@ export default function AboutUsPage({ onNavigate }: AboutUsPageProps) {
                     <div className="h-[2px] bg-[#f05e00]"></div>
                   </div>
                 </div>
-                <p className="text-base md:text-lg text-[#38495D] leading-relaxed mt-6">
+                <p className="text-base md:text-lg text-[#38495D] leading-relaxed mt-6 mb-8">
                   Senior Operators. Realistic Outcomes. Timebound Delivery.
                 </p>
+              </div>
+
+              <div className="pb-16">
+                <img
+                  src={`${import.meta.env.BASE_URL}how_we_differ_section.png`}
+                  alt="How We Differ"
+                  className="w-[85%] h-auto mx-auto"
+                />
               </div>
             </div>
           </div>
         </div>
-      </div>
-
-      <div className="w-full pb-16">
-        <img
-          src={`${import.meta.env.BASE_URL}how_we_differ_section.png`}
-          alt="How We Differ"
-          className="w-full h-auto"
-        />
       </div>
 
       <CTABar
