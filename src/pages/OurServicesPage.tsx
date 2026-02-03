@@ -392,7 +392,7 @@ export default function OurServicesPage({ onNavigate }: OurServicesPageProps) {
                       <p className="text-black text-sm md:text-base font-bold tracking-[0.2em] uppercase mb-2 animate-fade-in" style={{
                         letterSpacing: '0.25em'
                       }}>
-                        OUR EXPERIENCE
+                        Interim<br />Leadership Practice Areas
                       </p>
                       <div className="h-[2px] bg-[#f05e00]"></div>
                     </div>
@@ -400,11 +400,15 @@ export default function OurServicesPage({ onNavigate }: OurServicesPageProps) {
 
                   <div className="space-y-6 text-left max-w-xl mt-6">
                     <p className="text-gray-700 text-base leading-relaxed">
-                      Our interim management services are tailored for organizations who require hands-on operators to make change happen.
+                      We embed in the trenches with leaders to achieve specific, pragmatic goals quickly.
                     </p>
 
                     <p className="text-gray-700 text-base leading-relaxed">
-                      We have successfully placed our fractional and interim executives across multiple functions and industries.
+                      Our interim leadership services are informed by decades of combined experience; our entire team has served as director, VP, and C-level executives in house.
+                    </p>
+
+                    <p className="text-gray-700 text-base leading-relaxed">
+                      We modernize core business operations through process redesign, data integration, post-merger integration, and performance governance to scale cross-functional execution at speed and quality.
                     </p>
                   </div>
                 </div>
