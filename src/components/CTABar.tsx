@@ -18,7 +18,7 @@ export default function CTABar({ text, buttonText, onButtonClick }: CTABarProps)
           </p>
           <button
             onClick={onButtonClick}
-            className="px-8 py-3 bg-[#01A3DB] text-white rounded-md font-medium hover:bg-[#0192C5] transition-all hover:scale-105 relative group whitespace-nowrap"
+            className="px-8 py-3 bg-[#f05e00] text-white rounded-md font-medium hover:bg-[#d94f00] transition-all hover:scale-105 relative group whitespace-nowrap"
           >
             {buttonText}
             <span className="absolute bottom-0 left-1/2 -translate-x-1/2 w-0 h-0.5 bg-[#EF5919] transition-all group-hover:w-3/4"></span>
