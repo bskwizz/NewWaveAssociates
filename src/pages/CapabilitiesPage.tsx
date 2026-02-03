@@ -119,10 +119,10 @@ export default function CapabilitiesPage({ onNavigate }: CapabilitiesPageProps) 
                   <div className={`space-y-4 text-left mt-6 transition-opacity duration-1000 ${
                     fadeIn ? 'opacity-100' : 'opacity-0'
                   }`}>
-                    <p className="text-base md:text-lg text-[#38495D] leading-relaxed">
+                    <p className="text-base text-[#38495D] leading-relaxed">
                       Our interim management services are tailored for organizations who require hands-on operators to make change happen.
                     </p>
-                    <p className="text-base md:text-lg text-[#38495D] leading-relaxed">
+                    <p className="text-base text-[#38495D] leading-relaxed">
                       We have successfully placed our fractional and interim executives across multiple functions and industries.
                     </p>
                   </div>
