@@ -361,11 +361,11 @@ export default function FlywheelPage({ onNavigate }: FlywheelPageProps) {
 
         <PageHeader onNavigate={onNavigate} currentPage="flywheel" />
 
-        <div className="relative flex items-center" style={{ height: 'calc(100vh - 24rem)', paddingTop: '8rem' }}>
+        <div className="relative flex items-start" style={{ minHeight: 'calc(100vh - 16rem)', paddingTop: '2rem' }}>
           <div className="w-full">
             <div className="max-w-7xl mx-auto px-6">
-              <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
-                <div className="hero-rotator text-center">
+              <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-start">
+                <div className="hero-rotator text-center pt-8">
                   <div className="inline-block mb-2">
                     <div>
                       <p className="text-black text-sm md:text-base font-bold tracking-[0.2em] uppercase mb-2 animate-fade-in" style={{
