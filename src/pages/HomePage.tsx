@@ -81,7 +81,7 @@ export default function HomePage({ onNavigate }: HomePageProps) {
 
       <CTABar
         text="Learn more about New Wave solutions for your unique growth opportunity"
-        buttonText="Contact Us"
+        buttonText="Get in Touch"
         onButtonClick={() => onNavigate('contact-us')}
       />
     </div>
