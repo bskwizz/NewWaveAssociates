@@ -220,8 +220,8 @@ export default function OurServicesPage({ onNavigate }: OurServicesPageProps) {
           </div>
         </div>
 
-        <div className={content.image ? 'grid grid-cols-1 lg:grid-cols-2 gap-12 items-start' : ''}>
-          <div>
+        <div className={content.image ? 'grid grid-cols-1 lg:grid-cols-2 gap-12 items-center' : ''}>
+          <div className="flex flex-col justify-center">
             {content.subheading && (
               <p className="text-xl text-gray-700 mb-8 leading-relaxed text-left">{content.subheading}</p>
             )}
