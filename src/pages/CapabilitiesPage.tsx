@@ -154,62 +154,67 @@ export default function CapabilitiesPage({ onNavigate }: CapabilitiesPageProps) 
                     <tbody>
                       <tr className="border-b border-gray-200 hover:bg-gray-50 transition-colors">
                         <td className="px-6 py-4 text-gray-700">Technology and Managed Service Providers</td>
-                        <td className="px-6 py-4 text-gray-700"></td>
-                        <td className="px-6 py-4 text-gray-700"></td>
+                        <td className="px-6 py-4 text-gray-700">Vice President of Strategy and Transformation</td>
+                        <td className="px-6 py-4 text-gray-700">3 Months</td>
+                        <td className="px-6 py-4 text-gray-700">
+                          <ul className="list-disc list-inside space-y-1">
+                            <li>Developed a global labor strategy with $11M in annual operating efficiencies</li>
+                            <li>Created an M&A playbook to integration 35+ acquisitions</li>
+                          </ul>
+                        </td>
+                      </tr>
+                      <tr className="border-b border-gray-200 hover:bg-gray-50 transition-colors">
+                        <td className="px-6 py-4 text-gray-700">Technology and Managed Service Providers</td>
+                        <td className="px-6 py-4 text-gray-700">Director of Transformation</td>
+                        <td className="px-6 py-4 text-gray-700">8 Months</td>
                         <td className="px-6 py-4 text-gray-700"></td>
                       </tr>
                       <tr className="border-b border-gray-200 hover:bg-gray-50 transition-colors">
                         <td className="px-6 py-4 text-gray-700">Technology and Managed Service Providers</td>
-                        <td className="px-6 py-4 text-gray-700"></td>
-                        <td className="px-6 py-4 text-gray-700"></td>
-                        <td className="px-6 py-4 text-gray-700"></td>
-                      </tr>
-                      <tr className="border-b border-gray-200 hover:bg-gray-50 transition-colors">
-                        <td className="px-6 py-4 text-gray-700">Technology and Managed Service Providers</td>
-                        <td className="px-6 py-4 text-gray-700"></td>
-                        <td className="px-6 py-4 text-gray-700"></td>
+                        <td className="px-6 py-4 text-gray-700">Chief Growth Officer</td>
+                        <td className="px-6 py-4 text-gray-700">8 Months</td>
                         <td className="px-6 py-4 text-gray-700"></td>
                       </tr>
                       <tr className="border-b border-gray-200 hover:bg-gray-50 transition-colors">
                         <td className="px-6 py-4 text-gray-700">B2B SaaS / FinTech</td>
-                        <td className="px-6 py-4 text-gray-700"></td>
-                        <td className="px-6 py-4 text-gray-700"></td>
+                        <td className="px-6 py-4 text-gray-700">Vice President of Revenue Operations</td>
+                        <td className="px-6 py-4 text-gray-700">2.5 Years</td>
                         <td className="px-6 py-4 text-gray-700"></td>
                       </tr>
                       <tr className="border-b border-gray-200 hover:bg-gray-50 transition-colors">
                         <td className="px-6 py-4 text-gray-700">B2B SaaS / FinTech / AI</td>
-                        <td className="px-6 py-4 text-gray-700"></td>
-                        <td className="px-6 py-4 text-gray-700"></td>
+                        <td className="px-6 py-4 text-gray-700">Chief Operating Officer</td>
+                        <td className="px-6 py-4 text-gray-700">1 Year</td>
                         <td className="px-6 py-4 text-gray-700"></td>
                       </tr>
                       <tr className="border-b border-gray-200 hover:bg-gray-50 transition-colors">
                         <td className="px-6 py-4 text-gray-700">B2B SaaS / Fintech</td>
-                        <td className="px-6 py-4 text-gray-700"></td>
-                        <td className="px-6 py-4 text-gray-700"></td>
+                        <td className="px-6 py-4 text-gray-700">Director Strategy</td>
+                        <td className="px-6 py-4 text-gray-700">2 Years</td>
                         <td className="px-6 py-4 text-gray-700"></td>
                       </tr>
                       <tr className="border-b border-gray-200 hover:bg-gray-50 transition-colors">
                         <td className="px-6 py-4 text-gray-700">Healthcare</td>
-                        <td className="px-6 py-4 text-gray-700"></td>
-                        <td className="px-6 py-4 text-gray-700"></td>
+                        <td className="px-6 py-4 text-gray-700">Sr. Director of Strategic Sourcing</td>
+                        <td className="px-6 py-4 text-gray-700">2 Years</td>
                         <td className="px-6 py-4 text-gray-700"></td>
                       </tr>
                       <tr className="border-b border-gray-200 hover:bg-gray-50 transition-colors">
                         <td className="px-6 py-4 text-gray-700">Waste & Recycling Services</td>
-                        <td className="px-6 py-4 text-gray-700"></td>
-                        <td className="px-6 py-4 text-gray-700"></td>
+                        <td className="px-6 py-4 text-gray-700">VP of Strategic Sourcing</td>
+                        <td className="px-6 py-4 text-gray-700">1 Year</td>
                         <td className="px-6 py-4 text-gray-700"></td>
                       </tr>
                       <tr className="border-b border-gray-200 hover:bg-gray-50 transition-colors">
                         <td className="px-6 py-4 text-gray-700">BPO / ARM</td>
-                        <td className="px-6 py-4 text-gray-700"></td>
-                        <td className="px-6 py-4 text-gray-700"></td>
+                        <td className="px-6 py-4 text-gray-700">Chief Procurement Officer</td>
+                        <td className="px-6 py-4 text-gray-700">3 Years</td>
                         <td className="px-6 py-4 text-gray-700"></td>
                       </tr>
                       <tr className="hover:bg-gray-50 transition-colors">
                         <td className="px-6 py-4 text-gray-700">B2B / B2C Banking Payments</td>
-                        <td className="px-6 py-4 text-gray-700"></td>
-                        <td className="px-6 py-4 text-gray-700"></td>
+                        <td className="px-6 py-4 text-gray-700">VP of Strategic Alliance</td>
+                        <td className="px-6 py-4 text-gray-700">1 Year</td>
                         <td className="px-6 py-4 text-gray-700"></td>
                       </tr>
                     </tbody>
