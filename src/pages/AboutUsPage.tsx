@@ -126,34 +126,32 @@ export default function AboutUsPage({ onNavigate }: AboutUsPageProps) {
                 ))}
               </div>
 
-              <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-start mb-12">
-                <div className="text-left">
-                  <div className="inline-block mb-2">
-                    <div>
-                      <p className="text-black text-sm md:text-base font-bold tracking-[0.2em] uppercase mb-2" style={{
-                        letterSpacing: '0.25em'
-                      }}>
-                        How We Differ
-                      </p>
-                      <div className="h-[2px] bg-[#f05e00]"></div>
-                    </div>
+              <div className="text-left mb-8">
+                <div className="inline-block mb-2">
+                  <div>
+                    <p className="text-black text-sm md:text-base font-bold tracking-[0.2em] uppercase mb-2" style={{
+                      letterSpacing: '0.25em'
+                    }}>
+                      How We Differ
+                    </p>
+                    <div className="h-[2px] bg-[#f05e00]"></div>
                   </div>
-                  <p className="text-base md:text-lg text-[#38495D] leading-relaxed mt-6">
-                    Senior Operators. Realistic Outcomes. Timebound Delivery.
-                  </p>
                 </div>
+                <p className="text-base md:text-lg text-[#38495D] leading-relaxed mt-6">
+                  Senior Operators. Realistic Outcomes. Timebound Delivery.
+                </p>
               </div>
             </div>
           </div>
-
-          <div className="w-full pb-16">
-            <img
-              src={`${import.meta.env.BASE_URL}how_we_differ_section.png`}
-              alt="How We Differ"
-              className="w-full h-auto"
-            />
-          </div>
         </div>
+      </div>
+
+      <div className="w-full pb-16">
+        <img
+          src={`${import.meta.env.BASE_URL}how_we_differ_section.png`}
+          alt="How We Differ"
+          className="w-full h-auto"
+        />
       </div>
 
       <CTABar
