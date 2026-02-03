@@ -113,16 +113,21 @@ export default function CapabilitiesPage({ onNavigate }: CapabilitiesPageProps) 
                       <p className="text-black text-sm md:text-base font-bold tracking-[0.2em] uppercase mb-2" style={{
                         letterSpacing: '0.25em'
                       }}>
-                        Our Services
+                        OUR EXPERIENCE
                       </p>
                       <div className="h-[2px] bg-[#f05e00]"></div>
                     </div>
                   </div>
-                  <p className={`text-base md:text-lg text-[#38495D] leading-relaxed mt-6 transition-opacity duration-1000 ${
+                  <div className={`space-y-4 text-left mt-6 transition-opacity duration-1000 ${
                     fadeIn ? 'opacity-100' : 'opacity-0'
                   }`}>
-                    Explore the full spectrum of services we deploy to accelerate growth, expand margins, and operationalize transformation.
-                  </p>
+                    <p className="text-base md:text-lg text-[#38495D] leading-relaxed">
+                      Our interim management services are tailored for organizations who require hands-on operators to make change happen.
+                    </p>
+                    <p className="text-base md:text-lg text-[#38495D] leading-relaxed">
+                      We have successfully placed our fractional and interim executives across multiple functions and industries.
+                    </p>
+                  </div>
                 </div>
                 <div className="relative overflow-visible">
                   <img
