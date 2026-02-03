@@ -40,9 +40,11 @@ export default function HomePage({ onNavigate }: HomePageProps) {
                       <div className="h-[2px] bg-[#f05e00]"></div>
                     </div>
                   </div>
-                  <p className="hero-subtext text-base text-[#38495D] leading-relaxed is-visible mt-6">
-                    We bring <em className="font-semibold not-italic">operator-grade expertise</em> in procurement, revenue operations, and transformation excellence to help lower and middle market companies and small providers protect margins, extract value from their vendor communities, and prepare for the future.
-                  </p>
+                  <div className="space-y-4 text-left mt-6">
+                    <p className="text-base text-gray-700 leading-relaxed">
+                      We bring <em className="font-semibold not-italic">operator-grade expertise</em> in procurement, revenue operations, and transformation excellence to help lower and middle market companies and small providers protect margins, extract value from their vendor communities, and prepare for the future.
+                    </p>
+                  </div>
                 </div>
                 <div className="relative overflow-visible">
                   <img
