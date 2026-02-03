@@ -51,21 +51,32 @@ export default function AboutUsPage({ onNavigate }: AboutUsPageProps) {
       <div ref={vantaRef} className="capabilities-hero" aria-label="About Us">
         <PageHeader onNavigate={onNavigate} currentPage="about-us" />
         <div className="capabilities-hero__inner hero-content">
-          <div className="max-w-7xl mx-auto px-6 flex items-center justify-center h-full">
-            <div className={`transition-opacity duration-1000 ${fadeIn ? 'opacity-100' : 'opacity-0'}`} style={{ maxWidth: '900px' }}>
-              <div className="inline-block mb-8">
-                <div>
-                  <p className="text-white text-sm md:text-base font-bold tracking-[0.2em] uppercase mb-2" style={{
-                    letterSpacing: '0.25em'
-                  }}>
-                    The Right Operators
+          <div className="max-w-7xl mx-auto px-6 h-full flex items-center">
+            <div className={`w-full transition-opacity duration-1000 ${fadeIn ? 'opacity-100' : 'opacity-0'}`}>
+              <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
+                <div className="text-left">
+                  <div className="inline-block mb-2">
+                    <div>
+                      <p className="text-black text-sm md:text-base font-bold tracking-[0.2em] uppercase mb-2" style={{
+                        letterSpacing: '0.25em'
+                      }}>
+                        The Right Operators
+                      </p>
+                      <div className="h-[2px] bg-[#f05e00]"></div>
+                    </div>
+                  </div>
+                  <p className="text-base md:text-lg text-[#38495D] leading-relaxed mt-6">
+                    We have <span className="font-semibold">directly</span> led procurement, revenue operations, and M&A across lower and middle market organizations
                   </p>
-                  <div className="h-[2px] bg-[#f05e00]"></div>
+                </div>
+                <div className="relative overflow-visible">
+                  <img
+                    src={`${import.meta.env.BASE_URL}new_wave_associates_logo_only.png`}
+                    alt="New Wave Associates"
+                    className="w-full h-auto max-w-md mx-auto opacity-20"
+                  />
                 </div>
               </div>
-              <p className="text-xl text-white leading-relaxed">
-                We have <span className="font-semibold">directly</span> led procurement, revenue operations, and M&A across lower and middle market organizations
-              </p>
             </div>
           </div>
         </div>
