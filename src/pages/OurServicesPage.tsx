@@ -285,7 +285,7 @@ export default function OurServicesPage({ onNavigate }: OurServicesPageProps) {
 
   return (
     <div>
-      <div id="our-services-hero" ref={vantaRef} className="flywheel-hero fw-glow" aria-label="New Wave Flywheel" style={{ minHeight: '100vh', position: 'relative' }}>
+      <div id="our-services-hero" ref={vantaRef} className="flywheel-hero fw-glow relative min-h-screen" aria-label="New Wave Flywheel">
         <div className="absolute inset-0 opacity-[0.12] pointer-events-none" style={{
           backgroundImage: `radial-gradient(1px 1px at 20% 30%, #38495d 100%, transparent 0),
                             radial-gradient(1px 1px at 70% 60%, #01a3db 100%, transparent 0),
@@ -296,7 +296,7 @@ export default function OurServicesPage({ onNavigate }: OurServicesPageProps) {
 
         <PageHeader onNavigate={onNavigate} currentPage="our-services" />
 
-        <div className="absolute inset-x-0" style={{ bottom: '0', maxHeight: '300px', height: '30vh', pointerEvents: 'none' }}>
+        <div className="absolute inset-x-0 bottom-0 h-48 md:h-64 lg:h-80 pointer-events-none overflow-hidden">
           <img
             src={`${import.meta.env.BASE_URL}wave_graphic_for_our_services_page.png`}
             alt="Wave graphic"
@@ -304,16 +304,15 @@ export default function OurServicesPage({ onNavigate }: OurServicesPageProps) {
           />
         </div>
 
-        <div className="relative flex items-center min-h-[50vh] md:min-h-[60vh] py-8 md:py-0">
+        <div className="relative flex items-center min-h-[50vh] md:min-h-[60vh] py-8 md:py-12 lg:py-16">
           <div className="w-full">
-            <div className="max-w-7xl mx-auto px-4 sm:px-6 w-full">
+            <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 w-full">
               <div className="grid grid-cols-1 lg:grid-cols-2 gap-8 md:gap-12 items-center">
-                <div className="flywheel-hero__media relative">
+                <div className="flywheel-hero__media relative order-2 lg:order-1">
                   <img
-                    className={`flywheel-hero__img transition-opacity duration-1000 ${
+                    className={`flywheel-hero__img w-full max-w-full h-auto mx-auto transition-opacity duration-1000 ${
                       fadeInImage ? 'opacity-100' : 'opacity-0'
                     }`}
-                    style={{ maxWidth: '100%', width: '100%', margin: '0 auto' }}
                     src={`${import.meta.env.BASE_URL}final_new_wave_flywheel.pdf.png`}
                     alt="New Wave Flywheel"
                   />
@@ -375,7 +374,7 @@ export default function OurServicesPage({ onNavigate }: OurServicesPageProps) {
               }}
             ></a>
                 </div>
-                <div className="hero-rotator text-left">
+                <div className="hero-rotator text-left order-1 lg:order-2">
                   <div className="inline-block mb-2">
                     <div>
                       <p className="text-black text-xs sm:text-sm md:text-base font-bold uppercase mb-2 animate-fade-in" style={{
@@ -408,7 +407,7 @@ export default function OurServicesPage({ onNavigate }: OurServicesPageProps) {
       </div>
 
       <div className="bg-gray-50 pt-6 md:pt-8">
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 pb-12 md:pb-16 w-full">
+        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 pb-12 md:pb-16 w-full">
           {renderSection(gtmStrategyContent)}
           {renderSection(costOptimizationContent)}
           {renderSection(operationalEfficienciesContent)}
