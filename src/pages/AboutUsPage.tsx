@@ -76,14 +76,14 @@ export default function AboutUsPage({ onNavigate }: AboutUsPageProps) {
                 {teamMembers.map((member, index) => (
                   <div
                     key={index}
-                    className="bg-white border border-gray-200 rounded-lg p-5 hover:shadow-xl transition-all"
+                    className="bg-white border border-gray-200 rounded-lg p-5 shadow-lg hover:shadow-xl transition-all group"
                   >
                     <div className="flex gap-5 mb-5">
                       <div className="w-40 h-40 flex-shrink-0 flex items-center justify-center overflow-hidden bg-white rounded-lg">
                         <img
                           src={`${import.meta.env.BASE_URL}${member.image}`}
                           alt={member.name}
-                          className="w-full h-full object-cover"
+                          className="w-full h-full object-cover grayscale group-hover:grayscale-0 transition-all duration-300"
                           onError={(e) => {
                             const target = e.target as HTMLImageElement;
                             target.style.display = 'none';
@@ -147,7 +147,7 @@ export default function AboutUsPage({ onNavigate }: AboutUsPageProps) {
                 <img
                   src={`${import.meta.env.BASE_URL}how_we_differ_section.png`}
                   alt="How We Differ"
-                  className="w-[85%] h-auto mx-auto"
+                  className="w-[93.5%] h-auto mx-auto shadow-xl rounded-lg"
                 />
               </div>
             </div>

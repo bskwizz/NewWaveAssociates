@@ -140,7 +140,7 @@ export default function CapabilitiesPage({ onNavigate }: CapabilitiesPageProps) 
                 fadeIn ? 'opacity-100' : 'opacity-0'
               }`}>
                 <div className="overflow-x-auto">
-                  <table className="w-full border-collapse bg-white shadow-lg rounded-lg overflow-hidden">
+                  <table className="w-full border-collapse bg-white shadow-2xl rounded-lg overflow-hidden">
                     <thead>
                       <tr className="bg-[#00a4dd]">
                         <th className="px-6 py-4 text-left text-white font-semibold text-sm uppercase tracking-wider">Industry</th>

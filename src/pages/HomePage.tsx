@@ -42,7 +42,7 @@ export default function HomePage({ onNavigate }: HomePageProps) {
                   </div>
                   <div className="space-y-4 text-left mt-6">
                     <p className="text-base text-gray-700 leading-relaxed">
-                      We bring <em className="font-semibold not-italic">operator-grade expertise</em> in procurement, revenue operations, and transformation excellence to help lower and middle market companies and small providers protect margins, extract value from their vendor communities, and prepare for the future.
+                      We bring <em className="font-semibold not-italic">operator-grade expertise</em> in procurement, revenue operations, and transformation excellence to help lower and middle market companies protect margins, extract value from their vendor communities, and prepare for the future.
                     </p>
                   </div>
                 </div>
