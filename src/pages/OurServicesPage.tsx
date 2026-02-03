@@ -29,55 +29,13 @@ const gtmStrategyContent: SectionContent = {
 
 const costOptimizationContent: SectionContent = {
   id: 'cost-optimization',
-  title: 'Cost Optimization',
-  subheading: 'We deliver measurable reductions in SG&A, COGS, and operational overhead to unlock EBITDA expansion without sacrificing growth.',
-  groups: [
-    {
-      subhead: 'Cash Infusion & Liquidity Unlock',
-      items: [
-        'Working Capital Liberation',
-        'Balance Sheet Optimization',
-        'Liquidity Uplift',
-        'Cash Flow Acceleration',
-        'Monetization of Non-core Assets',
-        'Rapid ROI Levers',
-        'Operational Cash Reparation',
-      ],
-    },
-    {
-      subhead: 'Cost Takeout via Strategic Alignment',
-      items: [
-        'Targeted SG&A Rationalization',
-        'Support Function Rewiring',
-        'Shared Service Realignment',
-        'Strategic Consolidation',
-        'Functional Cost Harmonization',
-        'Support Stack Simplification',
-      ],
-    },
-    {
-      subhead: 'Transformation-Oriented Efficiency Plays',
-      items: [
-        'Cost-To-Serve Compression',
-        'Digital Labor Deployment',
-        'Process Reengineering at Scale',
-        'AI Driven Cost Containment',
-        'End-to-End Value Chain Optimization',
-        'Strategic Cost Restructuring',
-        'Run-Rate Reduction Initiatives',
-      ],
-    },
-    {
-      subhead: 'Executive-Ready Framing',
-      items: [
-        'Unlocking trapped value through surgical cost alignment',
-        'Infusing liquidity via precision-tuned support model transformation',
-        'From bloated to bold: Rearchitecting cost structure for scale',
-        'Turning cost centers into value engines',
-        'Aligning support functions to strategic intent, not inertia',
-      ],
-    },
+  title: 'Revenue and Demand Acceleration',
+  bullets: [
+    'Revenue Source and Gap Diagnostic',
+    'Pricing and Packaging Strategy Development',
+    'Define and Communicate Go-to-Market Objectives (Offerings, Pricing, Demand and Lead Generation)',
   ],
+  groups: [],
 };
 
 const operationalEfficienciesContent: SectionContent = {
