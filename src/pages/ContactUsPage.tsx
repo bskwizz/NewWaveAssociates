@@ -43,7 +43,9 @@ export default function ContactUsPage({ onNavigate }: ContactUsPageProps) {
                   <p className="text-black text-sm md:text-base font-bold tracking-[0.2em] uppercase mb-2" style={{
                     letterSpacing: '0.25em'
                   }}>
-                    Contact Us
+                    WE WOULD LOVE
+                    <br />
+                    TO HEAR FROM YOU
                   </p>
                   <div className="h-[2px] bg-[#f05e00]"></div>
                 </div>
