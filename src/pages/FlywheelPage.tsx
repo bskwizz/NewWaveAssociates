@@ -366,14 +366,6 @@ export default function FlywheelPage({ onNavigate }: FlywheelPageProps) {
             <div className="max-w-7xl mx-auto px-6">
               <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-start">
                 <div className="flywheel-hero__media relative">
-                  <img
-                    className={`flywheel-hero__img transition-opacity duration-1000 ${
-                      fadeInImage ? 'opacity-100' : 'opacity-0'
-                    }`}
-                    style={{ maxWidth: '240%', width: '240%', margin: '0 auto' }}
-                    src={`${import.meta.env.BASE_URL}new_new_wave_flywheel.pdf%20copy%20copy.png`}
-                    alt="New Wave Flywheel"
-                  />
             <div
               className={`flywheel-overlay flywheel-overlay--gtm transition-opacity duration-1400 ${
                 fadeInGtm ? 'opacity-0' : 'opacity-100'
