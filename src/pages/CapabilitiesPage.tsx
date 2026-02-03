@@ -167,7 +167,12 @@ export default function CapabilitiesPage({ onNavigate }: CapabilitiesPageProps) 
                         <td className="px-6 py-4 text-gray-700">Technology and Managed Service Providers</td>
                         <td className="px-6 py-4 text-gray-700">Director of Transformation</td>
                         <td className="px-6 py-4 text-gray-700">8 Months</td>
-                        <td className="px-6 py-4 text-gray-700"></td>
+                        <td className="px-6 py-4 text-gray-700">
+                          <ul className="list-disc list-inside space-y-1">
+                            <li>Orchestrated cross-functional workstreams to execute high-impact initiatives, utilizing custom project trackers to reconcile competing priorities and improve operational scalability across a $1B platform</li>
+                            <li>Standardized a global product catalog by rationalizing 80,000+ SKUs into a unified data structure; improved reporting accuracy and margin visibility while reducing operational complexity for global sales and delivery teams</li>
+                          </ul>
+                        </td>
                       </tr>
                       <tr className="border-b border-gray-200 hover:bg-gray-50 transition-colors">
                         <td className="px-6 py-4 text-gray-700">Technology and Managed Service Providers</td>
@@ -175,8 +180,8 @@ export default function CapabilitiesPage({ onNavigate }: CapabilitiesPageProps) 
                         <td className="px-6 py-4 text-gray-700">8 Months</td>
                         <td className="px-6 py-4 text-gray-700">
                           <ul className="list-disc list-inside space-y-1">
-                            <li>Orchestrated cross-functional workstreams to execute high-impact initiatives, utilizing custom project trackers to reconcile competing priorities and improve operational scalability across a $1B platform</li>
-                            <li>Standardized a global product catalog by rationalizing 80,000+ SKUs into a unified data structure; improved reporting accuracy and margin visibility while reducing operational complexity for global sales and delivery teams</li>
+                            <li>Drive GTM strategy transformation (org structure, ICP, pricing, macroeconomic frameworks, KPI standardization)</li>
+                            <li>Mitigated revenue leakage from bottom-tier clients with pricing levers, optimized data & reporting architecture/workflows</li>
                           </ul>
                         </td>
                       </tr>
@@ -186,8 +191,10 @@ export default function CapabilitiesPage({ onNavigate }: CapabilitiesPageProps) 
                         <td className="px-6 py-4 text-gray-700">2.5 Years</td>
                         <td className="px-6 py-4 text-gray-700">
                           <ul className="list-disc list-inside space-y-1">
-                            <li>Drive GTM strategy transformation (org structure, ICP, pricing, macroeconomic frameworks, KPI standardization)</li>
-                            <li>Mitigated revenue leakage from bottom-tier clients with pricing levers, optimized data & reporting architecture/workflows</li>
+                            <li>Managed tech stack transformations, launching a BI foundation & reducing operational costs by $2M+</li>
+                            <li>Led multiple global M&A integrations</li>
+                            <li>Restructured pricing & packaging models increasing ASP 20% & reducing churn 10%</li>
+                            <li>Drove $2M incremental ARR eliminating RevRec lag in deal closures</li>
                           </ul>
                         </td>
                       </tr>
@@ -195,14 +202,7 @@ export default function CapabilitiesPage({ onNavigate }: CapabilitiesPageProps) 
                         <td className="px-6 py-4 text-gray-700">B2B SaaS / FinTech / AI</td>
                         <td className="px-6 py-4 text-gray-700">Chief Operating Officer</td>
                         <td className="px-6 py-4 text-gray-700">1 Year</td>
-                        <td className="px-6 py-4 text-gray-700">
-                          <ul className="list-disc list-inside space-y-1">
-                            <li>Managed tech stack transformations, launching a BI foundation & reducing operational costs by $2M+</li>
-                            <li>Led multiple global M&A integrations</li>
-                            <li>Restructured pricing & packaging models increasing ASP 20% & reducing churn 10%</li>
-                            <li>Drove $2M incremental ARR eliminating RevRec lag in deal closures</li>
-                          </ul>
-                        </td>
+                        <td className="px-6 py-4 text-gray-700"></td>
                       </tr>
                       <tr className="border-b border-gray-200 hover:bg-gray-50 transition-colors">
                         <td className="px-6 py-4 text-gray-700">B2B SaaS / Fintech</td>
