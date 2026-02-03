@@ -111,19 +111,23 @@ export default function AboutUsPage({ onNavigate }: AboutUsPageProps) {
           </div>
 
           <div className="mb-16">
-            <div className="inline-block mb-8">
-              <div>
-                <p className="text-black text-sm md:text-base font-bold tracking-[0.2em] uppercase mb-2" style={{
-                  letterSpacing: '0.25em'
-                }}>
-                  The Right Operators
+            <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 mb-12">
+              <div className="text-left">
+                <div className="inline-block mb-8">
+                  <div>
+                    <p className="text-black text-sm md:text-base font-bold tracking-[0.2em] uppercase mb-2" style={{
+                      letterSpacing: '0.25em'
+                    }}>
+                      The Right Operators
+                    </p>
+                    <div className="h-[2px] bg-[#f05e00]"></div>
+                  </div>
+                </div>
+                <p className="text-base md:text-lg text-[#38495D] leading-relaxed">
+                  We have <span className="font-semibold">directly</span> led procurement, revenue operations, and M&A across lower and middle market organizations
                 </p>
-                <div className="h-[2px] bg-[#f05e00]"></div>
               </div>
             </div>
-            <p className="text-base md:text-lg text-[#38495D] leading-relaxed mb-12">
-              We have <span className="font-semibold">directly</span> led procurement, revenue operations, and M&A across lower and middle market organizations
-            </p>
             <div className="grid md:grid-cols-2 gap-8">
               {teamMembers.map((member, index) => (
                 <div
