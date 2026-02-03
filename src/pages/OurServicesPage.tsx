@@ -13,6 +13,7 @@ interface SectionContent {
   subheading?: string;
   bullets?: string[];
   groups: SectionGroup[];
+  image?: string;
 }
 
 const gtmStrategyContent: SectionContent = {
@@ -25,6 +26,7 @@ const gtmStrategyContent: SectionContent = {
     'GPO Interaction Model Development',
   ],
   groups: [],
+  image: '/strategic_sourcing_image.png',
 };
 
 const costOptimizationContent: SectionContent = {
@@ -216,33 +218,47 @@ export default function OurServicesPage({ onNavigate }: OurServicesPageProps) {
           </div>
         </div>
 
-        {content.subheading && (
-          <p className="text-xl text-gray-700 mb-8 leading-relaxed text-left w-full md:w-1/2">{content.subheading}</p>
-        )}
+        <div className={content.image ? 'grid grid-cols-1 lg:grid-cols-2 gap-12 items-start' : ''}>
+          <div>
+            {content.subheading && (
+              <p className="text-xl text-gray-700 mb-8 leading-relaxed text-left">{content.subheading}</p>
+            )}
 
-        {content.bullets && content.bullets.length > 0 && (
-          <ul className="space-y-3 mb-8 text-left">
-            {content.bullets.map((bullet, idx) => (
-              <li key={idx} className="flex items-start">
-                <span className="text-[#f05e00] mr-3 mt-1">•</span>
-                <span className="text-gray-700 text-base leading-relaxed">{bullet}</span>
-              </li>
-            ))}
-          </ul>
-        )}
+            {content.bullets && content.bullets.length > 0 && (
+              <ul className="space-y-3 mb-8 text-left">
+                {content.bullets.map((bullet, idx) => (
+                  <li key={idx} className="flex items-start">
+                    <span className="text-[#f05e00] mr-3 mt-1">•</span>
+                    <span className="text-gray-700 text-base leading-relaxed">{bullet}</span>
+                  </li>
+                ))}
+              </ul>
+            )}
 
-        {content.groups.length > 0 && (
-          <div className="fw-group-grid">
-            {content.groups.map((group, idx) => (
-              <CollapsibleGroup
-                key={idx}
-                subhead={group.subhead}
-                items={group.items}
-                groupId={`${content.id}-group-${idx}`}
-              />
-            ))}
+            {content.groups.length > 0 && (
+              <div className="fw-group-grid">
+                {content.groups.map((group, idx) => (
+                  <CollapsibleGroup
+                    key={idx}
+                    subhead={group.subhead}
+                    items={group.items}
+                    groupId={`${content.id}-group-${idx}`}
+                  />
+                ))}
+              </div>
+            )}
           </div>
-        )}
+
+          {content.image && (
+            <div className="flex items-center justify-center">
+              <img
+                src={content.image}
+                alt={content.title}
+                className="w-full h-auto rounded-lg shadow-lg"
+              />
+            </div>
+          )}
+        </div>
       </div>
     </section>
   );
