@@ -60,9 +60,9 @@ export default function HomePage({ onNavigate }: HomePageProps) {
               <LogoScroller logos={[
                 '/osg_logo.png',
                 '/bridgeview_eye_logo.png',
-                '/medius_logo.png',
-                '/new_era_technology_logo.png',
-                '/trustage_logo.png',
+                '/medius.png',
+                '/neweratechnology.png',
+                '/trustage.png',
                 '/tenet_health_logo.png',
               ]} />
             </div>
