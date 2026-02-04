@@ -296,7 +296,7 @@ export default function OurServicesPage({ onNavigate }: OurServicesPageProps) {
 
         <PageHeader onNavigate={onNavigate} currentPage="our-services" />
 
-        <div className="absolute inset-x-0 mt-20 translate-y-16 md:mt-0 md:-translate-y-12" style={{ bottom: '0', maxHeight: '300px', height: '30vh', pointerEvents: 'none' }}>
+        <div className="absolute inset-x-0 mt-20 translate-y-16 lg:mt-0 lg:-translate-y-24" style={{ bottom: '0', maxHeight: '300px', height: '30vh', pointerEvents: 'none' }}>
           <img
             src={`${import.meta.env.BASE_URL}wave_graphic_for_our_services_page.png`}
             alt="Wave graphic"
