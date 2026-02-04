@@ -228,32 +228,32 @@ html {
 
 @media (min-width: 1024px) {
   .flywheel-overlay--gtm {
-    top: 14%;
+    top: 2%;
     height: 24%;
   }
 
   .flywheel-overlay--cost {
-    top: 15%;
+    top: 3%;
     height: 24%;
   }
 
   .flywheel-overlay--ops {
-    bottom: 10%;
+    bottom: -2%;
     height: 24%;
   }
 
   .flywheel-hotspot--gtm {
-    top: 14%;
+    top: 2%;
     height: 24%;
   }
 
   .flywheel-hotspot--cost {
-    top: 15%;
+    top: 3%;
     height: 24%;
   }
 
   .flywheel-hotspot--ops {
-    bottom: 10%;
+    bottom: -2%;
     height: 24%;
   }
 }
