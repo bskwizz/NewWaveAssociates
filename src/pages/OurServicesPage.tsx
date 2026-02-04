@@ -296,11 +296,16 @@ export default function OurServicesPage({ onNavigate }: OurServicesPageProps) {
 
         <PageHeader onNavigate={onNavigate} currentPage="our-services" />
 
-        <div className="absolute left-0 right-0 bottom-0 mt-20 translate-y-16 lg:left-1/2 lg:right-auto lg:-translate-x-1/2 lg:w-screen lg:-bottom-8 lg:mt-0 max-h-[300px] h-[30vh] lg:max-h-[600px] lg:h-[60vh] pointer-events-none z-10 lg:overflow-visible lg:outline lg:outline-4 lg:outline-red-500 lg:bg-yellow-200/20">
+        <div
+          className="absolute left-0 right-0 bottom-0 mt-20 translate-y-16 lg:left-1/2 lg:right-auto lg:-translate-x-1/2 lg:w-screen lg:-bottom-8 lg:mt-0 max-h-[300px] h-[30vh] lg:max-h-[600px] lg:h-[60vh] pointer-events-none z-10 lg:overflow-visible lg:outline lg:outline-4 lg:outline-red-500 lg:bg-yellow-200/20 lg:bg-no-repeat lg:bg-bottom lg:bg-center lg:bg-[length:100%_auto]"
+          style={{
+            backgroundImage: `url(${import.meta.env.BASE_URL}wave_graphic_for_our_services_page.png)`,
+          }}
+        >
           <img
             src={`${import.meta.env.BASE_URL}wave_graphic_for_our_services_page.png`}
             alt="Wave graphic"
-            className="w-full h-full object-cover object-bottom lg:w-screen lg:max-w-none lg:relative lg:left-1/2 lg:-translate-x-1/2"
+            className="w-full h-full object-cover object-bottom lg:hidden"
           />
         </div>
 
