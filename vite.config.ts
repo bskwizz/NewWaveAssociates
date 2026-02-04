@@ -7,7 +7,7 @@ export default defineConfig({
   build: {
     outDir: 'docs',
     emptyOutDir: true,
-    copyPublicDir: false,
+    copyPublicDir: true,
   },
   plugins: [react()],
   optimizeDeps: {
