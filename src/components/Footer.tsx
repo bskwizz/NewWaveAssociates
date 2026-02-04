@@ -12,7 +12,7 @@ export default function Footer() {
               className="h-24 w-auto"
             />
           </div>
-          <div className="flex items-center gap-3 order-1 md:order-2">
+          <div className="flex items-center gap-3 order-1 md:order-2 mt-4 md:mt-0">
             <span className="text-sm text-gray-300">Find Us Online</span>
             <a
               href="https://www.linkedin.com/company/new-wave-associates/"
