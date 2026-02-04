@@ -296,7 +296,7 @@ export default function OurServicesPage({ onNavigate }: OurServicesPageProps) {
 
         <PageHeader onNavigate={onNavigate} currentPage="our-services" />
 
-        <div className="absolute inset-x-0 bottom-0 lg:bottom-32 mt-20 translate-y-16 lg:mt-0 lg:translate-y-0 max-h-[300px] h-[30vh] lg:max-h-[600px] lg:h-[60vh] pointer-events-none">
+        <div className="absolute inset-x-0 bottom-0 lg:-bottom-48 mt-20 translate-y-16 lg:mt-0 lg:translate-y-0 max-h-[300px] h-[30vh] lg:max-h-[600px] lg:h-[60vh] pointer-events-none z-10">
           <img
             src={`${import.meta.env.BASE_URL}wave_graphic_for_our_services_page.png`}
             alt="Wave graphic"
@@ -407,7 +407,7 @@ export default function OurServicesPage({ onNavigate }: OurServicesPageProps) {
         </div>
       </div>
 
-      <div className="bg-gray-50 pt-5 sm:pt-6 lg:pt-8">
+      <div className="bg-gray-50 pt-5 sm:pt-6 lg:pt-48">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 pb-8 sm:pb-12 lg:pb-16 w-full">
           {renderSection(gtmStrategyContent)}
           {renderSection(costOptimizationContent)}
