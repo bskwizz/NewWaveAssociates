@@ -5,14 +5,14 @@ export default function Footer() {
     <footer className="bg-[#38495D] text-white py-3">
       <div className="max-w-7xl mx-auto px-6">
         <div className="mb-2 flex flex-col md:flex-row justify-between items-center gap-4">
-          <div className="flex flex-col md:flex-row md:items-center gap-4 md:gap-8">
+          <div className="flex flex-col md:flex-row md:items-center gap-4 md:gap-8 order-2 md:order-1">
             <img
               src="/New Wave Associates Horizontal.png"
               alt="New Wave Associates Logo"
               className="h-24 w-auto"
             />
           </div>
-          <div className="flex items-center gap-3">
+          <div className="flex items-center gap-3 order-1 md:order-2">
             <span className="text-sm text-gray-300">Find Us Online</span>
             <a
               href="https://www.linkedin.com/company/new-wave-associates/"
