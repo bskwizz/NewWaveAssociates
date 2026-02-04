@@ -285,7 +285,7 @@ export default function OurServicesPage({ onNavigate }: OurServicesPageProps) {
 
   return (
     <div>
-      <div id="our-services-hero" ref={vantaRef} className="flywheel-hero fw-glow" aria-label="New Wave Flywheel" style={{ minHeight: '100vh', position: 'relative', overflow: 'visible', paddingBottom: '200px' }}>
+      <div id="our-services-hero" ref={vantaRef} className="flywheel-hero fw-glow pb-16 lg:pb-[200px]" aria-label="New Wave Flywheel" style={{ minHeight: '100vh', position: 'relative', overflow: 'visible' }}>
         <div className="absolute inset-0 opacity-[0.12] pointer-events-none" style={{
           backgroundImage: `radial-gradient(1px 1px at 20% 30%, #38495d 100%, transparent 0),
                             radial-gradient(1px 1px at 70% 60%, #01a3db 100%, transparent 0),
@@ -309,11 +309,11 @@ export default function OurServicesPage({ onNavigate }: OurServicesPageProps) {
           />
         </div>
 
-        <div className="relative flex items-center min-h-[50vh] sm:min-h-[55vh] lg:min-h-[60vh] py-6 sm:py-8 lg:py-0">
+        <div className="relative flex items-center min-h-[50vh] sm:min-h-[55vh] lg:min-h-[60vh] py-3 sm:py-6 lg:py-0">
           <div className="w-full">
             <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-6 w-full">
               <div className="grid grid-cols-1 lg:grid-cols-2 gap-6 sm:gap-8 lg:gap-12 items-center">
-                <div className="flywheel-hero__media relative order-2 lg:order-1">
+                <div className="flywheel-hero__media relative order-2 lg:order-1 mt-3 lg:mt-0">
                   <img
                     className={`flywheel-hero__img transition-opacity duration-1000 ${
                       fadeInImage ? 'opacity-100' : 'opacity-0'
