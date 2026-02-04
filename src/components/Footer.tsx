@@ -4,7 +4,7 @@ export default function Footer() {
   return (
     <footer className="bg-[#38495D] text-white py-3">
       <div className="max-w-7xl mx-auto px-6">
-        <div className="mb-2 flex flex-col md:flex-row justify-between items-start md:items-center gap-4">
+        <div className="mb-2 flex flex-col md:flex-row justify-between items-center gap-4">
           <div className="flex flex-col md:flex-row md:items-center gap-4 md:gap-8">
             <img
               src="/New Wave Associates Horizontal.png"

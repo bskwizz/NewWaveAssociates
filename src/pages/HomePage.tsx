@@ -29,7 +29,7 @@ export default function HomePage({ onNavigate }: HomePageProps) {
           <div className="w-full flex flex-col">
             <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-6">
               <div className="grid grid-cols-1 lg:grid-cols-2 gap-6 sm:gap-8 lg:gap-12 items-center">
-                <div id="hero-rotator" className="hero-rotator text-left order-2 lg:order-1">
+                <div id="hero-rotator" className="hero-rotator text-left order-1">
                   <div className="inline-block mb-2">
                     <div>
                       <p className="text-black text-xs sm:text-sm lg:text-base font-bold tracking-[0.2em] uppercase mb-2 animate-fade-in" style={{
@@ -46,7 +46,7 @@ export default function HomePage({ onNavigate }: HomePageProps) {
                     </p>
                   </div>
                 </div>
-                <div className="relative overflow-visible order-1 lg:order-2">
+                <div className="relative overflow-visible order-2">
                   <img
                     src="/new_wave_process_graphic_(1).png"
                     alt="New Wave Associates Process"
