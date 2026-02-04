@@ -268,8 +268,8 @@ export default function OurServicesPage({ onNavigate }: OurServicesPageProps) {
           <div className={content.image ? 'grid grid-cols-1 lg:grid-cols-2 gap-6 sm:gap-8 lg:gap-12 items-center' : ''}>
             {isFlipped ? (
               <>
-                <div className="order-2 lg:order-1">{imageContent}</div>
-                <div className="order-1 lg:order-2">{textContent}</div>
+                <div className="order-1 lg:order-1">{imageContent}</div>
+                <div className="order-2 lg:order-2">{textContent}</div>
               </>
             ) : (
               <>
@@ -296,7 +296,7 @@ export default function OurServicesPage({ onNavigate }: OurServicesPageProps) {
 
         <PageHeader onNavigate={onNavigate} currentPage="our-services" />
 
-        <div className="absolute inset-x-0" style={{ bottom: '0', maxHeight: '300px', height: '30vh', pointerEvents: 'none' }}>
+        <div className="absolute inset-x-0 mt-12 md:mt-0" style={{ bottom: '0', maxHeight: '300px', height: '30vh', pointerEvents: 'none' }}>
           <img
             src={`${import.meta.env.BASE_URL}wave_graphic_for_our_services_page.png`}
             alt="Wave graphic"
