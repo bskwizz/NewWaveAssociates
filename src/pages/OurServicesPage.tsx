@@ -300,7 +300,7 @@ export default function OurServicesPage({ onNavigate }: OurServicesPageProps) {
           <img
             src={`${import.meta.env.BASE_URL}wave_graphic_for_our_services_page.png`}
             alt="Wave graphic"
-            className="w-full h-full object-cover object-top"
+            className="w-full h-full object-cover object-top lg:-translate-y-24 lg:outline lg:outline-4 lg:outline-red-500"
           />
         </div>
 
