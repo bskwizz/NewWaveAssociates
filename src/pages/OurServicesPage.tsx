@@ -285,7 +285,7 @@ export default function OurServicesPage({ onNavigate }: OurServicesPageProps) {
 
   return (
     <div>
-      <div id="our-services-hero" ref={vantaRef} className="flywheel-hero fw-glow" aria-label="New Wave Flywheel" style={{ minHeight: '100vh', position: 'relative', overflow: 'visible' }}>
+      <div id="our-services-hero" ref={vantaRef} className="flywheel-hero fw-glow" aria-label="New Wave Flywheel" style={{ minHeight: '100vh', position: 'relative', overflow: 'visible', paddingBottom: '200px' }}>
         <div className="absolute inset-0 opacity-[0.12] pointer-events-none" style={{
           backgroundImage: `radial-gradient(1px 1px at 20% 30%, #38495d 100%, transparent 0),
                             radial-gradient(1px 1px at 70% 60%, #01a3db 100%, transparent 0),
@@ -296,11 +296,11 @@ export default function OurServicesPage({ onNavigate }: OurServicesPageProps) {
 
         <PageHeader onNavigate={onNavigate} currentPage="our-services" />
 
-        <div className="absolute inset-x-0 bottom-0 lg:-bottom-48 mt-20 translate-y-16 lg:mt-0 lg:translate-y-0 max-h-[300px] h-[30vh] lg:max-h-[600px] lg:h-[60vh] pointer-events-none z-10">
+        <div className="absolute inset-x-0 bottom-0 lg:bottom-20 mt-20 translate-y-16 lg:mt-0 lg:translate-y-0 max-h-[300px] h-[30vh] lg:max-h-[800px] lg:h-[80vh] pointer-events-none z-10">
           <img
             src={`${import.meta.env.BASE_URL}wave_graphic_for_our_services_page.png`}
             alt="Wave graphic"
-            className="w-full h-full object-cover object-top"
+            className="w-full h-full object-cover object-bottom lg:object-center"
           />
         </div>
 
@@ -407,7 +407,7 @@ export default function OurServicesPage({ onNavigate }: OurServicesPageProps) {
         </div>
       </div>
 
-      <div className="bg-gray-50 pt-5 sm:pt-6 lg:pt-48">
+      <div className="bg-gray-50 pt-5 sm:pt-6 lg:pt-32">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 pb-8 sm:pb-12 lg:pb-16 w-full">
           {renderSection(gtmStrategyContent)}
           {renderSection(costOptimizationContent)}
