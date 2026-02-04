@@ -265,16 +265,16 @@ export default function OurServicesPage({ onNavigate }: OurServicesPageProps) {
         className="mb-8 sm:mb-10 lg:mb-16 pb-8 sm:pb-10 lg:pb-16 border-b border-gray-200"
       >
         <div className="max-w-6xl">
-          <div className={content.image ? 'grid grid-cols-1 lg:grid-cols-2 gap-6 sm:gap-8 lg:gap-12 items-center' : ''}>
+          <div className={content.image ? 'grid grid-cols-1 md:grid-cols-2 gap-6 sm:gap-8 md:gap-8 lg:gap-10 xl:gap-12 items-center' : ''}>
             {isFlipped ? (
               <>
-                <div className="order-1 lg:order-1">{imageContent}</div>
-                <div className="order-2 lg:order-2">{textContent}</div>
+                <div className="order-1 md:order-1">{imageContent}</div>
+                <div className="order-2 md:order-2">{textContent}</div>
               </>
             ) : (
               <>
-                <div className="order-2 lg:order-1">{textContent}</div>
-                <div className="order-1 lg:order-2">{imageContent}</div>
+                <div className="order-2 md:order-1">{textContent}</div>
+                <div className="order-1 md:order-2">{imageContent}</div>
               </>
             )}
           </div>
@@ -311,9 +311,9 @@ export default function OurServicesPage({ onNavigate }: OurServicesPageProps) {
 
         <div className="relative flex items-center min-h-[50vh] sm:min-h-[55vh] lg:min-h-[60vh] py-3 sm:py-6 lg:py-0">
           <div className="w-full">
-            <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-6 w-full">
-              <div className="grid grid-cols-1 lg:grid-cols-2 gap-6 sm:gap-8 lg:gap-12 items-center">
-                <div className="flywheel-hero__media relative order-2 lg:order-1 mt-3 lg:mt-0">
+            <div className="max-w-7xl mx-auto px-4 sm:px-5 md:px-6 lg:px-6 xl:px-8 w-full">
+              <div className="grid grid-cols-1 md:grid-cols-2 gap-6 sm:gap-8 md:gap-8 lg:gap-10 xl:gap-12 items-center">
+                <div className="flywheel-hero__media relative order-2 md:order-1 mt-3 md:mt-0">
                   <img
                     className="flywheel-hero__img opacity-100"
                     style={{ maxWidth: '100%', width: '100%', margin: '0 auto' }}

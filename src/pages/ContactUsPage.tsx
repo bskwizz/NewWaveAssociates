@@ -35,9 +35,9 @@ export default function ContactUsPage({ onNavigate }: ContactUsPageProps) {
     <div className="min-h-screen bg-gray-50">
       <PageHeader onNavigate={onNavigate} currentPage="contact-us" />
       <div className="pt-12 sm:pt-14 lg:pt-16 pb-12 sm:pb-14 lg:pb-16">
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-6">
-          <div className="flex flex-col lg:flex-row gap-8 sm:gap-10 lg:gap-12 items-start">
-            <div className="w-full lg:w-[30%] lg:flex-shrink-0">
+        <div className="max-w-7xl mx-auto px-4 sm:px-5 md:px-6 lg:px-6 xl:px-8">
+          <div className="flex flex-col md:flex-row gap-8 sm:gap-8 md:gap-8 lg:gap-10 xl:gap-12 items-start">
+            <div className="w-full md:w-[30%] md:flex-shrink-0">
               <div className="inline-block mb-2">
                 <div>
                   <p className="text-black text-xs sm:text-sm lg:text-base font-bold tracking-[0.2em] uppercase mb-2" style={{
@@ -85,7 +85,7 @@ export default function ContactUsPage({ onNavigate }: ContactUsPageProps) {
               </div>
             </div>
 
-            <div className="w-full lg:w-[70%] bg-white border border-gray-200 rounded-lg p-5 sm:p-6 shadow-lg">
+            <div className="w-full md:w-[70%] bg-white border border-gray-200 rounded-lg p-5 sm:p-6 shadow-lg">
               <form onSubmit={handleSubmit} className="grid grid-cols-1 sm:grid-cols-2 gap-x-5 sm:gap-x-6 gap-y-3">
                 <div>
                   <label className="block text-sm font-semibold text-[#38495D] mb-1.5">

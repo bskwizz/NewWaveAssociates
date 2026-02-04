@@ -67,7 +67,7 @@ export default function IndustriesPage({ onNavigate }: IndustriesPageProps) {
     <div className="min-h-screen bg-gray-50">
       <PageHeader onNavigate={onNavigate} currentPage="industries" />
       <div className="pt-16 md:pt-24 pb-12 md:pb-16">
-      <div className="max-w-7xl mx-auto px-4 sm:px-6 w-full">
+      <div className="max-w-7xl mx-auto px-4 sm:px-5 md:px-6 lg:px-6 xl:px-8 w-full">
         <div className="max-w-4xl mb-12 md:mb-16">
           <h1 className="text-3xl sm:text-4xl md:text-5xl font-bold text-[#38495D] mb-4 md:mb-6">Industries</h1>
           <p className="text-base sm:text-lg md:text-xl text-gray-700 leading-relaxed">
@@ -75,7 +75,7 @@ export default function IndustriesPage({ onNavigate }: IndustriesPageProps) {
           </p>
         </div>
 
-        <div className="grid grid-cols-1 md:grid-cols-2 gap-6 md:gap-8">
+        <div className="grid grid-cols-1 md:grid-cols-2 gap-6 md:gap-6 lg:gap-7 xl:gap-8">
           {industries.map((industry, index) => (
             <div
               key={index}

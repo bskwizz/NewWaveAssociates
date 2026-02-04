@@ -103,8 +103,8 @@ export default function CapabilitiesPage({ onNavigate }: CapabilitiesPageProps) 
 
         <div className="relative flex items-start pt-8 md:pt-16">
           <div className="w-full">
-            <div className="max-w-7xl mx-auto px-4 sm:px-6 w-full">
-              <div className="grid grid-cols-1 lg:grid-cols-2 gap-8 lg:gap-12 items-start">
+            <div className="max-w-7xl mx-auto px-4 sm:px-5 md:px-6 lg:px-6 xl:px-8 w-full">
+              <div className="grid grid-cols-1 md:grid-cols-2 gap-6 sm:gap-8 md:gap-8 lg:gap-10 xl:gap-12 items-start">
                 <div className="text-left">
                   <div className="inline-block mb-2">
                     <div>

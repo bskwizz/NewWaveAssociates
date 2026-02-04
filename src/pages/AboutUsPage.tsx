@@ -66,9 +66,9 @@ export default function AboutUsPage({ onNavigate }: AboutUsPageProps) {
         </div>
 
         <div className="capabilities-hero__inner hero-content relative z-20 pt-6 sm:pt-8 lg:pt-[4rem]">
-          <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-6">
+          <div className="max-w-7xl mx-auto px-4 sm:px-5 md:px-6 lg:px-6 xl:px-8">
             <div className="w-full">
-              <div className="grid grid-cols-1 lg:grid-cols-2 gap-6 sm:gap-8 lg:gap-12 items-start mb-6 sm:mb-8 lg:mb-12">
+              <div className="grid grid-cols-1 md:grid-cols-2 gap-6 sm:gap-8 md:gap-8 lg:gap-10 xl:gap-12 items-start mb-6 sm:mb-8 lg:mb-10 xl:mb-12">
                 <div className="text-left">
                   <div className="inline-block mb-2">
                     <div>
@@ -86,7 +86,7 @@ export default function AboutUsPage({ onNavigate }: AboutUsPageProps) {
                 </div>
               </div>
 
-              <div className="grid grid-cols-1 md:grid-cols-2 gap-5 sm:gap-6 lg:gap-8 pb-8 sm:pb-12 lg:pb-16">
+              <div className="grid grid-cols-1 md:grid-cols-2 gap-5 sm:gap-6 md:gap-6 lg:gap-7 xl:gap-8 pb-8 sm:pb-10 md:pb-12 lg:pb-14 xl:pb-16">
                 {teamMembers.map((member, index) => (
                   <div
                     key={index}

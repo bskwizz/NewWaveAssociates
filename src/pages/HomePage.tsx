@@ -27,8 +27,8 @@ export default function HomePage({ onNavigate }: HomePageProps) {
 
         <div className="relative flex items-start pt-6 sm:pt-8 lg:pt-[2.5rem]">
           <div className="w-full flex flex-col">
-            <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-6">
-              <div className="grid grid-cols-1 lg:grid-cols-2 gap-6 sm:gap-8 lg:gap-12 items-center">
+            <div className="max-w-7xl mx-auto px-4 sm:px-5 md:px-6 lg:px-6 xl:px-8">
+              <div className="grid grid-cols-1 md:grid-cols-2 gap-6 sm:gap-8 md:gap-8 lg:gap-10 xl:gap-12 items-center">
                 <div id="hero-rotator" className="hero-rotator text-left order-1">
                   <div className="inline-block mb-2">
                     <div>
@@ -50,7 +50,7 @@ export default function HomePage({ onNavigate }: HomePageProps) {
                   <img
                     src="/new_wave_process_graphic_(1).png"
                     alt="New Wave Associates Process"
-                    className="w-full h-auto scale-110 sm:scale-115 lg:scale-125 origin-center reveal-animation"
+                    className="w-full h-auto scale-110 sm:scale-115 md:scale-110 lg:scale-115 xl:scale-125 origin-center reveal-animation"
                   />
                 </div>
               </div>

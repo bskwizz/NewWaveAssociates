@@ -371,8 +371,8 @@ export default function FlywheelPage({ onNavigate }: FlywheelPageProps) {
 
         <div className="relative flex items-center min-h-[50vh] md:min-h-[60vh] py-8 md:py-0">
           <div className="w-full">
-            <div className="max-w-7xl mx-auto px-4 sm:px-6 w-full">
-              <div className="grid grid-cols-1 lg:grid-cols-2 gap-8 md:gap-12 items-center">
+            <div className="max-w-7xl mx-auto px-4 sm:px-5 md:px-6 lg:px-6 xl:px-8 w-full">
+              <div className="grid grid-cols-1 md:grid-cols-2 gap-6 sm:gap-8 md:gap-8 lg:gap-10 xl:gap-12 items-center">
                 <div className="flywheel-hero__media relative">
                   <img
                     className="flywheel-hero__img opacity-100"
