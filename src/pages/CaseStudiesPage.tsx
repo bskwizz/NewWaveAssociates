@@ -25,7 +25,7 @@ export default function CaseStudiesPage({ onNavigate }: CaseStudiesPageProps) {
       <div ref={vantaRef} className="capabilities-hero" aria-label="Case Study">
         <div className="capabilities-hero__inner hero-content">
           <div className="max-w-7xl mx-auto px-6 py-20">
-            <div className={`transition-opacity duration-1000 ${fadeIn ? 'opacity-100' : 'opacity-0'}`}>
+            <div>
               <h1 className="text-5xl font-bold text-[#38495D] mb-6">
                 OUR EXPERIENCE
               </h1>

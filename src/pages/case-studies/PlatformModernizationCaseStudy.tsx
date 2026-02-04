@@ -34,7 +34,7 @@ export default function PlatformModernizationCaseStudy({ onNavigate }: PlatformM
           Back to Services
         </button>
 
-            <div className={`transition-opacity duration-1000 ${fadeIn ? 'opacity-100' : 'opacity-0'}`}>
+            <div>
               <h1 className="text-5xl font-bold text-[#38495D] mb-4">
                 On-Prem to Cloud Infrastructure
               </h1>

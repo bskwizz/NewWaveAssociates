@@ -33,7 +33,7 @@ export default function PMOCaseStudy({ onNavigate }: PMOCaseStudyProps) {
               <ArrowLeft size={20} />
               Back to Project Management Office
             </button>
-            <div className={`transition-opacity duration-1000 ${fadeIn ? 'opacity-100' : 'opacity-0'}`}>
+            <div>
               <h1 className="text-5xl font-bold text-[#38495D] mb-4">
                 Project Management Office Framework & Delivery Model Implementation
               </h1>

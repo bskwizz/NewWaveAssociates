@@ -34,7 +34,7 @@ export default function VerticalIncubationCaseStudy({ onNavigate }: VerticalIncu
           Back to Go-to-Market & Growth Optimization
         </button>
 
-            <div className={`transition-opacity duration-1000 ${fadeIn ? 'opacity-100' : 'opacity-0'}`}>
+            <div>
               <h1 className="text-5xl font-bold text-[#38495D] mb-4">
                 Vertical Incubation & Market Expansion
               </h1>

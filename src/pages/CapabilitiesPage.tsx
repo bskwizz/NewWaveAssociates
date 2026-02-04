@@ -116,9 +116,7 @@ export default function CapabilitiesPage({ onNavigate }: CapabilitiesPageProps) 
                       <div className="h-[2px] bg-[#f05e00]"></div>
                     </div>
                   </div>
-                  <div className={`space-y-3 md:space-y-4 text-left mt-4 md:mt-6 transition-opacity duration-1000 ${
-                    fadeIn ? 'opacity-100' : 'opacity-0'
-                  }`}>
+                  <div className="space-y-3 md:space-y-4 text-left mt-4 md:mt-6">
                     <p className="text-sm sm:text-base text-gray-700 leading-relaxed">
                       Our interim management services are tailored for organizations who require hands-on operators to make change happen.
                     </p>
@@ -136,9 +134,7 @@ export default function CapabilitiesPage({ onNavigate }: CapabilitiesPageProps) 
                 </div>
               </div>
 
-              <div className={`mt-8 md:mt-12 w-full transition-opacity duration-1000 ${
-                fadeIn ? 'opacity-100' : 'opacity-0'
-              }`}>
+              <div className="mt-8 md:mt-12 w-full">
                 <div className="overflow-x-auto px-2 sm:px-0">
                   <div className="inline-block min-w-full align-middle">
                     <div className="overflow-hidden shadow-2xl rounded-lg">

@@ -315,17 +315,13 @@ export default function OurServicesPage({ onNavigate }: OurServicesPageProps) {
               <div className="grid grid-cols-1 lg:grid-cols-2 gap-6 sm:gap-8 lg:gap-12 items-center">
                 <div className="flywheel-hero__media relative order-2 lg:order-1 mt-3 lg:mt-0">
                   <img
-                    className={`flywheel-hero__img transition-opacity duration-1000 ${
-                      fadeInImage ? 'opacity-100' : 'opacity-0'
-                    }`}
+                    className="flywheel-hero__img opacity-100"
                     style={{ maxWidth: '100%', width: '100%', margin: '0 auto' }}
                     src={`${import.meta.env.BASE_URL}final_new_wave_flywheel.pdf.png`}
                     alt="New Wave Flywheel"
                   />
             <div
-              className={`flywheel-overlay flywheel-overlay--gtm transition-opacity duration-1400 ${
-                fadeInGtm ? 'opacity-0' : 'opacity-100'
-              }`}
+              className="flywheel-overlay flywheel-overlay--gtm opacity-0"
             ></div>
             <a
               href="#gtm-strategy"
@@ -342,9 +338,7 @@ export default function OurServicesPage({ onNavigate }: OurServicesPageProps) {
               }}
             ></a>
             <div
-              className={`flywheel-overlay flywheel-overlay--cost transition-opacity duration-1400 ${
-                fadeInCost ? 'opacity-0' : 'opacity-100'
-              }`}
+              className="flywheel-overlay flywheel-overlay--cost opacity-0"
             ></div>
             <a
               href="#cost-optimization"
@@ -361,9 +355,7 @@ export default function OurServicesPage({ onNavigate }: OurServicesPageProps) {
               }}
             ></a>
             <div
-              className={`flywheel-overlay flywheel-overlay--ops transition-opacity duration-1400 ${
-                fadeInOps ? 'opacity-0' : 'opacity-100'
-              }`}
+              className="flywheel-overlay flywheel-overlay--ops opacity-0"
             ></div>
             <a
               href="#operational-efficiencies"

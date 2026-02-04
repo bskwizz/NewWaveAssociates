@@ -67,7 +67,7 @@ export default function AboutUsPage({ onNavigate }: AboutUsPageProps) {
 
         <div className="capabilities-hero__inner hero-content relative z-20 pt-6 sm:pt-8 lg:pt-[4rem]">
           <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-6">
-            <div className={`w-full transition-opacity duration-1000 ${fadeIn ? 'opacity-100' : 'opacity-0'}`}>
+            <div className="w-full">
               <div className="grid grid-cols-1 lg:grid-cols-2 gap-6 sm:gap-8 lg:gap-12 items-start mb-6 sm:mb-8 lg:mb-12">
                 <div className="text-left">
                   <div className="inline-block mb-2">
