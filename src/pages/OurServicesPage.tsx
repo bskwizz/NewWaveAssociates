@@ -285,7 +285,7 @@ export default function OurServicesPage({ onNavigate }: OurServicesPageProps) {
 
   return (
     <div>
-      <div id="our-services-hero" ref={vantaRef} className="flywheel-hero fw-glow" aria-label="New Wave Flywheel" style={{ minHeight: '100vh', position: 'relative' }}>
+      <div id="our-services-hero" ref={vantaRef} className="flywheel-hero fw-glow" aria-label="New Wave Flywheel" style={{ minHeight: '100vh', position: 'relative', overflow: 'visible' }}>
         <div className="absolute inset-0 opacity-[0.12] pointer-events-none" style={{
           backgroundImage: `radial-gradient(1px 1px at 20% 30%, #38495d 100%, transparent 0),
                             radial-gradient(1px 1px at 70% 60%, #01a3db 100%, transparent 0),
