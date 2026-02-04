@@ -64,6 +64,9 @@ export default function HomePage({ onNavigate }: HomePageProps) {
                 '/neweratechnology.png',
                 '/trustage.png',
                 '/tenet_health_logo.png',
+                '/hydrochem_logo.png',
+                '/netsuite_logo.png',
+                '/sentinel_logo.png',
               ]} />
             </div>
           </div>
