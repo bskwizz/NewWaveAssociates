@@ -14,9 +14,14 @@ export default function InsightsPage({ onNavigate }: InsightsPageProps) {
 
   useEffect(() => {
     async function loadInsights() {
-      const data = await getAllPublishedInsights();
-      setInsights(data);
-      setLoading(false);
+      try {
+        const data = await getAllPublishedInsights();
+        setInsights(data);
+      } catch (e) {
+        console.error('Failed to load insights:', e);
+      } finally {
+        setLoading(false);
+      }
     }
     loadInsights();
   }, []);
@@ -37,7 +42,7 @@ export default function InsightsPage({ onNavigate }: InsightsPageProps) {
           backgroundRepeat: 'repeat'
         }}></div>
 
-        <PageHeader onNavigate={onNavigate} currentPage="insights" />
+        <PageHeader />
 
         <div className="relative pt-6 sm:pt-8 lg:pt-[2.5rem] pb-16">
           <div className="max-w-7xl mx-auto px-4 sm:px-5 md:px-6 lg:px-6 xl:px-8">

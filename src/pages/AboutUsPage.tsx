@@ -49,7 +49,7 @@ export default function AboutUsPage({ onNavigate }: AboutUsPageProps) {
   return (
     <div>
       <div ref={vantaRef} className="capabilities-hero relative" aria-label="About Us">
-        <PageHeader onNavigate={onNavigate} currentPage="about-us" />
+        <PageHeader />
 
         <div className="absolute top-[16px] sm:top-[24px] left-0 right-0 w-full pointer-events-none z-30 lg:top-[256px] lg:-translate-y-1/2">
           <img

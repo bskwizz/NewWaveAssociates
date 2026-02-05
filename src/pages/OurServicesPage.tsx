@@ -295,7 +295,7 @@ export default function OurServicesPage({ onNavigate }: OurServicesPageProps) {
         }}></div>
 
         <div className="flex-1 flex flex-col">
-          <PageHeader onNavigate={onNavigate} currentPage="our-services" />
+          <PageHeader />
 
           <div className="relative flex items-center flex-1 py-4 sm:py-6 lg:min-h-0 lg:py-0">
           <div className="w-full">

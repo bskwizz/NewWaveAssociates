@@ -359,7 +359,7 @@ export default function FlywheelPage({ onNavigate }: FlywheelPageProps) {
           backgroundRepeat: 'repeat'
         }}></div>
 
-        <PageHeader onNavigate={onNavigate} currentPage="flywheel" />
+        <PageHeader />
 
         <div className="absolute inset-x-0" style={{ bottom: '0', maxHeight: '300px', height: '30vh', pointerEvents: 'none' }}>
           <img

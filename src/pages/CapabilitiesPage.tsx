@@ -99,7 +99,7 @@ export default function CapabilitiesPage({ onNavigate }: CapabilitiesPageProps) 
           backgroundRepeat: 'repeat'
         }}></div>
 
-        <PageHeader onNavigate={onNavigate} currentPage="capabilities" />
+        <PageHeader />
 
         <div className="relative flex items-start pt-8 md:pt-16">
           <div className="w-full">

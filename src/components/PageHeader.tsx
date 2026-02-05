@@ -1,63 +1,83 @@
 import { useState } from 'react';
+import { Link, useLocation } from 'react-router-dom';
 import { Menu, X } from 'lucide-react';
 
-interface PageHeaderProps {
-  onNavigate: (page: string) => void;
-  currentPage?: string;
-}
+const navItems = [
+  {
+    label: 'Our Services',
+    path: '/services',
+    isActive: (p: string) => p === '/services',
+  },
+  {
+    label: 'Case Studies',
+    path: '/case-studies',
+    isActive: (p: string) =>
+      p === '/case-studies' ||
+      p.startsWith('/case-studies/') ||
+      p.startsWith('/case-study-') ||
+      p.startsWith('/hub-'),
+  },
+  {
+    label: 'Insights',
+    path: '/insights',
+    isActive: (p: string) => p.startsWith('/insights'),
+  },
+  {
+    label: 'About Us',
+    path: '/about-us',
+    isActive: (p: string) => p === '/about-us',
+  },
+  {
+    label: 'Contact Us',
+    path: '/contact-us',
+    isActive: (p: string) => p === '/contact-us',
+  },
+];
 
-export default function PageHeader({ onNavigate, currentPage }: PageHeaderProps) {
+export default function PageHeader() {
   const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
-
-  const navItems = [
-    { label: 'Our Services', page: 'our-services' },
-    { label: 'Case Studies', page: 'case-studies' },
-    { label: 'Insights', page: 'insights' },
-    { label: 'About Us', page: 'about-us' },
-    { label: 'Contact Us', page: 'contact-us' },
-  ];
+  const { pathname } = useLocation();
 
   return (
     <div className="w-full py-4 sm:py-6 lg:py-8 relative z-50">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-6">
         <div className="flex items-center justify-between">
-          <button onClick={() => onNavigate('home')} className="hover:opacity-80 transition-opacity">
+          <Link to="/" className="hover:opacity-80 transition-opacity">
             <img
               src="/new_wave_associates_horizontal.png"
               alt="New Wave Associates"
               className="h-[80px] sm:h-[100px] lg:h-[126px] w-auto"
             />
-          </button>
+          </Link>
 
           <div className="hidden lg:flex items-center gap-8 xl:gap-12">
             {navItems.map((item) => {
-              const isContactUs = item.page === 'contact-us';
-              const isActive = currentPage === item.page ||
-                              (item.page === 'insights' && currentPage?.startsWith('insights/'));
+              const active = item.isActive(pathname);
+              const isContactUs = item.path === '/contact-us';
 
               if (isContactUs) {
                 return (
-                  <button
-                    key={item.page}
-                    onClick={() => onNavigate(item.page)}
+                  <Link
+                    key={item.path}
+                    to={item.path}
                     className="px-5 py-2.5 bg-[#f05e00] text-white text-sm font-semibold rounded-md hover:bg-[#d94f00] transition-all shadow-sm hover:shadow-md"
                   >
                     {item.label}
-                  </button>
+                  </Link>
                 );
               }
 
               return (
-                <button
-                  key={item.page}
-                  onClick={() => onNavigate(item.page)}
+                <Link
+                  key={item.path}
+                  to={item.path}
                   className={`text-sm font-medium transition-all hover:text-[#01A3DB] relative group ${
-                    isActive ? 'text-[#01A3DB]' : 'text-[#38495D]'
+                    active ? 'text-[#01A3DB]' : 'text-[#38495D]'
                   }`}
                 >
                   {item.label}
                   <span className="absolute -bottom-1 left-0 w-0 h-0.5 bg-[#01A3DB] transition-all group-hover:w-full"></span>
-                </button>
+                </Link>
               );
             })}
           </div>
@@ -73,38 +93,33 @@ export default function PageHeader({ onNavigate, currentPage }: PageHeaderProps)
         {mobileMenuOpen && (
           <div className="lg:hidden mt-4 pb-4 flex flex-col gap-3 sm:gap-4 bg-white/95 backdrop-blur-sm rounded-lg p-4">
             {navItems.map((item) => {
-              const isContactUs = item.page === 'contact-us';
-              const isActive = currentPage === item.page ||
-                              (item.page === 'insights' && currentPage?.startsWith('insights/'));
+              const active = item.isActive(pathname);
+              const isContactUs = item.path === '/contact-us';
 
               if (isContactUs) {
                 return (
-                  <button
-                    key={item.page}
-                    onClick={() => {
-                      onNavigate(item.page);
-                      setMobileMenuOpen(false);
-                    }}
+                  <Link
+                    key={item.path}
+                    to={item.path}
+                    onClick={() => setMobileMenuOpen(false)}
                     className="px-5 py-2.5 bg-[#f05e00] text-white text-sm font-semibold rounded-md hover:bg-[#d94f00] transition-all shadow-sm hover:shadow-md"
                   >
                     {item.label}
-                  </button>
+                  </Link>
                 );
               }
 
               return (
-                <button
-                  key={item.page}
-                  onClick={() => {
-                    onNavigate(item.page);
-                    setMobileMenuOpen(false);
-                  }}
+                <Link
+                  key={item.path}
+                  to={item.path}
+                  onClick={() => setMobileMenuOpen(false)}
                   className={`text-left text-sm font-medium transition-colors hover:text-[#01A3DB] ${
-                    isActive ? 'text-[#01A3DB]' : 'text-[#38495D]'
+                    active ? 'text-[#01A3DB]' : 'text-[#38495D]'
                   }`}
                 >
                   {item.label}
-                </button>
+                </Link>
               );
             })}
           </div>

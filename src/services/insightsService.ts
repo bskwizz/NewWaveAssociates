@@ -18,49 +18,87 @@ export interface Insight {
   updated_at: string;
 }
 
-export async function getAllPublishedInsights(): Promise<Insight[]> {
-  const { data, error } = await supabase
-    .from('insights')
-    .select('*')
-    .eq('published', true)
-    .order('publish_date', { ascending: false });
-
-  if (error) {
-    console.error('Error fetching insights:', error);
+async function fetchFallbackInsights(): Promise<Insight[]> {
+  try {
+    const res = await fetch('/insights.json');
+    if (!res.ok) return [];
+    const json: Insight[] = await res.json();
+    return json
+      .filter((i) => i.published)
+      .sort(
+        (a, b) =>
+          new Date(b.publish_date).getTime() -
+          new Date(a.publish_date).getTime(),
+      );
+  } catch {
     return [];
   }
-
-  return data || [];
 }
 
-export async function getInsightBySlug(slug: string): Promise<Insight | null> {
-  const { data, error } = await supabase
-    .from('insights')
-    .select('*')
-    .eq('slug', slug)
-    .eq('published', true)
-    .maybeSingle();
+export async function getAllPublishedInsights(): Promise<Insight[]> {
+  try {
+    const { data, error } = await supabase
+      .from('insights')
+      .select('*')
+      .eq('published', true)
+      .order('publish_date', { ascending: false });
 
-  if (error) {
-    console.error('Error fetching insight:', error);
-    return null;
+    if (!error && data && data.length > 0) {
+      return data;
+    }
+  } catch (e) {
+    console.error('Supabase fetch failed:', e);
   }
 
-  return data;
+  return fetchFallbackInsights();
+}
+
+export async function getInsightBySlug(
+  slug: string,
+): Promise<Insight | null> {
+  try {
+    const { data, error } = await supabase
+      .from('insights')
+      .select('*')
+      .eq('slug', slug)
+      .eq('published', true)
+      .maybeSingle();
+
+    if (!error && data) {
+      return data;
+    }
+  } catch (e) {
+    console.error('Supabase fetch failed:', e);
+  }
+
+  try {
+    const all = await fetchFallbackInsights();
+    return all.find((i) => i.slug === slug) ?? null;
+  } catch {
+    return null;
+  }
 }
 
 export async function getFeaturedInsight(): Promise<Insight | null> {
-  const { data, error } = await supabase
-    .from('insights')
-    .select('*')
-    .eq('published', true)
-    .eq('featured', true)
-    .maybeSingle();
+  try {
+    const { data, error } = await supabase
+      .from('insights')
+      .select('*')
+      .eq('published', true)
+      .eq('featured', true)
+      .maybeSingle();
 
-  if (error) {
-    console.error('Error fetching featured insight:', error);
-    return null;
+    if (!error && data) {
+      return data;
+    }
+  } catch (e) {
+    console.error('Supabase fetch failed:', e);
   }
 
-  return data;
+  try {
+    const all = await fetchFallbackInsights();
+    return all.find((i) => i.featured) ?? null;
+  } catch {
+    return null;
+  }
 }

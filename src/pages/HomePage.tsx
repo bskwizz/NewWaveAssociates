@@ -22,7 +22,7 @@ export default function HomePage({ onNavigate }: HomePageProps) {
           backgroundRepeat: 'repeat'
         }}></div>
 
-        <PageHeader onNavigate={onNavigate} currentPage="home" />
+        <PageHeader />
 
         <div className="relative flex items-start pt-8 md:pt-16">
           <div className="w-full flex flex-col">

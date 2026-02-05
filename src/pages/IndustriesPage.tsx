@@ -65,7 +65,7 @@ const industries = [
 export default function IndustriesPage({ onNavigate }: IndustriesPageProps) {
   return (
     <div className="min-h-screen bg-gray-50">
-      <PageHeader onNavigate={onNavigate} currentPage="industries" />
+      <PageHeader />
       <div className="pt-16 md:pt-24 pb-12 md:pb-16">
       <div className="max-w-7xl mx-auto px-4 sm:px-5 md:px-6 lg:px-6 xl:px-8 w-full">
         <div className="max-w-4xl mb-12 md:mb-16">

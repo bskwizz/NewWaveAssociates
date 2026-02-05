@@ -33,7 +33,7 @@ export default function ContactUsPage({ onNavigate }: ContactUsPageProps) {
 
   return (
     <div className="min-h-screen bg-gray-50">
-      <PageHeader onNavigate={onNavigate} currentPage="contact-us" />
+      <PageHeader />
       <div className="pt-12 sm:pt-14 lg:pt-16 pb-12 sm:pb-14 lg:pb-16">
         <div className="max-w-7xl mx-auto px-4 sm:px-5 md:px-6 lg:px-6 xl:px-8">
           <div className="flex flex-col md:flex-row gap-8 sm:gap-8 md:gap-8 lg:gap-10 xl:gap-12 items-start">

@@ -15,9 +15,14 @@ export default function InsightDetailPage({ onNavigate, slug }: InsightDetailPag
 
   useEffect(() => {
     async function loadInsight() {
-      const data = await getInsightBySlug(slug);
-      setInsight(data);
-      setLoading(false);
+      try {
+        const data = await getInsightBySlug(slug);
+        setInsight(data);
+      } catch (e) {
+        console.error('Failed to load insight:', e);
+      } finally {
+        setLoading(false);
+      }
     }
     loadInsight();
   }, [slug]);
@@ -26,7 +31,7 @@ export default function InsightDetailPage({ onNavigate, slug }: InsightDetailPag
     return (
       <div className="overflow-x-clip">
         <div className="min-h-screen bg-gray-50">
-          <PageHeader onNavigate={onNavigate} currentPage="insights" />
+          <PageHeader />
           <div className="max-w-4xl mx-auto px-4 pt-32 pb-16">
             <p className="text-center text-gray-600">Loading article...</p>
           </div>
@@ -39,7 +44,7 @@ export default function InsightDetailPage({ onNavigate, slug }: InsightDetailPag
     return (
       <div className="overflow-x-clip">
         <div className="min-h-screen bg-gray-50">
-          <PageHeader onNavigate={onNavigate} currentPage="insights" />
+          <PageHeader />
           <div className="max-w-4xl mx-auto px-4 pt-32 pb-16">
             <p className="text-center text-gray-600 mb-6">Article not found</p>
             <div className="text-center">
@@ -122,7 +127,7 @@ export default function InsightDetailPage({ onNavigate, slug }: InsightDetailPag
       `}</style>
 
       <div className="min-h-screen bg-white">
-        <PageHeader onNavigate={onNavigate} currentPage="insights" />
+        <PageHeader />
 
         <article className="max-w-5xl mx-auto px-4 sm:px-6 lg:px-8 pt-12 sm:pt-16 lg:pt-24 pb-16">
           <button
