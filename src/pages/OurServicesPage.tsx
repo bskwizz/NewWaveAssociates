@@ -285,7 +285,7 @@ export default function OurServicesPage({ onNavigate }: OurServicesPageProps) {
 
   return (
     <div>
-      <div id="our-services-hero" ref={vantaRef} className="flywheel-hero fw-glow flex flex-col pb-16 lg:pb-[200px] lg:min-h-screen" aria-label="New Wave Flywheel" style={{ position: 'relative', overflow: 'visible' }}>
+      <div id="our-services-hero" ref={vantaRef} className="flywheel-hero fw-glow flex flex-col min-h-[100svh] pb-8 overflow-hidden lg:pb-[200px] lg:min-h-screen lg:overflow-visible" aria-label="New Wave Flywheel" style={{ position: 'relative' }}>
         <div className="absolute inset-0 opacity-[0.12] pointer-events-none" style={{
           backgroundImage: `radial-gradient(1px 1px at 20% 30%, #38495d 100%, transparent 0),
                             radial-gradient(1px 1px at 70% 60%, #01a3db 100%, transparent 0),
@@ -297,7 +297,7 @@ export default function OurServicesPage({ onNavigate }: OurServicesPageProps) {
         <div className="flex-1 flex flex-col">
           <PageHeader onNavigate={onNavigate} currentPage="our-services" />
 
-          <div className="relative flex items-center flex-1 py-8 sm:py-12 lg:min-h-0 lg:py-0">
+          <div className="relative flex items-center flex-1 py-4 sm:py-6 lg:min-h-0 lg:py-0">
           <div className="w-full">
             <div className="max-w-7xl mx-auto px-4 sm:px-5 md:px-6 lg:px-6 xl:px-8 w-full">
               <div className="grid grid-cols-1 md:grid-cols-2 gap-6 sm:gap-8 md:gap-8 lg:gap-10 xl:gap-12 items-center">
@@ -361,9 +361,9 @@ export default function OurServicesPage({ onNavigate }: OurServicesPageProps) {
             ></a>
                 </div>
                 <div className="hero-rotator text-left order-1 lg:order-2">
-                  <div className="inline-block mb-2">
+                  <div className="inline-block mb-1 lg:mb-2">
                     <div>
-                      <p className="text-black text-xs sm:text-sm lg:text-base font-bold uppercase mb-2 animate-fade-in" style={{
+                      <p className="text-black text-xs sm:text-sm lg:text-base font-bold uppercase mb-1 lg:mb-2 animate-fade-in" style={{
                         letterSpacing: '0.2em'
                       }}>
                         Interim<br />Leadership Practice Areas
@@ -372,7 +372,7 @@ export default function OurServicesPage({ onNavigate }: OurServicesPageProps) {
                     </div>
                   </div>
 
-                  <div className="space-y-3 sm:space-y-4 lg:space-y-6 text-left max-w-xl mt-4 sm:mt-5 lg:mt-6">
+                  <div className="space-y-2 sm:space-y-3 lg:space-y-6 text-left max-w-xl mt-3 sm:mt-4 lg:mt-6">
                     <p className="text-gray-700 text-sm sm:text-base leading-relaxed">
                       We embed in the trenches with leaders to achieve specific, pragmatic goals quickly.
                     </p>
@@ -381,7 +381,7 @@ export default function OurServicesPage({ onNavigate }: OurServicesPageProps) {
                       Our interim leadership services are informed by decades of combined experience; our entire team has served as director, VP, and C-level executives in house.
                     </p>
 
-                    <p className="text-gray-700 text-sm sm:text-base leading-relaxed">
+                    <p className="text-gray-700 text-sm sm:text-base leading-relaxed hidden lg:block">
                       We modernize core business operations through process redesign, data integration, post-merger integration, and performance governance to scale cross-functional execution at speed and quality.
                     </p>
                   </div>
@@ -393,10 +393,7 @@ export default function OurServicesPage({ onNavigate }: OurServicesPageProps) {
         </div>
 
         <div
-          className="mt-auto lg:absolute left-0 right-0 lg:bottom-0 lg:mt-20 lg:translate-y-16 lg:left-1/2 lg:right-auto lg:-translate-x-1/2 lg:w-screen lg:-bottom-8 max-h-[200px] lg:max-h-[600px] lg:h-[60vh] pointer-events-none z-10 lg:overflow-visible lg:bg-no-repeat lg:bg-bottom lg:bg-center lg:bg-[length:100%_auto]"
-          style={{
-            backgroundImage: `url(${import.meta.env.BASE_URL}wave_graphic_for_our_services_page.png)`,
-          }}
+          className="mt-auto lg:absolute left-0 right-0 lg:bottom-0 lg:mt-20 lg:translate-y-16 lg:left-1/2 lg:right-auto lg:-translate-x-1/2 lg:w-screen lg:-bottom-8 max-h-[200px] lg:max-h-[600px] lg:h-[60vh] pointer-events-none z-10 lg:overflow-visible bg-none lg:bg-[url('/wave_graphic_for_our_services_page.png')] lg:bg-no-repeat lg:bg-bottom lg:bg-center lg:bg-[length:100%_auto]"
         >
           <img
             src={`${import.meta.env.BASE_URL}wave_graphic_for_our_services_page.png`}
@@ -408,6 +405,9 @@ export default function OurServicesPage({ onNavigate }: OurServicesPageProps) {
 
       <div className="bg-gray-50 pt-5 sm:pt-6 lg:pt-32">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 pb-8 sm:pb-12 lg:pb-16 w-full">
+          <p className="text-gray-700 text-sm sm:text-base leading-relaxed mb-8 lg:hidden">
+            We modernize core business operations through process redesign, data integration, post-merger integration, and performance governance to scale cross-functional execution at speed and quality.
+          </p>
           {renderSection(gtmStrategyContent)}
           {renderSection(costOptimizationContent)}
           {renderSection(operationalEfficienciesContent)}
