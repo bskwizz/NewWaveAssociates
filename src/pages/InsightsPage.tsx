@@ -66,14 +66,14 @@ export default function InsightsPage({ onNavigate }: InsightsPageProps) {
               <div className="space-y-12">
                 <div className="bg-transparent rounded-lg overflow-hidden hover:bg-white hover:shadow-xl transition-all duration-300 group/card">
                   <div className="flex flex-col md:flex-row">
-                    <div className="md:w-2/5 lg:w-1/3 p-6 sm:p-8 flex items-start">
+                    <div className="md:w-1/2 pl-6 pt-6 pb-6 sm:pl-8 sm:pt-8 sm:pb-8 flex items-start">
                       <img
                         src="/jenga_blocks_fallen.png"
                         alt="Jenga blocks fallen"
                         className="w-full h-auto object-cover rounded"
                       />
                     </div>
-                    <div className="md:w-3/5 lg:w-2/3 p-8 sm:p-10 lg:p-12 flex flex-col">
+                    <div className="md:w-1/2 p-8 sm:p-10 lg:p-12 flex flex-col">
                       <p className="text-xs text-black mb-3">Article</p>
                       <div className="mb-4">
                         <span className="inline-block px-4 py-1.5 bg-[#01A3DB] text-white text-xs font-semibold rounded-full uppercase tracking-wide">
