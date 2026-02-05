@@ -45,7 +45,7 @@ export default function HomePage({ onNavigate }: HomePageProps) {
                     </p>
                   </div>
                 </div>
-                <div className="relative overflow-visible order-2">
+                <div className="relative overflow-visible order-2 lg:-mt-8">
                   <img
                     src="/new_wave_process_graphic_(1).png"
                     alt="New Wave Associates Process"
