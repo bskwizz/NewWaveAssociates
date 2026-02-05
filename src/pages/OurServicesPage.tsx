@@ -301,7 +301,7 @@ export default function OurServicesPage({ onNavigate }: OurServicesPageProps) {
           <div className="w-full">
             <div className="max-w-7xl mx-auto px-4 sm:px-5 md:px-6 lg:px-6 xl:px-8 w-full">
               <div className="grid grid-cols-1 md:grid-cols-2 gap-6 sm:gap-8 md:gap-8 lg:gap-10 xl:gap-12 items-center">
-                <div className="flywheel-hero__media relative order-2 md:order-1 mt-8 md:mt-0">
+                <div className="flywheel-hero__media relative order-2 md:order-1 mt-10 md:mt-0">
                   <img
                     className="flywheel-hero__img opacity-100"
                     style={{ maxWidth: '100%', width: '100%', margin: '0 auto' }}
