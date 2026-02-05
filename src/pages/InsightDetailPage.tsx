@@ -59,23 +59,85 @@ export default function InsightDetailPage({ onNavigate, slug }: InsightDetailPag
 
   return (
     <div className="overflow-x-clip">
-      <div className="min-h-screen bg-gray-50">
+      <style>{`
+        .editorial-article p:first-of-type::first-letter {
+          float: left;
+          font-size: 4.5rem;
+          line-height: 3.5rem;
+          padding-right: 0.125rem;
+          margin-top: 0.125rem;
+          font-weight: 700;
+          color: #000;
+          font-family: "Segoe UI", system-ui, sans-serif;
+        }
+
+        @media (max-width: 640px) {
+          .editorial-article p:first-of-type::first-letter {
+            font-size: 3.5rem;
+            line-height: 2.75rem;
+          }
+        }
+
+        .editorial-article h2 {
+          font-size: 1.5rem;
+          font-weight: 700;
+          color: #000;
+          margin-top: 3rem;
+          margin-bottom: 1.5rem;
+          font-family: "Segoe UI", system-ui, sans-serif;
+          letter-spacing: -0.015em;
+        }
+
+        .editorial-article p {
+          font-size: 1.125rem;
+          line-height: 1.8;
+          color: #000;
+          margin-bottom: 1.5rem;
+          max-width: 65ch;
+          font-family: "Segoe UI", system-ui, sans-serif;
+        }
+
+        .editorial-article ul {
+          margin: 1.5rem 0;
+          padding-left: 1.5rem;
+          max-width: 65ch;
+        }
+
+        .editorial-article li {
+          font-size: 1.125rem;
+          line-height: 1.8;
+          color: #000;
+          margin-bottom: 0.75rem;
+          font-family: "Segoe UI", system-ui, sans-serif;
+        }
+
+        .editorial-article li::marker {
+          color: #000;
+        }
+
+        .editorial-article strong {
+          font-weight: 600;
+          color: #000;
+        }
+      `}</style>
+
+      <div className="min-h-screen bg-white">
         <PageHeader onNavigate={onNavigate} currentPage="insights" />
 
         <article className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 pt-12 sm:pt-16 lg:pt-24 pb-16">
           <button
             onClick={() => onNavigate('insights')}
-            className="inline-flex items-center gap-2 text-[#01A3DB] hover:text-[#0088b8] font-semibold mb-8 transition-colors"
+            className="inline-flex items-center gap-2 text-[#01A3DB] hover:text-[#0088b8] font-semibold mb-12 transition-colors"
           >
             <ArrowLeft size={20} />
             Back to Insights
           </button>
 
-          <h1 className="text-3xl sm:text-4xl lg:text-5xl font-bold text-black mb-6 leading-tight" style={{ fontFamily: '"Segoe UI", system-ui, sans-serif' }}>
+          <h1 className="text-3xl sm:text-4xl lg:text-5xl font-bold text-black mb-8 leading-[1.1] max-w-[90%]" style={{ fontFamily: '"Segoe UI", system-ui, sans-serif' }}>
             {insight.title}
           </h1>
 
-          <div className="flex items-center gap-4 text-sm text-black mb-12 pb-8 border-b">
+          <div className="flex items-center gap-4 text-sm text-black mb-12 pb-10 border-b border-gray-300">
             <span className="font-semibold">{insight.author}</span>
             <span>•</span>
             <span>{new Date(insight.publish_date).toLocaleDateString('en-US', { month: 'long', day: 'numeric', year: 'numeric' })}</span>
@@ -84,16 +146,13 @@ export default function InsightDetailPage({ onNavigate, slug }: InsightDetailPag
           </div>
 
           <div
-            className="prose prose-lg max-w-none prose-headings:text-black prose-headings:font-bold prose-h2:text-2xl prose-h2:mt-12 prose-h2:mb-6 prose-p:text-black prose-p:leading-relaxed prose-p:mb-6 prose-ul:my-6 prose-li:text-black prose-li:mb-2"
-            style={{ fontFamily: '"Segoe UI", system-ui, sans-serif' }}
+            className="editorial-article"
             dangerouslySetInnerHTML={{ __html: insight.content }}
           />
 
-          <div className="mt-16 pt-12 border-t border-gray-200">
-            <h3 className="text-xl font-bold text-black mb-4" style={{ fontFamily: '"Segoe UI", system-ui, sans-serif' }}>About the Author</h3>
-            <div className="bg-gray-50 rounded-lg p-6">
-              <p className="text-black leading-relaxed" style={{ fontFamily: '"Segoe UI", system-ui, sans-serif' }}>{insight.author_bio}</p>
-            </div>
+          <div className="mt-20 pt-12 border-t border-gray-300">
+            <h3 className="text-xl font-bold text-black mb-6" style={{ fontFamily: '"Segoe UI", system-ui, sans-serif' }}>About the Author</h3>
+            <p className="text-black leading-[1.8] text-lg max-w-[65ch]" style={{ fontFamily: '"Segoe UI", system-ui, sans-serif' }}>{insight.author_bio}</p>
           </div>
         </article>
       </div>
