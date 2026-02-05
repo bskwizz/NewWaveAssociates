@@ -51,15 +51,15 @@ export default function AboutUsPage({ onNavigate }: AboutUsPageProps) {
       <div ref={vantaRef} className="capabilities-hero relative" aria-label="About Us">
         <PageHeader onNavigate={onNavigate} currentPage="about-us" />
 
-        <div className="absolute top-[180px] sm:top-[200px] left-0 right-0 w-full pointer-events-none z-30 lg:top-[256px]">
+        <div className="absolute top-[100px] sm:top-[120px] left-0 right-0 w-full pointer-events-none z-30 lg:top-[256px] lg:-translate-y-1/2">
           <img
             src={`${import.meta.env.BASE_URL}wave_graphic_2.0.png`}
             alt=""
-            className="w-full h-auto block lg:-translate-y-1/2"
+            className="w-full h-auto block"
           />
         </div>
 
-        <div className="capabilities-hero__inner hero-content relative z-20 pt-6 sm:pt-8 lg:pt-[4rem]">
+        <div className="capabilities-hero__inner hero-content relative z-20 pt-[140px] sm:pt-[160px] lg:pt-[4rem]">
           <div className="max-w-7xl mx-auto px-4 sm:px-5 md:px-6 lg:px-6 xl:px-8">
             <div className="w-full">
               <div className="grid grid-cols-1 md:grid-cols-2 gap-6 sm:gap-8 md:gap-8 lg:gap-10 xl:gap-12 items-start mb-6 sm:mb-8 lg:mb-10 xl:mb-12">
