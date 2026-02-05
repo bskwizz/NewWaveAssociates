@@ -173,7 +173,7 @@ export default function AboutUsPage({ onNavigate }: AboutUsPageProps) {
                 <p className="text-sm sm:text-base text-gray-700 leading-relaxed mt-4 sm:mt-5 lg:mt-6 mb-6 sm:mb-8 lg:mb-10">
                   We exist for operators navigating complexity. These are moments where important work stalls, ownership is fragmented, and real value is left on the table. Our role is not to advise from the sidelines, but to step in, take responsibility, and help teams move again.
                   <br /><br />
-                  Our values reflect how we show up, how we make decisions, and how we earn the right to be trusted inside our clients' businesses.
+                  <span className="font-semibold">Our values</span> reflect how we show up, how we make decisions, and how we earn the right to be trusted inside our clients' businesses.
                 </p>
               </div>
 
@@ -211,15 +211,6 @@ export default function AboutUsPage({ onNavigate }: AboutUsPageProps) {
                   </h3>
                   <p className="text-sm sm:text-base text-gray-700 leading-relaxed">
                     Trust is built through consistent, honest execution, not credentials or promises. We do what we say we will do, communicate openly, and make progress visible.
-                  </p>
-                </div>
-
-                <div className="bg-white border border-gray-200 rounded-lg p-6 sm:p-8 shadow-lg">
-                  <h3 className="text-base sm:text-lg font-bold text-[#38495D] tracking-[0.15em] uppercase mb-3 sm:mb-4">
-                    How We Work
-                  </h3>
-                  <p className="text-sm sm:text-base text-gray-700 leading-relaxed">
-                    We embed directly into our clients' organizations and partner with internal teams to drive execution across critical initiatives. We bring experienced operators into moments that matter, helping unblock decisions, align teams, and convert inefficiency into measurable results.
                   </p>
                 </div>
               </div>
