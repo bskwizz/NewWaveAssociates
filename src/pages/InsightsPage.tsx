@@ -47,7 +47,7 @@ export default function InsightsPage({ onNavigate }: InsightsPageProps) {
               }}>
                 Insights
               </p>
-              <h1 className="text-2xl sm:text-3xl lg:text-4xl font-bold text-[#38495D] mb-4">
+              <h1 className="text-2xl sm:text-3xl lg:text-4xl font-bold text-black mb-4">
                 Practical thinking for operators leading change
               </h1>
               <button
@@ -74,8 +74,8 @@ export default function InsightsPage({ onNavigate }: InsightsPageProps) {
                       />
                     </div>
                     <div className="md:w-3/5 lg:w-2/3 p-8 sm:p-10 lg:p-12">
+                      <p className="text-xs text-black mb-3">Article</p>
                       <div className="mb-4">
-                        <p className="text-xs text-gray-600 mb-2">Article</p>
                         <span className="inline-block px-4 py-1.5 bg-[#01A3DB] text-white text-xs font-semibold rounded-full uppercase tracking-wide">
                           {insights[0].category}
                         </span>
@@ -84,11 +84,11 @@ export default function InsightsPage({ onNavigate }: InsightsPageProps) {
                         onClick={() => onNavigate(`insights/${insights[0].slug}`)}
                         className="text-left mb-4 w-full group/title"
                       >
-                        <h2 className="text-2xl sm:text-3xl lg:text-4xl font-bold text-[#38495D] group-hover/title:text-[#01A3DB] group-hover/title:underline leading-tight transition-colors inline-block">
+                        <h2 className="text-2xl sm:text-3xl lg:text-4xl font-bold text-black group-hover/title:text-[#01A3DB] group-hover/title:underline leading-tight transition-colors inline-block">
                           {insights[0].title.split('Avoided')[0]}Avoided<ChevronRight className="inline-block ml-2 mb-1 text-[#f05e00]" size={32} />
                         </h2>
                       </button>
-                      <p className="text-gray-700 text-base sm:text-lg leading-relaxed">
+                      <p className="text-black text-base sm:text-lg leading-relaxed">
                         <span className="italic">{new Date(insights[0].publish_date).toLocaleDateString('en-US', { month: 'long', day: 'numeric', year: 'numeric' })} - </span>
                         We are living in a project-based economy, where nearly all meaningful change today is...
                       </p>
