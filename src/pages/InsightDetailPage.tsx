@@ -124,7 +124,7 @@ export default function InsightDetailPage({ onNavigate, slug }: InsightDetailPag
       <div className="min-h-screen bg-white">
         <PageHeader onNavigate={onNavigate} currentPage="insights" />
 
-        <article className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 pt-12 sm:pt-16 lg:pt-24 pb-16">
+        <article className="max-w-5xl mx-auto px-4 sm:px-6 lg:px-8 pt-12 sm:pt-16 lg:pt-24 pb-16">
           <button
             onClick={() => onNavigate('insights')}
             className="inline-flex items-center gap-2 text-[#01A3DB] hover:text-[#0088b8] font-semibold mb-12 transition-colors"
@@ -137,7 +137,7 @@ export default function InsightDetailPage({ onNavigate, slug }: InsightDetailPag
             {insight.title}
           </h1>
 
-          <div className="flex items-center gap-4 text-sm text-black mb-12 pb-10 border-b border-gray-300">
+          <div className="flex items-center gap-4 text-sm text-black mb-10" style={{ fontFamily: '"Segoe UI", system-ui, sans-serif' }}>
             <span className="font-semibold">{insight.author}</span>
             <span>•</span>
             <span>{new Date(insight.publish_date).toLocaleDateString('en-US', { month: 'long', day: 'numeric', year: 'numeric' })}</span>
@@ -145,12 +145,25 @@ export default function InsightDetailPage({ onNavigate, slug }: InsightDetailPag
             <span>{insight.read_time}</span>
           </div>
 
+          {insight.image_url && (
+            <div className="mb-12 -mx-4 sm:-mx-6 lg:-mx-8">
+              <img
+                src={insight.image_url}
+                alt={insight.title}
+                className="w-full h-auto object-cover"
+                style={{ maxHeight: '600px' }}
+              />
+            </div>
+          )}
+
+          <div className="border-b border-gray-300 mb-12"></div>
+
           <div
-            className="editorial-article"
+            className="editorial-article max-w-4xl"
             dangerouslySetInnerHTML={{ __html: insight.content }}
           />
 
-          <div className="mt-20 pt-12 border-t border-gray-300">
+          <div className="mt-20 pt-12 border-t border-gray-300 max-w-4xl">
             <h3 className="text-xl font-bold text-black mb-6" style={{ fontFamily: '"Segoe UI", system-ui, sans-serif' }}>About the Author</h3>
             <p className="text-black leading-[1.8] text-lg max-w-[65ch]" style={{ fontFamily: '"Segoe UI", system-ui, sans-serif' }}>{insight.author_bio}</p>
           </div>

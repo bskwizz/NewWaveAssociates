@@ -13,6 +13,7 @@ export interface Insight {
   read_time: string;
   featured: boolean;
   published: boolean;
+  image_url?: string;
   created_at: string;
   updated_at: string;
 }
