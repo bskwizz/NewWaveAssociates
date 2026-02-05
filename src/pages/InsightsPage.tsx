@@ -1,4 +1,5 @@
 import { useState, useEffect } from 'react';
+import { ChevronRight } from 'lucide-react';
 import PageHeader from '../components/PageHeader';
 import CTABar from '../components/CTABar';
 import { getAllPublishedInsights, Insight } from '../services/insightsService';
@@ -72,30 +73,35 @@ export default function InsightsPage({ onNavigate }: InsightsPageProps) {
               </div>
             ) : insights.length > 0 ? (
               <div className="space-y-12">
-                <div className="bg-white rounded-lg shadow-lg overflow-hidden hover:shadow-xl transition-shadow cursor-pointer"
-                     onClick={() => onNavigate(`insights/${insights[0].slug}`)}>
-                  <div className="p-8 sm:p-10 lg:p-12">
-                    <div className="mb-4">
-                      <span className="inline-block px-4 py-1.5 bg-[#01A3DB] text-white text-xs font-semibold rounded-full uppercase tracking-wide">
-                        {insights[0].category}
-                      </span>
+                <div className="bg-white rounded-lg shadow-lg overflow-hidden hover:shadow-xl transition-shadow">
+                  <div className="flex flex-col md:flex-row">
+                    <div className="md:w-2/5 lg:w-1/3">
+                      <img
+                        src="/jenga_blocks_fallen.png"
+                        alt="Jenga blocks fallen"
+                        className="w-full h-full object-cover"
+                      />
                     </div>
-                    <h2 className="text-2xl sm:text-3xl lg:text-4xl font-bold text-[#38495D] mb-4 leading-tight">
-                      {insights[0].title}
-                    </h2>
-                    <p className="text-gray-700 text-base sm:text-lg leading-relaxed mb-6">
-                      {insights[0].excerpt}
-                    </p>
-                    <div className="flex items-center gap-4 text-sm text-gray-600 mb-6">
-                      <span className="font-semibold">{insights[0].author}</span>
-                      <span>•</span>
-                      <span>{new Date(insights[0].publish_date).toLocaleDateString('en-US', { month: 'long', day: 'numeric', year: 'numeric' })}</span>
-                      <span>•</span>
-                      <span>{insights[0].read_time}</span>
+                    <div className="md:w-3/5 lg:w-2/3 p-8 sm:p-10 lg:p-12">
+                      <div className="mb-4">
+                        <span className="inline-block px-4 py-1.5 bg-[#01A3DB] text-white text-xs font-semibold rounded-full uppercase tracking-wide">
+                          {insights[0].category}
+                        </span>
+                      </div>
+                      <button
+                        onClick={() => onNavigate(`insights/${insights[0].slug}`)}
+                        className="text-left mb-4 group"
+                      >
+                        <h2 className="text-2xl sm:text-3xl lg:text-4xl font-bold text-[#38495D] group-hover:text-[#01A3DB] group-hover:underline leading-tight transition-colors inline">
+                          {insights[0].title.split('Avoided')[0]}Avoided
+                        </h2>
+                        <ChevronRight className="inline ml-2 text-[#f05e00] group-hover:text-[#01A3DB]" size={32} />
+                      </button>
+                      <p className="text-gray-700 text-base sm:text-lg leading-relaxed">
+                        <span className="italic">{new Date(insights[0].publish_date).toLocaleDateString('en-US', { month: 'long', day: 'numeric', year: 'numeric' })} - </span>
+                        We are living in a project-based economy, where nearly all meaningful change today is...
+                      </p>
                     </div>
-                    <button className="px-6 py-2.5 bg-[#01A3DB] text-white font-semibold rounded hover:bg-[#0088b8] transition-colors">
-                      Read
-                    </button>
                   </div>
                 </div>
 
