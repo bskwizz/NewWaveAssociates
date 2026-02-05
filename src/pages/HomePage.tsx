@@ -27,7 +27,7 @@ export default function HomePage({ onNavigate }: HomePageProps) {
         <div className="relative flex items-start pt-8 md:pt-16">
           <div className="w-full flex flex-col">
             <div className="max-w-7xl mx-auto px-4 sm:px-5 md:px-6 lg:px-6 xl:px-8">
-              <div className="grid grid-cols-1 md:grid-cols-2 gap-6 sm:gap-8 md:gap-8 lg:gap-10 xl:gap-12 items-center">
+              <div className="grid grid-cols-1 md:grid-cols-2 gap-6 sm:gap-8 md:gap-8 lg:gap-10 xl:gap-12 items-start">
                 <div id="hero-rotator" className="hero-rotator text-left order-1">
                   <div className="inline-block mb-2">
                     <div>
