@@ -8,12 +8,11 @@ interface HomePageProps {
 
 export default function HomePage({ onNavigate }: HomePageProps) {
   return (
-    <div>
-      <div className="hero relative min-h-screen lg:h-screen" style={{
+    <div className="overflow-x-clip">
+      <div className="hero relative min-h-screen lg:h-screen overflow-x-clip" style={{
         background: `radial-gradient(1200px 600px at 15% -10%, rgba(1,163,219,0.25), transparent 50%),
                      radial-gradient(800px 400px at 85% 110%, rgba(56,73,93,0.25), transparent 50%),
-                     linear-gradient(180deg, #f7f9fb 0%, #eef3f7 100%)`,
-        overflow: 'visible'
+                     linear-gradient(180deg, #f7f9fb 0%, #eef3f7 100%)`
       }}>
         <div className="absolute inset-0 opacity-[0.12] pointer-events-none" style={{
           backgroundImage: `radial-gradient(1px 1px at 20% 30%, #38495d 100%, transparent 0),
@@ -56,7 +55,7 @@ export default function HomePage({ onNavigate }: HomePageProps) {
               </div>
             </div>
             <div className="w-full bg-[#00a4dd] mt-8 sm:mt-10 lg:mt-12 h-12 sm:h-16 lg:h-[75px]"></div>
-            <div className="w-full flex items-center justify-center py-6 sm:py-7 lg:py-8">
+            <div className="w-full flex items-center justify-center py-6 sm:py-7 lg:py-8 overflow-x-clip">
               <LogoScroller logos={[
                 '/osg_logo.png',
                 '/bridgeview_eye_logo.png',
