@@ -12,6 +12,7 @@ export default function PageHeader({ onNavigate, currentPage }: PageHeaderProps)
   const navItems = [
     { label: 'Our Services', page: 'our-services' },
     { label: 'Case Studies', page: 'case-studies' },
+    { label: 'Insights', page: 'insights' },
     { label: 'About Us', page: 'about-us' },
     { label: 'Contact Us', page: 'contact-us' },
   ];
@@ -31,6 +32,8 @@ export default function PageHeader({ onNavigate, currentPage }: PageHeaderProps)
           <div className="hidden lg:flex items-center gap-8 xl:gap-12">
             {navItems.map((item) => {
               const isContactUs = item.page === 'contact-us';
+              const isActive = currentPage === item.page ||
+                              (item.page === 'insights' && currentPage?.startsWith('insights/'));
 
               if (isContactUs) {
                 return (
@@ -49,7 +52,7 @@ export default function PageHeader({ onNavigate, currentPage }: PageHeaderProps)
                   key={item.page}
                   onClick={() => onNavigate(item.page)}
                   className={`text-sm font-medium transition-all hover:text-[#01A3DB] relative group ${
-                    currentPage === item.page ? 'text-[#01A3DB]' : 'text-[#38495D]'
+                    isActive ? 'text-[#01A3DB]' : 'text-[#38495D]'
                   }`}
                 >
                   {item.label}
@@ -71,6 +74,8 @@ export default function PageHeader({ onNavigate, currentPage }: PageHeaderProps)
           <div className="lg:hidden mt-4 pb-4 flex flex-col gap-3 sm:gap-4 bg-white/95 backdrop-blur-sm rounded-lg p-4">
             {navItems.map((item) => {
               const isContactUs = item.page === 'contact-us';
+              const isActive = currentPage === item.page ||
+                              (item.page === 'insights' && currentPage?.startsWith('insights/'));
 
               if (isContactUs) {
                 return (
@@ -95,7 +100,7 @@ export default function PageHeader({ onNavigate, currentPage }: PageHeaderProps)
                     setMobileMenuOpen(false);
                   }}
                   className={`text-left text-sm font-medium transition-colors hover:text-[#01A3DB] ${
-                    currentPage === item.page ? 'text-[#01A3DB]' : 'text-[#38495D]'
+                    isActive ? 'text-[#01A3DB]' : 'text-[#38495D]'
                   }`}
                 >
                   {item.label}
