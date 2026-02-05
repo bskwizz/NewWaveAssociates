@@ -32,9 +32,12 @@ export default function LogoScroller({ logos = [] }: LogoScrollerProps) {
   ];
 
   return (
-    <div className="logo-scroller-wrapper w-full flex items-center overflow-x-clip py-4 md:py-0">
-      <div ref={scrollerRef} className="logo-scroller w-full overflow-x-clip">
-        <div className="logo-scroller-inner flex gap-6 md:gap-12 items-center">
+    <div className="logo-scroller-wrapper w-full flex items-center overflow-hidden py-4 md:py-0">
+      <div
+        ref={scrollerRef}
+        className="logo-scroller relative w-full max-w-full overflow-hidden"
+      >
+        <div className="logo-scroller-inner flex w-max gap-6 md:gap-12 items-center">
           {placeholderLogos.map((logo, index) => (
             <div
               key={index}

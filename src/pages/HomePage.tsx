@@ -55,7 +55,7 @@ export default function HomePage({ onNavigate }: HomePageProps) {
               </div>
             </div>
             <div className="w-full bg-[#00a4dd] mt-8 sm:mt-10 lg:mt-12 h-12 sm:h-16 lg:h-[75px]"></div>
-            <div className="w-full flex items-center justify-center py-6 sm:py-7 lg:py-8 overflow-x-clip">
+            <div className="w-full flex items-center justify-center py-6 sm:py-7 lg:py-8 overflow-hidden">
               <LogoScroller logos={[
                 '/osg_logo.png',
                 '/bridgeview_eye_logo.png',
