@@ -137,12 +137,10 @@ export default function InsightDetailPage({ onNavigate, slug }: InsightDetailPag
             {insight.title}
           </h1>
 
-          <div className="flex items-center gap-4 text-sm text-black mb-10" style={{ fontFamily: '"Segoe UI", system-ui, sans-serif' }}>
-            <span className="font-semibold">{insight.author}</span>
-            <span>•</span>
+          <div className="flex items-center gap-3 text-sm text-black mb-10" style={{ fontFamily: '"Segoe UI", system-ui, sans-serif' }}>
             <span>{new Date(insight.publish_date).toLocaleDateString('en-US', { month: 'long', day: 'numeric', year: 'numeric' })}</span>
-            <span>•</span>
-            <span>{insight.read_time}</span>
+            <span>|</span>
+            <span>Article</span>
           </div>
 
           {insight.image_url && (
