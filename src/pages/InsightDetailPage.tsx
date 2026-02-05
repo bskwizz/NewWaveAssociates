@@ -71,18 +71,12 @@ export default function InsightDetailPage({ onNavigate, slug }: InsightDetailPag
             Back to Insights
           </button>
 
-          <div className="mb-6">
-            <span className="inline-block px-4 py-1.5 bg-[#01A3DB] text-white text-xs font-semibold rounded-full uppercase tracking-wide">
-              {insight.category}
-            </span>
-          </div>
-
-          <h1 className="text-3xl sm:text-4xl lg:text-5xl font-bold text-[#38495D] mb-6 leading-tight">
+          <h1 className="text-3xl sm:text-4xl lg:text-5xl font-bold text-black mb-6 leading-tight" style={{ fontFamily: '"Segoe UI", system-ui, sans-serif' }}>
             {insight.title}
           </h1>
 
-          <div className="flex items-center gap-4 text-sm text-gray-600 mb-12 pb-8 border-b">
-            <span className="font-semibold text-[#38495D]">{insight.author}</span>
+          <div className="flex items-center gap-4 text-sm text-black mb-12 pb-8 border-b">
+            <span className="font-semibold">{insight.author}</span>
             <span>•</span>
             <span>{new Date(insight.publish_date).toLocaleDateString('en-US', { month: 'long', day: 'numeric', year: 'numeric' })}</span>
             <span>•</span>
@@ -90,15 +84,15 @@ export default function InsightDetailPage({ onNavigate, slug }: InsightDetailPag
           </div>
 
           <div
-            className="prose prose-lg max-w-none prose-headings:text-[#38495D] prose-headings:font-bold prose-h2:text-2xl prose-h2:mt-12 prose-h2:mb-6 prose-p:text-gray-700 prose-p:leading-relaxed prose-p:mb-6 prose-ul:my-6 prose-li:text-gray-700 prose-li:mb-2"
+            className="prose prose-lg max-w-none prose-headings:text-black prose-headings:font-bold prose-h2:text-2xl prose-h2:mt-12 prose-h2:mb-6 prose-p:text-black prose-p:leading-relaxed prose-p:mb-6 prose-ul:my-6 prose-li:text-black prose-li:mb-2"
+            style={{ fontFamily: '"Segoe UI", system-ui, sans-serif' }}
             dangerouslySetInnerHTML={{ __html: insight.content }}
           />
 
           <div className="mt-16 pt-12 border-t border-gray-200">
-            <h3 className="text-xl font-bold text-[#38495D] mb-4">About the Author</h3>
+            <h3 className="text-xl font-bold text-black mb-4" style={{ fontFamily: '"Segoe UI", system-ui, sans-serif' }}>About the Author</h3>
             <div className="bg-gray-50 rounded-lg p-6">
-              <p className="font-semibold text-[#38495D] mb-2">{insight.author}</p>
-              <p className="text-gray-700 leading-relaxed">{insight.author_bio}</p>
+              <p className="text-black leading-relaxed" style={{ fontFamily: '"Segoe UI", system-ui, sans-serif' }}>{insight.author_bio}</p>
             </div>
           </div>
         </article>
