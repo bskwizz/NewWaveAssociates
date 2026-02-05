@@ -73,7 +73,7 @@ export default function InsightsPage({ onNavigate }: InsightsPageProps) {
               </div>
             ) : insights.length > 0 ? (
               <div className="space-y-12">
-                <div className="bg-white rounded-lg shadow-lg overflow-hidden hover:shadow-xl transition-shadow">
+                <div className="bg-transparent rounded-lg overflow-hidden hover:bg-white hover:shadow-xl transition-all duration-300 group/card">
                   <div className="flex flex-col md:flex-row">
                     <div className="md:w-2/5 lg:w-1/3">
                       <img
@@ -90,12 +90,11 @@ export default function InsightsPage({ onNavigate }: InsightsPageProps) {
                       </div>
                       <button
                         onClick={() => onNavigate(`insights/${insights[0].slug}`)}
-                        className="text-left mb-4 group"
+                        className="text-left mb-4 w-full group/title"
                       >
-                        <h2 className="text-2xl sm:text-3xl lg:text-4xl font-bold text-[#38495D] group-hover:text-[#01A3DB] group-hover:underline leading-tight transition-colors inline">
-                          {insights[0].title.split('Avoided')[0]}Avoided
+                        <h2 className="text-2xl sm:text-3xl lg:text-4xl font-bold text-[#38495D] group-hover/title:text-[#01A3DB] group-hover/title:underline leading-tight transition-colors inline-block">
+                          {insights[0].title.split('Avoided')[0]}Avoided<ChevronRight className="inline-block ml-2 mb-1 text-[#f05e00]" size={32} />
                         </h2>
-                        <ChevronRight className="inline ml-2 text-[#f05e00] group-hover:text-[#01A3DB]" size={32} />
                       </button>
                       <p className="text-gray-700 text-base sm:text-lg leading-relaxed">
                         <span className="italic">{new Date(insights[0].publish_date).toLocaleDateString('en-US', { month: 'long', day: 'numeric', year: 'numeric' })} - </span>
