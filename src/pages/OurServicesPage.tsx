@@ -285,7 +285,7 @@ export default function OurServicesPage({ onNavigate }: OurServicesPageProps) {
 
   return (
     <div>
-      <div id="our-services-hero" ref={vantaRef} className="flywheel-hero fw-glow pb-16 lg:pb-[200px]" aria-label="New Wave Flywheel" style={{ minHeight: '100vh', position: 'relative', overflow: 'visible' }}>
+      <div id="our-services-hero" ref={vantaRef} className="flywheel-hero fw-glow pb-16 lg:pb-[200px] lg:min-h-screen" aria-label="New Wave Flywheel" style={{ position: 'relative', overflow: 'visible' }}>
         <div className="absolute inset-0 opacity-[0.12] pointer-events-none" style={{
           backgroundImage: `radial-gradient(1px 1px at 20% 30%, #38495d 100%, transparent 0),
                             radial-gradient(1px 1px at 70% 60%, #01a3db 100%, transparent 0),
@@ -297,7 +297,7 @@ export default function OurServicesPage({ onNavigate }: OurServicesPageProps) {
         <PageHeader onNavigate={onNavigate} currentPage="our-services" />
 
         <div
-          className="absolute left-0 right-0 bottom-0 mt-20 translate-y-16 lg:left-1/2 lg:right-auto lg:-translate-x-1/2 lg:w-screen lg:-bottom-8 lg:mt-0 max-h-[300px] h-[30vh] lg:max-h-[600px] lg:h-[60vh] pointer-events-none z-10 lg:overflow-visible lg:bg-no-repeat lg:bg-bottom lg:bg-center lg:bg-[length:100%_auto]"
+          className="relative lg:absolute left-0 right-0 mt-8 lg:bottom-0 lg:mt-20 lg:translate-y-16 lg:left-1/2 lg:right-auto lg:-translate-x-1/2 lg:w-screen lg:-bottom-8 max-h-[200px] lg:max-h-[600px] lg:h-[60vh] pointer-events-none z-10 lg:overflow-visible lg:bg-no-repeat lg:bg-bottom lg:bg-center lg:bg-[length:100%_auto]"
           style={{
             backgroundImage: `url(${import.meta.env.BASE_URL}wave_graphic_for_our_services_page.png)`,
           }}
@@ -309,7 +309,7 @@ export default function OurServicesPage({ onNavigate }: OurServicesPageProps) {
           />
         </div>
 
-        <div className="relative flex items-center min-h-[50vh] sm:min-h-[55vh] lg:min-h-[60vh] py-3 sm:py-6 lg:py-0">
+        <div className="relative flex items-center py-8 sm:py-12 lg:min-h-[60vh] lg:py-0">
           <div className="w-full">
             <div className="max-w-7xl mx-auto px-4 sm:px-5 md:px-6 lg:px-6 xl:px-8 w-full">
               <div className="grid grid-cols-1 md:grid-cols-2 gap-6 sm:gap-8 md:gap-8 lg:gap-10 xl:gap-12 items-center">
