@@ -177,13 +177,49 @@ export default function AboutUsPage({ onNavigate }: AboutUsPageProps) {
                 </p>
               </div>
 
-              <div className="pb-8 sm:pb-12 lg:pb-16">
+              <div className="space-y-5 sm:space-y-6 pb-8 sm:pb-12 lg:pb-16">
                 <div className="bg-white border border-gray-200 rounded-lg p-6 sm:p-8 shadow-lg">
                   <h3 className="text-base sm:text-lg font-bold text-[#38495D] tracking-[0.15em] uppercase mb-3 sm:mb-4">
                     We Own the Outcome
                   </h3>
                   <p className="text-sm sm:text-base text-gray-700 leading-relaxed">
                     We take responsibility for results, not just recommendations. When we commit to work, we stay engaged until progress is real and value is delivered.
+                  </p>
+                </div>
+
+                <div className="bg-white border border-gray-200 rounded-lg p-6 sm:p-8 shadow-lg">
+                  <h3 className="text-base sm:text-lg font-bold text-[#38495D] tracking-[0.15em] uppercase mb-3 sm:mb-4">
+                    We Put Operators First
+                  </h3>
+                  <p className="text-sm sm:text-base text-gray-700 leading-relaxed">
+                    Our work is designed for the people running the business. We favor practical solutions, respect real-world constraints, and build systems teams can actually sustain.
+                  </p>
+                </div>
+
+                <div className="bg-white border border-gray-200 rounded-lg p-6 sm:p-8 shadow-lg">
+                  <h3 className="text-base sm:text-lg font-bold text-[#38495D] tracking-[0.15em] uppercase mb-3 sm:mb-4">
+                    We Choose Clarity Over Complexity
+                  </h3>
+                  <p className="text-sm sm:text-base text-gray-700 leading-relaxed">
+                    Plain language drives alignment. Alignment drives execution. We believe clear thinking and direct communication move organizations forward faster than complexity ever could.
+                  </p>
+                </div>
+
+                <div className="bg-white border border-gray-200 rounded-lg p-6 sm:p-8 shadow-lg">
+                  <h3 className="text-base sm:text-lg font-bold text-[#38495D] tracking-[0.15em] uppercase mb-3 sm:mb-4">
+                    We Earn Trust Daily
+                  </h3>
+                  <p className="text-sm sm:text-base text-gray-700 leading-relaxed">
+                    Trust is built through consistent, honest execution, not credentials or promises. We do what we say we will do, communicate openly, and make progress visible.
+                  </p>
+                </div>
+
+                <div className="bg-white border border-gray-200 rounded-lg p-6 sm:p-8 shadow-lg">
+                  <h3 className="text-base sm:text-lg font-bold text-[#38495D] tracking-[0.15em] uppercase mb-3 sm:mb-4">
+                    How We Work
+                  </h3>
+                  <p className="text-sm sm:text-base text-gray-700 leading-relaxed">
+                    We embed directly into our clients' organizations and partner with internal teams to drive execution across critical initiatives. We bring experienced operators into moments that matter, helping unblock decisions, align teams, and convert inefficiency into measurable results.
                   </p>
                 </div>
               </div>
