@@ -158,6 +158,35 @@ export default function AboutUsPage({ onNavigate }: AboutUsPageProps) {
                   className="w-full lg:w-[93.5%] h-auto mx-auto shadow-xl rounded-lg"
                 />
               </div>
+
+              <div className="text-left mb-5 sm:mb-6 lg:mb-8">
+                <div className="inline-block mb-2">
+                  <div>
+                    <p className="text-black text-xs sm:text-sm lg:text-base font-bold tracking-[0.2em] uppercase mb-2" style={{
+                      letterSpacing: '0.25em'
+                    }}>
+                      Our Mission and Values
+                    </p>
+                    <div className="h-[2px] bg-[#f05e00]"></div>
+                  </div>
+                </div>
+                <p className="text-sm sm:text-base text-gray-700 leading-relaxed mt-4 sm:mt-5 lg:mt-6 mb-6 sm:mb-8 lg:mb-10">
+                  We exist for operators navigating complexity. These are moments where important work stalls, ownership is fragmented, and real value is left on the table. Our role is not to advise from the sidelines, but to step in, take responsibility, and help teams move again.
+                  <br /><br />
+                  Our values reflect how we show up, how we make decisions, and how we earn the right to be trusted inside our clients' businesses.
+                </p>
+              </div>
+
+              <div className="pb-8 sm:pb-12 lg:pb-16">
+                <div className="bg-white border border-gray-200 rounded-lg p-6 sm:p-8 shadow-lg">
+                  <h3 className="text-base sm:text-lg font-bold text-[#38495D] tracking-[0.15em] uppercase mb-3 sm:mb-4">
+                    We Own the Outcome
+                  </h3>
+                  <p className="text-sm sm:text-base text-gray-700 leading-relaxed">
+                    We take responsibility for results, not just recommendations. When we commit to work, we stay engaged until progress is real and value is delivered.
+                  </p>
+                </div>
+              </div>
             </div>
           </div>
         </div>
