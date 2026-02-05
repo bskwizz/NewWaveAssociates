@@ -21,15 +21,6 @@ export default function InsightsPage({ onNavigate }: InsightsPageProps) {
     loadInsights();
   }, []);
 
-  const topics = [
-    'Execution',
-    'Procurement',
-    'Revenue Ops',
-    'M&A Integration',
-    'Operating Model',
-    'Performance Improvement',
-    'Transformation'
-  ];
 
   return (
     <div className="overflow-x-clip">
@@ -84,6 +75,7 @@ export default function InsightsPage({ onNavigate }: InsightsPageProps) {
                     </div>
                     <div className="md:w-3/5 lg:w-2/3 p-8 sm:p-10 lg:p-12">
                       <div className="mb-4">
+                        <p className="text-xs text-gray-600 mb-2">Article</p>
                         <span className="inline-block px-4 py-1.5 bg-[#01A3DB] text-white text-xs font-semibold rounded-full uppercase tracking-wide">
                           {insights[0].category}
                         </span>
@@ -101,20 +93,6 @@ export default function InsightsPage({ onNavigate }: InsightsPageProps) {
                         We are living in a project-based economy, where nearly all meaningful change today is...
                       </p>
                     </div>
-                  </div>
-                </div>
-
-                <div className="border-t pt-8">
-                  <h3 className="text-xl font-bold text-[#38495D] mb-4">Topics</h3>
-                  <div className="flex flex-wrap gap-3">
-                    {topics.map((topic) => (
-                      <button
-                        key={topic}
-                        className="px-5 py-2.5 bg-blue-50 text-[#38495D] text-sm font-medium rounded-full hover:bg-blue-100 transition-colors"
-                      >
-                        {topic}
-                      </button>
-                    ))}
                   </div>
                 </div>
 
