@@ -13,6 +13,7 @@ export default function Navigation({ currentPage, onNavigate }: NavigationProps)
   const navItems = [
     { label: 'Our Services', page: 'our-services' },
     { label: 'Case Studies', page: 'case-studies' },
+    { label: 'Insights', page: 'insights' },
     { label: 'About Us', page: 'about-us' },
     { label: 'Contact Us', page: 'contact-us' },
   ];
@@ -43,18 +44,22 @@ export default function Navigation({ currentPage, onNavigate }: NavigationProps)
           </button>
 
           <div className="hidden lg:flex items-center gap-8 xl:gap-12">
-            {navItems.map((item) => (
-              <button
-                key={item.page}
-                onClick={() => onNavigate(item.page)}
-                className={`text-sm font-medium transition-all hover:text-[#01A3DB] relative group ${
-                  currentPage === item.page ? 'text-[#01A3DB]' : 'text-[#38495D]'
-                }`}
-              >
-                {item.label}
-                <span className="absolute -bottom-1 left-0 w-0 h-0.5 bg-[#01A3DB] transition-all group-hover:w-full"></span>
-              </button>
-            ))}
+            {navItems.map((item) => {
+              const isActive = currentPage === item.page ||
+                              (item.page === 'insights' && currentPage.startsWith('insights/'));
+              return (
+                <button
+                  key={item.page}
+                  onClick={() => onNavigate(item.page)}
+                  className={`text-sm font-medium transition-all hover:text-[#01A3DB] relative group ${
+                    isActive ? 'text-[#01A3DB]' : 'text-[#38495D]'
+                  }`}
+                >
+                  {item.label}
+                  <span className="absolute -bottom-1 left-0 w-0 h-0.5 bg-[#01A3DB] transition-all group-hover:w-full"></span>
+                </button>
+              );
+            })}
           </div>
 
           <button
@@ -67,20 +72,24 @@ export default function Navigation({ currentPage, onNavigate }: NavigationProps)
 
         {mobileMenuOpen && (
           <div className="lg:hidden pb-4 flex flex-col gap-3 sm:gap-4">
-            {navItems.map((item) => (
-              <button
-                key={item.page}
-                onClick={() => {
-                  onNavigate(item.page);
-                  setMobileMenuOpen(false);
-                }}
-                className={`text-left text-sm font-medium transition-colors hover:text-[#01A3DB] ${
-                  currentPage === item.page ? 'text-[#01A3DB]' : 'text-[#38495D]'
-                }`}
-              >
-                {item.label}
-              </button>
-            ))}
+            {navItems.map((item) => {
+              const isActive = currentPage === item.page ||
+                              (item.page === 'insights' && currentPage.startsWith('insights/'));
+              return (
+                <button
+                  key={item.page}
+                  onClick={() => {
+                    onNavigate(item.page);
+                    setMobileMenuOpen(false);
+                  }}
+                  className={`text-left text-sm font-medium transition-colors hover:text-[#01A3DB] ${
+                    isActive ? 'text-[#01A3DB]' : 'text-[#38495D]'
+                  }`}
+                >
+                  {item.label}
+                </button>
+              );
+            })}
           </div>
         )}
       </div>

@@ -37,6 +37,8 @@ import IntegrationConsolidationHub from './pages/hubs/IntegrationConsolidationHu
 import LaborOffshoringHub from './pages/hubs/LaborOffshoringHub';
 import SGAOptimizationHub from './pages/hubs/SGAOptimizationHub';
 import AIAutomationHub from './pages/hubs/AIAutomationHub';
+import InsightsPage from './pages/InsightsPage';
+import InsightDetailPage from './pages/InsightDetailPage';
 
 function App() {
   const [currentPage, setCurrentPage] = useState('home');
@@ -71,6 +73,8 @@ function App() {
         return <CapabilitiesPage onNavigate={handleNavigate} />;
       case 'about-us':
         return <AboutUsPage onNavigate={handleNavigate} />;
+      case 'insights':
+        return <InsightsPage onNavigate={handleNavigate} />;
       case 'contact-us':
         return <ContactUsPage onNavigate={handleNavigate} />;
       case 'case-study-pmo':
@@ -138,6 +142,10 @@ function App() {
       case 'hub-ai-automation':
         return <AIAutomationHub onNavigate={handleNavigate} />;
       default:
+        if (currentPage.startsWith('insights/')) {
+          const slug = currentPage.replace('insights/', '');
+          return <InsightDetailPage onNavigate={handleNavigate} slug={slug} />;
+        }
         return <HomePage onNavigate={handleNavigate} />;
     }
   };
