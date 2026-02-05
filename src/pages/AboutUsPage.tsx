@@ -107,7 +107,7 @@ export default function AboutUsPage({ onNavigate }: AboutUsPageProps) {
                         />
                       </div>
                       <div className="flex-1 text-center sm:text-left flex flex-col justify-center">
-                        <h3 className="text-lg sm:text-xl font-bold text-[#38495D] mb-1">
+                        <h3 className="text-lg sm:text-xl font-bold text-black mb-1">
                           {member.name}
                         </h3>
                         <p className="text-sm sm:text-base text-gray-600">{member.title}</p>
@@ -179,7 +179,7 @@ export default function AboutUsPage({ onNavigate }: AboutUsPageProps) {
 
               <div className="space-y-5 sm:space-y-6 pb-8 sm:pb-12 lg:pb-16">
                 <div className="bg-white border border-gray-200 rounded-lg p-6 sm:p-8 shadow-lg">
-                  <h3 className="text-base sm:text-lg font-bold text-[#38495D] tracking-[0.15em] uppercase mb-3 sm:mb-4">
+                  <h3 className="text-base sm:text-lg font-bold text-black tracking-[0.15em] uppercase mb-3 sm:mb-4">
                     We Own the Outcome
                   </h3>
                   <p className="text-sm sm:text-base text-gray-700 leading-relaxed">
@@ -188,7 +188,7 @@ export default function AboutUsPage({ onNavigate }: AboutUsPageProps) {
                 </div>
 
                 <div className="bg-white border border-gray-200 rounded-lg p-6 sm:p-8 shadow-lg">
-                  <h3 className="text-base sm:text-lg font-bold text-[#38495D] tracking-[0.15em] uppercase mb-3 sm:mb-4">
+                  <h3 className="text-base sm:text-lg font-bold text-black tracking-[0.15em] uppercase mb-3 sm:mb-4">
                     We Put Operators First
                   </h3>
                   <p className="text-sm sm:text-base text-gray-700 leading-relaxed">
@@ -197,7 +197,7 @@ export default function AboutUsPage({ onNavigate }: AboutUsPageProps) {
                 </div>
 
                 <div className="bg-white border border-gray-200 rounded-lg p-6 sm:p-8 shadow-lg">
-                  <h3 className="text-base sm:text-lg font-bold text-[#38495D] tracking-[0.15em] uppercase mb-3 sm:mb-4">
+                  <h3 className="text-base sm:text-lg font-bold text-black tracking-[0.15em] uppercase mb-3 sm:mb-4">
                     We Choose Clarity Over Complexity
                   </h3>
                   <p className="text-sm sm:text-base text-gray-700 leading-relaxed">
@@ -206,7 +206,7 @@ export default function AboutUsPage({ onNavigate }: AboutUsPageProps) {
                 </div>
 
                 <div className="bg-white border border-gray-200 rounded-lg p-6 sm:p-8 shadow-lg">
-                  <h3 className="text-base sm:text-lg font-bold text-[#38495D] tracking-[0.15em] uppercase mb-3 sm:mb-4">
+                  <h3 className="text-base sm:text-lg font-bold text-black tracking-[0.15em] uppercase mb-3 sm:mb-4">
                     We Earn Trust Daily
                   </h3>
                   <p className="text-sm sm:text-base text-gray-700 leading-relaxed">
