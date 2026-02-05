@@ -24,7 +24,7 @@ export default function HomePage({ onNavigate }: HomePageProps) {
 
         <PageHeader onNavigate={onNavigate} currentPage="home" />
 
-        <div className="relative flex items-start pt-6 sm:pt-8 lg:pt-[2.5rem]">
+        <div className="relative flex items-center pt-4 sm:pt-6 lg:pt-8">
           <div className="w-full flex flex-col">
             <div className="max-w-7xl mx-auto px-4 sm:px-5 md:px-6 lg:px-6 xl:px-8">
               <div className="grid grid-cols-1 md:grid-cols-2 gap-6 sm:gap-8 md:gap-8 lg:gap-10 xl:gap-12 items-center">
