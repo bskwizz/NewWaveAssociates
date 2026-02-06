@@ -56,7 +56,7 @@ export default function AboutUsPage({ onNavigate }: AboutUsPageProps) {
           <img
             src={`${import.meta.env.BASE_URL}wave_graphic_about_us.svg`}
             alt=""
-            className="block w-full h-auto max-w-[1600px] mx-auto -translate-y-[40%]"
+            className="block w-full h-auto max-w-[1600px] mx-auto -translate-y-[41%]"
           />
         </div>
 
