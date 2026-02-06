@@ -40,7 +40,7 @@ const teamMembers = [
 
 export default function AboutUsPage({ onNavigate }: AboutUsPageProps) {
   const [fadeIn, setFadeIn] = useState(false);
-  const [pdfModalOpen, setPdfModalOpen] = useState(false);
+  const [lightboxOpen, setLightboxOpen] = useState(false);
   const vantaRef = useRef<HTMLDivElement>(null);
 
   useEffect(() => {
@@ -48,7 +48,7 @@ export default function AboutUsPage({ onNavigate }: AboutUsPageProps) {
   }, []);
 
   useEffect(() => {
-    if (pdfModalOpen) {
+    if (lightboxOpen) {
       document.body.style.overflow = 'hidden';
     } else {
       document.body.style.overflow = '';
@@ -56,7 +56,7 @@ export default function AboutUsPage({ onNavigate }: AboutUsPageProps) {
     return () => {
       document.body.style.overflow = '';
     };
-  }, [pdfModalOpen]);
+  }, [lightboxOpen]);
 
   return (
     <div>
@@ -167,13 +167,13 @@ export default function AboutUsPage({ onNavigate }: AboutUsPageProps) {
               <div className="pb-8 sm:pb-12 lg:pb-16">
                 <button
                   type="button"
-                  onClick={() => setPdfModalOpen(true)}
+                  onClick={() => setLightboxOpen(true)}
                   className="block w-full lg:w-[93.5%] mx-auto group cursor-pointer bg-transparent border-0 p-0 text-left"
                   aria-label="View How We Differ in detail"
                 >
                   <div className="relative overflow-hidden rounded-lg shadow-xl transition-shadow duration-300 group-hover:shadow-2xl">
                     <img
-                      src={`${import.meta.env.BASE_URL}how_we_differ_section.png`}
+                      src={`${import.meta.env.BASE_URL}how_we_differ_png_new.png`}
                       alt="How We Differ"
                       className="w-full h-auto block"
                     />
@@ -252,33 +252,30 @@ export default function AboutUsPage({ onNavigate }: AboutUsPageProps) {
         onButtonClick={() => onNavigate('contact-us')}
       />
 
-      {pdfModalOpen && (
+      {lightboxOpen && (
         <div
-          className="fixed inset-0 z-[9999] flex items-center justify-center"
+          className="fixed inset-0 z-[9999] flex items-center justify-center p-0 lg:p-8"
           role="dialog"
           aria-modal="true"
-          aria-label="How We Differ PDF"
+          aria-label="How We Differ"
         >
           <div
             className="absolute inset-0 bg-black/70 backdrop-blur-sm"
-            onClick={() => setPdfModalOpen(false)}
+            onClick={() => setLightboxOpen(false)}
           />
-          <div className="relative z-10 w-[95vw] h-[90vh] max-w-6xl bg-white rounded-xl shadow-2xl overflow-hidden flex flex-col">
-            <div className="flex items-center justify-between px-4 sm:px-6 py-3 border-b border-gray-200 bg-gray-50 flex-shrink-0">
-              <h3 className="text-sm sm:text-base font-semibold text-gray-800">How We Differ</h3>
-              <button
-                type="button"
-                onClick={() => setPdfModalOpen(false)}
-                className="p-1.5 rounded-lg hover:bg-gray-200 transition-colors text-gray-600 hover:text-gray-900"
-                aria-label="Close modal"
-              >
-                <X size={20} />
-              </button>
-            </div>
-            <iframe
-              src={`${import.meta.env.BASE_URL}how_we_differ_pdf.pdf`}
-              title="How We Differ PDF"
-              className="flex-1 w-full border-0"
+          <div className="relative z-10 w-full h-[100svh] lg:h-auto lg:max-h-[90vh] lg:max-w-4xl lg:rounded-xl overflow-hidden bg-black/40 flex items-center justify-center">
+            <button
+              type="button"
+              onClick={() => setLightboxOpen(false)}
+              className="absolute top-3 right-3 z-20 p-2 rounded-full bg-black/50 hover:bg-black/70 transition-colors text-white"
+              aria-label="Close"
+            >
+              <X size={22} />
+            </button>
+            <img
+              src={`${import.meta.env.BASE_URL}how_we_differ_png_new.png`}
+              alt="How We Differ"
+              className="w-full h-full object-contain"
             />
           </div>
         </div>
