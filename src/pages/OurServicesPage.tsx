@@ -285,7 +285,7 @@ export default function OurServicesPage({ onNavigate }: OurServicesPageProps) {
 
   return (
     <div>
-      <div id="our-services-hero" ref={vantaRef} className="flywheel-hero fw-glow flex flex-col min-h-[100svh] overflow-visible lg:min-h-screen" aria-label="New Wave Flywheel" style={{ position: 'relative' }}>
+      <div id="our-services-hero" ref={vantaRef} className="flywheel-hero fw-glow flex flex-col min-h-[100svh] overflow-hidden lg:overflow-visible lg:min-h-screen" aria-label="New Wave Flywheel" style={{ position: 'relative' }}>
         <div className="absolute inset-0 opacity-[0.12] pointer-events-none" style={{
           backgroundImage: `radial-gradient(1px 1px at 20% 30%, #38495d 100%, transparent 0),
                             radial-gradient(1px 1px at 70% 60%, #01a3db 100%, transparent 0),
@@ -397,7 +397,7 @@ export default function OurServicesPage({ onNavigate }: OurServicesPageProps) {
         </div>
         </div>
 
-        <div className="pointer-events-none flex justify-center">
+        <div className="pointer-events-none absolute bottom-0 left-0 right-0 z-[1] flex justify-center">
           <img
             src={`${import.meta.env.BASE_URL}wave_graphic_our_services.svg`}
             alt=""
