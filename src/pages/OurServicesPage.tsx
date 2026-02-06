@@ -297,15 +297,6 @@ export default function OurServicesPage({ onNavigate }: OurServicesPageProps) {
         <div className="relative z-10 flex-1 flex flex-col">
           <PageHeader />
 
-          {/* Wave divider (no layout shift) */}
-          <div className="pointer-events-none relative h-0">
-            <img
-              src={`${import.meta.env.BASE_URL}wave_graphic_our_services.svg`}
-              alt=""
-              className="block w-full h-auto max-w-[1600px] mx-auto -translate-y-[42%] sm:-translate-y-[44%] lg:-translate-y-[46%]"
-            />
-          </div>
-
           <div className="relative flex items-center flex-1 py-4 sm:py-6 lg:min-h-0 lg:py-0">
           <div className="w-full">
             <div className="max-w-7xl mx-auto px-4 sm:px-5 md:px-6 lg:px-6 xl:px-8 w-full">
@@ -406,6 +397,13 @@ export default function OurServicesPage({ onNavigate }: OurServicesPageProps) {
         </div>
         </div>
 
+        <div className="pointer-events-none flex justify-center">
+          <img
+            src={`${import.meta.env.BASE_URL}wave_graphic_our_services.svg`}
+            alt=""
+            className="block w-full h-auto max-w-[1600px] mx-auto"
+          />
+        </div>
       </div>
 
       <div className="bg-gray-50 pt-5 sm:pt-6 lg:pt-32">
