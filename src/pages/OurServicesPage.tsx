@@ -313,7 +313,7 @@ export default function OurServicesPage({ onNavigate }: OurServicesPageProps) {
                     </div>
                   </div>
 
-                  <div className="space-y-2 sm:space-y-3 lg:space-y-6 text-left max-w-xl mt-3 sm:mt-4 lg:mt-6">
+                  <div className="space-y-2 sm:space-y-3 lg:space-y-6 text-left max-w-xl mt-6 lg:mt-6">
                     <p className="text-gray-700 text-sm sm:text-base leading-relaxed">
                       We embed in the trenches with leaders to achieve specific, pragmatic goals quickly.
                     </p>
