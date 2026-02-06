@@ -1,5 +1,5 @@
 import { useRef, useEffect, useState } from 'react';
-import { Linkedin } from 'lucide-react';
+import { Linkedin, X } from 'lucide-react';
 import CTABar from '../components/CTABar';
 import PageHeader from '../components/PageHeader';
 
@@ -40,11 +40,23 @@ const teamMembers = [
 
 export default function AboutUsPage({ onNavigate }: AboutUsPageProps) {
   const [fadeIn, setFadeIn] = useState(false);
+  const [pdfModalOpen, setPdfModalOpen] = useState(false);
   const vantaRef = useRef<HTMLDivElement>(null);
 
   useEffect(() => {
     setFadeIn(true);
   }, []);
+
+  useEffect(() => {
+    if (pdfModalOpen) {
+      document.body.style.overflow = 'hidden';
+    } else {
+      document.body.style.overflow = '';
+    }
+    return () => {
+      document.body.style.overflow = '';
+    };
+  }, [pdfModalOpen]);
 
   return (
     <div>
@@ -153,11 +165,25 @@ export default function AboutUsPage({ onNavigate }: AboutUsPageProps) {
               </div>
 
               <div className="pb-8 sm:pb-12 lg:pb-16">
-                <img
-                  src={`${import.meta.env.BASE_URL}how_we_differ_section.png`}
-                  alt="How We Differ"
-                  className="w-full lg:w-[93.5%] h-auto mx-auto shadow-xl rounded-lg"
-                />
+                <button
+                  type="button"
+                  onClick={() => setPdfModalOpen(true)}
+                  className="block w-full lg:w-[93.5%] mx-auto group cursor-pointer bg-transparent border-0 p-0 text-left"
+                  aria-label="View How We Differ in detail"
+                >
+                  <div className="relative overflow-hidden rounded-lg shadow-xl transition-shadow duration-300 group-hover:shadow-2xl">
+                    <img
+                      src={`${import.meta.env.BASE_URL}how_we_differ_section.png`}
+                      alt="How We Differ"
+                      className="w-full h-auto block"
+                    />
+                    <div className="absolute inset-0 bg-black/0 group-hover:bg-black/5 transition-colors duration-300 flex items-center justify-center">
+                      <span className="opacity-0 group-hover:opacity-100 transition-opacity duration-300 bg-white/90 backdrop-blur-sm text-gray-800 text-sm font-semibold px-4 py-2 rounded-full shadow-lg">
+                        Click to expand
+                      </span>
+                    </div>
+                  </div>
+                </button>
               </div>
 
               <div className="text-left mb-5 sm:mb-6 lg:mb-8">
@@ -225,6 +251,38 @@ export default function AboutUsPage({ onNavigate }: AboutUsPageProps) {
         buttonText="Contact Us"
         onButtonClick={() => onNavigate('contact-us')}
       />
+
+      {pdfModalOpen && (
+        <div
+          className="fixed inset-0 z-[9999] flex items-center justify-center"
+          role="dialog"
+          aria-modal="true"
+          aria-label="How We Differ PDF"
+        >
+          <div
+            className="absolute inset-0 bg-black/70 backdrop-blur-sm"
+            onClick={() => setPdfModalOpen(false)}
+          />
+          <div className="relative z-10 w-[95vw] h-[90vh] max-w-6xl bg-white rounded-xl shadow-2xl overflow-hidden flex flex-col">
+            <div className="flex items-center justify-between px-4 sm:px-6 py-3 border-b border-gray-200 bg-gray-50 flex-shrink-0">
+              <h3 className="text-sm sm:text-base font-semibold text-gray-800">How We Differ</h3>
+              <button
+                type="button"
+                onClick={() => setPdfModalOpen(false)}
+                className="p-1.5 rounded-lg hover:bg-gray-200 transition-colors text-gray-600 hover:text-gray-900"
+                aria-label="Close modal"
+              >
+                <X size={20} />
+              </button>
+            </div>
+            <iframe
+              src={`${import.meta.env.BASE_URL}how_we_differ_pdf.pdf`}
+              title="How We Differ PDF"
+              className="flex-1 w-full border-0"
+            />
+          </div>
+        </div>
+      )}
     </div>
   );
 }
