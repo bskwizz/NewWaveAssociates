@@ -13,13 +13,14 @@ export default function ContactUsPage({ onNavigate }: ContactUsPageProps) {
     phone: '',
     company: '',
     reason: '',
+    timeline: '',
     message: '',
   });
 
   const handleSubmit = (e: React.FormEvent) => {
     e.preventDefault();
     const mailtoLink = `mailto:hello@newwaveassociates.com?subject=Contact from ${formData.name}&body=${encodeURIComponent(
-      `Name: ${formData.name}\nEmail: ${formData.email}\nPhone: ${formData.phone}\nCompany: ${formData.company}\nReason: ${formData.reason}\n\nMessage:\n${formData.message}`
+      `Name: ${formData.name}\nEmail: ${formData.email}\nPhone: ${formData.phone}\nCompany: ${formData.company}\nReason: ${formData.reason}\nTimeline: ${formData.timeline}\n\nMessage:\n${formData.message}`
     )}`;
     window.location.href = mailtoLink;
   };
@@ -157,6 +158,27 @@ export default function ContactUsPage({ onNavigate }: ContactUsPageProps) {
                     <option value="Partnership Opportunity">Partnership Opportunity</option>
                     <option value="Consulting Services">Consulting Services</option>
                     <option value="Other">Other</option>
+                  </select>
+                </div>
+
+                <div className="col-span-1 sm:col-span-2">
+                  <label htmlFor="timeline" className="block text-sm font-semibold text-[#38495D] mb-1.5">
+                    Timeline *
+                  </label>
+                  <select
+                    id="timeline"
+                    name="timeline"
+                    value={formData.timeline}
+                    onChange={handleChange}
+                    required
+                    className="w-full px-4 py-2 border border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-[#01A3DB] focus:border-transparent transition-all bg-white"
+                  >
+                    <option value="" disabled>Select a timeline</option>
+                    <option value="ASAP (0–2 weeks)">ASAP (0–2 weeks)</option>
+                    <option value="This month">This month</option>
+                    <option value="1–3 months">1–3 months</option>
+                    <option value="3–6 months">3–6 months</option>
+                    <option value="Exploring (6+ months)">Exploring (6+ months)</option>
                   </select>
                 </div>
 
