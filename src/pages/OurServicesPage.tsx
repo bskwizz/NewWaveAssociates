@@ -285,7 +285,7 @@ export default function OurServicesPage({ onNavigate }: OurServicesPageProps) {
 
   return (
     <div>
-      <div id="our-services-hero" ref={vantaRef} className="flywheel-hero fw-glow flex flex-col min-h-[100svh] pb-0 overflow-visible lg:min-h-screen lg:pb-[200px]" aria-label="New Wave Flywheel" style={{ position: 'relative' }}>
+      <div id="our-services-hero" ref={vantaRef} className="flywheel-hero fw-glow flex flex-col min-h-[100svh] overflow-visible lg:min-h-screen" aria-label="New Wave Flywheel" style={{ position: 'relative' }}>
         <div className="absolute inset-0 opacity-[0.12] pointer-events-none" style={{
           backgroundImage: `radial-gradient(1px 1px at 20% 30%, #38495d 100%, transparent 0),
                             radial-gradient(1px 1px at 70% 60%, #01a3db 100%, transparent 0),
@@ -296,6 +296,15 @@ export default function OurServicesPage({ onNavigate }: OurServicesPageProps) {
 
         <div className="relative z-10 flex-1 flex flex-col">
           <PageHeader />
+
+          {/* Wave divider (no layout shift) */}
+          <div className="pointer-events-none relative h-0">
+            <img
+              src={`${import.meta.env.BASE_URL}wave_graphic_our_services.svg`}
+              alt=""
+              className="block w-full h-auto max-w-[1600px] mx-auto -translate-y-[42%] sm:-translate-y-[44%] lg:-translate-y-[46%]"
+            />
+          </div>
 
           <div className="relative flex items-center flex-1 py-4 sm:py-6 lg:min-h-0 lg:py-0">
           <div className="w-full">
@@ -397,11 +406,6 @@ export default function OurServicesPage({ onNavigate }: OurServicesPageProps) {
         </div>
         </div>
 
-        <img
-          src={`${import.meta.env.BASE_URL}wave_graphic_our_services.svg`}
-          alt=""
-          className="w-full max-w-[1600px] mx-auto block"
-        />
       </div>
 
       <div className="bg-gray-50 pt-5 sm:pt-6 lg:pt-32">
