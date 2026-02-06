@@ -297,7 +297,7 @@ export default function OurServicesPage({ onNavigate }: OurServicesPageProps) {
         <div className="relative z-10 flex-1 flex flex-col">
           <PageHeader />
 
-          <div className="relative flex items-start flex-1 pt-8 pb-4 sm:pt-12 sm:pb-6 lg:pt-16 lg:pb-0 lg:min-h-0">
+          <div className="relative flex items-start flex-1 pt-6 pb-4 sm:pt-8 sm:pb-6 lg:pt-12 lg:pb-0 lg:min-h-0">
           <div className="w-full">
             <div className="max-w-7xl mx-auto px-4 sm:px-5 md:px-6 lg:px-6 xl:px-8 w-full">
               <div className="flex flex-col lg:grid lg:grid-cols-2 gap-6 sm:gap-8 md:gap-8 lg:gap-10 xl:gap-12 lg:items-center">
