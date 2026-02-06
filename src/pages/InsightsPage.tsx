@@ -91,8 +91,9 @@ export default function InsightsPage({ onNavigate }: InsightsPageProps) {
                         onClick={() => onNavigate(`insights/${insights[0].slug}`)}
                         className="text-left mb-4 w-full group/title"
                       >
-                        <h2 className="text-2xl sm:text-3xl lg:text-4xl font-bold text-black group-hover/title:text-[#01A3DB] group-hover/title:underline leading-tight transition-colors inline-block">
-                          {insights[0].title.split('Avoided')[0]}Avoided<ChevronRight className="inline-block ml-2 mb-1 text-[#f05e00]" size={32} />
+                        <h2 className="text-2xl sm:text-3xl lg:text-4xl font-bold text-black group-hover/title:text-[#01A3DB] group-hover/title:underline leading-tight transition-colors">
+                          {insights[0].title}
+                          <ChevronRight className="inline-block ml-2 mb-1 text-[#f05e00]" size={32} />
                         </h2>
                       </button>
                       <p className="text-black text-base sm:text-lg leading-relaxed">
