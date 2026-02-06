@@ -328,7 +328,7 @@ export default function OurServicesPage({ onNavigate }: OurServicesPageProps) {
                   </div>
                 </div>
 
-                <p className="text-gray-700 text-sm sm:text-base leading-relaxed order-2 lg:hidden">
+                <p className="text-gray-700 text-sm sm:text-base leading-relaxed order-2 lg:hidden -mt-4 sm:-mt-5">
                   We modernize core business operations through process redesign, data integration, post-merger integration, and performance governance to scale cross-functional execution at speed and quality.
                 </p>
 
