@@ -212,6 +212,12 @@ export default function AboutUsPage({ onNavigate }: AboutUsPageProps) {
         </div>
       </div>
 
+      <img
+        src={`${import.meta.env.BASE_URL}wave_graphic_about_us.svg`}
+        alt=""
+        className="w-full max-w-[1600px] mx-auto block"
+      />
+
       <CTABar
         text="Learn more about New Wave solutions for your unique growth opportunity"
         buttonText="Contact Us"

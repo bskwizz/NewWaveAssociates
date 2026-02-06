@@ -397,15 +397,11 @@ export default function OurServicesPage({ onNavigate }: OurServicesPageProps) {
         </div>
         </div>
 
-        <div
-          className="relative z-0 mt-auto pointer-events-none lg:absolute lg:-bottom-8 lg:h-[60vh] lg:max-h-[600px] lg:translate-y-16 lg:left-1/2 lg:right-auto lg:-translate-x-1/2 lg:w-screen lg:z-10 lg:overflow-visible bg-none lg:bg-[url('/wave_graphic_for_our_services_page.png')] lg:bg-no-repeat lg:bg-bottom lg:bg-center lg:bg-[length:100%_auto]"
-        >
-          <img
-            src={`${import.meta.env.BASE_URL}wave_graphic_for_our_services_page.png`}
-            alt="Wave graphic"
-            className="w-full h-[150px] object-cover object-bottom lg:hidden"
-          />
-        </div>
+        <img
+          src={`${import.meta.env.BASE_URL}wave_graphic_our_services.svg`}
+          alt=""
+          className="w-full max-w-[1600px] mx-auto block"
+        />
       </div>
 
       <div className="bg-gray-50 pt-5 sm:pt-6 lg:pt-32">
