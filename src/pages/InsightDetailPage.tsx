@@ -106,6 +106,7 @@ export default function InsightDetailPage({ onNavigate, slug }: InsightDetailPag
           margin: 1.5rem 0;
           padding-left: 1.5rem;
           max-width: 65ch;
+          list-style-type: disc;
         }
 
         .editorial-article li {
@@ -117,7 +118,8 @@ export default function InsightDetailPage({ onNavigate, slug }: InsightDetailPag
         }
 
         .editorial-article li::marker {
-          color: #000;
+          color: #f05e00;
+          font-size: 1.3em;
         }
 
         .editorial-article strong {
