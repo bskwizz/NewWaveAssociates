@@ -397,7 +397,7 @@ export default function OurServicesPage({ onNavigate }: OurServicesPageProps) {
         </div>
         </div>
 
-        <div className="pointer-events-none absolute bottom-0 left-0 right-0 z-[1] flex justify-center lg:translate-y-[calc(15%+184px)]">
+        <div className="pointer-events-none absolute bottom-0 left-0 right-0 z-[1] flex justify-center translate-y-[30px] lg:translate-y-[calc(15%+184px)]">
           <img
             src={`${import.meta.env.BASE_URL}wave_graphic_our_services.svg`}
             alt=""
