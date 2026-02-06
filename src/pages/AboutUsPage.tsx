@@ -51,6 +51,14 @@ export default function AboutUsPage({ onNavigate }: AboutUsPageProps) {
       <div ref={vantaRef} className="capabilities-hero relative" aria-label="About Us">
         <PageHeader />
 
+        {/* Wave divider (no layout shift) */}
+        <div className="pointer-events-none relative h-0">
+          <img
+            src={`${import.meta.env.BASE_URL}wave_about.svg`}
+            alt=""
+            className="block w-full h-auto max-w-[1600px] mx-auto -translate-y-1/2"
+          />
+        </div>
 
         <div className="capabilities-hero__inner hero-content relative z-20 pt-[32px] sm:pt-[48px] lg:pt-[4rem]">
           <div className="max-w-7xl mx-auto px-4 sm:px-5 md:px-6 lg:px-6 xl:px-8">
@@ -211,12 +219,6 @@ export default function AboutUsPage({ onNavigate }: AboutUsPageProps) {
           </div>
         </div>
       </div>
-
-      <img
-        src={`${import.meta.env.BASE_URL}wave_graphic_about_us.svg`}
-        alt=""
-        className="w-full max-w-[1600px] mx-auto block"
-      />
 
       <CTABar
         text="Learn more about New Wave solutions for your unique growth opportunity"
