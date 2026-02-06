@@ -285,7 +285,7 @@ export default function OurServicesPage({ onNavigate }: OurServicesPageProps) {
 
   return (
     <div>
-      <div id="our-services-hero" ref={vantaRef} className="flywheel-hero fw-glow flex flex-col min-h-0 pb-[180px] overflow-visible lg:min-h-screen lg:pb-[200px]" aria-label="New Wave Flywheel" style={{ position: 'relative' }}>
+      <div id="our-services-hero" ref={vantaRef} className="flywheel-hero fw-glow flex flex-col min-h-[100svh] pb-0 overflow-visible lg:min-h-screen lg:pb-[200px]" aria-label="New Wave Flywheel" style={{ position: 'relative' }}>
         <div className="absolute inset-0 opacity-[0.12] pointer-events-none" style={{
           backgroundImage: `radial-gradient(1px 1px at 20% 30%, #38495d 100%, transparent 0),
                             radial-gradient(1px 1px at 70% 60%, #01a3db 100%, transparent 0),
@@ -398,12 +398,12 @@ export default function OurServicesPage({ onNavigate }: OurServicesPageProps) {
         </div>
 
         <div
-          className="absolute -bottom-[20px] left-0 right-0 h-[140px] lg:bottom-auto lg:-bottom-8 lg:h-[60vh] lg:max-h-[600px] lg:translate-y-16 lg:left-1/2 lg:right-auto lg:-translate-x-1/2 lg:w-screen pointer-events-none z-0 lg:z-10 lg:overflow-visible bg-none lg:bg-[url('/wave_graphic_for_our_services_page.png')] lg:bg-no-repeat lg:bg-bottom lg:bg-center lg:bg-[length:100%_auto]"
+          className="relative z-0 mt-auto pointer-events-none lg:absolute lg:-bottom-8 lg:h-[60vh] lg:max-h-[600px] lg:translate-y-16 lg:left-1/2 lg:right-auto lg:-translate-x-1/2 lg:w-screen lg:z-10 lg:overflow-visible bg-none lg:bg-[url('/wave_graphic_for_our_services_page.png')] lg:bg-no-repeat lg:bg-bottom lg:bg-center lg:bg-[length:100%_auto]"
         >
           <img
             src={`${import.meta.env.BASE_URL}wave_graphic_for_our_services_page.png`}
             alt="Wave graphic"
-            className="w-full h-full object-cover object-bottom lg:hidden"
+            className="w-full h-[150px] object-cover object-bottom lg:hidden"
           />
         </div>
       </div>
