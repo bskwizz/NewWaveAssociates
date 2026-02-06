@@ -300,8 +300,39 @@ export default function OurServicesPage({ onNavigate }: OurServicesPageProps) {
           <div className="relative flex items-center flex-1 py-4 sm:py-6 lg:min-h-0 lg:py-0">
           <div className="w-full">
             <div className="max-w-7xl mx-auto px-4 sm:px-5 md:px-6 lg:px-6 xl:px-8 w-full">
-              <div className="grid grid-cols-1 md:grid-cols-2 gap-6 sm:gap-8 md:gap-8 lg:gap-10 xl:gap-12 items-center">
-                <div className="flywheel-hero__media relative order-2 md:order-1 mt-10 md:mt-0">
+              <div className="flex flex-col lg:grid lg:grid-cols-2 gap-6 sm:gap-8 md:gap-8 lg:gap-10 xl:gap-12 lg:items-center">
+                <div className="hero-rotator text-left order-1 lg:order-2">
+                  <div className="inline-block mb-1 lg:mb-2">
+                    <div>
+                      <p className="text-black text-xs sm:text-sm lg:text-base font-bold uppercase mb-1 lg:mb-2 animate-fade-in" style={{
+                        letterSpacing: '0.2em'
+                      }}>
+                        Interim<br />Leadership Practice Areas
+                      </p>
+                      <div className="h-[2px] bg-[#f05e00]"></div>
+                    </div>
+                  </div>
+
+                  <div className="space-y-2 sm:space-y-3 lg:space-y-6 text-left max-w-xl mt-3 sm:mt-4 lg:mt-6">
+                    <p className="text-gray-700 text-sm sm:text-base leading-relaxed">
+                      We embed in the trenches with leaders to achieve specific, pragmatic goals quickly.
+                    </p>
+
+                    <p className="text-gray-700 text-sm sm:text-base leading-relaxed">
+                      Our interim leadership services are informed by decades of combined experience; our entire team has served as director, VP, and C-level executives in house.
+                    </p>
+
+                    <p className="text-gray-700 text-sm sm:text-base leading-relaxed hidden lg:block">
+                      We modernize core business operations through process redesign, data integration, post-merger integration, and performance governance to scale cross-functional execution at speed and quality.
+                    </p>
+                  </div>
+                </div>
+
+                <p className="text-gray-700 text-sm sm:text-base leading-relaxed order-2 lg:hidden">
+                  We modernize core business operations through process redesign, data integration, post-merger integration, and performance governance to scale cross-functional execution at speed and quality.
+                </p>
+
+                <div className="flywheel-hero__media relative order-3 lg:order-1 mt-6 lg:mt-0">
                   <img
                     className="flywheel-hero__img opacity-100"
                     style={{ maxWidth: '100%', width: '100%', margin: '0 auto' }}
@@ -360,32 +391,6 @@ export default function OurServicesPage({ onNavigate }: OurServicesPageProps) {
               }}
             ></a>
                 </div>
-                <div className="hero-rotator text-left order-1 lg:order-2">
-                  <div className="inline-block mb-1 lg:mb-2">
-                    <div>
-                      <p className="text-black text-xs sm:text-sm lg:text-base font-bold uppercase mb-1 lg:mb-2 animate-fade-in" style={{
-                        letterSpacing: '0.2em'
-                      }}>
-                        Interim<br />Leadership Practice Areas
-                      </p>
-                      <div className="h-[2px] bg-[#f05e00]"></div>
-                    </div>
-                  </div>
-
-                  <div className="space-y-2 sm:space-y-3 lg:space-y-6 text-left max-w-xl mt-3 sm:mt-4 lg:mt-6">
-                    <p className="text-gray-700 text-sm sm:text-base leading-relaxed">
-                      We embed in the trenches with leaders to achieve specific, pragmatic goals quickly.
-                    </p>
-
-                    <p className="text-gray-700 text-sm sm:text-base leading-relaxed">
-                      Our interim leadership services are informed by decades of combined experience; our entire team has served as director, VP, and C-level executives in house.
-                    </p>
-
-                    <p className="text-gray-700 text-sm sm:text-base leading-relaxed hidden lg:block">
-                      We modernize core business operations through process redesign, data integration, post-merger integration, and performance governance to scale cross-functional execution at speed and quality.
-                    </p>
-                  </div>
-                </div>
               </div>
             </div>
           </div>
@@ -405,9 +410,6 @@ export default function OurServicesPage({ onNavigate }: OurServicesPageProps) {
 
       <div className="bg-gray-50 pt-5 sm:pt-6 lg:pt-32">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 pb-8 sm:pb-12 lg:pb-16 w-full">
-          <p className="text-gray-700 text-sm sm:text-base leading-relaxed mb-8 lg:hidden">
-            We modernize core business operations through process redesign, data integration, post-merger integration, and performance governance to scale cross-functional execution at speed and quality.
-          </p>
           {renderSection(gtmStrategyContent)}
           {renderSection(costOptimizationContent)}
           {renderSection(operationalEfficienciesContent)}
