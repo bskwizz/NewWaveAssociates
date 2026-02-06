@@ -103,7 +103,7 @@ export default function InsightDetailPage({ onNavigate, slug }: InsightDetailPag
         }
 
         .editorial-article ul {
-          margin: 1.5rem 0;
+          margin: 0.5rem 0 1.5rem;
           padding-left: 1.5rem;
           max-width: 65ch;
           list-style-type: disc;
@@ -113,7 +113,7 @@ export default function InsightDetailPage({ onNavigate, slug }: InsightDetailPag
           font-size: 1.125rem;
           line-height: 1.8;
           color: #000;
-          margin-bottom: 0.75rem;
+          margin-bottom: 0.25rem;
           font-family: "Segoe UI", system-ui, sans-serif;
         }
 
