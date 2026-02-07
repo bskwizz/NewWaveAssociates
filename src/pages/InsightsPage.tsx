@@ -98,7 +98,7 @@ export default function InsightsPage({ onNavigate }: InsightsPageProps) {
                       </button>
                       <p className="text-black text-base sm:text-lg leading-relaxed">
                         <span className="italic">{new Date(insights[0].publish_date).toLocaleDateString('en-US', { month: 'long', day: 'numeric', year: 'numeric' })} - </span>
-                        We have entered a project-based era of execution, whether leaders have embraced it or not.
+                        Nearly all meaningful value today is delivered through projects and programs rather than steady-state functional work.
                       </p>
                     </div>
                   </div>
