@@ -65,7 +65,18 @@ export default function InsightDetailPage({ onNavigate, slug }: InsightDetailPag
   return (
     <div className="overflow-x-clip">
       <style>{`
-        .editorial-article p:first-of-type::first-letter {
+        .editorial-article .executive-summary {
+          font-style: italic;
+          border-bottom: 1px solid #d1d5db;
+          padding-bottom: 2rem;
+          margin-bottom: 2rem;
+        }
+
+        .editorial-article .executive-summary p {
+          font-style: italic;
+        }
+
+        .editorial-article .executive-summary + p::first-letter {
           float: left;
           font-size: 4.5rem;
           line-height: 3.5rem;
@@ -77,7 +88,7 @@ export default function InsightDetailPage({ onNavigate, slug }: InsightDetailPag
         }
 
         @media (max-width: 640px) {
-          .editorial-article p:first-of-type::first-letter {
+          .editorial-article .executive-summary + p::first-letter {
             font-size: 3.5rem;
             line-height: 2.75rem;
           }
