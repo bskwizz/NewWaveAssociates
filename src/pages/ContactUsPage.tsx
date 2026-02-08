@@ -29,6 +29,10 @@ export default function ContactUsPage({ onNavigate }: ContactUsPageProps) {
 
     // Validate required fields
     if (!formData.name || !formData.email || !formData.reason || !formData.timeline) {
+      setSubmitStatus({
+        type: 'error',
+        message: 'Please complete all required fields.',
+      });
       return;
     }
 
