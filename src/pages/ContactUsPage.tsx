@@ -15,14 +15,77 @@ export default function ContactUsPage({ onNavigate }: ContactUsPageProps) {
     reason: '',
     timeline: '',
     message: '',
+    website: '',
   });
 
-  const handleSubmit = (e: React.FormEvent) => {
+  const [isSubmitting, setIsSubmitting] = useState(false);
+  const [submitStatus, setSubmitStatus] = useState<{
+    type: 'success' | 'error' | null;
+    message: string;
+  }>({ type: null, message: '' });
+
+  const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
-    const mailtoLink = `mailto:hello@newwaveassociates.com?subject=Contact from ${formData.name}&body=${encodeURIComponent(
-      `Name: ${formData.name}\nEmail: ${formData.email}\nPhone: ${formData.phone}\nCompany: ${formData.company}\nReason: ${formData.reason}\nTimeline: ${formData.timeline}\n\nMessage:\n${formData.message}`
-    )}`;
-    window.location.href = mailtoLink;
+
+    // Validate required fields
+    if (!formData.name || !formData.email || !formData.reason || !formData.timeline) {
+      return;
+    }
+
+    // Check honeypot
+    if (formData.website) {
+      return;
+    }
+
+    setIsSubmitting(true);
+    setSubmitStatus({ type: null, message: '' });
+
+    try {
+      const response = await fetch('https://vmxghbrjuyvyzxaavmus.functions.supabase.co/lead', {
+        method: 'POST',
+        headers: {
+          'Content-Type': 'application/json',
+        },
+        body: JSON.stringify({
+          name: formData.name,
+          email: formData.email,
+          phone: formData.phone,
+          company: formData.company,
+          reason: formData.reason,
+          timeline: formData.timeline,
+          message: formData.message,
+          pageUrl: window.location.href,
+          website: formData.website,
+        }),
+      });
+
+      if (!response.ok) {
+        throw new Error('Failed to submit form');
+      }
+
+      // Success - clear form and show success message
+      setFormData({
+        name: '',
+        email: '',
+        phone: '',
+        company: '',
+        reason: '',
+        timeline: '',
+        message: '',
+        website: '',
+      });
+      setSubmitStatus({
+        type: 'success',
+        message: "Thanks for reaching out. We'll get back to you shortly.",
+      });
+    } catch (error) {
+      setSubmitStatus({
+        type: 'error',
+        message: 'Something went wrong. Please try again.',
+      });
+    } finally {
+      setIsSubmitting(false);
+    }
   };
 
   const handleChange = (e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement | HTMLSelectElement>) => {
@@ -195,12 +258,44 @@ export default function ContactUsPage({ onNavigate }: ContactUsPageProps) {
                   />
                 </div>
 
+                {/* Honeypot field - hidden from users */}
+                <input
+                  type="text"
+                  name="website"
+                  value={formData.website}
+                  onChange={handleChange}
+                  tabIndex={-1}
+                  autoComplete="off"
+                  style={{
+                    position: 'absolute',
+                    left: '-9999px',
+                    width: '1px',
+                    height: '1px',
+                  }}
+                  aria-hidden="true"
+                />
+
+                {submitStatus.type && (
+                  <div className="col-span-1 sm:col-span-2">
+                    <div
+                      className={`p-4 rounded-md ${
+                        submitStatus.type === 'success'
+                          ? 'bg-green-50 text-green-800 border border-green-200'
+                          : 'bg-red-50 text-red-800 border border-red-200'
+                      }`}
+                    >
+                      {submitStatus.message}
+                    </div>
+                  </div>
+                )}
+
                 <div className="col-span-1 sm:col-span-2">
                   <button
                     type="submit"
-                    className="w-full py-2.5 bg-[#01A3DB] text-white rounded-md font-medium text-base sm:text-lg hover:bg-[#0192C5] transition-all hover:scale-[1.02] focus:outline-none focus:ring-2 focus:ring-[#01A3DB] focus:ring-offset-2"
+                    disabled={isSubmitting}
+                    className="w-full py-2.5 bg-[#01A3DB] text-white rounded-md font-medium text-base sm:text-lg hover:bg-[#0192C5] transition-all hover:scale-[1.02] focus:outline-none focus:ring-2 focus:ring-[#01A3DB] focus:ring-offset-2 disabled:opacity-50 disabled:cursor-not-allowed disabled:hover:scale-100"
                   >
-                    Submit
+                    {isSubmitting ? 'Submitting...' : 'Submit'}
                   </button>
                 </div>
               </form>
