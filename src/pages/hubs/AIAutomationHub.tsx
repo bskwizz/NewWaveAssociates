@@ -1,22 +1,17 @@
+import ListingPageLayout from '../../components/ListingPageLayout';
+
 interface AIAutomationHubProps {
   onNavigate: (page: string) => void;
 }
 
 export default function AIAutomationHub({ onNavigate }: AIAutomationHubProps) {
   return (
-    <div className="pt-32">
-      <section className="cs-hero has-image" style={{ backgroundImage: "url('https://images.unsplash.com/photo-1677442136019-21780ecad995?w=1600&h=900&fit=crop')" }}>
-        <div className="wrap">
-          <div className="cs-breadcrumbs">
-            <button onClick={() => onNavigate('case-studies')} className="hover:underline cursor-pointer bg-transparent border-none px-4 py-2 -mx-4 -my-2 font-inherit text-inherit rounded hover:bg-gray-100/50 transition-colors">Case Studies</button> · AI & Intelligent Automation
-          </div>
-          <h1>AI & Intelligent Automation Case Studies</h1>
-          <p>
-            AI-enabled workflows, adoption governance, and measurable cycle-time compression—automation that sticks.
-          </p>
-        </div>
-      </section>
-
+    <ListingPageLayout
+      onNavigate={onNavigate}
+      categoryLabel="Case Studies"
+      title="AI & Intelligent Automation"
+      subtitle="AI-enabled workflows, adoption governance, and measurable cycle-time compression—automation that sticks."
+    >
       <section className="cs-grid">
         <article className="cs-card">
           <img className="cs-card__img" src="https://images.unsplash.com/photo-1554224155-8d04cb21cd6c?w=1600&h=900&fit=crop" alt="AP Automation" />
@@ -40,6 +35,6 @@ export default function AIAutomationHub({ onNavigate }: AIAutomationHubProps) {
           <a className="cs-card__link" href="#" onClick={(e) => { e.preventDefault(); onNavigate('case-studies/automation-ar-acceleration'); }}>Read full case →</a>
         </article>
       </section>
-    </div>
+    </ListingPageLayout>
   );
 }

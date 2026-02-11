@@ -1,22 +1,17 @@
+import ListingPageLayout from '../../components/ListingPageLayout';
+
 interface GTMGrowthHubProps {
   onNavigate: (page: string) => void;
 }
 
 export default function GTMGrowthHub({ onNavigate }: GTMGrowthHubProps) {
   return (
-    <div className="pt-32">
-      <section className="cs-hero has-image" style={{ backgroundImage: "url('https://images.unsplash.com/photo-1460925895917-afdab827c52f?w=1600&h=900&fit=crop')" }}>
-        <div className="wrap">
-          <div className="cs-breadcrumbs">
-            <button onClick={() => onNavigate('case-studies')} className="hover:underline cursor-pointer bg-transparent border-none px-4 py-2 -mx-4 -my-2 font-inherit text-inherit rounded hover:bg-gray-100/50 transition-colors">Case Studies</button> · Go-to-Market & Growth Optimization
-          </div>
-          <h1>Go-to-Market & Growth Optimization Case Studies</h1>
-          <p>
-            Revenue architecture, demand activation, and conversion velocity—aligned to ICP, segment clarity, and margin discipline.
-          </p>
-        </div>
-      </section>
-
+    <ListingPageLayout
+      onNavigate={onNavigate}
+      categoryLabel="Case Studies"
+      title="Go-to-Market & Growth Optimization"
+      subtitle="Revenue architecture, demand activation, and conversion velocity—aligned to ICP, segment clarity, and margin discipline."
+    >
       <section className="cs-grid">
         <article className="cs-card">
           <img className="cs-card__img" src="https://images.unsplash.com/photo-1551288049-bebda4e38f71?w=1600&h=900&fit=crop" alt="Pricing & Packaging" />
@@ -62,6 +57,6 @@ export default function GTMGrowthHub({ onNavigate }: GTMGrowthHubProps) {
           <a className="cs-card__link" href="#" onClick={(e) => { e.preventDefault(); onNavigate('case-studies/gtm-revenue-visibility'); }}>Read full case →</a>
         </article>
       </section>
-    </div>
+    </ListingPageLayout>
   );
 }
