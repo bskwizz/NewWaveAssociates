@@ -253,24 +253,6 @@ Option 2: Install and provide the "ws" package:
           font-style: italic;
         }
 
-        .editorial-article .executive-summary + div > p:first-of-type::first-letter {
-          float: left;
-          font-size: 4.5rem;
-          line-height: 3.5rem;
-          padding-right: 0.125rem;
-          margin-top: 0.125rem;
-          font-weight: 700;
-          color: #000;
-          font-family: "Segoe UI", system-ui, sans-serif;
-        }
-
-        @media (max-width: 640px) {
-          .editorial-article .executive-summary + div > p:first-of-type::first-letter {
-            font-size: 3.5rem;
-            line-height: 2.75rem;
-          }
-        }
-
         .editorial-article h2 {
           font-size: 1.5rem;
           font-weight: 700;
