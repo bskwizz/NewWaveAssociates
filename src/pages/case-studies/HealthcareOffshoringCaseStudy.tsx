@@ -42,7 +42,7 @@ export default function HealthcareOffshoringCaseStudy({ onNavigate }: Healthcare
           </ul>
         `
       }}
-      authorBio="Hunter New, Founding Partner at New Wave Associates, specializes in global delivery models and operational transformation for healthcare organizations."
+      authorBio="Hunter New, Managing Partner at New Wave Associates, specializes in global delivery models and operational transformation for healthcare organizations."
       ctaText="Ready to scale with an offshore model? Let's discuss your cost reduction opportunities."
     />
   );

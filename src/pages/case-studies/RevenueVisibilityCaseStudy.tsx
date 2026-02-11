@@ -43,7 +43,7 @@ export default function RevenueVisibilityCaseStudy({ onNavigate }: RevenueVisibi
           </ul>
         `
       }}
-      authorBio="Jason Lee, Founding Partner at New Wave Associates, specializes in go-to-market optimization and revenue operations transformation for growth-stage companies."
+      authorBio="Jason Lee, Managing Partner at New Wave Associates, specializes in go-to-market optimization and revenue operations transformation for growth-stage companies."
       ctaText="Want to stop revenue leakage? Let's discuss your operational opportunities."
     />
   );

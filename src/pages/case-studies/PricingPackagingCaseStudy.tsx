@@ -42,7 +42,7 @@ export default function PricingPackagingCaseStudy({ onNavigate }: PricingPackagi
           </ul>
         `
       }}
-      authorBio="Jason Lee, Founding Partner at New Wave Associates, specializes in go-to-market optimization and revenue operations transformation for growth-stage companies."
+      authorBio="Jason Lee, Managing Partner at New Wave Associates, specializes in go-to-market optimization and revenue operations transformation for growth-stage companies."
       ctaText="Ready to optimize your pricing strategy? Let's discuss your growth opportunities."
     />
   );

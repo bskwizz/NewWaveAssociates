@@ -43,7 +43,7 @@ export default function ITMSPOffshoringCaseStudy({ onNavigate }: ITMSPOffshoring
           </ul>
         `
       }}
-      authorBio="Hunter New, Founding Partner at New Wave Associates, specializes in global delivery models and operational transformation for service organizations."
+      authorBio="Hunter New, Managing Partner at New Wave Associates, specializes in global delivery models and operational transformation for service organizations."
       ctaText="Ready to scale with a global delivery model? Let's discuss your opportunities."
     />
   );

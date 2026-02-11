@@ -44,7 +44,7 @@ export default function SubcontractingCaptureCaseStudy({ onNavigate }: Subcontra
           </ul>
         `
       }}
-      authorBio="Craig Keller, Founding Partner at New Wave Associates, specializes in SG&A optimization and operational efficiency for services organizations."
+      authorBio="Craig Keller, Managing Partner at New Wave Associates, specializes in SG&A optimization and operational efficiency for services organizations."
       ctaText="Ready to optimize your subcontractor spend? Let's discuss cost reduction opportunities."
     />
   );

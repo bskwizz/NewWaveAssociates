@@ -45,7 +45,7 @@ export default function AgreementsStandardizationCaseStudy({ onNavigate }: Agree
           </ul>
         `
       }}
-      authorBio="Bryan Skwirut, Founding Partner at New Wave Associates, specializes in contract management and revenue operations optimization."
+      authorBio="Bryan Skwirut, Managing Partner at New Wave Associates, specializes in contract management and revenue operations optimization."
       ctaText="Ready to standardize your agreements? Let's discuss your contract optimization opportunities."
     />
   );

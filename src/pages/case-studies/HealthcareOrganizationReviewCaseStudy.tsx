@@ -42,7 +42,7 @@ export default function HealthcareOrganizationReviewCaseStudy({ onNavigate }: He
           </ul>
         `
       }}
-      authorBio="Hunter New, Founding Partner at New Wave Associates, specializes in organizational design and labor strategy for healthcare and service organizations."
+      authorBio="Hunter New, Managing Partner at New Wave Associates, specializes in organizational design and labor strategy for healthcare and service organizations."
       ctaText="Ready to optimize your organizational model? Let's discuss your cost reduction opportunities."
     />
   );

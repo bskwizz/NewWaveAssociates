@@ -45,7 +45,7 @@ export default function VirtualCardCaseStudy({ onNavigate }: VirtualCardCaseStud
           </ul>
         `
       }}
-      authorBio="Craig Keller, Founding Partner at New Wave Associates, specializes in finance transformation and payment optimization for middle-market companies."
+      authorBio="Craig Keller, Managing Partner at New Wave Associates, specializes in finance transformation and payment optimization for middle-market companies."
       ctaText="Ready to unlock rebate value? Let's discuss virtual card implementation."
     />
   );

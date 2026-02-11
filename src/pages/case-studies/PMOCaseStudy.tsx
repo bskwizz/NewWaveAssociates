@@ -52,7 +52,7 @@ export default function PMOCaseStudy({ onNavigate }: PMOCaseStudyProps) {
           </ul>
         `
       }}
-      authorBio="Jason Lee, Founding Partner at New Wave Associates, specializes in PMO design and delivery excellence for SaaS and technology companies."
+      authorBio="Jason Lee, Managing Partner at New Wave Associates, specializes in PMO design and delivery excellence for SaaS and technology companies."
       ctaText="Need help establishing or optimizing your Project Management Office? Let's discuss your specific challenges."
     />
   );

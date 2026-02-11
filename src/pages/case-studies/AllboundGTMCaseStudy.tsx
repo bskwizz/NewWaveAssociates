@@ -42,7 +42,7 @@ export default function AllboundGTMCaseStudy({ onNavigate }: AllboundGTMCaseStud
           </ul>
         `
       }}
-      authorBio="Jason Lee, Founding Partner at New Wave Associates, specializes in go-to-market optimization and revenue operations transformation for growth-stage companies."
+      authorBio="Jason Lee, Managing Partner at New Wave Associates, specializes in go-to-market optimization and revenue operations transformation for growth-stage companies."
       ctaText="Ready to optimize your go-to-market strategy? Let's discuss your growth opportunities."
     />
   );

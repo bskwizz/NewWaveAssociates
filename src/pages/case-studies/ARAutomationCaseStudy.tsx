@@ -45,7 +45,7 @@ export default function ARAutomationCaseStudy({ onNavigate }: ARAutomationCaseSt
           </ul>
         `
       }}
-      authorBio="Craig Keller, Founding Partner at New Wave Associates, specializes in finance automation and digital transformation for middle-market companies."
+      authorBio="Craig Keller, Managing Partner at New Wave Associates, specializes in finance automation and digital transformation for middle-market companies."
       ctaText="Ready to accelerate your collections? Let's discuss how to optimize your AR."
     />
   );

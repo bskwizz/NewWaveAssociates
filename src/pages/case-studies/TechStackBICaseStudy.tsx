@@ -45,7 +45,7 @@ export default function TechStackBICaseStudy({ onNavigate }: TechStackBICaseStud
           </ul>
         `
       }}
-      authorBio="Jason Lee, Founding Partner at New Wave Associates, specializes in technology rationalization and business intelligence transformation."
+      authorBio="Jason Lee, Managing Partner at New Wave Associates, specializes in technology rationalization and business intelligence transformation."
       ctaText="Ready to consolidate your tech stack? Let's discuss your modernization opportunities."
     />
   );

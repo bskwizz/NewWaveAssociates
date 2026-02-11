@@ -42,7 +42,7 @@ export default function VerticalIncubationCaseStudy({ onNavigate }: VerticalIncu
           </ul>
         `
       }}
-      authorBio="Jason Lee, Founding Partner at New Wave Associates, specializes in go-to-market optimization and revenue operations transformation for growth-stage companies."
+      authorBio="Jason Lee, Managing Partner at New Wave Associates, specializes in go-to-market optimization and revenue operations transformation for growth-stage companies."
       ctaText="Ready to expand into new verticals? Let's discuss your market opportunities."
     />
   );

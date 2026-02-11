@@ -45,7 +45,7 @@ export default function CatalogRationalizationCaseStudy({ onNavigate }: CatalogR
           </ul>
         `
       }}
-      authorBio="Bryan Skwirut, Founding Partner at New Wave Associates, specializes in catalog management and pricing optimization for technology distributors."
+      authorBio="Bryan Skwirut, Managing Partner at New Wave Associates, specializes in catalog management and pricing optimization for technology distributors."
       ctaText="Ready to rationalize your product catalog? Let's discuss your simplification opportunities."
     />
   );

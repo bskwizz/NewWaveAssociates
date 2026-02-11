@@ -45,7 +45,7 @@ export default function MultisiteSystemIntegrationCaseStudy({ onNavigate }: Mult
           </ul>
         `
       }}
-      authorBio="Hunter New, Founding Partner at New Wave Associates, specializes in system integration and technology consolidation for multi-site enterprises."
+      authorBio="Hunter New, Managing Partner at New Wave Associates, specializes in system integration and technology consolidation for multi-site enterprises."
       ctaText="Ready to consolidate your systems? Let's discuss your integration opportunities."
     />
   );

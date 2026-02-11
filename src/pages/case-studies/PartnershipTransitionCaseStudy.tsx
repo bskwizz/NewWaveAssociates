@@ -44,7 +44,7 @@ export default function PartnershipTransitionCaseStudy({ onNavigate }: Partnersh
           </ul>
         `
       }}
-      authorBio="Bryan Skwirut, Founding Partner at New Wave Associates, specializes in partnership transitions and complex organizational separations."
+      authorBio="Bryan Skwirut, Managing Partner at New Wave Associates, specializes in partnership transitions and complex organizational separations."
       ctaText="Planning a partnership transition? Let's discuss your integration strategy."
     />
   );
