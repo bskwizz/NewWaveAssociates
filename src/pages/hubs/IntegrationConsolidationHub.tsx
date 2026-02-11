@@ -1,22 +1,17 @@
+import ListingPageLayout from '../../components/ListingPageLayout';
+
 interface IntegrationConsolidationHubProps {
   onNavigate: (page: string) => void;
 }
 
 export default function IntegrationConsolidationHub({ onNavigate }: IntegrationConsolidationHubProps) {
   return (
-    <div className="pt-32">
-      <section className="cs-hero has-image" style={{ backgroundImage: "url('https://images.unsplash.com/photo-1556761175-5973dc0f32e7?w=1600&h=900&fit=crop')" }}>
-        <div className="wrap">
-          <div className="cs-breadcrumbs">
-            <button onClick={() => onNavigate('case-studies')} className="hover:underline cursor-pointer bg-transparent border-none px-4 py-2 -mx-4 -my-2 font-inherit text-inherit rounded hover:bg-gray-100/50 transition-colors">Case Studies</button> · Integration & Consolidation
-          </div>
-          <h1>Integration & Consolidation Case Studies</h1>
-          <p>
-            IMOs, one-platform operating models, and synergy capture—from Day-1 readiness to Year-1 value realization.
-          </p>
-        </div>
-      </section>
-
+    <ListingPageLayout
+      onNavigate={onNavigate}
+      categoryLabel="Case Studies"
+      title="Integration & Consolidation"
+      subtitle="IMOs, one-platform operating models, and synergy capture—from Day-1 readiness to Year-1 value realization."
+    >
       <section className="cs-grid">
         <article className="cs-card">
           <img className="cs-card__img" src="https://images.unsplash.com/photo-1454165804606-c3d57bc86b40?w=1600&h=900&fit=crop" alt="System Integration" />
@@ -73,6 +68,6 @@ export default function IntegrationConsolidationHub({ onNavigate }: IntegrationC
           <a className="cs-card__link" href="#" onClick={(e) => { e.preventDefault(); onNavigate('case-studies/integration-techstack-bi'); }}>Read full case →</a>
         </article>
       </section>
-    </div>
+    </ListingPageLayout>
   );
 }

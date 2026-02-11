@@ -1,22 +1,17 @@
+import ListingPageLayout from '../../components/ListingPageLayout';
+
 interface LaborOffshoringHubProps {
   onNavigate: (page: string) => void;
 }
 
 export default function LaborOffshoringHub({ onNavigate }: LaborOffshoringHubProps) {
   return (
-    <div className="pt-32">
-      <section className="cs-hero has-image" style={{ backgroundImage: "url('https://images.unsplash.com/photo-1521737711867-e3b97375f902?w=1600&h=900&fit=crop')" }}>
-        <div className="wrap">
-          <div className="cs-breadcrumbs">
-            <button onClick={() => onNavigate('case-studies')} className="hover:underline cursor-pointer bg-transparent border-none px-4 py-2 -mx-4 -my-2 font-inherit text-inherit rounded hover:bg-gray-100/50 transition-colors">Case Studies</button> · Labor Strategy & Offshoring
-          </div>
-          <h1>Labor Strategy & Offshoring Case Studies</h1>
-          <p>
-            Hybrid operating models combining near-shore, off-shore, and digital labor—built to expand capacity and reduce cost without sacrificing quality.
-          </p>
-        </div>
-      </section>
-
+    <ListingPageLayout
+      onNavigate={onNavigate}
+      categoryLabel="Case Studies"
+      title="Labor Strategy & Offshoring"
+      subtitle="Hybrid operating models combining near-shore, off-shore, and digital labor—built to expand capacity and reduce cost without sacrificing quality."
+    >
       <section className="cs-grid">
         <article className="cs-card">
           <img className="cs-card__img" src="https://images.unsplash.com/photo-1573164713714-d95e436ab8d6?w=1600&h=900&fit=crop" alt="Labor Strategy" />
@@ -51,6 +46,6 @@ export default function LaborOffshoringHub({ onNavigate }: LaborOffshoringHubPro
           <a className="cs-card__link" href="#" onClick={(e) => { e.preventDefault(); onNavigate('case-studies/labor-healthcare-review'); }}>Read full case →</a>
         </article>
       </section>
-    </div>
+    </ListingPageLayout>
   );
 }

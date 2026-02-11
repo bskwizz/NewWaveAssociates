@@ -1,185 +1,50 @@
-import { useRef, useEffect, useState } from 'react';
-import { ArrowLeft } from 'lucide-react';
-import CTABar from '../../components/CTABar';
+import CaseStudyTemplate from '../../components/CaseStudyTemplate';
 
 interface ITMSPOffshoringCaseStudyProps {
   onNavigate: (page: string) => void;
 }
 
 export default function ITMSPOffshoringCaseStudy({ onNavigate }: ITMSPOffshoringCaseStudyProps) {
-  const [fadeIn, setFadeIn] = useState(false);
-  const vantaRef = useRef<HTMLDivElement>(null);
-
-  useEffect(() => {
-    setFadeIn(true);
-  }, []);
-
-  const scrollToSection = (sectionId: string) => {
-    const element = document.getElementById(sectionId);
-    if (element) {
-      element.scrollIntoView({ behavior: 'smooth', block: 'start' });
-    }
-  };
-
   return (
-    <div className="pt-16">
-      <div ref={vantaRef} className="capabilities-hero" aria-label="Case Study">
-        <div className="capabilities-hero__inner hero-content">
-          <div className="max-w-7xl mx-auto px-6 pt-6 pb-20">
-            <button
-          onClick={() => onNavigate('hub-labor-offshoring')}
-          className="flex items-center gap-2 text-[#01A3DB] hover:text-[#0182b3] transition-colors font-medium mb-8"
-        >
-          <ArrowLeft size={20} />
-          Back to Labor Strategy & Offshoring
-        </button>
-
-            <div>
-              <h1 className="text-5xl font-bold text-[#38495D] mb-4">
-                IT MSP Offshoring & Global Delivery
-              </h1>
-              <p className="text-lg text-[#38495D] mb-2">
-                Case Study
-              </p>
-              <p className="text-sm text-gray-600 mb-8">
-                Author: Hunter New | 3 minute read
-              </p>
-
-              <div className="bg-white/90 backdrop-blur-sm border border-gray-200 rounded-lg p-8 mb-8 shadow-lg max-w-4xl">
-                <h2 className="text-xl font-bold text-[#38495D] mb-4">Executive Summary</h2>
-                <p className="text-gray-700 leading-relaxed">
-                  A multi-entity managed services organization needed to lower delivery costs and scale consistently across operating centers. New Wave designed a hybrid global delivery model, harmonized processes, and established governance to unlock meaningful cost reduction and execution speed—grounded in a unified operating framework with $10M+ cost savings expected as the program progresses.
-                </p>
-              </div>
-
-              <div className="flex items-center gap-4 flex-wrap">
-                <span className="text-[#38495D] font-semibold">Jump to:</span>
-                <button
-                  onClick={() => scrollToSection('opportunity')}
-                  className="px-6 py-3 bg-[#01A3DB] text-white rounded-lg hover:bg-[#0182b3] transition-colors font-medium"
-                >
-                  The Opportunity
-                </button>
-                <button
-                  onClick={() => scrollToSection('approach')}
-                  className="px-6 py-3 bg-[#01A3DB] text-white rounded-lg hover:bg-[#0182b3] transition-colors font-medium"
-                >
-                  The Approach
-                </button>
-                <button
-                  onClick={() => scrollToSection('outcome')}
-                  className="px-6 py-3 bg-[#01A3DB] text-white rounded-lg hover:bg-[#0182b3] transition-colors font-medium"
-                >
-                  The Outcome
-                </button>
-              </div>
-            </div>
-          </div>
-        </div>
-      </div>
-
-      <div className="bg-gray-50 -mt-24 pt-32 pb-16">
-        <div className="max-w-5xl mx-auto px-6">
-          <div className="bg-white rounded-lg shadow-lg p-12 mb-12">
-            <div id="opportunity" className="mb-16 scroll-mt-24">
-              <h2 className="text-4xl font-bold text-[#38495D] mb-6">
-                The Opportunity
-              </h2>
-              <div className="space-y-4 text-gray-700 leading-relaxed text-lg">
-                <ul className="space-y-3 ml-6">
-                  <li className="flex items-start">
-                    <span className="inline-block w-2 h-2 bg-[#01A3DB] rounded-full mt-2 mr-3 flex-shrink-0"></span>
-                    <span>Fragmented operating centers with redundant processes and tools</span>
-                  </li>
-                  <li className="flex items-start">
-                    <span className="inline-block w-2 h-2 bg-[#01A3DB] rounded-full mt-2 mr-3 flex-shrink-0"></span>
-                    <span>Inconsistent performance reporting and accountability</span>
-                  </li>
-                  <li className="flex items-start">
-                    <span className="inline-block w-2 h-2 bg-[#01A3DB] rounded-full mt-2 mr-3 flex-shrink-0"></span>
-                    <span>Elevated delivery costs and limited scalability across entities</span>
-                  </li>
-                </ul>
-              </div>
-            </div>
-
-            <div id="approach" className="mb-16 scroll-mt-24">
-              <h2 className="text-4xl font-bold text-[#38495D] mb-6">
-                The Approach
-              </h2>
-              <div className="space-y-4 text-gray-700 leading-relaxed text-lg">
-                <ul className="space-y-3 ml-6">
-                  <li className="flex items-start">
-                    <span className="inline-block w-2 h-2 bg-[#01A3DB] rounded-full mt-2 mr-3 flex-shrink-0"></span>
-                    <span>Designed a unified operating model integrating people, process, and systems across centers</span>
-                  </li>
-                  <li className="flex items-start">
-                    <span className="inline-block w-2 h-2 bg-[#01A3DB] rounded-full mt-2 mr-3 flex-shrink-0"></span>
-                    <span>Implemented governance (cadence, dashboards, KPI/OKR alignment) to drive accountability and transparency</span>
-                  </li>
-                  <li className="flex items-start">
-                    <span className="inline-block w-2 h-2 bg-[#01A3DB] rounded-full mt-2 mr-3 flex-shrink-0"></span>
-                    <span>Sequenced migrations to minimize disruption; standardized role definitions and handoffs</span>
-                  </li>
-                  <li className="flex items-start">
-                    <span className="inline-block w-2 h-2 bg-[#01A3DB] rounded-full mt-2 mr-3 flex-shrink-0"></span>
-                    <span>Established a pathway for global labor mix (on/near/offshore) aligned to SLA tiers and data-security constraints</span>
-                  </li>
-                </ul>
-              </div>
-            </div>
-
-            <div id="outcome" className="mb-12 scroll-mt-24">
-              <h2 className="text-4xl font-bold text-[#38495D] mb-6">
-                The Outcome
-              </h2>
-              <div className="space-y-4 text-gray-700 leading-relaxed text-lg">
-                <ul className="space-y-3 ml-6">
-                  <li className="flex items-start">
-                    <span className="inline-block w-2 h-2 bg-[#01A3DB] rounded-full mt-2 mr-3 flex-shrink-0"></span>
-                    <span>$10M+ cost savings expected as implementation completes (WIP)</span>
-                  </li>
-                  <li className="flex items-start">
-                    <span className="inline-block w-2 h-2 bg-[#01A3DB] rounded-full mt-2 mr-3 flex-shrink-0"></span>
-                    <span>Reduced redundancy and improved cross-center consistency</span>
-                  </li>
-                  <li className="flex items-start">
-                    <span className="inline-block w-2 h-2 bg-[#01A3DB] rounded-full mt-2 mr-3 flex-shrink-0"></span>
-                    <span>Stronger visibility to utilization, cycle times, and service quality via executive dashboards</span>
-                  </li>
-                </ul>
-              </div>
-            </div>
-
-            <div className="border-t border-gray-200 pt-8">
-              <h3 className="text-2xl font-bold text-[#38495D] mb-6">
-                Meet The Team
-              </h3>
-              <div className="flex gap-6">
-                <div className="flex items-center gap-3">
-                  <div className="w-16 h-16 rounded-full overflow-hidden bg-gradient-to-br from-[#01A3DB] to-[#38495D]">
-                    <img
-                      src={`${import.meta.env.BASE_URL}Pictures-2.png`}
-                      alt="Hunter New"
-                      className="w-full h-full object-cover"
-                      onError={(e) => {
-                        const target = e.target as HTMLImageElement;
-                        target.style.display = 'none';
-                      }}
-                    />
-                  </div>
-                  <div>
-                    <p className="font-semibold text-[#38495D]">Hunter New</p>
-                    <p className="text-sm text-gray-600">Founding Partner</p>
-                  </div>
-                </div>
-              </div>
-            </div>
-          </div>
-        </div>
-      </div>
-
-      <CTABar onNavigate={onNavigate} />
-    </div>
+    <CaseStudyTemplate
+      onNavigate={onNavigate}
+      backLink={{
+        text: "Back to Labor Strategy & Offshoring",
+        page: "hub-labor-offshoring"
+      }}
+      title="IT MSP Offshoring & Global Delivery"
+      heroImage="https://images.unsplash.com/photo-1573164713714-d95e436ab8d6?w=1600&h=900&fit=crop"
+      executiveSummary="A multi-entity managed services organization needed to lower delivery costs and scale consistently across operating centers. New Wave designed a hybrid global delivery model, harmonized processes, and established governance to unlock meaningful cost reduction and execution speed—grounded in a unified operating framework with $10M+ cost savings expected as the program progresses."
+      opportunity={{
+        content: `
+          <ul>
+            <li>Fragmented operating centers with redundant processes and tools</li>
+            <li>Inconsistent performance reporting and accountability</li>
+            <li>Elevated delivery costs and limited scalability across entities</li>
+          </ul>
+        `
+      }}
+      approach={{
+        content: `
+          <ul>
+            <li>Designed a unified operating model integrating people, process, and systems across centers</li>
+            <li>Implemented governance (cadence, dashboards, KPI/OKR alignment) to drive accountability and transparency</li>
+            <li>Sequenced migrations to minimize disruption; standardized role definitions and handoffs</li>
+            <li>Established a pathway for global labor mix (on/near/offshore) aligned to SLA tiers and data-security constraints</li>
+          </ul>
+        `
+      }}
+      outcome={{
+        content: `
+          <ul>
+            <li>$10M+ cost savings expected as implementation completes (WIP)</li>
+            <li>Reduced redundancy and improved cross-center consistency</li>
+            <li>Stronger visibility to utilization, cycle times, and service quality via executive dashboards</li>
+          </ul>
+        `
+      }}
+      authorBio="Hunter New, Managing Partner at New Wave Associates, specializes in global delivery models and operational transformation for service organizations."
+      ctaText="Ready to scale with a global delivery model? Let's discuss your opportunities."
+    />
   );
 }
