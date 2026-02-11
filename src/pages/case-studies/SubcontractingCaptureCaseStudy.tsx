@@ -1,189 +1,51 @@
-import { useRef, useEffect, useState } from 'react';
-import { ArrowLeft } from 'lucide-react';
-import CTABar from '../../components/CTABar';
+import CaseStudyTemplate from '../../components/CaseStudyTemplate';
 
 interface SubcontractingCaptureCaseStudyProps {
   onNavigate: (page: string) => void;
 }
 
 export default function SubcontractingCaptureCaseStudy({ onNavigate }: SubcontractingCaptureCaseStudyProps) {
-  const [fadeIn, setFadeIn] = useState(false);
-  const vantaRef = useRef<HTMLDivElement>(null);
-
-  useEffect(() => {
-    setFadeIn(true);
-  }, []);
-
-  const scrollToSection = (sectionId: string) => {
-    const element = document.getElementById(sectionId);
-    if (element) {
-      element.scrollIntoView({ behavior: 'smooth', block: 'start' });
-    }
-  };
-
   return (
-    <div className="pt-16">
-      <div ref={vantaRef} className="capabilities-hero" aria-label="Case Study">
-        <div className="capabilities-hero__inner hero-content">
-          <div className="max-w-7xl mx-auto px-6 pt-6 pb-20">
-            <button
-          onClick={() => onNavigate('hub-sga-optimization')}
-          className="flex items-center gap-2 text-[#01A3DB] hover:text-[#0182b3] transition-colors font-medium mb-8"
-        >
-          <ArrowLeft size={20} />
-          Back to SG&A Cost Optimization
-        </button>
-
-            <div>
-              <h1 className="text-5xl font-bold text-[#38495D] mb-4">
-                Sub-Contracting Takeout & Capture Program
-              </h1>
-              <p className="text-lg text-[#38495D] mb-2">
-                Case Study
-              </p>
-              <p className="text-sm text-gray-600 mb-8">
-                Author: Craig Keller | 3 minute read
-              </p>
-
-              <div className="bg-white/90 backdrop-blur-sm border border-gray-200 rounded-lg p-8 mb-8 shadow-lg max-w-4xl">
-                <h2 className="text-xl font-bold text-[#38495D] mb-4">Executive Summary</h2>
-                <p className="text-gray-700 leading-relaxed">
-                  A diversified services organization relied heavily on third-party subcontractors for delivery, driving inflated SG&A and eroding margin. New Wave Associates designed and executed a "take-out and capture" program to internalize high-value delivery work, renegotiate vendor relationships, and institute formal governance — producing multimillion-dollar recurring savings.
-                </p>
-              </div>
-
-              <div className="flex items-center gap-4 flex-wrap">
-                <span className="text-[#38495D] font-semibold">Jump to:</span>
-                <button
-                  onClick={() => scrollToSection('opportunity')}
-                  className="px-6 py-3 bg-[#01A3DB] text-white rounded-lg hover:bg-[#0182b3] transition-colors font-medium"
-                >
-                  The Opportunity
-                </button>
-                <button
-                  onClick={() => scrollToSection('approach')}
-                  className="px-6 py-3 bg-[#01A3DB] text-white rounded-lg hover:bg-[#0182b3] transition-colors font-medium"
-                >
-                  The Approach
-                </button>
-                <button
-                  onClick={() => scrollToSection('outcome')}
-                  className="px-6 py-3 bg-[#01A3DB] text-white rounded-lg hover:bg-[#0182b3] transition-colors font-medium"
-                >
-                  The Outcome
-                </button>
-              </div>
-            </div>
-          </div>
-        </div>
-      </div>
-
-      <div className="bg-gray-50 -mt-24 pt-32 pb-16">
-        <div className="max-w-5xl mx-auto px-6">
-          <div className="bg-white rounded-lg shadow-lg p-12 mb-12">
-            <div id="opportunity" className="mb-16 scroll-mt-24">
-              <h2 className="text-4xl font-bold text-[#38495D] mb-6">
-                The Opportunity
-              </h2>
-              <div className="space-y-4 text-gray-700 leading-relaxed text-lg">
-                <ul className="space-y-3 ml-6">
-                  <li className="flex items-start">
-                    <span className="inline-block w-2 h-2 bg-[#01A3DB] rounded-full mt-2 mr-3 flex-shrink-0"></span>
-                    <span>More than 40% of total delivery costs tied to subcontracted resources</span>
-                  </li>
-                  <li className="flex items-start">
-                    <span className="inline-block w-2 h-2 bg-[#01A3DB] rounded-full mt-2 mr-3 flex-shrink-0"></span>
-                    <span>Redundant scopes between internal and external teams</span>
-                  </li>
-                  <li className="flex items-start">
-                    <span className="inline-block w-2 h-2 bg-[#01A3DB] rounded-full mt-2 mr-3 flex-shrink-0"></span>
-                    <span>Absence of vendor visibility, utilization tracking, or standardized agreements</span>
-                  </li>
-                </ul>
-              </div>
-            </div>
-
-            <div id="approach" className="mb-16 scroll-mt-24">
-              <h2 className="text-4xl font-bold text-[#38495D] mb-6">
-                The Approach
-              </h2>
-              <div className="space-y-4 text-gray-700 leading-relaxed text-lg">
-                <ul className="space-y-3 ml-6">
-                  <li className="flex items-start">
-                    <span className="inline-block w-2 h-2 bg-[#01A3DB] rounded-full mt-2 mr-3 flex-shrink-0"></span>
-                    <span>Conducted enterprise-wide subcontractor spend and utilization analysis</span>
-                  </li>
-                  <li className="flex items-start">
-                    <span className="inline-block w-2 h-2 bg-[#01A3DB] rounded-full mt-2 mr-3 flex-shrink-0"></span>
-                    <span>Identified internalization opportunities based on complexity, criticality, and ROI</span>
-                  </li>
-                  <li className="flex items-start">
-                    <span className="inline-block w-2 h-2 bg-[#01A3DB] rounded-full mt-2 mr-3 flex-shrink-0"></span>
-                    <span>Built transition plans and talent pipelines to backfill vendor capacity</span>
-                  </li>
-                  <li className="flex items-start">
-                    <span className="inline-block w-2 h-2 bg-[#01A3DB] rounded-full mt-2 mr-3 flex-shrink-0"></span>
-                    <span>Established vendor scorecards, quarterly business reviews, and KPI governance</span>
-                  </li>
-                  <li className="flex items-start">
-                    <span className="inline-block w-2 h-2 bg-[#01A3DB] rounded-full mt-2 mr-3 flex-shrink-0"></span>
-                    <span>Created an ongoing performance-management loop across SG&A functions</span>
-                  </li>
-                </ul>
-              </div>
-            </div>
-
-            <div id="outcome" className="mb-12 scroll-mt-24">
-              <h2 className="text-4xl font-bold text-[#38495D] mb-6">
-                The Outcome
-              </h2>
-              <div className="space-y-4 text-gray-700 leading-relaxed text-lg">
-                <ul className="space-y-3 ml-6">
-                  <li className="flex items-start">
-                    <span className="inline-block w-2 h-2 bg-[#01A3DB] rounded-full mt-2 mr-3 flex-shrink-0"></span>
-                    <span>Annualized SG&A savings of $12M+ through vendor consolidation and insourcing</span>
-                  </li>
-                  <li className="flex items-start">
-                    <span className="inline-block w-2 h-2 bg-[#01A3DB] rounded-full mt-2 mr-3 flex-shrink-0"></span>
-                    <span>Internal labor utilization up 25%, with margin per engagement up 8 points</span>
-                  </li>
-                  <li className="flex items-start">
-                    <span className="inline-block w-2 h-2 bg-[#01A3DB] rounded-full mt-2 mr-3 flex-shrink-0"></span>
-                    <span>Framework institutionalized across all business units for recurring cost capture</span>
-                  </li>
-                </ul>
-              </div>
-            </div>
-
-            <div className="border-t border-gray-200 pt-8">
-              <h3 className="text-2xl font-bold text-[#38495D] mb-6">
-                Meet The Team
-              </h3>
-              <div className="flex gap-6">
-                <div className="flex items-center gap-3">
-                  <div className="w-16 h-16 rounded-full overflow-hidden bg-gradient-to-br from-[#01A3DB] to-[#38495D]">
-                    <img
-                      src={`${import.meta.env.BASE_URL}Pictures-6.png`}
-                      alt="Craig Keller"
-                      className="w-full h-full object-cover"
-                      onError={(e) => {
-                        const target = e.target as HTMLImageElement;
-                        target.style.display = 'none';
-                      }}
-                    />
-                  </div>
-                  <div>
-                    <p className="font-semibold text-[#38495D]">Craig Keller</p>
-                    <p className="text-sm text-gray-600">Founding Partner</p>
-                  </div>
-                </div>
-              </div>
-            </div>
-          </div>
-        </div>
-      </div>
-
-      <CTABar onNavigate={onNavigate} />
-    </div>
+    <CaseStudyTemplate
+      onNavigate={onNavigate}
+      backLink={{
+        text: "Back to SG&A Cost Optimization",
+        page: "hub-sga-optimization"
+      }}
+      title="Sub-Contracting Takeout & Capture"
+      heroImage="https://images.unsplash.com/photo-1497366216548-37526070297c?w=1600&h=900&fit=crop"
+      executiveSummary="A diversified services organization relied heavily on third-party subcontractors for delivery, driving inflated SG&A and eroding margin. New Wave Associates designed and executed a take-out and capture program to internalize high-value delivery work, renegotiate vendor relationships, and institute formal governance — producing multimillion-dollar recurring savings."
+      opportunity={{
+        content: `
+          <ul>
+            <li>More than 40% of total delivery costs tied to subcontracted resources</li>
+            <li>Redundant scopes between internal and external teams</li>
+            <li>Absence of vendor visibility, utilization tracking, or standardized agreements</li>
+          </ul>
+        `
+      }}
+      approach={{
+        content: `
+          <ul>
+            <li>Conducted enterprise-wide subcontractor spend and utilization analysis</li>
+            <li>Identified internalization opportunities based on complexity, criticality, and ROI</li>
+            <li>Built transition plans and talent pipelines to backfill vendor capacity</li>
+            <li>Established vendor scorecards, quarterly business reviews, and KPI governance</li>
+            <li>Created an ongoing performance-management loop across SG&A functions</li>
+          </ul>
+        `
+      }}
+      outcome={{
+        content: `
+          <ul>
+            <li>Annualized SG&A savings of $12M+ through vendor consolidation and insourcing</li>
+            <li>Internal labor utilization up 25%, with margin per engagement up 8 points</li>
+            <li>Framework institutionalized across all business units for recurring cost capture</li>
+          </ul>
+        `
+      }}
+      authorBio="Craig Keller, Founding Partner at New Wave Associates, specializes in SG&A optimization and operational efficiency for services organizations."
+      ctaText="Ready to optimize your subcontractor spend? Let's discuss cost reduction opportunities."
+    />
   );
 }

@@ -1,193 +1,52 @@
-import { useRef, useEffect, useState } from 'react';
-import { ArrowLeft } from 'lucide-react';
-import CTABar from '../../components/CTABar';
+import CaseStudyTemplate from '../../components/CaseStudyTemplate';
 
 interface AgreementsStandardizationCaseStudyProps {
   onNavigate: (page: string) => void;
 }
 
 export default function AgreementsStandardizationCaseStudy({ onNavigate }: AgreementsStandardizationCaseStudyProps) {
-  const [fadeIn, setFadeIn] = useState(false);
-  const vantaRef = useRef<HTMLDivElement>(null);
-
-  useEffect(() => {
-    setFadeIn(true);
-  }, []);
-
-  const scrollToSection = (sectionId: string) => {
-    const element = document.getElementById(sectionId);
-    if (element) {
-      element.scrollIntoView({ behavior: 'smooth', block: 'start' });
-    }
-  };
-
   return (
-    <div className="pt-16">
-      <div ref={vantaRef} className="capabilities-hero" aria-label="Case Study">
-        <div className="capabilities-hero__inner hero-content">
-          <div className="max-w-7xl mx-auto px-6 pt-6 pb-20">
-            <button
-          onClick={() => onNavigate('hub-integration-consolidation')}
-          className="flex items-center gap-2 text-[#01A3DB] hover:text-[#0182b3] transition-colors font-medium mb-8"
-        >
-          <ArrowLeft size={20} />
-          Back to Integration & Consolidation
-        </button>
-
-            <div>
-              <h1 className="text-5xl font-bold text-[#38495D] mb-4">
-                Agreements Standardization
-              </h1>
-              <p className="text-lg text-[#38495D] mb-2">
-                Case Study
-              </p>
-              <p className="text-sm text-gray-600 mb-8">
-                Author: Bryan Skwirut | 3 minute read
-              </p>
-
-              <div className="bg-white/90 backdrop-blur-sm border border-gray-200 rounded-lg p-8 mb-8 shadow-lg max-w-4xl">
-                <h2 className="text-xl font-bold text-[#38495D] mb-4">Executive Summary</h2>
-                <p className="text-gray-700 leading-relaxed">
-                  The organization's fragmented contract management approach caused billing errors, misaligned renewals, and revenue leakage. New Wave Associates standardized agreement templates, approval processes, and data capture to create a unified contract framework that improved financial accuracy and customer trust.
-                </p>
-              </div>
-
-              <div className="flex items-center gap-4 flex-wrap">
-                <span className="text-[#38495D] font-semibold">Jump to:</span>
-                <button
-                  onClick={() => scrollToSection('opportunity')}
-                  className="px-6 py-3 bg-[#01A3DB] text-white rounded-lg hover:bg-[#0182b3] transition-colors font-medium"
-                >
-                  The Opportunity
-                </button>
-                <button
-                  onClick={() => scrollToSection('approach')}
-                  className="px-6 py-3 bg-[#01A3DB] text-white rounded-lg hover:bg-[#0182b3] transition-colors font-medium"
-                >
-                  The Approach
-                </button>
-                <button
-                  onClick={() => scrollToSection('outcome')}
-                  className="px-6 py-3 bg-[#01A3DB] text-white rounded-lg hover:bg-[#0182b3] transition-colors font-medium"
-                >
-                  The Outcome
-                </button>
-              </div>
-            </div>
-          </div>
-        </div>
-      </div>
-
-      <div className="bg-gray-50 -mt-24 pt-32 pb-16">
-        <div className="max-w-5xl mx-auto px-6">
-          <div className="bg-white rounded-lg shadow-lg p-12 mb-12">
-            <div id="opportunity" className="mb-16 scroll-mt-24">
-              <h2 className="text-4xl font-bold text-[#38495D] mb-6">
-                The Opportunity
-              </h2>
-              <div className="space-y-4 text-gray-700 leading-relaxed text-lg">
-                <ul className="space-y-3 ml-6">
-                  <li className="flex items-start">
-                    <span className="inline-block w-2 h-2 bg-[#01A3DB] rounded-full mt-2 mr-3 flex-shrink-0"></span>
-                    <span>Inconsistent contract terms and structures across multiple business units</span>
-                  </li>
-                  <li className="flex items-start">
-                    <span className="inline-block w-2 h-2 bg-[#01A3DB] rounded-full mt-2 mr-3 flex-shrink-0"></span>
-                    <span>Lack of centralized repository or version control</span>
-                  </li>
-                  <li className="flex items-start">
-                    <span className="inline-block w-2 h-2 bg-[#01A3DB] rounded-full mt-2 mr-3 flex-shrink-0"></span>
-                    <span>Manual renewals and pricing discrepancies</span>
-                  </li>
-                  <li className="flex items-start">
-                    <span className="inline-block w-2 h-2 bg-[#01A3DB] rounded-full mt-2 mr-3 flex-shrink-0"></span>
-                    <span>No linkage between agreement data and billing or CRM systems</span>
-                  </li>
-                </ul>
-              </div>
-            </div>
-
-            <div id="approach" className="mb-16 scroll-mt-24">
-              <h2 className="text-4xl font-bold text-[#38495D] mb-6">
-                The Approach
-              </h2>
-              <div className="space-y-4 text-gray-700 leading-relaxed text-lg">
-                <ul className="space-y-3 ml-6">
-                  <li className="flex items-start">
-                    <span className="inline-block w-2 h-2 bg-[#01A3DB] rounded-full mt-2 mr-3 flex-shrink-0"></span>
-                    <span>Built a standardized agreement library with defined templates and metadata</span>
-                  </li>
-                  <li className="flex items-start">
-                    <span className="inline-block w-2 h-2 bg-[#01A3DB] rounded-full mt-2 mr-3 flex-shrink-0"></span>
-                    <span>Introduced a structured intake and approval process with digital workflows</span>
-                  </li>
-                  <li className="flex items-start">
-                    <span className="inline-block w-2 h-2 bg-[#01A3DB] rounded-full mt-2 mr-3 flex-shrink-0"></span>
-                    <span>Integrated agreement data into CRM and billing systems for visibility</span>
-                  </li>
-                  <li className="flex items-start">
-                    <span className="inline-block w-2 h-2 bg-[#01A3DB] rounded-full mt-2 mr-3 flex-shrink-0"></span>
-                    <span>Trained cross-functional teams on governance and contract lifecycle ownership</span>
-                  </li>
-                </ul>
-              </div>
-            </div>
-
-            <div id="outcome" className="mb-12 scroll-mt-24">
-              <h2 className="text-4xl font-bold text-[#38495D] mb-6">
-                The Outcome
-              </h2>
-              <div className="space-y-4 text-gray-700 leading-relaxed text-lg">
-                <ul className="space-y-3 ml-6">
-                  <li className="flex items-start">
-                    <span className="inline-block w-2 h-2 bg-[#01A3DB] rounded-full mt-2 mr-3 flex-shrink-0"></span>
-                    <span>Eliminated duplicate and outdated agreement versions</span>
-                  </li>
-                  <li className="flex items-start">
-                    <span className="inline-block w-2 h-2 bg-[#01A3DB] rounded-full mt-2 mr-3 flex-shrink-0"></span>
-                    <span>Reduced contract processing time by 50%</span>
-                  </li>
-                  <li className="flex items-start">
-                    <span className="inline-block w-2 h-2 bg-[#01A3DB] rounded-full mt-2 mr-3 flex-shrink-0"></span>
-                    <span>Improved billing accuracy and revenue recognition</span>
-                  </li>
-                  <li className="flex items-start">
-                    <span className="inline-block w-2 h-2 bg-[#01A3DB] rounded-full mt-2 mr-3 flex-shrink-0"></span>
-                    <span>Increased renewal predictability through automation and reporting</span>
-                  </li>
-                </ul>
-              </div>
-            </div>
-
-            <div className="border-t border-gray-200 pt-8">
-              <h3 className="text-2xl font-bold text-[#38495D] mb-6">
-                Meet The Team
-              </h3>
-              <div className="flex gap-6">
-                <div className="flex items-center gap-3">
-                  <div className="w-16 h-16 rounded-full overflow-hidden bg-gradient-to-br from-[#01A3DB] to-[#38495D]">
-                    <img
-                      src={`${import.meta.env.BASE_URL}Pictures-3.png`}
-                      alt="Bryan Skwirut"
-                      className="w-full h-full object-cover"
-                      onError={(e) => {
-                        const target = e.target as HTMLImageElement;
-                        target.style.display = 'none';
-                      }}
-                    />
-                  </div>
-                  <div>
-                    <p className="font-semibold text-[#38495D]">Bryan Skwirut</p>
-                    <p className="text-sm text-gray-600">Founding Partner</p>
-                  </div>
-                </div>
-              </div>
-            </div>
-          </div>
-        </div>
-      </div>
-
-      <CTABar onNavigate={onNavigate} />
-    </div>
+    <CaseStudyTemplate
+      onNavigate={onNavigate}
+      backLink={{
+        text: "Back to Integration & Consolidation",
+        page: "hub-integration-consolidation"
+      }}
+      title="Agreements Standardization"
+      heroImage="https://images.unsplash.com/photo-1450101499163-c8848c66ca85?w=1600&h=900&fit=crop"
+      executiveSummary="The organization's fragmented contract management approach caused billing errors, misaligned renewals, and revenue leakage. New Wave Associates standardized agreement templates, approval processes, and data capture to create a unified contract framework that improved financial accuracy and customer trust."
+      opportunity={{
+        content: `
+          <ul>
+            <li>Inconsistent contract terms and structures across multiple business units</li>
+            <li>Lack of centralized repository or version control</li>
+            <li>Manual renewals and pricing discrepancies</li>
+            <li>No linkage between agreement data and billing or CRM systems</li>
+          </ul>
+        `
+      }}
+      approach={{
+        content: `
+          <ul>
+            <li>Built a standardized agreement library with defined templates and metadata</li>
+            <li>Introduced a structured intake and approval process with digital workflows</li>
+            <li>Integrated agreement data into CRM and billing systems for visibility</li>
+            <li>Trained cross-functional teams on governance and contract lifecycle ownership</li>
+          </ul>
+        `
+      }}
+      outcome={{
+        content: `
+          <ul>
+            <li>Eliminated duplicate and outdated agreement versions</li>
+            <li>Reduced contract processing time by 50%</li>
+            <li>Improved billing accuracy and revenue recognition</li>
+            <li>Increased renewal predictability through automation and reporting</li>
+          </ul>
+        `
+      }}
+      authorBio="Bryan Skwirut, Founding Partner at New Wave Associates, specializes in contract management and revenue operations optimization."
+      ctaText="Ready to standardize your agreements? Let's discuss your contract optimization opportunities."
+    />
   );
 }
