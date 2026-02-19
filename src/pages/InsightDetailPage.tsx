@@ -76,7 +76,7 @@ export default function InsightDetailPage({ onNavigate, slug }: InsightDetailPag
           font-style: italic;
         }
 
-        .editorial-article .executive-summary + p::first-letter {
+        .editorial-article .executive-summary + h2 + p::first-letter {
           float: left;
           font-size: 4.5rem;
           line-height: 3.5rem;
@@ -88,7 +88,7 @@ export default function InsightDetailPage({ onNavigate, slug }: InsightDetailPag
         }
 
         @media (max-width: 640px) {
-          .editorial-article .executive-summary + p::first-letter {
+          .editorial-article .executive-summary + h2 + p::first-letter {
             font-size: 3.5rem;
             line-height: 2.75rem;
           }
@@ -120,11 +120,18 @@ export default function InsightDetailPage({ onNavigate, slug }: InsightDetailPag
           list-style-type: disc;
         }
 
+        .editorial-article ol {
+          margin: 0.5rem 0 1.5rem;
+          padding-left: 1.5rem;
+          max-width: 65ch;
+          list-style-type: decimal;
+        }
+
         .editorial-article li {
           font-size: 1.125rem;
-          line-height: 1.8;
+          line-height: 1.4;
           color: #000;
-          margin-bottom: 0.25rem;
+          margin-bottom: 0;
           font-family: "Segoe UI", system-ui, sans-serif;
         }
 
