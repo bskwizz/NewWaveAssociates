@@ -163,7 +163,7 @@ export default function InsightDetailPage({ onNavigate, slug }: InsightDetailPag
           </h1>
 
           <div className="flex items-center gap-3 text-sm text-black mb-10" style={{ fontFamily: '"Segoe UI", system-ui, sans-serif' }}>
-            <span>{new Date(insight.publish_date).toLocaleDateString('en-US', { month: 'long', day: 'numeric', year: 'numeric' })}</span>
+            <span>{new Date(insight.publish_date + 'T00:00:00').toLocaleDateString('en-US', { month: 'long', day: 'numeric', year: 'numeric' })}</span>
             <span>|</span>
             <span>{insight.content_type || 'Article'}</span>
           </div>

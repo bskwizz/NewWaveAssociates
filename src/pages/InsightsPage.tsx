@@ -98,7 +98,7 @@ export default function InsightsPage({ onNavigate }: InsightsPageProps) {
                           </h2>
                         </button>
                         <p className="text-black text-base sm:text-lg leading-relaxed">
-                          <span className="italic">{new Date(insight.publish_date).toLocaleDateString('en-US', { month: 'long', day: 'numeric', year: 'numeric' })} - </span>
+                          <span className="italic">{new Date(insight.publish_date + 'T00:00:00').toLocaleDateString('en-US', { month: 'long', day: 'numeric', year: 'numeric' })} - </span>
                           {insight.excerpt}
                         </p>
                       </div>
