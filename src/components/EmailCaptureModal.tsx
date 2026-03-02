@@ -1,11 +1,11 @@
 import { useState, useEffect, useRef } from 'react';
 import { clearUnlock, getSavedEmail } from '../services/leadCaptureService';
 
-export type ModalContext = 'download_pdf' | 'subscribe_header' | 'subscribe_footer' | 'subscribe_insights';
+export type ModalContext = 'download_pdf' | 'subscribe_insights_header' | 'subscribe_insights_footer';
 
 interface EmailCaptureModalProps {
   context: ModalContext;
-  onSubmit: (email: string) => Promise<void>;
+  onSubmit: (email: string, company: string) => Promise<void>;
   onClose: () => void;
 }
 
@@ -15,17 +15,12 @@ const COPY: Record<ModalContext, { title: string; subtitle: string; button: stri
     subtitle: 'Enter your email to receive a copy for reference.',
     button: 'Send PDF',
   },
-  subscribe_header: {
+  subscribe_insights_header: {
     title: 'Subscribe to New Wave Insights',
     subtitle: 'Operator-led perspectives on enterprise transformation and value creation.',
     button: 'Subscribe',
   },
-  subscribe_footer: {
-    title: 'Subscribe to New Wave Insights',
-    subtitle: 'Operator-led perspectives on enterprise transformation and value creation.',
-    button: 'Subscribe',
-  },
-  subscribe_insights: {
+  subscribe_insights_footer: {
     title: 'Subscribe to New Wave Insights',
     subtitle: 'Operator-led perspectives on enterprise transformation and value creation.',
     button: 'Subscribe',
@@ -34,6 +29,7 @@ const COPY: Record<ModalContext, { title: string; subtitle: string; button: stri
 
 export default function EmailCaptureModal({ context, onSubmit, onClose }: EmailCaptureModalProps) {
   const [email, setEmail] = useState(getSavedEmail() ?? '');
+  const [company, setCompany] = useState('');
   const [loading, setLoading] = useState(false);
   const [success, setSuccess] = useState(false);
   const [error, setError] = useState('');
@@ -65,7 +61,7 @@ export default function EmailCaptureModal({ context, onSubmit, onClose }: EmailC
     setError('');
     setLoading(true);
     try {
-      await onSubmit(trimmed);
+      await onSubmit(trimmed, company.trim());
       setSuccess(true);
     } catch {
       setError('Something went wrong. Please try again.');
@@ -149,6 +145,22 @@ export default function EmailCaptureModal({ context, onSubmit, onClose }: EmailC
               {error && (
                 <p className="mt-1.5 text-xs text-red-500">{error}</p>
               )}
+            </div>
+
+            <div>
+              <label className="block text-sm font-medium text-gray-700 mb-1.5" htmlFor="nwa-company-input">
+                Company <span className="text-gray-400 font-normal">(Optional)</span>
+              </label>
+              <input
+                id="nwa-company-input"
+                type="text"
+                value={company}
+                onChange={(e) => setCompany(e.target.value)}
+                placeholder="Your company"
+                className="w-full px-4 py-2.5 border border-gray-300 rounded-lg text-sm focus:outline-none focus:ring-2 focus:ring-[#01A3DB]/40 focus:border-[#01A3DB] transition-colors"
+                style={{ fontFamily: '"Segoe UI", system-ui, sans-serif' }}
+                autoComplete="organization"
+              />
             </div>
 
             {getSavedEmail() && !success && (

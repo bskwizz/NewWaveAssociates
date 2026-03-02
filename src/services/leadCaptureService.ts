@@ -1,8 +1,8 @@
-import { supabase } from '../lib/supabaseClient';
-
 const UNLOCK_KEY = 'nwa_lead_unlocked_until';
 const EMAIL_KEY = 'nwa_lead_email';
 const UNLOCK_DAYS = 180;
+
+const LEAD_ENDPOINT = 'https://vmxghbrjuyvyzxaavmus.functions.supabase.co/lead';
 
 export function isUnlocked(): boolean {
   try {
@@ -40,26 +40,40 @@ export function clearUnlock(): void {
   }
 }
 
+export type LeadSource =
+  | 'download_pdf'
+  | 'subscribe_insights_header'
+  | 'subscribe_insights_footer';
+
 export interface LeadPayload {
   email: string;
-  source: 'download_pdf' | 'subscribe_header' | 'subscribe_footer' | 'subscribe_insights';
-  slug?: string;
-  url?: string;
+  company?: string;
+  source: LeadSource;
+  article_slug?: string;
+  page_url?: string;
+  pdf_url?: string;
 }
 
 export async function recordLead(payload: LeadPayload): Promise<void> {
-  try {
-    const { error } = await supabase.from('insight_leads').insert([{
-      email: payload.email,
-      source: payload.source,
-      slug: payload.slug ?? null,
-      url: payload.url ?? window.location.href,
-      created_at: new Date().toISOString(),
-    }]);
-    if (error) {
-      console.error('Lead capture failed:', error.message);
-    }
-  } catch (e) {
-    console.error('Lead capture error:', e);
+  const body: Record<string, string | null> = {
+    email: payload.email,
+    company: payload.company ?? null,
+    source: payload.source,
+    article_slug: payload.article_slug ?? null,
+    page_url: payload.page_url ?? window.location.href,
+    pdf_url: payload.pdf_url ?? null,
+  };
+
+  const response = await fetch(LEAD_ENDPOINT, {
+    method: 'POST',
+    headers: { 'Content-Type': 'application/json' },
+    body: JSON.stringify(body),
+  });
+
+  if (!response.ok) {
+    const text = await response.text().catch(() => '');
+    const err = new Error(`Lead capture failed: ${response.status} ${text}`);
+    console.error(err);
+    throw err;
   }
 }

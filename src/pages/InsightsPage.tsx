@@ -15,9 +15,14 @@ export default function InsightsPage({ onNavigate }: InsightsPageProps) {
   const [loading, setLoading] = useState(true);
   const [showSubscribeModal, setShowSubscribeModal] = useState(false);
 
-  async function handleSubscribeSubmit(email: string) {
+  async function handleSubscribeSubmit(email: string, company: string) {
     persistUnlock(email);
-    await recordLead({ email, source: 'subscribe_insights', url: window.location.href });
+    await recordLead({
+      email,
+      company: company || undefined,
+      source: 'subscribe_insights_header',
+      page_url: window.location.href,
+    });
   }
 
   useEffect(() => {
@@ -131,7 +136,7 @@ export default function InsightsPage({ onNavigate }: InsightsPageProps) {
 
       {showSubscribeModal && (
         <EmailCaptureModal
-          context="subscribe_insights"
+          context="subscribe_insights_header"
           onSubmit={handleSubscribeSubmit}
           onClose={() => setShowSubscribeModal(false)}
         />

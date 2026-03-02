@@ -53,9 +53,16 @@ export default function ArticleUtilitiesBar({ title, slug, pdfUrl }: ArticleUtil
     document.body.removeChild(a);
   }
 
-  async function handleModalSubmit(email: string) {
+  async function handleModalSubmit(email: string, company: string) {
     persistUnlock(email);
-    await recordLead({ email, source: 'download_pdf', slug, url: window.location.href });
+    await recordLead({
+      email,
+      company: company || undefined,
+      source: 'download_pdf',
+      article_slug: slug,
+      page_url: window.location.href,
+      pdf_url: pdfUrl,
+    });
     setShowModal(false);
     if (pdfUrl) {
       setTimeout(() => triggerDownload(pdfUrl!), 120);
