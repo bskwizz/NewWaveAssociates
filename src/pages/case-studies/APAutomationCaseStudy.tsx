@@ -47,6 +47,7 @@ export default function APAutomationCaseStudy({ onNavigate }: APAutomationCaseSt
       }}
       authorBio="Craig Keller, Managing Partner at New Wave Associates, specializes in finance automation and digital transformation for middle-market companies."
       ctaText="Ready to automate your AP process? Let's discuss how to improve your efficiency."
+      slug="ap-automation-tech-reseller"
     />
   );
 }

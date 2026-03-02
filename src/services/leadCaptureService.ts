@@ -42,7 +42,7 @@ export function clearUnlock(): void {
 
 export interface LeadPayload {
   email: string;
-  source: 'download_pdf' | 'subscribe_header' | 'subscribe_footer';
+  source: 'download_pdf' | 'subscribe_header' | 'subscribe_footer' | 'subscribe_insights';
   slug?: string;
   url?: string;
 }
