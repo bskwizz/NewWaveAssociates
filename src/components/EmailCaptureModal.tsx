@@ -1,7 +1,7 @@
 import { useState, useEffect, useRef } from 'react';
 import { clearUnlock, getSavedEmail } from '../services/leadCaptureService';
 
-export type ModalContext = 'download_pdf' | 'subscribe_header' | 'subscribe_footer';
+export type ModalContext = 'download_pdf' | 'subscribe_header' | 'subscribe_footer' | 'subscribe_insights';
 
 interface EmailCaptureModalProps {
   context: ModalContext;
@@ -21,6 +21,11 @@ const COPY: Record<ModalContext, { title: string; subtitle: string; button: stri
     button: 'Subscribe',
   },
   subscribe_footer: {
+    title: 'Subscribe to New Wave Insights',
+    subtitle: 'Operator-led perspectives on enterprise transformation and value creation.',
+    button: 'Subscribe',
+  },
+  subscribe_insights: {
     title: 'Subscribe to New Wave Insights',
     subtitle: 'Operator-led perspectives on enterprise transformation and value creation.',
     button: 'Subscribe',
