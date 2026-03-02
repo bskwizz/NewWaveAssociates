@@ -69,55 +69,42 @@ export default function InsightsPage({ onNavigate }: InsightsPageProps) {
               </div>
             ) : insights.length > 0 ? (
               <div className="space-y-12">
-                <div className="bg-transparent rounded-lg overflow-hidden hover:bg-white hover:shadow-xl transition-all duration-300 group/card">
-                  <div className="flex flex-col md:flex-row">
-                    {insights[0].image_url && (
-                      <div className="md:w-1/2 pl-6 pt-6 pb-6 sm:pl-8 sm:pt-8 sm:pb-8 flex items-start">
-                        <img
-                          src={insights[0].image_url}
-                          alt={insights[0].title}
-                          className="w-full h-auto object-cover rounded"
-                        />
+                {insights.map((insight) => (
+                  <div key={insight.id} className="bg-transparent rounded-lg overflow-hidden hover:bg-white hover:shadow-xl transition-all duration-300 group/card">
+                    <div className="flex flex-col md:flex-row">
+                      {insight.image_url && (
+                        <div className="md:w-1/2 pl-6 pt-6 pb-6 sm:pl-8 sm:pt-8 sm:pb-8 flex items-start">
+                          <img
+                            src={insight.image_url}
+                            alt={insight.title}
+                            className="w-full h-auto object-cover rounded"
+                          />
+                        </div>
+                      )}
+                      <div className={`${insight.image_url ? 'md:w-1/2' : 'w-full'} p-8 sm:p-10 lg:p-12 flex flex-col`}>
+                        <p className="text-xs text-black mb-3">{insight.content_type || 'Article'}</p>
+                        <div className="mb-4">
+                          <span className="inline-block px-4 py-1.5 bg-[#01A3DB] text-white text-xs font-semibold rounded-full uppercase tracking-wide">
+                            {insight.category}
+                          </span>
+                        </div>
+                        <button
+                          onClick={() => onNavigate(`insights/${insight.slug}`)}
+                          className="text-left mb-4 w-full group/title"
+                        >
+                          <h2 className="text-2xl sm:text-3xl lg:text-4xl font-bold text-black group-hover/title:text-[#01A3DB] group-hover/title:underline leading-tight transition-colors">
+                            {insight.title}
+                            <ChevronRight className="inline-block ml-2 mb-1 text-[#f05e00]" size={32} />
+                          </h2>
+                        </button>
+                        <p className="text-black text-base sm:text-lg leading-relaxed">
+                          <span className="italic">{new Date(insight.publish_date + 'T00:00:00').toLocaleDateString('en-US', { month: 'long', day: 'numeric', year: 'numeric' })} - </span>
+                          {insight.excerpt}
+                        </p>
                       </div>
-                    )}
-                    <div className={`${insights[0].image_url ? 'md:w-1/2' : 'w-full'} p-8 sm:p-10 lg:p-12 flex flex-col`}>
-                      <p className="text-xs text-black mb-3">Article</p>
-                      <div className="mb-4">
-                        <span className="inline-block px-4 py-1.5 bg-[#01A3DB] text-white text-xs font-semibold rounded-full uppercase tracking-wide">
-                          {insights[0].category}
-                        </span>
-                      </div>
-                      <button
-                        onClick={() => onNavigate(`insights/${insights[0].slug}`)}
-                        className="text-left mb-4 w-full group/title"
-                      >
-                        <h2 className="text-2xl sm:text-3xl lg:text-4xl font-bold text-black group-hover/title:text-[#01A3DB] group-hover/title:underline leading-tight transition-colors">
-                          {insights[0].title}
-                          <ChevronRight className="inline-block ml-2 mb-1 text-[#f05e00]" size={32} />
-                        </h2>
-                      </button>
-                      <p className="text-black text-base sm:text-lg leading-relaxed">
-                        <span className="italic">{new Date(insights[0].publish_date).toLocaleDateString('en-US', { month: 'long', day: 'numeric', year: 'numeric' })} - </span>
-                        Nearly all meaningful value today is delivered through projects and programs rather than steady-state functional work.
-                      </p>
                     </div>
                   </div>
-                </div>
-
-                <div className="bg-gray-50 rounded-lg p-8 sm:p-10 text-center">
-                  <h3 className="text-xl sm:text-2xl font-bold text-[#38495D] mb-3">
-                    More insights coming soon
-                  </h3>
-                  <p className="text-gray-700 mb-6 max-w-2xl mx-auto">
-                    We publish short, operator-focused thinking as we build in public
-                  </p>
-                  <button
-                    onClick={() => onNavigate('contact-us')}
-                    className="px-6 py-3 bg-[#01A3DB] text-white font-semibold rounded hover:bg-[#0088b8] transition-colors"
-                  >
-                    Request updates
-                  </button>
-                </div>
+                ))}
               </div>
             ) : (
               <div className="text-center py-12">
