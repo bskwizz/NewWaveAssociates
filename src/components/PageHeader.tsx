@@ -40,8 +40,6 @@ export default function PageHeader() {
   const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
   const [showSubscribeModal, setShowSubscribeModal] = useState(false);
   const { pathname } = useLocation();
-  const isInsightsPage = pathname.startsWith('/insights');
-
   async function handleSubscribeSubmit(email: string) {
     persistUnlock(email);
     await recordLead({ email, source: 'subscribe_header', url: window.location.href });
@@ -66,7 +64,6 @@ export default function PageHeader() {
               const isContactUs = item.path === '/contact-us';
 
               if (isContactUs) {
-                if (isInsightsPage) return null;
                 return (
                   <Link
                     key={item.path}
@@ -91,14 +88,6 @@ export default function PageHeader() {
                 </Link>
               );
             })}
-            {isInsightsPage && (
-              <button
-                onClick={() => setShowSubscribeModal(true)}
-                className="px-5 py-2.5 bg-[#f05e00] text-white text-sm font-semibold rounded-md hover:bg-[#d94f00] transition-all shadow-sm hover:shadow-md"
-              >
-                Subscribe
-              </button>
-            )}
           </div>
 
           <button
@@ -116,7 +105,6 @@ export default function PageHeader() {
               const isContactUs = item.path === '/contact-us';
 
               if (isContactUs) {
-                if (isInsightsPage) return null;
                 return (
                   <Link
                     key={item.path}
@@ -142,14 +130,6 @@ export default function PageHeader() {
                 </Link>
               );
             })}
-            {isInsightsPage && (
-              <button
-                onClick={() => { setMobileMenuOpen(false); setShowSubscribeModal(true); }}
-                className="px-5 py-2.5 bg-[#f05e00] text-white text-sm font-semibold rounded-md hover:bg-[#d94f00] transition-all shadow-sm hover:shadow-md text-left"
-              >
-                Subscribe
-              </button>
-            )}
           </div>
         )}
       </div>

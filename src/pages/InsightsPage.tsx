@@ -2,7 +2,9 @@ import { useState, useEffect } from 'react';
 import { ChevronRight } from 'lucide-react';
 import PageHeader from '../components/PageHeader';
 import CTABar from '../components/CTABar';
+import EmailCaptureModal from '../components/EmailCaptureModal';
 import { getAllPublishedInsights, Insight } from '../services/insightsService';
+import { persistUnlock, recordLead } from '../services/leadCaptureService';
 
 interface InsightsPageProps {
   onNavigate: (page: string) => void;
@@ -11,6 +13,12 @@ interface InsightsPageProps {
 export default function InsightsPage({ onNavigate }: InsightsPageProps) {
   const [insights, setInsights] = useState<Insight[]>([]);
   const [loading, setLoading] = useState(true);
+  const [showSubscribeModal, setShowSubscribeModal] = useState(false);
+
+  async function handleSubscribeSubmit(email: string) {
+    persistUnlock(email);
+    await recordLead({ email, source: 'subscribe_insights', url: window.location.href });
+  }
 
   useEffect(() => {
     async function loadInsights() {
@@ -56,10 +64,10 @@ export default function InsightsPage({ onNavigate }: InsightsPageProps) {
                 Practical thinking for operators leading change
               </h1>
               <button
-                onClick={() => onNavigate('contact-us')}
+                onClick={() => setShowSubscribeModal(true)}
                 className="mt-6 px-8 py-3 bg-[#f05e00] text-white font-semibold rounded hover:bg-[#d95500] transition-colors"
               >
-                Get in touch
+                Subscribe
               </button>
             </div>
 
@@ -120,6 +128,14 @@ export default function InsightsPage({ onNavigate }: InsightsPageProps) {
         buttonText="Contact Us"
         onButtonClick={() => onNavigate('contact-us')}
       />
+
+      {showSubscribeModal && (
+        <EmailCaptureModal
+          context="subscribe_insights"
+          onSubmit={handleSubscribeSubmit}
+          onClose={() => setShowSubscribeModal(false)}
+        />
+      )}
     </div>
   );
 }
