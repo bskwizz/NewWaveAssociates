@@ -1,6 +1,8 @@
 import { useState } from 'react';
 import { Link, useLocation } from 'react-router-dom';
 import { Menu, X } from 'lucide-react';
+import EmailCaptureModal from './EmailCaptureModal';
+import { persistUnlock, recordLead } from '../services/leadCaptureService';
 
 const navItems = [
   {
@@ -36,9 +38,15 @@ const navItems = [
 
 export default function PageHeader() {
   const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
+  const [showSubscribeModal, setShowSubscribeModal] = useState(false);
   const { pathname } = useLocation();
+  async function handleSubscribeSubmit(email: string) {
+    persistUnlock(email);
+    await recordLead({ email, source: 'subscribe_header', url: window.location.href });
+  }
 
   return (
+    <>
     <div className="w-full py-4 sm:py-6 lg:py-8 relative z-50">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-6">
         <div className="flex items-center justify-between">
@@ -50,7 +58,7 @@ export default function PageHeader() {
             />
           </Link>
 
-          <div className="hidden lg:flex items-center gap-8 xl:gap-12">
+          <div className="hidden lg:flex items-center gap-6 xl:gap-10">
             {navItems.map((item) => {
               const active = item.isActive(pathname);
               const isContactUs = item.path === '/contact-us';
@@ -126,5 +134,14 @@ export default function PageHeader() {
         )}
       </div>
     </div>
+
+    {showSubscribeModal && (
+      <EmailCaptureModal
+        context="subscribe_header"
+        onSubmit={handleSubscribeSubmit}
+        onClose={() => setShowSubscribeModal(false)}
+      />
+    )}
+    </>
   );
 }

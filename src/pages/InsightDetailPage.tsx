@@ -2,6 +2,8 @@ import { useState, useEffect } from 'react';
 import { ArrowLeft } from 'lucide-react';
 import PageHeader from '../components/PageHeader';
 import CTABar from '../components/CTABar';
+import ArticleUtilitiesBar from '../components/ArticleUtilitiesBar';
+import ArticleFooterCTA from '../components/ArticleFooterCTA';
 import { getInsightBySlug, Insight } from '../services/insightsService';
 
 interface InsightDetailPageProps {
@@ -18,6 +20,19 @@ export default function InsightDetailPage({ onNavigate, slug }: InsightDetailPag
       try {
         const data = await getInsightBySlug(slug);
         setInsight(data);
+        if (import.meta.env.DEV && data?.pdf_url) {
+          fetch(data.pdf_url, { method: 'HEAD' }).then((res) => {
+            if (!res.ok) {
+              console.warn(
+                `[InsightDetailPage] pdf_url returned ${res.status} for slug "${slug}": ${data.pdf_url}`,
+              );
+            }
+          }).catch(() => {
+            console.warn(
+              `[InsightDetailPage] pdf_url unreachable for slug "${slug}": ${data.pdf_url}`,
+            );
+          });
+        }
       } catch (e) {
         console.error('Failed to load insight:', e);
       } finally {
@@ -179,17 +194,29 @@ export default function InsightDetailPage({ onNavigate, slug }: InsightDetailPag
             </div>
           )}
 
-          <div className="border-b border-gray-300 mb-12"></div>
+          <div className="border-b border-gray-300 mb-6"></div>
+
+          <div className="max-w-4xl">
+            <ArticleUtilitiesBar
+              title={insight.title}
+              slug={insight.slug}
+              pdfUrl={insight.pdf_url}
+            />
+          </div>
 
           <div
             className="editorial-article max-w-4xl"
             dangerouslySetInnerHTML={{ __html: insight.content }}
           />
 
-          <div className="mt-20 pt-12 border-t border-gray-300 max-w-4xl">
-            <h3 className="text-xl font-bold text-black mb-6" style={{ fontFamily: '"Segoe UI", system-ui, sans-serif' }}>About the Author</h3>
-            <p className="text-black leading-[1.8] text-lg max-w-[65ch]" style={{ fontFamily: '"Segoe UI", system-ui, sans-serif' }}>{insight.author_bio}</p>
-          </div>
+          {insight.author_bio && (
+            <div className="mt-20 pt-12 border-t border-gray-300 max-w-4xl">
+              <h3 className="text-xl font-bold text-black mb-6" style={{ fontFamily: '"Segoe UI", system-ui, sans-serif' }}>About the Author</h3>
+              <p className="text-black leading-[1.8] text-lg max-w-[65ch]" style={{ fontFamily: '"Segoe UI", system-ui, sans-serif' }}>{insight.author_bio}</p>
+            </div>
+          )}
+
+          <ArticleFooterCTA slug={insight.slug} />
         </article>
       </div>
 
