@@ -1,7 +1,6 @@
 import { ArrowLeft } from 'lucide-react';
 import PageHeader from './PageHeader';
 import CTABar from './CTABar';
-import ArticleUtilitiesBar from './ArticleUtilitiesBar';
 
 interface CaseStudyTemplateProps {
   onNavigate: (page: string) => void;
@@ -23,8 +22,6 @@ interface CaseStudyTemplateProps {
   };
   authorBio?: string;
   ctaText?: string;
-  pdfUrl?: string;
-  slug?: string;
 }
 
 export default function CaseStudyTemplate({
@@ -37,9 +34,7 @@ export default function CaseStudyTemplate({
   approach,
   outcome,
   authorBio,
-  ctaText = "Want to discuss similar opportunities with our team?",
-  pdfUrl,
-  slug,
+  ctaText = "Want to discuss similar opportunities with our team?"
 }: CaseStudyTemplateProps) {
   return (
     <div className="overflow-x-clip">
@@ -154,11 +149,7 @@ export default function CaseStudyTemplate({
             </div>
           )}
 
-          <div className="border-b border-gray-300 mb-6"></div>
-
-          <div className="max-w-4xl">
-            <ArticleUtilitiesBar title={title} slug={slug} pdfUrl={pdfUrl} />
-          </div>
+          <div className="border-b border-gray-300 mb-12"></div>
 
           <div className="editorial-article max-w-4xl">
             <div className="executive-summary">
