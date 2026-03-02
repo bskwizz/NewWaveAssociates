@@ -82,7 +82,7 @@ export default function InsightsPage({ onNavigate }: InsightsPageProps) {
                         </div>
                       )}
                       <div className={`${insight.image_url ? 'md:w-1/2' : 'w-full'} p-8 sm:p-10 lg:p-12 flex flex-col`}>
-                        <p className="text-xs text-black mb-3">Article</p>
+                        <p className="text-xs text-black mb-3">{insight.content_type || 'Article'}</p>
                         <div className="mb-4">
                           <span className="inline-block px-4 py-1.5 bg-[#01A3DB] text-white text-xs font-semibold rounded-full uppercase tracking-wide">
                             {insight.category}

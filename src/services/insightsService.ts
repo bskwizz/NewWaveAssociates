@@ -11,6 +11,7 @@ export interface Insight {
   author_bio: string;
   publish_date: string;
   read_time: string;
+  content_type: string;
   featured: boolean;
   published: boolean;
   image_url?: string;
