@@ -20,6 +20,23 @@ export interface Insight {
   updated_at: string;
 }
 
+interface InsightJsonEntry {
+  slug: string;
+  pdf_url?: string;
+  [key: string]: unknown;
+}
+
+let jsonCachePromise: Promise<InsightJsonEntry[]> | null = null;
+
+function fetchJsonInsights(): Promise<InsightJsonEntry[]> {
+  if (!jsonCachePromise) {
+    jsonCachePromise = fetch('/insights.json')
+      .then((res) => (res.ok ? res.json() : []))
+      .catch(() => []);
+  }
+  return jsonCachePromise;
+}
+
 async function fetchFallbackInsights(): Promise<Insight[]> {
   try {
     const res = await fetch('/insights.json');
@@ -35,6 +52,19 @@ async function fetchFallbackInsights(): Promise<Insight[]> {
   } catch {
     return [];
   }
+}
+
+async function mergeJsonPdfUrl(insight: Insight): Promise<Insight> {
+  if (insight.pdf_url) return insight;
+  try {
+    const jsonEntries = await fetchJsonInsights();
+    const match = jsonEntries.find((e) => e.slug === insight.slug);
+    if (match?.pdf_url) {
+      return { ...insight, pdf_url: match.pdf_url };
+    }
+  } catch {
+  }
+  return insight;
 }
 
 export async function getAllPublishedInsights(): Promise<Insight[]> {
@@ -67,7 +97,7 @@ export async function getInsightBySlug(
       .maybeSingle();
 
     if (!error && data) {
-      return data;
+      return mergeJsonPdfUrl(data);
     }
   } catch (e) {
     console.error('Supabase fetch failed:', e);
@@ -75,7 +105,8 @@ export async function getInsightBySlug(
 
   try {
     const all = await fetchFallbackInsights();
-    return all.find((i) => i.slug === slug) ?? null;
+    const found = all.find((i) => i.slug === slug) ?? null;
+    return found;
   } catch {
     return null;
   }
@@ -91,7 +122,7 @@ export async function getFeaturedInsight(): Promise<Insight | null> {
       .maybeSingle();
 
     if (!error && data) {
-      return data;
+      return mergeJsonPdfUrl(data);
     }
   } catch (e) {
     console.error('Supabase fetch failed:', e);

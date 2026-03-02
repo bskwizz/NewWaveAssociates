@@ -20,6 +20,19 @@ export default function InsightDetailPage({ onNavigate, slug }: InsightDetailPag
       try {
         const data = await getInsightBySlug(slug);
         setInsight(data);
+        if (import.meta.env.DEV && data?.pdf_url) {
+          fetch(data.pdf_url, { method: 'HEAD' }).then((res) => {
+            if (!res.ok) {
+              console.warn(
+                `[InsightDetailPage] pdf_url returned ${res.status} for slug "${slug}": ${data.pdf_url}`,
+              );
+            }
+          }).catch(() => {
+            console.warn(
+              `[InsightDetailPage] pdf_url unreachable for slug "${slug}": ${data.pdf_url}`,
+            );
+          });
+        }
       } catch (e) {
         console.error('Failed to load insight:', e);
       } finally {
