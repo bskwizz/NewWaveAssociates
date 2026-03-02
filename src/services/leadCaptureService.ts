@@ -42,6 +42,7 @@ export function clearUnlock(): void {
 
 export type LeadSource =
   | 'download_pdf'
+  | 'print_pdf'
   | 'subscribe_insights_header'
   | 'subscribe_insights_footer';
 

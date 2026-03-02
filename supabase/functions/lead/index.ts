@@ -73,6 +73,7 @@ Deno.serve(async (req) => {
     const source = body?.source ? String(body.source).trim() : null;
     const isInsightLead = source && [
       "download_pdf",
+      "print_pdf",
       "subscribe_insights_header",
       "subscribe_insights_footer",
     ].includes(source);

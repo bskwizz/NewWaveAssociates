@@ -10,7 +10,8 @@ interface ArticleUtilitiesBarProps {
 }
 
 export default function ArticleUtilitiesBar({ title, slug, pdfUrl }: ArticleUtilitiesBarProps) {
-  const [showModal, setShowModal] = useState(false);
+  const [showDownloadModal, setShowDownloadModal] = useState(false);
+  const [showPrintModal, setShowPrintModal] = useState(false);
   const [toast, setToast] = useState<string | null>(null);
 
   async function handleShare() {
@@ -30,7 +31,11 @@ export default function ArticleUtilitiesBar({ title, slug, pdfUrl }: ArticleUtil
   }
 
   function handlePrint() {
-    window.print();
+    if (isUnlocked()) {
+      window.print();
+    } else {
+      setShowPrintModal(true);
+    }
   }
 
   function handleDownload() {
@@ -38,7 +43,7 @@ export default function ArticleUtilitiesBar({ title, slug, pdfUrl }: ArticleUtil
     if (isUnlocked()) {
       triggerDownload(pdfUrl);
     } else {
-      setShowModal(true);
+      setShowDownloadModal(true);
     }
   }
 
@@ -53,7 +58,7 @@ export default function ArticleUtilitiesBar({ title, slug, pdfUrl }: ArticleUtil
     document.body.removeChild(a);
   }
 
-  async function handleModalSubmit(email: string, company: string) {
+  async function handleDownloadSubmit(email: string, company: string) {
     persistUnlock(email);
     await recordLead({
       email,
@@ -63,10 +68,24 @@ export default function ArticleUtilitiesBar({ title, slug, pdfUrl }: ArticleUtil
       page_url: window.location.href,
       pdf_url: pdfUrl,
     });
-    setShowModal(false);
+    setShowDownloadModal(false);
     if (pdfUrl) {
       setTimeout(() => triggerDownload(pdfUrl!), 120);
     }
+  }
+
+  async function handlePrintSubmit(email: string, company: string) {
+    persistUnlock(email);
+    await recordLead({
+      email,
+      company: company || undefined,
+      source: 'print_pdf',
+      article_slug: slug,
+      page_url: window.location.href,
+      pdf_url: pdfUrl ?? undefined,
+    });
+    setShowPrintModal(false);
+    setTimeout(() => window.print(), 120);
   }
 
   return (
@@ -116,11 +135,19 @@ export default function ArticleUtilitiesBar({ title, slug, pdfUrl }: ArticleUtil
         )}
       </div>
 
-      {showModal && (
+      {showDownloadModal && (
         <EmailCaptureModal
           context="download_pdf"
-          onSubmit={handleModalSubmit}
-          onClose={() => setShowModal(false)}
+          onSubmit={handleDownloadSubmit}
+          onClose={() => setShowDownloadModal(false)}
+        />
+      )}
+
+      {showPrintModal && (
+        <EmailCaptureModal
+          context="print_pdf"
+          onSubmit={handlePrintSubmit}
+          onClose={() => setShowPrintModal(false)}
         />
       )}
 
