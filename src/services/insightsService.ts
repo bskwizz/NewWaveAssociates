@@ -15,6 +15,7 @@ export interface Insight {
   featured: boolean;
   published: boolean;
   image_url?: string;
+  pdf_url?: string;
   created_at: string;
   updated_at: string;
 }

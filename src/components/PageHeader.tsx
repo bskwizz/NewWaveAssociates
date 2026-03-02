@@ -1,6 +1,8 @@
 import { useState } from 'react';
 import { Link, useLocation } from 'react-router-dom';
 import { Menu, X } from 'lucide-react';
+import EmailCaptureModal from './EmailCaptureModal';
+import { persistUnlock, recordLead } from '../services/leadCaptureService';
 
 const navItems = [
   {
@@ -36,9 +38,16 @@ const navItems = [
 
 export default function PageHeader() {
   const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
+  const [showSubscribeModal, setShowSubscribeModal] = useState(false);
   const { pathname } = useLocation();
 
+  async function handleSubscribeSubmit(email: string) {
+    persistUnlock(email);
+    await recordLead({ email, source: 'subscribe_header', url: window.location.href });
+  }
+
   return (
+    <>
     <div className="w-full py-4 sm:py-6 lg:py-8 relative z-50">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-6">
         <div className="flex items-center justify-between">
@@ -50,7 +59,7 @@ export default function PageHeader() {
             />
           </Link>
 
-          <div className="hidden lg:flex items-center gap-8 xl:gap-12">
+          <div className="hidden lg:flex items-center gap-6 xl:gap-10">
             {navItems.map((item) => {
               const active = item.isActive(pathname);
               const isContactUs = item.path === '/contact-us';
@@ -80,6 +89,12 @@ export default function PageHeader() {
                 </Link>
               );
             })}
+            <button
+              onClick={() => setShowSubscribeModal(true)}
+              className="px-4 py-2 border border-[#38495D]/50 text-[#38495D] text-sm font-medium rounded-md hover:border-[#01A3DB] hover:text-[#01A3DB] transition-all"
+            >
+              Subscribe
+            </button>
           </div>
 
           <button
@@ -122,9 +137,24 @@ export default function PageHeader() {
                 </Link>
               );
             })}
+            <button
+              onClick={() => { setMobileMenuOpen(false); setShowSubscribeModal(true); }}
+              className="text-left text-sm font-medium text-[#38495D] hover:text-[#01A3DB] transition-colors border border-[#38495D]/50 rounded-md px-4 py-2 hover:border-[#01A3DB]"
+            >
+              Subscribe
+            </button>
           </div>
         )}
       </div>
     </div>
+
+    {showSubscribeModal && (
+      <EmailCaptureModal
+        context="subscribe_header"
+        onSubmit={handleSubscribeSubmit}
+        onClose={() => setShowSubscribeModal(false)}
+      />
+    )}
+    </>
   );
 }
