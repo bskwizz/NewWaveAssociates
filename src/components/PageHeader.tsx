@@ -40,6 +40,7 @@ export default function PageHeader() {
   const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
   const [showSubscribeModal, setShowSubscribeModal] = useState(false);
   const { pathname } = useLocation();
+  const isInsightsPage = pathname.startsWith('/insights');
 
   async function handleSubscribeSubmit(email: string) {
     persistUnlock(email);
@@ -65,6 +66,7 @@ export default function PageHeader() {
               const isContactUs = item.path === '/contact-us';
 
               if (isContactUs) {
+                if (isInsightsPage) return null;
                 return (
                   <Link
                     key={item.path}
@@ -89,12 +91,14 @@ export default function PageHeader() {
                 </Link>
               );
             })}
-            <button
-              onClick={() => setShowSubscribeModal(true)}
-              className="px-4 py-2 border border-[#38495D]/50 text-[#38495D] text-sm font-medium rounded-md hover:border-[#01A3DB] hover:text-[#01A3DB] transition-all"
-            >
-              Subscribe
-            </button>
+            {isInsightsPage && (
+              <button
+                onClick={() => setShowSubscribeModal(true)}
+                className="px-5 py-2.5 bg-[#f05e00] text-white text-sm font-semibold rounded-md hover:bg-[#d94f00] transition-all shadow-sm hover:shadow-md"
+              >
+                Subscribe
+              </button>
+            )}
           </div>
 
           <button
@@ -112,6 +116,7 @@ export default function PageHeader() {
               const isContactUs = item.path === '/contact-us';
 
               if (isContactUs) {
+                if (isInsightsPage) return null;
                 return (
                   <Link
                     key={item.path}
@@ -137,12 +142,14 @@ export default function PageHeader() {
                 </Link>
               );
             })}
-            <button
-              onClick={() => { setMobileMenuOpen(false); setShowSubscribeModal(true); }}
-              className="text-left text-sm font-medium text-[#38495D] hover:text-[#01A3DB] transition-colors border border-[#38495D]/50 rounded-md px-4 py-2 hover:border-[#01A3DB]"
-            >
-              Subscribe
-            </button>
+            {isInsightsPage && (
+              <button
+                onClick={() => { setMobileMenuOpen(false); setShowSubscribeModal(true); }}
+                className="px-5 py-2.5 bg-[#f05e00] text-white text-sm font-semibold rounded-md hover:bg-[#d94f00] transition-all shadow-sm hover:shadow-md text-left"
+              >
+                Subscribe
+              </button>
+            )}
           </div>
         )}
       </div>
