@@ -14,10 +14,14 @@ const INSIGHT_SOURCES = new Set([
 ]);
 
 function corsHeaders(origin: string | null) {
-  const allowOrigin =
-    origin && ALLOWED_ORIGINS.has(origin)
-      ? origin
-      : "https://newwaveassociates.com";
+  let allowOrigin: string;
+  if (origin === null) {
+    allowOrigin = "*";
+  } else if (ALLOWED_ORIGINS.has(origin)) {
+    allowOrigin = origin;
+  } else {
+    allowOrigin = "https://newwaveassociates.com";
+  }
 
   return {
     "Access-Control-Allow-Origin": allowOrigin,
@@ -65,8 +69,8 @@ Deno.serve(async (req) => {
       );
     }
 
-    const projectUrl = Deno.env.get("PROJECT_URL");
-    const serviceRoleKey = Deno.env.get("SERVICE_ROLE_KEY");
+    const projectUrl = Deno.env.get("PROJECT_URL") ?? Deno.env.get("SUPABASE_URL");
+    const serviceRoleKey = Deno.env.get("SERVICE_ROLE_KEY") ?? Deno.env.get("SUPABASE_SERVICE_ROLE_KEY");
 
     if (!projectUrl || !serviceRoleKey) {
       return new Response(

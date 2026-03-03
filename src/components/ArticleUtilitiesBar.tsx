@@ -60,14 +60,17 @@ export default function ArticleUtilitiesBar({ title, slug, pdfUrl }: ArticleUtil
 
   async function handleDownloadSubmit(email: string, company: string) {
     persistUnlock(email);
-    await recordLead({
-      email,
-      company: company || undefined,
-      source: 'download_pdf',
-      article_slug: slug,
-      page_url: window.location.href,
-      pdf_url: pdfUrl,
-    });
+    try {
+      await recordLead({
+        email,
+        company: company || undefined,
+        source: 'download_pdf',
+        article_slug: slug,
+        page_url: window.location.href,
+        pdf_url: pdfUrl,
+      });
+    } catch {
+    }
     setShowDownloadModal(false);
     if (pdfUrl) {
       setTimeout(() => triggerDownload(pdfUrl!), 120);
@@ -76,14 +79,17 @@ export default function ArticleUtilitiesBar({ title, slug, pdfUrl }: ArticleUtil
 
   async function handlePrintSubmit(email: string, company: string) {
     persistUnlock(email);
-    await recordLead({
-      email,
-      company: company || undefined,
-      source: 'print_pdf',
-      article_slug: slug,
-      page_url: window.location.href,
-      pdf_url: pdfUrl ?? undefined,
-    });
+    try {
+      await recordLead({
+        email,
+        company: company || undefined,
+        source: 'print_pdf',
+        article_slug: slug,
+        page_url: window.location.href,
+        pdf_url: pdfUrl ?? undefined,
+      });
+    } catch {
+    }
     setShowPrintModal(false);
     setTimeout(() => window.print(), 120);
   }

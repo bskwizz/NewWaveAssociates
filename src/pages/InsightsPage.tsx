@@ -17,12 +17,15 @@ export default function InsightsPage({ onNavigate }: InsightsPageProps) {
 
   async function handleSubscribeSubmit(email: string, company: string) {
     persistUnlock(email);
-    await recordLead({
-      email,
-      company: company || undefined,
-      source: 'subscribe_insights_header',
-      page_url: window.location.href,
-    });
+    try {
+      await recordLead({
+        email,
+        company: company || undefined,
+        source: 'subscribe_insights_header',
+        page_url: window.location.href,
+      });
+    } catch {
+    }
   }
 
   useEffect(() => {
