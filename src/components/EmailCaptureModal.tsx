@@ -1,7 +1,7 @@
 import { useState, useEffect, useRef } from 'react';
 import { clearUnlock, getSavedEmail } from '../services/leadCaptureService';
 
-export type ModalContext = 'download_pdf' | 'subscribe_insights_header' | 'subscribe_insights_footer';
+export type ModalContext = 'download_pdf' | 'print_pdf' | 'subscribe_insights_header' | 'subscribe_insights_footer';
 
 interface EmailCaptureModalProps {
   context: ModalContext;
@@ -14,6 +14,11 @@ const COPY: Record<ModalContext, { title: string; subtitle: string; button: stri
     title: 'Download the PDF',
     subtitle: 'Enter your email to receive a copy for reference.',
     button: 'Send PDF',
+  },
+  print_pdf: {
+    title: 'Print this article',
+    subtitle: 'Enter your email to unlock print access.',
+    button: 'Unlock & Print',
   },
   subscribe_insights_header: {
     title: 'Subscribe to New Wave Insights',
@@ -100,6 +105,12 @@ export default function EmailCaptureModal({ context, onSubmit, onClose }: EmailC
                 <path d="M21 15v4a2 2 0 01-2 2H5a2 2 0 01-2-2v-4"/>
                 <polyline points="7 10 12 15 17 10"/>
                 <line x1="12" y1="15" x2="12" y2="3"/>
+              </svg>
+            ) : context === 'print_pdf' ? (
+              <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="#f05e00" strokeWidth="1.75" strokeLinecap="round" strokeLinejoin="round">
+                <polyline points="6 9 6 2 18 2 18 9"/>
+                <path d="M6 18H4a2 2 0 01-2-2v-5a2 2 0 012-2h16a2 2 0 012 2v5a2 2 0 01-2 2h-2"/>
+                <rect x="6" y="14" width="12" height="8"/>
               </svg>
             ) : (
               <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="#f05e00" strokeWidth="1.75" strokeLinecap="round" strokeLinejoin="round">

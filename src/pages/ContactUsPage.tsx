@@ -1,6 +1,7 @@
 import { useState } from 'react';
-import { MapPin, Mail, Linkedin } from 'lucide-react';
+import { Mail, Linkedin } from 'lucide-react';
 import PageHeader from '../components/PageHeader';
+import { recordLead } from '../services/leadCaptureService';
 
 interface ContactUsPageProps {
   onNavigate: (page: string) => void;
@@ -45,29 +46,18 @@ export default function ContactUsPage({ onNavigate }: ContactUsPageProps) {
     setSubmitStatus({ type: null, message: '' });
 
     try {
-      const response = await fetch('https://vmxghbrjuyvyzxaavmus.functions.supabase.co/lead', {
-        method: 'POST',
-        headers: {
-          'Content-Type': 'application/json',
-        },
-        body: JSON.stringify({
-          name: formData.name,
-          email: formData.email,
-          phone: formData.phone,
-          company: formData.company,
-          reason: formData.reason,
-          timeline: formData.timeline,
-          message: formData.message,
-          pageUrl: window.location.href,
-          website: formData.website,
-        }),
+      await recordLead({
+        email: formData.email,
+        company: formData.company || undefined,
+        source: 'contact_form',
+        page_url: window.location.href,
+        name: formData.name,
+        phone: formData.phone || undefined,
+        reason: formData.reason,
+        timeline: formData.timeline,
+        message: formData.message || undefined,
       });
 
-      if (!response.ok) {
-        throw new Error('Failed to submit form');
-      }
-
-      // Success - clear form and show success message
       setFormData({
         name: '',
         email: '',

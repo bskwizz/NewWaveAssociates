@@ -41,7 +41,9 @@ export function clearUnlock(): void {
 }
 
 export type LeadSource =
+  | 'contact_form'
   | 'download_pdf'
+  | 'print_pdf'
   | 'subscribe_insights_header'
   | 'subscribe_insights_footer';
 
@@ -52,6 +54,11 @@ export interface LeadPayload {
   article_slug?: string;
   page_url?: string;
   pdf_url?: string;
+  name?: string;
+  phone?: string;
+  reason?: string;
+  timeline?: string;
+  message?: string;
 }
 
 export async function recordLead(payload: LeadPayload): Promise<void> {
@@ -62,6 +69,11 @@ export async function recordLead(payload: LeadPayload): Promise<void> {
     article_slug: payload.article_slug ?? null,
     page_url: payload.page_url ?? window.location.href,
     pdf_url: payload.pdf_url ?? null,
+    name: payload.name ?? null,
+    phone: payload.phone ?? null,
+    reason: payload.reason ?? null,
+    timeline: payload.timeline ?? null,
+    message: payload.message ?? null,
   };
 
   const response = await fetch(LEAD_ENDPOINT, {
@@ -73,7 +85,11 @@ export async function recordLead(payload: LeadPayload): Promise<void> {
   if (!response.ok) {
     const text = await response.text().catch(() => '');
     const err = new Error(`Lead capture failed: ${response.status} ${text}`);
-    console.error(err);
+    if (import.meta.env.DEV) console.error('[LEAD FAIL]', err);
     throw err;
+  }
+
+  if (import.meta.env.DEV) {
+    console.log('[LEAD OK]', { source: payload.source, email: payload.email, article_slug: payload.article_slug ?? null });
   }
 }
