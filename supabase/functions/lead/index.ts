@@ -14,10 +14,14 @@ const INSIGHT_SOURCES = new Set([
 ]);
 
 function corsHeaders(origin: string | null) {
-  const allowOrigin =
-    origin && ALLOWED_ORIGINS.has(origin)
-      ? origin
-      : "*";
+  let allowOrigin: string;
+  if (origin === null) {
+    allowOrigin = "*";
+  } else if (ALLOWED_ORIGINS.has(origin)) {
+    allowOrigin = origin;
+  } else {
+    allowOrigin = "https://newwaveassociates.com";
+  }
 
   return {
     "Access-Control-Allow-Origin": allowOrigin,
