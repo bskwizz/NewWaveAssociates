@@ -23,16 +23,17 @@ export default function ArticleFooterCTA({ slug }: ArticleFooterCTAProps) {
     setSubmitting(true);
     try {
       persistUnlock(trimmed);
-      await recordLead({
-        email: trimmed,
-        company: company.trim() || undefined,
-        source: 'subscribe_insights_footer',
-        article_slug: slug,
-        page_url: window.location.href,
-      });
+      try {
+        await recordLead({
+          email: trimmed,
+          company: company.trim() || undefined,
+          source: 'subscribe_insights_footer',
+          article_slug: slug,
+          page_url: window.location.href,
+        });
+      } catch {
+      }
       setSubmitted(true);
-    } catch {
-      setError('Something went wrong. Please try again.');
     } finally {
       setSubmitting(false);
     }
