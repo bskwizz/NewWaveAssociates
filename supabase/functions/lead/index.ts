@@ -6,6 +6,13 @@ const ALLOWED_ORIGINS = new Set([
   "https://www.newwaveassociates.com",
 ]);
 
+const INSIGHT_SOURCES = new Set([
+  "download_pdf",
+  "print_pdf",
+  "subscribe_insights_header",
+  "subscribe_insights_footer",
+]);
+
 function corsHeaders(origin: string | null) {
   const allowOrigin =
     origin && ALLOWED_ORIGINS.has(origin)
@@ -69,33 +76,25 @@ Deno.serve(async (req) => {
     }
 
     const supabase = createClient(projectUrl, serviceRoleKey);
-
     const source = body?.source ? String(body.source).trim() : null;
-    const isInsightLead = source && [
-      "download_pdf",
-      "print_pdf",
-      "subscribe_insights_header",
-      "subscribe_insights_footer",
-    ].includes(source);
 
-    if (isInsightLead) {
+    if (source && INSIGHT_SOURCES.has(source)) {
       const company = body?.company ? String(body.company).trim() : null;
       const article_slug = body?.article_slug ? String(body.article_slug).trim() : null;
-      const page_url = body?.page_url ? String(body.page_url).trim() : (body?.pageUrl ? String(body.pageUrl).trim() : null);
+      const page_url = body?.page_url ? String(body.page_url).trim() : null;
       const pdf_url = body?.pdf_url ? String(body.pdf_url).trim() : null;
 
-      const { error } = await supabase.from("leads").insert([{
+      const { error } = await supabase.from("insight_leads").insert([{
         email,
         company,
         source,
         article_slug,
         page_url,
         pdf_url,
-        status: "new",
       }]);
 
       if (error) {
-        console.error("Insight lead insert failed:", error.message);
+        console.error("insight_leads insert failed:", error.message);
         return new Response(
           JSON.stringify({ ok: false, error: "Database insert failed" }),
           { status: 500, headers: { ...headers, "Content-Type": "application/json" } }
@@ -108,44 +107,51 @@ Deno.serve(async (req) => {
       );
     }
 
-    const name = String(body?.name ?? "").trim();
-    const reason = String(body?.reason ?? "").trim();
-    const timeline = String(body?.timeline ?? "").trim();
-    const phone = body?.phone ? String(body.phone).trim() : null;
-    const company = body?.company ? String(body.company).trim() : null;
-    const message = body?.message ? String(body.message).trim() : null;
-    const page_url = body?.pageUrl ? String(body.pageUrl).trim() : null;
+    if (source === "contact_form") {
+      const name = String(body?.name ?? "").trim();
+      const reason = String(body?.reason ?? "").trim();
+      const timeline = String(body?.timeline ?? "").trim();
+      const phone = body?.phone ? String(body.phone).trim() : null;
+      const company = body?.company ? String(body.company).trim() : null;
+      const message = body?.message ? String(body.message).trim() : null;
+      const page_url = body?.page_url ? String(body.page_url).trim() : null;
 
-    if (!name || !reason || !timeline) {
+      if (!name || !reason || !timeline) {
+        return new Response(
+          JSON.stringify({ ok: false, error: "Missing required fields" }),
+          { status: 400, headers: { ...headers, "Content-Type": "application/json" } }
+        );
+      }
+
+      const { error } = await supabase.from("contact_leads").insert([{
+        name,
+        email,
+        reason,
+        timeline,
+        phone,
+        company,
+        message,
+        source: "contact_form",
+        page_url,
+      }]);
+
+      if (error) {
+        console.error("contact_leads insert failed:", error.message);
+        return new Response(
+          JSON.stringify({ ok: false, error: "Database insert failed" }),
+          { status: 500, headers: { ...headers, "Content-Type": "application/json" } }
+        );
+      }
+
       return new Response(
-        JSON.stringify({ ok: false, error: "Missing required fields" }),
-        { status: 400, headers: { ...headers, "Content-Type": "application/json" } }
-      );
-    }
-
-    const { error } = await supabase.from("leads").insert([{
-      name,
-      email,
-      reason,
-      timeline,
-      phone,
-      company,
-      message,
-      page_url,
-      status: "new",
-    }]);
-
-    if (error) {
-      console.error("Contact lead insert failed:", error.message);
-      return new Response(
-        JSON.stringify({ ok: false, error: "Database insert failed" }),
-        { status: 500, headers: { ...headers, "Content-Type": "application/json" } }
+        JSON.stringify({ ok: true }),
+        { status: 200, headers: { ...headers, "Content-Type": "application/json" } }
       );
     }
 
     return new Response(
-      JSON.stringify({ ok: true }),
-      { status: 200, headers: { ...headers, "Content-Type": "application/json" } }
+      JSON.stringify({ ok: false, error: "Unknown source" }),
+      { status: 400, headers: { ...headers, "Content-Type": "application/json" } }
     );
   } catch (e) {
     console.error("Edge function error:", e);
