@@ -186,7 +186,29 @@ Option 2: Install and provide the "ws" package:
           font-style: italic;
         }
 
-        .editorial-article .executive-summary + h2 + p::first-letter {
+        .editorial-article p.article-subtitle {
+          font-size: 1.375rem;
+          font-weight: 700;
+          color: #000;
+          line-height: 1.35;
+          margin-bottom: 1.75rem;
+          max-width: 65ch;
+          font-family: "Segoe UI", system-ui, sans-serif;
+          letter-spacing: -0.01em;
+        }
+
+        .editorial-article .executive-summary + p.article-subtitle + p::first-letter {
+          float: left;
+          font-size: 4.5rem;
+          line-height: 3.5rem;
+          padding-right: 0.125rem;
+          margin-top: 0.125rem;
+          font-weight: 700;
+          color: #000;
+          font-family: "Segoe UI", system-ui, sans-serif;
+        }
+
+        .editorial-article .executive-summary + p + p::first-letter {
           float: left;
           font-size: 4.5rem;
           line-height: 3.5rem;
@@ -198,7 +220,8 @@ Option 2: Install and provide the "ws" package:
         }
 
         @media (max-width: 640px) {
-          .editorial-article .executive-summary + h2 + p::first-letter {
+          .editorial-article .executive-summary + p.article-subtitle + p::first-letter,
+          .editorial-article .executive-summary + p + p::first-letter {
             font-size: 3.5rem;
             line-height: 2.75rem;
           }
