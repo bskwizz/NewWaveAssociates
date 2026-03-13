@@ -39,7 +39,10 @@ export default function ArticleUtilitiesBar({ title, slug, pdfUrl }: ArticleUtil
   }
 
   function handleDownload() {
-    if (!pdfUrl) return;
+    if (!pdfUrl) {
+      setToast('PDF coming soon');
+      return;
+    }
     if (isUnlocked()) {
       triggerDownload(pdfUrl);
     } else {
@@ -125,20 +128,18 @@ export default function ArticleUtilitiesBar({ title, slug, pdfUrl }: ArticleUtil
           <span className="text-[11px] font-medium tracking-wide uppercase" style={{ fontFamily: '"Segoe UI", system-ui, sans-serif' }}>Print</span>
         </button>
 
-        {pdfUrl && (
-          <button
-            onClick={handleDownload}
-            className="flex flex-col items-center gap-1 text-gray-500 hover:text-black transition-colors group"
-            aria-label="Download PDF"
-          >
-            <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.75" strokeLinecap="round" strokeLinejoin="round" className="transition-colors">
-              <path d="M21 15v4a2 2 0 01-2 2H5a2 2 0 01-2-2v-4"/>
-              <polyline points="7 10 12 15 17 10"/>
-              <line x1="12" y1="15" x2="12" y2="3"/>
-            </svg>
-            <span className="text-[11px] font-medium tracking-wide uppercase" style={{ fontFamily: '"Segoe UI", system-ui, sans-serif' }}>Download</span>
-          </button>
-        )}
+        <button
+          onClick={handleDownload}
+          className="flex flex-col items-center gap-1 text-gray-500 hover:text-black transition-colors group"
+          aria-label="Download PDF"
+        >
+          <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.75" strokeLinecap="round" strokeLinejoin="round" className="transition-colors">
+            <path d="M21 15v4a2 2 0 01-2 2H5a2 2 0 01-2-2v-4"/>
+            <polyline points="7 10 12 15 17 10"/>
+            <line x1="12" y1="15" x2="12" y2="3"/>
+          </svg>
+          <span className="text-[11px] font-medium tracking-wide uppercase" style={{ fontFamily: '"Segoe UI", system-ui, sans-serif' }}>Download</span>
+        </button>
       </div>
 
       {showDownloadModal && (
