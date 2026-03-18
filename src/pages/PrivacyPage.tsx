@@ -98,8 +98,8 @@ export default function PrivacyPage() {
             </p>
             <p className="mt-2 font-medium text-[#38495D]">
               New Wave Associates LLC<br />
-              <a href="mailto:info@newwaveassociates.com" className="text-[#01A3DB] hover:underline">
-                info@newwaveassociates.com
+              <a href="mailto:hello@newwaveassociates.com" className="text-[#01A3DB] hover:underline">
+                hello@newwaveassociates.com
               </a>
             </p>
           </section>
