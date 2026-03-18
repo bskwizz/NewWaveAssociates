@@ -41,6 +41,8 @@ import IntegrationConsolidationHub from './pages/hubs/IntegrationConsolidationHu
 import LaborOffshoringHub from './pages/hubs/LaborOffshoringHub';
 import SGAOptimizationHub from './pages/hubs/SGAOptimizationHub';
 import AIAutomationHub from './pages/hubs/AIAutomationHub';
+import PrivacyPage from './pages/PrivacyPage';
+import TermsPage from './pages/TermsPage';
 
 function WithNav({ Component }: { Component: React.ComponentType<{ onNavigate: (page: string) => void }> }) {
   const onNavigate = useAppNavigate();
@@ -66,6 +68,8 @@ function App() {
           <Route path="/insights" element={<WithNav Component={InsightsPage} />} />
           <Route path="/insights/:slug" element={<InsightDetailWrapper />} />
           <Route path="/contact-us" element={<WithNav Component={ContactUsPage} />} />
+          <Route path="/privacy" element={<PrivacyPage />} />
+          <Route path="/terms" element={<TermsPage />} />
 
           <Route path="/case-study-pmo" element={<WithNav Component={PMOCaseStudy} />} />
           <Route path="/case-study-operating-model" element={<WithNav Component={OperatingModelCaseStudy} />} />

@@ -1,4 +1,5 @@
 import { Linkedin } from 'lucide-react';
+import { Link } from 'react-router-dom';
 
 export default function Footer() {
   return (
@@ -24,10 +25,20 @@ export default function Footer() {
             </a>
           </div>
         </div>
-        <div className="pt-2 border-t border-white/10">
-          <p className="text-xs text-gray-300">
-            © 2026 New Wave Associates LLC. All rights reserved.
-          </p>
+        <div className="border-t border-white/10 pt-2">
+          <div className="flex flex-col gap-2 text-center md:flex-row md:items-center md:justify-between md:text-left">
+            <p className="text-xs text-gray-300">
+              © 2026 New Wave Associates LLC. All rights reserved.
+            </p>
+            <div className="flex items-center justify-center gap-4 text-xs text-gray-300 md:justify-end">
+              <Link to="/privacy" className="transition-colors hover:text-white">
+                Privacy Policy
+              </Link>
+              <Link to="/terms" className="transition-colors hover:text-white">
+                Terms of Service
+              </Link>
+            </div>
+          </div>
         </div>
       </div>
     </footer>
