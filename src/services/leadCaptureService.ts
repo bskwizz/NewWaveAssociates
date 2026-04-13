@@ -2,7 +2,7 @@ const UNLOCK_KEY = 'nwa_lead_unlocked_until';
 const EMAIL_KEY = 'nwa_lead_email';
 const UNLOCK_DAYS = 180;
 
-const LEAD_ENDPOINT = 'https://vmxghbrjuyvyzxaavmus.functions.supabase.co/lead';
+const LEAD_ENDPOINT = 'https://uodxsqqlszmonludxrlr.supabase.co/functions/v1/lead';
 
 export function isUnlocked(): boolean {
   try {
