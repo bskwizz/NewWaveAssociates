@@ -201,6 +201,11 @@
     <priority>0.7</priority>
   </url>
   <url>
+    <loc>https://www.newwaveassociates.com/insights/deploying-ai-agents-fail-and-rebuild</loc>
+    <changefreq>weekly</changefreq>
+    <priority>0.7</priority>
+  </url>
+  <url>
     <loc>https://www.newwaveassociates.com/insights/operational-rigor-foundation-for-ai</loc>
     <changefreq>weekly</changefreq>
     <priority>0.7</priority>
