@@ -101,6 +101,8 @@ export default function CapabilitiesPage({ onNavigate }: CapabilitiesPageProps) 
 
         <PageHeader />
 
+        <h1 className="sr-only">New Wave Associates Case Studies & Client Results</h1>
+
         <div className="relative flex items-start pt-8 md:pt-16">
           <div className="w-full">
             <div className="max-w-7xl mx-auto px-4 sm:px-5 md:px-6 lg:px-6 xl:px-8 w-full">

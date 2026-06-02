@@ -1,6 +1,7 @@
 import { useState, useEffect } from 'react';
 import { ArrowLeft } from 'lucide-react';
 import PageHeader from '../components/PageHeader';
+import Seo from '../components/Seo';
 import CTABar from '../components/CTABar';
 import ArticleUtilitiesBar from '../components/ArticleUtilitiesBar';
 import ArticleFooterCTA from '../components/ArticleFooterCTA';
@@ -79,6 +80,13 @@ export default function InsightDetailPage({ onNavigate, slug }: InsightDetailPag
 
   return (
     <div className="overflow-x-clip">
+      <Seo
+        title={`${insight.title} | New Wave Associates`}
+        description={insight.excerpt || insight.title}
+        canonical={`/insights/${insight.slug}`}
+        image={insight.image_url || undefined}
+        type="article"
+      />
       <style>{`
         .editorial-article .executive-summary {
           font-style: italic;

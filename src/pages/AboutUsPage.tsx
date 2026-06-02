@@ -63,6 +63,8 @@ export default function AboutUsPage({ onNavigate }: AboutUsPageProps) {
       <div ref={vantaRef} className="capabilities-hero relative" aria-label="About Us">
         <PageHeader />
 
+        <h1 className="sr-only">About New Wave Associates</h1>
+
         {/* Wave divider (no layout shift) */}
         <div className="pointer-events-none relative h-0">
           <img
