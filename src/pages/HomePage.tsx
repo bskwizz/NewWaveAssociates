@@ -24,6 +24,10 @@ export default function HomePage({ onNavigate }: HomePageProps) {
 
         <PageHeader />
 
+        <h1 className="sr-only">
+          New Wave Associates — Operational Transformation, Procurement & Revenue Operations Consulting
+        </h1>
+
         <div className="relative flex items-start pt-6 sm:pt-8 lg:pt-12">
           <div className="w-full flex flex-col">
             <div className="max-w-7xl mx-auto px-4 sm:px-5 md:px-6 lg:px-6 xl:px-8">

@@ -297,6 +297,8 @@ export default function OurServicesPage({ onNavigate }: OurServicesPageProps) {
         <div className="relative z-10 flex-1 flex flex-col">
           <PageHeader />
 
+          <h1 className="sr-only">Our Services — Procurement, Revenue Operations & Transformation Consulting</h1>
+
           <div className="relative flex items-start flex-1 pt-6 pb-4 sm:pt-8 sm:pb-6 lg:pt-12 lg:pb-0 lg:min-h-0">
           <div className="w-full">
             <div className="max-w-7xl mx-auto px-4 sm:px-5 md:px-6 lg:px-6 xl:px-8 w-full">
