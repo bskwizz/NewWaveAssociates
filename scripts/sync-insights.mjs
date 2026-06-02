@@ -1,6 +1,7 @@
-import { readFileSync, writeFileSync, existsSync } from 'node:fs';
+import { readFileSync, writeFileSync } from 'node:fs';
 import { fileURLToPath } from 'node:url';
 import { dirname, join } from 'node:path';
+import { loadEnv as viteLoadEnv } from 'vite';
 import { createClient } from '@supabase/supabase-js';
 
 // Regenerates public/insights.json from Supabase (the source of truth the app
@@ -12,23 +13,17 @@ import { createClient } from '@supabase/supabase-js';
 
 const __dirname = dirname(fileURLToPath(import.meta.url));
 const ROOT = join(__dirname, '..');
-const ENV_FILE = join(ROOT, '.env');
 const OUT_FILE = join(ROOT, 'public', 'insights.json');
 
 function loadEnv() {
-  const env = { ...process.env };
-  if (existsSync(ENV_FILE)) {
-    for (const line of readFileSync(ENV_FILE, 'utf8').split('\n')) {
-      const trimmed = line.trim();
-      if (!trimmed || trimmed.startsWith('#')) continue;
-      const eq = trimmed.indexOf('=');
-      if (eq === -1) continue;
-      const key = trimmed.slice(0, eq).trim();
-      const val = trimmed.slice(eq + 1).trim().replace(/^['"]|['"]$/g, '');
-      if (!(key in env)) env[key] = val;
-    }
-  }
-  return env;
+  // Use Vite's loader so we read the SAME env files the app does — .env,
+  // .env.local, .env.[mode], .env.[mode].local (with Vite's precedence) — not
+  // just .env. Otherwise creds in .env.local would be missed and the sync would
+  // silently skip, shipping a stale insights.json. Explicit process.env wins
+  // (e.g. CI-injected vars).
+  const mode = process.env.NODE_ENV || 'production';
+  const fromFiles = viteLoadEnv(mode, ROOT, 'VITE_');
+  return { ...fromFiles, ...process.env };
 }
 
 function readExisting() {
