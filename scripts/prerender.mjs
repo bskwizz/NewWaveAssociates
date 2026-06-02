@@ -44,6 +44,14 @@ async function prerenderRoute(browser, baseUrl, route) {
     );
   }
 
+  // The homepage's "Latest Insights" strip loads async; wait for it to settle so
+  // it's captured. The catch keeps capture going even if the fetch returns empty.
+  if (route === '/') {
+    await page
+      .waitForSelector('[data-insights-ready]', { timeout: CONTENT_TIMEOUT })
+      .catch(() => {});
+  }
+
   // Strip any Vanta/three.js canvas (post-mount, non-deterministic) and stamp
   // the sentinel used by main.tsx to decide hydrate vs. clean render.
   await page.evaluate((p) => {
