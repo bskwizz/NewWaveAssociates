@@ -23,7 +23,11 @@ export default function Seo({
   image = DEFAULT_IMAGE,
   type = 'website',
 }: SeoProps) {
-  const url = SITE + canonical;
+  // GitHub Pages serves directory index files with a trailing slash (e.g.
+  // /services -> 301 -> /services/). Canonicalize to that final 200 URL so the
+  // canonical + og:url don't point at a redirect. Home stays "/".
+  const path = canonical === '/' || canonical.endsWith('/') ? canonical : `${canonical}/`;
+  const url = SITE + path;
   const imageUrl = image.startsWith('http') ? image : SITE + image;
 
   return (
