@@ -30,9 +30,13 @@ const routes = getAllRoutes(PUBLIC_DIR);
 const urls = routes
   .map((route) => {
     const { changefreq, priority } = metaFor(route);
+    // GitHub Pages serves these at a trailing slash (e.g. /services/), 301-ing
+    // the no-slash form. List the final 200 URL so the sitemap matches the
+    // canonical tags and doesn't point at redirects. Home stays "/".
+    const loc = route === '/' ? `${SITE}/` : `${SITE}${route}/`;
     return [
       '  <url>',
-      `    <loc>${SITE}${route}</loc>`,
+      `    <loc>${loc}</loc>`,
       `    <changefreq>${changefreq}</changefreq>`,
       `    <priority>${priority}</priority>`,
       '  </url>',

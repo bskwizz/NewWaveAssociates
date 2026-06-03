@@ -6,217 +6,217 @@
     <priority>1.0</priority>
   </url>
   <url>
-    <loc>https://www.newwaveassociates.com/services</loc>
+    <loc>https://www.newwaveassociates.com/services/</loc>
     <changefreq>monthly</changefreq>
     <priority>0.9</priority>
   </url>
   <url>
-    <loc>https://www.newwaveassociates.com/case-studies</loc>
+    <loc>https://www.newwaveassociates.com/case-studies/</loc>
     <changefreq>weekly</changefreq>
     <priority>0.9</priority>
   </url>
   <url>
-    <loc>https://www.newwaveassociates.com/about-us</loc>
+    <loc>https://www.newwaveassociates.com/about-us/</loc>
     <changefreq>monthly</changefreq>
     <priority>0.9</priority>
   </url>
   <url>
-    <loc>https://www.newwaveassociates.com/insights</loc>
+    <loc>https://www.newwaveassociates.com/insights/</loc>
     <changefreq>weekly</changefreq>
     <priority>0.9</priority>
   </url>
   <url>
-    <loc>https://www.newwaveassociates.com/contact-us</loc>
+    <loc>https://www.newwaveassociates.com/contact-us/</loc>
     <changefreq>monthly</changefreq>
     <priority>0.9</priority>
   </url>
   <url>
-    <loc>https://www.newwaveassociates.com/privacy</loc>
+    <loc>https://www.newwaveassociates.com/privacy/</loc>
     <changefreq>yearly</changefreq>
     <priority>0.3</priority>
   </url>
   <url>
-    <loc>https://www.newwaveassociates.com/terms</loc>
+    <loc>https://www.newwaveassociates.com/terms/</loc>
     <changefreq>yearly</changefreq>
     <priority>0.3</priority>
   </url>
   <url>
-    <loc>https://www.newwaveassociates.com/case-study-pmo</loc>
+    <loc>https://www.newwaveassociates.com/case-study-pmo/</loc>
     <changefreq>monthly</changefreq>
     <priority>0.7</priority>
   </url>
   <url>
-    <loc>https://www.newwaveassociates.com/case-study-operating-model</loc>
+    <loc>https://www.newwaveassociates.com/case-study-operating-model/</loc>
     <changefreq>monthly</changefreq>
     <priority>0.7</priority>
   </url>
   <url>
-    <loc>https://www.newwaveassociates.com/case-study-pricing</loc>
+    <loc>https://www.newwaveassociates.com/case-study-pricing/</loc>
     <changefreq>monthly</changefreq>
     <priority>0.7</priority>
   </url>
   <url>
-    <loc>https://www.newwaveassociates.com/case-study-merger</loc>
+    <loc>https://www.newwaveassociates.com/case-study-merger/</loc>
     <changefreq>monthly</changefreq>
     <priority>0.7</priority>
   </url>
   <url>
-    <loc>https://www.newwaveassociates.com/case-study-data</loc>
+    <loc>https://www.newwaveassociates.com/case-study-data/</loc>
     <changefreq>monthly</changefreq>
     <priority>0.7</priority>
   </url>
   <url>
-    <loc>https://www.newwaveassociates.com/case-study-platform</loc>
+    <loc>https://www.newwaveassociates.com/case-study-platform/</loc>
     <changefreq>monthly</changefreq>
     <priority>0.7</priority>
   </url>
   <url>
-    <loc>https://www.newwaveassociates.com/case-study-ai</loc>
+    <loc>https://www.newwaveassociates.com/case-study-ai/</loc>
     <changefreq>monthly</changefreq>
     <priority>0.7</priority>
   </url>
   <url>
-    <loc>https://www.newwaveassociates.com/case-study-gtm</loc>
+    <loc>https://www.newwaveassociates.com/case-study-gtm/</loc>
     <changefreq>monthly</changefreq>
     <priority>0.7</priority>
   </url>
   <url>
-    <loc>https://www.newwaveassociates.com/case-study-labor</loc>
+    <loc>https://www.newwaveassociates.com/case-study-labor/</loc>
     <changefreq>monthly</changefreq>
     <priority>0.7</priority>
   </url>
   <url>
-    <loc>https://www.newwaveassociates.com/case-study-sga</loc>
+    <loc>https://www.newwaveassociates.com/case-study-sga/</loc>
     <changefreq>monthly</changefreq>
     <priority>0.7</priority>
   </url>
   <url>
-    <loc>https://www.newwaveassociates.com/case-studies/automation-ap-makeover</loc>
+    <loc>https://www.newwaveassociates.com/case-studies/automation-ap-makeover/</loc>
     <changefreq>monthly</changefreq>
     <priority>0.7</priority>
   </url>
   <url>
-    <loc>https://www.newwaveassociates.com/case-studies/automation-ar-acceleration</loc>
+    <loc>https://www.newwaveassociates.com/case-studies/automation-ar-acceleration/</loc>
     <changefreq>monthly</changefreq>
     <priority>0.7</priority>
   </url>
   <url>
-    <loc>https://www.newwaveassociates.com/case-studies/gtm-pricing-packaging</loc>
+    <loc>https://www.newwaveassociates.com/case-studies/gtm-pricing-packaging/</loc>
     <changefreq>monthly</changefreq>
     <priority>0.7</priority>
   </url>
   <url>
-    <loc>https://www.newwaveassociates.com/case-studies/gtm-allbound-model</loc>
+    <loc>https://www.newwaveassociates.com/case-studies/gtm-allbound-model/</loc>
     <changefreq>monthly</changefreq>
     <priority>0.7</priority>
   </url>
   <url>
-    <loc>https://www.newwaveassociates.com/case-studies/gtm-vertical-incubation</loc>
+    <loc>https://www.newwaveassociates.com/case-studies/gtm-vertical-incubation/</loc>
     <changefreq>monthly</changefreq>
     <priority>0.7</priority>
   </url>
   <url>
-    <loc>https://www.newwaveassociates.com/case-studies/gtm-revenue-visibility</loc>
+    <loc>https://www.newwaveassociates.com/case-studies/gtm-revenue-visibility/</loc>
     <changefreq>monthly</changefreq>
     <priority>0.7</priority>
   </url>
   <url>
-    <loc>https://www.newwaveassociates.com/case-studies/integration-multisite-system</loc>
+    <loc>https://www.newwaveassociates.com/case-studies/integration-multisite-system/</loc>
     <changefreq>monthly</changefreq>
     <priority>0.7</priority>
   </url>
   <url>
-    <loc>https://www.newwaveassociates.com/case-studies/integration-partnership-transition</loc>
+    <loc>https://www.newwaveassociates.com/case-studies/integration-partnership-transition/</loc>
     <changefreq>monthly</changefreq>
     <priority>0.7</priority>
   </url>
   <url>
-    <loc>https://www.newwaveassociates.com/case-studies/integration-agreements-standardization</loc>
+    <loc>https://www.newwaveassociates.com/case-studies/integration-agreements-standardization/</loc>
     <changefreq>monthly</changefreq>
     <priority>0.7</priority>
   </url>
   <url>
-    <loc>https://www.newwaveassociates.com/case-studies/integration-catalog-rationalization</loc>
+    <loc>https://www.newwaveassociates.com/case-studies/integration-catalog-rationalization/</loc>
     <changefreq>monthly</changefreq>
     <priority>0.7</priority>
   </url>
   <url>
-    <loc>https://www.newwaveassociates.com/case-studies/integration-techstack-bi</loc>
+    <loc>https://www.newwaveassociates.com/case-studies/integration-techstack-bi/</loc>
     <changefreq>monthly</changefreq>
     <priority>0.7</priority>
   </url>
   <url>
-    <loc>https://www.newwaveassociates.com/case-studies/labor-itmsp-offshoring</loc>
+    <loc>https://www.newwaveassociates.com/case-studies/labor-itmsp-offshoring/</loc>
     <changefreq>monthly</changefreq>
     <priority>0.7</priority>
   </url>
   <url>
-    <loc>https://www.newwaveassociates.com/case-studies/labor-healthcare-offshoring</loc>
+    <loc>https://www.newwaveassociates.com/case-studies/labor-healthcare-offshoring/</loc>
     <changefreq>monthly</changefreq>
     <priority>0.7</priority>
   </url>
   <url>
-    <loc>https://www.newwaveassociates.com/case-studies/labor-healthcare-review</loc>
+    <loc>https://www.newwaveassociates.com/case-studies/labor-healthcare-review/</loc>
     <changefreq>monthly</changefreq>
     <priority>0.7</priority>
   </url>
   <url>
-    <loc>https://www.newwaveassociates.com/case-studies/sga-subcontracting-capture</loc>
+    <loc>https://www.newwaveassociates.com/case-studies/sga-subcontracting-capture/</loc>
     <changefreq>monthly</changefreq>
     <priority>0.7</priority>
   </url>
   <url>
-    <loc>https://www.newwaveassociates.com/case-studies/sga-virtual-card</loc>
+    <loc>https://www.newwaveassociates.com/case-studies/sga-virtual-card/</loc>
     <changefreq>monthly</changefreq>
     <priority>0.7</priority>
   </url>
   <url>
-    <loc>https://www.newwaveassociates.com/hub-transformation-office</loc>
+    <loc>https://www.newwaveassociates.com/hub-transformation-office/</loc>
     <changefreq>monthly</changefreq>
     <priority>0.7</priority>
   </url>
   <url>
-    <loc>https://www.newwaveassociates.com/hub-gtm-growth</loc>
+    <loc>https://www.newwaveassociates.com/hub-gtm-growth/</loc>
     <changefreq>monthly</changefreq>
     <priority>0.7</priority>
   </url>
   <url>
-    <loc>https://www.newwaveassociates.com/hub-integration-consolidation</loc>
+    <loc>https://www.newwaveassociates.com/hub-integration-consolidation/</loc>
     <changefreq>monthly</changefreq>
     <priority>0.7</priority>
   </url>
   <url>
-    <loc>https://www.newwaveassociates.com/hub-labor-offshoring</loc>
+    <loc>https://www.newwaveassociates.com/hub-labor-offshoring/</loc>
     <changefreq>monthly</changefreq>
     <priority>0.7</priority>
   </url>
   <url>
-    <loc>https://www.newwaveassociates.com/hub-sga-optimization</loc>
+    <loc>https://www.newwaveassociates.com/hub-sga-optimization/</loc>
     <changefreq>monthly</changefreq>
     <priority>0.7</priority>
   </url>
   <url>
-    <loc>https://www.newwaveassociates.com/hub-ai-automation</loc>
+    <loc>https://www.newwaveassociates.com/hub-ai-automation/</loc>
     <changefreq>monthly</changefreq>
     <priority>0.7</priority>
   </url>
   <url>
-    <loc>https://www.newwaveassociates.com/insights/deploying-ai-agents-fail-and-rebuild</loc>
+    <loc>https://www.newwaveassociates.com/insights/deploying-ai-agents-fail-and-rebuild/</loc>
     <changefreq>weekly</changefreq>
     <priority>0.7</priority>
   </url>
   <url>
-    <loc>https://www.newwaveassociates.com/insights/operational-rigor-foundation-for-ai</loc>
+    <loc>https://www.newwaveassociates.com/insights/operational-rigor-foundation-for-ai/</loc>
     <changefreq>weekly</changefreq>
     <priority>0.7</priority>
   </url>
   <url>
-    <loc>https://www.newwaveassociates.com/insights/hidden-tax-operational-complexity</loc>
+    <loc>https://www.newwaveassociates.com/insights/hidden-tax-operational-complexity/</loc>
     <changefreq>weekly</changefreq>
     <priority>0.7</priority>
   </url>
   <url>
-    <loc>https://www.newwaveassociates.com/insights/transformation-project-based-era</loc>
+    <loc>https://www.newwaveassociates.com/insights/transformation-project-based-era/</loc>
     <changefreq>weekly</changefreq>
     <priority>0.7</priority>
   </url>
