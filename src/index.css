@@ -621,3 +621,25 @@ html {
     clip-path: none;
   }
 }
+
+/* Hero trend-line motif: reveals the orange line image left-to-right each time
+   the photo panel rotates, so it replots over the new photo. */
+@keyframes heroTrendlineReveal {
+  0% {
+    clip-path: inset(0 100% 0 0);
+  }
+  100% {
+    clip-path: inset(0 0 0 0);
+  }
+}
+
+.hero-trendline {
+  animation: heroTrendlineReveal 1s ease-out forwards;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .hero-trendline {
+    animation: none;
+    clip-path: none;
+  }
+}
