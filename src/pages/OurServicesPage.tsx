@@ -26,7 +26,7 @@ const gtmStrategyContent: SectionContent = {
     'GPO Interaction Model Development',
   ],
   groups: [],
-  image: '/strategic_sourcing_flow_diagram.png',
+  image: '/strategic_sourcing.webp',
 };
 
 const costOptimizationContent: SectionContent = {
@@ -38,7 +38,7 @@ const costOptimizationContent: SectionContent = {
     'Define and Communicate Go-to-Market Objectives (Offerings, Pricing, Demand and Lead Generation)',
   ],
   groups: [],
-  image: '/revenue_growth_through_digital_acceleration.png',
+  image: '/revenue_demand_acceleration.webp',
 };
 
 const operationalEfficienciesContent: SectionContent = {
@@ -51,7 +51,7 @@ const operationalEfficienciesContent: SectionContent = {
     'Current, Interim, and Future-State Operating Model Execution',
   ],
   groups: [],
-  image: '/integration_and_divestiture_in_motion.png',
+  image: '/integration_divestiture.webp',
 };
 
 interface CollapsibleGroupProps {

@@ -61,7 +61,7 @@ export default function CapabilitiesPage({ onNavigate }: CapabilitiesPageProps) 
                 </div>
                 <div className="flex items-center justify-center">
                   <img
-                    src="/our_experience_graphic.png"
+                    src="/our_experience.webp"
                     alt="New Wave Associates Experience"
                     className="w-full h-auto rounded-lg shadow-lg"
                   />
