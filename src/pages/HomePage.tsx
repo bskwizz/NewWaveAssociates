@@ -5,6 +5,7 @@ import CTABar from '../components/CTABar';
 import PageHeader from '../components/PageHeader';
 import LogoScroller from '../components/LogoScroller';
 import HeroRotator from '../components/HeroRotator';
+import ContactForm from '../components/ContactForm';
 import { capabilities } from '../data/capabilities';
 import { getAllPublishedInsights, Insight } from '../services/insightsService';
 
@@ -220,6 +221,24 @@ export default function HomePage({ onNavigate }: HomePageProps) {
         buttonText="Contact Us"
         onButtonClick={() => onNavigate('contact-us')}
       />
+
+      {/* Get In Touch */}
+      <section className="bg-gray-50 py-12 sm:py-16 lg:py-20">
+        <div className="max-w-7xl mx-auto px-4 sm:px-5 md:px-6 lg:px-6 xl:px-8">
+          <div className="inline-block mb-6 sm:mb-8">
+            <h2 className="text-black text-lg sm:text-xl lg:text-2xl font-bold tracking-[0.2em] uppercase mb-2" style={{ letterSpacing: '0.2em' }}>
+              Get In Touch
+            </h2>
+            <div className="h-[2px] bg-[#f05e00]"></div>
+          </div>
+          <p className="text-sm sm:text-base text-gray-700 leading-relaxed max-w-2xl mb-6 sm:mb-8">
+            {"What's your biggest business challenge? Reach out to an expert today."}
+          </p>
+          <div className="max-w-3xl mx-auto">
+            <ContactForm source="homepage" />
+          </div>
+        </div>
+      </section>
     </div>
   );
 }
