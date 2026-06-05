@@ -12,7 +12,7 @@ const HEADLINES = [
     { t: ' one.' },
   ],
   [
-    { t: 'Small team, senior operators, outsized ' },
+    { t: 'Lean team, senior operators, outsized ' },
     { t: 'results', bold: true },
     { t: '.' },
   ],
