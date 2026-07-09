@@ -5,24 +5,29 @@ import { Link } from 'react-router-dom';
 // emphasized (bold) against the lighter base weight. Always leads with the
 // first line so the prerendered first paint is deterministic.
 const HEADLINES = [
-  [
-    { t: 'When the path' },
-    { t: "isn't clear,", br: true },
-    { t: 'we build', bold: true, br: true },
-    { t: ' one.' },
-  ],
-  [
-    { t: 'Lean team, senior operators, outsized ' },
-    { t: 'results', bold: true },
-    { t: '.' },
-  ],
-  [
-    { t: 'We ' },
-    { t: 'own the outcome', bold: true },
-    { t: ',' },
-    { t: 'not just the', br: true },
-    { t: 'recommendation.', br: true },
-  ],
+  {
+    segs: [
+      { t: 'When the path' },
+      { t: "isn't clear,", br: true },
+      { t: 'we build', bold: true, br: true },
+      { t: ' one.' },
+    ],
+  },
+  {
+    segs: [
+      { t: 'We are ready', bold: true },
+      { t: 'when you are.', br: true },
+    ],
+  },
+  {
+    segs: [
+      { t: 'We ', bold: true },
+      { t: 'own the outcome', bold: true },
+      { t: ',' },
+      { t: 'not just the', br: true },
+      { t: 'recommendation.', br: true },
+    ],
+  },
 ];
 
 // Photo panel images. Placeholder paths for now; licensed, optimized ~1200px
@@ -70,7 +75,7 @@ export default function HeroRotator() {
               className="text-black text-xs sm:text-sm lg:text-base font-bold tracking-[0.2em] uppercase mb-2"
               style={{ letterSpacing: '0.25em' }}
             >
-              The New Playbook<br />For Operational Leaders
+              Get immediate access to<br />Top-Tier Operating Experts
             </p>
             <div className="h-[2px] bg-[#f05e00]"></div>
           </div>
@@ -84,10 +89,10 @@ export default function HeroRotator() {
               key={i}
               aria-hidden={i !== index}
               className={`col-start-1 row-start-1 text-2xl sm:text-3xl lg:text-4xl xl:text-5xl font-normal leading-tight text-[#38495D] transition-opacity duration-500 ${
-                i === index ? 'opacity-100' : 'opacity-0'
-              }`}
+                line.center ? 'text-center' : ''
+              } ${i === index ? 'opacity-100' : 'opacity-0'}`}
             >
-              {line.map((seg, j) => (
+              {line.segs.map((seg, j) => (
                 <Fragment key={j}>
                   {seg.br && <br />}
                   {seg.bold ? (
@@ -102,8 +107,11 @@ export default function HeroRotator() {
         </div>
 
         <p className="text-sm sm:text-base text-gray-700 leading-relaxed mt-4 sm:mt-5 lg:mt-6 max-w-xl">
-          Operator-grade expertise in procurement, revenue operations, and transformation,
-          for companies that need margins protected and growth unlocked.
+          No recruiting. No six-month search. No junior consultants.
+          <br />
+          We deploy experienced, deeply vetted operators who step in quickly,
+          <br />
+          own the outcome, and are ready to tackle your toughest challenges.
         </p>
 
         <div className="mt-5 sm:mt-6 lg:mt-7">
