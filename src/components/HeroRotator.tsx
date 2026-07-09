@@ -15,8 +15,9 @@ const HEADLINES = [
   },
   {
     segs: [
-      { t: 'We are ready', bold: true },
-      { t: 'when you are.', br: true },
+      { t: 'Ready', bold: true },
+      { t: 'when', br: true },
+      { t: 'you are.', br: true },
     ],
   },
   {
