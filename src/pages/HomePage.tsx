@@ -14,7 +14,7 @@ const values = [
     description: 'We take responsibility for execution and results, not just recommendations.',
   },
   {
-    title: 'Leaders Who Have Been There',
+    title: 'We Have Been There',
     description: 'Our professionals bring real executive and functional leadership experience, not just advisory experience.',
   },
   {
