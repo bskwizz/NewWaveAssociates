@@ -157,7 +157,7 @@ export default function HomePage() {
       {/* Executive Leadership, On Demand */}
       <Section background="white">
         <SectionHeader
-          label="Executive Leadership, On Demand"
+          label="Executive Leadership, On Demand."
           intro="Deploy experienced fractional and interim leaders who have already done the job. Whether you need executive leadership for a critical function, an experienced operator to lead a transformation, or temporary leadership while you hire, New Wave provides deeply vetted professionals who step in quickly and own the outcome."
         />
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-5 sm:gap-6 lg:gap-8">
@@ -196,8 +196,7 @@ export default function HomePage() {
       {/* When to Call New Wave */}
       <Section background="white">
         <SectionHeader
-          label="When to Call New Wave"
-          heading="Critical Leadership Gaps Cannot Wait."
+          label="Critical Leadership Gaps Cannot Wait."
           intro="Whether you are navigating a leadership vacancy, accelerating a major initiative, or building a capability your organization does not yet have, New Wave provides experienced leaders who can step in and move the work forward."
         />
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-5 sm:gap-6 lg:gap-8">
