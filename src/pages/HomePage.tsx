@@ -58,7 +58,7 @@ const services = [
   },
 ];
 
-export default function HomePage({ onNavigate }: HomePageProps) {
+export default function HomePage(_props: HomePageProps) {
   const [featured, setFeatured] = useState<Insight[]>([]);
   const [insightsLoaded, setInsightsLoaded] = useState(false);
 
