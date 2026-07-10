@@ -1,12 +1,10 @@
 import { useState, useEffect } from 'react';
 import { Link } from 'react-router-dom';
-import { ChevronRight } from 'lucide-react';
 import PageHeader from '../components/PageHeader';
 import LogoScroller from '../components/LogoScroller';
 import HeroRotator from '../components/HeroRotator';
 import NextWaveHero from '../components/NextWaveHero';
 import ContactForm from '../components/ContactForm';
-import { capabilities } from '../data/capabilities';
 import { getAllPublishedInsights, Insight } from '../services/insightsService';
 
 interface HomePageProps {
@@ -29,6 +27,34 @@ const values = [
   {
     title: 'We Earn Trust Daily',
     description: 'Consistent, honest execution — we do what we say we will do and make progress visible.',
+  },
+];
+
+// Informational cards for the "Executive Leadership, On Demand" section.
+const services = [
+  {
+    title: 'Procurement Leadership',
+    description: 'Fractional procurement executives who reduce costs, strengthen supplier partnerships, and build scalable procurement organizations.',
+  },
+  {
+    title: 'Strategic Sourcing',
+    description: 'Experienced sourcing leaders who negotiate complex agreements, improve supplier performance, and deliver measurable savings.',
+  },
+  {
+    title: 'Revenue Operations',
+    description: 'Revenue operators who improve forecasting, sales execution, CRM performance, and commercial operations.',
+  },
+  {
+    title: 'Transformation Office',
+    description: 'Experienced transformation leaders who establish governance, drive execution, and deliver enterprise change.',
+  },
+  {
+    title: 'Project Management Office',
+    description: 'PMO leaders who improve delivery predictability, portfolio governance, and executive visibility.',
+  },
+  {
+    title: 'M&A Integration',
+    description: 'Operators who lead due diligence, integration planning, carve-outs, and post-close execution.',
   },
 ];
 
@@ -106,31 +132,26 @@ export default function HomePage({ onNavigate }: HomePageProps) {
         <div className="max-w-7xl mx-auto px-4 sm:px-5 md:px-6 lg:px-6 xl:px-8">
           <div className="inline-block mb-8 sm:mb-10">
             <h2 className="text-black text-lg sm:text-xl lg:text-2xl font-bold tracking-[0.2em] uppercase mb-2" style={{ letterSpacing: '0.2em' }}>
-              What We Do
+              Executive Leadership, On Demand
             </h2>
             <div className="h-[2px] bg-[#f05e00]"></div>
           </div>
           <p className="text-base sm:text-lg text-gray-700 leading-relaxed max-w-3xl mb-8 sm:mb-10">
-            We embed alongside operational leaders to drive measurable outcomes across six core areas — from go-to-market growth and cost optimization to integration, labor strategy, and AI-enabled automation.
+            Deploy experienced fractional and interim leaders who have already done the job. Whether you need executive leadership for a critical function, an experienced operator to lead a transformation, or temporary leadership while you hire, New Wave provides deeply vetted professionals who step in quickly and own the outcome.
           </p>
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-5 sm:gap-6">
-            {capabilities.map((capability) => (
-              <Link
-                key={capability.id}
-                to={`/${capability.hubRoute}`}
-                className="group block bg-white border border-gray-200 rounded-lg p-5 sm:p-6 shadow-sm hover:shadow-lg transition-shadow"
+            {services.map((service) => (
+              <div
+                key={service.title}
+                className="bg-white border border-gray-200 rounded-lg p-5 sm:p-6 shadow-sm h-full"
               >
-                <h3 className="text-base sm:text-lg font-bold text-[#38495D] mb-3 group-hover:text-[#01A3DB] transition-colors">
-                  {capability.title}
+                <h3 className="text-base sm:text-lg font-bold text-[#38495D] mb-3">
+                  {service.title}
                 </h3>
-                <p className="text-sm sm:text-base text-gray-700 leading-relaxed mb-4">
-                  {capability.outcome}
+                <p className="text-sm sm:text-base text-gray-700 leading-relaxed">
+                  {service.description}
                 </p>
-                <span className="inline-flex items-center text-sm font-semibold text-[#01A3DB]">
-                  Explore
-                  <ChevronRight size={16} className="ml-1 text-[#f05e00]" />
-                </span>
-              </Link>
+              </div>
             ))}
           </div>
         </div>
