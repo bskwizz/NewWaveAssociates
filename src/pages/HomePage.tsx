@@ -5,6 +5,7 @@ import CTABar from '../components/CTABar';
 import PageHeader from '../components/PageHeader';
 import LogoScroller from '../components/LogoScroller';
 import HeroRotator from '../components/HeroRotator';
+import NextWaveHero from '../components/NextWaveHero';
 import ContactForm from '../components/ContactForm';
 import { capabilities } from '../data/capabilities';
 import { getAllPublishedInsights, Insight } from '../services/insightsService';
@@ -74,6 +75,8 @@ export default function HomePage({ onNavigate }: HomePageProps) {
         <h1 className="sr-only">
           New Wave Associates — Operational Transformation, Procurement & Revenue Operations Consulting
         </h1>
+
+        <NextWaveHero />
 
         <div className="relative flex items-start pt-6 sm:pt-8 lg:pt-12">
           <div className="w-full flex flex-col">

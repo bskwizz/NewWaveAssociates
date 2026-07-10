@@ -70,21 +70,9 @@ export default function HeroRotator() {
     <div className="grid grid-cols-1 md:grid-cols-2 gap-6 sm:gap-8 md:gap-8 lg:gap-10 xl:gap-12 items-center">
       {/* Left column: eyebrow, rotating headline, subhead, CTA */}
       <div id="hero-rotator" className="hero-rotator text-left order-1">
-        <div className="inline-block mb-2">
-          <div>
-            <p
-              className="text-black text-xs sm:text-sm lg:text-base font-bold tracking-[0.2em] uppercase mb-2"
-              style={{ letterSpacing: '0.25em' }}
-            >
-              Get immediate access to<br />Top-Tier Operating Experts
-            </p>
-            <div className="h-[2px] bg-[#f05e00]"></div>
-          </div>
-        </div>
-
         {/* Rotating headline. All lines share one grid cell so the container sizes
             to the tallest line and swaps never reflow the column. */}
-        <div className="grid mt-5 sm:mt-6 lg:mt-7">
+        <div className="grid">
           {HEADLINES.map((line, i) => (
             <h2
               key={i}
@@ -160,17 +148,6 @@ export default function HeroRotator() {
               />
             </div>
           ))}
-
-          {/* Orange trend-line motif (brand image). Remounts on each rotation
-              (key={index}) so it replots with a left-to-right reveal over the
-              new photo. Decorative, so aria-hidden with empty alt. */}
-          <img
-            key={index}
-            src="/hero-trendline.png"
-            alt=""
-            aria-hidden="true"
-            className="hero-trendline absolute bottom-5 right-5 w-[58%] max-w-[420px] h-auto pointer-events-none select-none"
-          />
         </div>
       </div>
     </div>
