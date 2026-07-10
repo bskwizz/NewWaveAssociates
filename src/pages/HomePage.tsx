@@ -1,7 +1,6 @@
 import { useState, useEffect } from 'react';
 import { Link } from 'react-router-dom';
 import { ChevronRight } from 'lucide-react';
-import CTABar from '../components/CTABar';
 import PageHeader from '../components/PageHeader';
 import LogoScroller from '../components/LogoScroller';
 import HeroRotator from '../components/HeroRotator';
@@ -219,12 +218,6 @@ export default function HomePage({ onNavigate }: HomePageProps) {
           )}
         </div>
       </section>
-
-      <CTABar
-        text="Learn more about New Wave solutions for your unique growth opportunity"
-        buttonText="Contact Us"
-        onButtonClick={() => onNavigate('contact-us')}
-      />
 
       {/* Get In Touch */}
       <section className="bg-gray-50 py-12 sm:py-16 lg:py-20">
