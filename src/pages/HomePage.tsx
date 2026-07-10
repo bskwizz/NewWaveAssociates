@@ -5,6 +5,8 @@ import LogoScroller from '../components/LogoScroller';
 import HeroRotator from '../components/HeroRotator';
 import NextWaveHero from '../components/NextWaveHero';
 import ContactForm from '../components/ContactForm';
+import Section from '../components/Section';
+import SectionHeader from '../components/SectionHeader';
 import { getAllPublishedInsights, Insight } from '../services/insightsService';
 
 // Cards for the "Why Companies Choose New Wave" section.
@@ -152,185 +154,148 @@ export default function HomePage() {
         </div>
       </div>
 
-      {/* What We Do */}
-      <section className="bg-white py-12 sm:py-16 lg:py-20">
-        <div className="max-w-7xl mx-auto px-4 sm:px-5 md:px-6 lg:px-6 xl:px-8">
-          <div className="inline-block mb-8 sm:mb-10">
-            <h2 className="text-black text-lg sm:text-xl lg:text-2xl font-bold tracking-[0.2em] uppercase mb-2" style={{ letterSpacing: '0.2em' }}>
-              Executive Leadership, On Demand
-            </h2>
-            <div className="h-[2px] bg-[#f05e00]"></div>
-          </div>
-          <p className="text-base sm:text-lg text-gray-700 leading-relaxed max-w-3xl mb-8 sm:mb-10">
-            Deploy experienced fractional and interim leaders who have already done the job. Whether you need executive leadership for a critical function, an experienced operator to lead a transformation, or temporary leadership while you hire, New Wave provides deeply vetted professionals who step in quickly and own the outcome.
-          </p>
-          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-5 sm:gap-6">
-            {services.map((service) => (
-              <div
-                key={service.title}
-                className="bg-white border border-gray-200 rounded-lg p-5 sm:p-6 shadow-sm h-full"
-              >
-                <h3 className="text-base sm:text-lg font-bold text-[#38495D] mb-3">
-                  {service.title}
-                </h3>
-                <p className="text-sm sm:text-base text-gray-700 leading-relaxed">
-                  {service.description}
-                </p>
-              </div>
-            ))}
-          </div>
+      {/* Executive Leadership, On Demand */}
+      <Section background="white">
+        <SectionHeader
+          label="Executive Leadership, On Demand"
+          intro="Deploy experienced fractional and interim leaders who have already done the job. Whether you need executive leadership for a critical function, an experienced operator to lead a transformation, or temporary leadership while you hire, New Wave provides deeply vetted professionals who step in quickly and own the outcome."
+        />
+        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-5 sm:gap-6 lg:gap-8">
+          {services.map((service) => (
+            <div
+              key={service.title}
+              className="bg-white border border-gray-200 rounded-lg p-5 sm:p-6 shadow-sm h-full"
+            >
+              <h3 className="text-base sm:text-lg font-bold text-[#38495D] mb-3">
+                {service.title}
+              </h3>
+              <p className="text-sm sm:text-base text-gray-700 leading-relaxed">
+                {service.description}
+              </p>
+            </div>
+          ))}
         </div>
-      </section>
+      </Section>
 
       {/* Why Companies Choose New Wave */}
-      <section className="bg-gray-50 py-12 sm:py-16 lg:py-20">
-        <div className="max-w-7xl mx-auto px-4 sm:px-5 md:px-6 lg:px-6 xl:px-8">
-          <div className="inline-block mb-8 sm:mb-10">
-            <h2 className="text-black text-lg sm:text-xl lg:text-2xl font-bold tracking-[0.2em] uppercase mb-2" style={{ letterSpacing: '0.2em' }}>
-              Why Companies Choose New Wave
-            </h2>
-            <div className="h-[2px] bg-[#f05e00]"></div>
-          </div>
-          <p className="text-xl sm:text-2xl lg:text-3xl font-bold text-[#38495D] leading-snug max-w-3xl mb-5">
-            Operators. Not Consultants.
-          </p>
-          <p className="text-base sm:text-lg text-gray-700 leading-relaxed max-w-3xl mb-10">
-            Every New Wave leader has sat in the seat before. We do not hand over recommendations and disappear. We step into critical leadership roles, take ownership, and stay accountable until results are delivered.
-          </p>
-          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-5 sm:gap-6">
-            {values.map((value) => (
-              <div key={value.title} className="bg-white rounded-lg p-5 sm:p-6 shadow-sm">
-                <h3 className="text-sm sm:text-base font-bold text-[#38495D] mb-2">{value.title}</h3>
-                <p className="text-sm text-gray-700 leading-relaxed">{value.description}</p>
-              </div>
-            ))}
-          </div>
+      <Section background="gray">
+        <SectionHeader
+          label="Why Companies Choose New Wave"
+          heading="Operators. Not Consultants."
+          intro="Every New Wave leader has sat in the seat before. We do not hand over recommendations and disappear. We step into critical leadership roles, take ownership, and stay accountable until results are delivered."
+        />
+        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-5 sm:gap-6 lg:gap-8">
+          {values.map((value) => (
+            <div key={value.title} className="bg-white rounded-lg p-5 sm:p-6 shadow-sm">
+              <h3 className="text-sm sm:text-base font-bold text-[#38495D] mb-2">{value.title}</h3>
+              <p className="text-sm text-gray-700 leading-relaxed">{value.description}</p>
+            </div>
+          ))}
         </div>
-      </section>
+      </Section>
 
       {/* When to Call New Wave */}
-      <section className="bg-white py-12 sm:py-16 lg:py-20">
-        <div className="max-w-7xl mx-auto px-4 sm:px-5 md:px-6 lg:px-6 xl:px-8">
-          <div className="inline-block mb-8 sm:mb-10">
-            <h2 className="text-black text-lg sm:text-xl lg:text-2xl font-bold tracking-[0.2em] uppercase mb-2" style={{ letterSpacing: '0.2em' }}>
-              When to Call New Wave
-            </h2>
-            <div className="h-[2px] bg-[#f05e00]"></div>
-          </div>
-          <p className="text-xl sm:text-2xl lg:text-3xl font-bold text-[#38495D] leading-snug max-w-3xl mb-5">
-            Critical Leadership Gaps Cannot Wait.
-          </p>
-          <p className="text-base sm:text-lg text-gray-700 leading-relaxed max-w-3xl mb-8 sm:mb-10">
-            Whether you are navigating a leadership vacancy, accelerating a major initiative, or building a capability your organization does not yet have, New Wave provides experienced leaders who can step in and move the work forward.
-          </p>
-          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-5 sm:gap-6">
-            {whenToCall.map((item) => (
-              <div
-                key={item.title}
-                className="bg-white border border-gray-200 rounded-lg p-5 sm:p-6 shadow-sm h-full"
-              >
-                <h3 className="text-base sm:text-lg font-bold text-[#38495D] mb-3">
-                  {item.title}
-                </h3>
-                <p className="text-sm sm:text-base text-gray-700 leading-relaxed">
-                  {item.description}
-                </p>
-              </div>
-            ))}
-          </div>
-
-          {/* Closing CTA */}
-          <div className="mt-24 sm:mt-32 lg:mt-40 text-center">
-            <h3 className="text-xl sm:text-2xl lg:text-3xl font-bold text-[#38495D] mb-2">
-              Need experienced leadership now?
-            </h3>
-            <p className="text-base sm:text-lg text-gray-700 mb-6 sm:mb-7">
-              We are ready when you are.
-            </p>
-            <Link
-              to="/contact-us"
-              className="inline-block px-6 py-3 bg-[#f05e00] text-white text-sm font-semibold uppercase tracking-wide rounded-md hover:bg-[#d94f00] transition-all shadow-sm hover:shadow-md"
+      <Section background="white">
+        <SectionHeader
+          label="When to Call New Wave"
+          heading="Critical Leadership Gaps Cannot Wait."
+          intro="Whether you are navigating a leadership vacancy, accelerating a major initiative, or building a capability your organization does not yet have, New Wave provides experienced leaders who can step in and move the work forward."
+        />
+        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-5 sm:gap-6 lg:gap-8">
+          {whenToCall.map((item) => (
+            <div
+              key={item.title}
+              className="bg-white border border-gray-200 rounded-lg p-5 sm:p-6 shadow-sm h-full"
             >
-              Meet New Wave
-            </Link>
-          </div>
+              <h3 className="text-base sm:text-lg font-bold text-[#38495D] mb-3">
+                {item.title}
+              </h3>
+              <p className="text-sm sm:text-base text-gray-700 leading-relaxed">
+                {item.description}
+              </p>
+            </div>
+          ))}
         </div>
-      </section>
+
+        {/* Closing CTA. Intentionally centered between the cards and the next
+            section. The top margin mirrors the combined section padding below it
+            (128 / 160 / 192px) so the CTA sits at the visual midpoint. */}
+        <div className="mt-32 sm:mt-40 lg:mt-48 text-center">
+          <h3 className="text-xl sm:text-2xl lg:text-3xl font-bold text-[#38495D] mb-2">
+            Need experienced leadership now?
+          </h3>
+          <p className="text-base sm:text-lg text-gray-700 mb-6 sm:mb-7">
+            We are ready when you are.
+          </p>
+          <Link
+            to="/contact-us"
+            className="inline-block px-6 py-3 bg-[#f05e00] text-white text-sm font-semibold uppercase tracking-wide rounded-md hover:bg-[#d94f00] transition-all shadow-sm hover:shadow-md"
+          >
+            Meet New Wave
+          </Link>
+        </div>
+      </Section>
 
       {/* Featured Insights */}
-      <section
-        className="bg-white py-12 sm:py-16 lg:py-20"
-        data-insights-ready={insightsLoaded ? 'true' : undefined}
-      >
-        <div className="max-w-7xl mx-auto px-4 sm:px-5 md:px-6 lg:px-6 xl:px-8">
-          <div className="flex items-end justify-between gap-4 mb-8 sm:mb-10">
-            <div className="inline-block">
-              <h2 className="text-black text-lg sm:text-xl lg:text-2xl font-bold tracking-[0.2em] uppercase mb-2" style={{ letterSpacing: '0.2em' }}>
-                Latest Insights
-              </h2>
-              <div className="h-[2px] bg-[#f05e00]"></div>
-            </div>
+      <Section background="white" dataInsightsReady={insightsLoaded}>
+        <SectionHeader
+          label="Latest Insights"
+          action={
             <Link to="/insights" className="text-sm font-semibold text-[#01A3DB] hover:underline whitespace-nowrap">
               View all →
             </Link>
-          </div>
-          {featured.length > 0 ? (
-            <div className="grid grid-cols-1 md:grid-cols-3 gap-6 sm:gap-8">
-              {featured.map((insight) => (
-                <Link
-                  key={insight.slug}
-                  to={`/insights/${insight.slug}`}
-                  className="group block bg-white border border-gray-200 rounded-lg overflow-hidden shadow-sm hover:shadow-lg transition-shadow"
-                >
-                  {insight.image_url && (
-                    <img
-                      src={insight.image_url}
-                      alt={insight.title}
-                      className="w-full h-44 object-cover"
-                    />
+          }
+        />
+        {featured.length > 0 ? (
+          <div className="grid grid-cols-1 md:grid-cols-3 gap-5 sm:gap-6 lg:gap-8">
+            {featured.map((insight) => (
+              <Link
+                key={insight.slug}
+                to={`/insights/${insight.slug}`}
+                className="group block bg-white border border-gray-200 rounded-lg overflow-hidden shadow-sm hover:shadow-lg transition-shadow"
+              >
+                {insight.image_url && (
+                  <img
+                    src={insight.image_url}
+                    alt={insight.title}
+                    className="w-full h-44 object-cover"
+                  />
+                )}
+                <div className="p-5 sm:p-6">
+                  {insight.category && (
+                    <span className="inline-block px-3 py-1 bg-[#01A3DB] text-white text-xs font-semibold rounded-full uppercase tracking-wide mb-3">
+                      {insight.category}
+                    </span>
                   )}
-                  <div className="p-5 sm:p-6">
-                    {insight.category && (
-                      <span className="inline-block px-3 py-1 bg-[#01A3DB] text-white text-xs font-semibold rounded-full uppercase tracking-wide mb-3">
-                        {insight.category}
-                      </span>
-                    )}
-                    <h3 className="text-base sm:text-lg font-bold text-[#38495D] leading-snug mb-2 group-hover:text-[#01A3DB] transition-colors">
-                      {insight.title}
-                    </h3>
-                    <p className="text-sm text-gray-700 leading-relaxed line-clamp-3">
-                      {insight.excerpt}
-                    </p>
-                  </div>
-                </Link>
-              ))}
-            </div>
-          ) : (
-            <p className="text-gray-600">
-              Read our latest thinking on the{' '}
-              <Link to="/insights" className="text-[#01A3DB] hover:underline">Insights page</Link>.
-            </p>
-          )}
-        </div>
-      </section>
+                  <h3 className="text-base sm:text-lg font-bold text-[#38495D] leading-snug mb-2 group-hover:text-[#01A3DB] transition-colors">
+                    {insight.title}
+                  </h3>
+                  <p className="text-sm text-gray-700 leading-relaxed line-clamp-3">
+                    {insight.excerpt}
+                  </p>
+                </div>
+              </Link>
+            ))}
+          </div>
+        ) : (
+          <p className="text-gray-600">
+            Read our latest thinking on the{' '}
+            <Link to="/insights" className="text-[#01A3DB] hover:underline">Insights page</Link>.
+          </p>
+        )}
+      </Section>
 
       {/* Get In Touch */}
-      <section className="bg-gray-50 py-12 sm:py-16 lg:py-20">
-        <div className="max-w-7xl mx-auto px-4 sm:px-5 md:px-6 lg:px-6 xl:px-8">
-          <div className="inline-block mb-6 sm:mb-8">
-            <h2 className="text-black text-lg sm:text-xl lg:text-2xl font-bold tracking-[0.2em] uppercase mb-2" style={{ letterSpacing: '0.2em' }}>
-              Get In Touch
-            </h2>
-            <div className="h-[2px] bg-[#f05e00]"></div>
-          </div>
-          <p className="text-sm sm:text-base text-gray-700 leading-relaxed max-w-2xl mb-6 sm:mb-8">
-            {"What's your biggest business challenge? Reach out to an expert today."}
-          </p>
-          <div className="max-w-3xl mx-auto">
-            <ContactForm source="homepage" />
-          </div>
+      <Section background="gray">
+        <SectionHeader
+          label="Get In Touch"
+          intro="What's your biggest business challenge? Reach out to an expert today."
+          introClassName="text-sm sm:text-base text-gray-700 leading-relaxed"
+        />
+        <div className="max-w-3xl mx-auto">
+          <ContactForm source="homepage" />
         </div>
-      </section>
+      </Section>
     </div>
   );
 }
