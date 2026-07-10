@@ -43,13 +43,13 @@ export default function NextWaveHero() {
   }, []);
 
   return (
-    <section className="relative overflow-hidden border-b border-gray-200/70">
+    <section className="relative overflow-hidden">
       {/* Brand wave mark, bled off the bottom-right corner as a soft watermark. */}
       <img
         src="/new_wave_associates_logo_only.png"
         alt=""
         aria-hidden="true"
-        className="pointer-events-none select-none absolute top-1/2 -translate-y-1/2 -right-16 sm:-right-24 lg:-right-28 w-[440px] sm:w-[620px] lg:w-[780px] opacity-[0.08]"
+        className="pointer-events-none select-none absolute top-[60%] -translate-y-1/2 -right-16 sm:-right-24 lg:-right-28 w-[440px] sm:w-[620px] lg:w-[780px] opacity-[0.08]"
       />
 
       <div className="relative max-w-7xl mx-auto px-4 sm:px-5 md:px-6 lg:px-6 xl:px-8 py-20 sm:py-24 lg:py-28">
