@@ -157,7 +157,7 @@ export default function HomePage() {
       {/* Executive Leadership, On Demand */}
       <Section background="white">
         <SectionHeader
-          label="Executive Leadership, On Demand"
+          label="Executive Leadership, On Demand."
           intro="Deploy experienced fractional and interim leaders who have already done the job. Whether you need executive leadership for a critical function, an experienced operator to lead a transformation, or temporary leadership while you hire, New Wave provides deeply vetted professionals who step in quickly and own the outcome."
         />
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-5 sm:gap-6 lg:gap-8">
