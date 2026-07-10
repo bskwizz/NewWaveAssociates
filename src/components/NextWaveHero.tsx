@@ -3,16 +3,13 @@ import { Link } from 'react-router-dom';
 
 // Buzzwords that scroll through after the fixed "Your Next Wave:" lead-in.
 const WORDS = [
-  'Growth.',
-  'Transformation.',
-  'Momentum.',
-  'Scale.',
-  'Clarity.',
-  'Execution.',
-  'Integration.',
-  'Turnaround.',
-  'Expansion.',
-  'Results.',
+  'An acquisition.',
+  'A turnaround.',
+  'Rapid growth.',
+  'A leadership gap.',
+  'An integration.',
+  'A transformation.',
+  'An exit.',
 ];
 
 // Hold each word this long before advancing.
