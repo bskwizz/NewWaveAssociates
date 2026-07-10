@@ -240,7 +240,7 @@ export default function HomePage() {
           </div>
 
           {/* Closing CTA */}
-          <div className="mt-12 sm:mt-14 text-center">
+          <div className="mt-24 sm:mt-32 lg:mt-40 text-center">
             <h3 className="text-xl sm:text-2xl lg:text-3xl font-bold text-[#38495D] mb-2">
               Need experienced leadership now?
             </h3>

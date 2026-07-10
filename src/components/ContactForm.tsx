@@ -14,8 +14,6 @@ export default function ContactForm({ source = 'contact_form' }: ContactFormProp
     email: '',
     phone: '',
     company: '',
-    reason: '',
-    timeline: '',
     message: '',
     website: '',
   });
@@ -30,7 +28,7 @@ export default function ContactForm({ source = 'contact_form' }: ContactFormProp
     e.preventDefault();
 
     // Validate required fields
-    if (!formData.name || !formData.email || !formData.reason || !formData.timeline) {
+    if (!formData.name || !formData.email) {
       setSubmitStatus({
         type: 'error',
         message: 'Please complete all required fields.',
@@ -54,8 +52,6 @@ export default function ContactForm({ source = 'contact_form' }: ContactFormProp
         page_url: window.location.href,
         name: formData.name,
         phone: formData.phone || undefined,
-        reason: formData.reason,
-        timeline: formData.timeline,
         message: formData.message || undefined,
       });
 
@@ -64,8 +60,6 @@ export default function ContactForm({ source = 'contact_form' }: ContactFormProp
         email: '',
         phone: '',
         company: '',
-        reason: '',
-        timeline: '',
         message: '',
         website: '',
       });
@@ -145,46 +139,6 @@ export default function ContactForm({ source = 'contact_form' }: ContactFormProp
             onChange={handleChange}
             className="w-full px-4 py-2 border border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-[#01A3DB] focus:border-transparent transition-all"
           />
-        </div>
-
-        <div className="col-span-1 sm:col-span-2">
-          <label className="block text-sm font-semibold text-[#38495D] mb-1.5">
-            Reason for Contact *
-          </label>
-          <select
-            name="reason"
-            value={formData.reason}
-            onChange={handleChange}
-            required
-            className="w-full px-4 py-2 border border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-[#01A3DB] focus:border-transparent transition-all bg-white"
-          >
-            <option value="">Select a reason</option>
-            <option value="General Inquiry">General Inquiry</option>
-            <option value="Partnership Opportunity">Partnership Opportunity</option>
-            <option value="Consulting Services">Consulting Services</option>
-            <option value="Other">Other</option>
-          </select>
-        </div>
-
-        <div className="col-span-1 sm:col-span-2">
-          <label htmlFor="timeline" className="block text-sm font-semibold text-[#38495D] mb-1.5">
-            Timeline *
-          </label>
-          <select
-            id="timeline"
-            name="timeline"
-            value={formData.timeline}
-            onChange={handleChange}
-            required
-            className="w-full px-4 py-2 border border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-[#01A3DB] focus:border-transparent transition-all bg-white"
-          >
-            <option value="" disabled>Select a timeline</option>
-            <option value="ASAP (0–2 weeks)">ASAP (0–2 weeks)</option>
-            <option value="This month">This month</option>
-            <option value="1–3 months">1–3 months</option>
-            <option value="3–6 months">3–6 months</option>
-            <option value="Exploring (6+ months)">Exploring (6+ months)</option>
-          </select>
         </div>
 
         <div className="col-span-1 sm:col-span-2">
