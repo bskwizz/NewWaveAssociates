@@ -77,7 +77,7 @@ export default function NextWaveHero() {
         </div>
 
         <p className="text-black text-sm sm:text-base lg:text-lg font-normal mt-4 sm:mt-5 leading-relaxed">
-          Get immediate access to Top-Tier Operating Experts<br />to unlock your market potential
+          Get immediate access to Top-Tier Operating Experts<br />to unlock your market potential.
         </p>
 
         <div className="mt-6 sm:mt-7">
