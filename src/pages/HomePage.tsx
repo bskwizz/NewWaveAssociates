@@ -57,34 +57,34 @@ export default function HomePage({ onNavigate }: HomePageProps) {
 
   return (
     <div className="overflow-x-clip">
-      <div className="hero relative min-h-screen overflow-x-clip" style={{
-        background: `radial-gradient(1200px 600px at 15% -10%, rgba(1,163,219,0.25), transparent 50%),
-                     radial-gradient(800px 400px at 85% 110%, rgba(56,73,93,0.25), transparent 50%),
-                     linear-gradient(180deg, #f7f9fb 0%, #eef3f7 100%)`
-      }}>
-        <div className="absolute inset-0 opacity-[0.12] pointer-events-none" style={{
-          backgroundImage: `radial-gradient(1px 1px at 20% 30%, #38495d 100%, transparent 0),
-                            radial-gradient(1px 1px at 70% 60%, #01a3db 100%, transparent 0),
-                            radial-gradient(1px 1px at 40% 80%, #38495d 100%, transparent 0)`,
-          backgroundSize: '120px 120px, 160px 160px, 200px 200px',
-          backgroundRepeat: 'repeat'
-        }}></div>
-
+      <div className="hero relative overflow-x-clip bg-white">
         <PageHeader />
 
-        <h1 className="sr-only">
-          New Wave Associates — Operational Transformation, Procurement & Revenue Operations Consulting
-        </h1>
+        {/* One subtly shaded band, starting below the white nav bar, that unifies
+            the "Your Next Wave" hero and the rotator/logos into a single section. */}
+        <div className="relative overflow-x-clip" style={{
+          background: 'linear-gradient(180deg, #fbfcfd 0%, #f4f7f9 100%)'
+        }}>
+          <div className="absolute inset-0 opacity-[0.06] pointer-events-none" style={{
+            backgroundImage: `radial-gradient(1px 1px at 20% 30%, #38495d 100%, transparent 0),
+                              radial-gradient(1px 1px at 70% 60%, #01a3db 100%, transparent 0),
+                              radial-gradient(1px 1px at 40% 80%, #38495d 100%, transparent 0)`,
+            backgroundSize: '120px 120px, 160px 160px, 200px 200px',
+            backgroundRepeat: 'repeat'
+          }}></div>
 
-        <NextWaveHero />
+          <h1 className="sr-only">
+            New Wave Associates — Operational Transformation, Procurement & Revenue Operations Consulting
+          </h1>
 
-        <div className="relative flex items-start pt-6 sm:pt-8 lg:pt-12">
+          <NextWaveHero />
+
+          <div className="relative flex items-start pt-6 sm:pt-8 lg:pt-12">
           <div className="w-full flex flex-col">
             <div className="max-w-7xl mx-auto px-4 sm:px-5 md:px-6 lg:px-6 xl:px-8">
               <HeroRotator />
             </div>
-            <div className="w-full bg-[#00a4dd] mt-8 sm:mt-10 lg:mt-12 h-12 sm:h-16 lg:h-[75px]"></div>
-            <div className="w-full flex items-center justify-center py-6 sm:py-7 lg:py-8 overflow-hidden">
+            <div className="w-full flex items-center justify-center pt-10 sm:pt-12 lg:pt-14 pb-8 sm:pb-10 lg:pb-12 overflow-hidden">
               <LogoScroller logos={[
                 '/osg_logo.png',
                 '/bridgeview_eye_logo.png',
@@ -98,6 +98,7 @@ export default function HomePage({ onNavigate }: HomePageProps) {
               ]} />
             </div>
           </div>
+        </div>
         </div>
       </div>
 

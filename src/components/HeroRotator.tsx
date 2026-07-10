@@ -106,9 +106,9 @@ export default function HeroRotator() {
         <div className="mt-5 sm:mt-6 lg:mt-7">
           <Link
             to="/contact-us"
-            className="inline-block px-5 py-2.5 bg-[#f05e00] text-white text-sm font-semibold rounded-md hover:bg-[#d94f00] transition-all shadow-sm hover:shadow-md"
+            className="inline-block px-5 py-2.5 bg-[#f05e00] text-white text-sm font-semibold uppercase tracking-wide rounded-md hover:bg-[#d94f00] transition-all shadow-sm hover:shadow-md"
           >
-            Contact us
+            Start a Conversation
           </Link>
         </div>
       </div>
