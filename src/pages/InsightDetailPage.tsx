@@ -7,6 +7,12 @@ import ArticleUtilitiesBar from '../components/ArticleUtilitiesBar';
 import ArticleFooterCTA from '../components/ArticleFooterCTA';
 import { getInsightBySlug, Insight } from '../services/insightsService';
 
+// Optional headshots shown in the "About the Author" block, keyed by author
+// name. Authors without an entry simply render the bio without a photo.
+const AUTHOR_IMAGES: Record<string, string> = {
+  'Jason Lee': '/jason_lee_headshot.jpg',
+};
+
 interface InsightDetailPageProps {
   onNavigate: (page: string) => void;
   slug: string;
@@ -243,7 +249,16 @@ export default function InsightDetailPage({ onNavigate, slug }: InsightDetailPag
           {insight.author_bio && (
             <div className="mt-20 pt-12 border-t border-gray-300 max-w-4xl">
               <h3 className="text-xl font-bold text-black mb-6" style={{ fontFamily: '"Segoe UI", system-ui, sans-serif' }}>About the Author</h3>
-              <p className="text-black leading-[1.8] text-lg max-w-[65ch]" style={{ fontFamily: '"Segoe UI", system-ui, sans-serif' }}>{insight.author_bio}</p>
+              <div className="flex flex-row gap-5 sm:gap-6 items-start">
+                {AUTHOR_IMAGES[insight.author] && (
+                  <img
+                    src={AUTHOR_IMAGES[insight.author]}
+                    alt={insight.author}
+                    className="w-28 sm:w-36 lg:w-40 aspect-square object-cover rounded-lg flex-shrink-0"
+                  />
+                )}
+                <p className="text-black leading-[1.8] text-lg max-w-[65ch]" style={{ fontFamily: '"Segoe UI", system-ui, sans-serif' }}>{insight.author_bio}</p>
+              </div>
             </div>
           )}
 
