@@ -7,26 +7,23 @@ import NextWaveHero from '../components/NextWaveHero';
 import ContactForm from '../components/ContactForm';
 import { getAllPublishedInsights, Insight } from '../services/insightsService';
 
-interface HomePageProps {
-  onNavigate: (page: string) => void;
-}
-
+// Cards for the "Why Companies Choose New Wave" section.
 const values = [
   {
     title: 'We Own the Outcome',
-    description: 'We take responsibility for results, not just recommendations, and stay engaged until value is real.',
+    description: 'We take responsibility for execution and results, not just recommendations.',
   },
   {
-    title: 'We Put Operators First',
-    description: 'Practical solutions that respect real-world constraints and that teams can actually sustain.',
+    title: 'Leaders Who Have Been There',
+    description: 'Our professionals bring real executive and functional leadership experience, not just advisory experience.',
   },
   {
-    title: 'We Choose Clarity Over Complexity',
-    description: 'Plain language drives alignment, and alignment drives execution.',
+    title: 'Ready When You Are',
+    description: 'Fill critical leadership gaps quickly without waiting through a lengthy executive search.',
   },
   {
-    title: 'We Earn Trust Daily',
-    description: 'Consistent, honest execution — we do what we say we will do and make progress visible.',
+    title: 'Flexible by Design',
+    description: 'Engage leadership on a fractional, interim, or project basis as your needs evolve.',
   },
 ];
 
@@ -58,7 +55,35 @@ const services = [
   },
 ];
 
-export default function HomePage(_props: HomePageProps) {
+// Informational cards for the "When to Call New Wave" section.
+const whenToCall = [
+  {
+    title: 'A Key Leader Just Left',
+    description: 'Maintain momentum and stability with an experienced interim leader while you determine the right long-term solution.',
+  },
+  {
+    title: 'You Need Leadership Before You Can Hire It',
+    description: 'Access senior functional expertise without taking on the cost or commitment of a full-time executive.',
+  },
+  {
+    title: 'A Critical Initiative Is Falling Behind',
+    description: 'Bring in an experienced operator to establish accountability, remove barriers, and restore execution.',
+  },
+  {
+    title: 'Your Company Is Entering Its Next Stage of Growth',
+    description: 'Add leadership capacity and operating discipline as the complexity of the business increases.',
+  },
+  {
+    title: 'You Are Integrating an Acquisition',
+    description: 'Deploy experienced M&A leadership to coordinate decisions, manage dependencies, and accelerate value realization.',
+  },
+  {
+    title: 'You Need to Build the Function',
+    description: 'Set the strategy, establish the operating model, and build the foundation before making permanent hires.',
+  },
+];
+
+export default function HomePage() {
   const [featured, setFeatured] = useState<Insight[]>([]);
   const [insightsLoaded, setInsightsLoaded] = useState(false);
 
@@ -157,20 +182,20 @@ export default function HomePage(_props: HomePageProps) {
         </div>
       </section>
 
-      {/* How We Differ */}
+      {/* Why Companies Choose New Wave */}
       <section className="bg-gray-50 py-12 sm:py-16 lg:py-20">
         <div className="max-w-7xl mx-auto px-4 sm:px-5 md:px-6 lg:px-6 xl:px-8">
           <div className="inline-block mb-8 sm:mb-10">
             <h2 className="text-black text-lg sm:text-xl lg:text-2xl font-bold tracking-[0.2em] uppercase mb-2" style={{ letterSpacing: '0.2em' }}>
-              How We Differ
+              Why Companies Choose New Wave
             </h2>
             <div className="h-[2px] bg-[#f05e00]"></div>
           </div>
           <p className="text-xl sm:text-2xl lg:text-3xl font-bold text-[#38495D] leading-snug max-w-3xl mb-5">
-            Senior Operators. Realistic Outcomes. Timebound Delivery.
+            Operators. Not Consultants.
           </p>
           <p className="text-base sm:text-lg text-gray-700 leading-relaxed max-w-3xl mb-10">
-            We embed in the trenches with leaders to achieve specific, pragmatic goals quickly. Our team has served as director, VP, and C-level executives in house, and we step in to take responsibility — not advise from the sidelines — until progress is real and value is delivered.
+            Every New Wave leader has sat in the seat before. We do not hand over recommendations and disappear. We step into critical leadership roles, take ownership, and stay accountable until results are delivered.
           </p>
           <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-5 sm:gap-6">
             {values.map((value) => (
@@ -179,6 +204,55 @@ export default function HomePage(_props: HomePageProps) {
                 <p className="text-sm text-gray-700 leading-relaxed">{value.description}</p>
               </div>
             ))}
+          </div>
+        </div>
+      </section>
+
+      {/* When to Call New Wave */}
+      <section className="bg-white py-12 sm:py-16 lg:py-20">
+        <div className="max-w-7xl mx-auto px-4 sm:px-5 md:px-6 lg:px-6 xl:px-8">
+          <div className="inline-block mb-8 sm:mb-10">
+            <h2 className="text-black text-lg sm:text-xl lg:text-2xl font-bold tracking-[0.2em] uppercase mb-2" style={{ letterSpacing: '0.2em' }}>
+              When to Call New Wave
+            </h2>
+            <div className="h-[2px] bg-[#f05e00]"></div>
+          </div>
+          <p className="text-xl sm:text-2xl lg:text-3xl font-bold text-[#38495D] leading-snug max-w-3xl mb-5">
+            Critical Leadership Gaps Cannot Wait.
+          </p>
+          <p className="text-base sm:text-lg text-gray-700 leading-relaxed max-w-3xl mb-8 sm:mb-10">
+            Whether you are navigating a leadership vacancy, accelerating a major initiative, or building a capability your organization does not yet have, New Wave provides experienced leaders who can step in and move the work forward.
+          </p>
+          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-5 sm:gap-6">
+            {whenToCall.map((item) => (
+              <div
+                key={item.title}
+                className="bg-white border border-gray-200 rounded-lg p-5 sm:p-6 shadow-sm h-full"
+              >
+                <h3 className="text-base sm:text-lg font-bold text-[#38495D] mb-3">
+                  {item.title}
+                </h3>
+                <p className="text-sm sm:text-base text-gray-700 leading-relaxed">
+                  {item.description}
+                </p>
+              </div>
+            ))}
+          </div>
+
+          {/* Closing CTA */}
+          <div className="mt-12 sm:mt-14 text-center">
+            <h3 className="text-xl sm:text-2xl lg:text-3xl font-bold text-[#38495D] mb-2">
+              Need experienced leadership now?
+            </h3>
+            <p className="text-base sm:text-lg text-gray-700 mb-6 sm:mb-7">
+              We are ready when you are.
+            </p>
+            <Link
+              to="/contact-us"
+              className="inline-block px-6 py-3 bg-[#f05e00] text-white text-sm font-semibold uppercase tracking-wide rounded-md hover:bg-[#d94f00] transition-all shadow-sm hover:shadow-md"
+            >
+              Meet New Wave
+            </Link>
           </div>
         </div>
       </section>
