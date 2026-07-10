@@ -287,7 +287,7 @@ export default function HomePage() {
       <Section background="gray">
         <SectionHeader
           label="Get In Touch"
-          intro="What's your biggest business challenge? Reach out to an expert today."
+          intro="Reach out to an expert today."
           introClassName="text-sm sm:text-base text-gray-700 leading-relaxed"
         />
         <div className="max-w-3xl mx-auto">
