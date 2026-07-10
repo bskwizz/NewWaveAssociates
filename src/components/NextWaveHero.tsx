@@ -79,10 +79,7 @@ export default function NextWaveHero() {
           </span>
         </div>
 
-        <p
-          className="text-black text-xs sm:text-sm lg:text-base font-bold tracking-[0.2em] uppercase mt-4 sm:mt-5 leading-relaxed"
-          style={{ letterSpacing: '0.25em' }}
-        >
+        <p className="text-black text-sm sm:text-base lg:text-lg font-normal mt-4 sm:mt-5 leading-relaxed">
           Get immediate access to Top-Tier Operating Experts<br />to unlock your market potential
         </p>
 

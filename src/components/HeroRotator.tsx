@@ -113,7 +113,7 @@ export default function HeroRotator() {
         </div>
       </div>
 
-      {/* Right column: rotating navy-duotone photo panel with orange trend line */}
+      {/* Right column: rotating full-color photo panel */}
       <div className="relative order-2">
         <div
           className="relative w-full rounded-lg overflow-hidden shadow-xl bg-[#38495D]"
@@ -131,20 +131,9 @@ export default function HeroRotator() {
                 src={img.src}
                 alt={img.alt}
                 className="absolute inset-0 w-full h-full object-cover"
-                style={{ filter: 'grayscale(1)' }}
                 fetchPriority={i === 0 ? 'high' : 'low'}
                 loading={i === 0 ? 'eager' : 'lazy'}
                 decoding="async"
-              />
-              {/* Navy duotone: a brand-navy layer blended over the grayscale photo. */}
-              <div
-                className="absolute inset-0"
-                style={{ backgroundColor: '#38495D', mixBlendMode: 'color' }}
-              />
-              {/* Gentle tint to unify the panel while keeping faces legible. */}
-              <div
-                className="absolute inset-0"
-                style={{ backgroundColor: 'rgba(56,73,93,0.22)' }}
               />
             </div>
           ))}
