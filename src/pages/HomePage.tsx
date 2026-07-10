@@ -180,8 +180,7 @@ export default function HomePage() {
       {/* Why Companies Choose New Wave */}
       <Section background="gray">
         <SectionHeader
-          label="Why Companies Choose New Wave"
-          heading="Operators. Not Consultants."
+          label="Operators. Not Consultants."
           intro="Every New Wave leader has sat in the seat before. We do not hand over recommendations and disappear. We step into critical leadership roles, take ownership, and stay accountable until results are delivered."
         />
         <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-5 sm:gap-6 lg:gap-8">
