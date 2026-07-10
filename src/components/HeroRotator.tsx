@@ -78,8 +78,8 @@ export default function HeroRotator() {
               key={i}
               aria-hidden={i !== index}
               className={`col-start-1 row-start-1 text-2xl sm:text-3xl lg:text-4xl xl:text-5xl font-normal leading-tight text-[#38495D] transition-opacity duration-500 ${
-                line.center ? 'text-center' : ''
-              } ${i === index ? 'opacity-100' : 'opacity-0'}`}
+                i === index ? 'opacity-100' : 'opacity-0'
+              }`}
             >
               {line.segs.map((seg, j) => (
                 <Fragment key={j}>
@@ -131,7 +131,6 @@ export default function HeroRotator() {
                 src={img.src}
                 alt={img.alt}
                 className="absolute inset-0 w-full h-full object-cover"
-                fetchPriority={i === 0 ? 'high' : 'low'}
                 loading={i === 0 ? 'eager' : 'lazy'}
                 decoding="async"
               />
