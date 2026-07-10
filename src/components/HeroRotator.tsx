@@ -7,26 +7,20 @@ import { Link } from 'react-router-dom';
 const HEADLINES = [
   {
     segs: [
-      { t: 'When the path' },
-      { t: "isn't clear,", br: true },
-      { t: 'we build', bold: true, br: true },
-      { t: ' one.' },
+      { t: 'Experienced', bold: true },
+      { t: ' operators.' },
+    ],
+  },
+  {
+    segs: [
+      { t: 'Immediate', bold: true },
+      { t: ' impact.' },
     ],
   },
   {
     segs: [
       { t: 'Ready', bold: true },
-      { t: 'when', br: true },
-      { t: 'you are.', br: true },
-    ],
-  },
-  {
-    segs: [
-      { t: 'We ', bold: true },
-      { t: 'own the outcome', bold: true },
-      { t: ',' },
-      { t: 'not just the', br: true },
-      { t: 'recommendation.', br: true },
+      { t: ' when you are.' },
     ],
   },
 ];
