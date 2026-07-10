@@ -100,7 +100,7 @@ export default function HeroRotator() {
           <br />
           We deploy experienced, deeply vetted operators who step in quickly,{' '}
           <br className="hidden sm:block" />
-          own the outcome, and are ready to tackle your toughest challenges.
+          take ownership, and deliver results.
         </p>
 
         <div className="mt-5 sm:mt-6 lg:mt-7">
