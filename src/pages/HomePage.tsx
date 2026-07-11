@@ -131,6 +131,18 @@ export default function HomePage() {
 
           <NextWaveHero />
 
+          {/* Mobile only: the wave mark drops into the flow here as a soft
+              separator between the two hero sections, adding breathing room and
+              pushing the content below down. Tablet/desktop keep the watermark
+              inside NextWaveHero. */}
+          <div className="sm:hidden relative overflow-hidden py-6" aria-hidden="true">
+            <img
+              src="/new_wave_associates_logo_only.png"
+              alt=""
+              className="pointer-events-none select-none block ml-auto -mr-12 w-[300px] opacity-[0.08]"
+            />
+          </div>
+
           <div className="relative flex items-start pt-6 sm:pt-8 lg:pt-12">
           <div className="w-full flex flex-col">
             <div className="max-w-7xl mx-auto px-4 sm:px-5 md:px-6 lg:px-6 xl:px-8">
