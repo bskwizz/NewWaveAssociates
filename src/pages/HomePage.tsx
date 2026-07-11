@@ -288,11 +288,7 @@ export default function HomePage() {
 
       {/* Get In Touch */}
       <Section background="gray">
-        <SectionHeader
-          label="Get In Touch"
-          intro="Reach out to an expert today."
-          introClassName="text-sm sm:text-base text-gray-700 leading-relaxed"
-        />
+        <SectionHeader label="Reach out to an Expert today" />
         <div className="max-w-3xl mx-auto">
           <ContactForm source="homepage" />
         </div>
