@@ -112,9 +112,12 @@ export default function HomePage() {
       <div className="hero relative overflow-x-clip bg-white">
         <PageHeader />
 
-        {/* One subtly shaded band, starting below the white nav bar, that unifies
-            the "Your Next Wave" hero and the rotator/logos into a single section. */}
-        <div className="relative overflow-x-clip" style={{
+        {/* One subtly shaded band, starting just below the white nav bar, that
+            unifies the "Your Next Wave" hero and the rotator/logos into a single
+            section. Negative top margin pulls it a bit closer to the nav (the gap
+            is the nav's bottom padding); stays under the z-50 nav so it never
+            overlaps the logo/links. */}
+        <div className="relative overflow-x-clip -mt-3 sm:-mt-4 lg:-mt-6" style={{
           background: 'linear-gradient(180deg, #fbfcfd 0%, #f4f7f9 100%)'
         }}>
           <div className="absolute inset-0 opacity-[0.06] pointer-events-none" style={{
