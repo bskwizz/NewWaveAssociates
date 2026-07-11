@@ -49,7 +49,7 @@ export default function NextWaveHero() {
         className="pointer-events-none select-none absolute top-[74%] sm:top-[60%] -translate-y-1/2 -right-16 sm:-right-24 lg:-right-28 w-[440px] sm:w-[620px] lg:w-[780px] opacity-[0.08]"
       />
 
-      <div className="relative max-w-7xl mx-auto px-4 sm:px-5 md:px-6 lg:px-6 xl:px-8 py-20 pb-[368px] sm:py-24 lg:py-28">
+      <div className="relative max-w-7xl mx-auto px-4 sm:px-5 md:px-6 lg:px-6 xl:px-8 py-20 pb-[288px] sm:py-24 lg:py-28">
         <div className="flex flex-col sm:flex-row sm:items-baseline sm:gap-x-4">
           <span className="text-3xl sm:text-4xl lg:text-5xl xl:text-6xl font-extrabold tracking-tight text-[#38495D] leading-tight">
             Your Next Wave:
