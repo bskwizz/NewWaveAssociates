@@ -32,7 +32,7 @@ const values = [
 // Informational cards for the "Executive Leadership, On Demand" section.
 const services = [
   {
-    title: 'Procurement Leadership',
+    title: 'Procurement',
     description: 'Fractional procurement executives who reduce costs, strengthen supplier partnerships, and build scalable procurement organizations.',
   },
   {
@@ -161,7 +161,7 @@ export default function HomePage() {
       <Section background="white">
         <SectionHeader
           label="Executive Leadership, On Demand."
-          intro="Deploy experienced fractional and interim leaders who have already done the job. Whether you need executive leadership for a critical function, an experienced operator to lead a transformation, or temporary leadership while you hire, New Wave provides deeply vetted professionals who step in quickly and own the outcome."
+          intro="Deploy experienced fractional and interim leaders who have successfully done the job before. Whether you need executive leadership for a critical function, an experienced operator to lead a transformation, or temporary leadership while you hire, New Wave provides deeply vetted professionals who step in quickly and own the outcome. Our expertise spans the critical business functions where experienced leadership creates the greatest impact."
         />
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-5 sm:gap-6 lg:gap-8">
           {services.map((service) => (
@@ -184,7 +184,7 @@ export default function HomePage() {
       <Section background="gray">
         <SectionHeader
           label="Operators. Not Consultants."
-          intro="Every New Wave leader has sat in the seat before. We do not hand over recommendations and disappear. We step into critical leadership roles, take ownership, and stay accountable until results are delivered."
+          intro="Every New Wave leader has sat in the seat before. We do not hand over recommendations and disappear. We step into critical leadership roles, take ownership, and stay accountable until results are delivered. Not all fractional and interim leadership is created equal. Here's what sets New Wave apart."
         />
         <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-5 sm:gap-6 lg:gap-8">
           {values.map((value) => (
@@ -200,7 +200,7 @@ export default function HomePage() {
       <Section background="white">
         <SectionHeader
           label="Critical Leadership Gaps Cannot Wait."
-          intro="Whether you are navigating a leadership vacancy, accelerating a major initiative, or building a capability your organization does not yet have, New Wave provides experienced leaders who can step in and move the work forward."
+          intro="Whether you are navigating a leadership vacancy, accelerating a major initiative, or building a capability your organization does not yet have, New Wave provides experienced leaders who can step in and move the work forward. When the stakes are high and execution matters, this is where we shine."
         />
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-5 sm:gap-6 lg:gap-8">
           {whenToCall.map((item) => (
