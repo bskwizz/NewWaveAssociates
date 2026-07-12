@@ -47,14 +47,14 @@ export default function PageHeader() {
 
   return (
     <>
-    <div className="w-full py-4 sm:py-6 lg:py-8 relative z-50">
+    <div className="w-full py-3 relative z-50">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-6">
         <div className="flex items-center justify-between">
           <Link to="/" className="hover:opacity-80 transition-opacity">
             <img
               src="/new_wave_associates_horizontal.png"
               alt="New Wave Associates"
-              className="h-[80px] sm:h-[100px] lg:h-[126px] w-auto"
+              className="h-10 sm:h-11 lg:h-12 w-auto"
             />
           </Link>
 
