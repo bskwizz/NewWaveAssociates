@@ -76,7 +76,7 @@ export default function NextWaveHero() {
           </span>
         </div>
 
-        <p className="text-black text-sm sm:text-base lg:text-lg font-normal mt-4 sm:mt-5 leading-relaxed">
+        <p className="text-gray-700 text-lg sm:text-xl font-normal mt-4 sm:mt-5 leading-relaxed">
           Get immediate access to top-tier operating experts<br />to unlock your market potential.
         </p>
 
