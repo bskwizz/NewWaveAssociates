@@ -58,7 +58,7 @@ export default function PageHeader() {
             />
           </Link>
 
-          <div className="hidden lg:flex items-center gap-6 xl:gap-10">
+          <div className="hidden lg:flex items-center gap-8 xl:gap-12">
             {navItems.map((item) => {
               const active = item.isActive(pathname);
               const isContactUs = item.path === '/contact-us';
@@ -68,7 +68,7 @@ export default function PageHeader() {
                   <Link
                     key={item.path}
                     to={item.path}
-                    className="px-5 py-2.5 bg-[#f05e00] text-white text-sm font-semibold rounded-md hover:bg-[#d94f00] transition-all shadow-sm hover:shadow-md"
+                    className="px-6 py-3 bg-[#f05e00] text-white text-base font-semibold rounded-md hover:bg-[#d94f00] transition-all shadow-sm hover:shadow-md"
                   >
                     {item.label}
                   </Link>
@@ -79,7 +79,7 @@ export default function PageHeader() {
                 <Link
                   key={item.path}
                   to={item.path}
-                  className={`text-sm font-medium transition-all hover:text-[#01A3DB] relative group ${
+                  className={`text-base font-medium transition-all hover:text-[#01A3DB] relative group ${
                     active ? 'text-[#01A3DB]' : 'text-[#38495D]'
                   }`}
                 >
