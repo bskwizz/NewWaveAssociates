@@ -188,34 +188,34 @@ export const ROUTE_META: Record<string, RouteMeta> = {
 
   // Hubs
   '/hub-transformation-office': {
-    title: `Transformation Office | ${BRAND}`,
+    title: `Project Management Office Case Studies | ${BRAND}`,
     description:
-      'How New Wave Associates builds and runs transformation offices that deliver measurable outcomes.',
+      'Representative Project Management Office case studies from New Wave Associates: experienced operators who stepped into leadership roles, established accountability, and delivered measurable business outcomes.',
   },
   '/hub-gtm-growth': {
-    title: `Go-to-Market & Growth | ${BRAND}`,
+    title: `Revenue Operations Case Studies | ${BRAND}`,
     description:
-      'Go-to-market and growth strategies that improve revenue visibility, pricing, and predictable expansion.',
+      'Representative Revenue Operations case studies from New Wave Associates: experienced operators who stepped into leadership roles, established accountability, and delivered measurable business outcomes.',
   },
   '/hub-integration-consolidation': {
-    title: `Integration & Consolidation | ${BRAND}`,
+    title: `M&A Integration Case Studies | ${BRAND}`,
     description:
-      'Integration and consolidation expertise that standardizes systems, agreements, and operations.',
+      'Representative M&A Integration case studies from New Wave Associates: experienced operators who stepped into leadership roles, established accountability, and delivered measurable business outcomes.',
   },
   '/hub-labor-offshoring': {
-    title: `Labor Strategy & Offshoring | ${BRAND}`,
+    title: `Strategic Sourcing Case Studies | ${BRAND}`,
     description:
-      'Labor strategy and offshoring approaches that reduce cost while protecting quality and continuity.',
+      'Representative Strategic Sourcing case studies from New Wave Associates: experienced operators who stepped into leadership roles, established accountability, and delivered measurable business outcomes.',
   },
   '/hub-sga-optimization': {
-    title: `SG&A Optimization | ${BRAND}`,
+    title: `Procurement Case Studies | ${BRAND}`,
     description:
-      'SG&A optimization that protects margin and frees resources without sacrificing capability.',
+      'Representative Procurement case studies from New Wave Associates: experienced operators who stepped into leadership roles, established accountability, and delivered measurable business outcomes.',
   },
   '/hub-ai-automation': {
-    title: `AI & Automation | ${BRAND}`,
+    title: `Transformation Office Case Studies | ${BRAND}`,
     description:
-      'AI and automation programs that remove manual work and accelerate decisions with operational rigor.',
+      'Representative Transformation Office case studies from New Wave Associates: experienced operators who stepped into leadership roles, established accountability, and delivered measurable business outcomes.',
   },
 };
 

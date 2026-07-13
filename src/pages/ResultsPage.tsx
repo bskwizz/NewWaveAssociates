@@ -9,6 +9,7 @@ import { useInViewOnce } from '../hooks/useInViewOnce';
 import {
   PRACTICE_AREAS,
   practiceAreaFromSlug,
+  practiceAreaHubPath,
   practiceAreaSlug,
   type PracticeAreaName,
 } from '../data/practiceAreas';
@@ -186,6 +187,20 @@ export default function ResultsPage() {
     setFadeIn(true);
   }, []);
 
+  // When arriving with a practice-area deep link (e.g. from Solutions), scroll to
+  // the engagements section so the filtered results are immediately in view. Runs
+  // once on mount (after the global ScrollToTop resets to the top); later filter
+  // changes update the URL but do not re-trigger this.
+  useEffect(() => {
+    const slug = searchParams.get('practiceArea');
+    if (!slug || !practiceAreaFromSlug(slug)) return;
+    const t = setTimeout(() => {
+      document.getElementById('engagements')?.scrollIntoView({ behavior: 'smooth', block: 'start' });
+    }, 120);
+    return () => clearTimeout(t);
+    // eslint-disable-next-line react-hooks/exhaustive-deps
+  }, []);
+
   // Practice-area filter is backed by the ?practiceArea= query param so it can be
   // deep-linked (e.g. from the Solutions page). Unknown/absent slug -> "All".
   const activeArea: string = practiceAreaFromSlug(searchParams.get('practiceArea')) ?? ALL;
@@ -229,7 +244,7 @@ export default function ResultsPage() {
 
         <PageHeader />
 
-        <h1 className="sr-only">New Wave Associates Results — Proven Executive Leadership Outcomes</h1>
+        <h1 className="sr-only">New Wave Associates Results: Proven Executive Leadership Outcomes</h1>
 
         <div className="relative max-w-7xl mx-auto px-4 sm:px-5 md:px-6 lg:px-6 xl:px-8 pt-8 md:pt-14">
           <div
@@ -289,7 +304,7 @@ export default function ResultsPage() {
       </Section>
 
       {/* Representative Leadership Engagements */}
-      <Section background="gray">
+      <Section background="gray" id="engagements">
         <SectionHeader
           label="REPRESENTATIVE LEADERSHIP ENGAGEMENTS"
           intro="Every engagement is different. Our approach is not. We step into leadership roles, establish accountability, and deliver measurable business outcomes. The engagements below represent a sample of the executive leadership roles our team has served."
@@ -314,6 +329,19 @@ export default function ResultsPage() {
           />
         </div>
 
+        {activeArea !== ALL && (
+          <p className="-mt-2 mb-6 text-sm text-gray-600">
+            Showing representative {activeArea} leadership engagements.{' '}
+            <button
+              type="button"
+              onClick={() => selectArea(ALL)}
+              className="rounded font-semibold text-[#01A3DB] underline underline-offset-2 hover:text-[#0182b3] focus:outline-none focus-visible:ring-2 focus-visible:ring-[#01A3DB] focus-visible:ring-offset-2"
+            >
+              View all engagements
+            </button>
+          </p>
+        )}
+
         {filteredEngagements.length > 0 ? (
           <div className="grid grid-cols-1 lg:grid-cols-2 gap-5 sm:gap-6 lg:gap-8">
             {filteredEngagements.map((engagement) => (
@@ -321,9 +349,17 @@ export default function ResultsPage() {
             ))}
           </div>
         ) : (
-          <p role="status" className="text-base text-gray-600">
-            No matching engagements found.
-          </p>
+          <div role="status">
+            <p className="text-base text-gray-600">No matching engagements found.</p>
+            {activeArea !== ALL && (
+              <Link
+                to={practiceAreaHubPath(activeArea as PracticeAreaName)}
+                className="mt-3 inline-block rounded text-sm font-semibold text-[#01A3DB] hover:text-[#0182b3] transition-colors focus:outline-none focus-visible:ring-2 focus-visible:ring-[#01A3DB] focus-visible:ring-offset-2"
+              >
+                Explore {activeArea} Case Studies →
+              </Link>
+            )}
+          </div>
         )}
       </Section>
 

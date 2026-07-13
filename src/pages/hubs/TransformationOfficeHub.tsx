@@ -8,9 +8,9 @@ export default function TransformationOfficeHub({ onNavigate }: TransformationOf
   return (
     <ListingPageLayout
       onNavigate={onNavigate}
-      categoryLabel="Case Studies"
-      title="Project Management Office"
-      subtitle="Project Management Office builds and turnarounds: unified governance, portfolio visibility, and predictable delivery that reduces risk and accelerates time-to-value."
+      categoryLabel="Results"
+      title="Project Management Office Results"
+      subtitle="Explore representative Project Management Office case studies demonstrating how experienced New Wave operators have stepped into critical leadership roles, established accountability, and delivered measurable business outcomes."
     >
       <section className="cs-grid">
         <article className="cs-card">
@@ -21,7 +21,7 @@ export default function TransformationOfficeHub({ onNavigate }: TransformationOf
             <p className="cs-card__text">Stood up a unified governance engine, executive dashboards, and cadence within 60 days.</p>
             <p className="cs-card__meta">Outcome: predictable delivery, visible burn-down of risk.</p>
           </div>
-          <a className="cs-card__link" href="#" onClick={(e) => { e.preventDefault(); onNavigate('case-study-pmo'); }}>Read full case →</a>
+          <a className="cs-card__link" href="#" onClick={(e) => { e.preventDefault(); onNavigate('case-study-pmo'); }}>View Case Study →</a>
         </article>
       </section>
     </ListingPageLayout>

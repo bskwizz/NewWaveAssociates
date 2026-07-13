@@ -8,9 +8,9 @@ export default function GTMGrowthHub({ onNavigate }: GTMGrowthHubProps) {
   return (
     <ListingPageLayout
       onNavigate={onNavigate}
-      categoryLabel="Case Studies"
-      title="Go-to-Market & Growth Optimization"
-      subtitle="Revenue architecture, demand activation, and conversion velocity—aligned to ICP, segment clarity, and margin discipline."
+      categoryLabel="Results"
+      title="Revenue Operations Results"
+      subtitle="Explore representative Revenue Operations case studies demonstrating how experienced New Wave operators have stepped into critical leadership roles, established accountability, and delivered measurable business outcomes."
     >
       <section className="cs-grid">
         <article className="cs-card">
@@ -21,7 +21,7 @@ export default function GTMGrowthHub({ onNavigate }: GTMGrowthHubProps) {
             <p className="cs-card__text">Rebuilt packaging, pricing guardrails, and Deal Desk to align value with margin discipline.</p>
             <p className="cs-card__meta">Outcome: +20% ASP, −10% churn, faster approvals with less discount variance.</p>
           </div>
-          <a className="cs-card__link" href="#" onClick={(e) => { e.preventDefault(); onNavigate('case-studies/gtm-pricing-packaging'); }}>Read full case →</a>
+          <a className="cs-card__link" href="#" onClick={(e) => { e.preventDefault(); onNavigate('case-studies/gtm-pricing-packaging'); }}>View Case Study →</a>
         </article>
 
         <article className="cs-card">
@@ -32,7 +32,7 @@ export default function GTMGrowthHub({ onNavigate }: GTMGrowthHubProps) {
             <p className="cs-card__text">Unified inbound/outbound/partner motions with a single customer-journey model and RevOps cadence.</p>
             <p className="cs-card__meta">Outcome: +10% ARR YoY, −20% CAC, faster cycle times.</p>
           </div>
-          <a className="cs-card__link" href="#" onClick={(e) => { e.preventDefault(); onNavigate('case-studies/gtm-allbound-model'); }}>Read full case →</a>
+          <a className="cs-card__link" href="#" onClick={(e) => { e.preventDefault(); onNavigate('case-studies/gtm-allbound-model'); }}>View Case Study →</a>
         </article>
 
         <article className="cs-card">
@@ -43,7 +43,7 @@ export default function GTMGrowthHub({ onNavigate }: GTMGrowthHubProps) {
             <p className="cs-card__text">Built a vertical incubation framework and launched five industry plays with product + field alignment.</p>
             <p className="cs-card__meta">Outcome: +$25M ARR, faster cycles, tighter discount discipline.</p>
           </div>
-          <a className="cs-card__link" href="#" onClick={(e) => { e.preventDefault(); onNavigate('case-studies/gtm-vertical-incubation'); }}>Read full case →</a>
+          <a className="cs-card__link" href="#" onClick={(e) => { e.preventDefault(); onNavigate('case-studies/gtm-vertical-incubation'); }}>View Case Study →</a>
         </article>
 
         <article className="cs-card">
@@ -54,7 +54,7 @@ export default function GTMGrowthHub({ onNavigate }: GTMGrowthHubProps) {
             <p className="cs-card__text">Standardized item master, unified reporting, and minimum-margin governance to stop silent leakage.</p>
             <p className="cs-card__meta">Outcome: ~$3M leakage recovered, +$500k EBITDA year 1, 6–10 FTE overhead saved.</p>
           </div>
-          <a className="cs-card__link" href="#" onClick={(e) => { e.preventDefault(); onNavigate('case-studies/gtm-revenue-visibility'); }}>Read full case →</a>
+          <a className="cs-card__link" href="#" onClick={(e) => { e.preventDefault(); onNavigate('case-studies/gtm-revenue-visibility'); }}>View Case Study →</a>
         </article>
       </section>
     </ListingPageLayout>

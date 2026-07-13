@@ -8,9 +8,9 @@ export default function SGAOptimizationHub({ onNavigate }: SGAOptimizationHubPro
   return (
     <ListingPageLayout
       onNavigate={onNavigate}
-      categoryLabel="Case Studies"
-      title="SG&A Cost Optimization"
-      subtitle="Shared services, zero-based design, and workflow re-engineering to simplify support functions and free cash for growth."
+      categoryLabel="Results"
+      title="Procurement Results"
+      subtitle="Explore representative Procurement case studies demonstrating how experienced New Wave operators have stepped into critical leadership roles, established accountability, and delivered measurable business outcomes."
     >
       <section className="cs-grid">
         <article className="cs-card">
@@ -21,7 +21,7 @@ export default function SGAOptimizationHub({ onNavigate }: SGAOptimizationHubPro
             <p className="cs-card__text">Internalized subcontracted delivery and established governance to sustain cost savings.</p>
             <p className="cs-card__meta">Outcome: $12M+ annual savings | 25% utilization lift | 8 pt margin gain</p>
           </div>
-          <a className="cs-card__link" href="#" onClick={(e) => { e.preventDefault(); onNavigate('case-studies/sga-subcontracting-capture'); }}>Read full case →</a>
+          <a className="cs-card__link" href="#" onClick={(e) => { e.preventDefault(); onNavigate('case-studies/sga-subcontracting-capture'); }}>View Case Study →</a>
         </article>
 
         <article className="cs-card">
@@ -32,7 +32,7 @@ export default function SGAOptimizationHub({ onNavigate }: SGAOptimizationHubPro
             <p className="cs-card__text">Implemented a virtual-card program to capture rebates and streamline AP processing.</p>
             <p className="cs-card__meta">Outcome: $4.5M annual rebate value | 35% cycle-time reduction | Working-capital gain</p>
           </div>
-          <a className="cs-card__link" href="#" onClick={(e) => { e.preventDefault(); onNavigate('case-studies/sga-virtual-card'); }}>Read full case →</a>
+          <a className="cs-card__link" href="#" onClick={(e) => { e.preventDefault(); onNavigate('case-studies/sga-virtual-card'); }}>View Case Study →</a>
         </article>
       </section>
     </ListingPageLayout>

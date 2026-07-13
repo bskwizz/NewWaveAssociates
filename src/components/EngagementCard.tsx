@@ -1,4 +1,5 @@
-import { type PracticeAreaName } from '../data/practiceAreas';
+import { Link } from 'react-router-dom';
+import { practiceAreaHubPath, type PracticeAreaName } from '../data/practiceAreas';
 
 export type EngagementModel = 'Fractional' | 'Interim' | 'Project-Based';
 
@@ -56,14 +57,24 @@ export default function EngagementCard({ role, practiceArea, model, industry, ou
         </span>
       </div>
 
-      <ul className="mt-auto space-y-2.5 pt-4 border-t border-gray-100">
-        {outcomes.map((outcome, i) => (
-          <li key={i} className="flex gap-2.5 text-sm sm:text-base text-gray-700 leading-snug">
-            <span className="mt-[9px] h-1.5 w-1.5 shrink-0 rounded-full bg-[#f05e00]" />
-            <span>{renderOutcome(outcome)}</span>
-          </li>
-        ))}
-      </ul>
+      <div className="mt-auto pt-4 border-t border-gray-100">
+        <ul className="space-y-2.5">
+          {outcomes.map((outcome, i) => (
+            <li key={i} className="flex gap-2.5 text-sm sm:text-base text-gray-700 leading-snug">
+              <span className="mt-[9px] h-1.5 w-1.5 shrink-0 rounded-full bg-[#f05e00]" />
+              <span>{renderOutcome(outcome)}</span>
+            </li>
+          ))}
+        </ul>
+
+        {/* Secondary CTA to the curated practice-area case-study hub. */}
+        <Link
+          to={practiceAreaHubPath(practiceArea)}
+          className="mt-4 inline-block rounded text-sm font-semibold text-[#01A3DB] hover:text-[#0182b3] transition-colors focus:outline-none focus-visible:ring-2 focus-visible:ring-[#01A3DB] focus-visible:ring-offset-2"
+        >
+          Explore {practiceArea} Case Studies →
+        </Link>
+      </div>
     </div>
   );
 }
