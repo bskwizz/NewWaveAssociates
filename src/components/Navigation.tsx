@@ -15,7 +15,7 @@ export default function Navigation({ currentPage, onNavigate }: NavigationProps)
     { label: 'Results', page: 'case-studies' },
     { label: 'Insights', page: 'insights' },
     { label: 'About', page: 'about-us' },
-    { label: 'Contact Us', page: 'contact-us' },
+    { label: 'Contact', page: 'contact-us' },
   ];
 
   const handleDropdownNavigation = (page: string, anchor: string) => {

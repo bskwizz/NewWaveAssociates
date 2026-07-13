@@ -68,10 +68,12 @@ function App() {
           <Route path="/results" element={<WithNav Component={ResultsPage} />} />
           {/* Legacy path redirect so old /case-studies links land on the renamed page */}
           <Route path="/case-studies" element={<Navigate to="/results" replace />} />
-          <Route path="/about-us" element={<WithNav Component={AboutUsPage} />} />
+          <Route path="/about" element={<WithNav Component={AboutUsPage} />} />
+          <Route path="/about-us" element={<Navigate to="/about" replace />} />
           <Route path="/insights" element={<WithNav Component={InsightsPage} />} />
           <Route path="/insights/:slug" element={<InsightDetailWrapper />} />
-          <Route path="/contact-us" element={<WithNav Component={ContactUsPage} />} />
+          <Route path="/contact" element={<WithNav Component={ContactUsPage} />} />
+          <Route path="/contact-us" element={<Navigate to="/contact" replace />} />
           <Route path="/privacy" element={<PrivacyPage />} />
           <Route path="/terms" element={<TermsPage />} />
 

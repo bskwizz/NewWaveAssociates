@@ -385,7 +385,7 @@ export default function ResultsPage() {
             lead a critical initiative, New Wave is ready to help.
           </p>
           <div className="mt-8">
-            <Link to="/contact-us" className={primaryButton}>
+            <Link to="/contact" className={primaryButton}>
               Schedule a Conversation
             </Link>
           </div>

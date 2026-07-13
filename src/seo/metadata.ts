@@ -28,7 +28,7 @@ export const ROUTE_META: Record<string, RouteMeta> = {
     description:
       'Proven executive leadership outcomes: $60M+ in documented cost savings, 35+ M&A supported, and measurable results delivered through fractional, interim, and project-based leaders.',
   },
-  '/about-us': {
+  '/about': {
     title: `About Us | ${BRAND}`,
     description:
       'Meet New Wave Associates — operators-turned-advisors who bring hands-on procurement, revenue operations, and transformation expertise to the lower and middle market.',
@@ -38,7 +38,7 @@ export const ROUTE_META: Record<string, RouteMeta> = {
     description:
       'Articles and perspectives on operational rigor, procurement, revenue operations, AI, and transformation from the New Wave Associates team.',
   },
-  '/contact-us': {
+  '/contact': {
     title: `Contact Us | ${BRAND}`,
     description:
       'Get in touch with New Wave Associates to discuss procurement, revenue operations, and transformation challenges facing your business.',

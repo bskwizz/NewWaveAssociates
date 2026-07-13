@@ -233,7 +233,7 @@ export default function HomePage() {
             We are ready when you are.
           </p>
           <Link
-            to="/contact-us"
+            to="/contact"
             className="inline-block px-6 py-3 bg-[#f05e00] text-white text-sm font-semibold uppercase tracking-wide rounded-md hover:bg-[#d94f00] transition-all shadow-sm hover:shadow-md"
           >
             Meet New Wave
