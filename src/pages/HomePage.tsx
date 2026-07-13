@@ -4,26 +4,36 @@ import PageHeader from '../components/PageHeader';
 import LogoScroller from '../components/LogoScroller';
 import HeroRotator from '../components/HeroRotator';
 import NextWaveHero from '../components/NextWaveHero';
+import {
+  Package, Handshake, TrendingUp, Workflow, ClipboardList, GitMerge,
+  Target, Award, Zap, SlidersHorizontal,
+  UserMinus, UserPlus, Activity, Rocket, Combine, Blocks,
+} from 'lucide-react';
 import ContactForm from '../components/ContactForm';
 import Section from '../components/Section';
 import SectionHeader from '../components/SectionHeader';
+import FeatureCard from '../components/FeatureCard';
 import { getAllPublishedInsights, Insight } from '../services/insightsService';
 
 // Cards for the "Why Companies Choose New Wave" section.
 const values = [
   {
+    icon: Target,
     title: 'We Own the Outcome',
     description: 'We take responsibility for execution and results, not just recommendations.',
   },
   {
+    icon: Award,
     title: 'We Have Been There',
     description: 'Our professionals bring real executive and functional leadership experience, not just advisory experience.',
   },
   {
+    icon: Zap,
     title: 'Ready When You Are',
     description: 'Fill critical leadership gaps quickly without waiting through a lengthy executive search.',
   },
   {
+    icon: SlidersHorizontal,
     title: 'Flexible by Design',
     description: 'Engage leadership on a fractional, interim, or project basis as your needs evolve.',
   },
@@ -32,26 +42,32 @@ const values = [
 // Informational cards for the "Executive Leadership, On Demand" section.
 const services = [
   {
+    icon: Package,
     title: 'Procurement',
     description: 'Fractional procurement executives who reduce costs, strengthen supplier partnerships, and build scalable procurement organizations.',
   },
   {
+    icon: Handshake,
     title: 'Strategic Sourcing',
     description: 'Experienced sourcing leaders who negotiate complex agreements, improve supplier performance, and deliver measurable savings.',
   },
   {
+    icon: TrendingUp,
     title: 'Revenue Operations',
     description: 'Revenue operators who improve forecasting, sales execution, CRM performance, and commercial operations.',
   },
   {
+    icon: Workflow,
     title: 'Transformation Office',
     description: 'Experienced transformation leaders who establish governance, drive execution, and deliver enterprise change.',
   },
   {
+    icon: ClipboardList,
     title: 'Project Management Office',
     description: 'PMO leaders who improve delivery predictability, portfolio governance, and executive visibility.',
   },
   {
+    icon: GitMerge,
     title: 'M&A Integration',
     description: 'Operators who lead due diligence, integration planning, carve-outs, and post-close execution.',
   },
@@ -60,26 +76,32 @@ const services = [
 // Informational cards for the "When to Call New Wave" section.
 const whenToCall = [
   {
+    icon: UserMinus,
     title: 'A Key Leader Just Left',
     description: 'Maintain momentum and stability with an experienced interim leader while you determine the right long-term solution.',
   },
   {
+    icon: UserPlus,
     title: 'You Need Leadership Before You Can Hire It',
     description: 'Access senior functional expertise without taking on the cost or commitment of a full-time executive.',
   },
   {
+    icon: Activity,
     title: 'A Critical Initiative Is Falling Behind',
     description: 'Bring in an experienced operator to establish accountability, remove barriers, and restore execution.',
   },
   {
+    icon: Rocket,
     title: 'Your Company Is Entering Its Next Stage of Growth',
     description: 'Add leadership capacity and operating discipline as the complexity of the business increases.',
   },
   {
+    icon: Combine,
     title: 'You Are Integrating an Acquisition',
     description: 'Deploy experienced M&A leadership to coordinate decisions, manage dependencies, and accelerate value realization.',
   },
   {
+    icon: Blocks,
     title: 'You Need to Build the Function',
     description: 'Set the strategy, establish the operating model, and build the foundation before making permanent hires.',
   },
@@ -152,17 +174,13 @@ export default function HomePage() {
         />
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-5 sm:gap-6 lg:gap-8">
           {services.map((service) => (
-            <div
+            <FeatureCard
               key={service.title}
-              className="bg-white border border-gray-200 rounded-lg p-5 sm:p-6 shadow-sm h-full"
-            >
-              <h3 className="text-base sm:text-lg font-bold text-[#38495D] mb-3">
-                {service.title}
-              </h3>
-              <p className="text-sm sm:text-base text-gray-700 leading-relaxed">
-                {service.description}
-              </p>
-            </div>
+              icon={service.icon}
+              title={service.title}
+              description={service.description}
+              accent="blue"
+            />
           ))}
         </div>
       </Section>
@@ -175,10 +193,13 @@ export default function HomePage() {
         />
         <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-5 sm:gap-6 lg:gap-8">
           {values.map((value) => (
-            <div key={value.title} className="bg-white rounded-lg p-5 sm:p-6 shadow-sm">
-              <h3 className="text-sm sm:text-base font-bold text-[#38495D] mb-2">{value.title}</h3>
-              <p className="text-sm text-gray-700 leading-relaxed">{value.description}</p>
-            </div>
+            <FeatureCard
+              key={value.title}
+              icon={value.icon}
+              title={value.title}
+              description={value.description}
+              accent="navy"
+            />
           ))}
         </div>
       </Section>
@@ -191,17 +212,13 @@ export default function HomePage() {
         />
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-5 sm:gap-6 lg:gap-8">
           {whenToCall.map((item) => (
-            <div
+            <FeatureCard
               key={item.title}
-              className="bg-white border border-gray-200 rounded-lg p-5 sm:p-6 shadow-sm h-full"
-            >
-              <h3 className="text-base sm:text-lg font-bold text-[#38495D] mb-3">
-                {item.title}
-              </h3>
-              <p className="text-sm sm:text-base text-gray-700 leading-relaxed">
-                {item.description}
-              </p>
-            </div>
+              icon={item.icon}
+              title={item.title}
+              description={item.description}
+              accent="orange"
+            />
           ))}
         </div>
 
