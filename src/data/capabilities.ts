@@ -1,5 +1,5 @@
 // Shared capabilities data — single source of truth for the six core offerings.
-// Used by the /case-studies listing (CapabilitiesPage) and the homepage
+// Used by the /results listing (ResultsPage) and the homepage
 // "What We Do" grid (HomePage). `hubRoute` is the react-router path key for the
 // matching hub page (e.g. "hub-gtm-growth" -> /hub-gtm-growth).
 

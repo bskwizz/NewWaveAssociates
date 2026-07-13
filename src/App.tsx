@@ -1,11 +1,11 @@
-import { Routes, Route, useParams } from 'react-router-dom';
+import { Routes, Route, Navigate, useParams } from 'react-router-dom';
 import { useAppNavigate } from './hooks/useAppNavigate';
 import ScrollToTop from './components/ScrollToTop';
 import RouteSeo from './components/RouteSeo';
 import Footer from './components/Footer';
 import HomePage from './pages/HomePage';
 import SolutionsPage from './pages/SolutionsPage';
-import CapabilitiesPage from './pages/CapabilitiesPage';
+import ResultsPage from './pages/ResultsPage';
 import AboutUsPage from './pages/AboutUsPage';
 import ContactUsPage from './pages/ContactUsPage';
 import InsightsPage from './pages/InsightsPage';
@@ -65,7 +65,9 @@ function App() {
         <Routes>
           <Route path="/" element={<WithNav Component={HomePage} />} />
           <Route path="/solutions" element={<WithNav Component={SolutionsPage} />} />
-          <Route path="/case-studies" element={<WithNav Component={CapabilitiesPage} />} />
+          <Route path="/results" element={<WithNav Component={ResultsPage} />} />
+          {/* Legacy path redirect so old /case-studies links land on the renamed page */}
+          <Route path="/case-studies" element={<Navigate to="/results" replace />} />
           <Route path="/about-us" element={<WithNav Component={AboutUsPage} />} />
           <Route path="/insights" element={<WithNav Component={InsightsPage} />} />
           <Route path="/insights/:slug" element={<InsightDetailWrapper />} />

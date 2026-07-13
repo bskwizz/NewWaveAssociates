@@ -23,10 +23,10 @@ export const ROUTE_META: Record<string, RouteMeta> = {
     description:
       'Experienced fractional and interim executive leadership in procurement, sourcing, revenue operations, transformation, PMO, and M&A integration. Deeply vetted operators who step in and deliver measurable results.',
   },
-  '/case-studies': {
-    title: `Case Studies & Client Results | ${BRAND}`,
+  '/results': {
+    title: `Results | ${BRAND}`,
     description:
-      'Explore real client results across procurement, revenue operations, integration, labor strategy, and automation engagements led by New Wave Associates.',
+      'Proven executive leadership outcomes: $45M+ in documented cost savings, 35+ M&A supported, and measurable results delivered through fractional, interim, and project-based leaders.',
   },
   '/about-us': {
     title: `About Us | ${BRAND}`,

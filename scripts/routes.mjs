@@ -9,7 +9,7 @@ export const STATIC_ROUTES = [
   // Main pages
   '/',
   '/solutions',
-  '/case-studies',
+  '/results',
   '/about-us',
   '/insights',
   '/contact-us',

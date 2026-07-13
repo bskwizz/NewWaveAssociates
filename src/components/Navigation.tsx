@@ -12,7 +12,7 @@ export default function Navigation({ currentPage, onNavigate }: NavigationProps)
 
   const navItems = [
     { label: 'Solutions', page: 'our-services' },
-    { label: 'Case Studies', page: 'case-studies' },
+    { label: 'Results', page: 'case-studies' },
     { label: 'Insights', page: 'insights' },
     { label: 'About Us', page: 'about-us' },
     { label: 'Contact Us', page: 'contact-us' },

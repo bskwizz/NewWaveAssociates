@@ -11,9 +11,10 @@ const navItems = [
     isActive: (p: string) => p === '/solutions',
   },
   {
-    label: 'Case Studies',
-    path: '/case-studies',
+    label: 'Results',
+    path: '/results',
     isActive: (p: string) =>
+      p === '/results' ||
       p === '/case-studies' ||
       p.startsWith('/case-studies/') ||
       p.startsWith('/case-study-') ||
