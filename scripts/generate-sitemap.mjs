@@ -44,12 +44,25 @@ const urls = routes
   })
   .join('\n');
 
+// AI-readable static resources (served raw from public/, no trailing slash).
+const RESOURCE_PATHS = ['/llms.txt', '/llminfo.md', '/faqsforllms.md'];
+const resourceUrls = RESOURCE_PATHS.map((path) =>
+  [
+    '  <url>',
+    `    <loc>${SITE}${path}</loc>`,
+    '    <changefreq>monthly</changefreq>',
+    '    <priority>0.5</priority>',
+    '  </url>',
+  ].join('\n')
+).join('\n');
+
 const xml = `<?xml version="1.0" encoding="UTF-8"?>
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
 ${urls}
+${resourceUrls}
 </urlset>
 `;
 
 const outPath = join(PUBLIC_DIR, 'sitemap.xml');
 writeFileSync(outPath, xml, 'utf8');
-console.log(`[sitemap] wrote ${routes.length} URLs to ${outPath}`);
+console.log(`[sitemap] wrote ${routes.length + RESOURCE_PATHS.length} URLs to ${outPath}`);
