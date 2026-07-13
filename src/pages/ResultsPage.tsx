@@ -136,6 +136,17 @@ const engagements: Engagement[] = [
       'Built CRM conversion and retention programs for card distribution',
     ],
   },
+  {
+    role: 'Head of Project Management Office',
+    practiceArea: 'Project Management Office',
+    model: 'Project-Based',
+    industry: 'Healthcare SaaS',
+    outcomes: [
+      'Stood up a full Project Management Office to standardize delivery',
+      'Established governance and executive dashboards that made delivery predictable',
+      'Enabled onboarding of the largest client at **$500K+ ARR**',
+    ],
+  },
 ];
 
 // Compact accessible pill group used for both filter dimensions.
