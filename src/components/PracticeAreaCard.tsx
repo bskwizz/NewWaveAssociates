@@ -1,3 +1,4 @@
+import { Link } from 'react-router-dom';
 import { type LucideIcon } from 'lucide-react';
 
 export interface PracticeArea {
@@ -7,6 +8,10 @@ export interface PracticeArea {
   description: string;
   engagements: string[];
   idealWhen: string[];
+  /** Optional hub route key (e.g. "hub-gtm-growth") for a "View ... Results" link. */
+  hubRoute?: string;
+  /** Label used in the results link ("View {hubLabel} Results"); defaults to title. */
+  hubLabel?: string;
 }
 
 function BulletList({ label, items }: { label: string; items: string[] }) {
@@ -35,6 +40,8 @@ export default function PracticeAreaCard({
   description,
   engagements,
   idealWhen,
+  hubRoute,
+  hubLabel,
 }: PracticeArea) {
   return (
     <div className="group flex h-full flex-col rounded-xl border border-gray-200 bg-white p-6 sm:p-7 shadow-sm transition-all duration-200 hover:-translate-y-1 hover:shadow-lg">
@@ -62,6 +69,14 @@ export default function PracticeAreaCard({
           <span className="text-[#38495D]">Interim</span> ·{' '}
           <span className="text-[#38495D]">Project-Based</span>
         </p>
+        {hubRoute && (
+          <Link
+            to={`/${hubRoute}`}
+            className="mt-3 inline-block text-sm font-semibold text-[#01A3DB] hover:text-[#0182b3] transition-colors"
+          >
+            View {hubLabel ?? title} Results →
+          </Link>
+        )}
       </div>
     </div>
   );
