@@ -11,7 +11,7 @@ const PUBLIC_DIR = join(__dirname, '..', 'public');
 // matching the react-router paths and the <link rel="canonical"> tags.
 function metaFor(route) {
   if (route === '/') return { changefreq: 'monthly', priority: '1.0' };
-  if (route === '/insights' || route === '/case-studies') {
+  if (route === '/insights' || route === '/results') {
     return { changefreq: 'weekly', priority: '0.9' };
   }
   if (route.startsWith('/insights/')) return { changefreq: 'weekly', priority: '0.7' };
