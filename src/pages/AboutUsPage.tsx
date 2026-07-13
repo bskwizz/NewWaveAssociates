@@ -1,5 +1,5 @@
-import { useRef, useEffect, useState } from 'react';
-import { X } from 'lucide-react';
+import { useRef } from 'react';
+import { Compass, Search, Zap, type LucideIcon } from 'lucide-react';
 import CTABar from '../components/CTABar';
 import PageHeader from '../components/PageHeader';
 
@@ -41,23 +41,111 @@ const teamMembers = [
 const aboutIntro =
   'New Wave was built on a simple belief: the most valuable thing a company can have is experienced leaders who have done the job before. We provide deeply vetted executives who step in quickly, establish accountability, solve complex business challenges, and deliver measurable results across procurement, strategic sourcing, revenue operations, transformation, project management, and M&A integration.';
 
+// Shared source of truth for the three comparison cards and the detailed table.
+interface LeadershipModel {
+  model: string;
+  icon: LucideIcon;
+  primaryValue: string;
+  supportingCopy: string;
+  /** Card attributes; the last item doubles as the best-fit callout. */
+  attributes: string[];
+  emphasized: boolean;
+  table: {
+    purpose: string;
+    timeToImpact: string;
+    accountability: string;
+    whoYouGet: string;
+    role: string;
+    bestFit: string;
+  };
+}
+
+const leadershipModels: LeadershipModel[] = [
+  {
+    model: 'Traditional Consulting',
+    icon: Compass,
+    primaryValue: 'Advice and Recommendations',
+    supportingCopy:
+      'Best suited for organizations that need analysis, specialized expertise, or an outside perspective.',
+    attributes: [
+      'External advisory role',
+      'Consulting team model',
+      'Engagement deliverables',
+      'Often begins with assessment',
+      'Best for analysis and specialized advice',
+    ],
+    emphasized: false,
+    table: {
+      purpose: 'Advice and recommendations',
+      timeToImpact: 'Often begins with assessment',
+      accountability: 'Engagement deliverables',
+      whoYouGet: 'Consulting team',
+      role: 'External advisor',
+      bestFit: 'Analysis and specialized advice',
+    },
+  },
+  {
+    model: 'New Wave',
+    icon: Zap,
+    primaryValue: 'Immediate Operating Leadership',
+    supportingCopy:
+      'Best suited for organizations that need experienced leadership to step directly into the work.',
+    attributes: [
+      'Embedded operating leader',
+      'Fractional, interim, or project-based',
+      'Accountability for execution',
+      'Focus on business outcomes',
+      'Best for critical gaps, transitions, & initiatives',
+    ],
+    emphasized: true,
+    table: {
+      purpose: 'Immediate operating leadership',
+      timeToImpact: 'Leader steps directly into the work',
+      accountability: 'Execution and business outcomes',
+      whoYouGet: 'Fractional, interim, or project-based leader',
+      role: 'Embedded operating leader',
+      bestFit: 'Critical gaps, transitions, and initiatives',
+    },
+  },
+  {
+    model: 'Executive Search',
+    icon: Search,
+    primaryValue: 'Permanent Executive\nHiring',
+    supportingCopy:
+      'Best suited for organizations ready to recruit and appoint a long-term permanent leader.',
+    attributes: [
+      'Recruiting partner',
+      'Permanent candidate placement',
+      'Impact begins after the hire',
+      'Success measured by placement',
+      'Best for long-term permanent hiring',
+    ],
+    emphasized: false,
+    table: {
+      purpose: 'Permanent candidate placement',
+      timeToImpact: 'Begins after the hire',
+      accountability: 'Successful placement',
+      whoYouGet: 'Permanent executive candidate',
+      role: 'Recruiting partner',
+      bestFit: 'Long-term permanent hiring',
+    },
+  },
+];
+
+const TABLE_ROWS: { label: string; key: keyof LeadershipModel['table'] }[] = [
+  { label: 'Purpose', key: 'purpose' },
+  { label: 'Time to Impact', key: 'timeToImpact' },
+  { label: 'Accountability', key: 'accountability' },
+  { label: 'Who You Get', key: 'whoYouGet' },
+  { label: 'Role in the Business', key: 'role' },
+  { label: 'Best Fit', key: 'bestFit' },
+];
+
 export default function AboutUsPage({ onNavigate }: AboutUsPageProps) {
-  const [lightboxOpen, setLightboxOpen] = useState(false);
   const vantaRef = useRef<HTMLDivElement>(null);
 
-  useEffect(() => {
-    if (lightboxOpen) {
-      document.body.style.overflow = 'hidden';
-    } else {
-      document.body.style.overflow = '';
-    }
-    return () => {
-      document.body.style.overflow = '';
-    };
-  }, [lightboxOpen]);
-
   return (
-    <div>
+    <div className="overflow-x-clip">
       <div ref={vantaRef} className="capabilities-hero relative" aria-label="About Us">
         <PageHeader />
 
@@ -112,42 +200,178 @@ export default function AboutUsPage({ onNavigate }: AboutUsPageProps) {
                 ))}
               </div>
 
+              {/* Full-bleed white section band (header through the closing callout) */}
+              <div className="relative left-1/2 -translate-x-1/2 w-screen bg-white border-y border-gray-200 my-10 sm:my-14 lg:my-16 py-12 sm:py-16 lg:py-20">
+              <div className="max-w-7xl mx-auto px-4 sm:px-5 md:px-6 lg:px-6 xl:px-8">
               <div className="text-left mb-5 sm:mb-6 lg:mb-8">
                 <div className="inline-block mb-2">
                   <div>
                     <p className="text-black text-xs sm:text-sm lg:text-base font-bold tracking-[0.2em] uppercase mb-2" style={{
                       letterSpacing: '0.25em'
                     }}>
-                      How We Differ
+                      A Different Kind of Leadership Partner
                     </p>
                     <div className="h-[2px] bg-[#f05e00]"></div>
                   </div>
                 </div>
-                <p className="text-sm sm:text-base text-gray-700 leading-relaxed mt-4 sm:mt-5 lg:mt-6 mb-5 sm:mb-6 lg:mb-8">
-                  Senior Operators. Realistic Outcomes. Timebound Delivery.
+                <p className="text-sm sm:text-base text-gray-700 leading-relaxed mt-4 sm:mt-5 lg:mt-6">
+                  Companies have several options when leadership capacity is missing. New Wave is designed for the moments when the business needs more than advice, but a permanent hire is not yet practical.
+                </p>
+                <p className="mt-3 text-xs sm:text-sm text-gray-500">
+                  The right solution depends on the need. Here is how the three models differ.
                 </p>
               </div>
 
-              <div className="pb-8 sm:pb-12 lg:pb-16">
-                <button
-                  type="button"
-                  onClick={() => setLightboxOpen(true)}
-                  className="block w-full lg:w-[93.5%] mx-auto group cursor-pointer bg-transparent border-0 p-0 text-left"
-                  aria-label="View How We Differ in detail"
-                >
-                  <div className="relative overflow-hidden rounded-lg shadow-xl transition-shadow duration-300 group-hover:shadow-2xl">
-                    <img
-                      src={`${import.meta.env.BASE_URL}how_we_differ_png_new.png`}
-                      alt="How We Differ"
-                      className="w-full h-auto block"
-                    />
-                    <div className="absolute inset-0 bg-black/0 group-hover:bg-black/5 transition-colors duration-300 flex items-center justify-center">
-                      <span className="opacity-0 group-hover:opacity-100 transition-opacity duration-300 bg-white/90 backdrop-blur-sm text-gray-800 text-sm font-semibold px-4 py-2 rounded-full shadow-lg">
-                        Click to expand
-                      </span>
+              {/* Three comparison cards (primary visual) */}
+              <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-5 sm:gap-6 lg:gap-8 mb-8 sm:mb-10">
+                {leadershipModels.map((m) => {
+                  const Icon = m.icon;
+                  const cardAttributes = m.attributes.slice(0, -1);
+                  const bestFit = m.attributes[m.attributes.length - 1];
+                  return (
+                    <div
+                      key={m.model}
+                      className={`relative flex h-full flex-col rounded-xl p-6 sm:p-7 transition-shadow ${
+                        m.emphasized
+                          ? 'order-first sm:order-none bg-[#38495D] text-white shadow-xl ring-1 ring-[#01A3DB]/40'
+                          : 'bg-white border border-gray-200 shadow-sm hover:shadow-md'
+                      }`}
+                    >
+                        {m.emphasized ? (
+                          <div className="h-11 flex items-center mb-4">
+                            <img
+                              src="/new_wave_associates_logo_only.png"
+                              alt=""
+                              className="h-7 w-auto"
+                            />
+                          </div>
+                        ) : (
+                          <div className="w-11 h-11 rounded-lg flex items-center justify-center mb-4 bg-gray-100 text-[#38495D]">
+                            <Icon size={22} strokeWidth={2} />
+                          </div>
+                        )}
+                        <h3
+                          className={`text-xs sm:text-sm font-bold uppercase tracking-wide ${
+                            m.emphasized ? 'text-gray-300' : 'text-gray-500'
+                          }`}
+                        >
+                          {m.model}
+                        </h3>
+                        <p
+                          className={`mt-1.5 whitespace-pre-line text-xl sm:text-2xl font-bold leading-snug ${
+                            m.emphasized ? 'text-white' : 'text-[#38495D]'
+                          }`}
+                        >
+                          {m.primaryValue}
+                        </p>
+                        <div
+                          className={`mt-3 h-[2px] w-10 ${m.emphasized ? 'bg-[#f05e00]' : 'bg-[#38495D]'}`}
+                        />
+                        <p
+                          className={`mt-3 text-sm leading-relaxed ${
+                            m.emphasized ? 'text-gray-200' : 'text-gray-600'
+                          }`}
+                        >
+                          {m.supportingCopy}
+                        </p>
+                        <ul className="mt-5 space-y-2">
+                          {cardAttributes.map((a) => (
+                            <li
+                              key={a}
+                              className={`flex gap-2.5 text-sm leading-snug ${
+                                m.emphasized ? 'text-gray-100' : 'text-gray-700'
+                              }`}
+                            >
+                              <span className="mt-[7px] h-1.5 w-1.5 shrink-0 rounded-full bg-[#01A3DB]" />
+                              {a}
+                            </li>
+                          ))}
+                        </ul>
+                        <div className="mt-auto pt-4">
+                          <span
+                            className={`block rounded-lg px-3 py-2 text-xs font-semibold ${
+                              m.emphasized ? 'bg-[#f05e00] text-white' : 'text-[#38495D]'
+                            }`}
+                          >
+                            {bestFit}
+                          </span>
+                        </div>
                     </div>
-                  </div>
-                </button>
+                  );
+                })}
+              </div>
+
+              {/* Detailed comparison table (tablet and desktop; mobile relies on the cards above) */}
+              <div className="hidden md:block mb-8 sm:mb-10">
+                <div className="overflow-hidden rounded-xl border border-gray-200 shadow-sm">
+                  <table className="w-full table-fixed border-collapse bg-white text-left">
+                    {/* Column widths chosen so the New Wave (3rd) column is centered
+                        in the container, lining up with the centered New Wave card. */}
+                    <colgroup>
+                      <col style={{ width: '13%' }} />
+                      <col style={{ width: '21%' }} />
+                      <col style={{ width: '32%' }} />
+                      <col style={{ width: '34%' }} />
+                    </colgroup>
+                    <thead>
+                      <tr>
+                        <th className="px-5 py-4" />
+                        {leadershipModels.map((m) => (
+                          <th
+                            key={m.model}
+                            scope="col"
+                            className={`px-5 py-4 text-sm font-bold ${
+                              m.emphasized ? 'bg-[#38495D] text-white' : 'text-[#38495D]'
+                            }`}
+                          >
+                            {m.model}
+                          </th>
+                        ))}
+                      </tr>
+                    </thead>
+                    <tbody>
+                      {TABLE_ROWS.map((row, ri) => (
+                        <tr key={row.key} className={ri % 2 === 1 ? 'bg-gray-50' : ''}>
+                          <th
+                            scope="row"
+                            className="px-5 py-3.5 text-sm font-semibold text-[#38495D] align-top"
+                          >
+                            {row.label}
+                          </th>
+                          {leadershipModels.map((m) => (
+                            <td
+                              key={m.model}
+                              className={`px-5 py-3.5 text-sm align-top ${
+                                m.emphasized
+                                  ? 'bg-[#01A3DB]/5 font-semibold text-[#38495D]'
+                                  : 'text-gray-700'
+                              }`}
+                            >
+                              {m.table[row.key]}
+                            </td>
+                          ))}
+                        </tr>
+                      ))}
+                    </tbody>
+                  </table>
+                </div>
+              </div>
+
+              {/* Bottom callout */}
+              <div>
+                <div className="rounded-xl border border-gray-200 bg-gray-50 p-6 sm:p-8 text-center">
+                  <h3 className="text-xl sm:text-2xl font-bold text-[#38495D]">
+                    Choose the right solution for the challenge.
+                  </h3>
+                  <p className="mt-3 text-sm sm:text-base text-gray-700 leading-relaxed max-w-3xl mx-auto">
+                    Consulting is valuable when you need analysis. Executive search is right when you need a permanent hire. New Wave is built for the moments when your business needs experienced leadership now.
+                  </p>
+                  <p className="mt-3 text-sm text-gray-500">
+                    When the opportunity, transition, or challenge cannot wait, we are ready when you are.
+                  </p>
+                </div>
+              </div>
+              </div>
               </div>
 
               <div className="text-left mb-5 sm:mb-6 lg:mb-8">
@@ -156,15 +380,29 @@ export default function AboutUsPage({ onNavigate }: AboutUsPageProps) {
                     <p className="text-black text-xs sm:text-sm lg:text-base font-bold tracking-[0.2em] uppercase mb-2" style={{
                       letterSpacing: '0.25em'
                     }}>
-                      Our Mission and Values
+                      Why New Wave Exists
                     </p>
                     <div className="h-[2px] bg-[#f05e00]"></div>
                   </div>
                 </div>
-                <p className="text-sm sm:text-base text-gray-700 leading-relaxed mt-4 sm:mt-5 lg:mt-6 mb-6 sm:mb-8 lg:mb-10">
-                  We exist for operators navigating complexity. These are moments where important work stalls, ownership is fragmented, and real value is left on the table. Our role is not to advise from the sidelines, but to step in, take responsibility, and help teams move again.
-                  <br /><br />
-                  <span className="font-semibold">Our values</span> reflect how we show up, how we make decisions, and how we earn the right to be trusted inside our clients' businesses.
+                <p className="text-sm sm:text-base text-gray-700 leading-relaxed mt-4 sm:mt-5 lg:mt-6">
+                  Our mission is to give organizations immediate access to experienced leadership when the opportunity, challenge, or transition cannot wait.
+                </p>
+              </div>
+
+              <div className="text-left mb-5 sm:mb-6 lg:mb-8">
+                <div className="inline-block mb-2">
+                  <div>
+                    <p className="text-black text-xs sm:text-sm lg:text-base font-bold tracking-[0.2em] uppercase mb-2" style={{
+                      letterSpacing: '0.25em'
+                    }}>
+                      How We Lead
+                    </p>
+                    <div className="h-[2px] bg-[#f05e00]"></div>
+                  </div>
+                </div>
+                <p className="text-sm sm:text-base text-gray-700 leading-relaxed mt-4 sm:mt-5 lg:mt-6">
+                  Our principles define how we enter an organization, make decisions, lead teams, and earn trust.
                 </p>
               </div>
 
@@ -174,25 +412,25 @@ export default function AboutUsPage({ onNavigate }: AboutUsPageProps) {
                     We Own the Outcome
                   </h3>
                   <p className="text-sm sm:text-base text-gray-700 leading-relaxed">
-                    We take responsibility for results, not just recommendations. When we commit to work, we stay engaged until progress is real and value is delivered.
+                    We take responsibility for execution and results, not just recommendations. We stay engaged, remove barriers, and keep the work moving until measurable value is delivered.
                   </p>
                 </div>
 
                 <div className="bg-white border border-gray-200 rounded-lg p-6 sm:p-8 shadow-lg">
                   <h3 className="text-base sm:text-lg font-bold text-black tracking-[0.15em] uppercase mb-3 sm:mb-4">
-                    We Put Operators First
+                    We Lead From Experience
                   </h3>
                   <p className="text-sm sm:text-base text-gray-700 leading-relaxed">
-                    Our work is designed for the people running the business. We favor practical solutions, respect real-world constraints, and build systems teams can actually sustain.
+                    Our leaders have sat in the seat before. We bring practical judgment, understand real-world constraints, and know how to turn strategy into execution.
                   </p>
                 </div>
 
                 <div className="bg-white border border-gray-200 rounded-lg p-6 sm:p-8 shadow-lg">
                   <h3 className="text-base sm:text-lg font-bold text-black tracking-[0.15em] uppercase mb-3 sm:mb-4">
-                    We Choose Clarity Over Complexity
+                    We Choose Clarity
                   </h3>
                   <p className="text-sm sm:text-base text-gray-700 leading-relaxed">
-                    Plain language drives alignment. Alignment drives execution. We believe clear thinking and direct communication move organizations forward faster than complexity ever could.
+                    Clear priorities, decision rights, and communication create momentum. We simplify the work so teams understand what matters, who owns it, and what happens next.
                   </p>
                 </div>
 
@@ -201,7 +439,7 @@ export default function AboutUsPage({ onNavigate }: AboutUsPageProps) {
                     We Earn Trust Daily
                   </h3>
                   <p className="text-sm sm:text-base text-gray-700 leading-relaxed">
-                    Trust is built through consistent, honest execution, not credentials or promises. We do what we say we will do, communicate openly, and make progress visible.
+                    Trust is built through honest communication, visible progress, and consistent follow-through. We do what we say we will do and raise issues early.
                   </p>
                 </div>
               </div>
@@ -215,35 +453,6 @@ export default function AboutUsPage({ onNavigate }: AboutUsPageProps) {
         buttonText="Contact Us"
         onButtonClick={() => onNavigate('contact-us')}
       />
-
-      {lightboxOpen && (
-        <div
-          className="fixed inset-0 z-[9999] flex items-center justify-center p-0 lg:p-8"
-          role="dialog"
-          aria-modal="true"
-          aria-label="How We Differ"
-        >
-          <div
-            className="absolute inset-0 bg-black/70 backdrop-blur-sm"
-            onClick={() => setLightboxOpen(false)}
-          />
-          <div className="relative z-10 w-full h-[100svh] lg:h-auto lg:max-h-[90vh] lg:max-w-4xl lg:rounded-xl overflow-hidden bg-black/40 flex items-center justify-center">
-            <button
-              type="button"
-              onClick={() => setLightboxOpen(false)}
-              className="absolute top-3 right-3 z-20 p-2 rounded-full bg-black/50 hover:bg-black/70 transition-colors text-white"
-              aria-label="Close"
-            >
-              <X size={22} />
-            </button>
-            <img
-              src={`${import.meta.env.BASE_URL}how_we_differ_png_new.png`}
-              alt="How We Differ"
-              className="w-full h-full object-contain"
-            />
-          </div>
-        </div>
-      )}
     </div>
   );
 }
