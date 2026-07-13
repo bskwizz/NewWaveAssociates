@@ -2,7 +2,7 @@ import { useNavigate } from 'react-router-dom';
 
 export function pageKeyToPath(pageKey: string): string {
   if (pageKey === 'home') return '/';
-  if (pageKey === 'our-services') return '/services';
+  if (pageKey === 'our-services') return '/solutions';
   if (pageKey.startsWith('/')) return pageKey;
   return '/' + pageKey;
 }

@@ -15,7 +15,7 @@ function metaFor(route) {
     return { changefreq: 'weekly', priority: '0.9' };
   }
   if (route.startsWith('/insights/')) return { changefreq: 'weekly', priority: '0.7' };
-  if (['/services', '/about-us', '/contact-us'].includes(route)) {
+  if (['/solutions', '/about-us', '/contact-us'].includes(route)) {
     return { changefreq: 'monthly', priority: '0.9' };
   }
   if (route === '/privacy' || route === '/terms') {

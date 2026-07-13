@@ -18,10 +18,10 @@ export const ROUTE_META: Record<string, RouteMeta> = {
     description:
       'New Wave Associates brings operator-grade expertise in procurement, revenue operations, and transformation to help lower and middle market companies protect margins and grow.',
   },
-  '/services': {
-    title: `Our Services | ${BRAND}`,
+  '/solutions': {
+    title: `Leadership Solutions | ${BRAND}`,
     description:
-      'Procurement, revenue operations, and transformation services that protect margins, unlock vendor value, and prepare lower and middle market companies for the future.',
+      'Experienced fractional and interim executive leadership in procurement, sourcing, revenue operations, transformation, PMO, and M&A integration. Deeply vetted operators who step in and deliver measurable results.',
   },
   '/case-studies': {
     title: `Case Studies & Client Results | ${BRAND}`,
