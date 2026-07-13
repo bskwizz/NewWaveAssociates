@@ -47,7 +47,7 @@ export default function PageHeader() {
 
   return (
     <>
-    <div className="w-full py-3 relative z-50">
+    <div className="w-full pt-6 pb-3 relative z-50">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-6">
         <div className="flex items-center justify-between">
           <Link to="/" className="hover:opacity-80 transition-opacity">
