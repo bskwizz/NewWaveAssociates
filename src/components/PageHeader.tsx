@@ -52,9 +52,9 @@ export default function PageHeader() {
         <div className="flex items-center justify-between">
           <Link to="/" className="hover:opacity-80 transition-opacity">
             <img
-              src="/new_wave_associates_horizontal.png"
+              src="/new_wave_associates_horizontal_trimmed.png"
               alt="New Wave Associates"
-              className="h-12 sm:h-14 lg:h-16 w-auto"
+              className="h-11 sm:h-12 lg:h-14 w-auto"
             />
           </Link>
 
