@@ -8,9 +8,9 @@ export default function IntegrationConsolidationHub({ onNavigate }: IntegrationC
   return (
     <ListingPageLayout
       onNavigate={onNavigate}
-      categoryLabel="Case Studies"
-      title="Integration & Consolidation"
-      subtitle="IMOs, one-platform operating models, and synergy capture—from Day-1 readiness to Year-1 value realization."
+      categoryLabel="Results"
+      title="M&A Integration Results"
+      subtitle="Explore representative M&A Integration case studies demonstrating how experienced New Wave operators have stepped into critical leadership roles, established accountability, and delivered measurable business outcomes."
     >
       <section className="cs-grid">
         <article className="cs-card">
@@ -21,7 +21,7 @@ export default function IntegrationConsolidationHub({ onNavigate }: IntegrationC
             <p className="cs-card__text">Consolidated systems and unified data models to enable cross-enterprise visibility.</p>
             <p className="cs-card__meta">Outcome: 60% improvement in data reliability, zero downtime during cutover.</p>
           </div>
-          <a className="cs-card__link" href="#" onClick={(e) => { e.preventDefault(); onNavigate('case-studies/integration-multisite-system'); }}>Read full case →</a>
+          <a className="cs-card__link" href="#" onClick={(e) => { e.preventDefault(); onNavigate('case-studies/integration-multisite-system'); }}>View Case Study →</a>
         </article>
 
         <article className="cs-card">
@@ -32,7 +32,7 @@ export default function IntegrationConsolidationHub({ onNavigate }: IntegrationC
             <p className="cs-card__text">Led a complex launch and asset transition with zero downtime and faster operational readiness.</p>
             <p className="cs-card__meta">Outcome: Complete transition in 90 days; accelerated ROI realization.</p>
           </div>
-          <a className="cs-card__link" href="#" onClick={(e) => { e.preventDefault(); onNavigate('case-studies/integration-partnership-transition'); }}>Read full case →</a>
+          <a className="cs-card__link" href="#" onClick={(e) => { e.preventDefault(); onNavigate('case-studies/integration-partnership-transition'); }}>View Case Study →</a>
         </article>
 
         <article className="cs-card">
@@ -43,7 +43,7 @@ export default function IntegrationConsolidationHub({ onNavigate }: IntegrationC
             <p className="cs-card__text">Standardized contract structure and workflows to improve billing accuracy and renewal visibility.</p>
             <p className="cs-card__meta">Outcome: 50% faster contract processing and improved revenue integrity.</p>
           </div>
-          <a className="cs-card__link" href="#" onClick={(e) => { e.preventDefault(); onNavigate('case-studies/integration-agreements-standardization'); }}>Read full case →</a>
+          <a className="cs-card__link" href="#" onClick={(e) => { e.preventDefault(); onNavigate('case-studies/integration-agreements-standardization'); }}>View Case Study →</a>
         </article>
 
         <article className="cs-card">
@@ -54,7 +54,7 @@ export default function IntegrationConsolidationHub({ onNavigate }: IntegrationC
             <p className="cs-card__text">Streamlined product catalog for consistent pricing and financial alignment.</p>
             <p className="cs-card__meta">Outcome: 60% SKU reduction and faster quoting accuracy.</p>
           </div>
-          <a className="cs-card__link" href="#" onClick={(e) => { e.preventDefault(); onNavigate('case-studies/integration-catalog-rationalization'); }}>Read full case →</a>
+          <a className="cs-card__link" href="#" onClick={(e) => { e.preventDefault(); onNavigate('case-studies/integration-catalog-rationalization'); }}>View Case Study →</a>
         </article>
 
         <article className="cs-card">
@@ -65,7 +65,7 @@ export default function IntegrationConsolidationHub({ onNavigate }: IntegrationC
             <p className="cs-card__text">Unified systems and BI frameworks to drive faster, data-informed decisions.</p>
             <p className="cs-card__meta">Outcome: 40% tech footprint reduction, reporting latency cut to hours.</p>
           </div>
-          <a className="cs-card__link" href="#" onClick={(e) => { e.preventDefault(); onNavigate('case-studies/integration-techstack-bi'); }}>Read full case →</a>
+          <a className="cs-card__link" href="#" onClick={(e) => { e.preventDefault(); onNavigate('case-studies/integration-techstack-bi'); }}>View Case Study →</a>
         </article>
       </section>
     </ListingPageLayout>

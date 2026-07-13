@@ -3,6 +3,8 @@ import type { ReactNode } from 'react';
 interface SectionProps {
   /** Background tint. Homepage sections alternate white / light gray. */
   background?: 'white' | 'gray';
+  /** Optional element id (e.g. a scroll/anchor target). */
+  id?: string;
   /** Extra classes appended to the <section> element. */
   className?: string;
   /** When true, tags the section with data-insights-ready for the prerenderer. */
@@ -16,6 +18,7 @@ interface SectionProps {
 // this in one place is what makes the sections feel congruent.
 export default function Section({
   background = 'white',
+  id,
   className = '',
   dataInsightsReady,
   children,
@@ -23,6 +26,7 @@ export default function Section({
   const bg = background === 'gray' ? 'bg-gray-50' : 'bg-white';
   return (
     <section
+      id={id}
       className={`${bg} py-16 sm:py-20 lg:py-24 ${className}`}
       {...(dataInsightsReady ? { 'data-insights-ready': 'true' } : {})}
     >

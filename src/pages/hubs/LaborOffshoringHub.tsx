@@ -8,9 +8,9 @@ export default function LaborOffshoringHub({ onNavigate }: LaborOffshoringHubPro
   return (
     <ListingPageLayout
       onNavigate={onNavigate}
-      categoryLabel="Case Studies"
-      title="Labor Strategy & Offshoring"
-      subtitle="Hybrid operating models combining near-shore, off-shore, and digital labor—built to expand capacity and reduce cost without sacrificing quality."
+      categoryLabel="Results"
+      title="Strategic Sourcing Results"
+      subtitle="Explore representative Strategic Sourcing case studies demonstrating how experienced New Wave operators have stepped into critical leadership roles, established accountability, and delivered measurable business outcomes."
     >
       <section className="cs-grid">
         <article className="cs-card">
@@ -21,7 +21,7 @@ export default function LaborOffshoringHub({ onNavigate }: LaborOffshoringHubPro
             <p className="cs-card__text">Designed a hybrid global delivery model to reduce cost and increase throughput for a multi-entity MSP.</p>
             <p className="cs-card__meta">Outcome: Unified operating model with $10M+ cost savings expected (program WIP).</p>
           </div>
-          <a className="cs-card__link" href="#" onClick={(e) => { e.preventDefault(); onNavigate('case-studies/labor-itmsp-offshoring'); }}>Read full case →</a>
+          <a className="cs-card__link" href="#" onClick={(e) => { e.preventDefault(); onNavigate('case-studies/labor-itmsp-offshoring'); }}>View Case Study →</a>
         </article>
 
         <article className="cs-card">
@@ -32,7 +32,7 @@ export default function LaborOffshoringHub({ onNavigate }: LaborOffshoringHubPro
             <p className="cs-card__text">Built a compliant captive BPO and centralized non-clinical operations to materially reduce cost-to-serve.</p>
             <p className="cs-card__meta">Outcome: $20M ARR savings through captive BPO model.</p>
           </div>
-          <a className="cs-card__link" href="#" onClick={(e) => { e.preventDefault(); onNavigate('case-studies/labor-healthcare-offshoring'); }}>Read full case →</a>
+          <a className="cs-card__link" href="#" onClick={(e) => { e.preventDefault(); onNavigate('case-studies/labor-healthcare-offshoring'); }}>View Case Study →</a>
         </article>
 
         <article className="cs-card">
@@ -43,7 +43,7 @@ export default function LaborOffshoringHub({ onNavigate }: LaborOffshoringHubPro
             <p className="cs-card__text">Assessed functional performance, span of control, and regional variance; delivered a cost takeout roadmap.</p>
             <p className="cs-card__meta">Outcome: Identified $150M+ in operational savings potential.</p>
           </div>
-          <a className="cs-card__link" href="#" onClick={(e) => { e.preventDefault(); onNavigate('case-studies/labor-healthcare-review'); }}>Read full case →</a>
+          <a className="cs-card__link" href="#" onClick={(e) => { e.preventDefault(); onNavigate('case-studies/labor-healthcare-review'); }}>View Case Study →</a>
         </article>
       </section>
     </ListingPageLayout>

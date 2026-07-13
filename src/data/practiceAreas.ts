@@ -1,7 +1,9 @@
-// Single source of truth for the six Leadership Practice Areas and their URL
-// slugs. Used by the Results page filter (parsing/serializing the
-// ?practiceArea= query param) and by the Solutions "View {area} Results" links,
-// so the names and slugs never drift apart.
+// Single source of truth for the six Leadership Practice Areas: display name,
+// URL slug (the ?practiceArea= value used by the Results filter and the
+// Solutions deep-links), and the existing case-study hub route each maps to.
+// Used by the Solutions "View {area} Results" links, the Results filter, the
+// filtered context message, and the Results card "Explore {area} Case Studies"
+// CTAs, so names, slugs, and routes never drift apart.
 
 export const PRACTICE_AREAS = [
   'Procurement',
@@ -14,21 +16,31 @@ export const PRACTICE_AREAS = [
 
 export type PracticeAreaName = (typeof PRACTICE_AREAS)[number];
 
-const SLUG_BY_NAME: Record<PracticeAreaName, string> = {
-  Procurement: 'procurement',
-  'Strategic Sourcing': 'strategic-sourcing',
-  'Revenue Operations': 'revenue-operations',
-  'Transformation Office': 'transformation-office',
-  'Project Management Office': 'project-management-office',
-  'M&A Integration': 'ma-integration',
+interface PracticeAreaMeta {
+  slug: string;
+  /** Existing (legacy-named) case-study hub route. Preserved to avoid breaking links. */
+  hubPath: string;
+}
+
+const META: Record<PracticeAreaName, PracticeAreaMeta> = {
+  Procurement: { slug: 'procurement', hubPath: '/hub-sga-optimization' },
+  'Strategic Sourcing': { slug: 'strategic-sourcing', hubPath: '/hub-labor-offshoring' },
+  'Revenue Operations': { slug: 'revenue-operations', hubPath: '/hub-gtm-growth' },
+  'Transformation Office': { slug: 'transformation-office', hubPath: '/hub-ai-automation' },
+  'Project Management Office': { slug: 'project-management-office', hubPath: '/hub-transformation-office' },
+  'M&A Integration': { slug: 'ma-integration', hubPath: '/hub-integration-consolidation' },
 };
 
 const NAME_BY_SLUG: Record<string, PracticeAreaName> = Object.fromEntries(
-  Object.entries(SLUG_BY_NAME).map(([name, slug]) => [slug, name as PracticeAreaName])
+  (Object.entries(META) as [PracticeAreaName, PracticeAreaMeta][]).map(([name, m]) => [m.slug, name])
 );
 
 export function practiceAreaSlug(name: PracticeAreaName): string {
-  return SLUG_BY_NAME[name];
+  return META[name].slug;
+}
+
+export function practiceAreaHubPath(name: PracticeAreaName): string {
+  return META[name].hubPath;
 }
 
 // Returns the matching practice-area name, or null for a missing/unknown slug

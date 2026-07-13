@@ -8,9 +8,9 @@ export default function AIAutomationHub({ onNavigate }: AIAutomationHubProps) {
   return (
     <ListingPageLayout
       onNavigate={onNavigate}
-      categoryLabel="Case Studies"
-      title="AI & Intelligent Automation"
-      subtitle="AI-enabled workflows, adoption governance, and measurable cycle-time compression—automation that sticks."
+      categoryLabel="Results"
+      title="Transformation Office Results"
+      subtitle="Explore representative Transformation Office case studies demonstrating how experienced New Wave operators have stepped into critical leadership roles, established accountability, and delivered measurable business outcomes."
     >
       <section className="cs-grid">
         <article className="cs-card">
@@ -21,7 +21,7 @@ export default function AIAutomationHub({ onNavigate }: AIAutomationHubProps) {
             <p className="cs-card__text">Deployed an enterprise AP platform (OCR → match → approve → pay) with auditability and vendor self-service.</p>
             <p className="cs-card__meta">Outcome: Processing cost ↓ to $1–$2/invoice, ~65% FTE efficiency, 6–9 month payback.</p>
           </div>
-          <a className="cs-card__link" href="#" onClick={(e) => { e.preventDefault(); onNavigate('case-studies/automation-ap-makeover'); }}>Read full case →</a>
+          <a className="cs-card__link" href="#" onClick={(e) => { e.preventDefault(); onNavigate('case-studies/automation-ap-makeover'); }}>View Case Study →</a>
         </article>
 
         <article className="cs-card">
@@ -32,7 +32,7 @@ export default function AIAutomationHub({ onNavigate }: AIAutomationHubProps) {
             <p className="cs-card__text">Prioritized collections, automated dunning, cash application, and dispute resolution with credit analytics.</p>
             <p className="cs-card__meta">Outcome: 40–60% cost-to-collect reduction, DSO ↓ 5–15 days, 6–9 month payback.</p>
           </div>
-          <a className="cs-card__link" href="#" onClick={(e) => { e.preventDefault(); onNavigate('case-studies/automation-ar-acceleration'); }}>Read full case →</a>
+          <a className="cs-card__link" href="#" onClick={(e) => { e.preventDefault(); onNavigate('case-studies/automation-ar-acceleration'); }}>View Case Study →</a>
         </article>
       </section>
     </ListingPageLayout>
