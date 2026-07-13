@@ -22,7 +22,7 @@ const primaryButton =
 
 // Headline KPIs — numbers are the primary visual element and count up on view.
 const metrics: { value: number; prefix?: string; suffix?: string; decimals?: number; label: string }[] = [
-  { value: 45, prefix: '$', suffix: 'M+', label: 'Documented Cost Savings Delivered' },
+  { value: 60, prefix: '$', suffix: 'M+', label: 'Documented Cost Savings Delivered' },
   { value: 35, suffix: '+', label: 'Mergers & Acquisitions Supported' },
   { value: 11, prefix: '$', suffix: 'M', label: 'Annual Operating Efficiencies Delivered' },
   { value: 20, suffix: '%', label: 'Pricing Improvement Achieved' },

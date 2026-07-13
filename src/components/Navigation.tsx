@@ -14,7 +14,7 @@ export default function Navigation({ currentPage, onNavigate }: NavigationProps)
     { label: 'Solutions', page: 'our-services' },
     { label: 'Results', page: 'case-studies' },
     { label: 'Insights', page: 'insights' },
-    { label: 'About Us', page: 'about-us' },
+    { label: 'About', page: 'about-us' },
     { label: 'Contact Us', page: 'contact-us' },
   ];
 

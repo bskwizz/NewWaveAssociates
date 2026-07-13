@@ -1,5 +1,5 @@
 import { useRef, useEffect, useState } from 'react';
-import { Linkedin, X } from 'lucide-react';
+import { X } from 'lucide-react';
 import CTABar from '../components/CTABar';
 import PageHeader from '../components/PageHeader';
 
@@ -38,14 +38,12 @@ const teamMembers = [
   },
 ];
 
+const aboutIntro =
+  'New Wave was built on a simple belief: the most valuable thing a company can have is experienced leaders who have done the job before. We provide deeply vetted executives who step in quickly, establish accountability, solve complex business challenges, and deliver measurable results across procurement, strategic sourcing, revenue operations, transformation, project management, and M&A integration.';
+
 export default function AboutUsPage({ onNavigate }: AboutUsPageProps) {
-  const [fadeIn, setFadeIn] = useState(false);
   const [lightboxOpen, setLightboxOpen] = useState(false);
   const vantaRef = useRef<HTMLDivElement>(null);
-
-  useEffect(() => {
-    setFadeIn(true);
-  }, []);
 
   useEffect(() => {
     if (lightboxOpen) {
@@ -65,87 +63,51 @@ export default function AboutUsPage({ onNavigate }: AboutUsPageProps) {
 
         <h1 className="sr-only">About New Wave Associates</h1>
 
-        {/* Wave divider (no layout shift) */}
-        <div className="pointer-events-none relative h-0">
-          <img
-            src={`${import.meta.env.BASE_URL}wave_graphic_about_us.svg`}
-            alt=""
-            className="block w-full h-auto max-w-[1600px] mx-auto -translate-y-[42%]"
-          />
-        </div>
-
         <div className="capabilities-hero__inner hero-content relative z-20 pt-[32px] sm:pt-[48px] lg:pt-[4rem]">
           <div className="max-w-7xl mx-auto px-4 sm:px-5 md:px-6 lg:px-6 xl:px-8">
             <div className="w-full">
-              <div className="grid grid-cols-1 md:grid-cols-2 gap-6 sm:gap-8 md:gap-8 lg:gap-10 xl:gap-12 items-start mb-6 sm:mb-8 lg:mb-10 xl:mb-12">
-                <div className="text-left">
-                  <div className="inline-block mb-2">
-                    <div>
-                      <p className="text-black text-xs sm:text-sm lg:text-base font-bold tracking-[0.2em] uppercase mb-2" style={{
-                        letterSpacing: '0.25em'
-                      }}>
-                        The Right Operators
-                      </p>
-                      <div className="h-[2px] bg-[#f05e00]"></div>
-                    </div>
-                  </div>
-                  <p className="text-sm sm:text-base text-gray-700 leading-relaxed mt-4 sm:mt-5 lg:mt-6">
-                    We have <span className="font-semibold">directly</span> led procurement, revenue operations, and M&A across lower and middle market organizations
+              {/* About — centered hero */}
+              <div className="text-center max-w-3xl mx-auto pt-2 sm:pt-4 lg:pt-6">
+                <div className="inline-block mb-5 sm:mb-6">
+                  <p className="text-[#f05e00] text-xs sm:text-sm lg:text-base font-bold uppercase" style={{ letterSpacing: '0.25em' }}>
+                    About Us
                   </p>
+                  <div className="mt-2 h-[2px] bg-[#f05e00]"></div>
                 </div>
+                <h2 className="text-4xl sm:text-5xl lg:text-6xl font-extrabold tracking-tight text-[#38495D] leading-tight">
+                  Operators.
+                  <br />
+                  Ready when you are.
+                </h2>
+                <p className="mt-6 sm:mt-7 text-base sm:text-lg text-gray-700 leading-relaxed">
+                  {aboutIntro}
+                </p>
               </div>
 
-              <div className="grid grid-cols-1 md:grid-cols-2 gap-5 sm:gap-6 md:gap-6 lg:gap-7 xl:gap-8 pb-8 sm:pb-10 md:pb-12 lg:pb-14 xl:pb-16">
+              {/* The four of us — overlapping cluster of rounded, full-color photos */}
+              <div className="flex justify-center pt-10 sm:pt-12 lg:pt-14 pb-8 sm:pb-10 md:pb-12 lg:pb-16">
                 {teamMembers.map((member, index) => (
                   <div
                     key={index}
-                    className="bg-white border border-gray-200 rounded-lg p-4 sm:p-5 shadow-lg hover:shadow-xl transition-all group"
+                    className={`relative w-24 h-24 sm:w-28 sm:h-28 lg:w-36 lg:h-36 rounded-full ring-4 ring-white overflow-hidden bg-gray-100 shadow-lg transition-transform duration-300 hover:z-10 hover:scale-105 ${index > 0 ? '-ml-5 sm:-ml-6 lg:-ml-8' : ''}`}
                   >
-                    <div className="flex flex-col sm:flex-row gap-4 sm:gap-5 mb-4 sm:mb-5">
-                      <div className="w-32 h-32 sm:w-36 sm:h-36 lg:w-40 lg:h-40 flex-shrink-0 flex items-center justify-center overflow-hidden bg-white rounded-lg mx-auto sm:mx-0">
-                        <img
-                          src={`${import.meta.env.BASE_URL}${member.image}`}
-                          alt={member.name}
-                          className="w-full h-full object-cover grayscale group-hover:grayscale-0 transition-all duration-300"
-                          onError={(e) => {
-                            const target = e.target as HTMLImageElement;
-                            target.style.display = 'none';
-                            const parent = target.parentElement;
-                            if (parent) {
-                              parent.classList.add('bg-gradient-to-br', 'from-[#01A3DB]', 'to-[#38495D]');
-                              const initials = document.createElement('div');
-                              initials.className = 'w-20 h-20 sm:w-22 sm:h-22 lg:w-24 lg:h-24 bg-white/20 rounded-full flex items-center justify-center';
-                              initials.innerHTML = `<span class="text-white text-2xl sm:text-2xl lg:text-3xl font-bold">${member.name.split(' ').map(n => n[0]).join('')}</span>`;
-                              parent.appendChild(initials);
-                            }
-                          }}
-                        />
-                      </div>
-                      <div className="flex-1 text-center sm:text-left flex flex-col justify-center">
-                        <h3 className="text-lg sm:text-xl font-bold text-black mb-1">
-                          {member.name}
-                        </h3>
-                        <p className="text-sm sm:text-base text-gray-600">{member.title}</p>
-                      </div>
-                    </div>
-
-                    <div className="border-t border-gray-200 mb-3 sm:mb-4"></div>
-
-                    <p className="text-sm sm:text-base text-gray-700 leading-relaxed mb-3 sm:mb-4">
-                      {member.bio}
-                    </p>
-
-                    <div className="border-t border-gray-200 mb-3 sm:mb-4"></div>
-
-                    <a
-                      href={member.linkedin}
-                      target="_blank"
-                      rel="noopener noreferrer"
-                      className="inline-flex items-center gap-2 text-[#01A3DB] hover:text-[#0192C5] transition-colors font-medium text-sm sm:text-base"
-                    >
-                      <Linkedin size={18} className="sm:w-5 sm:h-5" />
-                      <span>LinkedIn Profile</span>
-                    </a>
+                    <img
+                      src={`${import.meta.env.BASE_URL}${member.image}`}
+                      alt={member.name}
+                      className="w-full h-full object-cover"
+                      onError={(e) => {
+                        const target = e.target as HTMLImageElement;
+                        target.style.display = 'none';
+                        const parent = target.parentElement;
+                        if (parent) {
+                          parent.classList.add('bg-gradient-to-br', 'from-[#01A3DB]', 'to-[#38495D]');
+                          const initials = document.createElement('div');
+                          initials.className = 'w-full h-full flex items-center justify-center';
+                          initials.innerHTML = `<span class="text-white text-2xl lg:text-3xl font-bold">${member.name.split(' ').map((n) => n[0]).join('')}</span>`;
+                          parent.appendChild(initials);
+                        }
+                      }}
+                    />
                   </div>
                 ))}
               </div>

@@ -26,7 +26,7 @@ const navItems = [
     isActive: (p: string) => p.startsWith('/insights'),
   },
   {
-    label: 'About Us',
+    label: 'About',
     path: '/about-us',
     isActive: (p: string) => p === '/about-us',
   },

@@ -26,7 +26,7 @@ export const ROUTE_META: Record<string, RouteMeta> = {
   '/results': {
     title: `Results | ${BRAND}`,
     description:
-      'Proven executive leadership outcomes: $45M+ in documented cost savings, 35+ M&A supported, and measurable results delivered through fractional, interim, and project-based leaders.',
+      'Proven executive leadership outcomes: $60M+ in documented cost savings, 35+ M&A supported, and measurable results delivered through fractional, interim, and project-based leaders.',
   },
   '/about-us': {
     title: `About Us | ${BRAND}`,
