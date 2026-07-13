@@ -399,13 +399,6 @@ export default function OurServicesPage({ onNavigate }: OurServicesPageProps) {
         </div>
         </div>
 
-        <div className="pointer-events-none absolute bottom-0 left-0 right-0 z-[1] flex justify-center translate-y-[55px] lg:translate-y-[calc(15%+184px)]">
-          <img
-            src={`${import.meta.env.BASE_URL}wave_graphic_our_services.svg`}
-            alt=""
-            className="block w-full h-auto max-w-[1600px] mx-auto"
-          />
-        </div>
       </div>
 
       <div className="bg-gray-50 pt-5 sm:pt-6 lg:pt-32">
