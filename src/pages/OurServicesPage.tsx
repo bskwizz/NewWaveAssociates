@@ -115,18 +115,9 @@ interface OurServicesPageProps {
 
 export default function OurServicesPage({ onNavigate }: OurServicesPageProps) {
   const [showBackToTop, setShowBackToTop] = useState(false);
-  const [fadeInImage, setFadeInImage] = useState(false);
-  const [fadeInGtm, setFadeInGtm] = useState(false);
-  const [fadeInCost, setFadeInCost] = useState(false);
-  const [fadeInOps, setFadeInOps] = useState(false);
   const vantaRef = useRef<HTMLDivElement>(null);
 
   useEffect(() => {
-    setFadeInImage(true);
-    setTimeout(() => setFadeInGtm(true), 300);
-    setTimeout(() => setFadeInCost(true), 600);
-    setTimeout(() => setFadeInOps(true), 900);
-
     const hero = document.getElementById('our-services-hero');
     if (hero) {
       hero.classList.remove('is-sticky');
@@ -302,8 +293,8 @@ export default function OurServicesPage({ onNavigate }: OurServicesPageProps) {
           <div className="relative flex items-start flex-1 pt-6 pb-4 sm:pt-8 sm:pb-6 lg:pt-12 lg:pb-0 lg:min-h-0">
           <div className="w-full">
             <div className="max-w-7xl mx-auto px-4 sm:px-5 md:px-6 lg:px-6 xl:px-8 w-full">
-              <div className="flex flex-col lg:grid lg:grid-cols-2 gap-6 sm:gap-8 md:gap-8 lg:gap-10 xl:gap-12 lg:items-center">
-                <div className="hero-rotator text-left order-1 lg:order-2">
+              <div className="flex flex-col">
+                <div className="hero-rotator text-left">
                   <div className="inline-block mb-1 lg:mb-2">
                     <div>
                       <p className="text-black text-xs sm:text-sm lg:text-base font-bold uppercase mb-1 lg:mb-2 animate-fade-in" style={{
@@ -324,75 +315,12 @@ export default function OurServicesPage({ onNavigate }: OurServicesPageProps) {
                       Our interim leadership services are informed by decades of combined experience; our entire team has served as director, VP, and C-level executives in house.
                     </p>
 
-                    <p className="text-gray-700 text-sm sm:text-base leading-relaxed hidden lg:block">
+                    <p className="text-gray-700 text-sm sm:text-base leading-relaxed">
                       We modernize core business operations through process redesign, data integration, post-merger integration, and performance governance to scale cross-functional execution at speed and quality.
                     </p>
                   </div>
                 </div>
 
-                <p className="text-gray-700 text-sm sm:text-base leading-relaxed order-2 lg:hidden -mt-4 sm:-mt-5">
-                  We modernize core business operations through process redesign, data integration, post-merger integration, and performance governance to scale cross-functional execution at speed and quality.
-                </p>
-
-                <div className="flywheel-hero__media relative order-3 lg:order-1 mt-6 lg:mt-0">
-                  <img
-                    className="flywheel-hero__img opacity-100"
-                    style={{ maxWidth: '100%', width: '100%', margin: '0 auto' }}
-                    src={`${import.meta.env.BASE_URL}final_new_wave_flywheel.pdf.png`}
-                    alt="New Wave Flywheel"
-                  />
-            <div
-              className="flywheel-overlay flywheel-overlay--gtm opacity-0"
-            ></div>
-            <a
-              href="#gtm-strategy"
-              className="flywheel-hotspot flywheel-hotspot--gtm"
-              aria-label="Go to Go-to-Market Strategy"
-              onClick={(e) => {
-                e.preventDefault();
-                const target = document.getElementById('gtm-strategy');
-                if (target) {
-                  const headerH = 64;
-                  const y = target.getBoundingClientRect().top + window.scrollY - headerH - 16;
-                  window.scrollTo({ top: y, behavior: 'smooth' });
-                }
-              }}
-            ></a>
-            <div
-              className="flywheel-overlay flywheel-overlay--cost opacity-0"
-            ></div>
-            <a
-              href="#cost-optimization"
-              className="flywheel-hotspot flywheel-hotspot--cost"
-              aria-label="Go to Cost Optimization"
-              onClick={(e) => {
-                e.preventDefault();
-                const target = document.getElementById('cost-optimization');
-                if (target) {
-                  const headerH = 64;
-                  const y = target.getBoundingClientRect().top + window.scrollY - headerH - 16;
-                  window.scrollTo({ top: y, behavior: 'smooth' });
-                }
-              }}
-            ></a>
-            <div
-              className="flywheel-overlay flywheel-overlay--ops opacity-0"
-            ></div>
-            <a
-              href="#operational-efficiencies"
-              className="flywheel-hotspot flywheel-hotspot--ops"
-              aria-label="Go to Operational Efficiencies"
-              onClick={(e) => {
-                e.preventDefault();
-                const target = document.getElementById('operational-efficiencies');
-                if (target) {
-                  const headerH = 64;
-                  const y = target.getBoundingClientRect().top + window.scrollY - headerH - 16;
-                  window.scrollTo({ top: y, behavior: 'smooth' });
-                }
-              }}
-            ></a>
-                </div>
               </div>
             </div>
           </div>
