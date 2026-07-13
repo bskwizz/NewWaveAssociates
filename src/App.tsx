@@ -4,7 +4,7 @@ import ScrollToTop from './components/ScrollToTop';
 import RouteSeo from './components/RouteSeo';
 import Footer from './components/Footer';
 import HomePage from './pages/HomePage';
-import OurServicesPage from './pages/OurServicesPage';
+import SolutionsPage from './pages/SolutionsPage';
 import CapabilitiesPage from './pages/CapabilitiesPage';
 import AboutUsPage from './pages/AboutUsPage';
 import ContactUsPage from './pages/ContactUsPage';
@@ -64,7 +64,7 @@ function App() {
       <main className="flex-grow">
         <Routes>
           <Route path="/" element={<WithNav Component={HomePage} />} />
-          <Route path="/services" element={<WithNav Component={OurServicesPage} />} />
+          <Route path="/solutions" element={<WithNav Component={SolutionsPage} />} />
           <Route path="/case-studies" element={<WithNav Component={CapabilitiesPage} />} />
           <Route path="/about-us" element={<WithNav Component={AboutUsPage} />} />
           <Route path="/insights" element={<WithNav Component={InsightsPage} />} />

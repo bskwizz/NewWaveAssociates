@@ -8,7 +8,7 @@ import { join } from 'node:path';
 export const STATIC_ROUTES = [
   // Main pages
   '/',
-  '/services',
+  '/solutions',
   '/case-studies',
   '/about-us',
   '/insights',

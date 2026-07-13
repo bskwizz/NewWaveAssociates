@@ -6,9 +6,9 @@ import { persistUnlock, recordLead } from '../services/leadCaptureService';
 
 const navItems = [
   {
-    label: 'Our Services',
-    path: '/services',
-    isActive: (p: string) => p === '/services',
+    label: 'Solutions',
+    path: '/solutions',
+    isActive: (p: string) => p === '/solutions',
   },
   {
     label: 'Case Studies',
