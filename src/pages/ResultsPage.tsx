@@ -1,11 +1,20 @@
 import { useState, useEffect } from 'react';
-import { Link } from 'react-router-dom';
+import { Link, useSearchParams } from 'react-router-dom';
 import PageHeader from '../components/PageHeader';
 import Section from '../components/Section';
 import SectionHeader from '../components/SectionHeader';
 import EngagementCard, { type Engagement } from '../components/EngagementCard';
 import CountUp from '../components/CountUp';
 import { useInViewOnce } from '../hooks/useInViewOnce';
+import {
+  PRACTICE_AREAS,
+  practiceAreaFromSlug,
+  practiceAreaSlug,
+  type PracticeAreaName,
+} from '../data/practiceAreas';
+
+const ENGAGEMENT_TYPES = ['Interim', 'Fractional', 'Project-Based'] as const;
+const ALL = 'All';
 
 const primaryButton =
   'inline-block px-7 py-3.5 bg-[#f05e00] text-white text-base font-semibold uppercase tracking-wide rounded-md hover:bg-[#d94f00] transition-all shadow-sm hover:shadow-md';
@@ -20,110 +29,180 @@ const metrics: { value: number; prefix?: string; suffix?: string; decimals?: num
   { value: 8, suffix: '+', label: 'Industries Served' },
 ];
 
-// Existing engagement data, reorganized around the executive leadership role and
-// the engagement model, with outcomes rewritten short and scannable.
+// Structured engagement data. `practiceArea` and `model` drive the filters (never
+// inferred from text at runtime); key figures in outcomes are wrapped in ** ** so
+// EngagementCard renders them in <strong>.
 const engagements: Engagement[] = [
   {
     role: 'Vice President, Strategy & Transformation',
+    practiceArea: 'Transformation Office',
     model: 'Interim',
     industry: 'Technology & Managed Services',
     outcomes: [
-      'Delivered $11M in annual operating efficiencies',
-      'Created an M&A playbook supporting 35+ acquisitions',
+      'Delivered **$11M** in annual operating efficiencies',
+      'Created an M&A playbook supporting **35+ acquisitions**',
     ],
   },
   {
     role: 'Vice President, Revenue Operations',
+    practiceArea: 'Revenue Operations',
     model: 'Fractional',
     industry: 'B2B SaaS / FinTech',
     outcomes: [
       'Modernized the commercial technology stack',
       'Led multiple global M&A integrations',
-      'Increased ASP by 20% and reduced churn by 10%',
-      'Generated $2M in incremental ARR',
+      'Increased ASP by **20%** and reduced churn by **10%**',
+      'Generated **$2M** in incremental ARR',
     ],
   },
   {
     role: 'Chief Procurement Officer',
+    practiceArea: 'Procurement',
     model: 'Fractional',
     industry: 'Business Process Outsourcing',
     outcomes: [
-      'Drove vendor consolidation cutting $32M in annual cost',
-      'Streamlined operations to lower the cost structure',
+      'Delivered **$32M** in annual savings through vendor consolidation',
+      'Streamlined operations and reduced structural costs',
     ],
   },
   {
     role: 'Senior Director, Strategic Sourcing',
+    practiceArea: 'Strategic Sourcing',
     model: 'Fractional',
     industry: 'Healthcare',
     outcomes: [
-      'Delivered $22M in annual cost savings and unlocked $55M in working capital',
-      'Cleansed 60,000+ supplier records into a unified vendor master',
+      'Delivered **$22M** in annual cost savings and unlocked **$55M** in working capital',
+      'Cleansed **60,000+** supplier records into a unified vendor master',
     ],
   },
   {
     role: 'Director, Transformation',
+    practiceArea: 'Transformation Office',
     model: 'Interim',
     industry: 'Technology & Managed Services',
     outcomes: [
-      'Led high-impact initiatives across a $1B platform',
-      'Rationalized 80,000+ SKUs into one catalog, improving margin visibility',
+      'Led high-impact initiatives across a **$1B** platform',
+      'Rationalized **80,000+ SKUs** into one catalog and improved margin visibility',
     ],
   },
   {
     role: 'Chief Growth Officer',
+    practiceArea: 'Revenue Operations',
     model: 'Interim',
     industry: 'Technology & Managed Services',
     outcomes: [
       'Led a go-to-market transformation across pricing, ICP, and KPIs',
-      'Reduced revenue leakage with new pricing levers',
+      'Reduced revenue leakage through new pricing levers',
     ],
   },
   {
     role: 'Chief Operating Officer',
+    practiceArea: 'Transformation Office',
     model: 'Interim',
     industry: 'B2B SaaS / FinTech / AI',
     outcomes: [
-      'Owned product roadmap, positioning, and strategic direction',
-      'Set company-wide OKRs and KPI frameworks',
+      'Led product roadmap, market positioning, and strategic direction',
+      'Established company-wide OKRs and performance measures',
     ],
   },
   {
     role: 'Director, Strategy',
+    practiceArea: 'M&A Integration',
     model: 'Fractional',
     industry: 'B2B SaaS / FinTech',
     outcomes: [
-      'Increased net revenue retention 5% and cut costs 15%',
+      'Increased net revenue retention by **5%** and reduced costs by **15%**',
       'Directed global M&A integrations across pricing and go-to-market',
     ],
   },
   {
     role: 'Vice President, Strategic Sourcing',
+    practiceArea: 'Strategic Sourcing',
     model: 'Project-Based',
     industry: 'Waste & Recycling Services',
     outcomes: [
-      'Built a go-to-market strategy for organics waste recycling',
-      'Designed a new collections model leveraging existing fleet',
+      'Built the go-to-market strategy for an organics waste recycling offering',
+      'Designed a new collections model using existing fleet capacity',
     ],
   },
   {
     role: 'Vice President, Strategic Alliances',
+    practiceArea: 'Revenue Operations',
     model: 'Interim',
     industry: 'Banking & Payments',
     outcomes: [
-      'Launched a B2C payments product generating $22M in annual interchange revenue',
+      'Launched a B2C payments product generating **$22M** in annual interchange revenue',
       'Built CRM conversion and retention programs for card distribution',
     ],
   },
 ];
 
+// Compact accessible pill group used for both filter dimensions.
+function FilterGroup({
+  label,
+  options,
+  active,
+  onSelect,
+}: {
+  label: string;
+  options: readonly string[];
+  active: string;
+  onSelect: (value: string) => void;
+}) {
+  return (
+    <div>
+      <p className="text-xs font-bold uppercase tracking-[0.15em] text-[#38495D] mb-3">{label}</p>
+      <div className="flex flex-wrap gap-2" role="group" aria-label={label}>
+        {options.map((option) => {
+          const isActive = active === option;
+          return (
+            <button
+              key={option}
+              type="button"
+              aria-pressed={isActive}
+              onClick={() => onSelect(option)}
+              className={`rounded-full border px-4 py-1.5 text-sm font-medium transition-colors focus:outline-none focus-visible:ring-2 focus-visible:ring-[#01A3DB] focus-visible:ring-offset-2 ${
+                isActive
+                  ? 'bg-[#38495D] text-white border-[#38495D]'
+                  : 'bg-white text-[#38495D] border-gray-300 hover:border-[#01A3DB] hover:text-[#01A3DB]'
+              }`}
+            >
+              {option}
+            </button>
+          );
+        })}
+      </div>
+    </div>
+  );
+}
+
 export default function ResultsPage() {
   const [fadeIn, setFadeIn] = useState(false);
   const [kpiRef, kpiInView] = useInViewOnce<HTMLDivElement>({ threshold: 0.2 });
+  const [searchParams, setSearchParams] = useSearchParams();
+  const [activeType, setActiveType] = useState<string>(ALL);
 
   useEffect(() => {
     setFadeIn(true);
   }, []);
+
+  // Practice-area filter is backed by the ?practiceArea= query param so it can be
+  // deep-linked (e.g. from the Solutions page). Unknown/absent slug -> "All".
+  const activeArea: string = practiceAreaFromSlug(searchParams.get('practiceArea')) ?? ALL;
+
+  const selectArea = (name: string) => {
+    const next = new URLSearchParams(searchParams);
+    if (name === ALL) next.delete('practiceArea');
+    else next.set('practiceArea', practiceAreaSlug(name as PracticeAreaName));
+    setSearchParams(next, { replace: true });
+  };
+
+  // Both filters combine; original order is preserved within the result set.
+  const filteredEngagements = engagements.filter(
+    (e) =>
+      (activeArea === ALL || e.practiceArea === activeArea) &&
+      (activeType === ALL || e.model === activeType)
+  );
 
   return (
     <div>
@@ -209,17 +288,43 @@ export default function ResultsPage() {
         </div>
       </Section>
 
-      {/* Recent Leadership Engagements */}
+      {/* Representative Leadership Engagements */}
       <Section background="gray">
         <SectionHeader
-          label="RECENT LEADERSHIP ENGAGEMENTS"
-          intro="Every engagement is unique, but our approach is consistent. We step into leadership roles, establish accountability, and deliver measurable business outcomes. The engagements below represent a sample of the executive leadership roles our team has served."
+          label="REPRESENTATIVE LEADERSHIP ENGAGEMENTS"
+          intro="Every engagement is different. Our approach is not. We step into leadership roles, establish accountability, and deliver measurable business outcomes. The engagements below represent a sample of the executive leadership roles our team has served."
         />
-        <div className="grid grid-cols-1 lg:grid-cols-2 gap-5 sm:gap-6 lg:gap-8">
-          {engagements.map((engagement) => (
-            <EngagementCard key={engagement.role + engagement.industry} {...engagement} />
-          ))}
+        <p className="-mt-6 sm:-mt-7 lg:-mt-8 mb-8 sm:mb-10 max-w-[860px] text-base sm:text-lg font-medium text-[#38495D] leading-relaxed">
+          Filter engagements by leadership practice area or engagement model to explore
+          representative business outcomes.
+        </p>
+
+        <div className="mb-8 sm:mb-10 space-y-5 sm:space-y-6">
+          <FilterGroup
+            label="Leadership Practice Area"
+            options={[ALL, ...PRACTICE_AREAS]}
+            active={activeArea}
+            onSelect={selectArea}
+          />
+          <FilterGroup
+            label="Engagement Type"
+            options={[ALL, ...ENGAGEMENT_TYPES]}
+            active={activeType}
+            onSelect={setActiveType}
+          />
         </div>
+
+        {filteredEngagements.length > 0 ? (
+          <div className="grid grid-cols-1 lg:grid-cols-2 gap-5 sm:gap-6 lg:gap-8">
+            {filteredEngagements.map((engagement) => (
+              <EngagementCard key={engagement.role + engagement.industry} {...engagement} />
+            ))}
+          </div>
+        ) : (
+          <p role="status" className="text-base text-gray-600">
+            No matching engagements found.
+          </p>
+        )}
       </Section>
 
       {/* Bottom CTA */}

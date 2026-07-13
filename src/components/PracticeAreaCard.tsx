@@ -1,5 +1,6 @@
 import { Link } from 'react-router-dom';
 import { type LucideIcon } from 'lucide-react';
+import { practiceAreaSlug, type PracticeAreaName } from '../data/practiceAreas';
 
 export interface PracticeArea {
   icon: LucideIcon;
@@ -8,10 +9,9 @@ export interface PracticeArea {
   description: string;
   engagements: string[];
   idealWhen: string[];
-  /** Optional hub route key (e.g. "hub-gtm-growth") for a "View ... Results" link. */
-  hubRoute?: string;
-  /** Label used in the results link ("View {hubLabel} Results"); defaults to title. */
-  hubLabel?: string;
+  /** When set, shows a "View {resultsArea} Results" link deep-linking to the
+   *  Results page filtered to this practice area. */
+  resultsArea?: PracticeAreaName;
 }
 
 function BulletList({ label, items }: { label: string; items: string[] }) {
@@ -40,8 +40,7 @@ export default function PracticeAreaCard({
   description,
   engagements,
   idealWhen,
-  hubRoute,
-  hubLabel,
+  resultsArea,
 }: PracticeArea) {
   return (
     <div className="group flex h-full flex-col rounded-xl border border-gray-200 bg-white p-6 sm:p-7 shadow-sm transition-all duration-200 hover:-translate-y-1 hover:shadow-lg">
@@ -69,12 +68,12 @@ export default function PracticeAreaCard({
           <span className="text-[#38495D]">Interim</span> ·{' '}
           <span className="text-[#38495D]">Project-Based</span>
         </p>
-        {hubRoute && (
+        {resultsArea && (
           <Link
-            to={`/${hubRoute}`}
+            to={`/results?practiceArea=${practiceAreaSlug(resultsArea)}`}
             className="mt-3 inline-block text-sm font-semibold text-[#01A3DB] hover:text-[#0182b3] transition-colors"
           >
-            View {hubLabel ?? title} Results →
+            View {resultsArea} Results →
           </Link>
         )}
       </div>

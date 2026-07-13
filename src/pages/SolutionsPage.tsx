@@ -30,8 +30,7 @@ const practiceAreas: PracticeArea[] = [
       'Procurement transformation has stalled.',
       'Cost reduction is a strategic priority.',
     ],
-    hubRoute: 'hub-sga-optimization',
-    hubLabel: 'Procurement',
+    resultsArea: 'Procurement',
   },
   {
     icon: Handshake,
@@ -52,7 +51,7 @@ const practiceAreas: PracticeArea[] = [
       'Supplier costs continue to rise.',
       'Procurement lacks strategic capacity.',
     ],
-    hubRoute: 'hub-labor-offshoring',
+    resultsArea: 'Strategic Sourcing',
   },
   {
     icon: TrendingUp,
@@ -73,7 +72,7 @@ const practiceAreas: PracticeArea[] = [
       'Forecasts are unreliable.',
       'Commercial teams are misaligned.',
     ],
-    hubRoute: 'hub-gtm-growth',
+    resultsArea: 'Revenue Operations',
   },
   {
     icon: Workflow,
@@ -94,7 +93,7 @@ const practiceAreas: PracticeArea[] = [
       'Executive visibility is limited.',
       'Accountability has broken down.',
     ],
-    hubRoute: 'hub-ai-automation',
+    resultsArea: 'Transformation Office',
   },
   {
     icon: ClipboardList,
@@ -115,7 +114,7 @@ const practiceAreas: PracticeArea[] = [
       'Delivery risk is increasing.',
       'Portfolio visibility is lacking.',
     ],
-    hubRoute: 'hub-transformation-office',
+    resultsArea: 'Project Management Office',
   },
   {
     icon: GitMerge,
@@ -136,7 +135,7 @@ const practiceAreas: PracticeArea[] = [
       'Integration complexity is increasing.',
       'Leadership capacity is stretched.',
     ],
-    hubRoute: 'hub-integration-consolidation',
+    resultsArea: 'M&A Integration',
   },
 ];
 
