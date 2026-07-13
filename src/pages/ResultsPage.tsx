@@ -6,11 +6,6 @@ import SectionHeader from '../components/SectionHeader';
 import EngagementCard, { type Engagement } from '../components/EngagementCard';
 import CountUp from '../components/CountUp';
 import { useInViewOnce } from '../hooks/useInViewOnce';
-import { capabilities } from '../data/capabilities';
-
-interface ResultsPageProps {
-  onNavigate: (page: string) => void;
-}
 
 const primaryButton =
   'inline-block px-7 py-3.5 bg-[#f05e00] text-white text-base font-semibold uppercase tracking-wide rounded-md hover:bg-[#d94f00] transition-all shadow-sm hover:shadow-md';
@@ -122,7 +117,7 @@ const engagements: Engagement[] = [
   },
 ];
 
-export default function ResultsPage({ onNavigate }: ResultsPageProps) {
+export default function ResultsPage() {
   const [fadeIn, setFadeIn] = useState(false);
   const [kpiRef, kpiInView] = useInViewOnce<HTMLDivElement>({ threshold: 0.2 });
 
@@ -227,56 +222,8 @@ export default function ResultsPage({ onNavigate }: ResultsPageProps) {
         </div>
       </Section>
 
-      {/* Capabilities gateway — preserved so the detailed case-study and hub
-          pages stay reachable. */}
-      <Section background="white">
-        <SectionHeader
-          label="EXPLORE OUR WORK"
-          intro="The leadership we provide spans six core areas. Dive into the detailed case studies behind each."
-        />
-        <div className="grid grid-cols-1 md:grid-cols-2 gap-5 sm:gap-6 lg:gap-8">
-          {capabilities.map((capability) => (
-            <section
-              key={capability.id}
-              id={capability.id}
-              className="flex h-full flex-col rounded-xl border border-gray-200 bg-white p-6 sm:p-7 shadow-sm transition-all duration-200 hover:shadow-lg"
-            >
-              <div className="inline-block mb-4">
-                <p
-                  className="text-black text-xs sm:text-sm font-bold uppercase"
-                  style={{ letterSpacing: '0.15em' }}
-                >
-                  {capability.title}
-                </p>
-                <div className="mt-2 h-[2px] bg-[#f05e00]" />
-              </div>
-
-              <ul className="space-y-2.5">
-                {capability.points.map((point, i) => (
-                  <li key={i} className="flex items-start gap-2.5 text-sm sm:text-base text-gray-700 leading-snug">
-                    <span className="mt-[9px] h-1.5 w-1.5 shrink-0 rounded-full bg-[#01A3DB]" />
-                    <span>{point}</span>
-                  </li>
-                ))}
-              </ul>
-
-              <div className="mt-5 pt-4 border-t border-gray-100">
-                <p className="text-xs sm:text-sm font-semibold text-[#f05e00] mb-1">Outcome</p>
-                <p className="text-sm sm:text-base text-gray-700 leading-relaxed mb-4">{capability.outcome}</p>
-                <button
-                  onClick={() => onNavigate(capability.hubRoute)}
-                  className="mt-auto text-sm font-semibold text-[#01A3DB] hover:text-[#0182b3] transition-colors"
-                >
-                  View related case studies →
-                </button>
-              </div>
-            </section>
-          ))}
-        </div>
-      </Section>
-
       {/* Bottom CTA */}
-      <Section background="gray">
+      <Section background="white">
         <div className="max-w-3xl mx-auto text-center">
           <h2 className="text-3xl sm:text-4xl font-bold text-[#38495D] leading-tight">
             Need Leadership Like This?
