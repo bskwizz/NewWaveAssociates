@@ -89,7 +89,7 @@ export default function HeroRotator() {
           ))}
         </div>
 
-        <p className="text-sm sm:text-base text-gray-700 leading-relaxed mt-4 sm:mt-5 lg:mt-6 max-w-xl">
+        <p className="text-base sm:text-lg text-gray-700 leading-relaxed mt-4 sm:mt-5 lg:mt-6 max-w-xl">
           No recruiting. No six-month search. No junior consultants.
           <br />
           We deploy experienced, deeply vetted operators who step in quickly,{' '}
