@@ -198,7 +198,7 @@ export default function SolutionsPage() {
               <div className="mt-2 h-[2px] bg-[#f05e00]" />
             </div>
 
-            <p className="text-4xl sm:text-5xl lg:text-6xl font-extrabold tracking-tight text-[#38495D] leading-tight max-w-4xl">
+            <p className="text-4xl sm:text-5xl lg:text-6xl font-extrabold tracking-tight text-[#38495D] leading-tight max-w-5xl">
               Experienced Executive Leadership.
               <br />
               Exactly When You Need It.
