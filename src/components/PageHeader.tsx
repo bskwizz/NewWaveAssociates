@@ -54,7 +54,7 @@ export default function PageHeader() {
             <img
               src="/new_wave_associates_horizontal.png"
               alt="New Wave Associates"
-              className="h-10 sm:h-11 lg:h-12 w-auto"
+              className="h-12 sm:h-14 lg:h-16 w-auto"
             />
           </Link>
 
