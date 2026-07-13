@@ -85,7 +85,7 @@ export default function NextWaveHero() {
             to="/contact-us"
             className="inline-block px-7 py-3.5 bg-[#f05e00] text-white text-base font-semibold uppercase tracking-wide rounded-md hover:bg-[#d94f00] transition-all shadow-sm hover:shadow-md"
           >
-            Schedule Consultation
+            Start a Conversation
           </Link>
         </div>
       </div>
