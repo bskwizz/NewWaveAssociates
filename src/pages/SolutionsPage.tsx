@@ -1,4 +1,5 @@
-import { Link } from 'react-router-dom';
+import { useEffect } from 'react';
+import { Link, useLocation } from 'react-router-dom';
 import {
   Package, Handshake, TrendingUp, Workflow, ClipboardList, GitMerge,
   CalendarClock, Zap, Target, CheckCircle2, type LucideIcon,
@@ -7,6 +8,7 @@ import PageHeader from '../components/PageHeader';
 import Section from '../components/Section';
 import SectionHeader from '../components/SectionHeader';
 import PracticeAreaCard, { PracticeArea } from '../components/PracticeAreaCard';
+import { practiceAreaSlug } from '../data/practiceAreas';
 
 // The six leadership practice areas, each a consistent "mini landing page".
 const practiceAreas: PracticeArea[] = [
@@ -183,6 +185,19 @@ const primaryButton =
   'inline-block px-7 py-3.5 bg-[#f05e00] text-white text-base font-semibold uppercase tracking-wide rounded-md hover:bg-[#d94f00] transition-all shadow-sm hover:shadow-md';
 
 export default function SolutionsPage() {
+  const { hash } = useLocation();
+
+  // Scroll to a practice-area card when arriving via /solutions#<slug> (e.g. from
+  // the footer). Runs after the global ScrollToTop settles.
+  useEffect(() => {
+    if (!hash) return;
+    const id = decodeURIComponent(hash.slice(1));
+    const t = setTimeout(() => {
+      document.getElementById(id)?.scrollIntoView({ behavior: 'smooth', block: 'start' });
+    }, 120);
+    return () => clearTimeout(t);
+  }, [hash]);
+
   return (
     <div className="overflow-x-clip">
       {/* Hero */}
@@ -237,7 +252,11 @@ export default function SolutionsPage() {
         />
         <div className="grid grid-cols-1 lg:grid-cols-2 gap-5 sm:gap-6 lg:gap-8">
           {practiceAreas.map((area) => (
-            <PracticeAreaCard key={area.title} {...area} />
+            <PracticeAreaCard
+              key={area.title}
+              {...area}
+              id={area.resultsArea ? practiceAreaSlug(area.resultsArea) : undefined}
+            />
           ))}
         </div>
       </Section>

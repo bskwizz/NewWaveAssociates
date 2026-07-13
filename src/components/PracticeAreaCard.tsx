@@ -12,6 +12,8 @@ export interface PracticeArea {
   /** When set, shows a "View {resultsArea} Results" link deep-linking to the
    *  Results page filtered to this practice area. */
   resultsArea?: PracticeAreaName;
+  /** Optional element id used as a scroll anchor (e.g. /solutions#procurement). */
+  id?: string;
 }
 
 function BulletList({ label, items }: { label: string; items: string[] }) {
@@ -41,9 +43,13 @@ export default function PracticeAreaCard({
   engagements,
   idealWhen,
   resultsArea,
+  id,
 }: PracticeArea) {
   return (
-    <div className="group flex h-full flex-col rounded-xl border border-gray-200 bg-white p-6 sm:p-7 shadow-sm transition-all duration-200 hover:-translate-y-1 hover:shadow-lg">
+    <div
+      id={id}
+      className="group flex h-full flex-col scroll-mt-28 rounded-xl border border-gray-200 bg-white p-6 sm:p-7 shadow-sm transition-all duration-200 hover:-translate-y-1 hover:shadow-lg"
+    >
       <div className="flex items-center gap-3 mb-4">
         <div className="w-11 h-11 rounded-lg flex items-center justify-center bg-[#01A3DB]/10 text-[#01A3DB] shrink-0">
           <Icon size={22} strokeWidth={2} />

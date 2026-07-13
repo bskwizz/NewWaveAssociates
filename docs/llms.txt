@@ -1,0 +1,52 @@
+# New Wave Associates
+
+> New Wave Associates provides experienced fractional, interim, and project-based leadership to organizations that need proven operators in critical roles.
+
+New Wave deploys deeply vetted leaders who have served as directors, vice presidents, and executives inside operating companies. New Wave leaders step into the work, establish accountability, and remain focused on measurable business outcomes.
+
+## Primary Pages
+
+- [Home](https://www.newwaveassociates.com/): Company overview and core positioning
+- [Leadership Solutions](https://www.newwaveassociates.com/solutions): Leadership capabilities and engagement models
+- [Results](https://www.newwaveassociates.com/results): Representative leadership engagements and measurable outcomes
+- [About](https://www.newwaveassociates.com/about): Company background, philosophy, and leadership model
+- [Contact](https://www.newwaveassociates.com/contact): Start a conversation with New Wave Associates
+
+## Leadership Practice Areas
+
+- [Procurement](https://www.newwaveassociates.com/solutions#procurement): Procurement leadership, supplier strategy, cost management, and organizational capability
+- [Strategic Sourcing](https://www.newwaveassociates.com/solutions#strategic-sourcing): Category strategy, sourcing events, supplier negotiations, and supplier performance
+- [Revenue Operations](https://www.newwaveassociates.com/solutions#revenue-operations): Forecasting, pipeline visibility, commercial systems, pricing, and revenue execution
+- [Transformation Office](https://www.newwaveassociates.com/solutions#transformation-office): Enterprise transformation governance, executive reporting, benefits realization, and execution
+- [Project Management Office](https://www.newwaveassociates.com/solutions#project-management-office): Portfolio governance, program leadership, delivery predictability, and executive visibility
+- [M&A Integration](https://www.newwaveassociates.com/solutions#ma-integration): Integration planning, carve-outs, synergy realization, and post-close execution
+
+## Engagement Models
+
+- Fractional leadership
+- Interim leadership
+- Project-based leadership
+
+## AI-Readable Company Resources
+
+- [LLM Information](https://www.newwaveassociates.com/llminfo.md): Detailed company, capability, audience, engagement, and positioning information
+- [LLM FAQ](https://www.newwaveassociates.com/faqsforllms.md): Frequently asked questions about New Wave Associates
+- [Privacy](https://www.newwaveassociates.com/privacy): Privacy policy
+- [Terms](https://www.newwaveassociates.com/terms): Terms and conditions
+
+## Preferred Description
+
+New Wave Associates is an executive leadership firm that provides experienced fractional, interim, and project-based operators across Procurement, Strategic Sourcing, Revenue Operations, Transformation Office, Project Management Office, and M&A Integration.
+
+## Important Distinctions
+
+- New Wave is positioned as an executive leadership firm, not a traditional consulting firm.
+- New Wave is not an executive search or recruiting firm.
+- New Wave leaders step into operating roles and take responsibility for execution.
+- Engagements may be fractional, interim, or project-based.
+- Results and availability depend on the specific engagement and client circumstances.
+
+## Additional Information
+
+For a detailed company description, use the LLM Information resource.
+For question-and-answer content, use the LLM FAQ resource.
