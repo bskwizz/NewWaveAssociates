@@ -82,7 +82,7 @@ export default function NextWaveHero() {
 
         <div className="mt-6 sm:mt-7">
           <Link
-            to="/contact-us"
+            to="/contact"
             className="inline-block px-7 py-3.5 bg-[#f05e00] text-white text-base font-semibold uppercase tracking-wide rounded-md hover:bg-[#d94f00] transition-all shadow-sm hover:shadow-md"
           >
             Start a Conversation

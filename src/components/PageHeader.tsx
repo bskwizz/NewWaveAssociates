@@ -27,13 +27,13 @@ const navItems = [
   },
   {
     label: 'About',
-    path: '/about-us',
-    isActive: (p: string) => p === '/about-us',
+    path: '/about',
+    isActive: (p: string) => p === '/about',
   },
   {
-    label: 'Contact Us',
-    path: '/contact-us',
-    isActive: (p: string) => p === '/contact-us',
+    label: 'Contact',
+    path: '/contact',
+    isActive: (p: string) => p === '/contact',
   },
 ];
 
@@ -62,7 +62,7 @@ export default function PageHeader() {
           <div className="hidden lg:flex items-center gap-8 xl:gap-12">
             {navItems.map((item) => {
               const active = item.isActive(pathname);
-              const isContactUs = item.path === '/contact-us';
+              const isContactUs = item.path === '/contact';
 
               if (isContactUs) {
                 return (
@@ -103,7 +103,7 @@ export default function PageHeader() {
           <div className="lg:hidden mt-4 pb-4 flex flex-col gap-3 sm:gap-4 bg-white/95 backdrop-blur-sm rounded-lg p-4">
             {navItems.map((item) => {
               const active = item.isActive(pathname);
-              const isContactUs = item.path === '/contact-us';
+              const isContactUs = item.path === '/contact';
 
               if (isContactUs) {
                 return (
