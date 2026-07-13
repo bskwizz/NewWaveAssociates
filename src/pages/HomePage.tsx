@@ -222,10 +222,10 @@ export default function HomePage() {
           ))}
         </div>
 
-        {/* Closing CTA. Intentionally centered between the cards and the next
-            section. The top margin mirrors the combined section padding below it
-            (128 / 160 / 192px) so the CTA sits at the visual midpoint. */}
-        <div className="mt-32 sm:mt-40 lg:mt-48 text-center">
+        {/* Closing CTA, centered within the grey section: the top margin matches
+            the section's bottom padding (64 / 80 / 96px) so the CTA sits midway
+            between the cards above and the end of the grey background below. */}
+        <div className="mt-16 sm:mt-20 lg:mt-24 text-center">
           <h3 className="text-xl sm:text-2xl lg:text-3xl font-bold text-[#38495D] mb-2">
             Need experienced leadership now?
           </h3>
