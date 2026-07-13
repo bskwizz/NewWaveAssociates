@@ -112,22 +112,9 @@ export default function HomePage() {
       <div className="hero relative overflow-x-clip bg-white">
         <PageHeader />
 
-        {/* One subtly shaded band, starting just below the white nav bar, that
-            unifies the "Your Next Wave" hero and the rotator/logos into a single
-            section. Negative top margin pulls it a bit closer to the nav (the gap
-            is the nav's bottom padding); stays under the z-50 nav so it never
-            overlaps the logo/links. */}
-        <div className="relative overflow-x-clip -mt-1" style={{
-          background: 'linear-gradient(180deg, #fbfcfd 0%, #f4f7f9 100%)'
-        }}>
-          <div className="absolute inset-0 opacity-[0.06] pointer-events-none" style={{
-            backgroundImage: `radial-gradient(1px 1px at 20% 30%, #38495d 100%, transparent 0),
-                              radial-gradient(1px 1px at 70% 60%, #01a3db 100%, transparent 0),
-                              radial-gradient(1px 1px at 40% 80%, #38495d 100%, transparent 0)`,
-            backgroundSize: '120px 120px, 160px 160px, 200px 200px',
-            backgroundRepeat: 'repeat'
-          }}></div>
-
+        {/* White band holding the "Your Next Wave" hero and the rotator/logos.
+            The shaded treatment now starts at the sections below. */}
+        <div className="relative overflow-x-clip bg-white">
           <h1 className="sr-only">
             New Wave Associates — Operational Transformation, Procurement & Revenue Operations Consulting
           </h1>
@@ -158,7 +145,7 @@ export default function HomePage() {
       </div>
 
       {/* Executive Leadership, On Demand */}
-      <Section background="white">
+      <Section background="gray">
         <SectionHeader
           label="Executive Leadership, On Demand."
           intro="Deploy experienced fractional and interim leaders who have successfully done the job before. Whether you need executive leadership for a critical function, an experienced operator to lead a transformation, or temporary leadership while you hire, New Wave provides deeply vetted professionals who step in quickly and own the outcome. Our expertise spans the critical business functions where experienced leadership creates the greatest impact."
@@ -181,7 +168,7 @@ export default function HomePage() {
       </Section>
 
       {/* Why Companies Choose New Wave */}
-      <Section background="gray">
+      <Section background="white">
         <SectionHeader
           label="Operators. Not Consultants."
           intro="Every New Wave leader has sat in the seat before. We do not hand over recommendations and disappear. We step into critical leadership roles, take ownership, and stay accountable until results are delivered. Not all fractional and interim leadership is created equal. Here's what sets New Wave apart."
@@ -197,7 +184,7 @@ export default function HomePage() {
       </Section>
 
       {/* When to Call New Wave */}
-      <Section background="white">
+      <Section background="gray">
         <SectionHeader
           label="Critical Leadership Gaps Cannot Wait."
           intro="Whether you are navigating a leadership vacancy, accelerating a major initiative, or building a capability your organization does not yet have, New Wave provides experienced leaders who can step in and move the work forward. When the stakes are high and execution matters, this is where we shine."
