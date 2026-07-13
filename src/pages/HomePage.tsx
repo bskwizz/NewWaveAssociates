@@ -117,7 +117,7 @@ export default function HomePage() {
             section. Negative top margin pulls it a bit closer to the nav (the gap
             is the nav's bottom padding); stays under the z-50 nav so it never
             overlaps the logo/links. */}
-        <div className="relative overflow-x-clip -mt-3 sm:-mt-4 lg:-mt-6" style={{
+        <div className="relative overflow-x-clip -mt-1" style={{
           background: 'linear-gradient(180deg, #fbfcfd 0%, #f4f7f9 100%)'
         }}>
           <div className="absolute inset-0 opacity-[0.06] pointer-events-none" style={{
