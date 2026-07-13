@@ -51,7 +51,7 @@ export default function NextWaveHero() {
 
       <div className="relative max-w-7xl mx-auto px-4 sm:px-5 md:px-6 lg:px-6 xl:px-8 pt-20 sm:pt-32 lg:pt-40 pb-[288px] sm:pb-24 lg:pb-28">
         <div className="flex flex-col sm:flex-row sm:items-baseline sm:gap-x-4">
-          <span className="text-3xl sm:text-4xl lg:text-5xl xl:text-6xl font-extrabold tracking-tight text-[#38495D] leading-tight">
+          <span className="text-4xl sm:text-5xl lg:text-6xl xl:text-7xl font-extrabold tracking-tight text-[#38495D] leading-tight">
             Your Next Wave:
           </span>
 
@@ -62,7 +62,7 @@ export default function NextWaveHero() {
               <span
                 key={word}
                 aria-hidden={i !== index}
-                className={`col-start-1 row-start-1 text-3xl sm:text-4xl lg:text-5xl xl:text-6xl font-extrabold tracking-tight text-[#f05e00] leading-tight will-change-transform transition-all duration-[650ms] ease-[cubic-bezier(0.16,1,0.3,1)] ${
+                className={`col-start-1 row-start-1 text-4xl sm:text-5xl lg:text-6xl xl:text-7xl font-extrabold tracking-tight text-[#f05e00] leading-tight will-change-transform transition-all duration-[650ms] ease-[cubic-bezier(0.16,1,0.3,1)] ${
                   i === index
                     ? 'opacity-100 translate-y-0 blur-0'
                     : i === prevIndex
@@ -76,16 +76,16 @@ export default function NextWaveHero() {
           </span>
         </div>
 
-        <p className="text-gray-700 text-lg sm:text-xl font-normal mt-4 sm:mt-5 leading-relaxed">
+        <p className="text-gray-700 text-xl sm:text-2xl font-normal mt-4 sm:mt-5 leading-relaxed">
           Get immediate access to top-tier operating experts<br />to unlock your market potential.
         </p>
 
         <div className="mt-6 sm:mt-7">
           <Link
             to="/contact-us"
-            className="inline-block px-6 py-3 bg-[#f05e00] text-white text-sm font-semibold uppercase tracking-wide rounded-md hover:bg-[#d94f00] transition-all shadow-sm hover:shadow-md"
+            className="inline-block px-7 py-3.5 bg-[#f05e00] text-white text-base font-semibold uppercase tracking-wide rounded-md hover:bg-[#d94f00] transition-all shadow-sm hover:shadow-md"
           >
-            Schedule Consultation
+            Start a Conversation
           </Link>
         </div>
       </div>

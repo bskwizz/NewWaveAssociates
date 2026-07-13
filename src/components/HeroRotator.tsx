@@ -1,5 +1,4 @@
 import { useState, useEffect, Fragment } from 'react';
-import { Link } from 'react-router-dom';
 
 // Rotating headline lines, each split into segments so a phrase can be
 // emphasized (bold) against the lighter base weight. Always leads with the
@@ -96,15 +95,6 @@ export default function HeroRotator() {
           <br className="hidden sm:block" />
           take ownership, and deliver results.
         </p>
-
-        <div className="mt-5 sm:mt-6 lg:mt-7">
-          <Link
-            to="/contact-us"
-            className="inline-block px-5 py-2.5 bg-[#f05e00] text-white text-sm font-semibold uppercase tracking-wide rounded-md hover:bg-[#d94f00] transition-all shadow-sm hover:shadow-md"
-          >
-            Start a Conversation
-          </Link>
-        </div>
       </div>
 
       {/* Right column: rotating full-color photo panel */}
