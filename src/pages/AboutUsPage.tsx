@@ -2,37 +2,7 @@ import { useRef } from 'react';
 import { Link } from 'react-router-dom';
 import { Compass, Search, Zap, LogIn, Lightbulb, Rocket, Users, type LucideIcon } from 'lucide-react';
 import PageHeader from '../components/PageHeader';
-
-const teamMembers = [
-  {
-    name: 'Craig Keller',
-    title: 'Managing Partner',
-    image: 'craig_keller_headshot.jpeg',
-    bio: 'A finance and transformation executive with 30+ years of experience leading Strategic Sourcing, FP&A, M&A integration, and operational initiatives across multi-entity technology and managed-services organizations. He\'s achieved $150M+ in cost synergies through consolidation, shared-services alignment, and pricing discipline.',
-    linkedin: 'https://www.linkedin.com/in/crkeller/'
-  },
-  {
-    name: 'Hunter New',
-    title: 'Managing Partner',
-    image: 'hunter_new_headshot.jpeg',
-    bio: 'M&A, performance improvement, and labor strategy leader across the healthcare provider/payer and technology sectors. He\'s delivered 10-15% EBITDA gains through post-merger integrations, divestitures, and performance initiatives while supporting $120B+ in total transaction value for non-profit and for-profit health systems, PE-owned health services organizations, and payers.',
-    linkedin: 'https://www.linkedin.com/in/hunter-new-4983373a/'
-  },
-  {
-    name: 'Bryan Skwirut',
-    title: 'Managing Partner',
-    image: 'bryan_skwirut_headshot.jpeg',
-    bio: 'An enterprise transformation leader with over a decade of experience driving operational modernization and performance improvement across financial services, healthcare, and technology sectors. He\'s led initiatives that delivered $25M+ in process efficiency gains, reduced operational cycle times by 40%, and optimized enterprise workflows across 10+ business units.',
-    linkedin: 'https://www.linkedin.com/in/bryanskwirut/'
-  },
-  {
-    name: 'Jason Lee',
-    title: 'Managing Partner',
-    image: 'jason_lee_headshot.jpeg',
-    bio: 'Strategy and growth executive who has built and scaled multi-entity operating models across numerous industries. He has architected enterprise GTM frameworks, pricing normalization programs, and RevOps transformations that have delivered millions in incremental revenue and improved commercial efficiencies across 80+ business units.',
-    linkedin: 'https://www.linkedin.com/in/myportfoleeo/'
-  },
-];
+import TeamAvatars from '../components/TeamAvatars';
 
 const aboutIntro =
   'New Wave was built on a simple belief: the most valuable thing a company can have is experienced leaders who have done the job before. We provide deeply vetted executives who step in quickly, establish accountability, solve complex business challenges, and deliver measurable results across procurement, strategic sourcing, revenue operations, transformation, project management, and M&A integration.';
@@ -202,32 +172,7 @@ export default function AboutUsPage() {
               </div>
 
               {/* The four of us — overlapping cluster of rounded, full-color photos */}
-              <div className="flex justify-center pt-10 sm:pt-12 lg:pt-14 pb-8 sm:pb-10 md:pb-12 lg:pb-16">
-                {teamMembers.map((member, index) => (
-                  <div
-                    key={index}
-                    className={`relative w-24 h-24 sm:w-28 sm:h-28 lg:w-36 lg:h-36 rounded-full ring-4 ring-white overflow-hidden bg-gray-100 shadow-lg transition-transform duration-300 hover:z-10 hover:scale-105 ${index > 0 ? '-ml-5 sm:-ml-6 lg:-ml-8' : ''}`}
-                  >
-                    <img
-                      src={`${import.meta.env.BASE_URL}${member.image}`}
-                      alt={member.name}
-                      className="w-full h-full object-cover"
-                      onError={(e) => {
-                        const target = e.target as HTMLImageElement;
-                        target.style.display = 'none';
-                        const parent = target.parentElement;
-                        if (parent) {
-                          parent.classList.add('bg-gradient-to-br', 'from-[#01A3DB]', 'to-[#38495D]');
-                          const initials = document.createElement('div');
-                          initials.className = 'w-full h-full flex items-center justify-center';
-                          initials.innerHTML = `<span class="text-white text-2xl lg:text-3xl font-bold">${member.name.split(' ').map((n) => n[0]).join('')}</span>`;
-                          parent.appendChild(initials);
-                        }
-                      }}
-                    />
-                  </div>
-                ))}
-              </div>
+              <TeamAvatars className="pt-10 sm:pt-12 lg:pt-14 pb-8 sm:pb-10 md:pb-12 lg:pb-16" />
 
               {/* Full-bleed white section band (header through the closing callout) */}
               <div className="relative left-1/2 -translate-x-1/2 w-screen bg-white border-y border-gray-200 my-10 sm:my-14 lg:my-16 py-12 sm:py-16 lg:py-20">
