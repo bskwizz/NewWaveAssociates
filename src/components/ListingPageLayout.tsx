@@ -1,6 +1,5 @@
 import { ReactNode } from 'react';
 import PageHeader from './PageHeader';
-import CTABar from './CTABar';
 
 interface ListingPageLayoutProps {
   onNavigate: (page: string) => void;
@@ -62,12 +61,6 @@ export default function ListingPageLayout({
           </div>
         </div>
       </div>
-
-      <CTABar
-        text="Ready to discuss how we can help your organization?"
-        buttonText="Contact Us"
-        onButtonClick={() => onNavigate('contact-us')}
-      />
     </div>
   );
 }

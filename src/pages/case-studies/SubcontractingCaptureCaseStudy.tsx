@@ -9,7 +9,7 @@ export default function SubcontractingCaptureCaseStudy({ onNavigate }: Subcontra
     <CaseStudyTemplate
       onNavigate={onNavigate}
       backLink={{
-        text: "Back to SG&A Cost Optimization",
+        text: "Back to Procurement",
         page: "hub-procurement"
       }}
       title="Sub-Contracting Takeout & Capture"

@@ -9,7 +9,7 @@ export default function RevenueVisibilityCaseStudy({ onNavigate }: RevenueVisibi
     <CaseStudyTemplate
       onNavigate={onNavigate}
       backLink={{
-        text: "Back to Go-to-Market & Growth Optimization",
+        text: "Back to Revenue Operations",
         page: "hub-revenue-operations"
       }}
       title="Revenue Visibility & Leakage Mitigation for $1B MSP"

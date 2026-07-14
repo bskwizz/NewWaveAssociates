@@ -31,7 +31,7 @@ export default function AICaseStudy({ onNavigate }: AICaseStudyProps) {
               className="flex items-center gap-2 text-[#01A3DB] hover:text-[#0182b3] transition-colors font-medium mb-8"
             >
               <ArrowLeft size={20} />
-              Back to AI & Intelligent Automation
+              Back to Transformation Office
             </button>
             <div>
               <h1 className="text-5xl font-bold text-[#38495D] mb-4">

@@ -9,7 +9,7 @@ export default function CatalogRationalizationCaseStudy({ onNavigate }: CatalogR
     <CaseStudyTemplate
       onNavigate={onNavigate}
       backLink={{
-        text: "Back to Integration & Consolidation",
+        text: "Back to M&A Integration",
         page: "hub-ma-integration"
       }}
       title="Product Catalog Rationalization"

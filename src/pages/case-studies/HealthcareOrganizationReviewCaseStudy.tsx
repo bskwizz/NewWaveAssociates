@@ -9,7 +9,7 @@ export default function HealthcareOrganizationReviewCaseStudy({ onNavigate }: He
     <CaseStudyTemplate
       onNavigate={onNavigate}
       backLink={{
-        text: "Back to Labor Strategy & Offshoring",
+        text: "Back to Strategic Sourcing",
         page: "hub-strategic-sourcing"
       }}
       title="Enterprise Labor & Organizational Review"

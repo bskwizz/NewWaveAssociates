@@ -9,7 +9,7 @@ export default function AgreementsStandardizationCaseStudy({ onNavigate }: Agree
     <CaseStudyTemplate
       onNavigate={onNavigate}
       backLink={{
-        text: "Back to Integration & Consolidation",
+        text: "Back to M&A Integration",
         page: "hub-ma-integration"
       }}
       title="Agreements Standardization"

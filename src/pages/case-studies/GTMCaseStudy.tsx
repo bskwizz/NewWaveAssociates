@@ -31,7 +31,7 @@ export default function GTMCaseStudy({ onNavigate }: GTMCaseStudyProps) {
           className="flex items-center gap-2 text-[#01A3DB] hover:text-[#0182b3] transition-colors font-medium mb-8"
         >
           <ArrowLeft size={20} />
-          Back to Go-to-Market & Growth Optimization
+          Back to Revenue Operations
         </button>
 
             <div>
