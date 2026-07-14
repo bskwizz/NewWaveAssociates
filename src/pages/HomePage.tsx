@@ -9,7 +9,6 @@ import {
   Target, Award, Zap, SlidersHorizontal,
   UserMinus, UserPlus, Activity, Rocket, Combine, Blocks,
 } from 'lucide-react';
-import ContactForm from '../components/ContactForm';
 import Section from '../components/Section';
 import SectionHeader from '../components/SectionHeader';
 import FeatureCard from '../components/FeatureCard';
@@ -288,14 +287,6 @@ export default function HomePage() {
             <Link to="/insights" className="text-[#01A3DB] hover:underline">Insights page</Link>.
           </p>
         )}
-      </Section>
-
-      {/* Get In Touch */}
-      <Section background="gray">
-        <SectionHeader label="Reach out to an Expert today" />
-        <div className="max-w-3xl mx-auto">
-          <ContactForm source="homepage" />
-        </div>
       </Section>
     </div>
   );
