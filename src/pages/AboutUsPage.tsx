@@ -1,11 +1,7 @@
 import { useRef } from 'react';
-import { Compass, Search, Zap, type LucideIcon } from 'lucide-react';
-import CTABar from '../components/CTABar';
+import { Link } from 'react-router-dom';
+import { Compass, Search, Zap, LogIn, Lightbulb, Rocket, Users, type LucideIcon } from 'lucide-react';
 import PageHeader from '../components/PageHeader';
-
-interface AboutUsPageProps {
-  onNavigate: (page: string) => void;
-}
 
 const teamMembers = [
   {
@@ -40,6 +36,39 @@ const teamMembers = [
 
 const aboutIntro =
   'New Wave was built on a simple belief: the most valuable thing a company can have is experienced leaders who have done the job before. We provide deeply vetted executives who step in quickly, establish accountability, solve complex business challenges, and deliver measurable results across procurement, strategic sourcing, revenue operations, transformation, project management, and M&A integration.';
+
+// The four commitments every client can expect ("What to Expect").
+const commitments: { icon: LucideIcon; title: string; description: string }[] = [
+  {
+    icon: LogIn,
+    title: 'We Step In',
+    description:
+      'We integrate quickly, establish priorities, and begin moving important work forward from day one.',
+  },
+  {
+    icon: Lightbulb,
+    title: 'We Create Clarity',
+    description:
+      'We simplify complexity by defining priorities, decision rights, accountability, and measurable outcomes.',
+  },
+  {
+    icon: Rocket,
+    title: 'We Drive Execution',
+    description:
+      'We remove barriers, align teams, and stay accountable until measurable business value is delivered.',
+  },
+  {
+    icon: Users,
+    title: 'We Leave Stronger Teams',
+    description:
+      'We build capability, establish repeatable operating rhythms, and leave organizations better positioned for long-term success.',
+  },
+];
+
+const primaryButton =
+  'inline-block px-7 py-3.5 bg-[#f05e00] text-white text-base font-semibold uppercase tracking-wide rounded-md hover:bg-[#d94f00] transition-all shadow-sm hover:shadow-md';
+const secondaryButton =
+  'inline-block px-7 py-3.5 bg-white text-[#38495D] text-base font-semibold uppercase tracking-wide rounded-md border border-gray-300 hover:border-[#38495D] transition-all';
 
 // Shared source of truth for the three comparison cards and the detailed table.
 interface LeadershipModel {
@@ -141,7 +170,7 @@ const TABLE_ROWS: { label: string; key: keyof LeadershipModel['table'] }[] = [
   { label: 'Best Fit', key: 'bestFit' },
 ];
 
-export default function AboutUsPage({ onNavigate }: AboutUsPageProps) {
+export default function AboutUsPage() {
   const vantaRef = useRef<HTMLDivElement>(null);
 
   return (
@@ -215,10 +244,7 @@ export default function AboutUsPage({ onNavigate }: AboutUsPageProps) {
                   </div>
                 </div>
                 <p className="text-sm sm:text-base text-gray-700 leading-relaxed mt-4 sm:mt-5 lg:mt-6">
-                  Companies have several options when leadership capacity is missing. New Wave is designed for the moments when the business needs more than advice, but a permanent hire is not yet practical.
-                </p>
-                <p className="mt-3 text-xs sm:text-sm text-gray-500">
-                  The right solution depends on the need. Here is how the three models differ.
+                  Companies have several options when leadership capacity is missing. New Wave is designed for the moments when the business needs more than advice, but a permanent hire is not yet practical. The right solution depends on the need. Here is how the three models differ.
                 </p>
               </div>
 
@@ -364,83 +390,66 @@ export default function AboutUsPage({ onNavigate }: AboutUsPageProps) {
                     Choose the right solution for the challenge.
                   </h3>
                   <p className="mt-3 text-sm sm:text-base text-gray-700 leading-relaxed max-w-3xl mx-auto">
-                    Consulting is valuable when you need analysis. Executive search is right when you need a permanent hire. New Wave is built for the moments when your business needs experienced leadership now.
-                  </p>
-                  <p className="mt-3 text-sm text-gray-500">
-                    When the opportunity, transition, or challenge cannot wait, we are ready when you are.
+                    New Wave is built for the moments when your business needs experienced leadership now. When the opportunity, transition, or challenge cannot wait, we are ready when you are.
                   </p>
                 </div>
               </div>
               </div>
               </div>
 
-              <div className="text-left mb-5 sm:mb-6 lg:mb-8">
-                <div className="inline-block mb-2">
-                  <div>
-                    <p className="text-black text-xs sm:text-sm lg:text-base font-bold tracking-[0.2em] uppercase mb-2" style={{
-                      letterSpacing: '0.25em'
-                    }}>
-                      Why New Wave Exists
-                    </p>
-                    <div className="h-[2px] bg-[#f05e00]"></div>
-                  </div>
+              {/* Why New Wave Exists — brand statement */}
+              <div className="max-w-3xl pt-4 sm:pt-6 lg:pt-8 pb-14 sm:pb-20 lg:pb-24">
+                <div className="inline-block mb-6 sm:mb-8">
+                  <p className="text-black text-xs sm:text-sm lg:text-base font-bold uppercase" style={{ letterSpacing: '0.25em' }}>
+                    Why New Wave Exists
+                  </p>
+                  <div className="mt-2 h-[2px] bg-[#f05e00]"></div>
                 </div>
-                <p className="text-sm sm:text-base text-gray-700 leading-relaxed mt-4 sm:mt-5 lg:mt-6">
-                  Our mission is to give organizations immediate access to experienced leadership when the opportunity, challenge, or transition cannot wait.
+                <h2 className="text-3xl sm:text-4xl lg:text-5xl font-extrabold tracking-tight text-[#38495D] leading-tight">
+                  Leadership gaps should never become business constraints.
+                </h2>
+                <p className="mt-6 sm:mt-8 text-base sm:text-lg text-gray-700 leading-relaxed">
+                  New Wave exists to give organizations immediate access to experienced executive leadership when opportunity, transformation, or transition cannot wait.
+                </p>
+                <p className="mt-4 text-base sm:text-lg text-gray-700 leading-relaxed">
+                  We believe companies should not have to choose between waiting months for a permanent hire or relying solely on outside recommendations. We provide experienced leaders who step into the work, create momentum, and deliver measurable business outcomes.
                 </p>
               </div>
 
-              <div className="text-left mb-5 sm:mb-6 lg:mb-8">
-                <div className="inline-block mb-2">
-                  <div>
-                    <p className="text-black text-xs sm:text-sm lg:text-base font-bold tracking-[0.2em] uppercase mb-2" style={{
-                      letterSpacing: '0.25em'
-                    }}>
-                      How We Lead
+              {/* What to Expect */}
+              <div className="pb-8 sm:pb-12 lg:pb-16">
+                <div className="text-left mb-8 sm:mb-10 lg:mb-12">
+                  <div className="inline-block mb-2">
+                    <p className="text-black text-xs sm:text-sm lg:text-base font-bold uppercase" style={{ letterSpacing: '0.25em' }}>
+                      What to Expect
                     </p>
-                    <div className="h-[2px] bg-[#f05e00]"></div>
+                    <div className="mt-2 h-[2px] bg-[#f05e00]"></div>
                   </div>
-                </div>
-                <p className="text-sm sm:text-base text-gray-700 leading-relaxed mt-4 sm:mt-5 lg:mt-6">
-                  Our principles define how we enter an organization, make decisions, lead teams, and earn trust.
-                </p>
-              </div>
-
-              <div className="space-y-5 sm:space-y-6 pb-8 sm:pb-12 lg:pb-16">
-                <div className="bg-white border border-gray-200 rounded-lg p-6 sm:p-8 shadow-lg">
-                  <h3 className="text-base sm:text-lg font-bold text-black tracking-[0.15em] uppercase mb-3 sm:mb-4">
-                    We Own the Outcome
-                  </h3>
-                  <p className="text-sm sm:text-base text-gray-700 leading-relaxed">
-                    We take responsibility for execution and results, not just recommendations. We stay engaged, remove barriers, and keep the work moving until measurable value is delivered.
+                  <h2 className="mt-5 sm:mt-6 max-w-[860px] text-2xl sm:text-3xl lg:text-4xl font-bold text-[#38495D] leading-snug">
+                    Every engagement begins the same way.
+                  </h2>
+                  <p className="mt-4 sm:mt-5 max-w-[860px] text-base sm:text-lg text-gray-700 leading-relaxed">
+                    Whether we're engaged on an interim, fractional, or project basis, our approach is consistent. Here's what every client can expect from a New Wave leader.
                   </p>
                 </div>
-
-                <div className="bg-white border border-gray-200 rounded-lg p-6 sm:p-8 shadow-lg">
-                  <h3 className="text-base sm:text-lg font-bold text-black tracking-[0.15em] uppercase mb-3 sm:mb-4">
-                    We Lead From Experience
-                  </h3>
-                  <p className="text-sm sm:text-base text-gray-700 leading-relaxed">
-                    Our leaders have sat in the seat before. We bring practical judgment, understand real-world constraints, and know how to turn strategy into execution.
-                  </p>
-                </div>
-
-                <div className="bg-white border border-gray-200 rounded-lg p-6 sm:p-8 shadow-lg">
-                  <h3 className="text-base sm:text-lg font-bold text-black tracking-[0.15em] uppercase mb-3 sm:mb-4">
-                    We Choose Clarity
-                  </h3>
-                  <p className="text-sm sm:text-base text-gray-700 leading-relaxed">
-                    Clear priorities, decision rights, and communication create momentum. We simplify the work so teams understand what matters, who owns it, and what happens next.
-                  </p>
-                </div>
-
-                <div className="bg-white border border-gray-200 rounded-lg p-6 sm:p-8 shadow-lg">
-                  <h3 className="text-base sm:text-lg font-bold text-black tracking-[0.15em] uppercase mb-3 sm:mb-4">
-                    We Earn Trust Daily
-                  </h3>
-                  <p className="text-sm sm:text-base text-gray-700 leading-relaxed">
-                    Trust is built through honest communication, visible progress, and consistent follow-through. We do what we say we will do and raise issues early.
-                  </p>
+                <div className="grid grid-cols-1 sm:grid-cols-2 gap-5 sm:gap-6 lg:gap-8">
+                  {commitments.map((c) => {
+                    const Icon = c.icon;
+                    return (
+                      <div
+                        key={c.title}
+                        className="group flex h-full flex-col rounded-xl border border-gray-200 bg-white p-7 sm:p-8 shadow-sm transition-all duration-200 hover:-translate-y-1 hover:shadow-lg"
+                      >
+                        <div className="w-12 h-12 rounded-full flex items-center justify-center mb-5 bg-[#01A3DB]/10 text-[#01A3DB]">
+                          <Icon size={22} strokeWidth={2} aria-hidden="true" />
+                        </div>
+                        <h3 className="text-base sm:text-lg font-bold uppercase tracking-wide text-[#38495D] mb-2 sm:mb-3">
+                          {c.title}
+                        </h3>
+                        <p className="text-sm sm:text-base text-gray-700 leading-relaxed">{c.description}</p>
+                      </div>
+                    );
+                  })}
                 </div>
               </div>
             </div>
@@ -448,11 +457,27 @@ export default function AboutUsPage({ onNavigate }: AboutUsPageProps) {
         </div>
       </div>
 
-      <CTABar
-        text="Learn more about New Wave solutions for your unique growth opportunity"
-        buttonText="Contact Us"
-        onButtonClick={() => onNavigate('contact-us')}
-      />
+      {/* Final CTA */}
+      <section className="bg-white border-t border-gray-100 py-16 sm:py-20 lg:py-28">
+        <div className="max-w-5xl mx-auto px-4 sm:px-6 text-center">
+          <h2 className="text-3xl sm:text-4xl lg:text-5xl font-extrabold tracking-tight text-[#38495D] leading-tight lg:whitespace-nowrap">
+            Leadership, when it matters most.
+          </h2>
+          <p className="mt-6 max-w-3xl mx-auto text-base sm:text-lg text-gray-700 leading-relaxed">
+            Whether you're filling a leadership gap, accelerating a transformation, or building new
+            capability, New Wave provides experienced executives who step into the work and move your
+            business forward.
+          </p>
+          <div className="mt-9 flex flex-col sm:flex-row items-center justify-center gap-4">
+            <Link to="/contact" className={primaryButton}>
+              Let's Talk
+            </Link>
+            <Link to="/solutions" className={secondaryButton}>
+              Explore Leadership Solutions
+            </Link>
+          </div>
+        </div>
+      </section>
     </div>
   );
 }
