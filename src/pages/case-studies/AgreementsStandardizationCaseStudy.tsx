@@ -10,7 +10,7 @@ export default function AgreementsStandardizationCaseStudy({ onNavigate }: Agree
       onNavigate={onNavigate}
       backLink={{
         text: "Back to Integration & Consolidation",
-        page: "hub-integration-consolidation"
+        page: "hub-ma-integration"
       }}
       title="Agreements Standardization"
       heroImage="https://images.unsplash.com/photo-1450101499163-c8848c66ca85?w=1600&h=900&fit=crop"

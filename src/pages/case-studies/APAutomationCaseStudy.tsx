@@ -10,7 +10,7 @@ export default function APAutomationCaseStudy({ onNavigate }: APAutomationCaseSt
       onNavigate={onNavigate}
       backLink={{
         text: "Back to AI & Intelligent Automation",
-        page: "hub-ai-automation"
+        page: "hub-transformation-office"
       }}
       title="AP Automation & Payments for a $1B Tech Reseller"
       heroImage="https://images.unsplash.com/photo-1554224155-8d04cb21cd6c?w=1600&h=900&fit=crop"

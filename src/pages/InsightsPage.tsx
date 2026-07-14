@@ -62,18 +62,24 @@ export default function InsightsPage({ onNavigate }: InsightsPageProps) {
 
         <div className="relative pt-6 sm:pt-8 lg:pt-[2.5rem] pb-16">
           <div className="max-w-7xl mx-auto px-4 sm:px-5 md:px-6 lg:px-6 xl:px-8">
-            <div className="text-center mb-12">
-              <p className="text-black text-xs sm:text-sm lg:text-base font-bold tracking-[0.2em] uppercase mb-3" style={{
-                letterSpacing: '0.25em'
-              }}>
-                Insights
-              </p>
-              <h1 className="text-2xl sm:text-3xl lg:text-4xl font-bold text-black mb-4">
+            <div className="text-center max-w-4xl mx-auto mb-12">
+              <div className="inline-block mb-5 sm:mb-6">
+                <p className="text-black text-xs sm:text-sm lg:text-base font-bold uppercase" style={{
+                  letterSpacing: '0.25em'
+                }}>
+                  Insights
+                </p>
+                <div className="mt-2 h-[2px] bg-[#f05e00]"></div>
+              </div>
+              <h1 className="text-4xl sm:text-5xl lg:text-6xl font-extrabold tracking-tight text-[#38495D] leading-tight">
                 Practical thinking for operators leading change
               </h1>
+              <p className="mt-6 text-base sm:text-lg text-gray-700 leading-relaxed max-w-2xl mx-auto">
+                Articles and perspectives on leadership, transformation, and operational rigor from the New Wave Associates team.
+              </p>
               <button
                 onClick={() => setShowSubscribeModal(true)}
-                className="mt-6 px-8 py-3 bg-[#f05e00] text-white font-semibold rounded hover:bg-[#d95500] transition-colors"
+                className="mt-8 inline-block px-7 py-3.5 bg-[#f05e00] text-white text-base font-semibold uppercase tracking-wide rounded-md hover:bg-[#d94f00] transition-all shadow-sm hover:shadow-md"
               >
                 Subscribe
               </button>

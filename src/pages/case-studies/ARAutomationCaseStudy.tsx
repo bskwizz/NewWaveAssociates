@@ -10,7 +10,7 @@ export default function ARAutomationCaseStudy({ onNavigate }: ARAutomationCaseSt
       onNavigate={onNavigate}
       backLink={{
         text: "Back to AI & Intelligent Automation",
-        page: "hub-ai-automation"
+        page: "hub-transformation-office"
       }}
       title="AR Automation for a $1B Tech Reseller"
       heroImage="https://images.unsplash.com/photo-1460925895917-afdab827c52f?w=1600&h=900&fit=crop"

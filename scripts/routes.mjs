@@ -47,12 +47,12 @@ export const STATIC_ROUTES = [
   '/case-studies/sga-virtual-card',
 
   // Hubs
+  '/hub-project-management-office',
+  '/hub-revenue-operations',
+  '/hub-ma-integration',
+  '/hub-strategic-sourcing',
+  '/hub-procurement',
   '/hub-transformation-office',
-  '/hub-gtm-growth',
-  '/hub-integration-consolidation',
-  '/hub-labor-offshoring',
-  '/hub-sga-optimization',
-  '/hub-ai-automation',
 ];
 
 // Read insight slugs from a public/insights.json so /insights/<slug> routes

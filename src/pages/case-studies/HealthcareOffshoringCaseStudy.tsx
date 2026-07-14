@@ -10,7 +10,7 @@ export default function HealthcareOffshoringCaseStudy({ onNavigate }: Healthcare
       onNavigate={onNavigate}
       backLink={{
         text: "Back to Labor Strategy & Offshoring",
-        page: "hub-labor-offshoring"
+        page: "hub-strategic-sourcing"
       }}
       title="Offshore Model for Healthcare Operations"
       heroImage="https://images.unsplash.com/photo-1519494026892-80bbd2d6fd0d?w=1600&h=900&fit=crop"

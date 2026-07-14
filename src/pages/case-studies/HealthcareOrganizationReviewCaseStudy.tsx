@@ -10,7 +10,7 @@ export default function HealthcareOrganizationReviewCaseStudy({ onNavigate }: He
       onNavigate={onNavigate}
       backLink={{
         text: "Back to Labor Strategy & Offshoring",
-        page: "hub-labor-offshoring"
+        page: "hub-strategic-sourcing"
       }}
       title="Enterprise Labor & Organizational Review"
       heroImage="https://images.unsplash.com/photo-1450101499163-c8848c66ca85?w=1600&h=900&fit=crop"

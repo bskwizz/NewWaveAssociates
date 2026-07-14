@@ -10,7 +10,7 @@ export default function VirtualCardCaseStudy({ onNavigate }: VirtualCardCaseStud
       onNavigate={onNavigate}
       backLink={{
         text: "Back to SG&A Cost Optimization",
-        page: "hub-sga-optimization"
+        page: "hub-procurement"
       }}
       title="Virtual Card Implementation & Rebate Program"
       heroImage="https://images.unsplash.com/photo-1563013544-824ae1b704d3?w=1600&h=900&fit=crop"

@@ -10,7 +10,7 @@ export default function VerticalIncubationCaseStudy({ onNavigate }: VerticalIncu
       onNavigate={onNavigate}
       backLink={{
         text: "Back to Go-to-Market & Growth Optimization",
-        page: "hub-gtm-growth"
+        page: "hub-revenue-operations"
       }}
       title="Vertical Incubation & Expansion for $4B SaaS"
       heroImage="https://images.unsplash.com/photo-1557804506-669a67965ba0?w=1600&h=900&fit=crop"

@@ -10,7 +10,7 @@ export default function PricingPackagingCaseStudy({ onNavigate }: PricingPackagi
       onNavigate={onNavigate}
       backLink={{
         text: "Back to Go-to-Market & Growth Optimization",
-        page: "hub-gtm-growth"
+        page: "hub-revenue-operations"
       }}
       title="Pricing & Packaging Transformation for $150M SaaS"
       heroImage="https://images.unsplash.com/photo-1551288049-bebda4e38f71?w=1600&h=900&fit=crop"

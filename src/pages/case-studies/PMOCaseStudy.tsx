@@ -10,7 +10,7 @@ export default function PMOCaseStudy({ onNavigate }: PMOCaseStudyProps) {
       onNavigate={onNavigate}
       backLink={{
         text: "Back to Project Management Office",
-        page: "hub-transformation-office"
+        page: "hub-project-management-office"
       }}
       title="Project Management Office Build-Out for a Healthcare Platform"
       heroImage="https://images.unsplash.com/photo-1551288049-bebda4e38f71?w=1600&h=900&fit=crop"
