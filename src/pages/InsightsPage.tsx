@@ -1,7 +1,6 @@
 import { useState, useEffect } from 'react';
 import { ChevronRight } from 'lucide-react';
 import PageHeader from '../components/PageHeader';
-import CTABar from '../components/CTABar';
 import EmailCaptureModal from '../components/EmailCaptureModal';
 import { getAllPublishedInsights, Insight } from '../services/insightsService';
 import { persistUnlock, recordLead } from '../services/leadCaptureService';
@@ -25,6 +24,7 @@ export default function InsightsPage({ onNavigate }: InsightsPageProps) {
         page_url: window.location.href,
       });
     } catch {
+      // Best-effort lead capture; a failure here must not block the UI.
     }
   }
 
@@ -130,12 +130,6 @@ export default function InsightsPage({ onNavigate }: InsightsPageProps) {
           </div>
         </div>
       </div>
-
-      <CTABar
-        text="Ready to discuss how we can help your organization?"
-        buttonText="Contact Us"
-        onButtonClick={() => onNavigate('contact-us')}
-      />
 
       {showSubscribeModal && (
         <EmailCaptureModal
