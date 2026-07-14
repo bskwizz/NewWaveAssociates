@@ -206,23 +206,25 @@ export default function ContactUsPage() {
 
       {/* 6. Tell Us About Your Situation: the contact form. */}
       <section id="contact-form" className="bg-white border-t border-gray-100 py-16 sm:py-20 lg:py-24 scroll-mt-24">
-        <div className="max-w-3xl mx-auto px-4 sm:px-5 md:px-6 lg:px-6 xl:px-8">
-          <div className="text-center max-w-2xl mx-auto mb-8 sm:mb-10">
+        <div className="max-w-4xl mx-auto px-4 sm:px-5 md:px-6 lg:px-6 xl:px-8">
+          <div className="text-center mb-8 sm:mb-10">
             <h2 className="text-2xl sm:text-3xl lg:text-4xl font-bold text-[#38495D] leading-tight">
               Tell Us About Your Situation
             </h2>
-            <p className="mt-3 text-base sm:text-lg text-gray-700 leading-relaxed">
+            <p className="mt-3 text-base sm:text-lg text-gray-700 leading-relaxed lg:whitespace-nowrap">
               A few details will help us understand your needs and connect you with the right leader.
             </p>
           </div>
-          <ContactForm
-            ref={formRef}
-            showInquiryType
-            requireMessage
-            messageLabel="What are you navigating?"
-            messagePlaceholder="Tell us about the leadership gap, initiative, transformation, or business challenge."
-            submitLabel="Start the Conversation"
-          />
+          <div className="max-w-3xl mx-auto">
+            <ContactForm
+              ref={formRef}
+              showInquiryType
+              requireMessage
+              messageLabel="What are you navigating?"
+              messagePlaceholder="Tell us about the leadership gap, initiative, transformation, or business challenge."
+              submitLabel="Start the Conversation"
+            />
+          </div>
         </div>
       </section>
 
