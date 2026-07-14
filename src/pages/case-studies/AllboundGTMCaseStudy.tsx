@@ -10,7 +10,7 @@ export default function AllboundGTMCaseStudy({ onNavigate }: AllboundGTMCaseStud
       onNavigate={onNavigate}
       backLink={{
         text: "Back to Go-to-Market & Growth Optimization",
-        page: "hub-gtm-growth"
+        page: "hub-revenue-operations"
       }}
       title="Allbound Go-to-Market Model for $150M SaaS"
       heroImage="https://images.unsplash.com/photo-1600880292203-757bb62b4baf?w=1600&h=900&fit=crop"

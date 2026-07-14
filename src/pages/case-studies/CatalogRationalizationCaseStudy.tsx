@@ -10,7 +10,7 @@ export default function CatalogRationalizationCaseStudy({ onNavigate }: CatalogR
       onNavigate={onNavigate}
       backLink={{
         text: "Back to Integration & Consolidation",
-        page: "hub-integration-consolidation"
+        page: "hub-ma-integration"
       }}
       title="Product Catalog Rationalization"
       heroImage="https://images.unsplash.com/photo-1586528116311-ad8dd3c8310d?w=1600&h=900&fit=crop"

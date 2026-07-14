@@ -105,12 +105,19 @@ function App() {
           <Route path="/case-studies/sga-subcontracting-capture" element={<WithNav Component={SubcontractingCaptureCaseStudy} />} />
           <Route path="/case-studies/sga-virtual-card" element={<WithNav Component={VirtualCardCaseStudy} />} />
 
-          <Route path="/hub-transformation-office" element={<WithNav Component={TransformationOfficeHub} />} />
-          <Route path="/hub-gtm-growth" element={<WithNav Component={GTMGrowthHub} />} />
-          <Route path="/hub-integration-consolidation" element={<WithNav Component={IntegrationConsolidationHub} />} />
-          <Route path="/hub-labor-offshoring" element={<WithNav Component={LaborOffshoringHub} />} />
-          <Route path="/hub-sga-optimization" element={<WithNav Component={SGAOptimizationHub} />} />
-          <Route path="/hub-ai-automation" element={<WithNav Component={AIAutomationHub} />} />
+          <Route path="/hub-project-management-office" element={<WithNav Component={TransformationOfficeHub} />} />
+          <Route path="/hub-revenue-operations" element={<WithNav Component={GTMGrowthHub} />} />
+          <Route path="/hub-ma-integration" element={<WithNav Component={IntegrationConsolidationHub} />} />
+          <Route path="/hub-strategic-sourcing" element={<WithNav Component={LaborOffshoringHub} />} />
+          <Route path="/hub-procurement" element={<WithNav Component={SGAOptimizationHub} />} />
+          <Route path="/hub-transformation-office" element={<WithNav Component={AIAutomationHub} />} />
+
+          {/* Legacy hub route redirects -> renamed practice-area hubs */}
+          <Route path="/hub-sga-optimization" element={<Navigate to="/hub-procurement" replace />} />
+          <Route path="/hub-labor-offshoring" element={<Navigate to="/hub-strategic-sourcing" replace />} />
+          <Route path="/hub-gtm-growth" element={<Navigate to="/hub-revenue-operations" replace />} />
+          <Route path="/hub-ai-automation" element={<Navigate to="/hub-transformation-office" replace />} />
+          <Route path="/hub-integration-consolidation" element={<Navigate to="/hub-ma-integration" replace />} />
 
           <Route path="*" element={<WithNav Component={HomePage} />} />
         </Routes>

@@ -10,7 +10,7 @@ export default function PartnershipTransitionCaseStudy({ onNavigate }: Partnersh
       onNavigate={onNavigate}
       backLink={{
         text: "Back to Integration & Consolidation",
-        page: "hub-integration-consolidation"
+        page: "hub-ma-integration"
       }}
       title="Partnership Launch & Transition"
       heroImage="https://images.unsplash.com/photo-1542744173-8e7e53415bb0?w=1600&h=900&fit=crop"

@@ -10,7 +10,7 @@ export default function TechStackBICaseStudy({ onNavigate }: TechStackBICaseStud
       onNavigate={onNavigate}
       backLink={{
         text: "Back to Integration & Consolidation",
-        page: "hub-integration-consolidation"
+        page: "hub-ma-integration"
       }}
       title="Tech Stack Consolidation & BI Foundation"
       heroImage="https://images.unsplash.com/photo-1551288049-bebda4e38f71?w=1600&h=900&fit=crop"

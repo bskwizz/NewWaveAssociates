@@ -187,32 +187,32 @@ export const ROUTE_META: Record<string, RouteMeta> = {
   },
 
   // Hubs
-  '/hub-transformation-office': {
+  '/hub-project-management-office': {
     title: `Project Management Office Case Studies | ${BRAND}`,
     description:
       'Representative Project Management Office case studies from New Wave Associates: experienced operators who stepped into leadership roles, established accountability, and delivered measurable business outcomes.',
   },
-  '/hub-gtm-growth': {
+  '/hub-revenue-operations': {
     title: `Revenue Operations Case Studies | ${BRAND}`,
     description:
       'Representative Revenue Operations case studies from New Wave Associates: experienced operators who stepped into leadership roles, established accountability, and delivered measurable business outcomes.',
   },
-  '/hub-integration-consolidation': {
+  '/hub-ma-integration': {
     title: `M&A Integration Case Studies | ${BRAND}`,
     description:
       'Representative M&A Integration case studies from New Wave Associates: experienced operators who stepped into leadership roles, established accountability, and delivered measurable business outcomes.',
   },
-  '/hub-labor-offshoring': {
+  '/hub-strategic-sourcing': {
     title: `Strategic Sourcing Case Studies | ${BRAND}`,
     description:
       'Representative Strategic Sourcing case studies from New Wave Associates: experienced operators who stepped into leadership roles, established accountability, and delivered measurable business outcomes.',
   },
-  '/hub-sga-optimization': {
+  '/hub-procurement': {
     title: `Procurement Case Studies | ${BRAND}`,
     description:
       'Representative Procurement case studies from New Wave Associates: experienced operators who stepped into leadership roles, established accountability, and delivered measurable business outcomes.',
   },
-  '/hub-ai-automation': {
+  '/hub-transformation-office': {
     title: `Transformation Office Case Studies | ${BRAND}`,
     description:
       'Representative Transformation Office case studies from New Wave Associates: experienced operators who stepped into leadership roles, established accountability, and delivered measurable business outcomes.',

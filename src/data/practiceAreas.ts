@@ -23,12 +23,12 @@ interface PracticeAreaMeta {
 }
 
 const META: Record<PracticeAreaName, PracticeAreaMeta> = {
-  Procurement: { slug: 'procurement', hubPath: '/hub-sga-optimization' },
-  'Strategic Sourcing': { slug: 'strategic-sourcing', hubPath: '/hub-labor-offshoring' },
-  'Revenue Operations': { slug: 'revenue-operations', hubPath: '/hub-gtm-growth' },
-  'Transformation Office': { slug: 'transformation-office', hubPath: '/hub-ai-automation' },
-  'Project Management Office': { slug: 'project-management-office', hubPath: '/hub-transformation-office' },
-  'M&A Integration': { slug: 'ma-integration', hubPath: '/hub-integration-consolidation' },
+  Procurement: { slug: 'procurement', hubPath: '/hub-procurement' },
+  'Strategic Sourcing': { slug: 'strategic-sourcing', hubPath: '/hub-strategic-sourcing' },
+  'Revenue Operations': { slug: 'revenue-operations', hubPath: '/hub-revenue-operations' },
+  'Transformation Office': { slug: 'transformation-office', hubPath: '/hub-transformation-office' },
+  'Project Management Office': { slug: 'project-management-office', hubPath: '/hub-project-management-office' },
+  'M&A Integration': { slug: 'ma-integration', hubPath: '/hub-ma-integration' },
 };
 
 const NAME_BY_SLUG: Record<string, PracticeAreaName> = Object.fromEntries(

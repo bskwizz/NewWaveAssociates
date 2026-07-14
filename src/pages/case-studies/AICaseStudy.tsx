@@ -27,7 +27,7 @@ export default function AICaseStudy({ onNavigate }: AICaseStudyProps) {
         <div className="capabilities-hero__inner hero-content">
           <div className="max-w-7xl mx-auto px-6 pt-6 pb-20">
             <button
-              onClick={() => onNavigate('hub-ai-automation')}
+              onClick={() => onNavigate('hub-transformation-office')}
               className="flex items-center gap-2 text-[#01A3DB] hover:text-[#0182b3] transition-colors font-medium mb-8"
             >
               <ArrowLeft size={20} />

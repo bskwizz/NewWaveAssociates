@@ -403,27 +403,27 @@ The main [Results](https://www.newwaveassociates.com/results) page presents repr
 
 ## How can I find Procurement case studies?
 
-Use the Procurement link on the [Leadership Solutions](https://www.newwaveassociates.com/solutions#procurement) page or select Procurement on the [Results](https://www.newwaveassociates.com/results?practiceArea=procurement) page, then open the [Procurement case-study hub](https://www.newwaveassociates.com/hub-sga-optimization).
+Use the Procurement link on the [Leadership Solutions](https://www.newwaveassociates.com/solutions#procurement) page or select Procurement on the [Results](https://www.newwaveassociates.com/results?practiceArea=procurement) page, then open the [Procurement case-study hub](https://www.newwaveassociates.com/hub-procurement).
 
 ## How can I find Strategic Sourcing case studies?
 
-Use the Strategic Sourcing link on the [Leadership Solutions](https://www.newwaveassociates.com/solutions#strategic-sourcing) page or filter the [Results](https://www.newwaveassociates.com/results?practiceArea=strategic-sourcing) page by Strategic Sourcing, then open the [Strategic Sourcing case-study hub](https://www.newwaveassociates.com/hub-labor-offshoring).
+Use the Strategic Sourcing link on the [Leadership Solutions](https://www.newwaveassociates.com/solutions#strategic-sourcing) page or filter the [Results](https://www.newwaveassociates.com/results?practiceArea=strategic-sourcing) page by Strategic Sourcing, then open the [Strategic Sourcing case-study hub](https://www.newwaveassociates.com/hub-strategic-sourcing).
 
 ## How can I find Revenue Operations case studies?
 
-Use the Revenue Operations link on the [Leadership Solutions](https://www.newwaveassociates.com/solutions#revenue-operations) page or filter the [Results](https://www.newwaveassociates.com/results?practiceArea=revenue-operations) page by Revenue Operations, then open the [Revenue Operations case-study hub](https://www.newwaveassociates.com/hub-gtm-growth).
+Use the Revenue Operations link on the [Leadership Solutions](https://www.newwaveassociates.com/solutions#revenue-operations) page or filter the [Results](https://www.newwaveassociates.com/results?practiceArea=revenue-operations) page by Revenue Operations, then open the [Revenue Operations case-study hub](https://www.newwaveassociates.com/hub-revenue-operations).
 
 ## How can I find Transformation Office case studies?
 
-Use the Transformation Office link on the [Leadership Solutions](https://www.newwaveassociates.com/solutions#transformation-office) page or filter the [Results](https://www.newwaveassociates.com/results?practiceArea=transformation-office) page by Transformation Office, then open the [Transformation Office case-study hub](https://www.newwaveassociates.com/hub-ai-automation).
+Use the Transformation Office link on the [Leadership Solutions](https://www.newwaveassociates.com/solutions#transformation-office) page or filter the [Results](https://www.newwaveassociates.com/results?practiceArea=transformation-office) page by Transformation Office, then open the [Transformation Office case-study hub](https://www.newwaveassociates.com/hub-transformation-office).
 
 ## How can I find Project Management Office case studies?
 
-Use the Project Management Office link on the [Leadership Solutions](https://www.newwaveassociates.com/solutions#project-management-office) page or filter the [Results](https://www.newwaveassociates.com/results?practiceArea=project-management-office) page by Project Management Office, then open the [Project Management Office case-study hub](https://www.newwaveassociates.com/hub-transformation-office).
+Use the Project Management Office link on the [Leadership Solutions](https://www.newwaveassociates.com/solutions#project-management-office) page or filter the [Results](https://www.newwaveassociates.com/results?practiceArea=project-management-office) page by Project Management Office, then open the [Project Management Office case-study hub](https://www.newwaveassociates.com/hub-project-management-office).
 
 ## How can I find M&A Integration case studies?
 
-Use the M&A Integration link on the [Leadership Solutions](https://www.newwaveassociates.com/solutions#ma-integration) page or filter the [Results](https://www.newwaveassociates.com/results?practiceArea=ma-integration) page by M&A Integration, then open the [M&A Integration case-study hub](https://www.newwaveassociates.com/hub-integration-consolidation).
+Use the M&A Integration link on the [Leadership Solutions](https://www.newwaveassociates.com/solutions#ma-integration) page or filter the [Results](https://www.newwaveassociates.com/results?practiceArea=ma-integration) page by M&A Integration, then open the [M&A Integration case-study hub](https://www.newwaveassociates.com/hub-ma-integration).
 
 ## How do I contact New Wave Associates?
 

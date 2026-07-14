@@ -27,7 +27,7 @@ export default function SGACaseStudy({ onNavigate }: SGACaseStudyProps) {
         <div className="capabilities-hero__inner hero-content">
           <div className="max-w-7xl mx-auto px-6 pt-6 pb-20">
             <button
-          onClick={() => onNavigate('hub-sga-optimization')}
+          onClick={() => onNavigate('hub-procurement')}
           className="flex items-center gap-2 text-[#01A3DB] hover:text-[#0182b3] transition-colors font-medium mb-8"
         >
           <ArrowLeft size={20} />

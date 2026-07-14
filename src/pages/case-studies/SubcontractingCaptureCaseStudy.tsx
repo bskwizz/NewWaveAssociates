@@ -10,7 +10,7 @@ export default function SubcontractingCaptureCaseStudy({ onNavigate }: Subcontra
       onNavigate={onNavigate}
       backLink={{
         text: "Back to SG&A Cost Optimization",
-        page: "hub-sga-optimization"
+        page: "hub-procurement"
       }}
       title="Sub-Contracting Takeout & Capture"
       heroImage="https://images.unsplash.com/photo-1497366216548-37526070297c?w=1600&h=900&fit=crop"

@@ -10,7 +10,7 @@ export default function ITMSPOffshoringCaseStudy({ onNavigate }: ITMSPOffshoring
       onNavigate={onNavigate}
       backLink={{
         text: "Back to Labor Strategy & Offshoring",
-        page: "hub-labor-offshoring"
+        page: "hub-strategic-sourcing"
       }}
       title="IT MSP Offshoring & Global Delivery"
       heroImage="https://images.unsplash.com/photo-1573164713714-d95e436ab8d6?w=1600&h=900&fit=crop"
