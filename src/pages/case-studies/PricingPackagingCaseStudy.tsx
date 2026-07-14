@@ -9,7 +9,7 @@ export default function PricingPackagingCaseStudy({ onNavigate }: PricingPackagi
     <CaseStudyTemplate
       onNavigate={onNavigate}
       backLink={{
-        text: "Back to Go-to-Market & Growth Optimization",
+        text: "Back to Revenue Operations",
         page: "hub-revenue-operations"
       }}
       title="Pricing & Packaging Transformation for $150M SaaS"

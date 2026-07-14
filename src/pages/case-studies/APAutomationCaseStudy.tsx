@@ -9,7 +9,7 @@ export default function APAutomationCaseStudy({ onNavigate }: APAutomationCaseSt
     <CaseStudyTemplate
       onNavigate={onNavigate}
       backLink={{
-        text: "Back to AI & Intelligent Automation",
+        text: "Back to Transformation Office",
         page: "hub-transformation-office"
       }}
       title="AP Automation & Payments for a $1B Tech Reseller"

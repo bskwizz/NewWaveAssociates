@@ -31,7 +31,7 @@ export default function MergerCaseStudy({ onNavigate }: MergerCaseStudyProps) {
           className="flex items-center gap-2 text-[#01A3DB] hover:text-[#0182b3] transition-colors font-medium mb-8"
         >
           <ArrowLeft size={20} />
-          Back to Integration & Consolidation
+          Back to M&A Integration
         </button>
 
             <div>

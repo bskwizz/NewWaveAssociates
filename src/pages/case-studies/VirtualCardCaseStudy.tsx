@@ -9,7 +9,7 @@ export default function VirtualCardCaseStudy({ onNavigate }: VirtualCardCaseStud
     <CaseStudyTemplate
       onNavigate={onNavigate}
       backLink={{
-        text: "Back to SG&A Cost Optimization",
+        text: "Back to Procurement",
         page: "hub-procurement"
       }}
       title="Virtual Card Implementation & Rebate Program"
