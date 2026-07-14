@@ -2,7 +2,7 @@ import { useEffect } from 'react';
 import { Link, useLocation } from 'react-router-dom';
 import {
   Package, Handshake, TrendingUp, Workflow, ClipboardList, GitMerge,
-  CalendarClock, Zap, Target, CheckCircle2, type LucideIcon,
+  CalendarClock, Zap, Target, Award, Layers, Users, LineChart, type LucideIcon,
 } from 'lucide-react';
 import PageHeader from '../components/PageHeader';
 import Section from '../components/Section';
@@ -172,13 +172,43 @@ const engagementModels: EngagementModel[] = [
   },
 ];
 
-const whyNewWave = [
-  'Leaders who have sat in the seat.',
-  'Ready when you are.',
-  'We own the outcome.',
-  'Flexible engagement models.',
-  'Executive-level experience.',
-  'Practical leadership that delivers results.',
+const whyNewWave: { icon: LucideIcon; title: string; description: string }[] = [
+  {
+    icon: Award,
+    title: 'Leaders Who Have Been There',
+    description:
+      'Our professionals bring real executive and functional leadership experience to every engagement.',
+  },
+  {
+    icon: Zap,
+    title: 'Ready When You Are',
+    description:
+      'Access experienced leadership quickly without waiting through a lengthy permanent search.',
+  },
+  {
+    icon: Target,
+    title: 'We Own the Outcome',
+    description:
+      'We take responsibility for execution, measurable progress, and the business results we are engaged to deliver.',
+  },
+  {
+    icon: Layers,
+    title: 'Flexible by Design',
+    description:
+      'Engage leadership on a fractional, interim, or project-based basis as your needs evolve.',
+  },
+  {
+    icon: Users,
+    title: 'Built to Work Alongside You',
+    description:
+      'We partner with internal leaders, consulting teams, and specialists to create momentum without adding unnecessary friction.',
+  },
+  {
+    icon: LineChart,
+    title: 'Practical Leadership That Delivers',
+    description:
+      'We simplify priorities, establish accountability, and convert strategy into sustained execution.',
+  },
 ];
 
 const primaryButton =
@@ -299,17 +329,29 @@ export default function SolutionsPage() {
 
       {/* Why New Wave */}
       <Section background="gray">
-        <SectionHeader label="Why New Wave" heading="Operators. Not Consultants." />
-        <div className="grid grid-cols-1 sm:grid-cols-2 gap-4 sm:gap-5 max-w-4xl">
-          {whyNewWave.map((item) => (
-            <div
-              key={item}
-              className="flex items-center gap-3 rounded-xl border border-gray-200 bg-white p-4 sm:p-5 shadow-sm"
-            >
-              <CheckCircle2 size={22} strokeWidth={2} className="text-[#01A3DB] shrink-0" />
-              <p className="text-sm sm:text-base font-semibold text-[#38495D]">{item}</p>
-            </div>
-          ))}
+        <SectionHeader
+          label="Why New Wave"
+          heading="Execution Starts Here."
+          intro="When the work needs accountable leadership, New Wave steps in. Our experienced leaders align teams, remove barriers, and turn priorities into measurable progress. We work alongside internal executives, consulting partners, and functional teams to move critical work forward."
+        />
+        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-5 sm:gap-6 lg:gap-8">
+          {whyNewWave.map((item) => {
+            const Icon = item.icon;
+            return (
+              <div
+                key={item.title}
+                className="group flex h-full flex-col rounded-xl border border-gray-200 bg-white p-6 sm:p-7 shadow-sm transition-all duration-200 hover:-translate-y-1 hover:shadow-lg"
+              >
+                <div className="w-11 h-11 rounded-lg flex items-center justify-center mb-4 bg-[#01A3DB]/10 text-[#01A3DB]">
+                  <Icon size={22} strokeWidth={2} aria-hidden="true" />
+                </div>
+                <h3 className="text-base sm:text-lg font-bold text-[#38495D] mb-2 transition-colors group-hover:text-[#01A3DB]">
+                  {item.title}
+                </h3>
+                <p className="text-sm sm:text-base text-gray-700 leading-relaxed">{item.description}</p>
+              </div>
+            );
+          })}
         </div>
       </Section>
 
