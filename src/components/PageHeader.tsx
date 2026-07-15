@@ -4,7 +4,7 @@ import { Menu, X } from 'lucide-react';
 import EmailCaptureModal from './EmailCaptureModal';
 import { persistUnlock, recordLead } from '../services/leadCaptureService';
 
-type NavVariant = 'link' | 'primary' | 'secondary';
+type NavVariant = 'link' | 'primary';
 
 interface NavItem {
   label: string;
@@ -44,16 +44,16 @@ const navItems: NavItem[] = [
     variant: 'link',
   },
   {
-    label: 'Join Our Network',
-    path: '/executive-network',
-    isActive: (p: string) => p === '/executive-network',
-    variant: 'secondary',
-  },
-  {
     label: 'Contact',
     path: '/contact',
     isActive: (p: string) => p === '/contact',
     variant: 'primary',
+  },
+  {
+    label: 'Executive Network',
+    path: '/executive-network',
+    isActive: (p: string) => p === '/executive-network',
+    variant: 'link',
   },
 ];
 
@@ -95,18 +95,6 @@ export default function PageHeader() {
                 );
               }
 
-              if (item.variant === 'secondary') {
-                return (
-                  <Link
-                    key={item.path}
-                    to={item.path}
-                    className="px-6 py-3 border border-[#01A3DB] text-[#01A3DB] text-base font-semibold rounded-md hover:bg-[#01A3DB] hover:text-white transition-all shadow-sm hover:shadow-md focus:outline-none focus-visible:ring-2 focus-visible:ring-[#01A3DB] focus-visible:ring-offset-2"
-                  >
-                    {item.label}
-                  </Link>
-                );
-              }
-
               return (
                 <Link
                   key={item.path}
@@ -142,19 +130,6 @@ export default function PageHeader() {
                     to={item.path}
                     onClick={() => setMobileMenuOpen(false)}
                     className="px-5 py-2.5 bg-[#f05e00] text-white text-sm font-semibold rounded-md hover:bg-[#d94f00] transition-all shadow-sm hover:shadow-md text-center focus:outline-none focus-visible:ring-2 focus-visible:ring-[#f05e00] focus-visible:ring-offset-2"
-                  >
-                    {item.label}
-                  </Link>
-                );
-              }
-
-              if (item.variant === 'secondary') {
-                return (
-                  <Link
-                    key={item.path}
-                    to={item.path}
-                    onClick={() => setMobileMenuOpen(false)}
-                    className="px-5 py-2.5 border border-[#01A3DB] text-[#01A3DB] text-sm font-semibold rounded-md hover:bg-[#01A3DB] hover:text-white transition-all shadow-sm hover:shadow-md text-center focus:outline-none focus-visible:ring-2 focus-visible:ring-[#01A3DB] focus-visible:ring-offset-2"
                   >
                     {item.label}
                   </Link>

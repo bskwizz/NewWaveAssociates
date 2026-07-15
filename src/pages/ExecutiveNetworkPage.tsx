@@ -234,7 +234,7 @@ export default function ExecutiveNetworkPage() {
       </Section>
 
       {/* 8. Areas of leadership */}
-      <Section background="white">
+      <Section background="white" id="areas" className="scroll-mt-24">
         <SectionHeader
           label="Areas of Leadership"
           heading="Where New Wave Leaders Step In"
