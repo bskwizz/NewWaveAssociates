@@ -33,6 +33,11 @@ export const ROUTE_META: Record<string, RouteMeta> = {
     description:
       'Meet New Wave Associates — operators-turned-advisors who bring hands-on procurement, revenue operations, and transformation expertise to the lower and middle market.',
   },
+  '/executive-network': {
+    title: `Join the New Wave Executive Network | ${BRAND}`,
+    description:
+      "Join New Wave Associates' curated network of experienced fractional, interim, and project-based leaders across Procurement, Strategic Sourcing, Revenue Operations, Transformation Office, Project Management Office, and M&A Integration.",
+  },
   '/insights': {
     title: `Insights | ${BRAND}`,
     description:

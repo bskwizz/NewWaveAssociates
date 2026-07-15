@@ -74,6 +74,11 @@ export default function Footer() {
                 </Link>
               </li>
               <li>
+                <Link to={ROUTES.executiveNetwork} className={linkClass}>
+                  Join Our Network
+                </Link>
+              </li>
+              <li>
                 <Link to={ROUTES.contact} className={linkClass}>
                   Contact
                 </Link>

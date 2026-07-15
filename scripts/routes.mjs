@@ -11,6 +11,7 @@ export const STATIC_ROUTES = [
   '/solutions',
   '/results',
   '/about',
+  '/executive-network',
   '/insights',
   '/contact',
   '/privacy',

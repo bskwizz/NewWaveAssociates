@@ -4,11 +4,21 @@ import { Menu, X } from 'lucide-react';
 import EmailCaptureModal from './EmailCaptureModal';
 import { persistUnlock, recordLead } from '../services/leadCaptureService';
 
-const navItems = [
+type NavVariant = 'link' | 'primary' | 'secondary';
+
+interface NavItem {
+  label: string;
+  path: string;
+  isActive: (p: string) => boolean;
+  variant: NavVariant;
+}
+
+const navItems: NavItem[] = [
   {
     label: 'Solutions',
     path: '/solutions',
     isActive: (p: string) => p === '/solutions',
+    variant: 'link',
   },
   {
     label: 'Results',
@@ -19,21 +29,31 @@ const navItems = [
       p.startsWith('/case-studies/') ||
       p.startsWith('/case-study-') ||
       p.startsWith('/hub-'),
+    variant: 'link',
   },
   {
     label: 'Insights',
     path: '/insights',
     isActive: (p: string) => p.startsWith('/insights'),
+    variant: 'link',
   },
   {
     label: 'About',
     path: '/about',
     isActive: (p: string) => p === '/about',
+    variant: 'link',
+  },
+  {
+    label: 'Join Our Network',
+    path: '/executive-network',
+    isActive: (p: string) => p === '/executive-network',
+    variant: 'secondary',
   },
   {
     label: 'Contact',
     path: '/contact',
     isActive: (p: string) => p === '/contact',
+    variant: 'primary',
   },
 ];
 
@@ -59,17 +79,28 @@ export default function PageHeader() {
             />
           </Link>
 
-          <div className="hidden lg:flex items-center gap-8 xl:gap-12">
+          <div className="hidden lg:flex items-center gap-6 xl:gap-8">
             {navItems.map((item) => {
               const active = item.isActive(pathname);
-              const isContactUs = item.path === '/contact';
 
-              if (isContactUs) {
+              if (item.variant === 'primary') {
                 return (
                   <Link
                     key={item.path}
                     to={item.path}
-                    className="px-6 py-3 bg-[#f05e00] text-white text-base font-semibold rounded-md hover:bg-[#d94f00] transition-all shadow-sm hover:shadow-md"
+                    className="px-6 py-3 bg-[#f05e00] text-white text-base font-semibold rounded-md hover:bg-[#d94f00] transition-all shadow-sm hover:shadow-md focus:outline-none focus-visible:ring-2 focus-visible:ring-[#f05e00] focus-visible:ring-offset-2"
+                  >
+                    {item.label}
+                  </Link>
+                );
+              }
+
+              if (item.variant === 'secondary') {
+                return (
+                  <Link
+                    key={item.path}
+                    to={item.path}
+                    className="px-6 py-3 border border-[#01A3DB] text-[#01A3DB] text-base font-semibold rounded-md hover:bg-[#01A3DB] hover:text-white transition-all shadow-sm hover:shadow-md focus:outline-none focus-visible:ring-2 focus-visible:ring-[#01A3DB] focus-visible:ring-offset-2"
                   >
                     {item.label}
                   </Link>
@@ -103,15 +134,27 @@ export default function PageHeader() {
           <div className="lg:hidden mt-4 pb-4 flex flex-col gap-3 sm:gap-4 bg-white/95 backdrop-blur-sm rounded-lg p-4">
             {navItems.map((item) => {
               const active = item.isActive(pathname);
-              const isContactUs = item.path === '/contact';
 
-              if (isContactUs) {
+              if (item.variant === 'primary') {
                 return (
                   <Link
                     key={item.path}
                     to={item.path}
                     onClick={() => setMobileMenuOpen(false)}
-                    className="px-5 py-2.5 bg-[#f05e00] text-white text-sm font-semibold rounded-md hover:bg-[#d94f00] transition-all shadow-sm hover:shadow-md"
+                    className="px-5 py-2.5 bg-[#f05e00] text-white text-sm font-semibold rounded-md hover:bg-[#d94f00] transition-all shadow-sm hover:shadow-md text-center focus:outline-none focus-visible:ring-2 focus-visible:ring-[#f05e00] focus-visible:ring-offset-2"
+                  >
+                    {item.label}
+                  </Link>
+                );
+              }
+
+              if (item.variant === 'secondary') {
+                return (
+                  <Link
+                    key={item.path}
+                    to={item.path}
+                    onClick={() => setMobileMenuOpen(false)}
+                    className="px-5 py-2.5 border border-[#01A3DB] text-[#01A3DB] text-sm font-semibold rounded-md hover:bg-[#01A3DB] hover:text-white transition-all shadow-sm hover:shadow-md text-center focus:outline-none focus-visible:ring-2 focus-visible:ring-[#01A3DB] focus-visible:ring-offset-2"
                   >
                     {item.label}
                   </Link>
