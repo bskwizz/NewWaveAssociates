@@ -137,7 +137,7 @@ export default function HomePage() {
             The shaded treatment now starts at the sections below. */}
         <div className="relative overflow-x-clip bg-white">
           <h1 className="sr-only">
-            New Wave Associates — Operational Transformation, Procurement & Revenue Operations Consulting
+            New Wave Associates | Executive Leadership, On Demand
           </h1>
 
           <NextWaveHero />

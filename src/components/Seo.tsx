@@ -14,6 +14,10 @@ interface SeoProps {
   image?: string;
   /** Open Graph type. "website" for most pages, "article" for insights. */
   type?: 'website' | 'article';
+  /** Optional Open Graph description override (defaults to `description`). */
+  ogDescription?: string;
+  /** Optional Twitter description override (defaults to `description`). */
+  twitterDescription?: string;
 }
 
 export default function Seo({
@@ -22,7 +26,11 @@ export default function Seo({
   canonical,
   image = DEFAULT_IMAGE,
   type = 'website',
+  ogDescription,
+  twitterDescription,
 }: SeoProps) {
+  const ogDesc = ogDescription ?? description;
+  const twitterDesc = twitterDescription ?? description;
   // GitHub Pages serves directory index files with a trailing slash (e.g.
   // /services -> 301 -> /services/). Canonicalize to that final 200 URL so the
   // canonical + og:url don't point at a redirect. Home stays "/".
@@ -37,7 +45,7 @@ export default function Seo({
       <link rel="canonical" href={url} />
 
       <meta property="og:title" content={title} />
-      <meta property="og:description" content={description} />
+      <meta property="og:description" content={ogDesc} />
       <meta property="og:type" content={type} />
       <meta property="og:url" content={url} />
       <meta property="og:image" content={imageUrl} />
@@ -45,7 +53,7 @@ export default function Seo({
 
       <meta name="twitter:card" content="summary_large_image" />
       <meta name="twitter:title" content={title} />
-      <meta name="twitter:description" content={description} />
+      <meta name="twitter:description" content={twitterDesc} />
       <meta name="twitter:image" content={imageUrl} />
     </Helmet>
   );

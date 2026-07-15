@@ -8,15 +8,23 @@
 export interface RouteMeta {
   title: string;
   description: string;
+  /** Optional Open Graph description override (defaults to `description`). */
+  ogDescription?: string;
+  /** Optional Twitter description override (defaults to `description`). */
+  twitterDescription?: string;
 }
 
 const BRAND = 'New Wave Associates';
 
 export const ROUTE_META: Record<string, RouteMeta> = {
   '/': {
-    title: `${BRAND} | Operational Transformation & Procurement Consulting`,
+    title: 'New Wave Associates | Executive Leadership, On Demand',
     description:
-      'New Wave Associates brings operator-grade expertise in procurement, revenue operations, and transformation to help lower and middle market companies protect margins and grow.',
+      'New Wave Associates provides experienced fractional, interim, and project-based executive leadership across Procurement, Strategic Sourcing, Revenue Operations, Transformation Office, Project Management Office, and M&A Integration.',
+    ogDescription:
+      'Experienced fractional, interim, and project-based leaders who step into critical roles, own execution, and deliver measurable business outcomes.',
+    twitterDescription:
+      'Experienced executive leadership across critical business functions, available through fractional, interim, and project-based engagements.',
   },
   '/solutions': {
     title: `Leadership Solutions | ${BRAND}`,
@@ -29,12 +37,12 @@ export const ROUTE_META: Record<string, RouteMeta> = {
       'Proven executive leadership outcomes: $60M+ in documented cost savings, 35+ M&A supported, and measurable results delivered through fractional, interim, and project-based leaders.',
   },
   '/about': {
-    title: `About Us | ${BRAND}`,
+    title: `About | ${BRAND}`,
     description:
-      'Meet New Wave Associates — operators-turned-advisors who bring hands-on procurement, revenue operations, and transformation expertise to the lower and middle market.',
+      'Meet New Wave Associates, operators-turned-advisors who bring hands-on procurement, revenue operations, and transformation expertise to the lower and middle market.',
   },
   '/executive-network': {
-    title: `Join the New Wave Executive Network | ${BRAND}`,
+    title: `Executive Network | ${BRAND}`,
     description:
       "Join New Wave Associates' curated network of experienced fractional, interim, and project-based leaders across Procurement, Strategic Sourcing, Revenue Operations, Transformation Office, Project Management Office, and M&A Integration.",
   },
@@ -44,7 +52,7 @@ export const ROUTE_META: Record<string, RouteMeta> = {
       'Articles and perspectives on operational rigor, procurement, revenue operations, AI, and transformation from the New Wave Associates team.',
   },
   '/contact': {
-    title: `Contact Us | ${BRAND}`,
+    title: `Talk to Our Team | ${BRAND}`,
     description:
       'Get in touch with New Wave Associates to discuss procurement, revenue operations, and transformation challenges facing your business.',
   },

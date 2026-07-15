@@ -16,5 +16,13 @@ export default function RouteSeo() {
     : pathname;
   const meta = ROUTE_META[normalized] || DEFAULT_META;
 
-  return <Seo title={meta.title} description={meta.description} canonical={normalized} />;
+  return (
+    <Seo
+      title={meta.title}
+      description={meta.description}
+      canonical={normalized}
+      ogDescription={meta.ogDescription}
+      twitterDescription={meta.twitterDescription}
+    />
+  );
 }
