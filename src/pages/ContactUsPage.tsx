@@ -1,4 +1,4 @@
-import { useRef } from 'react';
+import { useRef, useState } from 'react';
 import {
   Briefcase,
   Handshake,
@@ -9,6 +9,8 @@ import {
   UserCheck,
   MessageSquare,
   ArrowRight,
+  Copy,
+  Check,
   type LucideIcon,
 } from 'lucide-react';
 import PageHeader from '../components/PageHeader';
@@ -82,6 +84,20 @@ const mailto = `mailto:${COMPANY.email}`;
 
 export default function ContactUsPage() {
   const formRef = useRef<ContactFormHandle>(null);
+  const [copied, setCopied] = useState(false);
+
+  // Copy the address to the clipboard as a reliable fallback for visitors
+  // whose device has no default mail app to handle the mailto link.
+  async function copyEmail() {
+    try {
+      await navigator.clipboard.writeText(COMPANY.email);
+      setCopied(true);
+      window.setTimeout(() => setCopied(false), 2000);
+    } catch {
+      // Clipboard unavailable (older browser / insecure context): the mailto
+      // links remain available as the primary path.
+    }
+  }
 
   // Move the visitor to the form and preselect the matching inquiry type.
   function goToForm(inquiry?: InquiryType) {
@@ -180,12 +196,35 @@ export default function ContactUsPage() {
                 <p className="text-sm sm:text-base text-gray-700 leading-relaxed">
                   Prefer email? Reach out directly and tell us what you are navigating.
                 </p>
-                <a
-                  href={mailto}
-                  className="mt-3 inline-block text-lg sm:text-xl font-bold text-[#01A3DB] hover:text-[#0192C5] transition-colors break-all"
-                >
-                  {COMPANY.email}
-                </a>
+                <div className="mt-3 flex flex-wrap items-center gap-x-3 gap-y-1">
+                  <a
+                    href={mailto}
+                    className="text-lg sm:text-xl font-bold text-[#01A3DB] hover:text-[#0192C5] transition-colors break-all"
+                  >
+                    {COMPANY.email}
+                  </a>
+                  <button
+                    type="button"
+                    onClick={copyEmail}
+                    aria-label={copied ? 'Email address copied' : 'Copy email address'}
+                    className="inline-flex items-center gap-1.5 text-sm font-semibold text-[#38495D] hover:text-[#01A3DB] transition-colors focus:outline-none focus:ring-2 focus:ring-[#01A3DB] focus:ring-offset-2 rounded-sm"
+                  >
+                    {copied ? (
+                      <>
+                        <Check size={16} aria-hidden="true" />
+                        Copied
+                      </>
+                    ) : (
+                      <>
+                        <Copy size={16} aria-hidden="true" />
+                        Copy
+                      </>
+                    )}
+                  </button>
+                  <span className="sr-only" role="status" aria-live="polite">
+                    {copied ? 'Email address copied to clipboard' : ''}
+                  </span>
+                </div>
                 <p className="mt-2 text-sm text-gray-600">
                   We will route your message to the right person.
                 </p>

@@ -29,6 +29,7 @@ export function persistUnlock(email: string): void {
     localStorage.setItem(UNLOCK_KEY, until.toISOString());
     localStorage.setItem(EMAIL_KEY, email);
   } catch {
+    // localStorage unavailable (private mode / disabled): non-fatal.
   }
 }
 
@@ -37,11 +38,13 @@ export function clearUnlock(): void {
     localStorage.removeItem(UNLOCK_KEY);
     localStorage.removeItem(EMAIL_KEY);
   } catch {
+    // localStorage unavailable (private mode / disabled): non-fatal.
   }
 }
 
 export type LeadSource =
   | 'contact_form'
+  | 'executive_network'
   | 'download_pdf'
   | 'print_pdf'
   | 'subscribe_insights_header'
@@ -59,6 +62,10 @@ export interface LeadPayload {
   reason?: string;
   timeline?: string;
   message?: string;
+  // Additional source-specific fields merged into the POST body as-is (e.g. the
+  // Executive Network application's structured columns). Keys should match what
+  // the edge function reads for that source.
+  fields?: Record<string, string | undefined>;
 }
 
 export async function recordLead(payload: LeadPayload): Promise<void> {
@@ -75,6 +82,13 @@ export async function recordLead(payload: LeadPayload): Promise<void> {
     timeline: payload.timeline ?? null,
     message: payload.message ?? null,
   };
+
+  // Merge any source-specific fields (e.g. executive_network columns).
+  if (payload.fields) {
+    for (const [key, value] of Object.entries(payload.fields)) {
+      body[key] = value ?? null;
+    }
+  }
 
   const response = await fetch(LEAD_ENDPOINT, {
     method: 'POST',

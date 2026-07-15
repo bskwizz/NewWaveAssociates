@@ -153,6 +153,66 @@ Deno.serve(async (req) => {
       );
     }
 
+    if (source === "executive_network") {
+      const str = (k: string) => {
+        const v = body?.[k];
+        if (v == null) return null;
+        const t = String(v).trim();
+        return t.length ? t : null;
+      };
+
+      const first_name = str("first_name");
+      const last_name = str("last_name");
+      const linkedin = str("linkedin");
+      const title = str("title");
+      const practice_area = str("practice_area");
+      const engagement_type = str("engagement_type");
+      const summary = str("summary");
+
+      if (!first_name || !last_name || !linkedin || !title || !practice_area || !engagement_type || !summary) {
+        return new Response(
+          JSON.stringify({ ok: false, error: "Missing required fields" }),
+          { status: 400, headers: { ...headers, "Content-Type": "application/json" } }
+        );
+      }
+
+      const { error } = await supabase.from("executive_network_leads").insert([{
+        first_name,
+        last_name,
+        email,
+        phone: str("phone"),
+        company: str("company"),
+        linkedin,
+        title,
+        practice_area,
+        additional_areas: str("additional_areas"),
+        engagement_type,
+        industries: str("industries"),
+        location: str("location"),
+        travel: str("travel"),
+        availability: str("availability"),
+        // The form's real website field is sent as website_url; "website" is the honeypot.
+        website_url: str("website_url"),
+        summary,
+        additional_info: str("additional_info"),
+        source: "executive_network",
+        page_url: str("page_url"),
+      }]);
+
+      if (error) {
+        console.error("executive_network_leads insert failed:", error.message);
+        return new Response(
+          JSON.stringify({ ok: false, error: "Database insert failed" }),
+          { status: 500, headers: { ...headers, "Content-Type": "application/json" } }
+        );
+      }
+
+      return new Response(
+        JSON.stringify({ ok: true }),
+        { status: 200, headers: { ...headers, "Content-Type": "application/json" } }
+      );
+    }
+
     return new Response(
       JSON.stringify({ ok: false, error: "Unknown source" }),
       { status: 400, headers: { ...headers, "Content-Type": "application/json" } }

@@ -275,7 +275,7 @@ export default function SolutionsPage() {
       </div>
 
       {/* Where We Lead — the six practice areas */}
-      <Section background="gray">
+      <Section background="gray" id="where-we-lead" className="scroll-mt-24">
         <SectionHeader
           label="Where We Lead"
           intro="Every New Wave leader has successfully led the function they support. Our operators bring practical experience, executive judgment, and accountability from day one."

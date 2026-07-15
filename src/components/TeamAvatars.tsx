@@ -1,11 +1,4 @@
-// The four partners' headshots. Single source of truth for the team photos,
-// shared by the About and Contact pages.
-const team = [
-  { name: 'Craig Keller', image: 'craig_keller_headshot.jpeg' },
-  { name: 'Hunter New', image: 'hunter_new_headshot.jpeg' },
-  { name: 'Bryan Skwirut', image: 'bryan_skwirut_headshot.jpeg' },
-  { name: 'Jason Lee', image: 'jason_lee_headshot.jpeg' },
-];
+import { TEAM as team } from '../data/team';
 
 interface TeamAvatarsProps {
   /** Extra classes for the wrapper (e.g. vertical spacing). */
