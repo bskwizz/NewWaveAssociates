@@ -113,14 +113,16 @@ Deno.serve(async (req) => {
 
     if (source === "contact_form") {
       const name = String(body?.name ?? "").trim();
-      const reason = String(body?.reason ?? "").trim();
-      const timeline = String(body?.timeline ?? "").trim();
+      // reason (inquiry type) and timeline are optional: the contact form only
+      // sends reason when an inquiry type is picked, and has no timeline field.
+      const reason = body?.reason ? String(body.reason).trim() || null : null;
+      const timeline = body?.timeline ? String(body.timeline).trim() || null : null;
       const phone = body?.phone ? String(body.phone).trim() : null;
       const company = body?.company ? String(body.company).trim() : null;
       const message = body?.message ? String(body.message).trim() : null;
       const page_url = body?.page_url ? String(body.page_url).trim() : null;
 
-      if (!name || !reason || !timeline) {
+      if (!name) {
         return new Response(
           JSON.stringify({ ok: false, error: "Missing required fields" }),
           { status: 400, headers: { ...headers, "Content-Type": "application/json" } }
