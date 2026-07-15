@@ -70,7 +70,7 @@ export default function ExecutiveNetworkHero() {
           <div className="lg:col-span-7">
             <div className="inline-block mb-6">
               <p className="text-white text-sm sm:text-base font-bold tracking-[0.2em] uppercase" style={{ letterSpacing: '0.2em' }}>
-                A Curated Executive Community
+                For Fractional &amp; Interim Executives
               </p>
               <div className="mt-2 h-[2px] bg-[#f05e00]" />
             </div>
@@ -81,10 +81,24 @@ export default function ExecutiveNetworkHero() {
             </h1>
 
             <p className="mt-6 text-lg sm:text-xl text-white/80 leading-relaxed max-w-[600px]">
-              Built for accomplished leaders who still want to build, fix, and lead. Join a trusted
-              network of executives considered for fractional, interim, and project-based
+              Built for experienced executives who still enjoy building, fixing, and leading. Join a
+              curated network considered for fractional, interim, and project-based leadership
               opportunities where experience and accountability matter.
             </p>
+
+            {/* Sub-line: jump down to the six practice areas. */}
+            <div className="mt-5 max-w-[600px] text-sm text-white/60 leading-relaxed">
+              <p>
+                Curious where you might fit?{' '}
+                <button
+                  type="button"
+                  onClick={() => scrollToId('areas')}
+                  className="font-semibold text-[#7fd3f0] underline underline-offset-2 hover:text-white transition-colors focus:outline-none focus-visible:ring-2 focus-visible:ring-[#01A3DB] focus-visible:ring-offset-2 focus-visible:ring-offset-[#38495D] rounded-sm"
+                >
+                  Explore our Areas of Leadership →
+                </button>
+              </p>
+            </div>
 
             <p className="mt-6 inline-block rounded-lg bg-white/5 ring-1 ring-white/10 px-4 py-2.5 text-sm sm:text-base font-semibold text-white/90">
               Senior operators. Meaningful work. Carefully matched opportunities.
