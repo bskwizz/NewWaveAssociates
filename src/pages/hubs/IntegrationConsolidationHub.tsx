@@ -9,6 +9,7 @@ export default function IntegrationConsolidationHub({ onNavigate }: IntegrationC
     <ListingPageLayout
       onNavigate={onNavigate}
       categoryLabel="Results"
+      ctaButtonText="Find an M&A Integration Leader"
       title="M&A Integration Results"
       subtitle="Explore representative M&A Integration case studies demonstrating how experienced New Wave operators have stepped into critical leadership roles, established accountability, and delivered measurable business outcomes."
     >

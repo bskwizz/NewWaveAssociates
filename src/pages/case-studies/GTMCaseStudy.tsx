@@ -175,8 +175,8 @@ export default function GTMCaseStudy({ onNavigate }: GTMCaseStudyProps) {
 
           <CTABar
             text="Ready to optimize your go-to-market strategy? Let's discuss your growth opportunities."
-            buttonText="Contact Us"
-            onButtonClick={() => onNavigate('contact-us')}
+            buttonText="Find a Revenue Operations Leader"
+            onButtonClick={() => onNavigate('/find-a-leader/new')}
           />
         </div>
       </div>

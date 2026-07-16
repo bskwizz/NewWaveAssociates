@@ -207,8 +207,8 @@ export default function MergerCaseStudy({ onNavigate }: MergerCaseStudyProps) {
 
           <CTABar
             text="Planning a merger or acquisition? Let's discuss how to maximize value and minimize risk."
-            buttonText="Contact Us"
-            onButtonClick={() => onNavigate('contact-us')}
+            buttonText="Find an M&A Integration Leader"
+            onButtonClick={() => onNavigate('/find-a-leader/new')}
           />
         </div>
       </div>

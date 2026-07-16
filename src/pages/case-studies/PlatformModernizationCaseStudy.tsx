@@ -207,8 +207,8 @@ export default function PlatformModernizationCaseStudy({ onNavigate }: PlatformM
 
           <CTABar
             text="Is your platform modernization stuck? Let's discuss how to get back on track."
-            buttonText="Contact Us"
-            onButtonClick={() => onNavigate('contact-us')}
+            buttonText="Find a Transformation Office Leader"
+            onButtonClick={() => onNavigate('/find-a-leader/new')}
           />
         </div>
       </div>

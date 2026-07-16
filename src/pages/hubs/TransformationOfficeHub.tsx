@@ -9,6 +9,7 @@ export default function TransformationOfficeHub({ onNavigate }: TransformationOf
     <ListingPageLayout
       onNavigate={onNavigate}
       categoryLabel="Results"
+      ctaButtonText="Find a PMO Leader"
       title="Project Management Office Results"
       subtitle="Explore representative Project Management Office case studies demonstrating how experienced New Wave operators have stepped into critical leadership roles, established accountability, and delivered measurable business outcomes."
     >

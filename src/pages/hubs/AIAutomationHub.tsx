@@ -9,6 +9,7 @@ export default function AIAutomationHub({ onNavigate }: AIAutomationHubProps) {
     <ListingPageLayout
       onNavigate={onNavigate}
       categoryLabel="Results"
+      ctaButtonText="Find a Transformation Office Leader"
       title="Transformation Office Results"
       subtitle="Explore representative Transformation Office case studies demonstrating how experienced New Wave operators have stepped into critical leadership roles, established accountability, and delivered measurable business outcomes."
     >

@@ -175,8 +175,8 @@ export default function SGACaseStudy({ onNavigate }: SGACaseStudyProps) {
 
           <CTABar
             text="Ready to optimize your SG&A costs? Let's explore opportunities for margin expansion."
-            buttonText="Contact Us"
-            onButtonClick={() => onNavigate('contact-us')}
+            buttonText="Find a Procurement Leader"
+            onButtonClick={() => onNavigate('/find-a-leader/new')}
           />
         </div>
       </div>

@@ -11,6 +11,24 @@ import {
 } from 'lucide-react';
 import { type PracticeAreaName } from './practiceAreas';
 
+// Route for the guided "Find the Right Leader" intake flow.
+export const FIND_LEADER_ROUTE = '/find-a-leader/new';
+
+// Per-practice-area CTA label that funnels into the intake flow. Used by the
+// case-study template, the legacy case studies, and the hub layout so the
+// wording stays consistent. Falls back to the generic label.
+export function findLeaderCtaLabel(area: string): string {
+  const map: Record<string, string> = {
+    Procurement: 'Find a Procurement Leader',
+    'Strategic Sourcing': 'Find a Strategic Sourcing Leader',
+    'Revenue Operations': 'Find a Revenue Operations Leader',
+    'Transformation Office': 'Find a Transformation Office Leader',
+    'Project Management Office': 'Find a PMO Leader',
+    'M&A Integration': 'Find an M&A Integration Leader',
+  };
+  return map[area] ?? 'Find the Right Leader';
+}
+
 export interface PracticeAreaCardData {
   name: PracticeAreaName;
   description: string;

@@ -44,12 +44,6 @@ const navItems: NavItem[] = [
     variant: 'link',
   },
   {
-    label: 'Contact',
-    path: '/contact',
-    isActive: (p: string) => p === '/contact',
-    variant: 'primary',
-  },
-  {
     label: 'Executive Network',
     path: '/executive-network',
     isActive: (p: string) => p === '/executive-network',
