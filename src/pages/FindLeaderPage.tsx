@@ -1,4 +1,5 @@
 import { useEffect, useState } from 'react';
+import { Link } from 'react-router-dom';
 import { Info } from 'lucide-react';
 import { recordLead } from '../services/leadCaptureService';
 import { trackFlowEvent } from '../services/flowAnalytics';
@@ -229,6 +230,14 @@ export default function FindLeaderPage() {
                   }}
                 />
               ))}
+            </div>
+            <div className="mt-5">
+              <Link
+                to="/executive-network/apply"
+                className="text-sm text-gray-500 hover:text-[#01A3DB] transition-colors rounded-sm focus:outline-none focus-visible:ring-2 focus-visible:ring-[#01A3DB] focus-visible:ring-offset-2"
+              >
+                Are you a leader?
+              </Link>
             </div>
           </FlowStepLayout>
         ) : step === 2 ? (
