@@ -8,8 +8,6 @@ import { NETWORK_METRICS, type HeroMetric } from '../data/executiveNetwork';
 
 const primaryButton =
   'inline-flex items-center justify-center w-full sm:w-auto px-7 py-3.5 bg-[#f05e00] text-white text-base font-semibold uppercase tracking-wide rounded-md hover:bg-[#d94f00] transition-all shadow-sm hover:shadow-md focus:outline-none focus-visible:ring-2 focus-visible:ring-[#f05e00] focus-visible:ring-offset-2 focus-visible:ring-offset-[#38495D]';
-const secondaryButton =
-  'inline-flex items-center justify-center w-full sm:w-auto px-7 py-3.5 border border-white/30 text-white text-base font-semibold uppercase tracking-wide rounded-md hover:bg-white/10 transition-all focus:outline-none focus-visible:ring-2 focus-visible:ring-white/70 focus-visible:ring-offset-2 focus-visible:ring-offset-[#38495D]';
 
 const engagementStrip: { icon: LucideIcon; label: string }[] = [
   { icon: CalendarClock, label: 'Fractional Leadership' },
@@ -104,12 +102,9 @@ export default function ExecutiveNetworkHero() {
               Senior operators. Meaningful work. Carefully matched opportunities.
             </p>
 
-            <div className="mt-8 flex flex-col sm:flex-row gap-4">
+            <div className="mt-8">
               <button type="button" onClick={() => scrollToId('apply')} className={primaryButton}>
-                Apply to Join the Network
-              </button>
-              <button type="button" onClick={() => scrollToId('process')} className={secondaryButton}>
-                See How the Network Works
+                Join the Network
               </button>
             </div>
           </div>
