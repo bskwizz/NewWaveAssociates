@@ -3,7 +3,7 @@ import {
   Briefcase, Compass, Hammer, Users, Target, Handshake,
   CalendarClock, Zap, Package, TrendingUp, Workflow, ClipboardList, GitMerge,
   Star, Layers, Building2, Puzzle, Repeat,
-  FileText, MessageCircle, ClipboardCheck, ShieldCheck, CheckCircle2,
+  FileText, MessageCircle, Network, BookOpen,
   ArrowRight, type LucideIcon,
 } from 'lucide-react';
 import { Link } from 'react-router-dom';
@@ -104,14 +104,53 @@ const standard = [
   'Delivers measurable outcomes',
 ];
 
-// 11. Vetting process
-const steps: { icon: LucideIcon; title: string; description: string }[] = [
-  { icon: FileText, title: 'Share Your Background', description: 'Tell us about your leadership experience, functional expertise, and the kinds of work that interest you.' },
-  { icon: MessageCircle, title: 'Initial Conversation', description: 'We learn more about your experience, availability, and what you are looking for next.' },
-  { icon: Users, title: 'Executive Interview', description: 'We explore how you lead, make decisions, build trust, and operate in complex environments.' },
-  { icon: ClipboardCheck, title: 'Experience Review', description: 'We review the roles you have held, the scope of your responsibility, and the outcomes you have delivered.' },
-  { icon: ShieldCheck, title: 'References and Validation', description: 'Where appropriate, we validate experience and speak with people who can provide relevant perspective.' },
-  { icon: CheckCircle2, title: 'Welcome to the Network', description: 'Leaders who align with the network may be considered for future opportunities as client needs arise.' },
+// 11. How it works: three-step process
+const processSteps: { number: number; title: string; description: string; icon: LucideIcon }[] = [
+  {
+    number: 1,
+    title: 'Apply',
+    description:
+      'Tell us about your leadership experience, functional expertise, availability, and the kinds of opportunities that interest you.',
+    icon: FileText,
+  },
+  {
+    number: 2,
+    title: 'Get to Know Each Other',
+    description:
+      'We will have a conversation about how you lead, where you create the greatest impact, and what you are looking for next.',
+    icon: MessageCircle,
+  },
+  {
+    number: 3,
+    title: 'Join the Network',
+    description:
+      'Leaders who are a strong fit may be welcomed into the network and considered for carefully matched fractional, interim, and project-based opportunities.',
+    icon: Network,
+  },
+];
+
+// Benefits of joining. NOTE: "Executive Resources" uses forward-looking copy
+// ("as the network grows ...") because those tools are not confirmed to exist
+// yet. Confirm with the business before switching to present tense.
+const networkBenefits: { title: string; description: string; icon: LucideIcon }[] = [
+  {
+    title: 'Curated Opportunities',
+    description:
+      'Be considered for fractional, interim, and project-based leadership engagements that align with your experience, interests, and availability.',
+    icon: Target,
+  },
+  {
+    title: 'Executive Resources',
+    description:
+      'As the network grows, members will gain access to practical tools, insights, and resources designed for experienced operators.',
+    icon: BookOpen,
+  },
+  {
+    title: 'A Trusted Community',
+    description:
+      'Join a growing network of accomplished peers who value practical leadership, trust, and measurable outcomes.',
+    icon: Users,
+  },
 ];
 
 function BulletList({ items }: { items: string[] }) {
@@ -313,33 +352,65 @@ export default function ExecutiveNetworkPage() {
         </div>
       </section>
 
-      {/* 11. Vetting process */}
+      {/* 11. How it works: three-step process, benefits, and reassurance */}
       <Section background="white" id="process" className="scroll-mt-24">
         <SectionHeader
-          label="The Network Process"
-          heading="Built One Relationship at a Time"
-          intro="New Wave is a curated network. We take the time to understand each leader's experience, operating style, interests, and fit."
+          label="How It Works"
+          heading="Built for Leaders Who Still Want to Lead"
+          intro="Joining the New Wave Executive Network should feel personal, straightforward, and worth your time. We focus on understanding where you have led, the kinds of challenges you solve best, and the opportunities that fit your experience."
         />
         <ol className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-5 sm:gap-6 lg:gap-8">
-          {steps.map((step, index) => {
+          {processSteps.map((step) => {
             const Icon = step.icon;
             return (
-              <li key={step.title} className="flex h-full flex-col rounded-xl border border-gray-200 bg-white p-6 sm:p-7 shadow-sm">
-                <div className="flex items-center gap-3 mb-4">
-                  <span className="w-9 h-9 shrink-0 rounded-full flex items-center justify-center bg-[#38495D] text-white text-sm font-bold">
-                    {index + 1}
+              <li
+                key={step.title}
+                className="group flex h-full flex-col rounded-xl border border-gray-200 bg-white p-7 sm:p-8 shadow-sm transition-all duration-200 hover:-translate-y-1 hover:shadow-lg"
+              >
+                <div className="flex items-center justify-between mb-5">
+                  <span className="text-4xl font-extrabold text-[#38495D]/15 leading-none" aria-hidden="true">
+                    {step.number}
                   </span>
-                  <Icon size={22} strokeWidth={2} className="text-[#01A3DB]" aria-hidden="true" />
+                  <div className="w-12 h-12 rounded-lg flex items-center justify-center bg-[#01A3DB]/10 text-[#01A3DB]">
+                    <Icon size={24} strokeWidth={2} aria-hidden="true" />
+                  </div>
                 </div>
-                <h3 className="text-base sm:text-lg font-bold text-[#38495D] mb-2">{step.title}</h3>
+                <h3 className="text-lg sm:text-xl font-bold text-[#38495D] mb-2">
+                  <span className="sr-only">Step {step.number}: </span>
+                  {step.title}
+                </h3>
                 <p className="text-sm sm:text-base text-gray-700 leading-relaxed">{step.description}</p>
               </li>
             );
           })}
         </ol>
-        <SectionClosingNote>
-          The process may vary based on the leader, the opportunity, and the information already available.
-        </SectionClosingNote>
+
+        {/* Benefits subsection */}
+        <div className="mt-16 sm:mt-20">
+          <SectionHeader
+            label="What Comes Next"
+            heading="More Than a List of Opportunities"
+            intro="The New Wave Executive Network is designed to create ongoing value for experienced leaders."
+          />
+          <div className="grid grid-cols-1 sm:grid-cols-3 gap-5 sm:gap-6 lg:gap-8">
+            {networkBenefits.map((benefit) => {
+              const Icon = benefit.icon;
+              return (
+                <article
+                  key={benefit.title}
+                  className="flex h-full flex-col rounded-xl border border-gray-200 bg-gray-50 p-6 sm:p-7"
+                >
+                  <div className="w-11 h-11 rounded-lg flex items-center justify-center mb-4 bg-[#01A3DB]/10 text-[#01A3DB]">
+                    <Icon size={22} strokeWidth={2} aria-hidden="true" />
+                  </div>
+                  <h3 className="text-base sm:text-lg font-bold text-[#38495D] mb-2">{benefit.title}</h3>
+                  <p className="text-sm sm:text-base text-gray-700 leading-relaxed">{benefit.description}</p>
+                </article>
+              );
+            })}
+          </div>
+        </div>
+
       </Section>
 
       {/* 12. Application form */}
