@@ -228,8 +228,8 @@ export default function ExecutiveNetworkPage() {
           })}
         </div>
         <SectionClosingNote>
-          Joining the network does not guarantee a specific engagement, level of work, or timing.
-          Opportunities depend on client demand, fit, availability, scope, and geography.
+          Executive network members receive curated leadership opportunities, exclusive resources,
+          and invitations to connect with fellow operators solving complex business challenges.
         </SectionClosingNote>
       </Section>
 
