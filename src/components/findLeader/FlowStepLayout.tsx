@@ -13,8 +13,6 @@ interface FlowStepLayoutProps {
   eyebrow?: string;
   /** The single H1 for this step. Receives focus when the step changes. */
   heading: string;
-  /** When true, show the bar only at top and the "Step X of 6" label below the heading. */
-  labelBelowHeading?: boolean;
   children: ReactNode;
 }
 
@@ -28,7 +26,6 @@ export default function FlowStepLayout({
   intro,
   eyebrow,
   heading,
-  labelBelowHeading = false,
   children,
 }: FlowStepLayoutProps) {
   const headingRef = useRef<HTMLHeadingElement>(null);
@@ -52,7 +49,7 @@ export default function FlowStepLayout({
         </button>
       )}
 
-      <FlowProgress step={step} total={total} hideLabel={labelBelowHeading} />
+      <FlowProgress step={step} total={total} />
 
       {intro && <div className="mb-8 sm:mb-10">{intro}</div>}
 
@@ -72,12 +69,6 @@ export default function FlowStepLayout({
       >
         {heading}
       </h1>
-
-      {labelBelowHeading && (
-        <p className="mt-3 text-xs sm:text-sm font-bold uppercase tracking-[0.15em] text-[#38495D]">
-          Step {step} of {total}
-        </p>
-      )}
 
       {children}
     </div>
