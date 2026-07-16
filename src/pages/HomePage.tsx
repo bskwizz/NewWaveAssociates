@@ -225,18 +225,18 @@ export default function HomePage() {
             the section's bottom padding (64 / 80 / 96px) so the CTA sits midway
             between the cards above and the end of the grey background below. */}
         <div className="mt-16 sm:mt-20 lg:mt-24 text-center">
-          <h3 className="text-xl sm:text-2xl lg:text-3xl font-bold text-[#38495D] mb-2">
+          <h3 className="text-xl sm:text-2xl lg:text-3xl font-bold text-[#38495D] mb-6 sm:mb-7">
             Need experienced leadership now?
           </h3>
-          <p className="text-base sm:text-lg text-gray-700 mb-6 sm:mb-7">
-            We are ready when you are.
-          </p>
           <Link
             to="/find-a-leader/new"
             className="inline-block px-6 py-3 bg-[#f05e00] text-white text-sm font-semibold uppercase tracking-wide rounded-md hover:bg-[#d94f00] transition-all shadow-sm hover:shadow-md"
           >
             Find the Right Leader
           </Link>
+          <p className="mt-6 sm:mt-7 text-base sm:text-lg text-gray-700">
+            We are ready when you are.
+          </p>
         </div>
       </Section>
 

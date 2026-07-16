@@ -10,6 +10,8 @@ import { ROUTES } from '../data/company';
 
 const primaryButton =
   'inline-flex items-center justify-center w-full sm:w-auto px-7 py-3.5 bg-[#f05e00] text-white text-base font-semibold uppercase tracking-wide rounded-md hover:bg-[#d94f00] transition-all shadow-sm hover:shadow-md focus:outline-none focus-visible:ring-2 focus-visible:ring-[#f05e00] focus-visible:ring-offset-2 focus-visible:ring-offset-[#38495D]';
+const secondaryButton =
+  'inline-flex items-center justify-center w-full sm:w-auto px-7 py-3.5 border border-white/30 text-white text-base font-semibold uppercase tracking-wide rounded-md hover:border-white hover:bg-white/5 transition-all focus:outline-none focus-visible:ring-2 focus-visible:ring-[#01A3DB] focus-visible:ring-offset-2 focus-visible:ring-offset-[#38495D]';
 
 const engagementStrip: { icon: LucideIcon; label: string }[] = [
   { icon: CalendarClock, label: 'Fractional Leadership' },
@@ -104,10 +106,13 @@ export default function ExecutiveNetworkHero() {
               Senior operators. Meaningful work. Carefully matched opportunities.
             </p>
 
-            <div className="mt-8">
+            <div className="mt-8 flex flex-col sm:flex-row gap-4">
               <Link to={ROUTES.executiveNetworkApply} className={primaryButton}>
                 Join the Network
               </Link>
+              <button type="button" onClick={() => scrollToId('process')} className={secondaryButton}>
+                Learn How the Network Works
+              </button>
             </div>
           </div>
 

@@ -15,8 +15,6 @@ import { ROUTES } from '../data/company';
 
 const primaryButton =
   'inline-flex items-center justify-center gap-2 px-7 py-3.5 bg-[#f05e00] text-white text-base font-semibold uppercase tracking-wide rounded-md hover:bg-[#d94f00] transition-all shadow-sm hover:shadow-md focus:outline-none focus-visible:ring-2 focus-visible:ring-[#f05e00] focus-visible:ring-offset-2';
-const secondaryButton =
-  'inline-flex items-center justify-center gap-2 px-7 py-3.5 border border-[#38495D]/25 text-[#38495D] text-base font-semibold uppercase tracking-wide rounded-md hover:border-[#01A3DB] hover:text-[#01A3DB] transition-all focus:outline-none focus-visible:ring-2 focus-visible:ring-[#01A3DB] focus-visible:ring-offset-2';
 
 // 5. Who thrives here
 const thriveCards: { icon: LucideIcon; title: string; description: string }[] = [
@@ -177,17 +175,6 @@ function SectionClosingNote({ children }: { children: ReactNode }) {
 }
 
 export default function ExecutiveNetworkPage() {
-  // Secondary CTA: scroll up to the How It Works section (not an application CTA).
-  function scrollToProcess() {
-    const prefersReducedMotion =
-      typeof window !== 'undefined' &&
-      window.matchMedia?.('(prefers-reduced-motion: reduce)').matches;
-    document.getElementById('process')?.scrollIntoView({
-      behavior: prefersReducedMotion ? 'auto' : 'smooth',
-      block: 'start',
-    });
-  }
-
   return (
     <div className="overflow-x-clip bg-white">
       <PageHeader />
@@ -442,13 +429,10 @@ export default function ExecutiveNetworkPage() {
             If you are an experienced executive interested in fractional, interim, or project-based
             leadership opportunities, we would like to learn more about you.
           </p>
-          <div className="mt-8 flex flex-col sm:flex-row justify-center gap-4">
+          <div className="mt-8 flex justify-center">
             <Link to={ROUTES.executiveNetworkApply} className={primaryButton}>
-              Apply to Join the Network
+              Join the Network
             </Link>
-            <button type="button" onClick={scrollToProcess} className={secondaryButton}>
-              Learn How the Network Works
-            </button>
           </div>
         </div>
       </Section>
@@ -463,11 +447,8 @@ export default function ExecutiveNetworkPage() {
             Learn more about how New Wave works, the leadership areas we support, and what clients
             expect from our leaders.
           </p>
-          <div className="mt-8 flex flex-col sm:flex-row justify-center gap-4">
-            <Link to={ROUTES.solutions} className={primaryButton}>
-              Explore Leadership Solutions
-            </Link>
-            <Link to={ROUTES.contact} className={secondaryButton}>
+          <div className="mt-8 flex justify-center">
+            <Link to={ROUTES.contact} className={primaryButton}>
               Talk to Our Team
             </Link>
           </div>
