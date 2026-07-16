@@ -202,25 +202,16 @@ export default function FindLeaderPage() {
           <FlowStepLayout
             step={1}
             total={TOTAL_STEPS}
+            intro={
+              <Callout>
+                Thank you for your interest in a New Wave leader! Before we get started, we would like
+                to ask a few questions to better understand your business needs.
+              </Callout>
+            }
             eyebrow="Find the Right Leader"
-            heading="Thanks for Your Interest in a New Wave Leader"
+            heading="Where do you need experienced leadership?"
+            labelBelowHeading
           >
-            <p className="mt-4 text-base sm:text-lg text-gray-700 leading-relaxed">
-              Before we get started, we would like to ask a few questions to better understand your
-              business needs.
-            </p>
-            <p className="mt-2 text-sm sm:text-base text-gray-600 leading-relaxed">
-              Your answers will help us identify the leadership experience, engagement model, and
-              operating background best suited to your situation.
-            </p>
-
-            <h2 className="mt-8 text-xl sm:text-2xl font-bold text-[#38495D]">
-              Where do you need experienced leadership?
-            </h2>
-            <p className="mt-2 text-sm sm:text-base text-gray-600 leading-relaxed">
-              Choose the area that best reflects your immediate need. You can provide additional
-              context later.
-            </p>
             <div className="mt-6 space-y-3 sm:space-y-4">
               {PRACTICE_AREA_CARDS.map((area) => (
                 <ChoiceCard
