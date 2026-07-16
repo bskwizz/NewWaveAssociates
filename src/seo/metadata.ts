@@ -8,6 +8,8 @@
 export interface RouteMeta {
   title: string;
   description: string;
+  /** Optional Open Graph title override (defaults to `title`). */
+  ogTitle?: string;
   /** Optional Open Graph description override (defaults to `description`). */
   ogDescription?: string;
   /** Optional Twitter description override (defaults to `description`). */
@@ -45,6 +47,14 @@ export const ROUTE_META: Record<string, RouteMeta> = {
     title: `Executive Network | ${BRAND}`,
     description:
       "Join New Wave Associates' curated network of experienced fractional, interim, and project-based leaders across Procurement, Strategic Sourcing, Revenue Operations, Transformation Office, Project Management Office, and M&A Integration.",
+  },
+  '/executive-network/apply': {
+    title: `Apply to the Executive Network | ${BRAND}`,
+    description:
+      "Apply to join New Wave Associates' curated network of experienced fractional, interim, and project-based executives.",
+    ogTitle: 'Apply to the New Wave Executive Network',
+    ogDescription:
+      'Share your leadership background and interest in carefully matched fractional, interim, and project-based opportunities.',
   },
   '/insights': {
     title: `Insights | ${BRAND}`,

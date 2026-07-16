@@ -11,7 +11,6 @@ import PageHeader from '../components/PageHeader';
 import Section from '../components/Section';
 import SectionHeader from '../components/SectionHeader';
 import ExecutiveNetworkHero from '../components/ExecutiveNetworkHero';
-import ExecutiveNetworkForm from '../components/ExecutiveNetworkForm';
 import { ROUTES } from '../data/company';
 
 const primaryButton =
@@ -178,6 +177,17 @@ function SectionClosingNote({ children }: { children: ReactNode }) {
 }
 
 export default function ExecutiveNetworkPage() {
+  // Secondary CTA: scroll up to the How It Works section (not an application CTA).
+  function scrollToProcess() {
+    const prefersReducedMotion =
+      typeof window !== 'undefined' &&
+      window.matchMedia?.('(prefers-reduced-motion: reduce)').matches;
+    document.getElementById('process')?.scrollIntoView({
+      behavior: prefersReducedMotion ? 'auto' : 'smooth',
+      block: 'start',
+    });
+  }
+
   return (
     <div className="overflow-x-clip bg-white">
       <PageHeader />
@@ -413,15 +423,33 @@ export default function ExecutiveNetworkPage() {
 
       </Section>
 
-      {/* 12. Application form */}
-      <Section background="gray" id="apply" className="scroll-mt-24">
-        <SectionHeader
-          label="Join the Network"
-          heading="Tell Us About Your Experience"
-          intro="Share your background, interests, and availability. We will review your information and reach out if there appears to be a potential fit with the New Wave Executive Network."
-        />
-        <div className="max-w-3xl">
-          <ExecutiveNetworkForm />
+      {/* 12. Ready to join: closing application CTA (routes to the apply page) */}
+      <Section background="gray">
+        <div className="text-center max-w-3xl mx-auto">
+          <div className="inline-block mb-5">
+            <p
+              className="text-black text-sm sm:text-base font-bold tracking-[0.2em] uppercase"
+              style={{ letterSpacing: '0.2em' }}
+            >
+              Ready to Join?
+            </p>
+            <div className="mt-2 h-[2px] bg-[#f05e00]" />
+          </div>
+          <h2 className="text-2xl sm:text-3xl lg:text-4xl font-bold text-[#38495D] leading-tight">
+            Bring Your Experience to the Network
+          </h2>
+          <p className="mt-4 text-base sm:text-lg text-gray-700 leading-relaxed">
+            If you are an experienced executive interested in fractional, interim, or project-based
+            leadership opportunities, we would like to learn more about you.
+          </p>
+          <div className="mt-8 flex flex-col sm:flex-row justify-center gap-4">
+            <Link to={ROUTES.executiveNetworkApply} className={primaryButton}>
+              Apply to Join the Network
+            </Link>
+            <button type="button" onClick={scrollToProcess} className={secondaryButton}>
+              Learn How the Network Works
+            </button>
+          </div>
         </div>
       </Section>
 

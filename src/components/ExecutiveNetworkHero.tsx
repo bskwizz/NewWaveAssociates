@@ -1,5 +1,7 @@
+import { Link } from 'react-router-dom';
 import { CalendarClock, Zap, Target, type LucideIcon } from 'lucide-react';
 import { NETWORK_METRICS, type HeroMetric } from '../data/executiveNetwork';
+import { ROUTES } from '../data/company';
 
 // Dark, editorial hero for /executive-network. Visually distinct from the rest
 // of the site: deep New Wave navy, restrained blue glow + subtle dot texture,
@@ -103,9 +105,9 @@ export default function ExecutiveNetworkHero() {
             </p>
 
             <div className="mt-8">
-              <button type="button" onClick={() => scrollToId('apply')} className={primaryButton}>
+              <Link to={ROUTES.executiveNetworkApply} className={primaryButton}>
                 Join the Network
-              </button>
+              </Link>
             </div>
           </div>
 

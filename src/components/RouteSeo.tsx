@@ -21,6 +21,7 @@ export default function RouteSeo() {
       title={meta.title}
       description={meta.description}
       canonical={normalized}
+      ogTitle={meta.ogTitle}
       ogDescription={meta.ogDescription}
       twitterDescription={meta.twitterDescription}
     />
