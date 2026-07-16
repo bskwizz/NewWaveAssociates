@@ -43,32 +43,32 @@ const services = [
   {
     icon: Package,
     title: 'Procurement',
-    description: 'Fractional procurement executives who reduce costs, strengthen supplier partnerships, and build scalable procurement organizations.',
+    description: 'Fractional procurement executives who reduce your costs, strengthen your supplier partnerships, and build scalable procurement capabilities.',
   },
   {
     icon: Handshake,
     title: 'Strategic Sourcing',
-    description: 'Experienced sourcing leaders who negotiate complex agreements, improve supplier performance, and deliver measurable savings.',
+    description: 'Experienced sourcing leaders who negotiate complex agreements, improve your supplier performance, and deliver measurable savings.',
   },
   {
     icon: TrendingUp,
     title: 'Revenue Operations',
-    description: 'Revenue operators who improve forecasting, sales execution, CRM performance, and commercial operations.',
+    description: 'Revenue operators who improve your forecasting, sales execution, CRM performance, and commercial operations.',
   },
   {
     icon: Workflow,
     title: 'Transformation Office',
-    description: 'Experienced transformation leaders who establish governance, drive execution, and deliver enterprise change.',
+    description: 'Experienced transformation leaders who establish governance, drive execution, and deliver enterprise change across your organization.',
   },
   {
     icon: ClipboardList,
     title: 'Project Management Office',
-    description: 'PMO leaders who improve delivery predictability, portfolio governance, and executive visibility.',
+    description: 'PMO leaders who improve your delivery predictability, portfolio governance, and executive visibility.',
   },
   {
     icon: GitMerge,
     title: 'M&A Integration',
-    description: 'Operators who lead due diligence, integration planning, carve-outs, and post-close execution.',
+    description: 'Operators who lead your integration planning, carve-outs, and post-close execution while accelerating value realization.',
   },
 ];
 
@@ -92,7 +92,7 @@ const whenToCall = [
   {
     icon: Rocket,
     title: 'Your Company Is Entering Its Next Stage of Growth',
-    description: 'Add leadership capacity and operating discipline as the complexity of the business increases.',
+    description: 'Add leadership capacity and operating discipline as the complexity of your business increases.',
   },
   {
     icon: Combine,
@@ -169,7 +169,7 @@ export default function HomePage() {
       <Section background="gray">
         <SectionHeader
           label="Executive Leadership, On Demand."
-          intro="We deploy experienced fractional and interim leaders who have successfully done the job before. Whether you need executive leadership for a critical function, an experienced operator to lead a transformation, or temporary leadership while you hire, New Wave provides deeply vetted professionals who step in quickly and own the outcome. Our expertise spans the critical business functions where experienced leadership creates the greatest impact."
+          intro="Access experienced fractional and interim leaders with a proven track record of success. Whether you need executive leadership for a critical function, an operator to lead a transformation, or temporary leadership while you hire, New Wave provides the leadership you need to keep your business moving forward. Our expertise spans the critical business functions where experienced leadership creates the greatest impact."
         />
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-5 sm:gap-6 lg:gap-8">
           {services.map((service) => (
