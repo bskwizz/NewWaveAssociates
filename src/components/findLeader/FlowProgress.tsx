@@ -8,7 +8,7 @@ export default function FlowProgress({ step, total }: FlowProgressProps) {
   const pct = Math.round((step / total) * 100);
   return (
     <div className="mb-6 sm:mb-8">
-      <p className="mb-2 text-xs sm:text-sm font-bold uppercase tracking-[0.15em] text-gray-400">
+      <p className="mb-2 text-xs sm:text-sm font-bold uppercase tracking-[0.15em] text-gray-500">
         Step {step}
       </p>
       <div
