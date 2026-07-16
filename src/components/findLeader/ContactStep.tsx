@@ -44,7 +44,7 @@ export default function ContactStep({
     <div className="mt-6">
       <p className="text-base sm:text-lg text-gray-700 leading-relaxed">
         We have what we need to understand your leadership request. Tell us where to reach you, and
-        our team will review the details and follow up.
+        our team will review the details and follow up within 24 hours.
       </p>
 
       {/* Compact request summary */}
