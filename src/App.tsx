@@ -9,6 +9,7 @@ import ResultsPage from './pages/ResultsPage';
 import AboutUsPage from './pages/AboutUsPage';
 import ContactUsPage from './pages/ContactUsPage';
 import ExecutiveNetworkPage from './pages/ExecutiveNetworkPage';
+import ExecutiveNetworkApplyPage from './pages/ExecutiveNetworkApplyPage';
 import InsightsPage from './pages/InsightsPage';
 import InsightDetailPage from './pages/InsightDetailPage';
 import PMOCaseStudy from './pages/case-studies/PMOCaseStudy';
@@ -72,6 +73,7 @@ function App() {
           <Route path="/about" element={<WithNav Component={AboutUsPage} />} />
           <Route path="/about-us" element={<Navigate to="/about" replace />} />
           <Route path="/executive-network" element={<ExecutiveNetworkPage />} />
+          <Route path="/executive-network/apply" element={<ExecutiveNetworkApplyPage />} />
           <Route path="/insights" element={<WithNav Component={InsightsPage} />} />
           <Route path="/insights/:slug" element={<InsightDetailWrapper />} />
           <Route path="/contact" element={<WithNav Component={ContactUsPage} />} />

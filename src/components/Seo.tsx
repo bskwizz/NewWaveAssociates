@@ -14,6 +14,8 @@ interface SeoProps {
   image?: string;
   /** Open Graph type. "website" for most pages, "article" for insights. */
   type?: 'website' | 'article';
+  /** Optional Open Graph title override (defaults to `title`). */
+  ogTitle?: string;
   /** Optional Open Graph description override (defaults to `description`). */
   ogDescription?: string;
   /** Optional Twitter description override (defaults to `description`). */
@@ -26,9 +28,11 @@ export default function Seo({
   canonical,
   image = DEFAULT_IMAGE,
   type = 'website',
+  ogTitle,
   ogDescription,
   twitterDescription,
 }: SeoProps) {
+  const ogTitleValue = ogTitle ?? title;
   const ogDesc = ogDescription ?? description;
   const twitterDesc = twitterDescription ?? description;
   // GitHub Pages serves directory index files with a trailing slash (e.g.
@@ -44,7 +48,7 @@ export default function Seo({
       <meta name="description" content={description} />
       <link rel="canonical" href={url} />
 
-      <meta property="og:title" content={title} />
+      <meta property="og:title" content={ogTitleValue} />
       <meta property="og:description" content={ogDesc} />
       <meta property="og:type" content={type} />
       <meta property="og:url" content={url} />

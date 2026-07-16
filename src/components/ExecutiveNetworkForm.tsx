@@ -1,9 +1,10 @@
 import { useState } from 'react';
 import { Link } from 'react-router-dom';
+import { CheckCircle2 } from 'lucide-react';
 import { recordLead } from '../services/leadCaptureService';
 import { ROUTES } from '../data/company';
 
-// The six Leadership Practice Areas (exact names/order), plus "Multiple Areas".
+// Primary Leadership Practice Area: exactly the six practice-area names.
 const PRACTICE_AREA_OPTIONS = [
   'Procurement',
   'Strategic Sourcing',
@@ -11,43 +12,47 @@ const PRACTICE_AREA_OPTIONS = [
   'Transformation Office',
   'Project Management Office',
   'M&A Integration',
-  'Multiple Areas',
 ];
 
 const ENGAGEMENT_OPTIONS = ['Fractional', 'Interim', 'Project-Based', 'Open to Multiple Models'];
 
+const AVAILABILITY_OPTIONS = [
+  'Available Now',
+  'Within 30 Days',
+  'Within 60 Days',
+  'Exploring Future Opportunities',
+];
+
 const inputClasses =
   'w-full px-4 py-2 border border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-[#01A3DB] focus:border-transparent transition-all';
 const labelClasses = 'block text-sm font-semibold text-[#38495D] mb-1.5';
+const optionalTag = <span className="font-normal text-gray-400">(optional)</span>;
 
+// Simplified first-step application. Removed fields (company, industries,
+// travel, website, additional info, additional practice areas) just go to the
+// executive_network_leads table as NULL, so no backend change is required.
 const initialState = {
   firstName: '',
   lastName: '',
   email: '',
-  phone: '',
-  company: '',
   linkedin: '',
   title: '',
   practiceArea: '',
-  additionalAreas: '',
   engagementType: '',
-  industries: '',
+  phone: '',
   location: '',
-  travel: '',
   availability: '',
-  personalSite: '',
   summary: '',
-  additionalInfo: '',
   website: '', // honeypot
 };
 
 export default function ExecutiveNetworkForm() {
   const [formData, setFormData] = useState(initialState);
   const [isSubmitting, setIsSubmitting] = useState(false);
-  const [submitStatus, setSubmitStatus] = useState<{
-    type: 'success' | 'error' | null;
-    message: string;
-  }>({ type: null, message: '' });
+  const [status, setStatus] = useState<{ type: 'success' | 'error' | null; message: string }>({
+    type: null,
+    message: '',
+  });
 
   const handleChange = (
     e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement | HTMLSelectElement>,
@@ -58,16 +63,8 @@ export default function ExecutiveNetworkForm() {
   const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
 
-    const {
-      firstName,
-      lastName,
-      email,
-      linkedin,
-      title,
-      practiceArea,
-      engagementType,
-      summary,
-    } = formData;
+    const { firstName, lastName, email, linkedin, title, practiceArea, engagementType, summary } =
+      formData;
 
     if (
       !firstName ||
@@ -79,10 +76,7 @@ export default function ExecutiveNetworkForm() {
       !engagementType ||
       !summary
     ) {
-      setSubmitStatus({
-        type: 'error',
-        message: 'Please complete all required fields.',
-      });
+      setStatus({ type: 'error', message: 'Please complete all required fields.' });
       return;
     }
 
@@ -90,52 +84,71 @@ export default function ExecutiveNetworkForm() {
     if (formData.website) return;
 
     setIsSubmitting(true);
-    setSubmitStatus({ type: null, message: '' });
+    setStatus({ type: null, message: '' });
 
     try {
       await recordLead({
         email,
-        company: formData.company || undefined,
         source: 'executive_network',
         page_url: window.location.href,
         name: `${firstName} ${lastName}`.trim(),
         phone: formData.phone || undefined,
-        // Structured columns for the executive_network_leads table. `website_url`
-        // (not `website`) avoids colliding with the honeypot field.
+        // Structured columns for the executive_network_leads table.
         fields: {
           first_name: firstName,
           last_name: lastName,
           linkedin,
           title,
           practice_area: practiceArea,
-          additional_areas: formData.additionalAreas || undefined,
           engagement_type: engagementType,
-          industries: formData.industries || undefined,
           location: formData.location || undefined,
-          travel: formData.travel || undefined,
           availability: formData.availability || undefined,
-          website_url: formData.personalSite || undefined,
           summary,
-          additional_info: formData.additionalInfo || undefined,
         },
       });
 
       setFormData(initialState);
-      setSubmitStatus({
-        type: 'success',
-        message:
-          'Thank you for your interest in the New Wave Executive Network. We will review your information and reach out if there appears to be a potential fit.',
-      });
+      setStatus({ type: 'success', message: '' });
     } catch {
-      setSubmitStatus({
+      setStatus({
         type: 'error',
         message:
-          'We could not submit your information. Please try again or contact New Wave directly.',
+          'We could not submit your application. Please try again or contact New Wave directly.',
       });
     } finally {
       setIsSubmitting(false);
     }
   };
+
+  // Success confirmation replaces the form.
+  if (status.type === 'success') {
+    return (
+      <div
+        className="w-full bg-white border border-gray-200 rounded-lg p-6 sm:p-8 lg:p-10 shadow-lg text-center"
+        role="status"
+        aria-live="polite"
+      >
+        <div className="w-14 h-14 mx-auto rounded-full flex items-center justify-center bg-[#01A3DB]/10 text-[#01A3DB] mb-5">
+          <CheckCircle2 size={30} strokeWidth={2} aria-hidden="true" />
+        </div>
+        <h3 className="text-2xl sm:text-3xl font-bold text-[#38495D]">Thank You for Applying</h3>
+        <p className="mt-4 text-base sm:text-lg text-gray-700 leading-relaxed max-w-xl mx-auto">
+          We appreciate your interest in the New Wave Executive Network. We will review your
+          information and reach out if there appears to be a potential fit.
+        </p>
+        <p className="mt-3 text-sm sm:text-base text-gray-600 leading-relaxed max-w-xl mx-auto">
+          In the meantime, you can return to the Executive Network page to learn more about how the
+          network works.
+        </p>
+        <Link
+          to={ROUTES.executiveNetwork}
+          className="mt-6 inline-flex items-center gap-1.5 text-sm font-semibold text-[#01A3DB] hover:text-[#0192C5] transition-colors focus:outline-none focus-visible:ring-2 focus-visible:ring-[#01A3DB] focus-visible:ring-offset-2 rounded-sm"
+        >
+          Back to Executive Network
+        </Link>
+      </div>
+    );
+  }
 
   return (
     <div className="w-full bg-white border border-gray-200 rounded-lg p-5 sm:p-6 lg:p-8 shadow-lg">
@@ -155,7 +168,10 @@ export default function ExecutiveNetworkForm() {
         </div>
         <div>
           <label htmlFor="en-linkedin" className={labelClasses}>LinkedIn Profile *</label>
-          <input id="en-linkedin" name="linkedin" type="url" required placeholder="https://www.linkedin.com/in/yourname" value={formData.linkedin} onChange={handleChange} className={inputClasses} />
+          <input id="en-linkedin" name="linkedin" type="url" required placeholder="https://www.linkedin.com/in/yourname" value={formData.linkedin} onChange={handleChange} aria-describedby="en-linkedin-help" className={inputClasses} />
+          <p id="en-linkedin-help" className="mt-1.5 text-xs text-gray-500 leading-relaxed">
+            Share the public LinkedIn profile that best reflects your leadership experience.
+          </p>
         </div>
 
         <div>
@@ -163,7 +179,7 @@ export default function ExecutiveNetworkForm() {
           <input id="en-title" name="title" type="text" required value={formData.title} onChange={handleChange} className={inputClasses} />
         </div>
         <div>
-          <label htmlFor="en-area" className={labelClasses}>Leadership Practice Area *</label>
+          <label htmlFor="en-area" className={labelClasses}>Primary Leadership Practice Area *</label>
           <select id="en-area" name="practiceArea" required value={formData.practiceArea} onChange={handleChange} className={`${inputClasses} bg-white`}>
             <option value="">Select an option</option>
             {PRACTICE_AREA_OPTIONS.map((o) => (
@@ -182,55 +198,38 @@ export default function ExecutiveNetworkForm() {
           </select>
         </div>
         <div>
-          <label htmlFor="en-phone" className={labelClasses}>Phone <span className="font-normal text-gray-400">(optional)</span></label>
+          <label htmlFor="en-phone" className={labelClasses}>Phone {optionalTag}</label>
           <input id="en-phone" name="phone" type="tel" value={formData.phone} onChange={handleChange} className={inputClasses} />
         </div>
 
         <div>
-          <label htmlFor="en-company" className={labelClasses}>Company <span className="font-normal text-gray-400">(optional)</span></label>
-          <input id="en-company" name="company" type="text" value={formData.company} onChange={handleChange} className={inputClasses} />
-        </div>
-        <div>
-          <label htmlFor="en-additional-areas" className={labelClasses}>Additional Practice Areas <span className="font-normal text-gray-400">(optional)</span></label>
-          <input id="en-additional-areas" name="additionalAreas" type="text" value={formData.additionalAreas} onChange={handleChange} className={inputClasses} />
-        </div>
-
-        <div>
-          <label htmlFor="en-industries" className={labelClasses}>Industries <span className="font-normal text-gray-400">(optional)</span></label>
-          <input id="en-industries" name="industries" type="text" value={formData.industries} onChange={handleChange} className={inputClasses} />
-        </div>
-        <div>
-          <label htmlFor="en-location" className={labelClasses}>Geographic Location <span className="font-normal text-gray-400">(optional)</span></label>
+          <label htmlFor="en-location" className={labelClasses}>Geographic Location {optionalTag}</label>
           <input id="en-location" name="location" type="text" value={formData.location} onChange={handleChange} className={inputClasses} />
         </div>
-
         <div>
-          <label htmlFor="en-travel" className={labelClasses}>Willingness to Travel <span className="font-normal text-gray-400">(optional)</span></label>
-          <select id="en-travel" name="travel" value={formData.travel} onChange={handleChange} className={`${inputClasses} bg-white`}>
+          <label htmlFor="en-availability" className={labelClasses}>Availability {optionalTag}</label>
+          <select id="en-availability" name="availability" value={formData.availability} onChange={handleChange} className={`${inputClasses} bg-white`}>
             <option value="">Select an option</option>
-            <option value="Not willing to travel">Not willing to travel</option>
-            <option value="Willing to travel occasionally">Willing to travel occasionally</option>
-            <option value="Willing to travel regularly">Willing to travel regularly</option>
+            {AVAILABILITY_OPTIONS.map((o) => (
+              <option key={o} value={o}>{o}</option>
+            ))}
           </select>
         </div>
-        <div>
-          <label htmlFor="en-availability" className={labelClasses}>Availability <span className="font-normal text-gray-400">(optional)</span></label>
-          <input id="en-availability" name="availability" type="text" placeholder="e.g. Immediate, 2 to 4 weeks" value={formData.availability} onChange={handleChange} className={inputClasses} />
-        </div>
 
         <div className="sm:col-span-2">
-          <label htmlFor="en-site" className={labelClasses}>Website <span className="font-normal text-gray-400">(optional)</span></label>
-          <input id="en-site" name="personalSite" type="url" placeholder="https://" value={formData.personalSite} onChange={handleChange} className={inputClasses} />
-        </div>
-
-        <div className="sm:col-span-2">
-          <label htmlFor="en-summary" className={labelClasses}>Brief Executive Summary *</label>
-          <textarea id="en-summary" name="summary" required rows={4} placeholder="Tell us about the leadership roles you have held and the outcomes you have delivered." value={formData.summary} onChange={handleChange} className={`${inputClasses} resize-none`} />
-        </div>
-
-        <div className="sm:col-span-2">
-          <label htmlFor="en-more" className={labelClasses}>Additional Information <span className="font-normal text-gray-400">(optional)</span></label>
-          <textarea id="en-more" name="additionalInfo" rows={3} placeholder="What kinds of opportunities are you most interested in?" value={formData.additionalInfo} onChange={handleChange} className={`${inputClasses} resize-none`} />
+          <label htmlFor="en-summary" className={labelClasses}>
+            Tell us about the leadership roles you have held and the outcomes you have delivered. *
+          </label>
+          <textarea
+            id="en-summary"
+            name="summary"
+            required
+            rows={4}
+            placeholder="Briefly describe the scope of your leadership experience, the types of organizations you have supported, and the business outcomes you are most proud of."
+            value={formData.summary}
+            onChange={handleChange}
+            className={`${inputClasses} resize-none`}
+          />
         </div>
 
         {/* Honeypot - hidden from users */}
@@ -245,18 +244,14 @@ export default function ExecutiveNetworkForm() {
           style={{ position: 'absolute', left: '-9999px', width: '1px', height: '1px' }}
         />
 
-        {submitStatus.type && (
+        {status.type === 'error' && (
           <div className="sm:col-span-2">
-            <div
-              role={submitStatus.type === 'error' ? 'alert' : 'status'}
-              aria-live={submitStatus.type === 'error' ? 'assertive' : 'polite'}
-              className={`p-4 rounded-md ${
-                submitStatus.type === 'success'
-                  ? 'bg-green-50 text-green-800 border border-green-200'
-                  : 'bg-red-50 text-red-800 border border-red-200'
-              }`}
-            >
-              {submitStatus.message}
+            <div role="alert" aria-live="assertive" className="p-4 rounded-md bg-red-50 text-red-800 border border-red-200">
+              {status.message}{' '}
+              <Link to={ROUTES.contact} className="font-semibold underline hover:no-underline">
+                Contact New Wave
+              </Link>
+              .
             </div>
           </div>
         )}
@@ -265,18 +260,17 @@ export default function ExecutiveNetworkForm() {
           <button
             type="submit"
             disabled={isSubmitting}
-            className="w-full py-3 bg-[#01A3DB] text-white rounded-md font-semibold text-base sm:text-lg hover:bg-[#0192C5] transition-all hover:scale-[1.01] focus:outline-none focus:ring-2 focus:ring-[#01A3DB] focus:ring-offset-2 disabled:opacity-50 disabled:cursor-not-allowed disabled:hover:scale-100"
+            className="w-full px-7 py-3.5 bg-[#f05e00] text-white text-base font-semibold uppercase tracking-wide rounded-md hover:bg-[#d94f00] transition-all shadow-sm hover:shadow-md focus:outline-none focus-visible:ring-2 focus-visible:ring-[#f05e00] focus-visible:ring-offset-2 disabled:opacity-50 disabled:cursor-not-allowed"
           >
             {isSubmitting ? 'Submitting...' : 'Apply to Join the Network'}
           </button>
         </div>
 
-        {/* Privacy and expectation notice */}
+        {/* Privacy notice */}
         <p className="sm:col-span-2 text-xs text-gray-500 leading-relaxed">
-          By submitting this form, you consent to New Wave Associates reviewing and retaining the
-          information you provide for the purpose of evaluating potential network and engagement
-          opportunities. Submission does not create an employment, contractor, agency, or engagement
-          relationship and does not guarantee future work. See our{' '}
+          By submitting this application, you consent to New Wave Associates reviewing and retaining
+          the information you provide for the purpose of evaluating potential network and engagement
+          opportunities. See our{' '}
           <Link to={ROUTES.privacy} className="text-[#01A3DB] hover:underline">
             Privacy Policy
           </Link>

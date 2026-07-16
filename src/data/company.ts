@@ -42,6 +42,7 @@ export const ROUTES = {
   results: '/results',
   about: '/about',
   executiveNetwork: '/executive-network',
+  executiveNetworkApply: '/executive-network/apply',
   contact: '/contact',
   privacy: '/privacy',
   terms: '/terms',
