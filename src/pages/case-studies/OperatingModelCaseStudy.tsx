@@ -207,8 +207,8 @@ export default function OperatingModelCaseStudy({ onNavigate }: OperatingModelCa
 
           <CTABar
             text="Ready to redesign your operating model for scale? Let's talk about your growth challenges."
-            buttonText="Contact Us"
-            onButtonClick={() => onNavigate('contact-us')}
+            buttonText="Find a Transformation Office Leader"
+            onButtonClick={() => onNavigate('/find-a-leader/new')}
           />
         </div>
       </div>

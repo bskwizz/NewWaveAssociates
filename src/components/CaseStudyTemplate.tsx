@@ -1,6 +1,7 @@
 import { ArrowLeft } from 'lucide-react';
 import PageHeader from './PageHeader';
 import CTABar from './CTABar';
+import { FIND_LEADER_ROUTE, findLeaderCtaLabel } from '../data/findLeader';
 
 interface CaseStudyTemplateProps {
   onNavigate: (page: string) => void;
@@ -183,8 +184,8 @@ export default function CaseStudyTemplate({
 
       <CTABar
         text={ctaText}
-        buttonText="Get in Touch"
-        onButtonClick={() => onNavigate('contact-us')}
+        buttonText={findLeaderCtaLabel(backLink.text.replace(/^Back to\s+/i, '').trim())}
+        onButtonClick={() => onNavigate(FIND_LEADER_ROUTE)}
       />
     </div>
   );

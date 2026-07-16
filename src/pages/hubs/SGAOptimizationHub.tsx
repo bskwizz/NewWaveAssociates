@@ -9,6 +9,7 @@ export default function SGAOptimizationHub({ onNavigate }: SGAOptimizationHubPro
     <ListingPageLayout
       onNavigate={onNavigate}
       categoryLabel="Results"
+      ctaButtonText="Find a Procurement Leader"
       title="Procurement Results"
       subtitle="Explore representative Procurement case studies demonstrating how experienced New Wave operators have stepped into critical leadership roles, established accountability, and delivered measurable business outcomes."
     >

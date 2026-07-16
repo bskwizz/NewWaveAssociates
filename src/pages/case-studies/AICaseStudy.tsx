@@ -206,8 +206,8 @@ export default function AICaseStudy({ onNavigate }: AICaseStudyProps) {
 
           <CTABar
             text="Ready to unlock capacity through intelligent automation? Let's explore the possibilities."
-            buttonText="Contact Us"
-            onButtonClick={() => onNavigate('contact-us')}
+            buttonText="Find a Transformation Office Leader"
+            onButtonClick={() => onNavigate('/find-a-leader/new')}
           />
         </div>
       </div>

@@ -207,8 +207,8 @@ export default function DataInsightsCaseStudy({ onNavigate }: DataInsightsCaseSt
 
           <CTABar
             text="Drowning in data but lacking insights? We can help you focus on what matters."
-            buttonText="Contact Us"
-            onButtonClick={() => onNavigate('contact-us')}
+            buttonText="Find a Transformation Office Leader"
+            onButtonClick={() => onNavigate('/find-a-leader/new')}
           />
         </div>
       </div>

@@ -425,8 +425,8 @@ export default function AboutUsPage() {
             business forward.
           </p>
           <div className="mt-9 flex flex-col sm:flex-row items-center justify-center gap-4">
-            <Link to="/contact" className={primaryButton}>
-              Let's Talk
+            <Link to="/find-a-leader/new" className={primaryButton}>
+              Find the Right Leader
             </Link>
             <Link to="/solutions" className={secondaryButton}>
               Explore Leadership Solutions

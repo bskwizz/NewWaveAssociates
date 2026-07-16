@@ -6,6 +6,8 @@ interface ListingPageLayoutProps {
   categoryLabel: string;
   title: string;
   subtitle: string;
+  /** CTA label for the header button; routes to the Find the Right Leader flow. */
+  ctaButtonText?: string;
   children: ReactNode;
 }
 
@@ -14,6 +16,7 @@ export default function ListingPageLayout({
   categoryLabel,
   title,
   subtitle,
+  ctaButtonText = 'Find the Right Leader',
   children
 }: ListingPageLayoutProps) {
   return (
@@ -48,10 +51,10 @@ export default function ListingPageLayout({
                 {subtitle}
               </p>
               <button
-                onClick={() => onNavigate('contact-us')}
+                onClick={() => onNavigate('/find-a-leader/new')}
                 className="mt-6 px-8 py-3 bg-[#f05e00] text-white font-semibold rounded hover:bg-[#d95500] transition-colors"
               >
-                Get in touch
+                {ctaButtonText}
               </button>
             </div>
 

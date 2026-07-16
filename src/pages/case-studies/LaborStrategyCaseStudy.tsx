@@ -175,8 +175,8 @@ export default function LaborStrategyCaseStudy({ onNavigate }: LaborStrategyCase
 
           <CTABar
             text="Ready to optimize your labor strategy? Let's discuss your scaling needs."
-            buttonText="Contact Us"
-            onButtonClick={() => onNavigate('contact-us')}
+            buttonText="Find a Strategic Sourcing Leader"
+            onButtonClick={() => onNavigate('/find-a-leader/new')}
           />
         </div>
       </div>

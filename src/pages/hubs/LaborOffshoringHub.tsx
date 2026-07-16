@@ -9,6 +9,7 @@ export default function LaborOffshoringHub({ onNavigate }: LaborOffshoringHubPro
     <ListingPageLayout
       onNavigate={onNavigate}
       categoryLabel="Results"
+      ctaButtonText="Find a Strategic Sourcing Leader"
       title="Strategic Sourcing Results"
       subtitle="Explore representative Strategic Sourcing case studies demonstrating how experienced New Wave operators have stepped into critical leadership roles, established accountability, and delivered measurable business outcomes."
     >

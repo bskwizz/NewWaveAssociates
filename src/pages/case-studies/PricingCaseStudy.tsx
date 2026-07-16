@@ -207,8 +207,8 @@ export default function PricingCaseStudy({ onNavigate }: PricingCaseStudyProps) 
 
           <CTABar
             text="Struggling with pricing complexity or slow deal cycles? We can help streamline your approach."
-            buttonText="Contact Us"
-            onButtonClick={() => onNavigate('contact-us')}
+            buttonText="Find a Revenue Operations Leader"
+            onButtonClick={() => onNavigate('/find-a-leader/new')}
           />
         </div>
       </div>

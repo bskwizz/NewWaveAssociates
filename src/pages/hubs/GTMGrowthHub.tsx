@@ -9,6 +9,7 @@ export default function GTMGrowthHub({ onNavigate }: GTMGrowthHubProps) {
     <ListingPageLayout
       onNavigate={onNavigate}
       categoryLabel="Results"
+      ctaButtonText="Find a Revenue Operations Leader"
       title="Revenue Operations Results"
       subtitle="Explore representative Revenue Operations case studies demonstrating how experienced New Wave operators have stepped into critical leadership roles, established accountability, and delivered measurable business outcomes."
     >
