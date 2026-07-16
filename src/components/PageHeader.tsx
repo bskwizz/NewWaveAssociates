@@ -44,7 +44,7 @@ const navItems: NavItem[] = [
     variant: 'link',
   },
   {
-    label: 'Get Started',
+    label: 'Find the Right Leader',
     path: '/find-a-leader/new',
     isActive: (p: string) => p.startsWith('/find-a-leader'),
     variant: 'primary',
