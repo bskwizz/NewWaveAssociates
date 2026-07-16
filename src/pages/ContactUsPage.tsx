@@ -5,9 +5,6 @@ import {
   HelpCircle,
   Mail,
   Linkedin,
-  ClipboardCheck,
-  UserCheck,
-  MessageSquare,
   ArrowRight,
   Copy,
   Check,
@@ -58,28 +55,6 @@ const contactPaths: ContactPath[] = [
   },
 ];
 
-// The post-submission journey, kept deliberately light.
-const nextSteps: { icon: LucideIcon; title: string; description: string }[] = [
-  {
-    icon: ClipboardCheck,
-    title: 'We Review Your Message',
-    description:
-      'We take a look at your needs, timing, and the type of leadership support you may require.',
-  },
-  {
-    icon: UserCheck,
-    title: 'We Connect You With the Right Person',
-    description:
-      'Your inquiry is routed to the New Wave leader best positioned to understand the situation.',
-  },
-  {
-    icon: MessageSquare,
-    title: 'We Start With a Conversation',
-    description:
-      'If there is a potential fit, we will schedule time to learn more and discuss the right next step.',
-  },
-];
-
 const mailto = `mailto:${COMPANY.email}`;
 
 export default function ContactUsPage() {
@@ -125,9 +100,18 @@ export default function ContactUsPage() {
           </h1>
           <p className="mt-5 sm:mt-6 text-base sm:text-lg text-gray-700 leading-relaxed max-w-2xl mx-auto">
             Whether you are filling a leadership gap, accelerating a critical initiative, or
-            navigating transformation, tell us what is happening. We will help you determine whether
-            New Wave is the right fit and connect you with the right leader.
+            navigating transformation, we are here for you. Tell us what you are facing, and we will
+            talk through the challenge, share our perspective, and help you identify the right next step.
           </p>
+          <div className="mt-8">
+            <button
+              type="button"
+              onClick={() => goToForm()}
+              className="inline-block px-7 py-3.5 bg-[#f05e00] text-white text-base font-semibold uppercase tracking-wide rounded-md hover:bg-[#d94f00] transition-all shadow-sm hover:shadow-md focus:outline-none focus-visible:ring-2 focus-visible:ring-[#f05e00] focus-visible:ring-offset-2"
+            >
+              Start the Conversation
+            </button>
+          </div>
         </div>
       </section>
 
@@ -267,40 +251,7 @@ export default function ContactUsPage() {
         </div>
       </section>
 
-      {/* 7. What Happens Next. */}
-      <section className="bg-gray-50 border-t border-gray-100 py-16 sm:py-20 lg:py-24">
-        <div className="max-w-7xl mx-auto px-4 sm:px-5 md:px-6 lg:px-6 xl:px-8">
-          <div className="text-center max-w-2xl mx-auto mb-10 sm:mb-12">
-            <h2 className="text-2xl sm:text-3xl lg:text-4xl font-bold text-[#38495D] leading-tight">
-              What Happens Next
-            </h2>
-          </div>
-          <ol className="grid grid-cols-1 md:grid-cols-3 gap-5 sm:gap-6 lg:gap-8">
-            {nextSteps.map((step, index) => {
-              const Icon = step.icon;
-              return (
-                <li
-                  key={step.title}
-                  className="flex h-full flex-col rounded-xl border border-gray-200 bg-white p-6 sm:p-7"
-                >
-                  <div className="flex items-center gap-3 mb-4">
-                    <span className="w-8 h-8 shrink-0 rounded-full flex items-center justify-center bg-[#38495D] text-white text-sm font-bold">
-                      {index + 1}
-                    </span>
-                    <Icon size={22} strokeWidth={2} className="text-[#01A3DB]" aria-hidden="true" />
-                  </div>
-                  <h3 className="text-base sm:text-lg font-bold text-[#38495D] mb-2">{step.title}</h3>
-                  <p className="text-sm sm:text-base text-gray-700 leading-relaxed">
-                    {step.description}
-                  </p>
-                </li>
-              );
-            })}
-          </ol>
-        </div>
-      </section>
-
-      {/* 8. LinkedIn: understated secondary connection option. */}
+      {/* 7. LinkedIn: understated secondary connection option. */}
       <section className="bg-white border-t border-gray-100 py-14 sm:py-16 lg:py-20">
         <div className="max-w-3xl mx-auto px-4 sm:px-5 md:px-6 lg:px-6 xl:px-8 text-center">
           <div className="w-11 h-11 mx-auto rounded-lg flex items-center justify-center mb-4 bg-[#38495D]/5 text-[#38495D]">

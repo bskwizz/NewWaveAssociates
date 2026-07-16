@@ -93,7 +93,7 @@ export default function HeroRotator() {
           <br />
           We deploy experienced, deeply vetted operators who step in quickly,{' '}
           <br className="hidden sm:block" />
-          take ownership, and deliver results.
+          take ownership, and deliver measurable results.
         </p>
       </div>
 
