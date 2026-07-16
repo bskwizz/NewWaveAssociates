@@ -210,7 +210,6 @@ export default function FindLeaderPage() {
             }
             eyebrow="Find the Right Leader"
             heading="Where do you need experienced leadership?"
-            labelBelowHeading
           >
             <div className="mt-6 space-y-3 sm:space-y-4">
               {PRACTICE_AREA_CARDS.map((area) => (
