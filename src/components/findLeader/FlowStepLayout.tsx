@@ -7,10 +7,14 @@ interface FlowStepLayoutProps {
   total: number;
   /** Omitted on Step 1 so no back button renders. */
   onBack?: () => void;
+  /** Optional highlighted box rendered below the progress bar (Step 1). */
+  intro?: ReactNode;
   /** Optional uppercase eyebrow above the heading (Step 1 welcome). */
   eyebrow?: string;
   /** The single H1 for this step. Receives focus when the step changes. */
   heading: string;
+  /** When true, show the bar only at top and the "Step X of 6" label below the heading. */
+  labelBelowHeading?: boolean;
   children: ReactNode;
 }
 
@@ -21,8 +25,10 @@ export default function FlowStepLayout({
   step,
   total,
   onBack,
+  intro,
   eyebrow,
   heading,
+  labelBelowHeading = false,
   children,
 }: FlowStepLayoutProps) {
   const headingRef = useRef<HTMLHeadingElement>(null);
@@ -46,7 +52,9 @@ export default function FlowStepLayout({
         </button>
       )}
 
-      <FlowProgress step={step} total={total} />
+      <FlowProgress step={step} total={total} hideLabel={labelBelowHeading} />
+
+      {intro && <div className="mb-8 sm:mb-10">{intro}</div>}
 
       {eyebrow && (
         <div className="inline-block mb-4">
@@ -64,6 +72,12 @@ export default function FlowStepLayout({
       >
         {heading}
       </h1>
+
+      {labelBelowHeading && (
+        <p className="mt-3 text-xs sm:text-sm font-bold uppercase tracking-[0.15em] text-[#38495D]">
+          Step {step} of {total}
+        </p>
+      )}
 
       {children}
     </div>
