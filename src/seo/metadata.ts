@@ -56,6 +56,14 @@ export const ROUTE_META: Record<string, RouteMeta> = {
     ogDescription:
       'Share your leadership background and interest in carefully matched fractional, interim, and project-based opportunities.',
   },
+  '/find-a-leader/new': {
+    title: `Find the Right Leader | ${BRAND}`,
+    description:
+      'Tell New Wave Associates about your leadership needs and request fractional, interim, or project-based executive leadership options.',
+    ogTitle: 'Find the Right Leader',
+    ogDescription:
+      'Share your business needs and connect with experienced New Wave leaders across six critical leadership practice areas.',
+  },
   '/insights': {
     title: `Insights | ${BRAND}`,
     description:

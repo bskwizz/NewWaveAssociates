@@ -77,25 +77,32 @@ export default function ExecutiveNetworkApplyPage() {
           </div>
 
           <h1 className="text-3xl sm:text-4xl lg:text-5xl font-extrabold tracking-tight leading-[1.08] text-white max-w-4xl">
-            Apply to Join a Network Built for Experienced Operators
+            Apply to Join an Exclusive Network of Executive Operators
           </h1>
 
           <p className="mt-6 text-lg sm:text-xl text-white/80 leading-relaxed max-w-[720px]">
-            New Wave connects proven executives with fractional, interim, and project-based leadership
-            opportunities where experience, accountability, and execution matter.
+            New Wave is an exclusive network of accomplished executive operators across Procurement,
+            Strategic Sourcing, Revenue Operations, Transformation, Project Management, and M&A
+            Integration.
           </p>
 
-          <p className="mt-6 inline-block rounded-lg bg-white/5 ring-1 ring-white/10 px-4 py-2.5 text-sm sm:text-base font-semibold text-white/90">
-            Carefully matched opportunities. Meaningful executive work. Trusted professional relationships.
+          {/*
+            VERIFY BEFORE LAUNCH: this line references "a community of experienced executives" and
+            "resources." Confirm the community and member resources are actually available (or
+            adjust to forward-looking wording) before go-live.
+          */}
+          <p className="mt-5 text-base sm:text-lg text-white/70 leading-relaxed max-w-[720px]">
+            We provide access to meaningful leadership opportunities, a community of experienced
+            executives, and resources designed to help you continue building your leadership career.
           </p>
 
-          <p className="mt-4 text-sm text-white/60 leading-relaxed max-w-[720px]">
-            Built for leaders who have sat in the seat and still want to build, fix, and lead.
+          <p className="mt-6 inline-block rounded-lg bg-white/5 ring-1 ring-[#f05e00] px-4 py-2.5 text-sm sm:text-base font-semibold text-white/90">
+            Meaningful leadership work. Exceptional executive peers. Relationships that compound over time.
           </p>
 
           {/* Proof strip */}
-          <div className="mt-10 sm:mt-12 border-t border-white/15">
-            <ul className="grid grid-cols-1 sm:grid-cols-3 divide-y sm:divide-y-0 sm:divide-x divide-white/10">
+          <div className="mt-10 sm:mt-12 border-t border-[#01A3DB]/60">
+            <ul className="grid grid-cols-1 sm:grid-cols-3 divide-y sm:divide-y-0 sm:divide-x divide-[#01A3DB]/50">
               {proofStrip.map((item) => (
                 <li
                   key={item}

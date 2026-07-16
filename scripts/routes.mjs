@@ -13,6 +13,7 @@ export const STATIC_ROUTES = [
   '/about',
   '/executive-network',
   '/executive-network/apply',
+  '/find-a-leader/new',
   '/insights',
   '/contact',
   '/privacy',

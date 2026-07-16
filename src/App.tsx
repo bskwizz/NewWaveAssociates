@@ -1,4 +1,4 @@
-import { Routes, Route, Navigate, useParams } from 'react-router-dom';
+import { Routes, Route, Navigate, useParams, useLocation } from 'react-router-dom';
 import { useAppNavigate } from './hooks/useAppNavigate';
 import ScrollToTop from './components/ScrollToTop';
 import RouteSeo from './components/RouteSeo';
@@ -46,6 +46,7 @@ import SGAOptimizationHub from './pages/hubs/SGAOptimizationHub';
 import AIAutomationHub from './pages/hubs/AIAutomationHub';
 import PrivacyPage from './pages/PrivacyPage';
 import TermsPage from './pages/TermsPage';
+import FindLeaderPage from './pages/FindLeaderPage';
 
 function WithNav({ Component }: { Component: React.ComponentType<{ onNavigate: (page: string) => void }> }) {
   const onNavigate = useAppNavigate();
@@ -59,6 +60,10 @@ function InsightDetailWrapper() {
 }
 
 function App() {
+  const { pathname } = useLocation();
+  // The guided intake flow uses its own simplified header and hides the global
+  // footer between steps.
+  const hideGlobalFooter = pathname.startsWith('/find-a-leader');
   return (
     <div className="min-h-screen bg-gray-50 flex flex-col">
       <ScrollToTop />
@@ -80,6 +85,7 @@ function App() {
           <Route path="/contact-us" element={<Navigate to="/contact" replace />} />
           <Route path="/privacy" element={<PrivacyPage />} />
           <Route path="/terms" element={<TermsPage />} />
+          <Route path="/find-a-leader/new" element={<FindLeaderPage />} />
 
           <Route path="/case-study-pmo" element={<WithNav Component={PMOCaseStudy} />} />
           <Route path="/case-study-operating-model" element={<WithNav Component={OperatingModelCaseStudy} />} />
@@ -126,7 +132,7 @@ function App() {
           <Route path="*" element={<WithNav Component={HomePage} />} />
         </Routes>
       </main>
-      <Footer />
+      {!hideGlobalFooter && <Footer />}
     </div>
   );
 }
