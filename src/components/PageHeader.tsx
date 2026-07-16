@@ -49,12 +49,6 @@ const navItems: NavItem[] = [
     isActive: (p: string) => p.startsWith('/find-a-leader'),
     variant: 'primary',
   },
-  {
-    label: 'Executive Network',
-    path: '/executive-network',
-    isActive: (p: string) => p === '/executive-network',
-    variant: 'link',
-  },
 ];
 
 export default function PageHeader() {
