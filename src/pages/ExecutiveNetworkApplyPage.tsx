@@ -7,7 +7,7 @@ import ExecutiveNetworkForm from '../components/ExecutiveNetworkForm';
 // blocks (header / hero / proof strip / form + benefits panel) so the form can
 // later become a multi-step flow without changing the route.
 
-const proofStrip = ['VP to C-Suite', '6 Leadership Practice Areas', 'Fractional • Interim • Project-Based'];
+const proofStrip = ['VP to C-Suite', '6 Practice Areas', 'Fractional • Interim • Project-Based'];
 
 const membershipBenefits: { title: string; description: string; icon: LucideIcon }[] = [
   {
@@ -87,17 +87,17 @@ export default function ExecutiveNetworkApplyPage() {
           </p>
 
           {/*
-            VERIFY BEFORE LAUNCH: this line references "a community of experienced leaders" and
+            VERIFY BEFORE LAUNCH: this line references "a community of experienced operators" and
             "resources." Confirm the community and member resources are actually available (or
             adjust to forward-looking wording) before go-live.
           */}
           <p className="mt-5 text-base sm:text-lg text-white/70 leading-relaxed max-w-[720px]">
             We provide access to meaningful leadership opportunities, a community of experienced
-            leaders, and resources designed to help you continue building your leadership career.
+            operators, and resources designed to help you continue building your career.
           </p>
 
           <p className="mt-6 inline-block rounded-lg bg-white/5 ring-1 ring-[#f05e00] px-4 py-2.5 text-sm sm:text-base font-semibold text-white/90">
-            Meaningful leadership work. Exceptional peers. Relationships that compound over time.
+            Meaningful work. Exceptional peers. Relationships that compound over time.
           </p>
 
           {/* Proof strip */}
