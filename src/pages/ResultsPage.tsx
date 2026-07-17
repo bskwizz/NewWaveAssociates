@@ -276,7 +276,7 @@ export default function ResultsPage() {
             </p>
 
             <p className="mt-4 text-base sm:text-lg font-medium text-[#01A3DB]">
-              Representative executive leadership engagements across interim, fractional, and project-based roles.
+              Representative engagements across interim, fractional, and project-based roles.
             </p>
 
             <p className="mt-5 max-w-2xl text-base sm:text-lg text-gray-700 leading-relaxed">
