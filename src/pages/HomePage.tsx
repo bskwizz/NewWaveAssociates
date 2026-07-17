@@ -43,7 +43,7 @@ const services = [
   {
     icon: Package,
     title: 'Procurement',
-    description: 'Fractional procurement executives who reduce your costs, strengthen your supplier partnerships, and build scalable procurement capabilities.',
+    description: 'Fractional procurement leaders who reduce your costs, strengthen your supplier partnerships, and build scalable procurement capabilities.',
   },
   {
     icon: Handshake,
