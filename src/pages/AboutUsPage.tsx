@@ -421,7 +421,7 @@ export default function AboutUsPage() {
           </h2>
           <p className="mt-6 max-w-3xl mx-auto text-base sm:text-lg text-gray-700 leading-relaxed">
             Whether you're filling a leadership gap, accelerating a transformation, or building new
-            capability, New Wave provides experienced executives who step into the work and move your
+            capability, New Wave provides experienced operators who step into the work and move your
             business forward.
           </p>
           <div className="mt-9 flex flex-col sm:flex-row items-center justify-center gap-4">
