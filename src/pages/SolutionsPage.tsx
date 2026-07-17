@@ -14,7 +14,7 @@ import { practiceAreaSlug } from '../data/practiceAreas';
 const practiceAreas: PracticeArea[] = [
   {
     icon: Package,
-    title: 'Procurement Leadership',
+    title: 'Procurement',
     promise: 'Build stronger supplier relationships. Reduce costs. Create lasting capability.',
     description:
       'Our procurement leaders help organizations improve spend visibility, negotiate complex supplier relationships, strengthen procurement teams, and build scalable operating models.',
@@ -250,7 +250,7 @@ export default function SolutionsPage() {
             </div>
 
             <p className="text-4xl sm:text-5xl lg:text-6xl font-extrabold tracking-tight text-[#38495D] leading-tight max-w-5xl">
-              Experienced Executive Leadership.
+              Experienced Operators.
               <br />
               Exactly When You Need It.
             </p>
