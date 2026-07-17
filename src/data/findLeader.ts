@@ -40,7 +40,7 @@ export const PRACTICE_AREA_CARDS: PracticeAreaCardData[] = [
   {
     name: 'Procurement',
     description:
-      'Executive procurement leadership, supplier strategy, cost management, and procurement capability.',
+      'Procurement leadership, supplier strategy, cost management, and procurement capability.',
     icon: Package,
   },
   {
