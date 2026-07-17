@@ -82,7 +82,7 @@ const whenToCall = [
   {
     icon: UserPlus,
     title: 'You Need Leadership Before You Can Hire It',
-    description: 'Access senior functional expertise without taking on the cost or commitment of a full-time executive.',
+    description: 'Access senior functional expertise without taking on the cost or commitment of a full-time hire.',
   },
   {
     icon: Activity,
