@@ -93,7 +93,7 @@ export default function ExecutiveNetworkApplyPage() {
           */}
           <p className="mt-5 text-base sm:text-lg text-white/70 leading-relaxed max-w-[720px]">
             We provide access to meaningful leadership opportunities, a community of experienced
-            leaders, and resources designed to help you continue building your leadership career.
+            leaders, and resources designed to help you continue building your career.
           </p>
 
           <p className="mt-6 inline-block rounded-lg bg-white/5 ring-1 ring-[#f05e00] px-4 py-2.5 text-sm sm:text-base font-semibold text-white/90">
