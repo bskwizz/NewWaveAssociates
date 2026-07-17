@@ -38,7 +38,7 @@ const values = [
   },
 ];
 
-// Informational cards for the "Executive Leadership, On Demand" section.
+// Informational cards for the "Leadership, On Demand" section.
 const services = [
   {
     icon: Package,
@@ -165,10 +165,10 @@ export default function HomePage() {
         </div>
       </div>
 
-      {/* Executive Leadership, On Demand */}
+      {/* Leadership, On Demand */}
       <Section background="gray">
         <SectionHeader
-          label="Executive Leadership, On Demand."
+          label="Leadership, On Demand."
           intro="Access experienced fractional and interim leaders with a proven track record of success. Whether you need executive leadership for a critical function, an operator to lead a transformation, or temporary leadership while you hire, New Wave provides the leadership you need to keep your business moving forward. Our expertise spans the critical business functions where experienced leadership creates the greatest impact."
         />
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-5 sm:gap-6 lg:gap-8">
