@@ -381,7 +381,7 @@ export default function ResultsPage() {
             Need Leadership Like This?
           </h2>
           <p className="mt-5 text-base sm:text-lg text-gray-700 leading-relaxed">
-            Whether you need an interim executive, a fractional leader, or an experienced operator to
+            Whether you need an interim leader, a fractional expert, or an experienced operator to
             lead a critical initiative, New Wave is ready to help.
           </p>
           <div className="mt-8">
