@@ -177,7 +177,7 @@ const whyNewWave: { icon: LucideIcon; title: string; description: string }[] = [
     icon: Award,
     title: 'Leaders Who Have Been There',
     description:
-      'Our professionals bring real executive and functional leadership experience to every engagement.',
+      'Our professionals are doers and bring real functional leadership experience to every engagement.',
   },
   {
     icon: Zap,
