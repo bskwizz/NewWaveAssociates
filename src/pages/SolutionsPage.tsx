@@ -153,14 +153,14 @@ const engagementModels: EngagementModel[] = [
     icon: CalendarClock,
     title: 'Fractional Leadership',
     description:
-      'Part-time executive leadership for organizations that need strategic expertise without a full-time executive.',
+      'Part-time leadership for organizations that need strategic expertise without a full-time executive.',
     bestFor: ['Growing companies', 'PE-backed businesses', 'Leadership coaching', 'Building new capabilities'],
   },
   {
     icon: Zap,
     title: 'Interim Leadership',
     description:
-      'Immediate executive leadership during transitions, leaves of absence, executive searches, or business-critical moments.',
+      'Immediate leadership during transitions, leaves of absence, executive searches, or business-critical moments.',
     bestFor: ['Executive vacancies', 'Organizational transitions', 'Business continuity', 'Turnarounds'],
   },
   {
