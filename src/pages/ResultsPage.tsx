@@ -314,11 +314,11 @@ export default function ResultsPage() {
         </div>
       </Section>
 
-      {/* Representative Leadership Engagements */}
+      {/* Representative Engagements */}
       <Section background="gray" id="engagements">
         <SectionHeader
-          label="REPRESENTATIVE LEADERSHIP ENGAGEMENTS"
-          intro="Every engagement is different. Our approach is not. We step into leadership roles, establish accountability, and deliver measurable business outcomes. The engagements below represent a sample of the executive leadership roles our team has served."
+          label="REPRESENTATIVE ENGAGEMENTS"
+          intro="Every engagement is different. Our approach is not. We step into leadership roles, establish accountability, and deliver measurable business outcomes. The engagements below represent a sample of the roles our team has served."
         />
         <p className="-mt-6 sm:-mt-7 lg:-mt-8 mb-8 sm:mb-10 max-w-[860px] text-base sm:text-lg font-medium text-[#38495D] leading-relaxed">
           Filter engagements by leadership practice area or engagement model to explore
