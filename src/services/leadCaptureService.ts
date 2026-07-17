@@ -64,7 +64,7 @@ export interface LeadPayload {
   timeline?: string;
   message?: string;
   // Additional source-specific fields merged into the POST body as-is (e.g. the
-  // Executive Network application's structured columns). Keys should match what
+  // Leadership Network application's structured columns). Keys should match what
   // the edge function reads for that source.
   fields?: Record<string, string | undefined>;
 }

@@ -3,8 +3,8 @@ import { ArrowLeft } from 'lucide-react';
 import { ROUTES } from '../data/company';
 
 // Simplified header for the focused application experience. Logo (home) on the
-// left, a single "Back to Executive Network" link on the right. Deliberately
-// omits the full client navigation. Used only on /executive-network/apply.
+// left, a single "Back to Leadership Network" link on the right. Deliberately
+// omits the full client navigation. Used only on /leadership-network/apply.
 export default function ApplyHeader() {
   return (
     <header className="w-full bg-white border-b border-gray-100">
@@ -25,7 +25,7 @@ export default function ApplyHeader() {
           className="inline-flex items-center gap-1.5 text-sm font-medium text-gray-600 hover:text-[#01A3DB] transition-colors rounded-sm focus:outline-none focus-visible:ring-2 focus-visible:ring-[#01A3DB] focus-visible:ring-offset-2"
         >
           <ArrowLeft size={16} aria-hidden="true" />
-          Back to Executive Network
+          Back to Leadership Network
         </Link>
       </div>
     </header>

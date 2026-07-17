@@ -1,4 +1,4 @@
-// Metric values shown in the /executive-network hero panel.
+// Metric values shown in the /leadership-network hero panel.
 //
 // VERIFICATION: `combinedYears` (the "100+ Years" card) is an illustrative
 // figure and MUST be confirmed by the business before launch. Calculate it as
@@ -19,7 +19,7 @@ export const NETWORK_METRICS: HeroMetric[] = [
   {
     // Newline forces "Years" onto a second line in the card.
     value: '100+\nYears',
-    label: 'Combined Executive Experience',
+    label: 'Combined Leadership Experience',
     description: 'Leadership experience across complex operating environments.',
     requiresVerification: true,
   },
@@ -27,6 +27,6 @@ export const NETWORK_METRICS: HeroMetric[] = [
     value: 'VP to C-Suite',
     // Newline forces "Leaders" onto a second line in the card.
     label: 'Proven Operating\nLeaders',
-    description: 'Executives who have held meaningful functional and enterprise responsibility.',
+    description: 'Leaders who have held meaningful functional and enterprise responsibility.',
   },
 ];

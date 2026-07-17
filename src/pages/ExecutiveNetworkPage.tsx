@@ -21,7 +21,7 @@ const thriveCards: { icon: LucideIcon; title: string; description: string }[] = 
   { icon: Briefcase, title: 'Have Sat in the Seat', description: 'You have owned a function, led teams, made difficult decisions, and remained accountable for business performance.' },
   { icon: Compass, title: 'Thrive in Ambiguity', description: 'You know how to create clarity, establish priorities, and move forward when the path is not fully defined.' },
   { icon: Hammer, title: 'Enjoy Building', description: 'You are energized by creating capability, improving how work gets done, and leaving organizations stronger.' },
-  { icon: Users, title: 'Lead Through Influence', description: 'You can align executives, teams, partners, and stakeholders without relying only on positional authority.' },
+  { icon: Users, title: 'Lead Through Influence', description: 'You can align leaders, teams, partners, and stakeholders without relying only on positional authority.' },
   { icon: Target, title: 'Own the Outcome', description: 'You measure success through execution and business results, not simply the completion of deliverables.' },
   { icon: Handshake, title: 'Value the Company of Peers', description: 'You enjoy learning from other experienced leaders and contributing to a network built on trust and collaboration.' },
 ];
@@ -34,11 +34,11 @@ const relevantExperience = [
   'Leading through growth, transition, integration, or disruption',
   'Managing cross-functional stakeholders',
   'Delivering measurable business outcomes',
-  'Working directly with executive teams and boards',
+  'Working directly with leadership teams and boards',
   'Developing internal talent and leaving sustainable capability',
 ];
 const beyondTitle = [
-  'Sound executive judgment',
+  'Sound leadership judgment',
   'Clear communication',
   'Humility and low ego',
   'Comfort working hands-on',
@@ -54,12 +54,12 @@ const engagements: { icon: LucideIcon; title: string; description: string; examp
     icon: CalendarClock,
     title: 'Fractional Leadership',
     description: 'Provide ongoing senior leadership on a part-time or defined-capacity basis while helping an organization build long-term capability.',
-    examples: ['Leading a function before a full-time hire is practical', 'Supporting a growing executive team', 'Building governance, operating cadence, and internal capability'],
+    examples: ['Leading a function before a full-time hire is practical', 'Supporting a growing leadership team', 'Building governance, operating cadence, and internal capability'],
   },
   {
     icon: Zap,
     title: 'Interim Leadership',
-    description: 'Step into a critical leadership role during a vacancy, transition, leave, turnaround, or permanent executive search.',
+    description: 'Step into a critical leadership role during a vacancy, transition, leave, turnaround, or permanent leadership search.',
     examples: ['Stabilizing a function', 'Maintaining continuity', 'Clarifying the long-term leadership need', 'Preparing for transition to a permanent leader'],
   },
   {
@@ -75,8 +75,8 @@ const areas: { icon: LucideIcon; name: string; description: string }[] = [
   { icon: Package, name: 'Procurement', description: 'Relevant experience may include leading procurement organizations, supplier strategy, cost management, procurement transformation, and functional capability building.' },
   { icon: Handshake, name: 'Strategic Sourcing', description: 'Relevant experience may include category strategy, complex sourcing events, supplier negotiations, vendor selection, and supplier performance.' },
   { icon: TrendingUp, name: 'Revenue Operations', description: 'Relevant experience may include forecasting, pipeline governance, CRM, pricing, commercial systems, sales operations, and cross-functional revenue execution.' },
-  { icon: Workflow, name: 'Transformation Office', description: 'Relevant experience may include enterprise transformation, governance, portfolio prioritization, executive reporting, benefits realization, and change leadership.' },
-  { icon: ClipboardList, name: 'Project Management Office', description: 'Relevant experience may include PMO leadership, portfolio management, program recovery, executive reporting, delivery governance, and project capability building.' },
+  { icon: Workflow, name: 'Transformation Office', description: 'Relevant experience may include enterprise transformation, governance, portfolio prioritization, leadership reporting, benefits realization, and change leadership.' },
+  { icon: ClipboardList, name: 'Project Management Office', description: 'Relevant experience may include PMO leadership, portfolio management, program recovery, leadership reporting, delivery governance, and project capability building.' },
   { icon: GitMerge, name: 'M&A Integration', description: 'Relevant experience may include integration planning, Integration Management Offices, Day One readiness, carve-outs, synergy realization, and post-close execution.' },
 ];
 
@@ -84,7 +84,7 @@ const areas: { icon: LucideIcon; name: string; description: string }[] = [
 const whyJoin: { icon: LucideIcon; title: string; description: string }[] = [
   { icon: Star, title: 'Meaningful Work', description: 'Lead business-critical initiatives where your experience can create visible and lasting impact.' },
   { icon: Layers, title: 'Flexible Engagements', description: 'Explore fractional, interim, and project-based opportunities that align with your interests, capacity, and availability.' },
-  { icon: Building2, title: 'Executive-Level Clients', description: 'Work directly with leaders navigating consequential moments in growing businesses and complex enterprises.' },
+  { icon: Building2, title: 'Leadership-Level Clients', description: 'Work directly with leaders navigating consequential moments in growing businesses and complex enterprises.' },
   { icon: Users, title: 'A Trusted Network', description: 'Build relationships with experienced peers who value collaboration, sound judgment, and practical execution.' },
   { icon: Puzzle, title: 'Careful Matching', description: 'We prioritize fit between the leader, the client, the challenge, and the working environment.' },
   { icon: Repeat, title: 'Long-Term Relationships', description: 'Our goal is to build a trusted leadership network, not simply fill one-time assignments.' },
@@ -126,7 +126,7 @@ const processSteps: { number: number; title: string; description: string; icon: 
   },
 ];
 
-// Benefits of joining. NOTE: "Executive Resources" uses forward-looking copy
+// Benefits of joining. NOTE: "Leadership Resources" uses forward-looking copy
 // ("as the network grows ...") because those tools are not confirmed to exist
 // yet. Confirm with the business before switching to present tense.
 const networkBenefits: { title: string; description: string; icon: LucideIcon }[] = [
@@ -137,7 +137,7 @@ const networkBenefits: { title: string; description: string; icon: LucideIcon }[
     icon: Target,
   },
   {
-    title: 'Executive Resources',
+    title: 'Leadership Resources',
     description:
       'As the network grows, members will gain access to practical tools, insights, and resources designed for experienced operators.',
     icon: BookOpen,
@@ -264,7 +264,7 @@ export default function ExecutiveNetworkPage() {
           })}
         </div>
         <SectionClosingNote>
-          Executive network members receive curated leadership opportunities, exclusive resources,
+          Leadership Network members receive curated leadership opportunities, exclusive resources,
           and invitations to connect with fellow operators solving complex business challenges.
         </SectionClosingNote>
       </Section>
@@ -354,7 +354,7 @@ export default function ExecutiveNetworkPage() {
         <SectionHeader
           label="How It Works"
           heading="Built for Leaders Who Still Want to Lead"
-          intro="Joining the New Wave Executive Network should feel personal, straightforward, and worth your time. We focus on understanding where you have led, the kinds of challenges you solve best, and the opportunities that fit your experience."
+          intro="Joining the New Wave Leadership Network should feel personal, straightforward, and worth your time. We focus on understanding where you have led, the kinds of challenges you solve best, and the opportunities that fit your experience."
         />
         <ol className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-5 sm:gap-6 lg:gap-8">
           {processSteps.map((step) => {
@@ -387,7 +387,7 @@ export default function ExecutiveNetworkPage() {
           <SectionHeader
             label="What Comes Next"
             heading="More Than a List of Opportunities"
-            intro="The New Wave Executive Network is designed to create ongoing value for experienced leaders."
+            intro="The New Wave Leadership Network is designed to create ongoing value for experienced leaders."
           />
           <div className="grid grid-cols-1 sm:grid-cols-3 gap-5 sm:gap-6 lg:gap-8">
             {networkBenefits.map((benefit) => {
@@ -426,7 +426,7 @@ export default function ExecutiveNetworkPage() {
             Bring Your Experience to the Network
           </h2>
           <p className="mt-4 text-base sm:text-lg text-gray-700 leading-relaxed">
-            If you are an experienced executive interested in fractional, interim, or project-based
+            If you are an experienced leader interested in fractional, interim, or project-based
             leadership opportunities, we would like to learn more about you.
           </p>
           <div className="mt-8 flex justify-center">

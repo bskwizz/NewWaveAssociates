@@ -3,9 +3,9 @@ import { CalendarClock, Zap, Target, type LucideIcon } from 'lucide-react';
 import { NETWORK_METRICS, type HeroMetric } from '../data/executiveNetwork';
 import { ROUTES } from '../data/company';
 
-// Dark, editorial hero for /executive-network. Visually distinct from the rest
+// Dark, editorial hero for /leadership-network. Visually distinct from the rest
 // of the site: deep New Wave navy, restrained blue glow + subtle dot texture,
-// a two-column layout (copy left, executive portrait cluster right), and a
+// a two-column layout (copy left, leadership portrait cluster right), and a
 // bottom engagement-model strip that bridges into the next section.
 
 const primaryButton =
@@ -72,18 +72,18 @@ export default function ExecutiveNetworkHero() {
           <div className="lg:col-span-7">
             <div className="inline-block mb-6">
               <p className="text-white text-sm sm:text-base font-bold tracking-[0.2em] uppercase" style={{ letterSpacing: '0.2em' }}>
-                For Fractional &amp; Interim Executives
+                For Fractional &amp; Interim Leaders
               </p>
               <div className="mt-2 h-[2px] bg-[#f05e00]" />
             </div>
 
             <h1 className="text-4xl sm:text-5xl lg:text-6xl font-extrabold tracking-tight leading-[1.05] text-white">
               Join the New Wave
-              <br className="hidden lg:block" /> Executive Network
+              <br className="hidden lg:block" /> Leadership Network
             </h1>
 
             <p className="mt-6 text-lg sm:text-xl text-white/80 leading-relaxed max-w-[600px]">
-              Built for experienced executives who still enjoy building, fixing, and leading. Join a
+              Built for experienced operators who still enjoy building, fixing, and leading. Join a
               curated network considered for fractional, interim, and project-based leadership
               opportunities where experience and accountability matter.
             </p>

@@ -43,16 +43,16 @@ export const ROUTE_META: Record<string, RouteMeta> = {
     description:
       'Meet New Wave Associates, operators-turned-advisors who bring hands-on procurement, revenue operations, and transformation expertise to the lower and middle market.',
   },
-  '/executive-network': {
-    title: `Executive Network | ${BRAND}`,
+  '/leadership-network': {
+    title: `Leadership Network | ${BRAND}`,
     description:
       "Join New Wave Associates' curated network of experienced fractional, interim, and project-based leaders across Procurement, Strategic Sourcing, Revenue Operations, Transformation Office, Project Management Office, and M&A Integration.",
   },
-  '/executive-network/apply': {
-    title: `Apply to the Executive Network | ${BRAND}`,
+  '/leadership-network/apply': {
+    title: `Apply to the Leadership Network | ${BRAND}`,
     description:
-      "Apply to join New Wave Associates' curated network of experienced fractional, interim, and project-based executives.",
-    ogTitle: 'Apply to the New Wave Executive Network',
+      "Apply to join New Wave Associates' curated network of experienced fractional, interim, and project-based leaders.",
+    ogTitle: 'Apply to the New Wave Leadership Network',
     ogDescription:
       'Share your leadership background and interest in carefully matched fractional, interim, and project-based opportunities.',
   },

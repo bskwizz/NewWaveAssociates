@@ -41,8 +41,10 @@ export const ROUTES = {
   solutions: '/solutions',
   results: '/results',
   about: '/about',
-  executiveNetwork: '/executive-network',
-  executiveNetworkApply: '/executive-network/apply',
+  // Keys keep the executiveNetwork name for internal stability; the public
+  // path is now /leadership-network (old /executive-network paths redirect).
+  executiveNetwork: '/leadership-network',
+  executiveNetworkApply: '/leadership-network/apply',
   contact: '/contact',
   privacy: '/privacy',
   terms: '/terms',
