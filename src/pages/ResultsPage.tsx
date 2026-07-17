@@ -276,7 +276,7 @@ export default function ResultsPage() {
             </p>
 
             <p className="mt-4 text-base sm:text-lg font-medium text-[#01A3DB]">
-              Representative executive leadership engagements across interim, fractional, and project-based roles.
+              Representative engagements across interim, fractional, and project-based roles.
             </p>
 
             <p className="mt-5 max-w-2xl text-base sm:text-lg text-gray-700 leading-relaxed">
@@ -314,11 +314,11 @@ export default function ResultsPage() {
         </div>
       </Section>
 
-      {/* Representative Leadership Engagements */}
+      {/* Representative Engagements */}
       <Section background="gray" id="engagements">
         <SectionHeader
-          label="REPRESENTATIVE LEADERSHIP ENGAGEMENTS"
-          intro="Every engagement is different. Our approach is not. We step into leadership roles, establish accountability, and deliver measurable business outcomes. The engagements below represent a sample of the executive leadership roles our team has served."
+          label="REPRESENTATIVE ENGAGEMENTS"
+          intro="Every engagement is different. Our approach is not. We step into leadership roles, establish accountability, and deliver measurable business outcomes. The engagements below represent a sample of the roles our team has served."
         />
         <p className="-mt-6 sm:-mt-7 lg:-mt-8 mb-8 sm:mb-10 max-w-[860px] text-base sm:text-lg font-medium text-[#38495D] leading-relaxed">
           Filter engagements by leadership practice area or engagement model to explore
@@ -381,7 +381,7 @@ export default function ResultsPage() {
             Need Leadership Like This?
           </h2>
           <p className="mt-5 text-base sm:text-lg text-gray-700 leading-relaxed">
-            Whether you need an interim executive, a fractional leader, or an experienced operator to
+            Whether you need an interim leader, a fractional expert, or an experienced operator to
             lead a critical initiative, New Wave is ready to help.
           </p>
           <div className="mt-8">
