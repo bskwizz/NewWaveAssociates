@@ -5,7 +5,7 @@ import PageHeader from '../components/PageHeader';
 import TeamAvatars from '../components/TeamAvatars';
 
 const aboutIntro =
-  'New Wave was built on a simple belief: the most valuable thing a company can have is experienced leaders who have done the job before. We provide deeply vetted executives who step in quickly, establish accountability, solve complex business challenges, and deliver measurable results across procurement, strategic sourcing, revenue operations, transformation, project management, and M&A integration.';
+  'New Wave was built on a simple belief: the most valuable thing a company can have is experienced leaders who have done the job before. We provide deeply vetted operators who step in quickly, establish accountability, solve complex business challenges, and deliver measurable results across procurement, strategic sourcing, revenue operations, transformation, project management, and M&A integration.';
 
 // The four commitments every client can expect ("What to Expect").
 const commitments: { icon: LucideIcon; title: string; description: string }[] = [
@@ -365,7 +365,7 @@ export default function AboutUsPage() {
                   Leadership gaps should never become business constraints.
                 </h2>
                 <p className="mt-6 sm:mt-8 text-base sm:text-lg text-gray-700 leading-relaxed">
-                  New Wave exists to give organizations immediate access to experienced executive leadership when opportunity, transformation, or transition cannot wait.
+                  New Wave exists to give organizations immediate access to experienced leadership when opportunity, transformation, or transition cannot wait.
                 </p>
                 <p className="mt-4 text-base sm:text-lg text-gray-700 leading-relaxed">
                   We believe companies should not have to choose between waiting months for a permanent hire or relying solely on outside recommendations. We provide experienced leaders who step into the work, create momentum, and deliver measurable business outcomes.
@@ -421,7 +421,7 @@ export default function AboutUsPage() {
           </h2>
           <p className="mt-6 max-w-3xl mx-auto text-base sm:text-lg text-gray-700 leading-relaxed">
             Whether you're filling a leadership gap, accelerating a transformation, or building new
-            capability, New Wave provides experienced executives who step into the work and move your
+            capability, New Wave provides experienced operators who step into the work and move your
             business forward.
           </p>
           <div className="mt-9 flex flex-col sm:flex-row items-center justify-center gap-4">
