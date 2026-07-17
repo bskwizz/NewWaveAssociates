@@ -233,7 +233,7 @@ export default function FindLeaderPage() {
             </div>
             <div className="mt-5">
               <Link
-                to="/executive-network/apply"
+                to="/leadership-network/apply"
                 className="text-sm text-gray-500 hover:text-[#01A3DB] transition-colors rounded-sm focus:outline-none focus-visible:ring-2 focus-visible:ring-[#01A3DB] focus-visible:ring-offset-2"
               >
                 Are you a leader?

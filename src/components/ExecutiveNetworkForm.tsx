@@ -133,18 +133,18 @@ export default function ExecutiveNetworkForm() {
         </div>
         <h3 className="text-2xl sm:text-3xl font-bold text-[#38495D]">Thank You for Applying</h3>
         <p className="mt-4 text-base sm:text-lg text-gray-700 leading-relaxed max-w-xl mx-auto">
-          We appreciate your interest in the New Wave Executive Network. We will review your
+          We appreciate your interest in the New Wave Leadership Network. We will review your
           information and reach out if there appears to be a potential fit.
         </p>
         <p className="mt-3 text-sm sm:text-base text-gray-600 leading-relaxed max-w-xl mx-auto">
-          In the meantime, you can return to the Executive Network page to learn more about how the
+          In the meantime, you can return to the Leadership Network page to learn more about how the
           network works.
         </p>
         <Link
           to={ROUTES.executiveNetwork}
           className="mt-6 inline-flex items-center gap-1.5 text-sm font-semibold text-[#01A3DB] hover:text-[#0192C5] transition-colors focus:outline-none focus-visible:ring-2 focus-visible:ring-[#01A3DB] focus-visible:ring-offset-2 rounded-sm"
         >
-          Back to Executive Network
+          Back to Leadership Network
         </Link>
       </div>
     );

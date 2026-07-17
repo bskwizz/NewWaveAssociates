@@ -77,8 +77,11 @@ function App() {
           <Route path="/case-studies" element={<Navigate to="/results" replace />} />
           <Route path="/about" element={<WithNav Component={AboutUsPage} />} />
           <Route path="/about-us" element={<Navigate to="/about" replace />} />
-          <Route path="/executive-network" element={<ExecutiveNetworkPage />} />
-          <Route path="/executive-network/apply" element={<ExecutiveNetworkApplyPage />} />
+          <Route path="/leadership-network" element={<ExecutiveNetworkPage />} />
+          <Route path="/leadership-network/apply" element={<ExecutiveNetworkApplyPage />} />
+          {/* Legacy path redirects so old /executive-network links keep working */}
+          <Route path="/executive-network" element={<Navigate to="/leadership-network" replace />} />
+          <Route path="/executive-network/apply" element={<Navigate to="/leadership-network/apply" replace />} />
           <Route path="/insights" element={<WithNav Component={InsightsPage} />} />
           <Route path="/insights/:slug" element={<InsightDetailWrapper />} />
           <Route path="/contact" element={<WithNav Component={ContactUsPage} />} />

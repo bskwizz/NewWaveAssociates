@@ -17,7 +17,7 @@ const membershipBenefits: { title: string; description: string; icon: LucideIcon
     icon: Target,
   },
   {
-    title: 'Meaningful Executive Work',
+    title: 'Meaningful Leadership Work',
     description:
       'Step into business-critical situations where your judgment and leadership can create visible impact.',
     icon: Zap,
@@ -71,33 +71,33 @@ export default function ExecutiveNetworkApplyPage() {
         <div className="relative max-w-7xl mx-auto px-4 sm:px-5 md:px-6 lg:px-6 xl:px-8 pt-12 sm:pt-14 lg:pt-16 pb-0">
           <div className="inline-block mb-5">
             <p className="text-white text-sm sm:text-base font-bold tracking-[0.2em] uppercase" style={{ letterSpacing: '0.2em' }}>
-              Executive Network Application
+              Leadership Network Application
             </p>
             <div className="mt-2 h-[2px] bg-[#f05e00]" />
           </div>
 
           <h1 className="text-3xl sm:text-4xl lg:text-5xl font-extrabold tracking-tight leading-[1.08] text-white max-w-4xl">
-            Apply to Join an Exclusive Network of Executive Operators
+            Apply to Join an Exclusive Network of Experienced Operators
           </h1>
 
           <p className="mt-6 text-lg sm:text-xl text-white/80 leading-relaxed max-w-[720px]">
-            New Wave is an exclusive network of accomplished executive operators across Procurement,
+            New Wave is an exclusive network of accomplished operators across Procurement,
             Strategic Sourcing, Revenue Operations, Transformation, Project Management, and M&A
             Integration.
           </p>
 
           {/*
-            VERIFY BEFORE LAUNCH: this line references "a community of experienced executives" and
+            VERIFY BEFORE LAUNCH: this line references "a community of experienced leaders" and
             "resources." Confirm the community and member resources are actually available (or
             adjust to forward-looking wording) before go-live.
           */}
           <p className="mt-5 text-base sm:text-lg text-white/70 leading-relaxed max-w-[720px]">
             We provide access to meaningful leadership opportunities, a community of experienced
-            executives, and resources designed to help you continue building your leadership career.
+            leaders, and resources designed to help you continue building your leadership career.
           </p>
 
           <p className="mt-6 inline-block rounded-lg bg-white/5 ring-1 ring-[#f05e00] px-4 py-2.5 text-sm sm:text-base font-semibold text-white/90">
-            Meaningful leadership work. Exceptional executive peers. Relationships that compound over time.
+            Meaningful leadership work. Exceptional peers. Relationships that compound over time.
           </p>
 
           {/* Proof strip */}
