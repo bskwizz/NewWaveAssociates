@@ -43,7 +43,7 @@ const services = [
   {
     icon: Package,
     title: 'Procurement',
-    description: 'Fractional procurement executives who reduce your costs, strengthen your supplier partnerships, and build scalable procurement capabilities.',
+    description: 'Fractional procurement leaders who reduce your costs, strengthen your supplier partnerships, and build scalable procurement capabilities.',
   },
   {
     icon: Handshake,
@@ -169,7 +169,7 @@ export default function HomePage() {
       <Section background="gray">
         <SectionHeader
           label="Leadership, On Demand."
-          intro="Access experienced fractional and interim leaders with a proven track record of success. Whether you need executive leadership for a critical function, an operator to lead a transformation, or temporary leadership while you hire, New Wave provides the leadership you need to keep your business moving forward. Our expertise spans the critical business functions where experienced leadership creates the greatest impact."
+          intro="Access experienced fractional and interim leaders with a proven track record of success. Whether you need experienced leadership for a critical function, an operator to lead a transformation, or temporary leadership while you hire, New Wave provides the talent you need to keep your business moving forward. Our expertise spans the critical business functions where experienced leadership creates the greatest impact."
         />
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-5 sm:gap-6 lg:gap-8">
           {services.map((service) => (
