@@ -40,7 +40,7 @@ export const PRACTICE_AREA_CARDS: PracticeAreaCardData[] = [
   {
     name: 'Procurement',
     description:
-      'Executive procurement leadership, supplier strategy, cost management, and procurement capability.',
+      'Procurement leadership, supplier strategy, cost management, and procurement capability.',
     icon: Package,
   },
   {
@@ -99,7 +99,7 @@ export const ENGAGEMENT_MODELS: EngagementModel[] = [
   },
   {
     name: 'Fractional Leadership',
-    description: 'Ongoing executive leadership on a part-time or defined-capacity basis.',
+    description: 'Ongoing leadership on a part-time or defined-capacity basis.',
   },
   {
     name: 'Project-Based Leadership',
