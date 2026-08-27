@@ -42,7 +42,7 @@ export default function MergerCaseStudy({ onNavigate }: MergerCaseStudyProps) {
                 Case Study
               </p>
               <p className="text-sm text-gray-600 mb-8">
-                Author: Bryan Skwirut | 8 minute read
+                Author: New Wave Associates | 8 minute read
               </p>
 
               <div className="bg-white/90 backdrop-blur-sm border border-gray-200 rounded-lg p-8 mb-8 shadow-lg max-w-4xl">
@@ -182,27 +182,6 @@ export default function MergerCaseStudy({ onNavigate }: MergerCaseStudyProps) {
               </div>
             </div>
 
-            <div className="border-t border-gray-200 pt-8">
-              <h3 className="text-2xl font-bold text-[#38495D] mb-6">
-                Meet The Team
-              </h3>
-              <div className="flex gap-6">
-                <div className="flex items-center gap-3">
-                  <div className="w-16 h-16 rounded-full overflow-hidden bg-gradient-to-br from-[#01A3DB] to-[#38495D]">
-                    <img
-                      src={`${import.meta.env.BASE_URL}Pictures-3.png`}
-                      alt="Bryan Skwirut"
-                      className="w-full h-full object-cover"
-                      onError={(e) => {
-                        const target = e.target as HTMLImageElement;
-                        target.style.display = 'none';
-                      }}
-                    />
-                  </div>
-                  <span className="text-gray-700 font-medium">Bryan Skwirut</span>
-                </div>
-              </div>
-            </div>
           </div>
 
           <CTABar
